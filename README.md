@@ -32,7 +32,7 @@
 | :-----: | :------: | :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
 |   AV1   | 03/04/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
 |   TB1   | 09/05/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
-|   AV2   |            |       |                                                            |
+|   AV2   | 12/06/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
 |   TF1   |            |       |                                                            |
 
 <div style="page-break-after: always;"></div>
