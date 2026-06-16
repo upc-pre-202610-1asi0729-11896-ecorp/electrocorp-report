@@ -3395,15 +3395,14 @@ Durante el Sprint 2, la colaboración del equipo se intensificó al tener que ma
 * **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
 * **Link de commits del repositorio del frontend:** [https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/main/]
 
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/Commits1.png"></img><br>
-   <img src="assets/Commits2.png"></img><br>
-   <img src="assets/Commits3.png"></img><br>
-   <img src="assets/Commits4.png"></img><br>
-   <br>
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/ComitsWeb1.png"></img><br>
-   <img src="assets/ComitsWeb2.png"></img><br>
+   <img src="assets/Evidence5.2.8..png"></img><br>
+   <img src="assets/ReportCommit.png"></img><br>
+
+   <img src="assets/Evidence5.2.8.3.png"></img><br>
+   <img src="assets/LandingCommit.png"></img><br>
+   
+   img src="assets/Evidence5.2.8.2.png"></img><br>
+   <img src="assets/FronendCommit.png"></img><br>
 
 ### 5.2.1. Sprint n 
 #### 5.2.X.1. Sprint Planning n
