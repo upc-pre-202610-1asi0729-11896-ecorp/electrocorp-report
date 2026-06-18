@@ -1,0 +1,96 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
+}
+skinparam database {
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
+}
+hide stereotype
+title ElectroCorp - Service Management Frontend Components Diagram
+left to right direction
+
+
+package "Service Management Frontend Bounded Context
+[container]" {
+  rectangle "<b>Support Tickets Page</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents user interaction for this bounded context." as F0 <#58A9E8>
+  rectangle "<b>Maintenance Tickets Page</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents user interaction for this bounded context." as F1 <#58A9E8>
+  rectangle "<b>Ticket Components</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents user interaction for this bounded context." as F2 <#58A9E8>
+  rectangle "<b>Service Management Facade</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates state, use cases and REST calls." as F3 <#58A9E8>
+  rectangle "<b>Service API Client</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates state, use cases and REST calls." as F4 <#58A9E8>
+}
+rectangle "<b>ElectroCorp Backend API</b>
+<size:12><i>[External Container]</i></size>
+
+REST API consumed by this frontend context." as Backend <#7F8C8D>
+package "Connected Frontend Contexts
+[external containers]" {
+  rectangle "<b>IAM</b>
+<size:12><i>[Frontend Context]</i></size>
+
+Provides shared navigation, session or referenced data." as Dep0 <#7F8C8D>
+  rectangle "<b>Device Control</b>
+<size:12><i>[Frontend Context]</i></size>
+
+Provides shared navigation, session or referenced data." as Dep1 <#7F8C8D>
+  rectangle "<b>Workplace</b>
+<size:12><i>[Frontend Context]</i></size>
+
+Provides shared navigation, session or referenced data." as Dep2 <#7F8C8D>
+  rectangle "<b>Shared Kernel</b>
+<size:12><i>[Frontend Context]</i></size>
+
+Provides shared navigation, session or referenced data." as Dep3 <#7F8C8D>
+}
+F0 --> F3 : Uses
+F1 --> F3 : Uses
+F2 --> F3 : Uses
+F3 --> F4 : Uses
+F4 --> Backend : Consumes REST endpoints (JSON / HTTPS)
+F3 ..> Dep0 : Coordinates with
+F3 ..> Dep1 : Coordinates with
+F3 ..> Dep2 : Coordinates with
+F3 ..> Dep3 : Coordinates with
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
+@enduml

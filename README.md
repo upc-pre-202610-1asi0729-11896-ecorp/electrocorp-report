@@ -1748,69 +1748,131 @@ La arquitectura de contenedores separa el sitio publico, la aplicacion Angular, 
 
 ### 4.6.4. Software Architecture Components Diagrams
 
-Los siguientes diagramas de componentes representan la arquitectura interna de ElectroCorp. Primero se presenta una vista general que conecta frontend, backend, shared kernel y persistencia. Luego se incluyen diagramas por bounded context para mostrar como cada modulo se conecta mediante componentes de presentacion, facades, API clients, controladores REST, servicios de aplicacion, repositorios, persistencia y otros bounded contexts.
+Los siguientes diagramas de componentes representan la arquitectura interna de ElectroCorp separada por frontend y backend. Esta seccion evita detallar entidades, value objects o clases internas de dominio, porque ese nivel corresponde a los diagramas de clases de la seccion 4.7. Aqui se muestran componentes arquitectonicos: paginas, componentes Angular, facades, API clients, controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias entre bounded contexts.
 
-#### 4.6.4.1. ElectroCorp - General Components Diagram
+#### 4.6.4.1. ElectroCorp - Frontend General Components Diagram
 
-![ElectroCorp - General Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/electrocorp-general-components.puml)
+![ElectroCorp - Frontend General Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/frontend-general-components.puml)
 
-El diagrama general de componentes muestra como el usuario pasa desde la Landing Page hacia el router de Angular, como cada bounded context frontend consume el HTTP API Layer y como el backend Spring Boot distribuye la solicitud hacia IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting, Service Management y Shared Kernel.
+El diagrama general de componentes del frontend muestra como el usuario interactua con el App Layout, el router de Angular y los bounded contexts de la Web Application. Cada contexto consume API clients y se apoya en el Shared Kernel para layout, sesion, preferencias y servicios base.
 
-#### 4.6.4.2. ElectroCorp - Bounded Context Components Diagrams
+#### 4.6.4.2. ElectroCorp - Frontend Bounded Context Components Diagrams
 
-##### ElectroCorp - Shared Kernel Components Diagram
+##### ElectroCorp - Shared Kernel Frontend Components Diagram
 
-![ElectroCorp - Shared Kernel Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/shared-kernel-components.puml)
+![ElectroCorp - Shared Kernel Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/shared-kernel-frontend-components.puml)
 
-El diagrama de componentes de `Shared Kernel` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Shared Kernel`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - IAM Components Diagram
+##### ElectroCorp - IAM Frontend Components Diagram
 
-![ElectroCorp - IAM Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/iam-components.puml)
+![ElectroCorp - IAM Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/iam-frontend-components.puml)
 
-El diagrama de componentes de `IAM` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `IAM`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Billing Components Diagram
+##### ElectroCorp - Billing Frontend Components Diagram
 
-![ElectroCorp - Billing Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/billing-components.puml)
+![ElectroCorp - Billing Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/billing-frontend-components.puml)
 
-El diagrama de componentes de `Billing` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Billing`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Workplace Components Diagram
+##### ElectroCorp - Workplace Frontend Components Diagram
 
-![ElectroCorp - Workplace Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/workplace-components.puml)
+![ElectroCorp - Workplace Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/workplace-frontend-components.puml)
 
-El diagrama de componentes de `Workplace` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Workplace`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Device Control Components Diagram
+##### ElectroCorp - Device Control Frontend Components Diagram
 
-![ElectroCorp - Device Control Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/device-control-components.puml)
+![ElectroCorp - Device Control Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/device-control-frontend-components.puml)
 
-El diagrama de componentes de `Device Control` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Device Control`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Energy Monitoring Components Diagram
+##### ElectroCorp - Energy Monitoring Frontend Components Diagram
 
-![ElectroCorp - Energy Monitoring Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/energy-monitoring-components.puml)
+![ElectroCorp - Energy Monitoring Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/energy-monitoring-frontend-components.puml)
 
-El diagrama de componentes de `Energy Monitoring` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Energy Monitoring`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Notifications Components Diagram
+##### ElectroCorp - Notifications Frontend Components Diagram
 
-![ElectroCorp - Notifications Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/notifications-components.puml)
+![ElectroCorp - Notifications Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/notifications-frontend-components.puml)
 
-El diagrama de componentes de `Notifications` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Notifications`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Reporting Components Diagram
+##### ElectroCorp - Reporting Frontend Components Diagram
 
-![ElectroCorp - Reporting Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/reporting-components.puml)
+![ElectroCorp - Reporting Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/reporting-frontend-components.puml)
 
-El diagrama de componentes de `Reporting` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Reporting`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
 
-##### ElectroCorp - Service Management Components Diagram
+##### ElectroCorp - Service Management Frontend Components Diagram
 
-![ElectroCorp - Service Management Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/bounded-contexts/service-management-components.puml)
+![ElectroCorp - Service Management Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/service-management-frontend-components.puml)
 
-El diagrama de componentes de `Service Management` muestra la relacion entre la presentacion Angular, los servicios/facades de aplicacion, los endpoints REST del backend, los servicios de aplicacion y la persistencia asociada. Tambien explicita las dependencias con otros bounded contexts para evitar que el modulo quede aislado.
+Este diagrama muestra los componentes frontend del bounded context `Service Management`: paginas o componentes Angular, facades/stores cuando corresponden, API clients y dependencias con otros contextos frontend.
+
+#### 4.6.4.3. ElectroCorp - Backend General Components Diagram
+
+![ElectroCorp - Backend General Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/backend-general-components.puml)
+
+El diagrama general de componentes del backend muestra el contenedor Spring Boot como API REST modular. El entry point distribuye solicitudes hacia los bounded contexts, y cada contexto persiste informacion en la base de datos de ElectroCorp.
+
+#### 4.6.4.4. ElectroCorp - Backend Bounded Context Components Diagrams
+
+##### ElectroCorp - Shared Kernel Backend Components Diagram
+
+![ElectroCorp - Shared Kernel Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/shared-kernel-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Shared Kernel`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - IAM Backend Components Diagram
+
+![ElectroCorp - IAM Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/iam-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `IAM`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Billing Backend Components Diagram
+
+![ElectroCorp - Billing Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/billing-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Billing`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Workplace Backend Components Diagram
+
+![ElectroCorp - Workplace Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/workplace-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Workplace`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Device Control Backend Components Diagram
+
+![ElectroCorp - Device Control Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/device-control-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Device Control`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Energy Monitoring Backend Components Diagram
+
+![ElectroCorp - Energy Monitoring Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/energy-monitoring-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Energy Monitoring`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Notifications Backend Components Diagram
+
+![ElectroCorp - Notifications Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/notifications-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Notifications`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Reporting Backend Components Diagram
+
+![ElectroCorp - Reporting Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/reporting-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Reporting`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
+
+##### ElectroCorp - Service Management Backend Components Diagram
+
+![ElectroCorp - Service Management Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/service-management-backend-components.puml)
+
+Este diagrama muestra los componentes backend del bounded context `Service Management`: controladores REST, servicios de aplicacion, repositorios, persistencia y dependencias con otros bounded contexts.
 
 ## 4.7. Software Object-Oriented Design
 
