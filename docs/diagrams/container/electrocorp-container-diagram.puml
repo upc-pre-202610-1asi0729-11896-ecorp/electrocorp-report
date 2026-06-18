@@ -3,8 +3,10 @@ skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam defaultTextAlignment center
-skinparam wrapWidth 120
-skinparam maxMessageSize 80
+skinparam wrapWidth 220
+skinparam maxMessageSize 130
+skinparam nodesep 70
+skinparam ranksep 80
 skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
@@ -15,6 +17,12 @@ skinparam rectangleFontColor #FFFFFF
 skinparam rectangleFontStyle plain
 skinparam rectangle {
   BorderThickness 0
+  MinimumWidth 190
+  Padding 12
+}
+skinparam database {
+  MinimumWidth 210
+  Padding 12
 }
 skinparam rectangle<<SystemBoundary>> {
   BackgroundColor transparent
@@ -23,6 +31,8 @@ skinparam rectangle<<SystemBoundary>> {
   BorderStyle dashed
   FontColor #333333
   FontStyle bold
+  MinimumWidth 760
+  Padding 18
 }
 skinparam rectangle<<BoundedContext>> {
   BackgroundColor transparent
@@ -31,6 +41,8 @@ skinparam rectangle<<BoundedContext>> {
   BorderStyle dashed
   FontColor #333333
   FontStyle bold
+  MinimumWidth 760
+  Padding 18
 }
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
@@ -44,11 +56,11 @@ title ElectroCorp - C4 Container Diagram
 rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses public and authenticated\nenergy management flows." as User #0B5593
 
 rectangle "<b>ElectroCorp Product Boundary</b>\n<i>[Software System]</i>" as Product <<SystemBoundary>> {
-  rectangle "<b>Landing Page</b>\n<i>[Static Website]</i>\n\nPublic site for value\nproposition, plans and\ncall-to-action flows." as Website #3498DB
-  rectangle "<b>ElectroCorp WebApp</b>\n<i>[Angular Source App]</i>\n\nFrontend application source\nwith routes, views, facades,\nstores and API clients." as WebApp #3498DB
-  rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime produced\nfrom the WebApp build and\nserved as static files." as Spa #3498DB
-  rectangle "<b>Backend API</b>\n<i>[Spring Boot Container]</i>\n\nModular monolith organized\nby DDD bounded contexts." as Api #3498DB
-  database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL Container]</i>\n\nPersists users, plans,\nworkplaces, devices,\nreadings, reports and tickets." as Db
+  rectangle "<b>Landing Page</b>\n<i>[Static Website]</i>\n\nPublic site for value proposition, plans and call-to-action flows." as Website #3498DB
+  rectangle "<b>ElectroCorp WebApp</b>\n<i>[Angular Source App]</i>\n\nFrontend application source with routes, views, facades, stores and API clients." as WebApp #3498DB
+  rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime produced from the WebApp build and served as static files." as Spa #3498DB
+  rectangle "<b>Backend API</b>\n<i>[Spring Boot Container]</i>\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api #3498DB
+  database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL Container]</i>\n\nPersists users, plans, workplaces, devices, readings, reports and tickets." as Db
 }
 
 rectangle "<b>GitHub Pages</b>\n<i>[External Container]</i>\n\nHosts the landing page." as GithubPages #7F8C8D
