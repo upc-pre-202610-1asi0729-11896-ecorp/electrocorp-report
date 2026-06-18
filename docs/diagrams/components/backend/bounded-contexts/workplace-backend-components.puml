@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
@@ -8,76 +7,35 @@ skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
-skinparam rectangle {
-  RoundCorner 0
-  BorderThickness 1
-}
-skinparam package {
-  BorderColor #555555
-  BorderStyle dashed
-  BackgroundColor transparent
-  FontColor #444444
-  FontStyle bold
-}
-skinparam database {
-  BackgroundColor #C9332B
-  BorderColor #C9332B
-  FontColor #FFFFFF
-}
+skinparam rectangleRoundCorner 0
+skinparam rectangleBorderThickness 1
+skinparam packageStyle rectangle
+skinparam packageBorderColor #555555
+skinparam packageBackgroundColor transparent
+skinparam packageFontColor #444444
+skinparam packageFontStyle bold
+skinparam databaseBackgroundColor #C9332B
+skinparam databaseBorderColor #C9332B
+skinparam databaseFontColor #FFFFFF
 hide stereotype
 title ElectroCorp - Workplace Backend Components Diagram
 left to right direction
 
 
-package "Workplace Backend Bounded Context
-[container]" {
-  rectangle "<b>Workplace Controller</b>
-<size:12><i>[REST Controller]</i></size>
-
-Exposes HTTP endpoints for this bounded context." as B0 <#3498DB>
-  rectangle "<b>Location Application Service</b>
-<size:12><i>[Application Service]</i></size>
-
-Coordinates commands, queries and use cases." as B1 <#3498DB>
-  rectangle "<b>Room Application Service</b>
-<size:12><i>[Application Service]</i></size>
-
-Coordinates commands, queries and use cases." as B2 <#3498DB>
-  rectangle "<b>Device Assignment Application Service</b>
-<size:12><i>[Application Service]</i></size>
-
-Coordinates commands, queries and use cases." as B3 <#3498DB>
-  rectangle "<b>Location Repository</b>
-<size:12><i>[Spring Data Repository]</i></size>
-
-Persists and retrieves bounded context data." as R0 <#F39C12>
-  rectangle "<b>Room Repository</b>
-<size:12><i>[Spring Data Repository]</i></size>
-
-Persists and retrieves bounded context data." as R1 <#F39C12>
-  rectangle "<b>Device Assignment Repository</b>
-<size:12><i>[Spring Data Repository]</i></size>
-
-Persists and retrieves bounded context data." as R2 <#F39C12>
+package "Workplace Backend Bounded Context\n[container]" {
+  rectangle "Workplace Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 <#3498DB>
+  rectangle "Location Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 <#3498DB>
+  rectangle "Room Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 <#3498DB>
+  rectangle "Device Assignment Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 <#3498DB>
+  rectangle "Location Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 <#F39C12>
+  rectangle "Room Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R1 <#F39C12>
+  rectangle "Device Assignment Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R2 <#F39C12>
 }
-database "<b>ElectroCorp Database</b>
-<size:12><i>[Relational Database]</i></size>
-
-Stores locations, rooms and device assignments." as Database
-package "Connected Bounded Contexts
-[external containers]" {
-  rectangle "<b>IAM</b>
-<size:12><i>[Bounded Context]</i></size>
-
-Provides referenced capability or published language." as Dep0 <#7F8C8D>
-  rectangle "<b>Device Control</b>
-<size:12><i>[Bounded Context]</i></size>
-
-Provides referenced capability or published language." as Dep1 <#7F8C8D>
-  rectangle "<b>Shared Kernel</b>
-<size:12><i>[Bounded Context]</i></size>
-
-Provides referenced capability or published language." as Dep2 <#7F8C8D>
+database "ElectroCorp Database\n[Relational Database]\n\nStores locations, rooms and device assignments." as Database
+package "Connected Bounded Contexts\n[external containers]" {
+  rectangle "IAM\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 <#7F8C8D>
+  rectangle "Device Control\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 <#7F8C8D>
+  rectangle "Shared Kernel\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep2 <#7F8C8D>
 }
 B0 --> B1 : Delegates to
 B0 --> B2 : Delegates to
