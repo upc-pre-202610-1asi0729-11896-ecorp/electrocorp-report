@@ -54,11 +54,9 @@ left to right direction
 
 title ElectroCorp - Backend General Components Diagram
 
-rectangle "<b>ElectroCorp Web App</b>\n<i>[External Container]</i>\n\nAngular SPA that\nconsumes backend\nservices." as WebApp #7F8C8D
+rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime that consumes backend bounded context capabilities through HTTPS." as Spa #3498DB
 
 rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" <<BoundedContext>> {
-
-  rectangle "<b>REST API Entry Point</b>\n<i>[Spring Boot Application]</i>\n\nReceives HTTP requests\nand delegates them to\nthe bounded contexts." as Api #3498DB
 
   rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nProvides shared security,\nOpenAPI, CORS, health\nchecks and common\nplatform configuration." as Shared #58A9E8
 
@@ -81,17 +79,15 @@ rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modul
 
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores application data\nused by every bounded\ncontext." as Database
 
-WebApp --> Api : Consumes backend\nservices\n[JSON / HTTPS]
-
-Api --> Shared : Routes shared\nplatform requests
-Api --> IAM : Routes identity\nrequests
-Api --> Billing : Routes billing\nrequests
-Api --> Workplace : Routes workplace\nrequests
-Api --> Device : Routes operation\nrequests
-Api --> Energy : Routes energy\nrequests
-Api --> Notifications : Routes notification\nrequests
-Api --> Reporting : Routes reporting\nrequests
-Api --> Service : Routes service\nrequests
+Spa --> Shared : Uses shared platform\nendpoints\n[JSON / HTTPS]
+Spa --> IAM : Uses identity\nendpoints\n[JSON / HTTPS]
+Spa --> Billing : Uses billing\nendpoints\n[JSON / HTTPS]
+Spa --> Workplace : Uses workplace\nendpoints\n[JSON / HTTPS]
+Spa --> Device : Uses operation\nendpoints\n[JSON / HTTPS]
+Spa --> Energy : Uses energy\nendpoints\n[JSON / HTTPS]
+Spa --> Notifications : Uses notification\nendpoints\n[JSON / HTTPS]
+Spa --> Reporting : Uses reporting\nendpoints\n[JSON / HTTPS]
+Spa --> Service : Uses service\nendpoints\n[JSON / HTTPS]
 
 Shared --> Database : Reads and writes\n[JPA / SQL]
 IAM --> Database : Reads and writes\n[JPA / SQL]
@@ -115,8 +111,8 @@ Reporting --> Energy : Reads energy\nmetrics
 Reporting --> Notifications : Reads alert\nmetrics
 Reporting --> Service : Reads service\nmetrics
 
-' Visual hierarchy similar to the Billing diagram
-Api -[hidden]down- Billing
+' Visual hierarchy similar to the reference component diagram
+Spa -[hidden]down- Billing
 
 Shared -[hidden]right- IAM
 IAM -[hidden]right- Billing

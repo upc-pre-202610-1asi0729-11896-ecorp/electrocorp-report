@@ -49,9 +49,11 @@ skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
 skinparam databaseFontStyle plain
 hide stereotype
-left to right direction
+top to bottom direction
 
 title ElectroCorp - Shared Kernel Backend Components Diagram
+
+rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime that consumes this bounded context through HTTPS." as Spa #3498DB
 
 rectangle "<b>Shared Kernel Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" <<BoundedContext>> {
   rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
@@ -60,27 +62,19 @@ rectangle "<b>Shared Kernel Backend Bounded Context</b>\n<i>[Spring Boot Module]
   rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores shared security, layout, session, configuration and platform services." as Database
-rectangle "<b>Shared Kernel</b>\n<i>[Published Language]</i>\n\nProvides common errors, security context and shared platform configuration." as Shared #7F8C8D
-rectangle "<b>IAM</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep0 #7F8C8D
-rectangle "<b>Billing</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep1 #7F8C8D
-rectangle "<b>Workplace</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep2 #7F8C8D
-rectangle "<b>Device Control</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep3 #7F8C8D
 
+Spa --> Interfaces : Calls REST endpoints\n[JSON / HTTPS]
 Interfaces --> Application : Delegates use cases
 Application --> Domain : Enforces business rules
 Application --> Infrastructure : Uses ports / repositories
 Infrastructure --> Domain : Maps persisted state
 Infrastructure --> Database : Reads and writes
-Interfaces ..> Shared : Uses platform contracts
-Application ..> Shared : Uses shared language
-Application ..> Dep0 : Coordinates with
-Application ..> Dep1 : Coordinates with
-Application ..> Dep2 : Coordinates with
-Application ..> Dep3 : Coordinates with
 
-Interfaces -[hidden]right- Application
-Application -[hidden]right- Domain
+Spa -[hidden]down- Interfaces
+Interfaces -[hidden]down- Application
+Application -[hidden]down- Domain
 Domain -[hidden]right- Infrastructure
+Infrastructure -[hidden]down- Database
 
 legend right
   <b>Legend</b>
