@@ -786,4 +786,7 @@ Frontend_device_control_RoutinesPageComponent ..> Frontend_device_control_Routin
 Frontend_device_control_RoutinesPageComponent ..> Frontend_device_control_RoutineTargetType
 Frontend_device_control_UpdateDeviceStatusCommand ..> Frontend_device_control_DeviceStatus
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_device_control_DeviceGroupsPageComponent ..> Frontend_device_control_DeviceControlRoutes
+
 @enduml

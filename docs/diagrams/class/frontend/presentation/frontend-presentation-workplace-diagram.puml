@@ -140,4 +140,9 @@ package "Workplace Presentation" {
 FrontendPresentation_workplace_LocationsPageComponent ..> FrontendPresentation_workplace_LocationCardComponent
 FrontendPresentation_workplace_RoomsPageComponent ..> FrontendPresentation_workplace_RoomCardComponent
 
+' Relationship completion: every declared type participates in the frontend diagram.
+FrontendPresentation_workplace_LocationsPageComponent ..> FrontendPresentation_workplace_DeviceAssignmentFormComponent
+FrontendPresentation_workplace_LocationsPageComponent ..> FrontendPresentation_workplace_DeviceAssignmentsPageComponent
+FrontendPresentation_workplace_LocationsPageComponent ..> FrontendPresentation_workplace_WORKPLACE_ROUTES
+
 @enduml

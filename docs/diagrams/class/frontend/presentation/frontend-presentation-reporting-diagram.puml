@@ -129,4 +129,7 @@ FrontendPresentation_reporting_EnergyGoalsPageComponent ..> FrontendPresentation
 FrontendPresentation_reporting_ReportsPageComponent ..> FrontendPresentation_reporting_MonthlyComparisonChartComponent
 FrontendPresentation_reporting_ReportsPageComponent ..> FrontendPresentation_reporting_ReportCardComponent
 
+' Relationship completion: every declared type participates in the frontend diagram.
+FrontendPresentation_reporting_EnergyGoalsPageComponent ..> FrontendPresentation_reporting_REPORTING_ROUTES
+
 @enduml

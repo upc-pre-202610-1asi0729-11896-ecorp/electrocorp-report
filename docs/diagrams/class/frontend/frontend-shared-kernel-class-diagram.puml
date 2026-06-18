@@ -662,4 +662,35 @@ Frontend_shared_ToastContainerComponent ..> Frontend_shared_ToastType
 Frontend_shared_TranslationService ..> Frontend_shared_AppLanguageCode
 Frontend_shared_UiStateService ..> Frontend_shared_SharedUiStore
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_shared_AboutPageComponent ..> Frontend_shared_AuthenticatedUserSession
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ConfirmDialogOptions
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ConfirmDialogState
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ToastMessage
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ErrorInterceptor
+Frontend_shared_AboutPageComponent ..> Frontend_shared_BaseEntity
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ApiConfig
+Frontend_shared_AboutPageComponent ..> Frontend_shared_HttpStatusCode
+Frontend_shared_AboutPageComponent ..> Frontend_shared_RoutePaths
+Frontend_shared_AboutPageComponent ..> Frontend_shared_StorageKeys
+Frontend_shared_AboutPageComponent ..> Frontend_shared_BaseResource
+Frontend_shared_AboutPageComponent ..> Frontend_shared_BaseResponse
+Frontend_shared_AboutPageComponent ..> Frontend_shared_LocalStorageService
+Frontend_shared_AboutPageComponent ..> Frontend_shared_AppButtonSize
+Frontend_shared_AboutPageComponent ..> Frontend_shared_AppNumberStepperComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_AppTimePickerComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_DraggableBarCarouselComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_DraggableBarCarouselItem
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ErrorMessageComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_LoadingSpinnerComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_ModalFormShellComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_SectionCardSize
+Frontend_shared_AboutPageComponent ..> Frontend_shared_SettingsSectionComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_SettingsShellComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_SeverityBadgeComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_SeverityBadgeLevel
+Frontend_shared_AboutPageComponent ..> Frontend_shared_NotFoundPageComponent
+Frontend_shared_AboutPageComponent ..> Frontend_shared_FloatingPanelPosition
+Frontend_shared_AboutPageComponent ..> Frontend_shared_FloatingPanelPositionOptions
+
 @enduml
