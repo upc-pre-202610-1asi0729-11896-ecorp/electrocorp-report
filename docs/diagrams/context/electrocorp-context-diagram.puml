@@ -1,52 +1,93 @@
 @startuml
+!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam componentStyle rectangle
-skinparam packageStyle rectangle
+skinparam defaultFontName Arial
 skinparam wrapWidth 180
 skinparam maxMessageSize 90
-skinparam defaultFontName Arial
-skinparam ArrowColor #1F4E79
-skinparam component {
-  BackgroundColor #F8FBFF
-  BorderColor #1F4E79
-  FontColor #0B1F33
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
 }
 skinparam database {
-  BackgroundColor #FFF9E8
-  BorderColor #8A6D1D
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
 }
-skinparam actor {
-  BackgroundColor #EEF7FF
-  BorderColor #1F4E79
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
 }
-
+hide stereotype
 title ElectroCorp - C4 Context Diagram
 left to right direction
 
-actor "Home Owner" as HomeOwner
-actor "Business Owner" as BusinessOwner
-rectangle "ElectroCorp Platform" as ElectroCorp {
-  component "Landing Page" as Landing
-  component "Web Application" as WebApp
-  component "Backend API" as Api
-}
-cloud "Render" as Render
-cloud "GitHub Pages" as GitHubPages
-cloud "Payment Provider" as PaymentProvider
-cloud "Email / Notification Provider" as NotificationProvider
-database "PostgreSQL Database" as Db
 
-HomeOwner --> Landing : discovers plans and value proposition
-BusinessOwner --> Landing : compares energy management plans
-HomeOwner --> WebApp : manages homes, devices and energy usage
-BusinessOwner --> WebApp : manages business locations and reports
-Landing --> WebApp : redirects to account and plan flow
-WebApp --> Api : HTTPS / JSON REST
-Api --> Db : persists platform data
-Api --> PaymentProvider : processes subscriptions and payments
-Api --> NotificationProvider : sends alerts and reports
-GitHubPages --> Landing : hosts public website
-Render --> WebApp : hosts SPA
-Render --> Api : hosts Spring Boot API
+rectangle "<b>Home Owner</b>
+<size:12><i>[Person]</i></size>
+
+Manages home devices, routines, energy usage and alerts." as HomeOwner <#0B5593>
+rectangle "<b>Business Owner</b>
+<size:12><i>[Person]</i></size>
+
+Manages business locations, devices, reports, support and billing." as BusinessOwner <#0B5593>
+
+package "ElectroCorp Digital Ecosystem
+[system boundary]" {
+  rectangle "<b>ElectroCorp Website</b>
+<size:12><i>[Public Website]</i></size>
+
+Presents value proposition, plans and calls to action." as Landing <#0B6FB3>
+  rectangle "<b>ElectroCorp Web Application</b>
+<size:12><i>[Angular SPA]</i></size>
+
+Operational product used after sign up or login." as WebApp <#0B6FB3>
+  rectangle "<b>ElectroCorp Platform API</b>
+<size:12><i>[Spring Boot System]</i></size>
+
+Coordinates IAM, billing, workplaces, devices, energy, alerts, reports and service." as Platform <#0B6FB3>
+}
+
+rectangle "<b>Payment Provider</b>
+<size:12><i>[External System]</i></size>
+
+Processes subscription payments and checkout status." as PaymentProvider <#7F8C8D>
+rectangle "<b>Email / Notification Provider</b>
+<size:12><i>[External System]</i></size>
+
+Delivers alerts, reports and support notifications." as NotificationProvider <#7F8C8D>
+database "<b>ElectroCorp Database</b>
+<size:12><i>[Relational Database]</i></size>
+
+Stores users, plans, workplaces, devices, readings, alerts, reports and tickets." as Database
+
+HomeOwner --> Landing : Visits
+BusinessOwner --> Landing : Compares plans
+Landing --> WebApp : Redirects selected plan
+HomeOwner --> WebApp : Uses platform
+BusinessOwner --> WebApp : Uses platform
+WebApp --> Platform : Consumes REST API (JSON / HTTPS)
+Platform --> Database : Reads and writes (JPA / SQL)
+Platform --> PaymentProvider : Processes billing
+Platform --> NotificationProvider : Sends notifications
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#9B59B6> domain |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
 @enduml

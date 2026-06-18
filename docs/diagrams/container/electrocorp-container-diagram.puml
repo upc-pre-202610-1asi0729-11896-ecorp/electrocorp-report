@@ -1,75 +1,98 @@
 @startuml
+!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam componentStyle rectangle
-skinparam packageStyle rectangle
+skinparam defaultFontName Arial
 skinparam wrapWidth 180
 skinparam maxMessageSize 90
-skinparam defaultFontName Arial
-skinparam ArrowColor #1F4E79
-skinparam component {
-  BackgroundColor #F8FBFF
-  BorderColor #1F4E79
-  FontColor #0B1F33
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
 }
 skinparam database {
-  BackgroundColor #FFF9E8
-  BorderColor #8A6D1D
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
 }
-skinparam actor {
-  BackgroundColor #EEF7FF
-  BorderColor #1F4E79
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
 }
-
+hide stereotype
 title ElectroCorp - C4 Container Diagram
 left to right direction
 
-actor "ElectroCorp User" as User
-node "Client Browser" {
-  component "Landing Page
-HTML/CSS/JS" as Landing
-  component "Angular Web App
-SPA" as Spa
-}
-node "Render" {
-  component "Spring Boot Backend API
-Modular Monolith" as Backend
-}
-database "PostgreSQL
-Relational Database" as Postgres
-cloud "Payment Provider" as Payments
-cloud "Email / Notification Provider" as Emails
-cloud "PlantUML Proxy" as PlantUml
-component "Report Repository
-README + PUML sources" as ReportRepo
 
-User --> Landing : reads value proposition
-Landing --> Spa : redirects CTA and selected plan
-User --> Spa : authenticates and manages platform
-Spa --> Backend : consumes REST endpoints
-Backend --> Postgres : JPA repositories
-Backend --> Payments : billing checkout and payment status
-Backend --> Emails : alert and report delivery
-ReportRepo --> PlantUml : renders diagrams from main branch
+rectangle "<b>ElectroCorp User</b>
+<size:12><i>[Person]</i></size>
 
-package "Backend bounded contexts" {
-  component "IAM" as Iam
-  component "Billing" as Billing
-  component "Workplace" as Workplace
-  component "Device Control" as DeviceControl
-  component "Energy Monitoring" as Energy
-  component "Notifications" as Notifications
-  component "Reporting" as Reporting
-  component "Service Management" as Service
-  component "Shared Kernel" as Shared
+Uses smart energy management flows across website and web app." as User <#0B5593>
+
+package "ElectroCorp Product Boundary
+[software system]" {
+  rectangle "<b>Landing Page</b>
+<size:12><i>[Static Website]</i></size>
+
+Public marketing site hosted on GitHub Pages." as Website <#3498DB>
+  rectangle "<b>Angular Web App</b>
+<size:12><i>[Container]</i></size>
+
+SPA with routes, layout, facades, stores and API clients." as Spa <#3498DB>
+  rectangle "<b>Backend API</b>
+<size:12><i>[Container]</i></size>
+
+Spring Boot modular monolith organized by DDD bounded contexts." as Api <#3498DB>
+  database "<b>ElectroCorp Database</b>
+<size:12><i>[Relational Database]</i></size>
+
+Persists operational and analytical platform data." as Db
 }
-Backend --> Iam
-Backend --> Billing
-Backend --> Workplace
-Backend --> DeviceControl
-Backend --> Energy
-Backend --> Notifications
-Backend --> Reporting
-Backend --> Service
-Backend --> Shared
+
+rectangle "<b>GitHub Pages</b>
+<size:12><i>[External Container]</i></size>
+
+Hosts the public website." as GithubPages <#7F8C8D>
+rectangle "<b>Render Web Service</b>
+<size:12><i>[External Container]</i></size>
+
+Hosts Angular and Spring Boot deployments." as RenderWeb <#7F8C8D>
+rectangle "<b>Payment Provider</b>
+<size:12><i>[External System]</i></size>
+
+Supports subscription payment flow." as Payment <#7F8C8D>
+rectangle "<b>Email Provider</b>
+<size:12><i>[External System]</i></size>
+
+Supports notification delivery." as Mail <#7F8C8D>
+
+User --> Website : Reads product information
+Website --> Spa : Redirects to sign up / selected plan
+User --> Spa : Navigates authenticated features
+Spa --> Api : Uses REST endpoints (JSON / HTTPS)
+Api --> Db : Reads and writes (JPA / SQL)
+Api --> Payment : Uses checkout and payment APIs
+Api --> Mail : Sends alerts and reports
+GithubPages --> Website : Hosts
+RenderWeb --> Spa : Hosts
+RenderWeb --> Api : Hosts
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#9B59B6> domain |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
 @enduml
