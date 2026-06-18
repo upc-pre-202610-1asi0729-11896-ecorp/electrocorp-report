@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,39 +23,51 @@ hide stereotype
 title ElectroCorp - Energy Monitoring Backend Components Diagram
 left to right direction
 
-
 package "Energy Monitoring Backend Bounded Context\n[container]" {
-  rectangle "Energy Monitoring Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 <#3498DB>
-  rectangle "Reading Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 <#3498DB>
-  rectangle "Dashboard Query Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 <#3498DB>
-  rectangle "Sampling Settings Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 <#3498DB>
-  rectangle "Energy Reading Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 <#F39C12>
-  rectangle "Sampling Settings Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R1 <#F39C12>
+  rectangle "<b>Energy Monitoring Service</b>\n<i>[Application Service]</i>\n\nCoordinates readings, metrics and dashboard queries." as Service #3498DB
+  rectangle "<b>Register Reading Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C0 #3498DB
+  rectangle "<b>Filter Readings Query</b>\n<i>[Query]</i>\n\nInput data to retrieve or calculate information." as C1 #3498DB
+  rectangle "<b>Calculate Dashboard Query</b>\n<i>[Query]</i>\n\nInput data to retrieve or calculate information." as C2 #3498DB
+  rectangle "<b>Reading Analyzer</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D0 #9B59B6
+  rectangle "<b>Consumption Aggregator</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D1 #9B59B6
+  rectangle "<b>Energy Reading</b>\n<i>[Domain Entity]</i>\n\nRepresents energy reading business state." as E0 #9B59B6
+  rectangle "<b>Watts</b>\n<i>[Value Object]</i>\n\nRepresents watts value." as V0 #9B59B6
+  rectangle "<b>Reading Timestamp</b>\n<i>[Value Object]</i>\n\nRepresents reading timestamp value." as V1 #9B59B6
+  rectangle "<b>Consumption Level</b>\n<i>[Value Object]</i>\n\nRepresents consumption level value." as V2 #9B59B6
+  rectangle "<b>Energy Reading Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists energy reading data." as R0 #F39C12
+  rectangle "<b>Sampling Settings Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists sampling settings data." as R1 #F39C12
 }
-database "ElectroCorp Database\n[Relational Database]\n\nStores energy readings and sampling settings." as Database
+database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores energy readings and sampling settings." as Database
 package "Connected Bounded Contexts\n[external containers]" {
-  rectangle "Device Control\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 <#7F8C8D>
-  rectangle "Reporting\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 <#7F8C8D>
-  rectangle "Notifications\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep2 <#7F8C8D>
-  rectangle "Shared Kernel\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep3 <#7F8C8D>
+  rectangle "<b>Device Control</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep0 #7F8C8D
+  rectangle "<b>Reporting</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep1 #7F8C8D
+  rectangle "<b>Notifications</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep2 #7F8C8D
+  rectangle "<b>Shared Kernel</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep3 #7F8C8D
 }
-B0 --> B1 : Delegates to
-B0 --> B2 : Delegates to
-B0 --> B3 : Delegates to
-B1 --> R0 : Uses
-B2 --> R1 : Uses
+Service --> C0 : Receives
+Service --> C1 : Receives
+Service --> C2 : Receives
+Service --> D0 : Uses
+Service --> D1 : Uses
+Service --> R0 : Uses
+Service --> R1 : Uses
+D0 --> E0 : Validates
+D1 --> E0 : Validates
+E0 --> V0 : Has
+E0 --> V1 : Has
 R0 --> Database : Reads and writes
 R1 --> Database : Reads and writes
-B0 ..> Dep0 : Coordinates with
-B0 ..> Dep1 : Coordinates with
-B0 ..> Dep2 : Coordinates with
-B0 ..> Dep3 : Coordinates with
+Service ..> Dep0 : Coordinates with
+Service ..> Dep1 : Coordinates with
+Service ..> Dep2 : Coordinates with
+Service ..> Dep3 : Coordinates with
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
+  |<#9B59B6> domain |
   |<#F39C12> repository / external |
   |<#C9332B> database |
 endlegend

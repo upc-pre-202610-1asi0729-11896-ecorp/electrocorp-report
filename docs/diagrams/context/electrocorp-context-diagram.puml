@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,29 +23,25 @@ hide stereotype
 title ElectroCorp - C4 Context Diagram
 left to right direction
 
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nHomeowner or business owner who manages devices, energy, alerts, reports, support and billing." as User #0B5593
 
-rectangle "Home Owner\n[Person]\n\nManages home devices, routines, energy usage and alerts." as HomeOwner <#0B5593>
-rectangle "Business Owner\n[Person]\n\nManages business locations, devices, reports, support and billing." as BusinessOwner <#0B5593>
-
-package "ElectroCorp Digital Ecosystem\n[system boundary]" {
-  rectangle "ElectroCorp Website\n[Public Website]\n\nPresents value proposition, plans and calls to action." as Landing <#0B6FB3>
-  rectangle "ElectroCorp Web Application\n[Angular SPA]\n\nOperational product used after sign up or login." as WebApp <#0B6FB3>
-  rectangle "ElectroCorp Platform API\n[Spring Boot System]\n\nCoordinates IAM, billing, workplaces, devices, energy, alerts, reports and service." as Platform <#0B6FB3>
+package "ElectroCorp Digital Ecosystem\n[system]" {
+  rectangle "<b>ElectroCorp Website</b>\n<i>[Public Website]</i>\n\nPresents value proposition, pricing and calls to action." as Landing #1ABC9C
+  rectangle "<b>ElectroCorp Web App</b>\n<i>[Angular SPA]</i>\n\nOperational application for the complete energy management experience." as WebApp #27AE60
+  rectangle "<b>ElectroCorp Platform API</b>\n<i>[Spring Boot System]</i>\n\nModular monolith that coordinates IAM, billing, workplaces, devices, monitoring, alerts, reporting and service." as Platform #0B6FB3
 }
 
-rectangle "Payment Provider\n[External System]\n\nProcesses subscription payments and checkout status." as PaymentProvider <#7F8C8D>
-rectangle "Email / Notification Provider\n[External System]\n\nDelivers alerts, reports and support notifications." as NotificationProvider <#7F8C8D>
-database "ElectroCorp Database\n[Relational Database]\n\nStores users, plans, workplaces, devices, readings, alerts, reports and tickets." as Database
+rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nProcesses subscription payments and checkout status." as PaymentProvider #7F8C8D
+rectangle "<b>Email / Notification Provider</b>\n<i>[External System]</i>\n\nDelivers alerts, reports and support notifications." as NotificationProvider #7F8C8D
+database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users, plans, workplaces, devices, readings, alerts, reports and tickets." as Database
 
-HomeOwner --> Landing : Visits
-BusinessOwner --> Landing : Compares plans
-Landing --> WebApp : Redirects selected plan
-HomeOwner --> WebApp : Uses platform
-BusinessOwner --> WebApp : Uses platform
-WebApp --> Platform : Consumes REST API (JSON / HTTPS)
-Platform --> Database : Reads and writes (JPA / SQL)
-Platform --> PaymentProvider : Processes billing
-Platform --> NotificationProvider : Sends notifications
+User --> Landing : Browses public information\nand plans\n[Browser]
+User --> WebApp : Uses authenticated\napplication flows\n[Browser]
+Landing --> WebApp : Redirects selected plan\n[CTA Link]
+WebApp --> Platform : Consumes platform services\n[JSON / HTTPS]
+Platform --> Database : Reads and writes\n[JPA / SQL]
+Platform --> PaymentProvider : Processes subscriptions\n[HTTPS / API]
+Platform --> NotificationProvider : Sends alerts and reports\n[HTTPS / API]
 legend right
   <b>Legend</b>
   |<#0B5593> person |

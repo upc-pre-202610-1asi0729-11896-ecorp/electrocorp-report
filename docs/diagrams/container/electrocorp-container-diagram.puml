@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -18,34 +20,28 @@ skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
 hide stereotype
-title ElectroCorp - C4 Container Diagram
-left to right direction
+title ElectroCorp - Container Diagram
+top to bottom direction
 
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUser who manages devices, routines, readings, reports, goals, support and billing." as User #0B5593
+rectangle "<b>Mailchimp</b>\n<i>[External System]</i>\n\nExternal email service used to send reports, notifications and critical alerts." as Mailchimp #58A9E8
+rectangle "<b>Stripe</b>\n<i>[External System]</i>\n\nExternal payment service used to process subscriptions and card payments." as Stripe #58A9E8
 
-rectangle "ElectroCorp User\n[Person]\n\nUses smart energy management flows across website and web app." as User <#0B5593>
-
-package "ElectroCorp Product Boundary\n[software system]" {
-  rectangle "Landing Page\n[Static Website]\n\nPublic marketing site hosted on GitHub Pages." as Website <#3498DB>
-  rectangle "Angular Web App\n[Container]\n\nSPA with routes, layout, facades, stores and API clients." as Spa <#3498DB>
-  rectangle "Backend API\n[Container]\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api <#3498DB>
-  database "ElectroCorp Database\n[Relational Database]\n\nPersists operational and analytical platform data." as Db
+package "ElectroCorp System\n[system]" {
+  rectangle "<b>Landing Page</b>\n<i>[HTML, CSS, JavaScript]</i>\n\nPublic marketing page with plans and call-to-action buttons that redirect users to the SPA." as Landing #1ABC9C
+  rectangle "<b>Single Page Application</b>\n<i>[Angular]</i>\n\nClient-side product interface for platform workflows." as Spa #27AE60
+  rectangle "<b>ElectroCorp API</b>\n<i>[Java, Spring Boot]</i>\n\nREST API implementing business rules across modular bounded contexts." as Api #F39C12
+  database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users, access profiles, devices, routines, readings, alerts, reports, goals, support tickets and subscriptions." as Database
 }
 
-rectangle "GitHub Pages\n[External Container]\n\nHosts the public website." as GithubPages <#7F8C8D>
-rectangle "Render Web Service\n[External Container]\n\nHosts Angular and Spring Boot deployments." as RenderWeb <#7F8C8D>
-rectangle "Payment Provider\n[External System]\n\nSupports subscription payment flow." as Payment <#7F8C8D>
-rectangle "Email Provider\n[External System]\n\nSupports notification delivery." as Mail <#7F8C8D>
-
-User --> Website : Reads product information
-Website --> Spa : Redirects to sign up / selected plan
-User --> Spa : Navigates authenticated features
-Spa --> Api : Uses REST endpoints (JSON / HTTPS)
-Api --> Db : Reads and writes (JPA / SQL)
-Api --> Payment : Uses checkout and payment APIs
-Api --> Mail : Sends alerts and reports
-GithubPages --> Website : Hosts
-RenderWeb --> Spa : Hosts
-RenderWeb --> Api : Hosts
+User --> Landing : Browses public information\nand plans\n[Browser]
+User --> Spa : Accesses application\ndirectly\n[Browser]
+Landing --> Spa : Redirects selected plan\n[CTA Link]
+Spa --> Api : Consumes backend services\n[JSON / HTTPS]
+Api --> Database : Reads and writes application\ndata\n[JPA / SQL]
+Api --> Stripe : Processes subscriptions\nand payments\n[HTTPS / API]
+Api --> Mailchimp : Sends reports and critical\nalerts\n[Email]
+Mailchimp --> User : Delivers notifications\nand reports\n[Email]
 legend right
   <b>Legend</b>
   |<#0B5593> person |

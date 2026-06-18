@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,32 +23,32 @@ hide stereotype
 title ElectroCorp - IAM Frontend Components Diagram
 left to right direction
 
-
 package "IAM Frontend Bounded Context\n[container]" {
-  rectangle "Login/Register Pages\n[Angular Component]\n\nPresents user interaction for this bounded context." as F0 <#58A9E8>
-  rectangle "Account/Profile Pages\n[Angular Component]\n\nPresents user interaction for this bounded context." as F1 <#58A9E8>
-  rectangle "IAM Facade\n[Angular Component]\n\nPresents user interaction for this bounded context." as F2 <#58A9E8>
-  rectangle "IAM Store\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F3 <#58A9E8>
-  rectangle "IAM API Client\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F4 <#58A9E8>
+  rectangle "<b>Login Page</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P0 #58A9E8
+  rectangle "<b>Register Page</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P1 #58A9E8
+  rectangle "<b>Profile Page</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P2 #58A9E8
+  rectangle "<b>IAM Facade</b>\n<i>[Angular Service]</i>\n\nCoordinates state, use cases and REST calls." as Facade #58A9E8
+  rectangle "<b>IAM API Client</b>\n<i>[Angular Service]</i>\n\nConsumes backend endpoints for this context." as Client #58A9E8
 }
-rectangle "ElectroCorp Backend API\n[External Container]\n\nREST API consumed by this frontend context." as Backend <#7F8C8D>
+rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nREST API consumed by this frontend context." as Backend #7F8C8D
 package "Connected Frontend Contexts\n[external containers]" {
-  rectangle "Billing\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep0 <#7F8C8D>
-  rectangle "Shared Kernel\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep1 <#7F8C8D>
+  rectangle "<b>Billing</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep0 #7F8C8D
+  rectangle "<b>Shared Kernel</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep1 #7F8C8D
 }
-F0 --> F3 : Uses
-F1 --> F3 : Uses
-F2 --> F3 : Uses
-F3 --> F4 : Uses
-F4 --> Backend : Consumes REST endpoints (JSON / HTTPS)
-F3 ..> Dep0 : Coordinates with
-F3 ..> Dep1 : Coordinates with
+P0 --> Facade : Uses
+P1 --> Facade : Uses
+P2 --> Facade : Uses
+Facade --> Client : Uses
+Client --> Backend : Consumes REST endpoints\n[JSON / HTTPS]
+Facade ..> Dep0 : Coordinates with
+Facade ..> Dep1 : Coordinates with
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
+  |<#9B59B6> domain |
   |<#F39C12> repository / external |
   |<#C9332B> database |
 endlegend
