@@ -22,18 +22,18 @@ title ElectroCorp - Backend General Components Diagram
 left to right direction
 
 
-rectangle "ElectroCorp Web App\n[External Container]\n\nAngular SPA consuming backend services." as WebApp <#7F8C8D>
+rectangle "ElectroCorp Web App\n[External Container]\n\nAngular SPA consuming backend services." as WebApp #7F8C8D
 package "ElectroCorp Backend API / Spring Boot\n[container]" {
-  rectangle "REST API Entry Point\n[Spring Boot Application]\n\nReceives HTTP requests and delegates to bounded contexts." as Api <#3498DB>
-  rectangle "Shared Kernel API\n[Bounded Context Component]\n\nHealth Controller, Global Exception Handler, Security Filter Chain." as B0 <#3498DB>
-  rectangle "IAM API\n[Bounded Context Component]\n\nAuth Controller, User Controller, Authentication Application Service." as B1 <#3498DB>
-  rectangle "Billing API\n[Bounded Context Component]\n\nBilling Controller, Plan Application Service, Subscription Application Service." as B2 <#3498DB>
-  rectangle "Workplace API\n[Bounded Context Component]\n\nWorkplace Controller, Location Application Service, Room Application Service." as B3 <#3498DB>
-  rectangle "Device Control API\n[Bounded Context Component]\n\nDevice Control Controller, Device Application Service, Device Group Application Service." as B4 <#3498DB>
-  rectangle "Energy Monitoring API\n[Bounded Context Component]\n\nEnergy Monitoring Controller, Reading Application Service, Dashboard Query Service." as B5 <#3498DB>
-  rectangle "Notifications API\n[Bounded Context Component]\n\nNotifications Controller, Alert Application Service, Alert Rule Application Service." as B6 <#3498DB>
-  rectangle "Reporting API\n[Bounded Context Component]\n\nReporting Controller, Platform Insight Controller, Report Application Service." as B7 <#3498DB>
-  rectangle "Service Management API\n[Bounded Context Component]\n\nService Management Controller, Support Ticket Application Service, Maintenance Ticket Application Service." as B8 <#3498DB>
+  rectangle "REST API Entry Point\n[Spring Boot Application]\n\nReceives HTTP requests and delegates to bounded contexts." as Api #3498DB
+  rectangle "Shared Kernel API\n[Bounded Context Component]\n\nHealth Controller, Global Exception Handler, Security Filter Chain." as B0 #3498DB
+  rectangle "IAM API\n[Bounded Context Component]\n\nAuth Controller, User Controller, Authentication Application Service." as B1 #3498DB
+  rectangle "Billing API\n[Bounded Context Component]\n\nBilling Controller, Plan Application Service, Subscription Application Service." as B2 #3498DB
+  rectangle "Workplace API\n[Bounded Context Component]\n\nWorkplace Controller, Location Application Service, Room Application Service." as B3 #3498DB
+  rectangle "Device Control API\n[Bounded Context Component]\n\nDevice Control Controller, Device Application Service, Device Group Application Service." as B4 #3498DB
+  rectangle "Energy Monitoring API\n[Bounded Context Component]\n\nEnergy Monitoring Controller, Reading Application Service, Dashboard Query Service." as B5 #3498DB
+  rectangle "Notifications API\n[Bounded Context Component]\n\nNotifications Controller, Alert Application Service, Alert Rule Application Service." as B6 #3498DB
+  rectangle "Reporting API\n[Bounded Context Component]\n\nReporting Controller, Platform Insight Controller, Report Application Service." as B7 #3498DB
+  rectangle "Service Management API\n[Bounded Context Component]\n\nService Management Controller, Support Ticket Application Service, Maintenance Ticket Application Service." as B8 #3498DB
 }
 database "ElectroCorp Database\n[Relational Database]\n\nStores backend data for every bounded context." as Database
 WebApp --> Api : Consumes REST endpoints (JSON / HTTPS)

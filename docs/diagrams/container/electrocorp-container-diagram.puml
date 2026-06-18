@@ -22,19 +22,19 @@ title ElectroCorp - C4 Container Diagram
 left to right direction
 
 
-rectangle "ElectroCorp User\n[Person]\n\nUses smart energy management flows across website and web app." as User <#0B5593>
+rectangle "ElectroCorp User\n[Person]\n\nUses smart energy management flows across website and web app." as User #0B5593
 
 package "ElectroCorp Product Boundary\n[software system]" {
-  rectangle "Landing Page\n[Static Website]\n\nPublic marketing site hosted on GitHub Pages." as Website <#3498DB>
-  rectangle "Angular Web App\n[Container]\n\nSPA with routes, layout, facades, stores and API clients." as Spa <#3498DB>
-  rectangle "Backend API\n[Container]\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api <#3498DB>
+  rectangle "Landing Page\n[Static Website]\n\nPublic marketing site hosted on GitHub Pages." as Website #3498DB
+  rectangle "Angular Web App\n[Container]\n\nSPA with routes, layout, facades, stores and API clients." as Spa #3498DB
+  rectangle "Backend API\n[Container]\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api #3498DB
   database "ElectroCorp Database\n[Relational Database]\n\nPersists operational and analytical platform data." as Db
 }
 
-rectangle "GitHub Pages\n[External Container]\n\nHosts the public website." as GithubPages <#7F8C8D>
-rectangle "Render Web Service\n[External Container]\n\nHosts Angular and Spring Boot deployments." as RenderWeb <#7F8C8D>
-rectangle "Payment Provider\n[External System]\n\nSupports subscription payment flow." as Payment <#7F8C8D>
-rectangle "Email Provider\n[External System]\n\nSupports notification delivery." as Mail <#7F8C8D>
+rectangle "GitHub Pages\n[External Container]\n\nHosts the public website." as GithubPages #7F8C8D
+rectangle "Render Web Service\n[External Container]\n\nHosts Angular and Spring Boot deployments." as RenderWeb #7F8C8D
+rectangle "Payment Provider\n[External System]\n\nSupports subscription payment flow." as Payment #7F8C8D
+rectangle "Email Provider\n[External System]\n\nSupports notification delivery." as Mail #7F8C8D
 
 User --> Website : Reads product information
 Website --> Spa : Redirects to sign up / selected plan

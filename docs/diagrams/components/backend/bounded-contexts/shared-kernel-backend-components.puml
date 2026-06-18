@@ -23,22 +23,22 @@ left to right direction
 
 
 package "Shared Kernel Backend Bounded Context\n[container]" {
-  rectangle "Health Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 <#3498DB>
-  rectangle "Global Exception Handler\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 <#3498DB>
-  rectangle "Security Filter Chain\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 <#3498DB>
-  rectangle "OpenAPI Configuration\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 <#3498DB>
-  rectangle "Base API Configuration\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 <#F39C12>
+  rectangle "Health Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 #3498DB
+  rectangle "Global Exception Handler\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 #3498DB
+  rectangle "Security Filter Chain\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 #3498DB
+  rectangle "OpenAPI Configuration\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 #3498DB
+  rectangle "Base API Configuration\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 #F39C12
 }
 database "ElectroCorp Database\n[Relational Database]\n\nStores runtime configuration." as Database
 package "Connected Bounded Contexts\n[external containers]" {
-  rectangle "IAM\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 <#7F8C8D>
-  rectangle "Billing\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 <#7F8C8D>
-  rectangle "Workplace\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep2 <#7F8C8D>
-  rectangle "Device Control\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep3 <#7F8C8D>
-  rectangle "Energy Monitoring\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep4 <#7F8C8D>
-  rectangle "Notifications\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep5 <#7F8C8D>
-  rectangle "Reporting\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep6 <#7F8C8D>
-  rectangle "Service Management\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep7 <#7F8C8D>
+  rectangle "IAM\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 #7F8C8D
+  rectangle "Billing\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 #7F8C8D
+  rectangle "Workplace\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep2 #7F8C8D
+  rectangle "Device Control\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep3 #7F8C8D
+  rectangle "Energy Monitoring\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep4 #7F8C8D
+  rectangle "Notifications\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep5 #7F8C8D
+  rectangle "Reporting\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep6 #7F8C8D
+  rectangle "Service Management\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep7 #7F8C8D
 }
 B0 --> B1 : Delegates to
 B0 --> B2 : Delegates to

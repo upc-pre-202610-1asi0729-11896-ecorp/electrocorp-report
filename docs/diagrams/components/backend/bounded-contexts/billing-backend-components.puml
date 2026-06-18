@@ -23,18 +23,18 @@ left to right direction
 
 
 package "Billing Backend Bounded Context\n[container]" {
-  rectangle "Billing Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 <#3498DB>
-  rectangle "Plan Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 <#3498DB>
-  rectangle "Subscription Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 <#3498DB>
-  rectangle "Payment Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 <#3498DB>
-  rectangle "Plan Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 <#F39C12>
-  rectangle "Subscription Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R1 <#F39C12>
-  rectangle "Payment Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R2 <#F39C12>
+  rectangle "Billing Controller\n[REST Controller]\n\nExposes HTTP endpoints for this bounded context." as B0 #3498DB
+  rectangle "Plan Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B1 #3498DB
+  rectangle "Subscription Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B2 #3498DB
+  rectangle "Payment Application Service\n[Application Service]\n\nCoordinates commands, queries and use cases." as B3 #3498DB
+  rectangle "Plan Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R0 #F39C12
+  rectangle "Subscription Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R1 #F39C12
+  rectangle "Payment Repository\n[Spring Data Repository]\n\nPersists and retrieves bounded context data." as R2 #F39C12
 }
 database "ElectroCorp Database\n[Relational Database]\n\nStores plans, subscriptions, payments and invoices." as Database
 package "Connected Bounded Contexts\n[external containers]" {
-  rectangle "IAM\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 <#7F8C8D>
-  rectangle "Shared Kernel\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 <#7F8C8D>
+  rectangle "IAM\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep0 #7F8C8D
+  rectangle "Shared Kernel\n[Bounded Context]\n\nProvides referenced capability or published language." as Dep1 #7F8C8D
 }
 B0 --> B1 : Delegates to
 B0 --> B2 : Delegates to
