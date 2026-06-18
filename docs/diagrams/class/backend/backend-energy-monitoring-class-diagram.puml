@@ -249,8 +249,6 @@ package "Energy Monitoring" {
       + FIND_BY_DATE_RANGE: String
       - EnergyMonitoringQueryHints()
     }
-    class "for" as Backend_energymonitoring_for <<Class>> {
-    }
   }
   package "Infrastructure / JPA Repositories" {
     interface "JpaEnergyDeviceUsageStateRepository" as Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository <<interface>> {
@@ -400,5 +398,17 @@ Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository ..> Backend_energym
 Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository ..> Backend_energymonitoring_EnergyDeviceUsageStateRepository
 Backend_energymonitoring_JpaEnergyReadingRepository ..> Backend_energymonitoring_EnergyReading
 Backend_energymonitoring_JpaEnergyReadingRepository ..> Backend_energymonitoring_EnergyReadingRepository
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyReadingSchedulerService
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_ExportEnergyReadingsCommand
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_FilterEnergyReadingsCommand
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_GetEnergyStatisticsCommand
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyThresholdExceededEvent
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyReadingPolicyService
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyUsageClassifierService
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyCost
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyMonitoringJpaTableNames
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyMonitoringQueryHints
 
 @enduml

@@ -154,8 +154,6 @@ package "Workplace" {
     }
   }
   package "Infrastructure / JPA" {
-    class "for" as Backend_workplace_for <<Class>> {
-    }
     class "WorkplaceJpaTableNames" as Backend_workplace_WorkplaceJpaTableNames <<Class>> {
       + LOCATIONS: String
       + ROOMS: String
@@ -311,5 +309,20 @@ Backend_workplace_WorkplaceController ..> Backend_workplace_WorkplaceApplication
 Backend_workplace_WorkplaceSummaryService ..> Backend_workplace_DeviceAssignment
 Backend_workplace_WorkplaceSummaryService ..> Backend_workplace_Location
 Backend_workplace_WorkplaceSummaryService ..> Backend_workplace_Room
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_workplace_WorkplaceController ..> Backend_workplace_DeleteLocationCommand
+Backend_workplace_WorkplaceController ..> Backend_workplace_RemoveDeviceAssignmentCommand
+Backend_workplace_WorkplaceController ..> Backend_workplace_UpdateLocationCommand
+Backend_workplace_WorkplaceController ..> Backend_workplace_DeviceAssignmentPolicyService
+Backend_workplace_WorkplaceController ..> Backend_workplace_LocationPolicyService
+Backend_workplace_WorkplaceController ..> Backend_workplace_WorkplacePolicyService
+Backend_workplace_WorkplaceController ..> Backend_workplace_Address
+Backend_workplace_WorkplaceController ..> Backend_workplace_Capacity
+Backend_workplace_WorkplaceController ..> Backend_workplace_LocationName
+Backend_workplace_WorkplaceController ..> Backend_workplace_WorkplaceJpaTableNames
+Backend_workplace_WorkplaceController ..> Backend_workplace_WorkplaceQueryHints
+Backend_workplace_WorkplaceController ..> Backend_workplace_MoveDeviceAssignmentResource
+Backend_workplace_WorkplaceController ..> Backend_workplace_UpdateLocationResource
 
 @enduml
