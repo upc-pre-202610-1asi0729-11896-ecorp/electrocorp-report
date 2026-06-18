@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
@@ -8,72 +7,34 @@ skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
-skinparam rectangle {
-  RoundCorner 0
-  BorderThickness 1
-}
-skinparam package {
-  BorderColor #555555
-  BorderStyle dashed
-  BackgroundColor transparent
-  FontColor #444444
-  FontStyle bold
-}
-skinparam database {
-  BackgroundColor #C9332B
-  BorderColor #C9332B
-  FontColor #FFFFFF
-}
-skinparam note {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-}
+skinparam rectangleRoundCorner 0
+skinparam rectangleBorderThickness 1
+skinparam packageStyle rectangle
+skinparam packageBorderColor #555555
+skinparam packageBackgroundColor transparent
+skinparam packageFontColor #444444
+skinparam packageFontStyle bold
+skinparam databaseBackgroundColor #C9332B
+skinparam databaseBorderColor #C9332B
+skinparam databaseFontColor #FFFFFF
 hide stereotype
 title ElectroCorp - C4 Container Diagram
 left to right direction
 
 
-rectangle "<b>ElectroCorp User</b>
-<size:12><i>[Person]</i></size>
+rectangle "ElectroCorp User\n[Person]\n\nUses smart energy management flows across website and web app." as User <#0B5593>
 
-Uses smart energy management flows across website and web app." as User <#0B5593>
-
-package "ElectroCorp Product Boundary
-[software system]" {
-  rectangle "<b>Landing Page</b>
-<size:12><i>[Static Website]</i></size>
-
-Public marketing site hosted on GitHub Pages." as Website <#3498DB>
-  rectangle "<b>Angular Web App</b>
-<size:12><i>[Container]</i></size>
-
-SPA with routes, layout, facades, stores and API clients." as Spa <#3498DB>
-  rectangle "<b>Backend API</b>
-<size:12><i>[Container]</i></size>
-
-Spring Boot modular monolith organized by DDD bounded contexts." as Api <#3498DB>
-  database "<b>ElectroCorp Database</b>
-<size:12><i>[Relational Database]</i></size>
-
-Persists operational and analytical platform data." as Db
+package "ElectroCorp Product Boundary\n[software system]" {
+  rectangle "Landing Page\n[Static Website]\n\nPublic marketing site hosted on GitHub Pages." as Website <#3498DB>
+  rectangle "Angular Web App\n[Container]\n\nSPA with routes, layout, facades, stores and API clients." as Spa <#3498DB>
+  rectangle "Backend API\n[Container]\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api <#3498DB>
+  database "ElectroCorp Database\n[Relational Database]\n\nPersists operational and analytical platform data." as Db
 }
 
-rectangle "<b>GitHub Pages</b>
-<size:12><i>[External Container]</i></size>
-
-Hosts the public website." as GithubPages <#7F8C8D>
-rectangle "<b>Render Web Service</b>
-<size:12><i>[External Container]</i></size>
-
-Hosts Angular and Spring Boot deployments." as RenderWeb <#7F8C8D>
-rectangle "<b>Payment Provider</b>
-<size:12><i>[External System]</i></size>
-
-Supports subscription payment flow." as Payment <#7F8C8D>
-rectangle "<b>Email Provider</b>
-<size:12><i>[External System]</i></size>
-
-Supports notification delivery." as Mail <#7F8C8D>
+rectangle "GitHub Pages\n[External Container]\n\nHosts the public website." as GithubPages <#7F8C8D>
+rectangle "Render Web Service\n[External Container]\n\nHosts Angular and Spring Boot deployments." as RenderWeb <#7F8C8D>
+rectangle "Payment Provider\n[External System]\n\nSupports subscription payment flow." as Payment <#7F8C8D>
+rectangle "Email Provider\n[External System]\n\nSupports notification delivery." as Mail <#7F8C8D>
 
 User --> Website : Reads product information
 Website --> Spa : Redirects to sign up / selected plan
