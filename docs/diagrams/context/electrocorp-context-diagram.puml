@@ -22,17 +22,17 @@ title ElectroCorp - C4 Context Diagram
 left to right direction
 
 
-rectangle "Home Owner\n[Person]\n\nManages home devices, routines, energy usage and alerts." as HomeOwner <#0B5593>
-rectangle "Business Owner\n[Person]\n\nManages business locations, devices, reports, support and billing." as BusinessOwner <#0B5593>
+rectangle "Home Owner\n[Person]\n\nManages home devices, routines, energy usage and alerts." as HomeOwner #0B5593
+rectangle "Business Owner\n[Person]\n\nManages business locations, devices, reports, support and billing." as BusinessOwner #0B5593
 
 package "ElectroCorp Digital Ecosystem\n[system boundary]" {
-  rectangle "ElectroCorp Website\n[Public Website]\n\nPresents value proposition, plans and calls to action." as Landing <#0B6FB3>
-  rectangle "ElectroCorp Web Application\n[Angular SPA]\n\nOperational product used after sign up or login." as WebApp <#0B6FB3>
-  rectangle "ElectroCorp Platform API\n[Spring Boot System]\n\nCoordinates IAM, billing, workplaces, devices, energy, alerts, reports and service." as Platform <#0B6FB3>
+  rectangle "ElectroCorp Website\n[Public Website]\n\nPresents value proposition, plans and calls to action." as Landing #0B6FB3
+  rectangle "ElectroCorp Web Application\n[Angular SPA]\n\nOperational product used after sign up or login." as WebApp #0B6FB3
+  rectangle "ElectroCorp Platform API\n[Spring Boot System]\n\nCoordinates IAM, billing, workplaces, devices, energy, alerts, reports and service." as Platform #0B6FB3
 }
 
-rectangle "Payment Provider\n[External System]\n\nProcesses subscription payments and checkout status." as PaymentProvider <#7F8C8D>
-rectangle "Email / Notification Provider\n[External System]\n\nDelivers alerts, reports and support notifications." as NotificationProvider <#7F8C8D>
+rectangle "Payment Provider\n[External System]\n\nProcesses subscription payments and checkout status." as PaymentProvider #7F8C8D
+rectangle "Email / Notification Provider\n[External System]\n\nDelivers alerts, reports and support notifications." as NotificationProvider #7F8C8D
 database "ElectroCorp Database\n[Relational Database]\n\nStores users, plans, workplaces, devices, readings, alerts, reports and tickets." as Database
 
 HomeOwner --> Landing : Visits

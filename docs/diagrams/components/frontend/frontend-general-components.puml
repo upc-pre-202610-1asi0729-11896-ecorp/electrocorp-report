@@ -22,22 +22,22 @@ title ElectroCorp - Frontend General Components Diagram
 left to right direction
 
 
-rectangle "ElectroCorp User\n[Person]\n\nUses the Angular SPA to manage energy operations." as User <#0B5593>
+rectangle "ElectroCorp User\n[Person]\n\nUses the Angular SPA to manage energy operations." as User #0B5593
 package "ElectroCorp Frontend / Angular SPA\n[container]" {
-  rectangle "App Layout Component\n[Angular Component]\n\nMain shell, topbar, language switcher and router outlet." as Layout <#58A9E8>
-  rectangle "App Router\n[Angular Router]\n\nRoutes users to each bounded context." as Router <#58A9E8>
-  rectangle "Shared Kernel Context\n[Bounded Context]\n\nApp Layout Component, Shared UI Components, Language Switcher Component." as C0 <#3498DB>
-  rectangle "IAM Context\n[Bounded Context]\n\nLogin/Register Pages, Account/Profile Pages, IAM Facade." as C1 <#3498DB>
-  rectangle "Billing Context\n[Bounded Context]\n\nPlans Page, Billing History Page, Plan Card Component." as C2 <#3498DB>
-  rectangle "Workplace Context\n[Bounded Context]\n\nLocations Page, Rooms Page, Device Assignments Page." as C3 <#3498DB>
-  rectangle "Device Control Context\n[Bounded Context]\n\nDevices Page, Device Groups Page, Routines Page." as C4 <#3498DB>
-  rectangle "Energy Monitoring Context\n[Bounded Context]\n\nEnergy Dashboard Page, Energy History Page, Metrics Components." as C5 <#3498DB>
-  rectangle "Notifications Context\n[Bounded Context]\n\nAlerts Page, Alert Rules Page, Notification Preferences Page." as C6 <#3498DB>
-  rectangle "Reporting Context\n[Bounded Context]\n\nReports Page, Energy Goals Page, Report Components." as C7 <#3498DB>
-  rectangle "Service Management Context\n[Bounded Context]\n\nSupport Tickets Page, Maintenance Tickets Page, Ticket Components." as C8 <#3498DB>
-  rectangle "Infrastructure API Clients\n[Angular HTTP Services]\n\nTyped services that call backend REST endpoints." as Clients <#F39C12>
+  rectangle "App Layout Component\n[Angular Component]\n\nMain shell, topbar, language switcher and router outlet." as Layout #58A9E8
+  rectangle "App Router\n[Angular Router]\n\nRoutes users to each bounded context." as Router #58A9E8
+  rectangle "Shared Kernel Context\n[Bounded Context]\n\nApp Layout Component, Shared UI Components, Language Switcher Component." as C0 #3498DB
+  rectangle "IAM Context\n[Bounded Context]\n\nLogin/Register Pages, Account/Profile Pages, IAM Facade." as C1 #3498DB
+  rectangle "Billing Context\n[Bounded Context]\n\nPlans Page, Billing History Page, Plan Card Component." as C2 #3498DB
+  rectangle "Workplace Context\n[Bounded Context]\n\nLocations Page, Rooms Page, Device Assignments Page." as C3 #3498DB
+  rectangle "Device Control Context\n[Bounded Context]\n\nDevices Page, Device Groups Page, Routines Page." as C4 #3498DB
+  rectangle "Energy Monitoring Context\n[Bounded Context]\n\nEnergy Dashboard Page, Energy History Page, Metrics Components." as C5 #3498DB
+  rectangle "Notifications Context\n[Bounded Context]\n\nAlerts Page, Alert Rules Page, Notification Preferences Page." as C6 #3498DB
+  rectangle "Reporting Context\n[Bounded Context]\n\nReports Page, Energy Goals Page, Report Components." as C7 #3498DB
+  rectangle "Service Management Context\n[Bounded Context]\n\nSupport Tickets Page, Maintenance Tickets Page, Ticket Components." as C8 #3498DB
+  rectangle "Infrastructure API Clients\n[Angular HTTP Services]\n\nTyped services that call backend REST endpoints." as Clients #F39C12
 }
-rectangle "ElectroCorp Backend API\n[External Container]\n\nSpring Boot REST API consumed by Angular." as Backend <#7F8C8D>
+rectangle "ElectroCorp Backend API\n[External Container]\n\nSpring Boot REST API consumed by Angular." as Backend #7F8C8D
 User --> Layout : Uses
 Layout --> Router : Displays routed views through
 Router --> C0 : Routes to

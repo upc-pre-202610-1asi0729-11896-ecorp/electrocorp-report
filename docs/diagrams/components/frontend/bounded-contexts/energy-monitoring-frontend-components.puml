@@ -23,18 +23,18 @@ left to right direction
 
 
 package "Energy Monitoring Frontend Bounded Context\n[container]" {
-  rectangle "Energy Dashboard Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F0 <#58A9E8>
-  rectangle "Energy History Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F1 <#58A9E8>
-  rectangle "Metrics Components\n[Angular Component]\n\nPresents user interaction for this bounded context." as F2 <#58A9E8>
-  rectangle "Energy Monitoring Facade\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F3 <#58A9E8>
-  rectangle "Energy API Client\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F4 <#58A9E8>
+  rectangle "Energy Dashboard Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F0 #58A9E8
+  rectangle "Energy History Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F1 #58A9E8
+  rectangle "Metrics Components\n[Angular Component]\n\nPresents user interaction for this bounded context." as F2 #58A9E8
+  rectangle "Energy Monitoring Facade\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F3 #58A9E8
+  rectangle "Energy API Client\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F4 #58A9E8
 }
-rectangle "ElectroCorp Backend API\n[External Container]\n\nREST API consumed by this frontend context." as Backend <#7F8C8D>
+rectangle "ElectroCorp Backend API\n[External Container]\n\nREST API consumed by this frontend context." as Backend #7F8C8D
 package "Connected Frontend Contexts\n[external containers]" {
-  rectangle "Device Control\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep0 <#7F8C8D>
-  rectangle "Reporting\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep1 <#7F8C8D>
-  rectangle "Notifications\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep2 <#7F8C8D>
-  rectangle "Shared Kernel\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep3 <#7F8C8D>
+  rectangle "Device Control\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep0 #7F8C8D
+  rectangle "Reporting\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep1 #7F8C8D
+  rectangle "Notifications\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep2 #7F8C8D
+  rectangle "Shared Kernel\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep3 #7F8C8D
 }
 F0 --> F3 : Uses
 F1 --> F3 : Uses
