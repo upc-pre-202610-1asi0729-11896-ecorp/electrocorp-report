@@ -451,4 +451,8 @@ Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionAssemb
 Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionResource
 Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionResponse
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_PaymentMethod
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_BillingRoutes
+
 @enduml

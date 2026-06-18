@@ -414,4 +414,7 @@ Frontend_workplace_WorkplaceStore ..> Frontend_workplace_DeviceAssignment
 Frontend_workplace_WorkplaceStore ..> Frontend_workplace_Location
 Frontend_workplace_WorkplaceStore ..> Frontend_workplace_Room
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_workplace_DeviceAssignmentsPageComponent ..> Frontend_workplace_WorkplaceRoutes
+
 @enduml

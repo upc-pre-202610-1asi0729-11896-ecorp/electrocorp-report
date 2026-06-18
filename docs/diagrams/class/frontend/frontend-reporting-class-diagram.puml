@@ -406,4 +406,8 @@ Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_MonthlyComparison
 Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ReportCardComponent
 Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ReportingFacade
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_GenerateConsumptionReportCommand
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_ReportingRoutes
+
 @enduml

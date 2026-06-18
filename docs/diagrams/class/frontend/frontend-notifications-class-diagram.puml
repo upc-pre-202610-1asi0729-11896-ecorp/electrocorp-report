@@ -721,4 +721,7 @@ Frontend_notifications_UpdateNotificationPreferenceCommand ..> Frontend_notifica
 Frontend_notifications_UpdateNotificationPreferenceCommand ..> Frontend_notifications_NotificationDeliveryMode
 Frontend_notifications_UpdateNotificationPreferenceCommand ..> Frontend_notifications_NotificationPreferenceScope
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_notifications_AlertRulesPageComponent ..> Frontend_notifications_NotificationsRoutes
+
 @enduml
