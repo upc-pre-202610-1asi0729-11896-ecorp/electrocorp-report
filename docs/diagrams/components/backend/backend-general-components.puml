@@ -3,10 +3,10 @@ skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam defaultTextAlignment center
-skinparam wrapWidth 220
-skinparam maxMessageSize 130
-skinparam nodesep 70
-skinparam ranksep 80
+skinparam wrapWidth 135
+skinparam maxMessageSize 70
+skinparam nodesep 35
+skinparam ranksep 45
 skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
@@ -17,22 +17,12 @@ skinparam rectangleFontColor #FFFFFF
 skinparam rectangleFontStyle plain
 skinparam rectangle {
   BorderThickness 0
-  MinimumWidth 190
-  Padding 12
+  MinimumWidth 150
+  Padding 8
 }
 skinparam database {
-  MinimumWidth 210
-  Padding 12
-}
-skinparam rectangle<<SystemBoundary>> {
-  BackgroundColor transparent
-  BorderColor #4A4A4A
-  BorderThickness 2
-  BorderStyle dashed
-  FontColor #333333
-  FontStyle bold
-  MinimumWidth 760
-  Padding 18
+  MinimumWidth 165
+  Padding 8
 }
 skinparam rectangle<<BoundedContext>> {
   BackgroundColor transparent
@@ -41,8 +31,8 @@ skinparam rectangle<<BoundedContext>> {
   BorderStyle dashed
   FontColor #333333
   FontStyle bold
-  MinimumWidth 760
-  Padding 18
+  MinimumWidth 620
+  Padding 12
 }
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
@@ -50,89 +40,89 @@ skinparam databaseFontColor #FFFFFF
 skinparam databaseFontStyle plain
 
 hide stereotype
-left to right direction
+top to bottom direction
 
 title ElectroCorp - Backend General Components Diagram
 
-rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime that consumes backend bounded context capabilities through HTTPS." as Spa #3498DB
+rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nConsumes backend bounded context capabilities through HTTPS." as Spa #3498DB
 
 rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" <<BoundedContext>> {
+  rectangle "<b>REST API Surface</b>\n<i>[Spring Boot Entry Points]</i>\n\nReceives SPA requests and dispatches them to bounded contexts." as ApiSurface #3498DB
 
-  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nProvides shared security,\nOpenAPI, CORS, health\nchecks and common\nplatform configuration." as Shared #58A9E8
+  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nSecurity, OpenAPI, CORS, health and common platform configuration." as Shared #58A9E8
+  rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nAuthentication, users, profiles and access control." as IAM #58A9E8
+  rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nPlans, subscriptions, payments and invoices." as Billing #58A9E8
 
-  rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nManages authentication,\nusers, profiles and\naccess control." as IAM #58A9E8
+  rectangle "<b>Workplace API</b>\n<i>[Bounded Context Component]</i>\n\nLocations, rooms and device assignments." as Workplace #58A9E8
+  rectangle "<b>Device Control API</b>\n<i>[Bounded Context Component]</i>\n\nDevices, groups, routines and operation modes." as Device #58A9E8
+  rectangle "<b>Energy Monitoring API</b>\n<i>[Bounded Context Component]</i>\n\nReadings, sampling, statistics and dashboards." as Energy #58A9E8
 
-  rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates plans,\nsubscriptions, payments\nand invoices." as Billing #58A9E8
+  rectangle "<b>Notifications API</b>\n<i>[Bounded Context Component]</i>\n\nAlerts, rules, preferences and evaluation." as Notifications #58A9E8
+  rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nReports, goals, exports and insights." as Reporting #58A9E8
+  rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nSupport tickets, maintenance and service follow-up." as Service #58A9E8
 
-  rectangle "<b>Workplace API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates locations,\nrooms and device\nassignments." as Workplace #58A9E8
-
-  rectangle "<b>Device Control API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates devices,\ngroups, routines and\noperation modes." as Device #58A9E8
-
-  rectangle "<b>Energy Monitoring API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates readings,\nsampling settings,\nstatistics and energy\ndashboards." as Energy #58A9E8
-
-  rectangle "<b>Notifications API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates alerts,\nrules, preferences and\nnotification evaluation." as Notifications #58A9E8
-
-  rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates reports,\nenergy goals, exports\nand platform insights." as Reporting #58A9E8
-
-  rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates support\ntickets, maintenance\ntickets and service\nfollow-up." as Service #58A9E8
+  rectangle "<b>Persistence Access</b>\n<i>[Repositories / Adapters]</i>\n\nAggregates JPA repositories used by bounded contexts." as Persistence #F39C12
 }
 
-database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores application data\nused by every bounded\ncontext." as Database
+database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nPersists data for all bounded contexts." as Database
 
-Spa --> Shared : Uses shared platform\nendpoints\n[JSON / HTTPS]
-Spa --> IAM : Uses identity\nendpoints\n[JSON / HTTPS]
-Spa --> Billing : Uses billing\nendpoints\n[JSON / HTTPS]
-Spa --> Workplace : Uses workplace\nendpoints\n[JSON / HTTPS]
-Spa --> Device : Uses operation\nendpoints\n[JSON / HTTPS]
-Spa --> Energy : Uses energy\nendpoints\n[JSON / HTTPS]
-Spa --> Notifications : Uses notification\nendpoints\n[JSON / HTTPS]
-Spa --> Reporting : Uses reporting\nendpoints\n[JSON / HTTPS]
-Spa --> Service : Uses service\nendpoints\n[JSON / HTTPS]
+Spa --> ApiSurface : JSON / HTTPS
+ApiSurface --> Shared : route
+ApiSurface --> IAM : route
+ApiSurface --> Billing : route
+ApiSurface --> Workplace : route
+ApiSurface --> Device : route
+ApiSurface --> Energy : route
+ApiSurface --> Notifications : route
+ApiSurface --> Reporting : route
+ApiSurface --> Service : route
 
-Shared --> Database : Reads and writes\n[JPA / SQL]
-IAM --> Database : Reads and writes\n[JPA / SQL]
-Billing --> Database : Reads and writes\n[JPA / SQL]
-Workplace --> Database : Reads and writes\n[JPA / SQL]
-Device --> Database : Reads and writes\n[JPA / SQL]
-Energy --> Database : Reads and writes\n[JPA / SQL]
-Notifications --> Database : Reads and writes\n[JPA / SQL]
-Reporting --> Database : Reads and writes\n[JPA / SQL]
-Service --> Database : Reads and writes\n[JPA / SQL]
+Billing --> IAM : user ownership
+Workplace --> IAM : user scope
+Device --> Workplace : assigned spaces
+Energy --> Device : device readings
+Notifications --> Energy : energy conditions
+Reporting --> Billing : subscription metrics
+Reporting --> Workplace : workplace metrics
+Reporting --> Device : operation metrics
+Reporting --> Energy : energy metrics
+Reporting --> Notifications : alert metrics
+Reporting --> Service : service metrics
 
-Billing --> IAM : Validates user\nownership
-Workplace --> IAM : Validates user\nownership
-Device --> Workplace : Uses assigned\nspaces
-Energy --> Device : Records device\nreadings
-Notifications --> Energy : Evaluates energy\nconditions
-Reporting --> Billing : Reads subscription\nmetrics
-Reporting --> Workplace : Reads workplace\nmetrics
-Reporting --> Device : Reads operation\nmetrics
-Reporting --> Energy : Reads energy\nmetrics
-Reporting --> Notifications : Reads alert\nmetrics
-Reporting --> Service : Reads service\nmetrics
+Shared --> Persistence : persist
+IAM --> Persistence : persist
+Billing --> Persistence : persist
+Workplace --> Persistence : persist
+Device --> Persistence : persist
+Energy --> Persistence : persist
+Notifications --> Persistence : persist
+Reporting --> Persistence : persist
+Service --> Persistence : persist
+Persistence --> Database : JPA / SQL
 
-' Visual hierarchy similar to the reference component diagram
-Spa -[hidden]down- Billing
-
+' Compact board layout
+ApiSurface -[hidden]down- IAM
 Shared -[hidden]right- IAM
 IAM -[hidden]right- Billing
-Billing -[hidden]right- Workplace
+Shared -[hidden]down- Workplace
+IAM -[hidden]down- Device
+Billing -[hidden]down- Energy
 Workplace -[hidden]right- Device
-
-Device -[hidden]down- Energy
-
-Energy -[hidden]right- Notifications
+Device -[hidden]right- Energy
+Workplace -[hidden]down- Notifications
+Device -[hidden]down- Reporting
+Energy -[hidden]down- Service
 Notifications -[hidden]right- Reporting
 Reporting -[hidden]right- Service
+Reporting -[hidden]down- Persistence
+Persistence -[hidden]down- Database
 
 legend right
   <b>Legend</b>
   |<#0B5593> person |
-  |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
   |<#C9332B> database |
-  |<#7F8C8D> external container |
 endlegend
 
 @enduml

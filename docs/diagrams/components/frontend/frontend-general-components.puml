@@ -3,10 +3,10 @@ skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam defaultTextAlignment center
-skinparam wrapWidth 220
-skinparam maxMessageSize 130
-skinparam nodesep 70
-skinparam ranksep 80
+skinparam wrapWidth 135
+skinparam maxMessageSize 70
+skinparam nodesep 35
+skinparam ranksep 45
 skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
@@ -17,22 +17,8 @@ skinparam rectangleFontColor #FFFFFF
 skinparam rectangleFontStyle plain
 skinparam rectangle {
   BorderThickness 0
-  MinimumWidth 190
-  Padding 12
-}
-skinparam database {
-  MinimumWidth 210
-  Padding 12
-}
-skinparam rectangle<<SystemBoundary>> {
-  BackgroundColor transparent
-  BorderColor #4A4A4A
-  BorderThickness 2
-  BorderStyle dashed
-  FontColor #333333
-  FontStyle bold
-  MinimumWidth 760
-  Padding 18
+  MinimumWidth 150
+  Padding 8
 }
 skinparam rectangle<<BoundedContext>> {
   BackgroundColor transparent
@@ -41,87 +27,97 @@ skinparam rectangle<<BoundedContext>> {
   BorderStyle dashed
   FontColor #333333
   FontStyle bold
-  MinimumWidth 760
-  Padding 18
+  MinimumWidth 620
+  Padding 12
 }
-skinparam databaseBackgroundColor #C9332B
-skinparam databaseBorderColor #C9332B
-skinparam databaseFontColor #FFFFFF
-skinparam databaseFontStyle plain
 hide stereotype
-left to right direction
+top to bottom direction
 
 title ElectroCorp - Frontend General Components Diagram
 
-rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses the Angular SPA to operate the product." as User #0B5593
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses the SPA in a browser." as User #0B5593
+
 rectangle "<b>ElectroCorp Frontend Bounded Context Map</b>\n<i>[Angular SPA / Frontend Container]</i>" <<BoundedContext>> {
-  rectangle "<b>App Layout Component</b>\n<i>[Angular Shell]</i>\n\nProvides topbar, navigation, language selector and router outlet." as Layout #3498DB
-  rectangle "<b>App Router</b>\n<i>[Angular Router]</i>\n\nRoutes users to each frontend bounded context." as Router #3498DB
-  rectangle "<b>Shared Kernel Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns shared security, layout, session, configuration and platform services." as F0 #58A9E8
-  rectangle "<b>IAM Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns authentication, users, profiles and access control." as F1 #58A9E8
-  rectangle "<b>Billing Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns plans, subscriptions, payments and invoices." as F2 #58A9E8
-  rectangle "<b>Workplace Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns locations, rooms and device assignments." as F3 #58A9E8
-  rectangle "<b>Device Control Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns devices, device groups, routines and operation modes." as F4 #58A9E8
-  rectangle "<b>Energy Monitoring Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns readings, sampling settings, statistics and energy dashboards." as F5 #58A9E8
-  rectangle "<b>Notifications Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns alerts, alert rules, preferences and notification evaluation." as F6 #58A9E8
-  rectangle "<b>Reporting Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns reports, energy goals, exports and platform insights." as F7 #58A9E8
-  rectangle "<b>Service Management Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns support tickets, maintenance tickets and service follow-up." as F8 #58A9E8
+  rectangle "<b>App Layout</b>\n<i>[Angular Shell]</i>\n\nTopbar, navigation, language selector and router outlet." as Layout #3498DB
+  rectangle "<b>App Router</b>\n<i>[Angular Router]</i>\n\nRoutes to frontend bounded contexts." as Router #3498DB
+
+  rectangle "<b>Shared Kernel Context</b>\n<i>[Bounded Context Component]</i>\n\nSession, layout, configuration and platform services." as Shared #58A9E8
+  rectangle "<b>IAM Context</b>\n<i>[Bounded Context Component]</i>\n\nAuthentication, users, profiles and access control." as IAM #58A9E8
+  rectangle "<b>Billing Context</b>\n<i>[Bounded Context Component]</i>\n\nPlans, subscriptions, payments and invoices." as Billing #58A9E8
+
+  rectangle "<b>Workplace Context</b>\n<i>[Bounded Context Component]</i>\n\nLocations, rooms and device assignments." as Workplace #58A9E8
+  rectangle "<b>Device Control Context</b>\n<i>[Bounded Context Component]</i>\n\nDevices, groups, routines and operation modes." as Device #58A9E8
+  rectangle "<b>Energy Monitoring Context</b>\n<i>[Bounded Context Component]</i>\n\nReadings, sampling, statistics and dashboards." as Energy #58A9E8
+
+  rectangle "<b>Notifications Context</b>\n<i>[Bounded Context Component]</i>\n\nAlerts, rules, preferences and evaluation." as Notifications #58A9E8
+  rectangle "<b>Reporting Context</b>\n<i>[Bounded Context Component]</i>\n\nReports, goals, exports and insights." as Reporting #58A9E8
+  rectangle "<b>Service Management Context</b>\n<i>[Bounded Context Component]</i>\n\nSupport tickets, maintenance and service follow-up." as Service #58A9E8
+
+  rectangle "<b>API Clients</b>\n<i>[Angular Infrastructure]</i>\n\nTyped services that call backend REST endpoints." as ApiClients #F39C12
 }
 
-rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nSpring Boot REST API consumed by Angular contexts." as Backend #7F8C8D
+rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nSpring Boot REST API consumed by frontend contexts." as Backend #7F8C8D
 
-User --> Layout : Uses in browser
-Layout --> Router : Displays routed views
-Router --> F0 : Routes to
-Router --> F1 : Routes to
-Router --> F2 : Routes to
-Router --> F3 : Routes to
-Router --> F4 : Routes to
-Router --> F5 : Routes to
-Router --> F6 : Routes to
-Router --> F7 : Routes to
-Router --> F8 : Routes to
+User --> Layout : uses
+Layout --> Router : routed views
 
-F1 --> F0 : Uses session UI
-F2 --> F1 : Uses account context
-F3 --> F1 : Uses user scope
-F4 --> F3 : Uses spaces
-F5 --> F4 : Displays device readings
-F6 --> F5 : Uses energy conditions
-F7 --> F2 : Shows billing metrics
-F7 --> F3 : Shows workplace metrics
-F7 --> F4 : Shows operation metrics
-F7 --> F5 : Shows energy metrics
-F8 --> F4 : References affected devices
-F0 --> Backend : Consumes REST endpoints
-F1 --> Backend : Consumes REST endpoints
-F2 --> Backend : Consumes REST endpoints
-F3 --> Backend : Consumes REST endpoints
-F4 --> Backend : Consumes REST endpoints
-F5 --> Backend : Consumes REST endpoints
-F6 --> Backend : Consumes REST endpoints
-F7 --> Backend : Consumes REST endpoints
-F8 --> Backend : Consumes REST endpoints
+Router --> Shared : routes
+Router --> IAM : routes
+Router --> Billing : routes
+Router --> Workplace : routes
+Router --> Device : routes
+Router --> Energy : routes
+Router --> Notifications : routes
+Router --> Reporting : routes
+Router --> Service : routes
 
+IAM --> Shared : session UI
+Billing --> IAM : account context
+Workplace --> IAM : user scope
+Device --> Workplace : spaces
+Energy --> Device : readings
+Notifications --> Energy : conditions
+Reporting --> Billing : billing metrics
+Reporting --> Workplace : workplace metrics
+Reporting --> Device : operation metrics
+Reporting --> Energy : energy metrics
+Service --> Device : affected devices
+
+Shared --> ApiClients : REST services
+IAM --> ApiClients : REST services
+Billing --> ApiClients : REST services
+Workplace --> ApiClients : REST services
+Device --> ApiClients : REST services
+Energy --> ApiClients : REST services
+Notifications --> ApiClients : REST services
+Reporting --> ApiClients : REST services
+Service --> ApiClients : REST services
+ApiClients --> Backend : JSON / HTTPS
+
+' Compact board layout
 Layout -[hidden]down- Router
-Router -[hidden]down- F0
-F0 -[hidden]right- F1
-F1 -[hidden]right- F2
-F2 -[hidden]right- F3
-F3 -[hidden]right- F4
-F4 -[hidden]down- F5
-F5 -[hidden]right- F6
-F6 -[hidden]right- F7
-F7 -[hidden]right- F8
+Router -[hidden]down- IAM
+Shared -[hidden]right- IAM
+IAM -[hidden]right- Billing
+Shared -[hidden]down- Workplace
+IAM -[hidden]down- Device
+Billing -[hidden]down- Energy
+Workplace -[hidden]right- Device
+Device -[hidden]right- Energy
+Workplace -[hidden]down- Notifications
+Device -[hidden]down- Reporting
+Energy -[hidden]down- Service
+Notifications -[hidden]right- Reporting
+Reporting -[hidden]right- Service
+Reporting -[hidden]down- ApiClients
+ApiClients -[hidden]down- Backend
 
 legend right
   <b>Legend</b>
   |<#0B5593> person |
-  |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#F39C12> infrastructure / external |
-  |<#C9332B> database |
+  |<#F39C12> infrastructure |
   |<#7F8C8D> external container |
 endlegend
 
