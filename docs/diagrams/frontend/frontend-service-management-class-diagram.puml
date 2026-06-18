@@ -1,0 +1,362 @@
+@startuml
+title ElectroCorp Web App - Service Management Frontend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Service Management" {
+  package "Application / Commands" {
+    interface "CreateMaintenanceTicketCommand" as Frontend_service_management_CreateMaintenanceTicketCommand <<interface>> {
+      + deviceId: number
+      + deviceName: string
+      + type: MaintenanceTicketType
+      + description: string
+      + scheduledDate: string
+    }
+    interface "CreateSupportTicketCommand" as Frontend_service_management_CreateSupportTicketCommand <<interface>> {
+      + subject: string
+      + description: string
+      + priority: SupportTicketPriority
+    }
+    interface "UpdateMaintenanceTicketStatusCommand" as Frontend_service_management_UpdateMaintenanceTicketStatusCommand <<interface>> {
+      + ticketId: number
+      + status: MaintenanceTicketStatus
+    }
+    interface "UpdateSupportTicketStatusCommand" as Frontend_service_management_UpdateSupportTicketStatusCommand <<interface>> {
+      + ticketId: number
+      + status: SupportTicketStatus
+    }
+  }
+  package "Application / Facades and Services" {
+    class "ServiceManagementFacade" as Frontend_service_management_ServiceManagementFacade <<Facade>> {
+      - supportTicketAssembler
+      - maintenanceTicketAssembler
+      + get: supportTickets()
+      + get: maintenanceTickets()
+      + get: sortedSupportTickets()
+      + get: sortedMaintenanceTickets()
+      + get: loading()
+      + get: error()
+      + get: openSupportTickets()
+      + get: urgentSupportTickets()
+      + get: pendingMaintenanceTickets()
+      + get: scheduledMaintenanceTickets()
+      + get: completedMaintenanceTickets()
+      + constructor: (
+      - supportTicketsApi: SupportTicketsApiService
+      - maintenanceTicketsApi: MaintenanceTicketsApiService
+      - deviceControlFacade: DeviceControlFacade
+      - store: ServiceManagementStore
+    }
+  }
+  package "Application / Stores" {
+    class "ServiceManagementStore" as Frontend_service_management_ServiceManagementStore <<Store>> {
+      - supportTicketsSignal
+      - maintenanceTicketsSignal
+      - loadingSignal
+      - errorSignal
+      + constructor(ticketPriorityService: TicketPriorityService)
+      + setSupportTickets(value: SupportTicket[]) : void
+      + prependSupportTicket(value: SupportTicket) : void
+      + updateSupportTicket(value: SupportTicket) : void
+      + removeSupportTicket(ticketId: number) : void
+      + setMaintenanceTickets(value: MaintenanceTicket[]) : void
+      + prependMaintenanceTicket(value: MaintenanceTicket) : void
+      + updateMaintenanceTicket(value: MaintenanceTicket) : void
+      + removeMaintenanceTicket(ticketId: number) : void
+      + setLoading(value: boolean) : void
+      + setError(value: string | null) : void
+    }
+  }
+  package "Domain / Model" {
+    class "MaintenanceTicket" as Frontend_service_management_MaintenanceTicket <<Entity>> {
+      - _userId: number
+      - _deviceId: number
+      - _deviceName: string
+      - _type: MaintenanceTicketType
+      - _description: string
+      - _scheduledDate: string
+      - _status: MaintenanceTicketStatus
+      - _createdAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: deviceId(): number
+      + get: deviceName(): string
+      + get: type(): MaintenanceTicketType
+      + get: description(): string
+      + get: scheduledDate(): string
+      + get: status(): MaintenanceTicketStatus
+      + get: createdAt(): string
+      + get: isPending(): boolean
+    }
+    class "MaintenanceTicketStatus" as Frontend_service_management_MaintenanceTicketStatus <<type>> {
+      + 'PENDING' | 'SCHEDULED' | 'COMPLETED' | 'CANCELED'
+    }
+    class "MaintenanceTicketType" as Frontend_service_management_MaintenanceTicketType <<type>> {
+      + 'INSPECTION' | 'REPAIR' | 'REPLACEMENT' | 'INSTALLATION'
+    }
+    class "SupportTicket" as Frontend_service_management_SupportTicket <<Entity>> {
+      - _userId: number
+      - _subject: string
+      - _description: string
+      - _priority: SupportTicketPriority
+      - _status: SupportTicketStatus
+      - _createdAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: subject(): string
+      + get: description(): string
+      + get: priority(): SupportTicketPriority
+      + get: status(): SupportTicketStatus
+      + get: createdAt(): string
+      + get: isOpen(): boolean
+      + get: isInProgress(): boolean
+      + get: isResolved(): boolean
+      + get: isClosed(): boolean
+      + get: isUrgent(): boolean
+    }
+    class "SupportTicketPriority" as Frontend_service_management_SupportTicketPriority <<type>> {
+      + 'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT'
+    }
+    class "SupportTicketStatus" as Frontend_service_management_SupportTicketStatus <<type>> {
+      + 'OPEN' | 'IN_PROGRESS' | 'RESOLVED' | 'CLOSED'
+    }
+  }
+  package "Domain / Services" {
+    class "TicketPriorityService" as Frontend_service_management_TicketPriorityService <<Domain Service>> {
+      - supportPriorityWeight: Record<SupportTicketPriority, number>
+      - maintenanceStatusWeight: Record<MaintenanceTicketStatus, number>
+      + sortSupportTickets(tickets: SupportTicket[]) : SupportTicket[]
+      + sortMaintenanceTickets(tickets: MaintenanceTicket[]) : MaintenanceTicket[]
+      + getSupportPriorityWeight(priority: SupportTicketPriority) : number
+      + getMaintenanceStatusWeight(status: MaintenanceTicketStatus) : number
+    }
+  }
+  package "Infrastructure / API Services" {
+    class "MaintenanceTicketsApiService" as Frontend_service_management_MaintenanceTicketsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<MaintenanceTicketResponse[]>
+      + updateStatus: (
+      + ticketId: number
+      + resource: Partial<MaintenanceTicketResource>
+    }
+    class "SupportTicketsApiService" as Frontend_service_management_SupportTicketsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<SupportTicketResponse[]>
+      + updateStatus: (
+      + ticketId: number
+      + resource: Partial<SupportTicketResource>
+    }
+  }
+  package "Infrastructure / Assemblers" {
+    class "MaintenanceTicketAssembler" as Frontend_service_management_MaintenanceTicketAssembler <<Assembler>> {
+      + override: toEntity(response: MaintenanceTicketResponse): MaintenanceTicket
+      + override: toResource(entity: MaintenanceTicket): MaintenanceTicketResource
+    }
+    class "SupportTicketAssembler" as Frontend_service_management_SupportTicketAssembler <<Assembler>> {
+      + override: toEntity(response: SupportTicketResponse): SupportTicket
+      + override: toResource(entity: SupportTicket): SupportTicketResource
+      - resolveCreatedAt(value?: string | null) : string
+    }
+  }
+  package "Infrastructure / Resources" {
+    interface "MaintenanceTicketResource" as Frontend_service_management_MaintenanceTicketResource <<interface>> {
+      + userId?: number
+      + deviceId: number
+      + deviceName: string
+      + type: MaintenanceTicketType
+      + description: string
+      + scheduledDate: string
+      + status: MaintenanceTicketStatus
+      + createdAt: string
+    }
+    interface "SupportTicketResource" as Frontend_service_management_SupportTicketResource <<interface>> {
+      + userId?: number
+      + subject: string
+      + description: string
+      + priority: SupportTicketPriority
+      + status: SupportTicketStatus
+      + createdAt?: string | null
+    }
+  }
+  package "Infrastructure / Responses" {
+    interface "MaintenanceTicketResponse" as Frontend_service_management_MaintenanceTicketResponse <<interface>> {
+      + userId: number
+      + deviceId: number
+      + deviceName: string
+      + type: MaintenanceTicketType
+      + description: string
+      + scheduledDate: string
+      + status: MaintenanceTicketStatus
+      + createdAt: string
+    }
+    interface "SupportTicketResponse" as Frontend_service_management_SupportTicketResponse <<interface>> {
+      + userId: number
+      + subject: string
+      + description: string
+      + priority: SupportTicketPriority
+      + status: SupportTicketStatus
+      + createdAt?: string | null
+    }
+  }
+  package "Presentation / Components" {
+    class "MaintenanceTicketCardComponent" as Frontend_service_management_MaintenanceTicketCardComponent <<Component>> {
+      + ticket: !: MaintenanceTicket
+      + statusChanged
+      + remove
+      + statuses: MaintenanceTicketStatus[]
+      + get: statusOptions(): DropdownOption[]
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + changeStatus(status: string) : void
+      + onRemove() : void
+      + maintenanceTypeLabel(type: MaintenanceTicketType) : string
+      - maintenanceTypeLabelKey(type: MaintenanceTicketType) : string
+      + statusLabel(status: MaintenanceTicketStatus) : string
+      - statusLabelKey(status: MaintenanceTicketStatus) : string
+      + formatDate(value: string) : string
+      - t(key: string) : string
+      - currentLocale() : string
+    }
+    class "SupportTicketCardComponent" as Frontend_service_management_SupportTicketCardComponent <<Component>> {
+      + ticket: !: SupportTicket
+      + statusChanged
+      + remove
+      + statuses: SupportTicketStatus[]
+      + get: statusOptions(): DropdownOption[]
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + changeStatus(status: string) : void
+      + onRemove() : void
+      + priorityLabel(priority: SupportTicketPriority) : string
+      - priorityLabelKey(priority: SupportTicketPriority) : string
+      + statusLabel(status: SupportTicketStatus) : string
+      - statusLabelKey(status: SupportTicketStatus) : string
+      + formatDate(value: string) : string
+      - t(key: string) : string
+      - currentLocale() : string
+    }
+    class "TicketStatusBadgeComponent" as Frontend_service_management_TicketStatusBadgeComponent <<Component>> {
+      + value: !: BadgeVariant
+      + label: string | null
+      + get: normalizedValue(): string
+      + get: displayLabel(): string
+    }
+  }
+  package "Presentation / Pages" {
+    class "MaintenanceTicketsPageComponent" as Frontend_service_management_MaintenanceTicketsPageComponent <<Component>> {
+      + deviceId: number | null
+      + type: MaintenanceTicketType
+      + description
+      + scheduledDate
+      + isMaintenanceModalOpen
+      + types: MaintenanceTicketType[]
+      + get: deviceValue(): string | null
+      + get: deviceOptions(): DropdownOption[]
+      + get: hasDevices(): boolean
+      + get: todayInput(): string
+      + get: typeOptions(): DropdownOption[]
+      + constructor: (
+      + serviceManagementFacade: ServiceManagementFacade
+      + deviceControlFacade: DeviceControlFacade
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      - translate: TranslateService
+      + ngOnInit() : Promise<void>
+    }
+    class "SupportTicketsPageComponent" as Frontend_service_management_SupportTicketsPageComponent <<Component>> {
+      + subject
+      + description
+      + priority: SupportTicketPriority
+      + isSupportModalOpen
+      + priorities: SupportTicketPriority[]
+      + get: priorityOptions(): DropdownOption[]
+      + constructor: (
+      + serviceManagementFacade: ServiceManagementFacade
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      - translate: TranslateService
+      + ngOnInit() : Promise<void>
+      + openSupportModal() : void
+      + closeSupportModal() : void
+      + createTicket() : Promise<void>
+      + selectPriority(value: string) : void
+      + priorityLabel(priority: SupportTicketPriority) : string
+      + priorityLabelKey(priority: SupportTicketPriority) : string
+    }
+  }
+  package "Presentation / Routes" {
+    class "ServiceManagementRoutes" as Frontend_service_management_ServiceManagementRoutes <<Routes>> {
+      + Routes
+    }
+  }
+}
+
+Frontend_service_management_CreateMaintenanceTicketCommand ..> Frontend_service_management_MaintenanceTicketType
+Frontend_service_management_CreateSupportTicketCommand ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_MaintenanceTicketAssembler ..> Frontend_service_management_MaintenanceTicket
+Frontend_service_management_MaintenanceTicketAssembler ..> Frontend_service_management_MaintenanceTicketResource
+Frontend_service_management_MaintenanceTicketAssembler ..> Frontend_service_management_MaintenanceTicketResponse
+Frontend_service_management_MaintenanceTicketCardComponent ..> Frontend_service_management_MaintenanceTicket
+Frontend_service_management_MaintenanceTicketCardComponent ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_MaintenanceTicketCardComponent ..> Frontend_service_management_MaintenanceTicketType
+Frontend_service_management_MaintenanceTicketCardComponent ..> Frontend_service_management_TicketStatusBadgeComponent
+Frontend_service_management_MaintenanceTicketResource ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_MaintenanceTicketResource ..> Frontend_service_management_MaintenanceTicketType
+Frontend_service_management_MaintenanceTicketResponse ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_MaintenanceTicketResponse ..> Frontend_service_management_MaintenanceTicketType
+Frontend_service_management_MaintenanceTicketsApiService ..> Frontend_service_management_MaintenanceTicket
+Frontend_service_management_MaintenanceTicketsApiService ..> Frontend_service_management_MaintenanceTicketAssembler
+Frontend_service_management_MaintenanceTicketsApiService ..> Frontend_service_management_MaintenanceTicketResource
+Frontend_service_management_MaintenanceTicketsApiService ..> Frontend_service_management_MaintenanceTicketResponse
+Frontend_service_management_MaintenanceTicketsPageComponent ..> Frontend_service_management_MaintenanceTicketCardComponent
+Frontend_service_management_MaintenanceTicketsPageComponent ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_MaintenanceTicketsPageComponent ..> Frontend_service_management_MaintenanceTicketType
+Frontend_service_management_MaintenanceTicketsPageComponent ..> Frontend_service_management_ServiceManagementFacade
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_CreateMaintenanceTicketCommand
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_CreateSupportTicketCommand
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_MaintenanceTicketAssembler
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_MaintenanceTicketsApiService
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_ServiceManagementStore
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_SupportTicketAssembler
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_SupportTicketsApiService
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_UpdateMaintenanceTicketStatusCommand
+Frontend_service_management_ServiceManagementFacade ..> Frontend_service_management_UpdateSupportTicketStatusCommand
+Frontend_service_management_ServiceManagementStore ..> Frontend_service_management_MaintenanceTicket
+Frontend_service_management_ServiceManagementStore ..> Frontend_service_management_SupportTicket
+Frontend_service_management_ServiceManagementStore ..> Frontend_service_management_TicketPriorityService
+Frontend_service_management_SupportTicketAssembler ..> Frontend_service_management_SupportTicket
+Frontend_service_management_SupportTicketAssembler ..> Frontend_service_management_SupportTicketResource
+Frontend_service_management_SupportTicketAssembler ..> Frontend_service_management_SupportTicketResponse
+Frontend_service_management_SupportTicketCardComponent ..> Frontend_service_management_SupportTicket
+Frontend_service_management_SupportTicketCardComponent ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_SupportTicketCardComponent ..> Frontend_service_management_SupportTicketStatus
+Frontend_service_management_SupportTicketCardComponent ..> Frontend_service_management_TicketStatusBadgeComponent
+Frontend_service_management_SupportTicketResource ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_SupportTicketResource ..> Frontend_service_management_SupportTicketStatus
+Frontend_service_management_SupportTicketResponse ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_SupportTicketResponse ..> Frontend_service_management_SupportTicketStatus
+Frontend_service_management_SupportTicketsApiService ..> Frontend_service_management_SupportTicket
+Frontend_service_management_SupportTicketsApiService ..> Frontend_service_management_SupportTicketAssembler
+Frontend_service_management_SupportTicketsApiService ..> Frontend_service_management_SupportTicketResource
+Frontend_service_management_SupportTicketsApiService ..> Frontend_service_management_SupportTicketResponse
+Frontend_service_management_SupportTicketsPageComponent ..> Frontend_service_management_ServiceManagementFacade
+Frontend_service_management_SupportTicketsPageComponent ..> Frontend_service_management_SupportTicketCardComponent
+Frontend_service_management_SupportTicketsPageComponent ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_SupportTicketsPageComponent ..> Frontend_service_management_SupportTicketStatus
+Frontend_service_management_TicketPriorityService ..> Frontend_service_management_MaintenanceTicket
+Frontend_service_management_TicketPriorityService ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_TicketPriorityService ..> Frontend_service_management_SupportTicket
+Frontend_service_management_TicketPriorityService ..> Frontend_service_management_SupportTicketPriority
+Frontend_service_management_UpdateMaintenanceTicketStatusCommand ..> Frontend_service_management_MaintenanceTicketStatus
+Frontend_service_management_UpdateSupportTicketStatusCommand ..> Frontend_service_management_SupportTicketStatus
+
+@enduml

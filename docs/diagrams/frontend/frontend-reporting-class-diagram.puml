@@ -1,0 +1,409 @@
+@startuml
+title ElectroCorp Web App - Reporting Frontend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Reporting" {
+  package "Application / Commands" {
+    interface "CreateConsumptionReportCommand" as Frontend_reporting_CreateConsumptionReportCommand <<interface>> {
+      + title: string
+      + period: ConsumptionReportPeriod
+      + startDate: string
+      + endDate: string
+    }
+    interface "CreateEnergyGoalCommand" as Frontend_reporting_CreateEnergyGoalCommand <<interface>> {
+      + title: string
+      + targetKilowattHours: number
+      + deadline: string
+      + scopeType?: 'GENERAL' | 'WORKPLACE' | 'ROOM' | 'DEVICE' | 'GROUP'
+      + scopeId?: number | null
+      + scopeName?: string | null
+      + activeFrom?: string | null
+      + activeTo?: string | null
+    }
+    interface "ExportReportCommand" as Frontend_reporting_ExportReportCommand <<interface>> {
+      + reportId: number
+    }
+    interface "GenerateConsumptionReportCommand" as Frontend_reporting_GenerateConsumptionReportCommand <<interface>> {
+      + startDate: string
+      + endDate: string
+    }
+    interface "UpdateEnergyGoalCommand" as Frontend_reporting_UpdateEnergyGoalCommand <<interface>> {
+      + goalId: number
+      + title: string
+      + targetKilowattHours: number
+      + currentKilowattHours: number
+      + deadline: string
+      + scopeType?: 'GENERAL' | 'WORKPLACE' | 'ROOM' | 'DEVICE' | 'GROUP'
+      + scopeId?: number | null
+      + scopeName?: string | null
+      + activeFrom?: string | null
+      + activeTo?: string | null
+    }
+  }
+  package "Application / Facades and Services" {
+    class "CreateConsumptionReportResult" as Frontend_reporting_CreateConsumptionReportResult <<type>> {
+      + | 'CREATED' | 'UPDATED' | 'UNCHANGED' | 'FAILED'
+    }
+    class "ReportingFacade" as Frontend_reporting_ReportingFacade <<Facade>> {
+      - consumptionReportAssembler
+      - energyGoalAssembler
+      + get: consumptionReports()
+      + get: energyGoals()
+      + get: loading()
+      + get: error()
+      + get: activeGoals()
+      + get: completedGoals()
+      + get: failedGoals()
+      + get: totalReportedWatts()
+      + get: averageReportedWatts()
+      + get: highestReport()
+      + get: energyReadings()
+      + constructor: (
+      - consumptionReportsApi: ConsumptionReportsApiService
+      - energyGoalsApi: EnergyGoalsApiService
+      - billingFacade: BillingFacade
+      - energyMonitoringFacade: EnergyMonitoringFacade
+    }
+  }
+  package "Application / Stores" {
+    class "ReportingStore" as Frontend_reporting_ReportingStore <<Store>> {
+      - consumptionReportsSignal
+      - energyGoalsSignal
+      - loadingSignal
+      - errorSignal
+      + constructor(reportSummaryService: ReportSummaryService)
+      + setConsumptionReports(value: ConsumptionReport[]) : void
+      + upsertConsumptionReport(value: ConsumptionReport) : void
+      + removeConsumptionReport(reportId: number) : void
+      + setEnergyGoals(value: EnergyGoal[]) : void
+      + prependEnergyGoal(value: EnergyGoal) : void
+      + updateEnergyGoal(value: EnergyGoal) : void
+      + removeEnergyGoal(goalId: number) : void
+      + setLoading(value: boolean) : void
+      + setError(value: string | null) : void
+    }
+  }
+  package "Domain / Model" {
+    class "ConsumptionReport" as Frontend_reporting_ConsumptionReport <<Entity>> {
+      - _userId: number
+      - _title: string
+      - _period: ConsumptionReportPeriod
+      - _totalWatts: number
+      - _averageWatts: number
+      - _highestWatts: number
+      - _startDate: string
+      - _endDate: string
+      - _generatedAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: title(): string
+      + get: period(): ConsumptionReportPeriod
+      + get: totalWatts(): number
+      + get: averageWatts(): number
+      + get: highestWatts(): number
+      + get: startDate(): string
+      + get: endDate(): string
+    }
+    class "ConsumptionReportPeriod" as Frontend_reporting_ConsumptionReportPeriod <<type>> {
+      + 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'YEARLY'
+    }
+    class "EnergyGoal" as Frontend_reporting_EnergyGoal <<Entity>> {
+      - _userId: number
+      - _title: string
+      - _targetKilowattHours: number
+      - _currentKilowattHours: number
+      - _deadline: string
+      - _status: EnergyGoalStatus
+      - _createdAt: string
+      - _scopeType: EnergyGoalScopeType
+      - _scopeId: number | null
+      - _scopeName: string
+      - _activeFrom: string | null
+      - _activeTo: string | null
+      + constructor: (props:
+      + get: userId(): number
+      + get: title(): string
+      + get: targetKilowattHours(): number
+      + get: currentKilowattHours(): number
+      + get: deadline(): string
+    }
+    class "EnergyGoalScopeType" as Frontend_reporting_EnergyGoalScopeType <<type>> {
+      + 'GENERAL' | 'WORKPLACE' | 'ROOM' | 'DEVICE' | 'GROUP'
+    }
+    class "EnergyGoalStatus" as Frontend_reporting_EnergyGoalStatus <<type>> {
+      + 'ACTIVE' | 'COMPLETED' | 'FAILED'
+    }
+  }
+  package "Domain / Services" {
+    class "EnergyGoalPolicyService" as Frontend_reporting_EnergyGoalPolicyService <<Domain Service>> {
+      + canCreateGoal(title: string, targetKilowattHours: number, deadline: string) : boolean
+      + resolveStatus(goal: EnergyGoalProgress) : 'ACTIVE' | 'COMPLETED' | 'FAILED'
+    }
+    class "ReportSummaryService" as Frontend_reporting_ReportSummaryService <<Domain Service>> {
+      + calculateTotalReportedWatts(reports: ConsumptionReport[]) : number
+      + calculateAverageReportedWatts(reports: ConsumptionReport[]) : number
+      + findHighestReport(reports: ConsumptionReport[]) : ConsumptionReport | null
+    }
+  }
+  package "Infrastructure / API Services" {
+    class "ConsumptionReportsApiService" as Frontend_reporting_ConsumptionReportsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<ConsumptionReportResponse[]>
+    }
+    class "EnergyGoalsApiService" as Frontend_reporting_EnergyGoalsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<EnergyGoalResponse[]>
+    }
+  }
+  package "Infrastructure / Assemblers" {
+    class "ConsumptionReportAssembler" as Frontend_reporting_ConsumptionReportAssembler <<Assembler>> {
+      + override: toEntity(response: ConsumptionReportResponse): ConsumptionReport
+      + override: toResource(entity: ConsumptionReport): ConsumptionReportResource
+      - resolvePeriod: (
+      + startDate: string
+      + endDate: string
+    }
+    class "EnergyGoalAssembler" as Frontend_reporting_EnergyGoalAssembler <<Assembler>> {
+      + override: toEntity(response: EnergyGoalResponse): EnergyGoal
+      + override: toResource(entity: EnergyGoal): EnergyGoalResource
+      - resolveTargetKilowattHours(primary: number | undefined, legacyMisnamedKilowattHours: number | undefined) : number
+      - resolveCurrentKilowattHours(primary: number | undefined, legacyMisnamedKilowattHours: number | undefined) : number
+      - normalizeLegacyTarget(value: number) : number
+    }
+  }
+  package "Infrastructure / Resources" {
+    interface "ConsumptionReportResource" as Frontend_reporting_ConsumptionReportResource <<interface>> {
+      + userId?: number
+      + startDate: string
+      + endDate: string
+    }
+    interface "EnergyGoalResource" as Frontend_reporting_EnergyGoalResource <<interface>> {
+      + userId?: number
+      + title: string
+      + targetKilowattHours: number
+      + currentKilowattHours: number
+      + deadline: string
+      + status: EnergyGoalStatus
+      + createdAt?: string
+      + scopeType?: EnergyGoalScopeType
+      + scopeId?: number | null
+      + scopeName?: string | null
+      + activeFrom?: string | null
+      + activeTo?: string | null
+    }
+  }
+  package "Infrastructure / Responses" {
+    interface "ConsumptionReportResponse" as Frontend_reporting_ConsumptionReportResponse <<interface>> {
+      + userId: number
+      + totalWatts: number
+      + averageWatts: number
+      + highestWatts: number
+      + startDate: string
+      + endDate: string
+    }
+    interface "EnergyGoalResponse" as Frontend_reporting_EnergyGoalResponse <<interface>> {
+      + userId: number
+      + title: string
+      + targetKilowattHours: number
+      + currentKilowattHours: number
+      + targetWatts?: number
+      + currentWatts?: number
+      + deadline: string
+      + status: EnergyGoalStatus
+      + createdAt: string
+      + scopeType?: EnergyGoalScopeType | null
+      + scopeId?: number | null
+      + scopeName?: string | null
+      + activeFrom?: string | null
+      + activeTo?: string | null
+    }
+  }
+  package "Presentation / Components" {
+    interface "EnergyGoalInsight" as Frontend_reporting_EnergyGoalInsight <<interface>> {
+      + measuredKilowattHours: number
+      + estimatedCost: number
+      + devicesMeasured: number
+      + daysRemaining: number
+      + expectedProgressPercentage: number
+      + projectedKilowattHours: number
+      + statusLabel: string
+      + statusTone: 'good' | 'warning' | 'danger'
+      + recommendation: string
+    }
+    class "GoalProgressCardComponent" as Frontend_reporting_GoalProgressCardComponent <<Component>> {
+      + goal: !: EnergyGoal
+      + insight: !: EnergyGoalInsight
+      + remove
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + get: progressPercentage(): number
+      + get: remainingKilowattHours(): number
+      + get: projectedPercentage(): number
+      + onRemove() : void
+      + formatNumber(value: number, decimals = 2) : string
+      + formatDate(value: string) : string
+      + activeWindowLabel() : string
+      + daysRemainingLabel() : string
+      - t(key: string, params?: Record<string, unknown>) : string
+      - currentLocale() : string
+    }
+    class "MonthlyComparisonChartComponent" as Frontend_reporting_MonthlyComparisonChartComponent <<Component>> {
+      - _reports: ConsumptionReport[]
+      + set: reports(value: ConsumptionReport[] | null)
+      + get: reports(): ConsumptionReport[]
+      + reportSelected
+      + selectedPeriod: ConsumptionReportPeriod
+      + chartReports: ConsumptionReport[]
+      + chartItems: DraggableBarCarouselItem[]
+      - chartMaxWatts
+      - languageChangeSubscription: Subscription
+      + periodOptions: DropdownOption[]
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + ngOnDestroy() : void
+      + get: filteredReports(): ConsumptionReport[]
+      + getBarPercentage(totalWatts: number) : number
+      + selectReport(report: ConsumptionReport) : void
+      + selectCarouselItem(item: DraggableBarCarouselItem) : void
+    }
+    class "ReportCardComponent" as Frontend_reporting_ReportCardComponent <<Component>> {
+      + report: !: ConsumptionReport
+      + exported
+      + remove
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + onExport() : void
+      + onRemove() : void
+      + getCleanTitle() : string
+      + periodLabel(period: ConsumptionReportPeriod) : string
+      + formatWatts(value: number) : string
+      + formatDate(value: string) : string
+      - t(key: string, params?: Record<string, unknown>) : string
+      - currentLocale() : string
+      - dateFromInput(value: string) : Date
+    }
+  }
+  package "Presentation / Pages" {
+    class "EnergyGoalsPageComponent" as Frontend_reporting_EnergyGoalsPageComponent <<Component>> {
+      + createModalOpen
+      + title
+      + targetKilowattHours: number | null
+      + deadline
+      + scopeType: EnergyGoalScopeType
+      + scopeTargetId
+      + activeFrom
+      + activeTo
+      + scopeOptions: DropdownOption[]
+      + constructor: (
+      + reportingFacade: ReportingFacade
+      + deviceControlFacade: DeviceControlFacade
+      + workplaceFacade: WorkplaceFacade
+      - activeWorkplaceContext: ActiveWorkplaceContextService
+      - confirmDialogService: ConfirmDialogService
+      - toastService: ToastService
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+    }
+    class "ReportsPageComponent" as Frontend_reporting_ReportsPageComponent <<Component>> {
+      + title
+      + period: ConsumptionReportPeriod
+      + selectedReport: ConsumptionReport | null
+      + isReportDetailClosing
+      + rangeOptions: TimeRangeOption[]
+      + selectedRangeValue: TimeRangeOption
+      - lockedScrollY
+      - reportDetailCloseTimeout: ReturnType<typeof setTimeout> | null
+      - reportDetailCloseAnimationMs
+      - languageChangeSubscription: Subscription
+      + periods: ConsumptionReportPeriod[]
+      + constructor: (
+      + reportingFacade: ReportingFacade
+      - changeDetectorRef: ChangeDetectorRef
+      - toastService: ToastService
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      - document: Document
+    }
+  }
+  package "Presentation / Routes" {
+    class "ReportingRoutes" as Frontend_reporting_ReportingRoutes <<Routes>> {
+      + Routes
+    }
+  }
+}
+
+Frontend_reporting_ConsumptionReportAssembler ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ConsumptionReportAssembler ..> Frontend_reporting_ConsumptionReportResource
+Frontend_reporting_ConsumptionReportAssembler ..> Frontend_reporting_ConsumptionReportResponse
+Frontend_reporting_ConsumptionReportsApiService ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ConsumptionReportsApiService ..> Frontend_reporting_ConsumptionReportAssembler
+Frontend_reporting_ConsumptionReportsApiService ..> Frontend_reporting_ConsumptionReportResource
+Frontend_reporting_ConsumptionReportsApiService ..> Frontend_reporting_ConsumptionReportResponse
+Frontend_reporting_CreateConsumptionReportCommand ..> Frontend_reporting_ConsumptionReportPeriod
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_ConsumptionReportAssembler
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_ConsumptionReportsApiService
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_CreateConsumptionReportCommand
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_CreateEnergyGoalCommand
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_EnergyGoalAssembler
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_EnergyGoalPolicyService
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_EnergyGoalsApiService
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_ExportReportCommand
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_ReportingStore
+Frontend_reporting_CreateConsumptionReportResult ..> Frontend_reporting_UpdateEnergyGoalCommand
+Frontend_reporting_EnergyGoalAssembler ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_EnergyGoalAssembler ..> Frontend_reporting_EnergyGoalResource
+Frontend_reporting_EnergyGoalAssembler ..> Frontend_reporting_EnergyGoalResponse
+Frontend_reporting_EnergyGoalInsight ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_EnergyGoalPolicyService ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_EnergyGoalResource ..> Frontend_reporting_EnergyGoalScopeType
+Frontend_reporting_EnergyGoalResource ..> Frontend_reporting_EnergyGoalStatus
+Frontend_reporting_EnergyGoalResponse ..> Frontend_reporting_EnergyGoalScopeType
+Frontend_reporting_EnergyGoalResponse ..> Frontend_reporting_EnergyGoalStatus
+Frontend_reporting_EnergyGoalsApiService ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_EnergyGoalsApiService ..> Frontend_reporting_EnergyGoalAssembler
+Frontend_reporting_EnergyGoalsApiService ..> Frontend_reporting_EnergyGoalResource
+Frontend_reporting_EnergyGoalsApiService ..> Frontend_reporting_EnergyGoalResponse
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_EnergyGoalInsight
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_EnergyGoalScopeType
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_GoalProgressCardComponent
+Frontend_reporting_EnergyGoalsPageComponent ..> Frontend_reporting_ReportingFacade
+Frontend_reporting_GoalProgressCardComponent ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_MonthlyComparisonChartComponent ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_MonthlyComparisonChartComponent ..> Frontend_reporting_ConsumptionReportPeriod
+Frontend_reporting_ReportCardComponent ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ReportCardComponent ..> Frontend_reporting_ConsumptionReportPeriod
+Frontend_reporting_ReportSummaryService ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_ConsumptionReportAssembler
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_ConsumptionReportsApiService
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_CreateConsumptionReportCommand
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_CreateEnergyGoalCommand
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_EnergyGoalAssembler
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_EnergyGoalPolicyService
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_EnergyGoalsApiService
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_ExportReportCommand
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_ReportingStore
+Frontend_reporting_ReportingFacade ..> Frontend_reporting_UpdateEnergyGoalCommand
+Frontend_reporting_ReportingStore ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ReportingStore ..> Frontend_reporting_EnergyGoal
+Frontend_reporting_ReportingStore ..> Frontend_reporting_ReportSummaryService
+Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ConsumptionReport
+Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ConsumptionReportPeriod
+Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_MonthlyComparisonChartComponent
+Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ReportCardComponent
+Frontend_reporting_ReportsPageComponent ..> Frontend_reporting_ReportingFacade
+
+@enduml

@@ -1,0 +1,404 @@
+@startuml
+title ElectroCorp Platform - Energy Monitoring Backend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Energy Monitoring" {
+  package "Application / Command Services" {
+    interface "EnergyMonitoringCommandService" as Backend_energymonitoring_EnergyMonitoringCommandService <<interface>> {
+    }
+  }
+  package "Application / Command Services Impl" {
+    class "EnergyMonitoringCommandServiceImpl" as Backend_energymonitoring_EnergyMonitoringCommandServiceImpl <<Command Service>> {
+      - applicationService: EnergyMonitoringApplicationService
+      - settingsService: EnergySamplingSettingsService
+      + handle(CreateEnergyReadingCommand command) : EnergyReading
+      + handle(UpdateEnergySamplingSettingsCommand command) : Integer
+    }
+  }
+  package "Application / Query Services" {
+    interface "EnergyMonitoringQueryService" as Backend_energymonitoring_EnergyMonitoringQueryService <<interface>> {
+    }
+  }
+  package "Application / Query Services Impl" {
+    class "EnergyMonitoringQueryServiceImpl" as Backend_energymonitoring_EnergyMonitoringQueryServiceImpl <<Query Service>> {
+      - applicationService: EnergyMonitoringApplicationService
+      - settingsService: EnergySamplingSettingsService
+      + handle(GetEnergyReadingsByUserQuery query) : List<EnergyReading>
+      + handle(GetEnergyDashboardSummaryQuery query) : EnergyDashboardSummaryResource
+      + handle(GetEnergySamplingSettingsQuery query) : Integer
+    }
+  }
+  package "Application / Services" {
+    class "EnergyMonitoringApplicationService" as Backend_energymonitoring_EnergyMonitoringApplicationService <<Application Service>> {
+      - TARIFF_PER_KWH: BigDecimal
+      - energyReadingRepository: EnergyReadingRepository
+      - deviceRepository: DeviceRepository
+      - alertRepository: AlertRepository
+      - energyReadingRecorderService: EnergyReadingRecorderService
+      - energySamplingSettingsService: EnergySamplingSettingsService
+      + getReadings(Long userId) : List<EnergyReading>
+      + getReadings(Long userId, LocalDateTime start, LocalDateTime end) : List<EnergyReading>
+      + getDashboardSummary(Long userId) : EnergyDashboardSummaryResource
+      + createReading(CreateEnergyReadingCommand command) : EnergyReading
+      - calculateAverageWatts(List<EnergyReading> readings) : BigDecimal
+      - calculateCostPerHour(BigDecimal watts) : BigDecimal
+      - projectMonthlyCost(BigDecimal todayEstimatedCost) : BigDecimal
+      - calculateEfficiencyScore(int totalReadings, int highReadings) : int
+      - resolveOperationalStatus(int efficiencyScore) : String
+      - buildTrend(List<EnergyReading> readings) : List<EnergyDashboardSummaryResource.TrendPoint>
+      - buildActiveDeviceDetails(List<Device> activeDevices) : List<EnergyDashboardSummaryResource.ActiveDevice>
+      - resolveRoom(Device device) : String
+      - alertLastTriggeredAt(Alert alert) : LocalDateTime
+      - safeKilowattHours(EnergyReading reading) : BigDecimal
+      - safeEstimatedCost(EnergyReading reading) : BigDecimal
+      - recordDueActiveDeviceIntervals(Long userId) : List<Device>
+    }
+    class "EnergyReadingRecorderService" as Backend_energymonitoring_EnergyReadingRecorderService <<Application Service>> {
+      - DEFAULT_TARIFF_PER_KWH: BigDecimal
+      - MAX_SAMPLE_SECONDS: int
+      - usageStateRepository: EnergyDeviceUsageStateRepository
+      - energyReadingRepository: EnergyReadingRepository
+      - simulatorService: EnergyConsumptionSimulatorService
+      - notificationApplicationService: NotificationApplicationService
+      + recordStatusTransition(Device device, DeviceStatus previousStatus) : void
+      + recordActiveDeviceInterval(Device device) : EnergyReading
+      + recordActiveDeviceIntervalIfDue(Device device, int minimumSeconds) : EnergyReading
+      + closeUsage(Device device) : EnergyReading
+      - startUsage(Device device, LocalDateTime now) : EnergyDeviceUsageState
+      - closeUsage(Device device, LocalDateTime now) : EnergyReading
+      - calculateWatts(Device device) : BigDecimal
+      - calculateKilowattHours(BigDecimal watts, int sampleSeconds) : BigDecimal
+      - calculateEstimatedCost(BigDecimal kilowattHours) : BigDecimal
+      - publishRuleEvaluation(Device device, EnergyReading reading) : void
+    }
+    class "EnergyReadingSchedulerService" as Backend_energymonitoring_EnergyReadingSchedulerService <<Application Service>> {
+      - deviceRepository: DeviceRepository
+      - recorderService: EnergyReadingRecorderService
+      - settingsService: EnergySamplingSettingsService
+      + recordActiveDevicesConsumption() : void
+      + configureTasks(ScheduledTaskRegistrar taskRegistrar) : void
+    }
+    class "EnergySamplingSettingsService" as Backend_energymonitoring_EnergySamplingSettingsService <<Application Service>> {
+      - DEFAULT_SECONDS: int
+      - MIN_SECONDS: int
+      - MAX_SECONDS: int
+      + getSampleSeconds() : int
+      + updateSampleSeconds(int seconds) : int
+    }
+  }
+  package "Domain / Aggregates" {
+    class "EnergyReading" as Backend_energymonitoring_EnergyReading <<Aggregate>> {
+      - userId: Long
+      - deviceId: Long
+      - deviceName: String
+      - recordedAt: LocalDateTime
+      - watts: BigDecimal
+      - kilowattHours: BigDecimal
+      - estimatedCost: BigDecimal
+      - sampleSeconds: Integer
+      - status: EnergyReadingStatus
+    }
+  }
+  package "Domain / Commands" {
+    class "CreateEnergyReadingCommand" as Backend_energymonitoring_CreateEnergyReadingCommand <<record>> {
+      + Long userId
+      + Long deviceId
+      + String deviceName
+      + BigDecimal watts
+    }
+    class "ExportEnergyReadingsCommand" as Backend_energymonitoring_ExportEnergyReadingsCommand <<record>> {
+      + Long userId
+      + LocalDateTime startDate
+      + LocalDateTime endDate
+    }
+    class "FilterEnergyReadingsCommand" as Backend_energymonitoring_FilterEnergyReadingsCommand <<record>> {
+      + Long userId
+      + Long deviceId
+      + LocalDateTime startDate
+      + LocalDateTime endDate
+    }
+    class "GetEnergyStatisticsCommand" as Backend_energymonitoring_GetEnergyStatisticsCommand <<record>> {
+      + Long userId
+      + LocalDateTime startDate
+      + LocalDateTime endDate
+    }
+    class "UpdateEnergySamplingSettingsCommand" as Backend_energymonitoring_UpdateEnergySamplingSettingsCommand <<record>> {
+      + Integer sampleSeconds
+      + UpdateEnergySamplingSettingsCommand(Integer sampleSeconds) : record
+    }
+  }
+  package "Domain / Events" {
+    class "EnergyThresholdExceededEvent" as Backend_energymonitoring_EnergyThresholdExceededEvent <<record>> {
+      + Long userId
+      + Long deviceId
+      + BigDecimal watts
+      + LocalDateTime occurredOn
+      + EnergyThresholdExceededEvent(Long userId, Long deviceId, BigDecimal watts, LocalDateTime occurredOn) : record
+      + EnergyThresholdExceededEvent(Long userId, Long deviceId, BigDecimal watts)
+    }
+  }
+  package "Domain / Factories" {
+    class "EnergyReadingFactory" as Backend_energymonitoring_EnergyReadingFactory <<Class>> {
+    }
+  }
+  package "Domain / Model" {
+    class "EnergyDeviceUsageState" as Backend_energymonitoring_EnergyDeviceUsageState <<Class>> {
+      - userId: Long
+      - deviceId: Long
+      - startedAt: LocalDateTime
+      - lastRecordedAt: LocalDateTime
+    }
+    enum "EnergyReadingStatus" as Backend_energymonitoring_EnergyReadingStatus <<enum>> {
+      + NORMAL
+    }
+  }
+  package "Domain / Queries" {
+    class "GetEnergyDashboardSummaryQuery" as Backend_energymonitoring_GetEnergyDashboardSummaryQuery <<record>> {
+      + Long userId
+      + GetEnergyDashboardSummaryQuery(Long userId) : record
+    }
+    class "GetEnergyReadingsByUserQuery" as Backend_energymonitoring_GetEnergyReadingsByUserQuery <<record>> {
+      + Long userId
+      + LocalDateTime start
+      + LocalDateTime end
+    }
+    class "GetEnergySamplingSettingsQuery" as Backend_energymonitoring_GetEnergySamplingSettingsQuery <<record>> {
+      + GetEnergySamplingSettingsQuery() : record
+    }
+  }
+  package "Domain / Repositories" {
+    interface "EnergyDeviceUsageStateRepository" as Backend_energymonitoring_EnergyDeviceUsageStateRepository <<interface>> {
+    }
+    interface "EnergyReadingRepository" as Backend_energymonitoring_EnergyReadingRepository <<interface>> {
+    }
+  }
+  package "Domain / Services" {
+    class "EnergyConsumptionSimulatorService" as Backend_energymonitoring_EnergyConsumptionSimulatorService <<Domain Service>> {
+      + simulateWatts(Device device) : BigDecimal
+    }
+    class "EnergyReadingFilterService" as Backend_energymonitoring_EnergyReadingFilterService <<Domain Service>> {
+      + filterByDevice(List<EnergyReading> readings, Long deviceId) : List<EnergyReading>
+    }
+    class "EnergyReadingPolicyService" as Backend_energymonitoring_EnergyReadingPolicyService <<Domain Service>> {
+      + validateReading(Long userId, Long deviceId, String deviceName, BigDecimal watts) : void
+      + isHighConsumption(BigDecimal watts) : boolean
+      + isLowConsumption(BigDecimal watts) : boolean
+    }
+    class "EnergyRecommendationService" as Backend_energymonitoring_EnergyRecommendationService <<Domain Service>> {
+      + resolveRecommendation(List<EnergyReading> readings) : String
+    }
+    class "EnergyStatisticsService" as Backend_energymonitoring_EnergyStatisticsService <<Domain Service>> {
+      + calculateTotalWatts(List<EnergyReading> readings) : BigDecimal
+      + calculateAverageWatts(List<EnergyReading> readings) : BigDecimal
+    }
+    class "EnergyUsageClassifierService" as Backend_energymonitoring_EnergyUsageClassifierService <<Domain Service>> {
+      + classify(BigDecimal watts) : String
+    }
+  }
+  package "Domain / Specifications" {
+    class "HighConsumptionSpecification" as Backend_energymonitoring_HighConsumptionSpecification <<Class>> {
+      - threshold: EnergyThreshold
+      + HighConsumptionSpecification()
+      + HighConsumptionSpecification(BigDecimal thresholdWatts)
+      + isSatisfiedBy(BigDecimal watts) : boolean
+    }
+  }
+  package "Domain / Value Objects" {
+    class "EnergyCost" as Backend_energymonitoring_EnergyCost <<record>> {
+      + Money value
+      + EnergyCost(Money value) : record
+      + EnergyCost(BigDecimal amount)
+    }
+    class "EnergyThreshold" as Backend_energymonitoring_EnergyThreshold <<record>> {
+      + Watts watts
+      + EnergyThreshold(Watts watts) : record
+      + EnergyThreshold(BigDecimal value)
+      + isExceededBy(Watts reading) : boolean
+    }
+    class "KilowattHours" as Backend_energymonitoring_KilowattHours <<record>> {
+      + BigDecimal value
+      + KilowattHours(BigDecimal value) : record
+    }
+    class "SampleSeconds" as Backend_energymonitoring_SampleSeconds <<record>> {
+      + Integer value
+      + SampleSeconds(Integer value) : record
+    }
+    class "Watts" as Backend_energymonitoring_Watts <<record>> {
+      + BigDecimal value
+      + Watts(BigDecimal value) : record
+    }
+  }
+  package "Infrastructure / Export" {
+    class "EnergyReadingsCsvExporter" as Backend_energymonitoring_EnergyReadingsCsvExporter <<Class>> {
+      + export(List<EnergyReading> readings) : byte[]
+      - sanitize(String value) : String
+    }
+  }
+  package "Infrastructure / JPA" {
+    class "EnergyMonitoringJpaTableNames" as Backend_energymonitoring_EnergyMonitoringJpaTableNames <<Class>> {
+      + ENERGY_READINGS: String
+      - EnergyMonitoringJpaTableNames()
+    }
+    class "EnergyMonitoringQueryHints" as Backend_energymonitoring_EnergyMonitoringQueryHints <<Class>> {
+      + FIND_BY_USER: String
+      + FIND_BY_DEVICE: String
+      + FIND_BY_DATE_RANGE: String
+      - EnergyMonitoringQueryHints()
+    }
+    class "for" as Backend_energymonitoring_for <<Class>> {
+    }
+  }
+  package "Infrastructure / JPA Repositories" {
+    interface "JpaEnergyDeviceUsageStateRepository" as Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository <<interface>> {
+    }
+    interface "JpaEnergyReadingRepository" as Backend_energymonitoring_JpaEnergyReadingRepository <<interface>> {
+    }
+  }
+  package "Interfaces / REST Assemblers" {
+    class "CreateEnergyReadingCommandFromResourceAssembler" as Backend_energymonitoring_CreateEnergyReadingCommandFromResourceAssembler <<Assembler>> {
+      + toCommandFromResource(CreateEnergyReadingResource resource, Long userId) : CreateEnergyReadingCommand
+    }
+    class "EnergyReadingResourceFromEntityAssembler" as Backend_energymonitoring_EnergyReadingResourceFromEntityAssembler <<Assembler>> {
+      + toResourceFromEntity(EnergyReading reading) : EnergyReadingResource
+    }
+  }
+  package "Interfaces / REST Controllers" {
+    class "EnergyMonitoringController" as Backend_energymonitoring_EnergyMonitoringController <<REST Controller>> {
+      - commandService: EnergyMonitoringCommandService
+      - queryService: EnergyMonitoringQueryService
+      - currentUserProvider: CurrentUserProvider
+      + getDashboardSummary() : EnergyDashboardSummaryResource
+      + getSamplingSettings() : EnergySamplingSettingsResource
+      + createReading(CreateEnergyReadingResource request) : EnergyReadingResource
+      - parseStart(String value) : LocalDateTime
+      - parseEnd(String value) : LocalDateTime
+    }
+  }
+  package "Interfaces / REST Resources" {
+    class "CreateEnergyReadingResource" as Backend_energymonitoring_CreateEnergyReadingResource <<record>> {
+      + Long deviceId
+      + String deviceName
+      + BigDecimal watts
+    }
+    class "EnergyDashboardSummaryResource" as Backend_energymonitoring_EnergyDashboardSummaryResource <<record>> {
+      + BigDecimal currentWatts
+      + BigDecimal todayKilowattHours
+      + BigDecimal todayEstimatedCost
+      + BigDecimal projectedMonthlyCost
+      + BigDecimal costPerHour
+      + BigDecimal peakWatts
+      + BigDecimal averageWatts
+      + Integer activeDevices
+      + Integer monitoredDevices
+      + Integer normalReadings
+      + Integer highReadings
+      + Integer efficiencyScore
+      + String operationalStatus
+      + String recommendation
+      + Integer activeAlerts
+      + Integer criticalAlerts
+      + String latestAlertLevel
+      + String latestAlertTitle
+      + List<TrendPoint> trend
+      + List<DeviceConsumption> topDevices
+      + List<RoomConsumption> rooms
+      + List<ActiveDevice> activeDeviceDetails
+    }
+    class "EnergyReadingResource" as Backend_energymonitoring_EnergyReadingResource <<record>> {
+      + Long id
+      + Long userId
+      + Long deviceId
+      + String deviceName
+      + BigDecimal watts
+      + BigDecimal kilowattHours
+      + BigDecimal estimatedCost
+      + Integer sampleSeconds
+      + LocalDateTime recordedAt
+      + String status
+      + from(EnergyReading reading) : EnergyReadingResource
+    }
+    class "EnergySamplingSettingsResource" as Backend_energymonitoring_EnergySamplingSettingsResource <<record>> {
+      + Integer sampleSeconds
+    }
+    class "UpdateEnergySamplingSettingsResource" as Backend_energymonitoring_UpdateEnergySamplingSettingsResource <<record>> {
+      + (5
+    }
+  }
+}
+
+Backend_energymonitoring_CreateEnergyReadingCommandFromResourceAssembler ..> Backend_energymonitoring_CreateEnergyReadingCommand
+Backend_energymonitoring_CreateEnergyReadingCommandFromResourceAssembler ..> Backend_energymonitoring_CreateEnergyReadingResource
+Backend_energymonitoring_EnergyDeviceUsageStateRepository ..> Backend_energymonitoring_EnergyDeviceUsageState
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_CreateEnergyReadingCommand
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_EnergyDashboardSummaryResource
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_EnergyReadingFactory
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_EnergyReadingRepository
+Backend_energymonitoring_EnergyMonitoringApplicationService ..> Backend_energymonitoring_EnergyReadingStatus
+Backend_energymonitoring_EnergyMonitoringCommandService ..> Backend_energymonitoring_CreateEnergyReadingCommand
+Backend_energymonitoring_EnergyMonitoringCommandService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyMonitoringCommandService ..> Backend_energymonitoring_UpdateEnergySamplingSettingsCommand
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_CreateEnergyReadingCommand
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergyMonitoringApplicationService
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergyMonitoringCommandService
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergySamplingSettingsService
+Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_UpdateEnergySamplingSettingsCommand
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_CreateEnergyReadingCommandFromResourceAssembler
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_CreateEnergyReadingResource
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyDashboardSummaryResource
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyMonitoringCommandService
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyMonitoringQueryService
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyReadingResource
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergyReadingResourceFromEntityAssembler
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_EnergySamplingSettingsResource
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_GetEnergyDashboardSummaryQuery
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_GetEnergyReadingsByUserQuery
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_GetEnergySamplingSettingsQuery
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_UpdateEnergySamplingSettingsCommand
+Backend_energymonitoring_EnergyMonitoringController ..> Backend_energymonitoring_UpdateEnergySamplingSettingsResource
+Backend_energymonitoring_EnergyMonitoringQueryService ..> Backend_energymonitoring_EnergyDashboardSummaryResource
+Backend_energymonitoring_EnergyMonitoringQueryService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyMonitoringQueryService ..> Backend_energymonitoring_GetEnergyDashboardSummaryQuery
+Backend_energymonitoring_EnergyMonitoringQueryService ..> Backend_energymonitoring_GetEnergyReadingsByUserQuery
+Backend_energymonitoring_EnergyMonitoringQueryService ..> Backend_energymonitoring_GetEnergySamplingSettingsQuery
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_EnergyDashboardSummaryResource
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_EnergyMonitoringApplicationService
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_EnergyMonitoringQueryService
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_EnergySamplingSettingsService
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_GetEnergyDashboardSummaryQuery
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_GetEnergyReadingsByUserQuery
+Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymonitoring_GetEnergySamplingSettingsQuery
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_EnergyReadingStatus
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_HighConsumptionSpecification
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_KilowattHours
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_SampleSeconds
+Backend_energymonitoring_EnergyReadingFactory ..> Backend_energymonitoring_Watts
+Backend_energymonitoring_EnergyReadingFilterService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyConsumptionSimulatorService
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyDeviceUsageState
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyDeviceUsageStateRepository
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyReadingFactory
+Backend_energymonitoring_EnergyReadingRecorderService ..> Backend_energymonitoring_EnergyReadingRepository
+Backend_energymonitoring_EnergyReadingRepository ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingResource ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingResourceFromEntityAssembler ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyReadingResourceFromEntityAssembler ..> Backend_energymonitoring_EnergyReadingResource
+Backend_energymonitoring_EnergyReadingsCsvExporter ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyRecommendationService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_EnergyStatisticsService ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_HighConsumptionSpecification ..> Backend_energymonitoring_EnergyThreshold
+Backend_energymonitoring_HighConsumptionSpecification ..> Backend_energymonitoring_Watts
+Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository ..> Backend_energymonitoring_EnergyDeviceUsageState
+Backend_energymonitoring_JpaEnergyDeviceUsageStateRepository ..> Backend_energymonitoring_EnergyDeviceUsageStateRepository
+Backend_energymonitoring_JpaEnergyReadingRepository ..> Backend_energymonitoring_EnergyReading
+Backend_energymonitoring_JpaEnergyReadingRepository ..> Backend_energymonitoring_EnergyReadingRepository
+
+@enduml

@@ -1,0 +1,289 @@
+@startuml
+title ElectroCorp Platform - Service Management Backend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Service Management" {
+  package "Application / Services" {
+    class "ServiceManagementApplicationService" as Backend_servicemanagement_ServiceManagementApplicationService <<Application Service>> {
+      - supportTicketRepository: SupportTicketRepository
+      - maintenanceTicketRepository: MaintenanceTicketRepository
+      - deviceRepository: DeviceRepository
+      + getSupportTickets(Long userId) : List<SupportTicket>
+      + createSupportTicket(CreateSupportTicketCommand command) : SupportTicket
+      + updateSupportStatus(Long userId, Long ticketId, UpdateTicketStatusCommand command) : SupportTicket
+      + deleteSupportTicket(DeleteSupportTicketCommand command) : void
+      + getMaintenanceTickets(Long userId) : List<MaintenanceTicket>
+      + createMaintenanceTicket(CreateMaintenanceTicketCommand command) : MaintenanceTicket
+      + updateMaintenanceStatus(Long userId, Long ticketId, UpdateTicketStatusCommand command) : MaintenanceTicket
+      + deleteMaintenanceTicket(DeleteMaintenanceTicketCommand command) : void
+    }
+  }
+  package "Domain / Aggregates" {
+    class "MaintenanceTicket" as Backend_servicemanagement_MaintenanceTicket <<Aggregate>> {
+      - userId: Long
+      - deviceId: Long
+      - deviceName: String
+      - type: String
+      - description: String
+      - scheduledDate: LocalDate
+      - status: String
+    }
+    class "SupportTicket" as Backend_servicemanagement_SupportTicket <<Aggregate>> {
+      - userId: Long
+      - subject: String
+      - description: String
+      - priority: String
+      - status: String
+      + resolve() : void
+      + isOpen() : boolean
+    }
+  }
+  package "Domain / Commands" {
+    class "CreateMaintenanceTicketCommand" as Backend_servicemanagement_CreateMaintenanceTicketCommand <<record>> {
+      + Long userId
+      + Long deviceId
+      + String deviceName
+      + String type
+      + String description
+      + LocalDate scheduledDate
+    }
+    class "CreateSupportTicketCommand" as Backend_servicemanagement_CreateSupportTicketCommand <<record>> {
+      + Long userId
+      + String subject
+      + String description
+      + String priority
+    }
+    class "DeleteMaintenanceTicketCommand" as Backend_servicemanagement_DeleteMaintenanceTicketCommand <<record>> {
+      + Long userId
+      + Long ticketId
+    }
+    class "DeleteSupportTicketCommand" as Backend_servicemanagement_DeleteSupportTicketCommand <<record>> {
+      + Long userId
+      + Long ticketId
+    }
+    class "ScheduleMaintenanceTicketCommand" as Backend_servicemanagement_ScheduleMaintenanceTicketCommand <<record>> {
+      + Long userId
+      + Long ticketId
+      + LocalDate scheduledDate
+    }
+    class "UpdateTicketStatusCommand" as Backend_servicemanagement_UpdateTicketStatusCommand <<record>> {
+      + String status
+      + UpdateTicketStatusCommand(String status) : record
+    }
+  }
+  package "Domain / Events" {
+    class "MaintenanceTicketCreatedEvent" as Backend_servicemanagement_MaintenanceTicketCreatedEvent <<record>> {
+      + Long userId
+      + Long ticketId
+      + Long deviceId
+      + LocalDateTime occurredOn
+      + MaintenanceTicketCreatedEvent(Long userId, Long ticketId, Long deviceId, LocalDateTime occurredOn) : record
+      + MaintenanceTicketCreatedEvent(Long userId, Long ticketId, Long deviceId)
+    }
+    class "SupportTicketCreatedEvent" as Backend_servicemanagement_SupportTicketCreatedEvent <<record>> {
+      + Long userId
+      + Long ticketId
+      + String priority
+      + LocalDateTime occurredOn
+      + SupportTicketCreatedEvent(Long userId, Long ticketId, String priority, LocalDateTime occurredOn) : record
+      + SupportTicketCreatedEvent(Long userId, Long ticketId, String priority)
+    }
+  }
+  package "Domain / Factories" {
+    class "SupportTicketFactory" as Backend_servicemanagement_SupportTicketFactory <<Class>> {
+      + create(Long userId, String subject, String description, String priority) : SupportTicket
+    }
+  }
+  package "Domain / Repositories" {
+    interface "MaintenanceTicketRepository" as Backend_servicemanagement_MaintenanceTicketRepository <<interface>> {
+    }
+    interface "SupportTicketRepository" as Backend_servicemanagement_SupportTicketRepository <<interface>> {
+    }
+  }
+  package "Domain / Services" {
+    class "MaintenanceSchedulePolicyService" as Backend_servicemanagement_MaintenanceSchedulePolicyService <<Domain Service>> {
+      + validateScheduleDate(LocalDate scheduledDate) : void
+      + isScheduledForToday(LocalDate scheduledDate) : boolean
+      + isOverdue(LocalDate scheduledDate, String status) : boolean
+    }
+    class "MaintenanceTicketPolicyService" as Backend_servicemanagement_MaintenanceTicketPolicyService <<Domain Service>> {
+      + normalizeType(String type) : String
+    }
+    class "SupportTicketPolicyService" as Backend_servicemanagement_SupportTicketPolicyService <<Domain Service>> {
+      + validateSupportTicket(String subject, String description) : void
+    }
+    class "TicketPriorityPolicyService" as Backend_servicemanagement_TicketPriorityPolicyService <<Domain Service>> {
+      - ALLOWED_PRIORITIES: Set<String>
+      + isValidPriority(String priority) : boolean
+    }
+    class "TicketStatusPolicyService" as Backend_servicemanagement_TicketStatusPolicyService <<Domain Service>> {
+      - ALLOWED_STATUSES: Set<String>
+      + isValidStatus(String status) : boolean
+    }
+    class "TicketSummaryService" as Backend_servicemanagement_TicketSummaryService <<Domain Service>> {
+      + countOpenSupportTickets(List<SupportTicket> tickets) : long
+      + countUrgentSupportTickets(List<SupportTicket> tickets) : long
+      + countOpenMaintenanceTickets(List<MaintenanceTicket> tickets) : long
+      + countScheduledMaintenanceTickets(List<MaintenanceTicket> tickets) : long
+    }
+  }
+  package "Domain / Specifications" {
+    class "OpenTicketSpecification" as Backend_servicemanagement_OpenTicketSpecification <<Class>> {
+      + isSatisfiedBy(String status) : boolean
+    }
+  }
+  package "Domain / Value Objects" {
+    class "Priority" as Backend_servicemanagement_Priority <<record>> {
+      + String value
+      + Priority(String value) : record
+      - ALLOWED: Set<String>
+    }
+    class "TicketCode" as Backend_servicemanagement_TicketCode <<record>> {
+      + String value
+      + TicketCode(String value) : record
+      - PATTERN: Pattern
+    }
+    class "TicketDescription" as Backend_servicemanagement_TicketDescription <<record>> {
+      + String value
+      + TicketDescription(String value) : record
+    }
+    class "TicketTitle" as Backend_servicemanagement_TicketTitle <<record>> {
+      + String value
+      + TicketTitle(String value) : record
+    }
+  }
+  package "Infrastructure / JPA" {
+    class "for" as Backend_servicemanagement_for <<Class>> {
+    }
+    class "ServiceManagementJpaTableNames" as Backend_servicemanagement_ServiceManagementJpaTableNames <<Class>> {
+      + SUPPORT_TICKETS: String
+      + MAINTENANCE_TICKETS: String
+      - ServiceManagementJpaTableNames()
+    }
+    class "ServiceManagementQueryHints" as Backend_servicemanagement_ServiceManagementQueryHints <<Class>> {
+      + FIND_SUPPORT_TICKETS_BY_USER: String
+      + FIND_MAINTENANCE_TICKETS_BY_USER: String
+      + FIND_OPEN_TICKETS: String
+      + FIND_URGENT_TICKETS: String
+      - ServiceManagementQueryHints()
+    }
+  }
+  package "Infrastructure / JPA Repositories" {
+    interface "JpaMaintenanceTicketRepository" as Backend_servicemanagement_JpaMaintenanceTicketRepository <<interface>> {
+    }
+    interface "JpaSupportTicketRepository" as Backend_servicemanagement_JpaSupportTicketRepository <<interface>> {
+    }
+  }
+  package "Infrastructure / Notifications" {
+    class "ConsoleTicketNotificationAdapter" as Backend_servicemanagement_ConsoleTicketNotificationAdapter <<Class>> {
+      + notifyTicketCreated(Long userId, Long ticketId, String ticketType) : void
+      + notifyTicketStatusChanged(Long userId, Long ticketId, String status) : void
+    }
+    interface "TicketNotificationPort" as Backend_servicemanagement_TicketNotificationPort <<interface>> {
+    }
+  }
+  package "Interfaces / REST Assemblers" {
+    class "CreateMaintenanceTicketCommandFromResourceAssembler" as Backend_servicemanagement_CreateMaintenanceTicketCommandFromResourceAssembler <<Assembler>> {
+      + toCommandFromResource(CreateMaintenanceTicketResource resource, Long userId) : CreateMaintenanceTicketCommand
+    }
+    class "CreateSupportTicketCommandFromResourceAssembler" as Backend_servicemanagement_CreateSupportTicketCommandFromResourceAssembler <<Assembler>> {
+      + toCommandFromResource(CreateSupportTicketResource resource, Long userId) : CreateSupportTicketCommand
+    }
+    class "MaintenanceTicketResourceFromEntityAssembler" as Backend_servicemanagement_MaintenanceTicketResourceFromEntityAssembler <<Assembler>> {
+      + toResourceFromEntity(MaintenanceTicket ticket) : MaintenanceTicketResource
+    }
+    class "SupportTicketResourceFromEntityAssembler" as Backend_servicemanagement_SupportTicketResourceFromEntityAssembler <<Assembler>> {
+      + toResourceFromEntity(SupportTicket ticket) : SupportTicketResource
+    }
+    class "UpdateTicketStatusCommandFromResourceAssembler" as Backend_servicemanagement_UpdateTicketStatusCommandFromResourceAssembler <<Assembler>> {
+      + toCommandFromResource(UpdateTicketStatusResource resource) : UpdateTicketStatusCommand
+    }
+  }
+  package "Interfaces / REST Controllers" {
+    class "ServiceManagementController" as Backend_servicemanagement_ServiceManagementController <<REST Controller>> {
+      - service: ServiceManagementApplicationService
+      - currentUserProvider: CurrentUserProvider
+      + getSupportTickets() : List<SupportTicketResource>
+      + createSupportTicket(CreateSupportTicketResource request) : SupportTicketResource
+      + updateSupportStatus(Long ticketId, UpdateTicketStatusResource request) : SupportTicketResource
+      + deleteSupportTicket(Long ticketId) : void
+      + getMaintenanceTickets() : List<MaintenanceTicketResource>
+      + createMaintenanceTicket(CreateMaintenanceTicketResource request) : MaintenanceTicketResource
+      + updateMaintenanceStatus(Long ticketId, UpdateTicketStatusResource request) : MaintenanceTicketResource
+      + deleteMaintenanceTicket(Long ticketId) : void
+    }
+  }
+  package "Interfaces / REST Resources" {
+    class "CreateMaintenanceTicketResource" as Backend_servicemanagement_CreateMaintenanceTicketResource <<record>> {
+      + Long deviceId
+      + String deviceName
+      + String type
+      + String description
+      + LocalDate scheduledDate
+    }
+    class "CreateSupportTicketResource" as Backend_servicemanagement_CreateSupportTicketResource <<record>> {
+      + String subject
+      + String description
+      + String priority
+    }
+    class "MaintenanceTicketResource" as Backend_servicemanagement_MaintenanceTicketResource <<record>> {
+      + Long id
+      + Long userId
+      + Long deviceId
+      + String deviceName
+      + String type
+      + String description
+      + LocalDate scheduledDate
+      + String status
+      + from(MaintenanceTicket ticket) : MaintenanceTicketResource
+    }
+    class "SupportTicketResource" as Backend_servicemanagement_SupportTicketResource <<record>> {
+      + Long id
+      + Long userId
+      + String subject
+      + String description
+      + String priority
+      + String status
+      + LocalDate createdAt
+      + from(SupportTicket ticket) : SupportTicketResource
+    }
+    class "UpdateTicketStatusResource" as Backend_servicemanagement_UpdateTicketStatusResource <<record>> {
+      + String status
+    }
+  }
+}
+
+Backend_servicemanagement_CreateMaintenanceTicketCommandFromResourceAssembler ..> Backend_servicemanagement_CreateMaintenanceTicketCommand
+Backend_servicemanagement_CreateMaintenanceTicketCommandFromResourceAssembler ..> Backend_servicemanagement_CreateMaintenanceTicketResource
+Backend_servicemanagement_CreateSupportTicketCommandFromResourceAssembler ..> Backend_servicemanagement_CreateSupportTicketCommand
+Backend_servicemanagement_CreateSupportTicketCommandFromResourceAssembler ..> Backend_servicemanagement_CreateSupportTicketResource
+Backend_servicemanagement_JpaMaintenanceTicketRepository ..> Backend_servicemanagement_MaintenanceTicket
+Backend_servicemanagement_JpaMaintenanceTicketRepository ..> Backend_servicemanagement_MaintenanceTicketRepository
+Backend_servicemanagement_JpaSupportTicketRepository ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_JpaSupportTicketRepository ..> Backend_servicemanagement_SupportTicketRepository
+Backend_servicemanagement_MaintenanceTicketRepository ..> Backend_servicemanagement_MaintenanceTicket
+Backend_servicemanagement_MaintenanceTicketResource ..> Backend_servicemanagement_MaintenanceTicket
+Backend_servicemanagement_MaintenanceTicketResourceFromEntityAssembler ..> Backend_servicemanagement_MaintenanceTicket
+Backend_servicemanagement_MaintenanceTicketResourceFromEntityAssembler ..> Backend_servicemanagement_MaintenanceTicketResource
+Backend_servicemanagement_ServiceManagementApplicationService ..> Backend_servicemanagement_SupportTicketFactory
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_DeleteMaintenanceTicketCommand
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_DeleteSupportTicketCommand
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_ServiceManagementApplicationService
+Backend_servicemanagement_SupportTicketFactory ..> Backend_servicemanagement_Priority
+Backend_servicemanagement_SupportTicketFactory ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_SupportTicketFactory ..> Backend_servicemanagement_TicketDescription
+Backend_servicemanagement_SupportTicketFactory ..> Backend_servicemanagement_TicketTitle
+Backend_servicemanagement_SupportTicketRepository ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_SupportTicketResource ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_SupportTicketResourceFromEntityAssembler ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_SupportTicketResourceFromEntityAssembler ..> Backend_servicemanagement_SupportTicketResource
+Backend_servicemanagement_TicketSummaryService ..> Backend_servicemanagement_MaintenanceTicket
+Backend_servicemanagement_TicketSummaryService ..> Backend_servicemanagement_SupportTicket
+Backend_servicemanagement_UpdateTicketStatusCommandFromResourceAssembler ..> Backend_servicemanagement_UpdateTicketStatusCommand
+Backend_servicemanagement_UpdateTicketStatusCommandFromResourceAssembler ..> Backend_servicemanagement_UpdateTicketStatusResource
+
+@enduml

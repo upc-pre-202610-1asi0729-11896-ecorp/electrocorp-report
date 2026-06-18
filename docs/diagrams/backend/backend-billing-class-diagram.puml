@@ -1,0 +1,440 @@
+@startuml
+title ElectroCorp Platform - Billing Backend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Billing" {
+  package "Application / Command Services" {
+    interface "BillingCommandService" as Backend_billing_BillingCommandService <<interface>> {
+    }
+  }
+  package "Application / Command Services Impl" {
+    class "BillingCommandServiceImpl" as Backend_billing_BillingCommandServiceImpl <<Command Service>> {
+      - planRepository: PlanRepository
+      - subscriptionRepository: SubscriptionRepository
+      - paymentRepository: PaymentRepository
+      - invoiceRepository: InvoiceRepository
+      - paymentValidationService: PaymentValidationService
+      + handle(CheckoutSubscriptionCommand command) : Subscription
+      + handle(CancelSubscriptionCommand command) : void
+      + handle(ProcessPaymentCommand command) : Payment
+      - validatePaymentDetails(CheckoutSubscriptionCommand command) : void
+    }
+  }
+  package "Application / Query Services" {
+    interface "BillingQueryService" as Backend_billing_BillingQueryService <<interface>> {
+    }
+  }
+  package "Application / Query Services Impl" {
+    class "BillingQueryServiceImpl" as Backend_billing_BillingQueryServiceImpl <<Query Service>> {
+      - planRepository: PlanRepository
+      - subscriptionRepository: SubscriptionRepository
+      - paymentRepository: PaymentRepository
+      - invoiceRepository: InvoiceRepository
+      + handle(GetAllPlansQuery query) : List<Plan>
+      + handle(GetCurrentSubscriptionQuery query) : Optional<Subscription>
+      + handle(GetPaymentsByUserQuery query) : List<Payment>
+      + handle(GetInvoicesByUserQuery query) : List<Invoice>
+    }
+  }
+  package "Domain / Aggregates" {
+    class "Invoice" as Backend_billing_Invoice <<Aggregate>> {
+      - userId: Long
+      - payment: Payment
+      - invoiceNumber: String
+      - totalAmount: Money
+      - issuedAt: LocalDate
+      + Invoice(Payment payment)
+    }
+    class "Payment" as Backend_billing_Payment <<Aggregate>> {
+      - userId: Long
+      - subscription: Subscription
+      - amount: Money
+      - status: PaymentStatus
+      - paymentMethod: String
+      - paidAt: LocalDateTime
+      + Payment(ProcessPaymentCommand command, Subscription subscription)
+    }
+    class "Plan" as Backend_billing_Plan <<Aggregate>> {
+      - code: String
+      - name: String
+      - monthlyPrice: Money
+      - maxDevices: Integer
+      - maxRoutines: Integer
+      - maxAlerts: Integer
+      - reportExportEnabled: Boolean
+    }
+    class "Subscription" as Backend_billing_Subscription <<Aggregate>> {
+      - userId: Long
+      - plan: Plan
+      - status: SubscriptionStatus
+      - startDate: LocalDate
+      - endDate: LocalDate
+      + Subscription(SubscribeCommand command, Plan plan)
+      + isActive() : boolean
+      + cancel() : void
+    }
+  }
+  package "Domain / Commands" {
+    class "CancelSubscriptionCommand" as Backend_billing_CancelSubscriptionCommand <<record>> {
+      + Long userId
+      + CancelSubscriptionCommand(Long userId) : record
+    }
+    class "CheckoutSubscriptionCommand" as Backend_billing_CheckoutSubscriptionCommand <<record>> {
+      + Long userId
+      + String planCode
+      + String holderName
+      + String cardNumber
+      + String expirationDate
+      + String cvv
+    }
+    class "ProcessPaymentCommand" as Backend_billing_ProcessPaymentCommand <<record>> {
+      + Long userId
+      + Long subscriptionId
+    }
+    class "SubscribeCommand" as Backend_billing_SubscribeCommand <<record>> {
+      + Long userId
+      + String planCode
+    }
+  }
+  package "Domain / Events" {
+    class "PaymentRegisteredEvent" as Backend_billing_PaymentRegisteredEvent <<record>> {
+      + Long userId
+      + Long paymentId
+      + BigDecimal amount
+      + LocalDateTime occurredOn
+      + PaymentRegisteredEvent(Long userId, Long paymentId, BigDecimal amount, LocalDateTime occurredOn) : record
+      + PaymentRegisteredEvent(Long userId, Long paymentId, BigDecimal amount)
+    }
+    class "SubscriptionActivatedEvent" as Backend_billing_SubscriptionActivatedEvent <<record>> {
+      + Long userId
+      + Long subscriptionId
+      + String planCode
+      + LocalDateTime occurredOn
+      + SubscriptionActivatedEvent(Long userId, Long subscriptionId, String planCode, LocalDateTime occurredOn) : record
+      + SubscriptionActivatedEvent(Long userId, Long subscriptionId, String planCode)
+    }
+  }
+  package "Domain / Model" {
+    enum "PaymentStatus" as Backend_billing_PaymentStatus <<enum>> {
+      + PENDING
+      + APPROVED
+    }
+    enum "SubscriptionStatus" as Backend_billing_SubscriptionStatus <<enum>> {
+      + ACTIVE
+      + CANCELLED
+    }
+  }
+  package "Domain / Queries" {
+    class "GetAllPlansQuery" as Backend_billing_GetAllPlansQuery <<record>> {
+      + GetAllPlansQuery() : record
+    }
+    class "GetCurrentSubscriptionQuery" as Backend_billing_GetCurrentSubscriptionQuery <<record>> {
+      + Long userId
+      + GetCurrentSubscriptionQuery(Long userId) : record
+    }
+    class "GetInvoicesByUserQuery" as Backend_billing_GetInvoicesByUserQuery <<record>> {
+      + Long userId
+      + GetInvoicesByUserQuery(Long userId) : record
+    }
+    class "GetPaymentsByUserQuery" as Backend_billing_GetPaymentsByUserQuery <<record>> {
+      + Long userId
+      + GetPaymentsByUserQuery(Long userId) : record
+    }
+  }
+  package "Domain / Repositories" {
+    interface "InvoiceRepository" as Backend_billing_InvoiceRepository <<interface>> {
+    }
+    interface "PaymentRepository" as Backend_billing_PaymentRepository <<interface>> {
+    }
+    interface "PlanRepository" as Backend_billing_PlanRepository <<interface>> {
+    }
+    interface "SubscriptionRepository" as Backend_billing_SubscriptionRepository <<interface>> {
+    }
+  }
+  package "Domain / Services" {
+    class "BillingAmountPolicyService" as Backend_billing_BillingAmountPolicyService <<Domain Service>> {
+      + validatePositiveAmount(Money amount) : void
+      + validateCurrency(Money amount, String expectedCurrency) : void
+    }
+    class "InvoiceGenerationService" as Backend_billing_InvoiceGenerationService <<Domain Service>> {
+      + generateInvoice(Payment payment) : Invoice
+      + generateInvoiceNumber(Long paymentId) : String
+    }
+    class "PaymentValidationService" as Backend_billing_PaymentValidationService <<Domain Service>> {
+      + isValidHolderName(String holderName) : boolean
+      + isValidCardNumber(String cardNumber) : boolean
+      + isValidExpirationDate(String expirationDate) : boolean
+      + isValidCvv(String cvv) : boolean
+    }
+    class "PlanLimitPolicyService" as Backend_billing_PlanLimitPolicyService <<Domain Service>> {
+      + canCreateDevice(Plan plan, int currentDeviceCount) : boolean
+      + canCreateRoutine(Plan plan, int currentRoutineCount) : boolean
+      + canCreateAlert(Plan plan, int currentAlertCount) : boolean
+      + canExportReports(Plan plan) : boolean
+    }
+    class "SubscriptionPolicyService" as Backend_billing_SubscriptionPolicyService <<Domain Service>> {
+      + hasActiveSubscription(Subscription subscription) : boolean
+    }
+  }
+  package "Domain / Value Objects" {
+    class "BillingPeriod" as Backend_billing_BillingPeriod <<record>> {
+      + DateRange range
+      + BillingPeriod(DateRange range) : record
+      + BillingPeriod(LocalDate startDate, LocalDate endDate)
+    }
+    class "InvoiceNumber" as Backend_billing_InvoiceNumber <<record>> {
+      + String value
+      + InvoiceNumber(String value) : record
+      - PATTERN: Pattern
+    }
+    class "PaymentAmount" as Backend_billing_PaymentAmount <<record>> {
+      + Money money
+      + PaymentAmount(Money money) : record
+      + PaymentAmount(BigDecimal amount)
+    }
+    class "PlanName" as Backend_billing_PlanName <<record>> {
+      + String value
+      + PlanName(String value) : record
+    }
+    class "SubscriptionId" as Backend_billing_SubscriptionId <<record>> {
+      + Long value
+      + SubscriptionId(Long value) : record
+    }
+  }
+  package "Infrastructure / Bootstrap" {
+    class "BillingPlanCatalogInitializer" as Backend_billing_BillingPlanCatalogInitializer <<Class>> {
+      - planRepository: JpaPlanRepository
+      + run(ApplicationArguments args) : void
+      - defaultPlans() : List<Plan>
+    }
+  }
+  package "Infrastructure / JPA" {
+    class "BillingJpaTableNames" as Backend_billing_BillingJpaTableNames <<Class>> {
+      + PLANS: String
+      + SUBSCRIPTIONS: String
+      + PAYMENTS: String
+      + INVOICES: String
+      - BillingJpaTableNames()
+    }
+    class "for" as Backend_billing_for <<Class>> {
+    }
+  }
+  package "Infrastructure / JPA Repositories" {
+    interface "JpaInvoiceRepository" as Backend_billing_JpaInvoiceRepository <<interface>> {
+    }
+    interface "JpaPaymentRepository" as Backend_billing_JpaPaymentRepository <<interface>> {
+    }
+    interface "JpaPlanRepository" as Backend_billing_JpaPlanRepository <<interface>> {
+    }
+    interface "JpaSubscriptionRepository" as Backend_billing_JpaSubscriptionRepository <<interface>> {
+    }
+  }
+  package "Interfaces / REST Assemblers" {
+    class "CheckoutSubscriptionCommandFromResourceAssembler" as Backend_billing_CheckoutSubscriptionCommandFromResourceAssembler <<Assembler>> {
+      - CheckoutSubscriptionCommandFromResourceAssembler()
+      + toCommandFromResource(CheckoutSubscriptionResource resource, Long userId) : CheckoutSubscriptionCommand
+    }
+    class "InvoiceResourceFromEntityAssembler" as Backend_billing_InvoiceResourceFromEntityAssembler <<Assembler>> {
+      - InvoiceResourceFromEntityAssembler()
+      + toResourceFromEntity(Invoice entity) : InvoiceResource
+    }
+    class "PaymentResourceFromEntityAssembler" as Backend_billing_PaymentResourceFromEntityAssembler <<Assembler>> {
+      - PaymentResourceFromEntityAssembler()
+      + toResourceFromEntity(Payment entity) : PaymentResource
+    }
+    class "PlanResourceFromEntityAssembler" as Backend_billing_PlanResourceFromEntityAssembler <<Assembler>> {
+      - PlanResourceFromEntityAssembler()
+      + toResourceFromEntity(Plan entity) : PlanResource
+    }
+    class "ProcessPaymentCommandFromResourceAssembler" as Backend_billing_ProcessPaymentCommandFromResourceAssembler <<Assembler>> {
+      - ProcessPaymentCommandFromResourceAssembler()
+      + toCommandFromResource(ProcessPaymentResource resource, Long userId) : ProcessPaymentCommand
+    }
+    class "SubscribeCommandFromResourceAssembler" as Backend_billing_SubscribeCommandFromResourceAssembler <<Assembler>> {
+      - SubscribeCommandFromResourceAssembler()
+      + toCommandFromResource(SubscribeResource resource, Long userId) : SubscribeCommand
+    }
+    class "SubscriptionResourceFromEntityAssembler" as Backend_billing_SubscriptionResourceFromEntityAssembler <<Assembler>> {
+      - SubscriptionResourceFromEntityAssembler()
+      + toResourceFromEntity(Subscription entity) : SubscriptionResource
+    }
+  }
+  package "Interfaces / REST Controllers" {
+    class "BillingController" as Backend_billing_BillingController <<REST Controller>> {
+      - billingCommandService: BillingCommandService
+      - billingQueryService: BillingQueryService
+      - currentUserProvider: CurrentUserProvider
+      + getPlans() : List<PlanResource>
+      + getCurrentSubscription() : SubscriptionResource
+      + subscribe(SubscribeResource request) : SubscriptionResource
+      + checkoutSubscription(CheckoutSubscriptionResource request) : SubscriptionResource
+      + cancelSubscription() : void
+      + processPayment(ProcessPaymentResource request) : PaymentResource
+      + getPayments() : List<PaymentResource>
+      + getInvoices() : List<InvoiceResource>
+    }
+  }
+  package "Interfaces / REST Resources" {
+    class "CheckoutSubscriptionResource" as Backend_billing_CheckoutSubscriptionResource <<record>> {
+      + String planCode
+      + String holderName
+      + String cardNumber
+      + String expirationDate
+      + String cvv
+    }
+    class "InvoiceResource" as Backend_billing_InvoiceResource <<record>> {
+      + Long id
+      + Long userId
+      + String invoiceNumber
+      + BigDecimal totalAmount
+      + String currency
+      + LocalDate issuedAt
+      + from(Invoice invoice) : InvoiceResource
+    }
+    class "PaymentResource" as Backend_billing_PaymentResource <<record>> {
+      + Long id
+      + Long userId
+      + BigDecimal amount
+      + String currency
+      + String status
+      + String paymentMethod
+      + from(Payment payment) : PaymentResource
+    }
+    class "PlanResource" as Backend_billing_PlanResource <<record>> {
+      + Long id
+      + String code
+      + String name
+      + BigDecimal monthlyPrice
+      + String currency
+      + Integer maxDevices
+      + Integer maxRoutines
+      + Integer maxAlerts
+      + Boolean reportExportEnabled
+      + from(Plan plan) : PlanResource
+    }
+    class "ProcessPaymentResource" as Backend_billing_ProcessPaymentResource <<record>> {
+      + Long subscriptionId
+      + String holderName
+      + String cardNumber
+      + String expirationDate
+      + String cvv
+    }
+    class "SubscribeResource" as Backend_billing_SubscribeResource <<record>> {
+      + String planCode
+    }
+    class "SubscriptionResource" as Backend_billing_SubscriptionResource <<record>> {
+      + Long id
+      + Long userId
+      + String planCode
+      + String status
+      + boolean active
+      + LocalDate startDate
+      + LocalDate nextBillingDate
+      + LocalDate endDate
+      + from(Subscription subscription) : SubscriptionResource
+      - nextBillingDateFor(Subscription subscription) : LocalDate
+    }
+  }
+}
+
+Backend_billing_BillingCommandService ..> Backend_billing_CancelSubscriptionCommand
+Backend_billing_BillingCommandService ..> Backend_billing_CheckoutSubscriptionCommand
+Backend_billing_BillingCommandService ..> Backend_billing_Payment
+Backend_billing_BillingCommandService ..> Backend_billing_ProcessPaymentCommand
+Backend_billing_BillingCommandService ..> Backend_billing_Subscription
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_BillingCommandService
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_CancelSubscriptionCommand
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_CheckoutSubscriptionCommand
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_Invoice
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_InvoiceRepository
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_Payment
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_PaymentRepository
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_PaymentValidationService
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_Plan
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_PlanRepository
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_ProcessPaymentCommand
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_SubscribeCommand
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_Subscription
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_SubscriptionRepository
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_SubscriptionStatus
+Backend_billing_BillingController ..> Backend_billing_BillingCommandService
+Backend_billing_BillingController ..> Backend_billing_BillingQueryService
+Backend_billing_BillingController ..> Backend_billing_CancelSubscriptionCommand
+Backend_billing_BillingController ..> Backend_billing_CheckoutSubscriptionCommandFromResourceAssembler
+Backend_billing_BillingController ..> Backend_billing_GetAllPlansQuery
+Backend_billing_BillingController ..> Backend_billing_GetCurrentSubscriptionQuery
+Backend_billing_BillingController ..> Backend_billing_GetInvoicesByUserQuery
+Backend_billing_BillingController ..> Backend_billing_GetPaymentsByUserQuery
+Backend_billing_BillingController ..> Backend_billing_InvoiceResourceFromEntityAssembler
+Backend_billing_BillingController ..> Backend_billing_PaymentResourceFromEntityAssembler
+Backend_billing_BillingController ..> Backend_billing_PlanResourceFromEntityAssembler
+Backend_billing_BillingController ..> Backend_billing_ProcessPaymentCommandFromResourceAssembler
+Backend_billing_BillingController ..> Backend_billing_SubscriptionResourceFromEntityAssembler
+Backend_billing_BillingPlanCatalogInitializer ..> Backend_billing_JpaPlanRepository
+Backend_billing_BillingPlanCatalogInitializer ..> Backend_billing_Plan
+Backend_billing_BillingQueryService ..> Backend_billing_GetAllPlansQuery
+Backend_billing_BillingQueryService ..> Backend_billing_GetCurrentSubscriptionQuery
+Backend_billing_BillingQueryService ..> Backend_billing_GetInvoicesByUserQuery
+Backend_billing_BillingQueryService ..> Backend_billing_GetPaymentsByUserQuery
+Backend_billing_BillingQueryService ..> Backend_billing_Invoice
+Backend_billing_BillingQueryService ..> Backend_billing_Payment
+Backend_billing_BillingQueryService ..> Backend_billing_Plan
+Backend_billing_BillingQueryService ..> Backend_billing_Subscription
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_BillingQueryService
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_GetAllPlansQuery
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_GetCurrentSubscriptionQuery
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_GetInvoicesByUserQuery
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_GetPaymentsByUserQuery
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_Invoice
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_InvoiceRepository
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_Payment
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_PaymentRepository
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_Plan
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_PlanRepository
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_Subscription
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_SubscriptionRepository
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_SubscriptionStatus
+Backend_billing_CheckoutSubscriptionCommandFromResourceAssembler ..> Backend_billing_CheckoutSubscriptionCommand
+Backend_billing_CheckoutSubscriptionCommandFromResourceAssembler ..> Backend_billing_CheckoutSubscriptionResource
+Backend_billing_InvoiceGenerationService ..> Backend_billing_Invoice
+Backend_billing_InvoiceGenerationService ..> Backend_billing_Payment
+Backend_billing_InvoiceRepository ..> Backend_billing_Invoice
+Backend_billing_InvoiceResource ..> Backend_billing_Invoice
+Backend_billing_InvoiceResourceFromEntityAssembler ..> Backend_billing_Invoice
+Backend_billing_InvoiceResourceFromEntityAssembler ..> Backend_billing_InvoiceResource
+Backend_billing_JpaInvoiceRepository ..> Backend_billing_Invoice
+Backend_billing_JpaInvoiceRepository ..> Backend_billing_InvoiceRepository
+Backend_billing_JpaPaymentRepository ..> Backend_billing_Payment
+Backend_billing_JpaPaymentRepository ..> Backend_billing_PaymentRepository
+Backend_billing_JpaPlanRepository ..> Backend_billing_Plan
+Backend_billing_JpaPlanRepository ..> Backend_billing_PlanRepository
+Backend_billing_JpaSubscriptionRepository ..> Backend_billing_Subscription
+Backend_billing_JpaSubscriptionRepository ..> Backend_billing_SubscriptionRepository
+Backend_billing_Payment ..> Backend_billing_ProcessPaymentCommand
+Backend_billing_PaymentRepository ..> Backend_billing_Payment
+Backend_billing_PaymentResource ..> Backend_billing_Payment
+Backend_billing_PaymentResourceFromEntityAssembler ..> Backend_billing_Payment
+Backend_billing_PaymentResourceFromEntityAssembler ..> Backend_billing_PaymentResource
+Backend_billing_PlanLimitPolicyService ..> Backend_billing_Plan
+Backend_billing_PlanRepository ..> Backend_billing_Plan
+Backend_billing_PlanResource ..> Backend_billing_Plan
+Backend_billing_PlanResourceFromEntityAssembler ..> Backend_billing_Plan
+Backend_billing_PlanResourceFromEntityAssembler ..> Backend_billing_PlanResource
+Backend_billing_ProcessPaymentCommandFromResourceAssembler ..> Backend_billing_ProcessPaymentCommand
+Backend_billing_ProcessPaymentCommandFromResourceAssembler ..> Backend_billing_ProcessPaymentResource
+Backend_billing_SubscribeCommandFromResourceAssembler ..> Backend_billing_SubscribeCommand
+Backend_billing_SubscribeCommandFromResourceAssembler ..> Backend_billing_SubscribeResource
+Backend_billing_Subscription ..> Backend_billing_SubscribeCommand
+Backend_billing_SubscriptionPolicyService ..> Backend_billing_Subscription
+Backend_billing_SubscriptionPolicyService ..> Backend_billing_SubscriptionStatus
+Backend_billing_SubscriptionRepository ..> Backend_billing_Subscription
+Backend_billing_SubscriptionRepository ..> Backend_billing_SubscriptionStatus
+Backend_billing_SubscriptionResource ..> Backend_billing_Subscription
+Backend_billing_SubscriptionResourceFromEntityAssembler ..> Backend_billing_Subscription
+Backend_billing_SubscriptionResourceFromEntityAssembler ..> Backend_billing_SubscriptionResource
+
+@enduml

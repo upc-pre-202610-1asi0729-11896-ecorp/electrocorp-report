@@ -1,0 +1,417 @@
+@startuml
+title ElectroCorp Platform - Reporting Backend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Reporting" {
+  package "Application / Command Services" {
+    interface "ReportingCommandService" as Backend_reporting_ReportingCommandService <<interface>> {
+    }
+  }
+  package "Application / Command Services Impl" {
+    class "ReportingCommandServiceImpl" as Backend_reporting_ReportingCommandServiceImpl <<Command Service>> {
+      - applicationService: ReportingApplicationService
+      + handle(CreateConsumptionReportCommand command) : ConsumptionReport
+      + deleteReport(Long userId, Long reportId) : void
+      + handle(CreateEnergyGoalCommand command) : EnergyGoal
+      + handle(UpdateEnergyGoalCommand command) : EnergyGoal
+      + deleteGoal(Long userId, Long goalId) : void
+    }
+  }
+  package "Application / Query Services" {
+    interface "ReportingQueryService" as Backend_reporting_ReportingQueryService <<interface>> {
+    }
+  }
+  package "Application / Query Services Impl" {
+    class "ReportingQueryServiceImpl" as Backend_reporting_ReportingQueryServiceImpl <<Query Service>> {
+      - applicationService: ReportingApplicationService
+      + handle(GetConsumptionReportsByUserQuery query) : List<ConsumptionReport>
+      + handle(GetEnergyGoalsByUserQuery query) : List<EnergyGoal>
+    }
+  }
+  package "Application / Services" {
+    class "PlatformInsightApplicationService" as Backend_reporting_PlatformInsightApplicationService <<Application Service>> {
+      - subscriptionRepository: SubscriptionRepository
+      - deviceRepository: DeviceRepository
+      - routineRepository: RoutineRepository
+      - deviceGroupRepository: DeviceGroupRepository
+      - energyReadingRepository: EnergyReadingRepository
+      - locationRepository: LocationRepository
+      - roomRepository: RoomRepository
+      - deviceAssignmentRepository: DeviceAssignmentRepository
+      - alertRepository: AlertRepository
+      - alertRuleRepository: AlertRuleRepository
+      - supportTicketRepository: SupportTicketRepository
+      - maintenanceTicketRepository: MaintenanceTicketRepository
+      + getPlatformSummary(Long userId) : UserPlatformSummary
+      - buildBillingSnapshot(Long userId) : UserPlatformSummary.BillingSnapshot
+      - buildEnergySnapshot(List<EnergyReading> readings) : UserPlatformSummary.EnergySnapshot
+      - findRoomsFromLocations(List<Location> locations) : List<Room>
+      - findAssignmentsFromLocations(List<Location> locations) : List<DeviceAssignment>
+    }
+    class "ReportingApplicationService" as Backend_reporting_ReportingApplicationService <<Application Service>> {
+      - reportRepository: ConsumptionReportRepository
+      - goalRepository: EnergyGoalRepository
+      - energyReadingRepository: EnergyReadingRepository
+      - deviceGroupDeviceRepository: DeviceGroupDeviceRepository
+      - deviceAssignmentRepository: DeviceAssignmentRepository
+      - deviceRepository: DeviceRepository
+      - deviceGroupRepository: DeviceGroupRepository
+      - locationRepository: LocationRepository
+      - roomRepository: RoomRepository
+      - reportPolicyService: ConsumptionReportPolicyService
+      + getReports(Long userId) : List<ConsumptionReport>
+      + createReport(CreateConsumptionReportCommand command) : ConsumptionReport
+      - isClosedReportCycle(LocalDate endDate) : boolean
+      - reportCycleKey(ConsumptionReport report) : String
+      + deleteReport(Long userId, Long reportId) : void
+      + getGoals(Long userId) : List<EnergyGoal>
+      + createGoal(CreateEnergyGoalCommand command) : EnergyGoal
+      + updateGoal(UpdateEnergyGoalCommand command) : EnergyGoal
+      + deleteGoal(Long userId, Long goalId) : void
+      - refreshGoalProgress(EnergyGoal goal) : EnergyGoal
+      - matchesGoalScope(EnergyReading reading, EnergyGoal goal, Set<Long> scopedDeviceIds) : boolean
+      - matchesActiveWindow(EnergyReading reading, EnergyGoal goal) : boolean
+      - getScopedDeviceIds(EnergyGoal goal) : Set<Long>
+      - validateGoalScope(Long userId, String scopeType, Long scopeId) : void
+    }
+  }
+  package "Domain / Aggregates" {
+    class "ConsumptionReport" as Backend_reporting_ConsumptionReport <<Aggregate>> {
+      - userId: Long
+      - totalWatts: BigDecimal
+      - averageWatts: BigDecimal
+      - highestWatts: BigDecimal
+      - startDate: LocalDate
+      - endDate: LocalDate
+    }
+    class "EnergyGoal" as Backend_reporting_EnergyGoal <<Aggregate>> {
+      - userId: Long
+      - title: String
+      - targetKilowattHours: BigDecimal
+      - currentKilowattHours: BigDecimal
+      - deadline: LocalDate
+      - status: String
+      - scopeType: String
+      - scopeId: Long
+      - scopeName: String
+      - activeFrom: LocalTime
+      - activeTo: LocalTime
+    }
+  }
+  package "Domain / Commands" {
+    class "CreateConsumptionReportCommand" as Backend_reporting_CreateConsumptionReportCommand <<record>> {
+      + Long userId
+      + LocalDate startDate
+      + LocalDate endDate
+    }
+    class "CreateEnergyGoalCommand" as Backend_reporting_CreateEnergyGoalCommand <<record>> {
+      + Long userId
+      + String title
+      + BigDecimal targetKilowattHours
+      + LocalDate deadline
+      + String scopeType
+      + Long scopeId
+      + String scopeName
+      + LocalTime activeFrom
+      + LocalTime activeTo
+    }
+    class "DeleteEnergyGoalCommand" as Backend_reporting_DeleteEnergyGoalCommand <<record>> {
+      + Long userId
+      + Long goalId
+    }
+    class "ExportReportCommand" as Backend_reporting_ExportReportCommand <<record>> {
+      + Long userId
+      + LocalDate startDate
+      + LocalDate endDate
+      + String format
+    }
+    class "GenerateConsumptionReportCommand" as Backend_reporting_GenerateConsumptionReportCommand <<record>> {
+      + Long userId
+      + LocalDate startDate
+      + LocalDate endDate
+    }
+    class "UpdateEnergyGoalCommand" as Backend_reporting_UpdateEnergyGoalCommand <<record>> {
+      + Long userId
+      + Long goalId
+      + String title
+      + BigDecimal targetKilowattHours
+      + BigDecimal currentKilowattHours
+      + LocalDate deadline
+      + String status
+      + String scopeType
+      + Long scopeId
+      + String scopeName
+      + LocalTime activeFrom
+      + LocalTime activeTo
+    }
+  }
+  package "Domain / Queries" {
+    class "GetConsumptionReportsByUserQuery" as Backend_reporting_GetConsumptionReportsByUserQuery <<record>> {
+      + Long userId
+      + GetConsumptionReportsByUserQuery(Long userId) : record
+    }
+    class "GetEnergyGoalsByUserQuery" as Backend_reporting_GetEnergyGoalsByUserQuery <<record>> {
+      + Long userId
+      + GetEnergyGoalsByUserQuery(Long userId) : record
+    }
+  }
+  package "Domain / Repositories" {
+    interface "ConsumptionReportRepository" as Backend_reporting_ConsumptionReportRepository <<interface>> {
+    }
+    interface "EnergyGoalRepository" as Backend_reporting_EnergyGoalRepository <<interface>> {
+    }
+  }
+  package "Domain / Services" {
+    class "ConsumptionReportPolicyService" as Backend_reporting_ConsumptionReportPolicyService <<Domain Service>> {
+      + validateReportRange(LocalDate startDate, LocalDate endDate) : void
+      + isValidRange(LocalDate startDate, LocalDate endDate) : boolean
+    }
+    class "EnergyGoalPolicyService" as Backend_reporting_EnergyGoalPolicyService <<Domain Service>> {
+      + canCreateGoal(String title, BigDecimal targetKilowattHours, LocalDate deadline) : boolean
+    }
+    class "EnergyGoalProgressService" as Backend_reporting_EnergyGoalProgressService <<Domain Service>> {
+      + calculateProgressPercentage(BigDecimal currentKilowattHours, BigDecimal targetKilowattHours) : BigDecimal
+      + isCompleted(BigDecimal currentKilowattHours, BigDecimal targetKilowattHours) : boolean
+    }
+    class "ReportFormatPolicyService" as Backend_reporting_ReportFormatPolicyService <<Domain Service>> {
+      + validateFormat(String format) : void
+      + isCsv(String format) : boolean
+      + isPdf(String format) : boolean
+      + isJson(String format) : boolean
+    }
+    class "ReportSummaryService" as Backend_reporting_ReportSummaryService <<Domain Service>> {
+      + calculateTotalReportedWatts(List<ConsumptionReport> reports) : BigDecimal
+    }
+  }
+  package "Domain / Value Objects" {
+    class "EnergyGoalTitle" as Backend_reporting_EnergyGoalTitle <<record>> {
+      + String value
+      + EnergyGoalTitle(String value) : record
+    }
+    class "GoalTargetWatts" as Backend_reporting_GoalTargetWatts <<record>> {
+      + BigDecimal value
+      + GoalTargetWatts(BigDecimal value) : record
+    }
+    class "ReportEstimatedCost" as Backend_reporting_ReportEstimatedCost <<record>> {
+      + Money value
+      + ReportEstimatedCost(Money value) : record
+    }
+    class "ReportPeriod" as Backend_reporting_ReportPeriod <<record>> {
+      + LocalDate startDate
+      + LocalDate endDate
+      + ReportPeriod(LocalDate startDate, LocalDate endDate) : record
+    }
+  }
+  package "Infrastructure / Export" {
+    class "ConsumptionReportCsvExporter" as Backend_reporting_ConsumptionReportCsvExporter <<Class>> {
+      + export(List<ConsumptionReport> reports) : byte[]
+    }
+    class "EnergyGoalCsvExporter" as Backend_reporting_EnergyGoalCsvExporter <<Class>> {
+      + export(List<EnergyGoal> goals) : byte[]
+      - sanitize(String value) : String
+    }
+  }
+  package "Infrastructure / JPA" {
+    class "for" as Backend_reporting_for <<Class>> {
+    }
+    class "ReportingJpaTableNames" as Backend_reporting_ReportingJpaTableNames <<Class>> {
+      + CONSUMPTION_REPORTS: String
+      + ENERGY_GOALS: String
+      - ReportingJpaTableNames()
+    }
+    class "ReportingQueryHints" as Backend_reporting_ReportingQueryHints <<Class>> {
+      + FIND_REPORTS_BY_USER: String
+      + FIND_GOALS_BY_USER: String
+      + FIND_ACTIVE_GOALS: String
+      - ReportingQueryHints()
+    }
+  }
+  package "Infrastructure / JPA Repositories" {
+    interface "JpaConsumptionReportRepository" as Backend_reporting_JpaConsumptionReportRepository <<interface>> {
+    }
+    interface "JpaEnergyGoalRepository" as Backend_reporting_JpaEnergyGoalRepository <<interface>> {
+    }
+  }
+  package "Interfaces / REST Assemblers" {
+    class "ConsumptionReportResourceFromEntityAssembler" as Backend_reporting_ConsumptionReportResourceFromEntityAssembler <<Assembler>> {
+      - ConsumptionReportResourceFromEntityAssembler()
+      + toResourceFromEntity(ConsumptionReport entity) : ConsumptionReportResource
+    }
+    class "CreateConsumptionReportCommandFromResourceAssembler" as Backend_reporting_CreateConsumptionReportCommandFromResourceAssembler <<Assembler>> {
+      - CreateConsumptionReportCommandFromResourceAssembler()
+      + toCommandFromResource(CreateConsumptionReportResource resource, Long userId) : CreateConsumptionReportCommand
+    }
+    class "CreateEnergyGoalCommandFromResourceAssembler" as Backend_reporting_CreateEnergyGoalCommandFromResourceAssembler <<Assembler>> {
+      - CreateEnergyGoalCommandFromResourceAssembler()
+      + toCommandFromResource(CreateEnergyGoalResource resource, Long userId) : CreateEnergyGoalCommand
+    }
+    class "EnergyGoalResourceFromEntityAssembler" as Backend_reporting_EnergyGoalResourceFromEntityAssembler <<Assembler>> {
+      - EnergyGoalResourceFromEntityAssembler()
+      + toResourceFromEntity(EnergyGoal entity) : EnergyGoalResource
+    }
+    class "UpdateEnergyGoalCommandFromResourceAssembler" as Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler <<Assembler>> {
+    }
+  }
+  package "Interfaces / REST Controllers" {
+    class "PlatformInsightController" as Backend_reporting_PlatformInsightController <<REST Controller>> {
+      - platformInsightApplicationService: PlatformInsightApplicationService
+      - currentUserProvider: CurrentUserProvider
+      + getPlatformSummary() : PlatformSummaryResource
+    }
+    class "ReportingController" as Backend_reporting_ReportingController <<REST Controller>> {
+      - commandService: ReportingCommandService
+      - queryService: ReportingQueryService
+      - currentUserProvider: CurrentUserProvider
+      + getReports() : List<ConsumptionReportResource>
+      + deleteReport(Long reportId) : void
+      + getGoals() : List<EnergyGoalResource>
+      + createGoal(CreateEnergyGoalResource request) : EnergyGoalResource
+      + deleteGoal(Long goalId) : void
+    }
+  }
+  package "Interfaces / REST Resources" {
+    class "ConsumptionReportResource" as Backend_reporting_ConsumptionReportResource <<record>> {
+      + Long id
+      + Long userId
+      + BigDecimal totalWatts
+      + BigDecimal averageWatts
+      + BigDecimal highestWatts
+      + LocalDate startDate
+      + LocalDate endDate
+      + from(ConsumptionReport report) : ConsumptionReportResource
+    }
+    class "CreateConsumptionReportResource" as Backend_reporting_CreateConsumptionReportResource <<record>> {
+      + LocalDate startDate
+      + LocalDate endDate
+    }
+    class "CreateEnergyGoalResource" as Backend_reporting_CreateEnergyGoalResource <<record>> {
+      + String title
+      + BigDecimal targetKilowattHours
+      + BigDecimal targetWatts
+      + LocalDate deadline
+      + String scopeType
+      + Long scopeId
+      + String scopeName
+      + LocalTime activeFrom
+      + LocalTime activeTo
+      + effectiveTargetKilowattHours() : BigDecimal
+    }
+    class "EnergyGoalResource" as Backend_reporting_EnergyGoalResource <<record>> {
+      + Long id
+      + Long userId
+      + String title
+      + BigDecimal targetKilowattHours
+      + BigDecimal currentKilowattHours
+      + LocalDate deadline
+      + String status
+      + LocalDate createdAt
+      + String scopeType
+      + Long scopeId
+      + String scopeName
+      + LocalTime activeFrom
+      + LocalTime activeTo
+      + from(EnergyGoal goal) : EnergyGoalResource
+    }
+    class "PlatformSummaryResource" as Backend_reporting_PlatformSummaryResource <<record>> {
+      + Long userId
+      + boolean operationallyHealthy
+      + BigDecimal platformScore
+      + BillingSummary billing
+      + DeviceSummary devices
+      + WorkplaceSummary workplace
+      + EnergySummary energy
+      + NotificationSummary notifications
+      + ServiceSummary service
+      + List<ActionSummary> suggestedActions
+      + from(UserPlatformSummary summary) : PlatformSummaryResource
+      + from(UserPlatformSummary.BillingSnapshot snapshot) : BillingSummary
+      + from(UserPlatformSummary.DeviceSnapshot snapshot) : DeviceSummary
+      + from(UserPlatformSummary.WorkplaceSnapshot snapshot) : WorkplaceSummary
+      + from(UserPlatformSummary.EnergySnapshot snapshot) : EnergySummary
+      + from(UserPlatformSummary.NotificationSnapshot snapshot) : NotificationSummary
+      + from(UserPlatformSummary.ServiceSnapshot snapshot) : ServiceSummary
+      + from(UserPlatformSummary.PlatformAction action) : ActionSummary
+    }
+    class "UpdateEnergyGoalResource" as Backend_reporting_UpdateEnergyGoalResource <<record>> {
+      + String title
+      + BigDecimal targetKilowattHours
+      + BigDecimal currentKilowattHours
+      + LocalDate deadline
+      + String status
+      + String scopeType
+      + Long scopeId
+      + String scopeName
+      + LocalTime activeFrom
+      + LocalTime activeTo
+    }
+  }
+}
+
+Backend_reporting_ConsumptionReportCsvExporter ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ConsumptionReportRepository ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ConsumptionReportResource ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ConsumptionReportResourceFromEntityAssembler ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ConsumptionReportResourceFromEntityAssembler ..> Backend_reporting_ConsumptionReportResource
+Backend_reporting_CreateConsumptionReportCommandFromResourceAssembler ..> Backend_reporting_CreateConsumptionReportCommand
+Backend_reporting_CreateConsumptionReportCommandFromResourceAssembler ..> Backend_reporting_CreateConsumptionReportResource
+Backend_reporting_CreateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_CreateEnergyGoalCommand
+Backend_reporting_CreateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_CreateEnergyGoalResource
+Backend_reporting_EnergyGoalCsvExporter ..> Backend_reporting_EnergyGoal
+Backend_reporting_EnergyGoalRepository ..> Backend_reporting_EnergyGoal
+Backend_reporting_EnergyGoalResource ..> Backend_reporting_EnergyGoal
+Backend_reporting_EnergyGoalResourceFromEntityAssembler ..> Backend_reporting_EnergyGoal
+Backend_reporting_EnergyGoalResourceFromEntityAssembler ..> Backend_reporting_EnergyGoalResource
+Backend_reporting_JpaConsumptionReportRepository ..> Backend_reporting_ConsumptionReport
+Backend_reporting_JpaConsumptionReportRepository ..> Backend_reporting_ConsumptionReportRepository
+Backend_reporting_JpaEnergyGoalRepository ..> Backend_reporting_EnergyGoal
+Backend_reporting_JpaEnergyGoalRepository ..> Backend_reporting_EnergyGoalRepository
+Backend_reporting_PlatformInsightController ..> Backend_reporting_PlatformInsightApplicationService
+Backend_reporting_PlatformInsightController ..> Backend_reporting_PlatformSummaryResource
+Backend_reporting_ReportSummaryService ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_ConsumptionReportPolicyService
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_ConsumptionReportRepository
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_CreateConsumptionReportCommand
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_CreateEnergyGoalCommand
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_EnergyGoal
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_EnergyGoalRepository
+Backend_reporting_ReportingApplicationService ..> Backend_reporting_UpdateEnergyGoalCommand
+Backend_reporting_ReportingCommandService ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingCommandService ..> Backend_reporting_CreateConsumptionReportCommand
+Backend_reporting_ReportingCommandService ..> Backend_reporting_CreateEnergyGoalCommand
+Backend_reporting_ReportingCommandService ..> Backend_reporting_EnergyGoal
+Backend_reporting_ReportingCommandService ..> Backend_reporting_UpdateEnergyGoalCommand
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_CreateConsumptionReportCommand
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_CreateEnergyGoalCommand
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_EnergyGoal
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_ReportingApplicationService
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_ReportingCommandService
+Backend_reporting_ReportingCommandServiceImpl ..> Backend_reporting_UpdateEnergyGoalCommand
+Backend_reporting_ReportingController ..> Backend_reporting_ConsumptionReportResourceFromEntityAssembler
+Backend_reporting_ReportingController ..> Backend_reporting_CreateConsumptionReportCommandFromResourceAssembler
+Backend_reporting_ReportingController ..> Backend_reporting_CreateEnergyGoalCommandFromResourceAssembler
+Backend_reporting_ReportingController ..> Backend_reporting_EnergyGoalResourceFromEntityAssembler
+Backend_reporting_ReportingController ..> Backend_reporting_GetConsumptionReportsByUserQuery
+Backend_reporting_ReportingController ..> Backend_reporting_GetEnergyGoalsByUserQuery
+Backend_reporting_ReportingController ..> Backend_reporting_ReportingCommandService
+Backend_reporting_ReportingController ..> Backend_reporting_ReportingQueryService
+Backend_reporting_ReportingController ..> Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler
+Backend_reporting_ReportingQueryService ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingQueryService ..> Backend_reporting_EnergyGoal
+Backend_reporting_ReportingQueryService ..> Backend_reporting_GetConsumptionReportsByUserQuery
+Backend_reporting_ReportingQueryService ..> Backend_reporting_GetEnergyGoalsByUserQuery
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_ConsumptionReport
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_EnergyGoal
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_GetConsumptionReportsByUserQuery
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_GetEnergyGoalsByUserQuery
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_ReportingApplicationService
+Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_ReportingQueryService
+Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_UpdateEnergyGoalCommand
+Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_UpdateEnergyGoalResource
+
+@enduml

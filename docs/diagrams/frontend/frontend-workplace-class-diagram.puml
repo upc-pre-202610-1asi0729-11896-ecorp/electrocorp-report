@@ -1,0 +1,417 @@
+@startuml
+title ElectroCorp Web App - Workplace Frontend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Workplace" {
+  package "Application / Commands" {
+    interface "AssignDeviceCommand" as Frontend_workplace_AssignDeviceCommand <<interface>> {
+      + deviceId: number
+      + locationId: number
+      + roomId?: number | null
+    }
+    interface "CreateLocationCommand" as Frontend_workplace_CreateLocationCommand <<interface>> {
+      + name: string
+      + address: string
+      + type: LocationType
+    }
+    interface "CreateRoomCommand" as Frontend_workplace_CreateRoomCommand <<interface>> {
+      + locationId: number
+      + name: string
+      + floor: string
+    }
+    interface "MoveDeviceAssignmentCommand" as Frontend_workplace_MoveDeviceAssignmentCommand <<interface>> {
+      + assignmentId: number
+      + locationId: number
+      + roomId?: number | null
+    }
+    interface "UpdateLocationCommand" as Frontend_workplace_UpdateLocationCommand <<interface>> {
+      + locationId: number
+      + name: string
+      + address: string
+      + type: LocationType
+    }
+    interface "UpdateRoomCommand" as Frontend_workplace_UpdateRoomCommand <<interface>> {
+      + roomId: number
+      + locationId: number
+      + name: string
+      + floor: string
+    }
+  }
+  package "Application / Facades and Services" {
+    class "ActiveWorkplaceContextService" as Frontend_workplace_ActiveWorkplaceContextService <<Service>> {
+      - activeLocationIdSignal
+      - locationsSignal
+      + setActiveLocation(locationId: number | null) : void
+      + clearActiveLocation() : void
+      + ensureActiveLocation(locations: Location[]) : Location | null
+      - restoreActiveLocationId() : number | null
+    }
+    class "WorkplaceFacade" as Frontend_workplace_WorkplaceFacade <<Facade>> {
+      - locationAssembler
+      - roomAssembler
+      - deviceAssignmentAssembler
+      + get: locations()
+      + get: rooms()
+      + get: deviceAssignments()
+      + get: loading()
+      + get: error()
+      + get: businessLocations()
+      + get: branchLocations()
+      + get: homeLocations()
+      + constructor: (
+      - locationsApi: LocationsApiService
+      - roomsApi: RoomsApiService
+      - deviceAssignmentsApi: DeviceAssignmentsApiService
+      - deviceControlFacade: DeviceControlFacade
+      - store: WorkplaceStore
+      + loadWorkplace() : Promise<void>
+    }
+  }
+  package "Application / Stores" {
+    class "WorkplaceStore" as Frontend_workplace_WorkplaceStore <<Store>> {
+      - locationsSignal
+      - roomsSignal
+      - deviceAssignmentsSignal
+      - loadingSignal
+      - errorSignal
+      + setLocations(value: Location[]) : void
+      + prependLocation(value: Location) : void
+      + updateLocation(value: Location) : void
+      + removeLocation(locationId: number) : void
+      + setRooms(value: Room[]) : void
+      + prependRoom(value: Room) : void
+      + updateRoom(value: Room) : void
+      + removeRoom(roomId: number) : void
+      + setDeviceAssignments(value: DeviceAssignment[]) : void
+      + prependDeviceAssignment(value: DeviceAssignment) : void
+      + updateDeviceAssignment(value: DeviceAssignment) : void
+      + removeDeviceAssignment(assignmentId: number) : void
+      + setLoading(value: boolean) : void
+    }
+  }
+  package "Domain / Model" {
+    class "DeviceAssignment" as Frontend_workplace_DeviceAssignment <<Entity>> {
+      - _userId: number
+      - _deviceId: number
+      - _locationId: number
+      - _roomId: number | null
+      - _assignedAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: deviceId(): number
+      + get: locationId(): number
+      + get: roomId(): number | null
+      + get: hasRoom(): boolean
+      + get: assignedAt(): string
+    }
+    class "Location" as Frontend_workplace_Location <<Entity>> {
+      - _userId: number
+      - _name: string
+      - _address: string
+      - _type: LocationType
+      - _createdAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: name(): string
+      + get: address(): string
+      + get: type(): LocationType
+      + get: createdAt(): string
+      + get: isBusiness(): boolean
+      + get: isBranch(): boolean
+      + get: isHome(): boolean
+    }
+    class "LocationType" as Frontend_workplace_LocationType <<type>> {
+      + 'HOME' | 'BUSINESS' | 'BRANCH'
+    }
+    class "Room" as Frontend_workplace_Room <<Entity>> {
+      - _userId: number
+      - _locationId: number
+      - _name: string
+      - _floor: string
+      - _createdAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: locationId(): number
+      + get: name(): string
+      + get: floor(): string
+      + get: createdAt(): string
+    }
+  }
+  package "Infrastructure / API Services" {
+    class "DeviceAssignmentsApiService" as Frontend_workplace_DeviceAssignmentsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<DeviceAssignmentResponse[]>
+      + findByDeviceId(deviceId: number) : Observable<DeviceAssignmentResponse[]>
+    }
+    class "LocationsApiService" as Frontend_workplace_LocationsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<LocationResponse[]>
+    }
+    class "RoomsApiService" as Frontend_workplace_RoomsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findAllForCurrentUser() : Observable<RoomResponse[]>
+      + findByLocationId(locationId: number) : Observable<RoomResponse[]>
+    }
+  }
+  package "Infrastructure / Assemblers" {
+    class "DeviceAssignmentAssembler" as Frontend_workplace_DeviceAssignmentAssembler <<Assembler>> {
+      + override: toEntity(response: DeviceAssignmentResponse): DeviceAssignment
+      + override: toResource(entity: DeviceAssignment): DeviceAssignmentResource
+    }
+    class "LocationAssembler" as Frontend_workplace_LocationAssembler <<Assembler>> {
+      + override: toEntity(response: LocationResponse): Location
+      + override: toResource(entity: Location): LocationResource
+    }
+    class "RoomAssembler" as Frontend_workplace_RoomAssembler <<Assembler>> {
+      + override: toEntity(response: RoomResponse): Room
+      + override: toResource(entity: Room): RoomResource
+    }
+  }
+  package "Infrastructure / Resources" {
+    interface "DeviceAssignmentResource" as Frontend_workplace_DeviceAssignmentResource <<interface>> {
+      + userId?: number
+      + deviceId: number
+      + locationId: number
+      + roomId?: number | null
+      + assignedAt: string
+    }
+    interface "LocationResource" as Frontend_workplace_LocationResource <<interface>> {
+      + userId?: number
+      + name: string
+      + address: string
+      + type: LocationType
+      + createdAt: string
+    }
+    interface "RoomResource" as Frontend_workplace_RoomResource <<interface>> {
+      + userId?: number
+      + locationId: number
+      + name: string
+      + floor: string
+      + createdAt: string
+    }
+  }
+  package "Infrastructure / Responses" {
+    interface "DeviceAssignmentResponse" as Frontend_workplace_DeviceAssignmentResponse <<interface>> {
+      + userId: number
+      + deviceId: number
+      + locationId: number
+      + roomId?: number | null
+      + assignedAt: string
+    }
+    interface "LocationResponse" as Frontend_workplace_LocationResponse <<interface>> {
+      + userId: number
+      + name: string
+      + address: string
+      + type: LocationType
+      + createdAt: string
+    }
+    interface "RoomResponse" as Frontend_workplace_RoomResponse <<interface>> {
+      + userId: number
+      + locationId: number
+      + name: string
+      + floor: string
+      + createdAt: string
+    }
+  }
+  package "Presentation / Components" {
+    class "DeviceAssignmentFormComponent" as Frontend_workplace_DeviceAssignmentFormComponent <<Component>> {
+      + devices: Device[]
+      + locations: Location[]
+      + rooms: Room[]
+      + loading
+      + assigned
+      + deviceId: number | null
+      + locationId: number | null
+      + roomId: number | null
+      + constructor(translate: TranslateService)
+      + ngOnChanges() : void
+      + get: availableRooms(): Room[]
+      + get: deviceValue(): string | null
+      + get: locationValue(): string | null
+      + get: roomValue(): string
+      + get: deviceOptions(): DropdownOption[]
+      + get: locationOptions(): DropdownOption[]
+      + get: roomOptions(): DropdownOption[]
+      + deviceTypeLabel(type: Device['type']) : string
+    }
+    class "LocationCardComponent" as Frontend_workplace_LocationCardComponent <<Component>> {
+      + location: !: Location
+      + deviceCount
+      + roomCount
+      + groupCount
+      + unroomedDeviceCount
+      + activeWatts
+      + coverage
+      + selected
+      + remove
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + get: typeLabel(): string
+      + get: typeLabelKey(): string
+      + get: formattedCreatedAt(): string
+      + onOpen() : void
+      + onRemove() : void
+      - currentLocale() : string
+    }
+    class "RoomCardComponent" as Frontend_workplace_RoomCardComponent <<Component>> {
+      + room: !: Room
+      + locationName
+      + deviceCount
+      + activeDeviceCount
+      + groupCount
+      + routineCount
+      + currentWatts
+      + primaryGroupName
+      + remove
+      + constructor: (
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + get: statusLabel(): string
+      + get: statusLabelKey(): string
+      + get: formattedCreatedAt(): string
+      + onRemove() : void
+      - currentLocale() : string
+    }
+  }
+  package "Presentation / Pages" {
+    class "DeviceAssignmentsPageComponent" as Frontend_workplace_DeviceAssignmentsPageComponent <<Component>> {
+      + roomOneValue: string | null
+      + roomTwoValue: string | null
+      + draggedAssignmentId: number | null
+      + activeDropRoomId: number | null
+      + constructor: (
+      + workplaceFacade: WorkplaceFacade
+      + deviceControlFacade: DeviceControlFacade
+      - activeWorkplaceContext: ActiveWorkplaceContextService
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      - translate: TranslateService
+      + ngOnInit() : Promise<void>
+      + get: activeLocationId(): number | null
+      + get: activeLocationName(): string
+      + get: activeRooms()
+      + get: activeAssignments()
+      + get: roomOneDropdownOptions(): DropdownOption[]
+      + get: roomTwoDropdownOptions(): DropdownOption[]
+    }
+    class "LocationsPageComponent" as Frontend_workplace_LocationsPageComponent <<Component>> {
+      - mapViewport?: ElementRef<HTMLElement>
+      + name
+      + address
+      + type: LocationType
+      + createModalOpen
+      + selectedLatitude
+      + selectedLongitude
+      + addressSuggestions: OpenStreetMapPlace[]
+      + addressSearchLoading
+      + locatingUser
+      + draggingMap
+      + types: LocationType[]
+      + tileSize
+      - mapCenterLatitude
+      - mapCenterLongitude
+      - mapZoomLevel
+      - minMapZoomLevel
+      - maxMapZoomLevel
+    }
+    class "RoomsPageComponent" as Frontend_workplace_RoomsPageComponent <<Component>> {
+      + name
+      + createModalOpen
+      - defaultRoomFloor
+      + constructor: (
+      + workplaceFacade: WorkplaceFacade
+      + deviceControlFacade: DeviceControlFacade
+      - activeWorkplaceContext: ActiveWorkplaceContextService
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      - translate: TranslateService
+      + ngOnInit() : Promise<void>
+      + get: activeLocationId(): number | null
+      + get: activeRooms()
+      + get: activeAssignments()
+      + get: activeDeviceCount(): number
+      + get: activeGroupCount(): number
+      + get: activeLocationName(): string
+      + openCreateModal() : void
+    }
+  }
+  package "Presentation / Routes" {
+    class "WorkplaceRoutes" as Frontend_workplace_WorkplaceRoutes <<Routes>> {
+      + Routes
+    }
+  }
+}
+
+Frontend_workplace_ActiveWorkplaceContextService ..> Frontend_workplace_Location
+Frontend_workplace_CreateLocationCommand ..> Frontend_workplace_LocationType
+Frontend_workplace_DeviceAssignmentAssembler ..> Frontend_workplace_DeviceAssignment
+Frontend_workplace_DeviceAssignmentAssembler ..> Frontend_workplace_DeviceAssignmentResource
+Frontend_workplace_DeviceAssignmentAssembler ..> Frontend_workplace_DeviceAssignmentResponse
+Frontend_workplace_DeviceAssignmentFormComponent ..> Frontend_workplace_AssignDeviceCommand
+Frontend_workplace_DeviceAssignmentFormComponent ..> Frontend_workplace_Location
+Frontend_workplace_DeviceAssignmentFormComponent ..> Frontend_workplace_Room
+Frontend_workplace_DeviceAssignmentsApiService ..> Frontend_workplace_DeviceAssignment
+Frontend_workplace_DeviceAssignmentsApiService ..> Frontend_workplace_DeviceAssignmentAssembler
+Frontend_workplace_DeviceAssignmentsApiService ..> Frontend_workplace_DeviceAssignmentResource
+Frontend_workplace_DeviceAssignmentsApiService ..> Frontend_workplace_DeviceAssignmentResponse
+Frontend_workplace_DeviceAssignmentsPageComponent ..> Frontend_workplace_ActiveWorkplaceContextService
+Frontend_workplace_DeviceAssignmentsPageComponent ..> Frontend_workplace_DeviceAssignment
+Frontend_workplace_DeviceAssignmentsPageComponent ..> Frontend_workplace_Room
+Frontend_workplace_DeviceAssignmentsPageComponent ..> Frontend_workplace_WorkplaceFacade
+Frontend_workplace_LocationAssembler ..> Frontend_workplace_Location
+Frontend_workplace_LocationAssembler ..> Frontend_workplace_LocationResource
+Frontend_workplace_LocationAssembler ..> Frontend_workplace_LocationResponse
+Frontend_workplace_LocationCardComponent ..> Frontend_workplace_Location
+Frontend_workplace_LocationCardComponent ..> Frontend_workplace_LocationType
+Frontend_workplace_LocationResource ..> Frontend_workplace_LocationType
+Frontend_workplace_LocationResponse ..> Frontend_workplace_LocationType
+Frontend_workplace_LocationsApiService ..> Frontend_workplace_Location
+Frontend_workplace_LocationsApiService ..> Frontend_workplace_LocationAssembler
+Frontend_workplace_LocationsApiService ..> Frontend_workplace_LocationResource
+Frontend_workplace_LocationsApiService ..> Frontend_workplace_LocationResponse
+Frontend_workplace_LocationsPageComponent ..> Frontend_workplace_ActiveWorkplaceContextService
+Frontend_workplace_LocationsPageComponent ..> Frontend_workplace_LocationCardComponent
+Frontend_workplace_LocationsPageComponent ..> Frontend_workplace_LocationType
+Frontend_workplace_LocationsPageComponent ..> Frontend_workplace_WorkplaceFacade
+Frontend_workplace_RoomAssembler ..> Frontend_workplace_Room
+Frontend_workplace_RoomAssembler ..> Frontend_workplace_RoomResource
+Frontend_workplace_RoomAssembler ..> Frontend_workplace_RoomResponse
+Frontend_workplace_RoomCardComponent ..> Frontend_workplace_Room
+Frontend_workplace_RoomsApiService ..> Frontend_workplace_Room
+Frontend_workplace_RoomsApiService ..> Frontend_workplace_RoomAssembler
+Frontend_workplace_RoomsApiService ..> Frontend_workplace_RoomResource
+Frontend_workplace_RoomsApiService ..> Frontend_workplace_RoomResponse
+Frontend_workplace_RoomsPageComponent ..> Frontend_workplace_ActiveWorkplaceContextService
+Frontend_workplace_RoomsPageComponent ..> Frontend_workplace_Room
+Frontend_workplace_RoomsPageComponent ..> Frontend_workplace_RoomCardComponent
+Frontend_workplace_RoomsPageComponent ..> Frontend_workplace_WorkplaceFacade
+Frontend_workplace_UpdateLocationCommand ..> Frontend_workplace_LocationType
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_AssignDeviceCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_CreateLocationCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_CreateRoomCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_DeviceAssignmentAssembler
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_DeviceAssignmentsApiService
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_LocationAssembler
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_LocationsApiService
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_MoveDeviceAssignmentCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_RoomAssembler
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_RoomsApiService
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_UpdateLocationCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_UpdateRoomCommand
+Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_WorkplaceStore
+Frontend_workplace_WorkplaceStore ..> Frontend_workplace_DeviceAssignment
+Frontend_workplace_WorkplaceStore ..> Frontend_workplace_Location
+Frontend_workplace_WorkplaceStore ..> Frontend_workplace_Room
+
+@enduml

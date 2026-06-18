@@ -1,0 +1,263 @@
+@startuml
+title ElectroCorp Platform - Shared Kernel Backend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Shared Kernel" {
+  package "Application / Events" {
+    interface "DomainEventPublisher" as Backend_shared_DomainEventPublisher <<interface>> {
+    }
+  }
+  package "Application / Results" {
+    class "Result" as Backend_shared_Result <<Class>> {
+      - success: TSuccess
+      - failure: TFailure
+      - successful: boolean
+      - Result(TSuccess success, TFailure failure, boolean successful)
+      + success(TSuccess value) : <TSuccess, TFailure> Result<TSuccess, TFailure>
+      + failure(TFailure value) : <TSuccess, TFailure> Result<TSuccess, TFailure>
+      + isSuccess() : boolean
+      + isFailure() : boolean
+      + success() : TSuccess
+      + failure() : TFailure
+    }
+  }
+  package "Application / Services" {
+    class "DateTimeService" as Backend_shared_DateTimeService <<Application Service>> {
+      + today() : LocalDate
+      + now() : LocalDateTime
+    }
+    class "StringNormalizerService" as Backend_shared_StringNormalizerService <<Application Service>> {
+      + normalizeText(String value) : String
+      + normalizeEmail(String email) : String
+    }
+  }
+  package "Domain / Exceptions" {
+    class "BusinessRuleException" as Backend_shared_BusinessRuleException <<Class>> {
+      + BusinessRuleException(String message)
+    }
+    class "BusinessRuleValidationException" as Backend_shared_BusinessRuleValidationException <<Class>> {
+      + BusinessRuleValidationException(String message)
+    }
+    class "ConflictException" as Backend_shared_ConflictException <<Class>> {
+      + ConflictException(String message)
+    }
+    class "DomainException" as Backend_shared_DomainException <<Class>> {
+      + DomainException(String message)
+    }
+    class "InvalidValueObjectException" as Backend_shared_InvalidValueObjectException <<Class>> {
+      + InvalidValueObjectException(String message)
+    }
+    class "ResourceNotFoundException" as Backend_shared_ResourceNotFoundException <<Class>> {
+      + ResourceNotFoundException(String resourceName, Long id)
+      + ResourceNotFoundException(String message)
+    }
+  }
+  package "Domain / Model" {
+    interface "DomainEvent" as Backend_shared_DomainEvent <<interface>> {
+    }
+    class "EntityId" as Backend_shared_EntityId <<record>> {
+      + Long value
+      + EntityId(Long value) : record
+    }
+    class "public" as Backend_shared_public <<Class>> {
+      # id: Long
+      # createdAt: LocalDateTime
+      # updatedAt: LocalDateTime
+      # onCreate() : void
+      # onUpdate() : void
+    }
+  }
+  package "Domain / Repositories" {
+    interface "UnitOfWork" as Backend_shared_UnitOfWork <<interface>> {
+    }
+  }
+  package "Domain / Shared Value Objects" {
+    class "DateRange" as Backend_shared_DateRange <<record>> {
+      + LocalDate startDate
+      + LocalDate endDate
+      + DateRange(LocalDate startDate, LocalDate endDate) : record
+      + contains(LocalDate date) : boolean
+    }
+    class "DeviceId" as Backend_shared_DeviceId <<Value Object>> {
+      - value: Long
+      + DeviceId(Long value)
+      + of(Long value) : DeviceId
+      + equals(Object o) : boolean
+      + hashCode() : int
+    }
+    class "EmailAddress" as Backend_shared_EmailAddress <<record>> {
+      + String value
+      + EmailAddress(String value) : record
+    }
+    class "EnergyUsage" as Backend_shared_EnergyUsage <<Value Object>> {
+      - watts: BigDecimal
+      + EnergyUsage(BigDecimal watts)
+      + of(BigDecimal watts) : EnergyUsage
+      + zero() : EnergyUsage
+      + add(EnergyUsage other) : EnergyUsage
+      + isHighUsage(BigDecimal threshold) : boolean
+      + classify() : String
+      + equals(Object o) : boolean
+      + hashCode() : int
+    }
+    class "LocationId" as Backend_shared_LocationId <<Value Object>> {
+      - value: Long
+      + LocationId(Long value)
+      + of(Long value) : LocationId
+      + equals(Object o) : boolean
+      + hashCode() : int
+    }
+    class "Money" as Backend_shared_Money <<Value Object>> {
+      + DEFAULT_CURRENCY: String
+      - amount: BigDecimal
+      - currency: String
+      + Money(BigDecimal amount, String currency)
+      + of(BigDecimal amount) : Money
+      + of(BigDecimal amount, String currency) : Money
+      + zero() : Money
+      + add(Money other) : Money
+      + subtract(Money other) : Money
+      + multiply(BigDecimal factor) : Money
+      + isZero() : boolean
+      + isPositive() : boolean
+      + isGreaterThan(Money other) : boolean
+      - validateSameCurrency(Money other) : void
+    }
+    class "NonBlankText" as Backend_shared_NonBlankText <<record>> {
+      + String value
+      + NonBlankText(String value) : record
+      + of(String value) : NonBlankText
+    }
+    class "Percentage" as Backend_shared_Percentage <<record>> {
+      + BigDecimal value
+      + Percentage(BigDecimal value) : record
+      + of(BigDecimal value) : Percentage
+    }
+    class "PhoneNumber" as Backend_shared_PhoneNumber <<record>> {
+      + String value
+      + PhoneNumber(String value) : record
+      - PHONE_PATTERN: Pattern
+    }
+    class "RoomId" as Backend_shared_RoomId <<record>> {
+      + Long value
+      + RoomId(Long value) : record
+    }
+    class "UserId" as Backend_shared_UserId <<Value Object>> {
+      - value: Long
+      + UserId(Long value)
+      + of(Long value) : UserId
+      + equals(Object o) : boolean
+      + hashCode() : int
+    }
+    class "UserPlatformSummary" as Backend_shared_UserPlatformSummary <<Value Object>> {
+      - userId: UserId
+      - billing: BillingSnapshot
+      - devices: DeviceSnapshot
+      - workplace: WorkplaceSnapshot
+      - energy: EnergySnapshot
+      - notifications: NotificationSnapshot
+      - service: ServiceSnapshot
+      - suggestedActions: List<PlatformAction>
+      + isOperationallyHealthy() : boolean
+      + calculatePlatformScore() : BigDecimal
+      - buildSuggestedActions() : List<PlatformAction>
+    }
+  }
+  package "Infrastructure / Configuration" {
+    class "CorsConfig" as Backend_shared_CorsConfig <<Configuration>> {
+      - allowedOrigins: String[]
+      + CorsConfig(("$app.cors.allowed-origins:http://localhost:4200")
+      + corsConfigurer() : WebMvcConfigurer
+      + addCorsMappings(CorsRegistry registry) : void
+    }
+    class "OpenApiConfig" as Backend_shared_OpenApiConfig <<Configuration>> {
+    }
+  }
+  package "Infrastructure / Events" {
+    class "SpringDomainEventPublisher" as Backend_shared_SpringDomainEventPublisher <<Domain Event>> {
+      - applicationEventPublisher: ApplicationEventPublisher
+      + publish(DomainEvent event) : void
+    }
+  }
+  package "Infrastructure / JPA" {
+    class "JpaAuditingConfiguration" as Backend_shared_JpaAuditingConfiguration <<Class>> {
+    }
+    class "JpaUnitOfWork" as Backend_shared_JpaUnitOfWork <<Class>> {
+      + execute(Runnable operation) : void
+      + execute(Supplier<T> operation) : <T> T
+    }
+    class "PersistenceConstants" as Backend_shared_PersistenceConstants <<Class>> {
+      + DEFAULT_SCHEMA: String
+      - PersistenceConstants()
+    }
+  }
+  package "Infrastructure / JPA Strategy" {
+    class "SnakeCasePhysicalNamingStrategy" as Backend_shared_SnakeCasePhysicalNamingStrategy <<Class>> {
+      + toPhysicalCatalogName(Identifier name, JdbcEnvironment context) : Identifier
+      + toPhysicalSchemaName(Identifier name, JdbcEnvironment context) : Identifier
+      + toPhysicalTableName(Identifier name, JdbcEnvironment context) : Identifier
+      + toPhysicalSequenceName(Identifier name, JdbcEnvironment context) : Identifier
+      + toPhysicalColumnName(Identifier name, JdbcEnvironment context) : Identifier
+      - apply(Identifier name) : Identifier
+      - toSnakeCase(String value) : String
+    }
+  }
+  package "Infrastructure / Security" {
+    class "CurrentUserProvider" as Backend_shared_CurrentUserProvider <<Security>> {
+      + getCurrentUserId() : Long
+    }
+    class "SecurityConfig" as Backend_shared_SecurityConfig <<Security>> {
+      + passwordEncoder() : PasswordEncoder
+    }
+  }
+  package "Interfaces / REST Controllers" {
+    class "HealthController" as Backend_shared_HealthController <<REST Controller>> {
+      + root() : Map<String, String>
+      + health() : Map<String, String>
+    }
+  }
+  package "Interfaces / REST Errors" {
+    class "GlobalExceptionHandler" as Backend_shared_GlobalExceptionHandler <<Error Handling>> {
+      - messageSource: MessageSource
+      + GlobalExceptionHandler(MessageSource messageSource)
+      + handleResourceNotFoundException(ResourceNotFoundException exception) : ErrorResource
+      + handleConflictException(ConflictException exception) : ErrorResource
+      + handleDomainException(RuntimeException exception) : ErrorResource
+      + handleIllegalArgumentException(IllegalArgumentException exception) : ErrorResource
+      + handleGeneralException(Exception exception) : ErrorResource
+      - error(String code, String message) : ErrorResource
+      - resolveMessage(String message) : String
+    }
+  }
+  package "Interfaces / REST Resources" {
+    class "ApiResource" as Backend_shared_ApiResource <<record>> {
+    }
+    class "ErrorResource" as Backend_shared_ErrorResource <<record>> {
+      + String code
+      + String message
+      + LocalDateTime timestamp
+    }
+    class "PageResource" as Backend_shared_PageResource <<record>> {
+    }
+  }
+}
+
+Backend_shared_DomainEventPublisher ..> Backend_shared_DomainEvent
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_BusinessRuleException
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_BusinessRuleValidationException
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_ConflictException
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_DomainException
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_ErrorResource
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_InvalidValueObjectException
+Backend_shared_GlobalExceptionHandler ..> Backend_shared_ResourceNotFoundException
+Backend_shared_JpaUnitOfWork ..> Backend_shared_UnitOfWork
+Backend_shared_SpringDomainEventPublisher ..> Backend_shared_DomainEvent
+Backend_shared_SpringDomainEventPublisher ..> Backend_shared_DomainEventPublisher
+Backend_shared_UserPlatformSummary ..> Backend_shared_EnergyUsage
+Backend_shared_UserPlatformSummary ..> Backend_shared_UserId
+
+@enduml

@@ -2006,25 +2006,93 @@ En el dominio se consideran entidades como `Support Ticket` y `Maintenance Ticke
 
 ### 4.7.1. Class Diagrams
 
-Los siguientes diagramas de clases presentan el diseño orientado a objetos del sistema ElectroCorp, separados en una vista de frontend y una vista de backend. Ambos diagramas se renderizan de forma online a partir de los archivos fuente PlantUML almacenados en el repositorio, utilizando la versión raw de GitHub.
+Los siguientes diagramas de clases presentan el diseno orientado a objetos del sistema ElectroCorp, separados en backend y frontend. Cada bloque incluye primero una vista general de bounded contexts, donde las clases representan contextos vacios y solo muestran sus dependencias principales. Luego se presenta un diagrama por bounded context con las clases, interfaces, records, enums, resources, assemblers, services, stores, endpoints y componentes identificados en el codigo fuente.
 
-#### Frontend Class Diagram
+Los diagramas se renderizan con PlantUML Proxy desde los archivos fuente .puml almacenados en este repositorio, apuntando a la rama main.
 
-![Frontend Class Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/master/docs/frontend-class-diagram.puml)
+#### Backend Class Diagrams
 
-El diagrama de clases del frontend representa la estructura interna de la webapp de ElectroCorp, organizada por bounded contexts. Cada módulo conecta sus vistas y componentes con stores de Pinia, servicios de aplicación, endpoints de infraestructura, ensambladores y modelos de dominio.
+##### Backend General Bounded Contexts
 
-La conexión principal sigue el flujo: las vistas invocan acciones del store, el store utiliza facades para coordinar la lógica de aplicación, las facades consumen endpoints de infraestructura, y los responses recibidos desde la API son transformados en entidades de dominio mediante assemblers. Esta estructura permite mantener una separación clara entre presentación, aplicación, infraestructura y dominio, facilitando la futura conexión con el backend real de ElectroCorp Platform.
+![Backend General Bounded Contexts](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-general-bounded-contexts.puml)
 
-#### Backend Class Diagram
+##### Backend IAM
 
-![Backend Class Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/master/docs/backend-class-diagram.puml)
+![Backend IAM](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-iam-class-diagram.puml)
 
-El diagrama de clases del backend representa la arquitectura propuesta para ElectroCorp Platform, planteada como una aplicación Spring Boot organizada por bounded contexts y capas. El diseño contempla módulos como IAM, Device Control, Energy Monitoring, Notifications y Billing.
+##### Backend Billing
 
-Cada bounded context se estructura mediante controladores REST, servicios de aplicación, entidades de dominio, repositorios, adaptadores de persistencia, entidades JPA y mappers. Esta organización permite separar responsabilidades entre la capa de presentación de API, la lógica de aplicación, el modelo de dominio y la infraestructura de persistencia.
+![Backend Billing](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-billing-class-diagram.puml)
 
-El flujo principal parte desde los controladores REST, los cuales reciben requests y delegan la ejecución a servicios de aplicación. Estos servicios coordinan la lógica del caso de uso, interactúan con entidades de dominio y consumen interfaces de repositorio. Finalmente, los adaptadores de persistencia implementan dichas interfaces utilizando Spring Data JPA y transforman la información entre entidades de dominio, entidades JPA y DTOs de respuesta.
+##### Backend Workplace
+
+![Backend Workplace](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-workplace-class-diagram.puml)
+
+##### Backend Device Control
+
+![Backend Device Control](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-device-control-class-diagram.puml)
+
+##### Backend Energy Monitoring
+
+![Backend Energy Monitoring](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-energy-monitoring-class-diagram.puml)
+
+##### Backend Notifications
+
+![Backend Notifications](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-notifications-class-diagram.puml)
+
+##### Backend Reporting
+
+![Backend Reporting](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-reporting-class-diagram.puml)
+
+##### Backend Service Management
+
+![Backend Service Management](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-service-management-class-diagram.puml)
+
+##### Backend Shared Kernel
+
+![Backend Shared Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/backend/backend-shared-kernel-class-diagram.puml)
+
+#### Frontend Class Diagrams
+
+##### Frontend General Bounded Contexts
+
+![Frontend General Bounded Contexts](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-general-bounded-contexts.puml)
+
+##### Frontend IAM
+
+![Frontend IAM](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-iam-class-diagram.puml)
+
+##### Frontend Billing
+
+![Frontend Billing](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-billing-class-diagram.puml)
+
+##### Frontend Workplace
+
+![Frontend Workplace](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-workplace-class-diagram.puml)
+
+##### Frontend Device Control
+
+![Frontend Device Control](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-device-control-class-diagram.puml)
+
+##### Frontend Energy Monitoring
+
+![Frontend Energy Monitoring](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-energy-monitoring-class-diagram.puml)
+
+##### Frontend Notifications
+
+![Frontend Notifications](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-notifications-class-diagram.puml)
+
+##### Frontend Reporting
+
+![Frontend Reporting](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-reporting-class-diagram.puml)
+
+##### Frontend Service Management
+
+![Frontend Service Management](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-service-management-class-diagram.puml)
+
+##### Frontend Shared UI / Kernel
+
+![Frontend Shared UI Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/frontend/frontend-shared-kernel-class-diagram.puml)
 
 ## 4.8. Database Design
 

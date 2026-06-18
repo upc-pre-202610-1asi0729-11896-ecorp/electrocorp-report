@@ -1,0 +1,454 @@
+@startuml
+title ElectroCorp Web App - Billing Frontend Class Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Billing" {
+  package "Application / Commands" {
+    interface "CancelSubscriptionCommand" as Frontend_billing_CancelSubscriptionCommand <<interface>> {
+      + subscriptionId: number
+    }
+    interface "DownloadInvoiceCommand" as Frontend_billing_DownloadInvoiceCommand <<interface>> {
+      + invoiceId: number
+    }
+    interface "PaymentFormCommand" as Frontend_billing_PaymentFormCommand <<interface>> {
+      + planCode: PlanCode
+      + holderName: string
+      + cardNumber: string
+      + expirationDate: string
+      + cvv: string
+    }
+  }
+  package "Application / Facades and Services" {
+    class "BillingFacade" as Frontend_billing_BillingFacade <<Facade>> {
+      - planAssembler
+      - subscriptionAssembler
+      - paymentAssembler
+      - invoiceAssembler
+      + get: plans()
+      + get: activeSubscription()
+      + get: payments()
+      + get: invoices()
+      + get: lastPayment()
+      + get: loading()
+      + get: error()
+      + get: hasActiveSubscription()
+      + get: activePlanCode()
+      + get: activePlan()
+      + constructor: (
+      - plansApi: PlansApiService
+      - subscriptionsApi: SubscriptionsApiService
+      - paymentsApi: PaymentsApiService
+    }
+  }
+  package "Application / Stores" {
+    class "BillingStore" as Frontend_billing_BillingStore <<Store>> {
+      - plansSignal
+      - activeSubscriptionSignal
+      - paymentsSignal
+      - invoicesSignal
+      - lastPaymentSignal
+      - loadingSignal
+      - errorSignal
+      + hasActiveSubscription
+      + setPlans(value: Plan[]) : void
+      + setActiveSubscription(value: Subscription | null) : void
+      + setPayments(value: Payment[]) : void
+      + setInvoices(value: Invoice[]) : void
+      + setLastPayment(value: Payment | null) : void
+      + prependPayment(value: Payment) : void
+      + prependInvoice(value: Invoice) : void
+      + setLoading(value: boolean) : void
+      + setError(value: string | null) : void
+      + clearMessages() : void
+    }
+  }
+  package "Domain / Model" {
+    class "Invoice" as Frontend_billing_Invoice <<Entity>> {
+      - _userId: number
+      - _invoiceNumber: string
+      - _totalAmount: number
+      - _currency: string
+      - _issuedAt: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: invoiceNumber(): string
+      + get: totalAmount(): number
+      + get: currency(): string
+      + get: issuedAt(): string
+    }
+    class "Payment" as Frontend_billing_Payment <<Entity>> {
+      - _userId: number
+      - _amount: number
+      - _currency: string
+      - _status: PaymentStatus
+      - _paymentMethod: string
+      + constructor: (props:
+      + get: userId(): number
+      + get: amount(): number
+      + get: currency(): string
+      + get: status(): PaymentStatus
+      + get: paymentMethod(): string
+      + get: isApproved(): boolean
+    }
+    class "PaymentMethod" as Frontend_billing_PaymentMethod <<type>> {
+      + 'CARD'
+    }
+    class "PaymentStatus" as Frontend_billing_PaymentStatus <<type>> {
+      + 'APPROVED' | 'REJECTED' | 'PENDING'
+    }
+    class "Plan" as Frontend_billing_Plan <<Entity>> {
+      - _code: PlanCode
+      - _name: string
+      - _monthlyPrice: number
+      - _currency: string
+      - _maxDevices: number | null
+      - _maxRoutines: number | null
+      - _maxAlerts: number | null
+      - _reportExportEnabled: boolean
+      + constructor: (props:
+      + get: code(): PlanCode
+      + get: name(): string
+      + get: monthlyPrice(): number
+      + get: currency(): string
+      + get: maxDevices(): number | null
+      + get: maxRoutines(): number | null
+      + get: maxAlerts(): number | null
+      + get: reportExportEnabled(): boolean
+      + get: isStarter(): boolean
+    }
+    class "PlanCode" as Frontend_billing_PlanCode <<type>> {
+      + 'STARTER' | 'PROFESSIONAL' | 'ENTERPRISE'
+    }
+    class "Subscription" as Frontend_billing_Subscription <<Entity>> {
+      - _userId: number
+      - _planCode: PlanCode
+      - _status: SubscriptionStatus
+      - _active: boolean
+      - _startDate: string | null
+      - _nextBillingDate: string | null
+      - _endDate: string | null
+      + constructor: (props:
+      + get: userId(): number
+      + get: planCode(): PlanCode
+      + get: status(): SubscriptionStatus
+      + get: active(): boolean
+      + get: isActive(): boolean
+      + get: startDate(): string | null
+      + get: nextBillingDate(): string | null
+      + get: endDate(): string | null
+    }
+    class "SubscriptionStatus" as Frontend_billing_SubscriptionStatus <<type>> {
+      + 'ACTIVE' | 'CANCELLED' | 'EXPIRED'
+    }
+  }
+  package "Domain / Services" {
+    class "PaymentValidationService" as Frontend_billing_PaymentValidationService <<Domain Service>> {
+      + isValidCardNumber(cardNumber: string) : boolean
+      + isValidCvv(cvv: string) : boolean
+      + isValidHolderName(holderName: string) : boolean
+      + isValidExpirationDate(expirationDate: string) : boolean
+      + sanitizeCardNumber(cardNumber: string) : string
+      + getLastFourDigits(cardNumber: string) : string
+    }
+    interface "PlanPermissions" as Frontend_billing_PlanPermissions <<interface>> {
+      + maxDevices: number
+      + maxRoutines: number
+      + maxManualAlerts: number
+      + canExportCsv: boolean
+      + canAccessEnergyHistory: boolean
+      + canUseAdvancedAnalytics: boolean
+      + canUseMultipleLocations: boolean
+    }
+    class "PlanPermissionService" as Frontend_billing_PlanPermissionService <<Domain Service>> {
+      - permissions: Record<PlanCode, PlanPermissions>
+      + getPermissions(planCode: PlanCode | null) : PlanPermissions | null
+      + canCreateDevice(planCode: PlanCode | null, currentDevices: number) : boolean
+      + canCreateRoutine(planCode: PlanCode | null, currentRoutines: number) : boolean
+      + canCreateManualAlert(planCode: PlanCode | null, currentAlerts: number) : boolean
+      + canExportCsv(planCode: PlanCode | null) : boolean
+      + canAccessEnergyHistory(planCode: PlanCode | null) : boolean
+      + canUseAdvancedAnalytics(planCode: PlanCode | null) : boolean
+      + canUseMultipleLocations(planCode: PlanCode | null) : boolean
+    }
+    class "SubscriptionPolicyService" as Frontend_billing_SubscriptionPolicyService <<Domain Service>> {
+      + canSubscribeToPlan: (
+      + currentSubscription: Subscription | null
+      + targetPlanCode: PlanCode
+      + canCancelSubscription(subscription: Subscription | null) : boolean
+    }
+  }
+  package "Infrastructure / API Services" {
+    class "InvoicesApiService" as Frontend_billing_InvoicesApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findCurrentUserInvoices() : Observable<InvoiceResponse[]>
+    }
+    class "PaymentsApiService" as Frontend_billing_PaymentsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findCurrentUserPayments() : Observable<PaymentResponse[]>
+    }
+    class "PlansApiService" as Frontend_billing_PlansApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+    }
+    class "SubscriptionsApiService" as Frontend_billing_SubscriptionsApiService <<API Service>> {
+      + constructor: (
+      + http: HttpClient
+      + apiBaseUrl: string
+      + findCurrent() : Observable<SubscriptionResponse | null>
+      + cancelCurrent() : Observable<void>
+      + checkout(resource: CheckoutSubscriptionResource) : Observable<SubscriptionResponse>
+    }
+  }
+  package "Infrastructure / Assemblers" {
+    class "InvoiceAssembler" as Frontend_billing_InvoiceAssembler <<Assembler>> {
+      + override: toEntity(response: InvoiceResponse): Invoice
+      + override: toResource(entity: Invoice): InvoiceResource
+    }
+    class "PaymentAssembler" as Frontend_billing_PaymentAssembler <<Assembler>> {
+      + override: toEntity(response: PaymentResponse): Payment
+      + override: toResource(entity: Payment): PaymentResource
+    }
+    class "PlanAssembler" as Frontend_billing_PlanAssembler <<Assembler>> {
+      + override: toEntity(response: PlanResponse): Plan
+      + override: toResource(entity: Plan): PlanResource
+    }
+    class "SubscriptionAssembler" as Frontend_billing_SubscriptionAssembler <<Assembler>> {
+      + override: toEntity(response: SubscriptionResponse): Subscription
+      + override: toResource(entity: Subscription): SubscriptionResource
+    }
+  }
+  package "Infrastructure / Resources" {
+    interface "CheckoutSubscriptionResource" as Frontend_billing_CheckoutSubscriptionResource <<interface>> {
+      + planCode: PlanCode
+      + holderName: string
+      + cardNumber: string
+      + expirationDate: string
+      + cvv: string
+    }
+    interface "InvoiceResource" as Frontend_billing_InvoiceResource <<interface>> {
+      + userId: number
+      + invoiceNumber: string
+      + totalAmount: number
+      + currency: string
+      + issuedAt: string
+    }
+    interface "PaymentResource" as Frontend_billing_PaymentResource <<interface>> {
+      + userId: number
+      + subscriptionId: number
+      + holderName: string
+      + cardNumber: string
+      + expirationDate: string
+      + cvv: string
+    }
+    interface "PlanResource" as Frontend_billing_PlanResource <<interface>> {
+      + code: PlanCode
+      + name: string
+      + monthlyPrice: number
+      + currency: string
+      + maxDevices: number | null
+      + maxRoutines: number | null
+      + maxAlerts: number | null
+      + reportExportEnabled: boolean
+    }
+    interface "SubscriptionResource" as Frontend_billing_SubscriptionResource <<interface>> {
+      + userId: number
+      + planCode: PlanCode
+    }
+  }
+  package "Infrastructure / Responses" {
+    interface "InvoiceResponse" as Frontend_billing_InvoiceResponse <<interface>> {
+      + userId: number
+      + invoiceNumber: string
+      + totalAmount: number
+      + currency: string
+      + issuedAt: string
+    }
+    interface "PaymentResponse" as Frontend_billing_PaymentResponse <<interface>> {
+      + userId: number
+      + amount: number
+      + currency: string
+      + status: PaymentStatus
+      + paymentMethod: string
+    }
+    interface "PlanResponse" as Frontend_billing_PlanResponse <<interface>> {
+      + code: PlanCode
+      + name: string
+      + monthlyPrice: number
+      + currency: string
+      + maxDevices: number | null
+      + maxRoutines: number | null
+      + maxAlerts: number | null
+      + reportExportEnabled: boolean
+    }
+    interface "SubscriptionResponse" as Frontend_billing_SubscriptionResponse <<interface>> {
+      + userId: number
+      + planCode: PlanCode
+      + status: SubscriptionStatus
+      + active: boolean
+      + startDate?: string | null
+      + nextBillingDate?: string | null
+      + endDate?: string | null
+    }
+  }
+  package "Presentation / Components" {
+    class "InvoiceCardComponent" as Frontend_billing_InvoiceCardComponent <<Component>> {
+      + invoice: !: Invoice
+      + download
+      + onDownload() : void
+    }
+    class "PaymentFormComponent" as Frontend_billing_PaymentFormComponent <<Component>> {
+      + plan: !: Plan
+      + loading
+      + confirmed
+      + canceled
+      + holderName
+      + cardNumber
+      + expirationDate
+      + cvv
+      + onCardNumberChange(value: string) : void
+      + onExpirationDateChange(value: string) : void
+      + onCvvChange(value: string) : void
+      + onConfirm() : void
+      + onCancel() : void
+    }
+    class "PlanCardComponent" as Frontend_billing_PlanCardComponent <<Component>> {
+      + plan: !: Plan
+      + activePlanCode: PlanCode | null
+      + selected
+      - featureKeysByPlan: Record<PlanCode, string[]>
+      + get: isSelected(): boolean
+      + get: isRecommended(): boolean
+      + get: descriptionKey(): string
+      + get: featureKeys(): string[]
+      + get: usageKey(): string
+      + onSelect() : void
+    }
+  }
+  package "Presentation / Pages" {
+    class "BillingHistoryPageComponent" as Frontend_billing_BillingHistoryPageComponent <<Component>> {
+      + constructor: (
+      + billingFacade: BillingFacade
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      - translate: TranslateService
+      - uiPreferences: UiPreferencesService
+      + ngOnInit() : Promise<void>
+      + downloadInvoice(invoiceId: number) : void
+      + cancelSubscription() : Promise<void>
+      + formatMoney(amount: number | undefined, currency = 'PEN') : string
+      + formatLimit(value: number | null | undefined) : string
+      + formatDate(value: string | undefined) : string
+      + subscriptionStatusLabel(status: SubscriptionStatus | undefined) : string
+      + paymentStatusLabel(status: PaymentStatus | undefined) : string
+      + invoiceStateLabel(invoice: Invoice) : string
+      - currentLocale() : string
+      - t(key: string) : string
+    }
+    class "PlansPageComponent" as Frontend_billing_PlansPageComponent <<Component>> {
+      + selectedPlan: Plan | null
+      + constructor: (
+      + billingFacade: BillingFacade
+      - toastService: ToastService
+      - confirmDialog: ConfirmDialogService
+      + ngOnInit() : Promise<void>
+      + openPayment(plan: Plan) : void
+      + closePayment() : void
+      + confirmPayment(command: PaymentFormCommand) : Promise<void>
+      + cancelSubscription() : Promise<void>
+    }
+  }
+  package "Presentation / Routes" {
+    class "BillingRoutes" as Frontend_billing_BillingRoutes <<Routes>> {
+      + Routes
+    }
+  }
+}
+
+Frontend_billing_BillingFacade ..> Frontend_billing_BillingStore
+Frontend_billing_BillingFacade ..> Frontend_billing_CancelSubscriptionCommand
+Frontend_billing_BillingFacade ..> Frontend_billing_DownloadInvoiceCommand
+Frontend_billing_BillingFacade ..> Frontend_billing_Invoice
+Frontend_billing_BillingFacade ..> Frontend_billing_InvoiceAssembler
+Frontend_billing_BillingFacade ..> Frontend_billing_InvoicesApiService
+Frontend_billing_BillingFacade ..> Frontend_billing_PaymentAssembler
+Frontend_billing_BillingFacade ..> Frontend_billing_PaymentFormCommand
+Frontend_billing_BillingFacade ..> Frontend_billing_PaymentValidationService
+Frontend_billing_BillingFacade ..> Frontend_billing_PaymentsApiService
+Frontend_billing_BillingFacade ..> Frontend_billing_PlanAssembler
+Frontend_billing_BillingFacade ..> Frontend_billing_PlansApiService
+Frontend_billing_BillingFacade ..> Frontend_billing_SubscriptionAssembler
+Frontend_billing_BillingFacade ..> Frontend_billing_SubscriptionPolicyService
+Frontend_billing_BillingFacade ..> Frontend_billing_SubscriptionsApiService
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_BillingFacade
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_Invoice
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_PaymentStatus
+Frontend_billing_BillingHistoryPageComponent ..> Frontend_billing_SubscriptionStatus
+Frontend_billing_BillingStore ..> Frontend_billing_Invoice
+Frontend_billing_BillingStore ..> Frontend_billing_Payment
+Frontend_billing_BillingStore ..> Frontend_billing_Plan
+Frontend_billing_BillingStore ..> Frontend_billing_PlanCode
+Frontend_billing_BillingStore ..> Frontend_billing_Subscription
+Frontend_billing_CheckoutSubscriptionResource ..> Frontend_billing_PlanCode
+Frontend_billing_InvoiceAssembler ..> Frontend_billing_Invoice
+Frontend_billing_InvoiceAssembler ..> Frontend_billing_InvoiceResource
+Frontend_billing_InvoiceAssembler ..> Frontend_billing_InvoiceResponse
+Frontend_billing_InvoiceCardComponent ..> Frontend_billing_Invoice
+Frontend_billing_InvoicesApiService ..> Frontend_billing_Invoice
+Frontend_billing_InvoicesApiService ..> Frontend_billing_InvoiceAssembler
+Frontend_billing_InvoicesApiService ..> Frontend_billing_InvoiceResource
+Frontend_billing_InvoicesApiService ..> Frontend_billing_InvoiceResponse
+Frontend_billing_PaymentAssembler ..> Frontend_billing_Payment
+Frontend_billing_PaymentAssembler ..> Frontend_billing_PaymentResource
+Frontend_billing_PaymentAssembler ..> Frontend_billing_PaymentResponse
+Frontend_billing_PaymentFormCommand ..> Frontend_billing_PlanCode
+Frontend_billing_PaymentFormComponent ..> Frontend_billing_PaymentFormCommand
+Frontend_billing_PaymentFormComponent ..> Frontend_billing_Plan
+Frontend_billing_PaymentResponse ..> Frontend_billing_PaymentStatus
+Frontend_billing_PaymentsApiService ..> Frontend_billing_Payment
+Frontend_billing_PaymentsApiService ..> Frontend_billing_PaymentAssembler
+Frontend_billing_PaymentsApiService ..> Frontend_billing_PaymentResource
+Frontend_billing_PaymentsApiService ..> Frontend_billing_PaymentResponse
+Frontend_billing_PlanAssembler ..> Frontend_billing_Plan
+Frontend_billing_PlanAssembler ..> Frontend_billing_PlanResource
+Frontend_billing_PlanAssembler ..> Frontend_billing_PlanResponse
+Frontend_billing_PlanCardComponent ..> Frontend_billing_Plan
+Frontend_billing_PlanCardComponent ..> Frontend_billing_PlanCode
+Frontend_billing_PlanPermissionService ..> Frontend_billing_PlanCode
+Frontend_billing_PlanPermissions ..> Frontend_billing_PlanCode
+Frontend_billing_PlanResource ..> Frontend_billing_PlanCode
+Frontend_billing_PlanResponse ..> Frontend_billing_PlanCode
+Frontend_billing_PlansApiService ..> Frontend_billing_Plan
+Frontend_billing_PlansApiService ..> Frontend_billing_PlanAssembler
+Frontend_billing_PlansApiService ..> Frontend_billing_PlanResource
+Frontend_billing_PlansApiService ..> Frontend_billing_PlanResponse
+Frontend_billing_PlansPageComponent ..> Frontend_billing_BillingFacade
+Frontend_billing_PlansPageComponent ..> Frontend_billing_PaymentFormCommand
+Frontend_billing_PlansPageComponent ..> Frontend_billing_PaymentFormComponent
+Frontend_billing_PlansPageComponent ..> Frontend_billing_Plan
+Frontend_billing_PlansPageComponent ..> Frontend_billing_PlanCardComponent
+Frontend_billing_Subscription ..> Frontend_billing_PlanCode
+Frontend_billing_SubscriptionAssembler ..> Frontend_billing_Subscription
+Frontend_billing_SubscriptionAssembler ..> Frontend_billing_SubscriptionResource
+Frontend_billing_SubscriptionAssembler ..> Frontend_billing_SubscriptionResponse
+Frontend_billing_SubscriptionPolicyService ..> Frontend_billing_PlanCode
+Frontend_billing_SubscriptionPolicyService ..> Frontend_billing_Subscription
+Frontend_billing_SubscriptionResource ..> Frontend_billing_PlanCode
+Frontend_billing_SubscriptionResponse ..> Frontend_billing_PlanCode
+Frontend_billing_SubscriptionResponse ..> Frontend_billing_SubscriptionStatus
+Frontend_billing_SubscriptionStatus ..> Frontend_billing_PlanCode
+Frontend_billing_SubscriptionsApiService ..> Frontend_billing_CheckoutSubscriptionResource
+Frontend_billing_SubscriptionsApiService ..> Frontend_billing_Subscription
+Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionAssembler
+Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionResource
+Frontend_billing_SubscriptionsApiService ..> Frontend_billing_SubscriptionResponse
+
+@enduml
