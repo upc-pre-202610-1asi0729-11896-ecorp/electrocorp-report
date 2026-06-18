@@ -1734,65 +1734,65 @@ La primera vista resume la separacion de bounded contexts y sus relaciones princ
 
 #### 4.6.1.1. Bounded Contexts Overview
 
-<img src="assets/md-images-chapter4/BoundedContexts-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-bounded-contexts-overview.jpg">
 
 Esta vista general identifica los bounded contexts principales de ElectroCorp y muestra como se distribuyen las capacidades del producto. IAM centraliza identidad y acceso; Billing gestiona planes y suscripciones; Workplace organiza sedes y ambientes; Device Control coordina dispositivos, grupos, rutinas y modos; Energy Monitoring procesa lecturas y metricas; Notifications evalua alertas y preferencias; Reporting consolida reportes e indicadores; y Service Management gestiona tickets y mantenimiento.
 
 #### 4.6.1.2. IAM Event Storming
 
-<img src="assets/md-images-chapter4/IAM-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-iam.jpg">
 
 El contexto IAM representa los flujos de registro, autenticacion, perfiles y control de acceso. Este contexto provee la identidad base que otros bounded contexts usan para validar propiedad, alcance de usuario y permisos de operacion.
 
 #### 4.6.1.3. Billing Event Storming
 
-<img src="assets/md-images-chapter4/Billing-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-billing.jpg">
 
 El contexto Billing cubre planes, suscripciones, pagos e invoices. Sus eventos permiten conectar la seleccion de plan, la activacion de beneficios y la validacion de acceso a funcionalidades de la plataforma.
 
 #### 4.6.1.4. Workplace Event Storming
 
-<img src="assets/md-images-chapter4/Workplace_1-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-workplace-flow-1.jpg">
 
-<img src="assets/md-images-chapter4/Workplace_2-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-workplace-flow-2.jpg">
 
 El contexto Workplace modela sedes, rooms y asignaciones de dispositivos. Su separacion en dos vistas permite mostrar el flujo de creacion y administracion de espacios, junto con las relaciones necesarias para que Device Control, Energy Monitoring y Reporting trabajen con ubicaciones reales.
 
 #### 4.6.1.5. Device Control Event Storming
 
-<img src="assets/md-images-chapter4/DeviceControl_1-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-device-control-flow-1.jpg">
 
-<img src="assets/md-images-chapter4/DeviceControl_2-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-device-control-flow-2.jpg">
 
 El contexto Device Control representa dispositivos, grupos de dispositivos, rutinas y modos de operacion. Estos eventos sostienen la automatizacion del producto y preparan la informacion que luego consumen Energy Monitoring, Notifications y Reporting.
 
 #### 4.6.1.6. Energy Monitoring Event Storming
 
-<img src="assets/md-images-chapter4/EnergyMonitoring_1-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-1.jpg">
 
-<img src="assets/md-images-chapter4/EnergyMonitoring_2-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-2.jpg">
 
 El contexto Energy Monitoring organiza la captura, consulta y analisis de lecturas energeticas. Sus eventos conectan dispositivos con metricas, dashboards y condiciones que pueden activar alertas o alimentar reportes.
 
 #### 4.6.1.7. Notifications Event Storming
 
-<img src="assets/md-images-chapter4/Notification_1-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-notifications-flow-1.jpg">
 
-<img src="assets/md-images-chapter4/Notification_2-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-notifications-flow-2.jpg">
 
 El contexto Notifications modela reglas de alerta, preferencias y evaluacion de condiciones. Se apoya en lecturas energeticas y configuraciones de usuario para generar notificaciones relevantes dentro del flujo operativo de ElectroCorp.
 
 #### 4.6.1.8. Reporting Event Storming
 
-<img src="assets/md-images-chapter4/Reporting_1-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-reporting-flow-1.jpg">
 
-<img src="assets/md-images-chapter4/Reporting_2-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-reporting-flow-2.jpg">
 
 El contexto Reporting consolida indicadores de consumo, metas energeticas, reportes y exportaciones. Su rol es integrar datos de billing, workplaces, devices, energy monitoring, notifications y service management para producir una vista ejecutiva del sistema.
 
 #### 4.6.1.9. Service Management Event Storming
 
-<img src="assets/md-images-chapter4/ServiceManagement-EventStorming.jpg">
+<img src="assets/md-images-chapter4/event-storming-service-management.jpg">
 
 El contexto Service Management cubre tickets de soporte, tickets de mantenimiento y seguimiento de atenciones. Este contexto se conecta con dispositivos y espacios afectados para que las incidencias tengan trazabilidad operativa.
 
