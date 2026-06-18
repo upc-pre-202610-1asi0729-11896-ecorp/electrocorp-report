@@ -1,0 +1,49 @@
+@startuml
+title ElectroCorp Platform - Billing Backend Application Layer
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+package "Billing / Application" {
+  package "Application / Command Services" {
+    interface "BillingCommandService" as Backend_billing_BillingCommandService <<interface>> {
+    }
+  }
+  package "Application / Command Services Impl" {
+    class "BillingCommandServiceImpl" as Backend_billing_BillingCommandServiceImpl <<Command Service>> {
+      - planRepository: PlanRepository
+      - subscriptionRepository: SubscriptionRepository
+      - paymentRepository: PaymentRepository
+      - invoiceRepository: InvoiceRepository
+      - paymentValidationService: PaymentValidationService
+      + handle(CheckoutSubscriptionCommand command) : Subscription
+      + handle(CancelSubscriptionCommand command) : void
+      + handle(ProcessPaymentCommand command) : Payment
+      - validatePaymentDetails(CheckoutSubscriptionCommand command) : void
+    }
+  }
+  package "Application / Query Services" {
+    interface "BillingQueryService" as Backend_billing_BillingQueryService <<interface>> {
+    }
+  }
+  package "Application / Query Services Impl" {
+    class "BillingQueryServiceImpl" as Backend_billing_BillingQueryServiceImpl <<Query Service>> {
+      - planRepository: PlanRepository
+      - subscriptionRepository: SubscriptionRepository
+      - paymentRepository: PaymentRepository
+      - invoiceRepository: InvoiceRepository
+      + handle(GetAllPlansQuery query) : List<Plan>
+      + handle(GetCurrentSubscriptionQuery query) : Optional<Subscription>
+      + handle(GetPaymentsByUserQuery query) : List<Payment>
+      + handle(GetInvoicesByUserQuery query) : List<Invoice>
+    }
+  }
+}
+
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_BillingCommandService
+Backend_billing_BillingQueryServiceImpl ..> Backend_billing_BillingQueryService
+
+
+@enduml
