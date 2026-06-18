@@ -1,0 +1,395 @@
+@startuml
+title ElectroCorp Platform - Database Diagram
+left to right direction
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "IAM" {
+  entity "access_profiles" as access_profiles {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    name : varchar
+    description : varchar
+  }
+  entity "users" as users {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    full_name : varchar
+    email : varchar
+    password_hash : varchar
+    status : varchar
+    FK access_profile_id : bigint
+  }
+}
+
+package "Billing" {
+  entity "invoices" as invoices {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    FK payment_id : bigint
+    invoice_number : varchar
+    total_amount : Money
+    issued_at : date
+  }
+  entity "payments" as payments {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    FK subscription_id : bigint
+    amount : Money
+    status : varchar
+    payment_method : varchar
+    paid_at : timestamp
+  }
+  entity "plans" as plans {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    code : varchar
+    name : varchar
+    monthly_price : Money
+    max_devices : integer
+    max_routines : integer
+    max_alerts : integer
+    report_export_enabled : boolean
+  }
+  entity "subscriptions" as subscriptions {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    FK plan_id : bigint
+    status : varchar
+    start_date : date
+    end_date : date
+  }
+}
+
+package "Workplace" {
+  entity "device_assignments" as device_assignments {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    device_id : bigint
+    room_id : bigint
+    location_id : bigint
+    assigned_at : timestamp
+  }
+  entity "locations" as locations {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    name : varchar
+    address : varchar
+    type : varchar
+  }
+  entity "rooms" as rooms {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    location_id : bigint
+    name : varchar
+    floor : varchar
+  }
+}
+
+package "Device Control" {
+  entity "device_group_devices" as device_group_devices {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    device_group_id : bigint
+    device_id : bigint
+  }
+  entity "device_groups" as device_groups {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    name : varchar
+    description : varchar
+  }
+  entity "devices" as devices {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    name : varchar
+    room : varchar
+    type : varchar
+    power_watts : decimal
+    status : varchar
+  }
+  entity "operation_mode_routines" as operation_mode_routines {
+    PK, FK operation_mode_id : bigint
+    name : varchar
+    target_type : varchar
+    target_id : bigint
+    action : varchar
+    trigger_time : varchar
+    enabled : boolean
+  }
+  entity "operation_modes" as operation_modes {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    location_id : bigint
+    name : varchar
+    description : varchar
+    status : varchar
+    room_ids : varchar
+    group_ids : varchar
+    device_ids : varchar
+    turn_on_device_ids : varchar
+    turn_off_device_ids : varchar
+    keep_on_device_ids : varchar
+    routine_ids : varchar
+    routines_to_enable_ids : varchar
+    routines_to_disable_ids : varchar
+    goal_ids : varchar
+    internal_routines : List
+    all_day : boolean
+    starts_at : varchar
+    ends_at : varchar
+    rule_profile_id : bigint
+    preference_id : bigint
+    apply_rule_profile : boolean
+    apply_notification_preference : boolean
+    apply_routines : boolean
+    preserve_critical_sound : boolean
+    last_activated_at : timestamp
+  }
+  entity "routines" as routines {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    device_id : bigint
+    group_id : bigint
+    target_type : varchar
+    target_id : bigint
+    name : varchar
+    action : varchar
+    time : varchar
+    repeat_type : varchar
+    days_of_week : varchar
+    interval_days : integer
+    starts_on : varchar
+    enabled : boolean
+  }
+}
+
+package "Energy Monitoring" {
+  entity "energy_device_usage_states" as energy_device_usage_states {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    device_id : bigint
+    started_at : timestamp
+    last_recorded_at : timestamp
+  }
+  entity "energy_readings" as energy_readings {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    device_id : bigint
+    device_name : varchar
+    recorded_at : timestamp
+    watts : decimal
+    kilowatt_hours : decimal
+    estimated_cost : decimal
+    sample_seconds : integer
+    status : varchar
+  }
+}
+
+package "Notifications" {
+  entity "alert_rule_profiles" as alert_rule_profiles {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    name : varchar
+    description : varchar
+    scope_type : varchar
+    scope_id : varchar
+    mode : varchar
+    sensitivity : varchar
+    active : boolean
+  }
+  entity "alert_rules" as alert_rules {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    name : varchar
+    metric : varchar
+    condition_type : varchar
+    threshold : decimal
+    level : varchar
+    scope_type : varchar
+    scope_id : varchar
+    evaluator_type : varchar
+    weight : integer
+    profile_name : varchar
+    enabled : boolean
+  }
+  entity "alerts" as alerts {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    title : varchar
+    message : varchar
+    level : varchar
+    source_type : varchar
+    source_id : varchar
+    source_label : varchar
+    event_type : varchar
+    thread_key : varchar
+    evidence : varchar
+    explanation : varchar
+    recommended_action : varchar
+    severity_score : integer
+    repeat_count : integer
+    active : boolean
+    resolved : boolean
+    read_status : boolean
+    first_detected_at : timestamp
+    last_triggered_at : timestamp
+    dismissed_until : timestamp
+    expires_at : timestamp
+  }
+  entity "notification_preferences" as notification_preferences {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    scope_type : varchar
+    scope_id : varchar
+    email_enabled : boolean
+    push_enabled : boolean
+    in_app_enabled : boolean
+    toast_enabled : boolean
+    dashboard_enabled : boolean
+    critical_only : boolean
+    minimum_level : varchar
+    allowed_levels : varchar
+    allowed_source_types : varchar
+    critical_breaks_quiet_hours : boolean
+    group_similar_alerts : boolean
+    reminders_enabled : boolean
+    cooldown_minutes : integer
+    max_alerts_per_hour : integer
+    routine_night_silence : boolean
+    goal_deadline_alerts : boolean
+    maintenance_device_alerts : boolean
+    system_recommendations : boolean
+    daily_summary_enabled : boolean
+    weekly_summary_enabled : boolean
+    default_delivery_mode : varchar
+  }
+}
+
+package "Reporting" {
+  entity "consumption_reports" as consumption_reports {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    total_watts : decimal
+    average_watts : decimal
+    highest_watts : decimal
+    start_date : date
+    end_date : date
+  }
+  entity "energy_goals" as energy_goals {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    title : varchar
+    target_watts : decimal
+    current_watts : decimal
+    deadline : date
+    status : varchar
+    scope_type : varchar
+    scope_id : bigint
+    scope_name : varchar
+    active_from : LocalTime
+    active_to : LocalTime
+  }
+}
+
+package "Service Management" {
+  entity "maintenance_tickets" as maintenance_tickets {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    device_id : bigint
+    device_name : varchar
+    type : varchar
+    description : varchar
+    scheduled_date : date
+    status : varchar
+  }
+  entity "support_tickets" as support_tickets {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    subject : varchar
+    description : varchar
+    priority : varchar
+    status : varchar
+  }
+}
+
+access_profiles ||--o{ users : access_profile_id
+device_groups ||--o{ device_group_devices : device_group_id
+devices ||--o{ device_assignments : device_id
+devices ||--o{ device_group_devices : device_id
+devices ||--o{ energy_device_usage_states : device_id
+devices ||--o{ energy_readings : device_id
+devices ||--o{ maintenance_tickets : device_id
+devices ||--o{ routines : device_id
+locations ||--o{ device_assignments : location_id
+locations ||--o{ operation_modes : location_id
+locations ||--o{ rooms : location_id
+operation_modes ||--o{ operation_mode_routines : operation_mode_id
+payments ||--o{ invoices : payment_id
+plans ||--o{ subscriptions : plan_id
+rooms ||--o{ device_assignments : room_id
+subscriptions ||--o{ payments : subscription_id
+users ||--o{ alert_rule_profiles : user_id
+users ||--o{ alert_rules : user_id
+users ||--o{ alerts : user_id
+users ||--o{ consumption_reports : user_id
+users ||--o{ device_groups : user_id
+users ||--o{ devices : user_id
+users ||--o{ energy_device_usage_states : user_id
+users ||--o{ energy_goals : user_id
+users ||--o{ energy_readings : user_id
+users ||--o{ invoices : user_id
+users ||--o{ locations : user_id
+users ||--o{ maintenance_tickets : user_id
+users ||--o{ notification_preferences : user_id
+users ||--o{ operation_modes : user_id
+users ||--o{ payments : user_id
+users ||--o{ routines : user_id
+users ||--o{ subscriptions : user_id
+users ||--o{ support_tickets : user_id
+
+@enduml

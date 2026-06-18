@@ -2096,51 +2096,51 @@ Los diagramas se renderizan con PlantUML Proxy desde los archivos fuente .puml a
 
 #### Frontend Presentation Layer Diagrams
 
-Los siguientes diagramas detallan la capa de presentation del frontend por bounded context. Se enfocan en pages, components, routes, models y utilidades de presentacion, manteniendo la lectura separada de las capas de application, domain e infrastructure.
+Estos diagramas detallan la capa de presentacion del frontend por bounded context. Incluyen pages, components, route definitions, facades consumidas desde la UI y conexiones principales con shared UI cuando corresponde.
 
-##### Frontend IAM Presentation
+##### IAM Presentation
 
-![Frontend IAM Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-iam-diagram.puml)
+![IAM Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-iam-diagram.puml)
 
-##### Frontend Billing Presentation
+##### Billing Presentation
 
-![Frontend Billing Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-billing-diagram.puml)
+![Billing Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-billing-diagram.puml)
 
-##### Frontend Workplace Presentation
+##### Workplace Presentation
 
-![Frontend Workplace Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-workplace-diagram.puml)
+![Workplace Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-workplace-diagram.puml)
 
-##### Frontend Device Control Presentation
+##### Device Control Presentation
 
-![Frontend Device Control Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-device-control-diagram.puml)
+![Device Control Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-device-control-diagram.puml)
 
-##### Frontend Energy Monitoring Presentation
+##### Energy Monitoring Presentation
 
-![Frontend Energy Monitoring Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-energy-monitoring-diagram.puml)
+![Energy Monitoring Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-energy-monitoring-diagram.puml)
 
-##### Frontend Notifications Presentation
+##### Notifications Presentation
 
-![Frontend Notifications Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-notifications-diagram.puml)
+![Notifications Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-notifications-diagram.puml)
 
-##### Frontend Reporting Presentation
+##### Reporting Presentation
 
-![Frontend Reporting Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-reporting-diagram.puml)
+![Reporting Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-reporting-diagram.puml)
 
-##### Frontend Service Management Presentation
+##### Service Management Presentation
 
-![Frontend Service Management Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-service-management-diagram.puml)
+![Service Management Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-service-management-diagram.puml)
 
-##### Frontend Shared UI / Kernel Presentation
+##### Shared UI Kernel Presentation
 
-![Frontend Shared UI Kernel Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-shared-kernel-diagram.puml)
+![Shared UI Kernel Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-shared-kernel-diagram.puml)
 
 ## 4.8. Database Design
 
-### 4.8.1. Database Diagrams
+### 4.8.1. Database Diagram
 
-El diagrama de base de datos de ElectroCorp representa las principales entidades necesarias para el funcionamiento de la plataforma. Se incluyen entidades relacionadas con la gestión de usuarios, perfiles de acceso, permisos, dispositivos inteligentes, rutinas automáticas, lecturas de consumo energético, alertas, planes de servicio y suscripciones.
+El diagrama de base de datos de ElectroCorp representa la estructura persistente actual del backend Spring Boot. Fue actualizado a partir de las entidades JPA, aggregates persistentes, columnas, relaciones y tablas auxiliares presentes en `electrocorp-platform`.
 
-La estructura permite modelar la relación entre usuarios y dispositivos, así como el registro de lecturas energéticas generadas por cada dispositivo. Además, contempla la gestión de rutinas programadas, alertas asociadas al consumo o estado de los equipos, y la administración de planes de suscripción. Este diseño está alineado con una futura implementación backend en Spring Boot, donde las entidades podrán persistirse en una base de datos relacional.
+La estructura incluye IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management. Tambien muestra relaciones relevantes como usuarios con perfiles de acceso, suscripciones con planes, pagos con facturas, sedes con rooms, rooms con asignaciones de dispositivos, grupos con dispositivos, lecturas energeticas, alertas, reglas, preferencias, metas y tickets de soporte o mantenimiento.
 
 ![Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-diagram.puml)
 
