@@ -2134,6 +2134,172 @@ Estos diagramas detallan la capa de presentacion del frontend por bounded contex
 
 ![Shared UI Kernel Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-shared-kernel-diagram.puml)
 
+#### Frontend Layer Class Diagrams
+
+Estos diagramas dividen cada bounded context frontend por capa para mantener imagenes pequenas y revisables. Cada vista conserva relaciones internas de la capa y dependencias explicitas para que ningun elemento quede aislado.
+
+##### Frontend IAM Layers
+
+###### Domain
+
+![Frontend IAM Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend IAM Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend IAM Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend IAM Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-presentation-class-diagram.puml)
+
+##### Frontend Billing Layers
+
+###### Domain
+
+![Frontend Billing Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Billing Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Billing Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Billing Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-presentation-class-diagram.puml)
+
+##### Frontend Workplace Layers
+
+###### Domain
+
+![Frontend Workplace Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Workplace Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Workplace Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Workplace Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-presentation-class-diagram.puml)
+
+##### Frontend Device Control Layers
+
+###### Domain
+
+![Frontend Device Control Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Device Control Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Device Control Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Device Control Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-presentation-class-diagram.puml)
+
+##### Frontend Energy Monitoring Layers
+
+###### Domain
+
+![Frontend Energy Monitoring Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Energy Monitoring Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Energy Monitoring Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Energy Monitoring Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-presentation-class-diagram.puml)
+
+##### Frontend Notifications Layers
+
+###### Domain
+
+![Frontend Notifications Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Notifications Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Notifications Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Notifications Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-presentation-class-diagram.puml)
+
+##### Frontend Reporting Layers
+
+###### Domain
+
+![Frontend Reporting Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Reporting Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Reporting Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Reporting Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-presentation-class-diagram.puml)
+
+##### Frontend Service Management Layers
+
+###### Domain
+
+![Frontend Service Management Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Service Management Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Service Management Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Service Management Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-presentation-class-diagram.puml)
+
+##### Frontend Shared Kernel Layers
+
+###### Domain
+
+![Frontend Shared Kernel Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Shared Kernel Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Shared Kernel Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Shared Kernel Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-presentation-class-diagram.puml)
+
 ## 4.8. Database Design
 
 ### 4.8.1. Database Diagram
