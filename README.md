@@ -2006,7 +2006,7 @@ En el dominio se consideran entidades como `Support Ticket` y `Maintenance Ticke
 
 ### 4.7.1. Class Diagrams
 
-Los siguientes diagramas de clases presentan el diseno orientado a objetos del sistema ElectroCorp, separados en backend y frontend. Cada bloque incluye primero una vista general de bounded contexts, donde las clases representan contextos vacios y solo muestran sus dependencias principales. Luego se presenta un diagrama por bounded context con las clases, interfaces, records, enums, resources, assemblers, services, stores, endpoints y componentes identificados en el codigo fuente.
+Los siguientes diagramas de clases presentan el diseno orientado a objetos del sistema ElectroCorp, separados en backend y frontend. Se organizan en tres niveles: una vista general que relaciona bounded contexts, una vista por bounded context que relaciona sus capas internas, y diagramas detallados por capa donde si se muestran clases, interfaces, records, enums, resources, assemblers, services, stores, endpoints y componentes identificados en el codigo fuente.
 
 Los diagramas se renderizan con PlantUML Proxy desde los archivos fuente .puml almacenados en este repositorio, apuntando a la rama main.
 
@@ -2219,6 +2219,8 @@ Estos diagramas dividen cada bounded context backend por capa para evitar imagen
 ![Backend Shared Kernel Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-interfaces-rest-class-diagram.puml)
 
 #### Frontend Class Diagrams
+
+Los diagramas frontend por bounded context muestran solo capas y dependencias entre capas. El detalle de clases queda en los diagramas frontend por capa.
 
 ##### Frontend General Bounded Contexts
 
