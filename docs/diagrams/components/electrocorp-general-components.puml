@@ -1,104 +1,147 @@
 @startuml
+!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam componentStyle rectangle
-skinparam packageStyle rectangle
+skinparam defaultFontName Arial
 skinparam wrapWidth 180
 skinparam maxMessageSize 90
-skinparam defaultFontName Arial
-skinparam ArrowColor #1F4E79
-skinparam component {
-  BackgroundColor #F8FBFF
-  BorderColor #1F4E79
-  FontColor #0B1F33
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
 }
 skinparam database {
-  BackgroundColor #FFF9E8
-  BorderColor #8A6D1D
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
 }
-skinparam actor {
-  BackgroundColor #EEF7FF
-  BorderColor #1F4E79
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
 }
-
-title ElectroCorp - General Components Diagram
+hide stereotype
+title ElectroCorp - Frontend General Components Diagram
 left to right direction
 
-actor "User" as User
-component "Landing Page" as Landing
-component "Angular Router" as Router
-component "Shared UI Shell" as Shell
-component "HTTP API Layer" as HttpLayer
-component "Spring Boot REST API" as Api
-database "PostgreSQL" as Db
 
-package "Frontend bounded contexts" {
-  component "IAM UI" as FIam
-  component "Billing UI" as FBilling
-  component "Workplace UI" as FWorkplace
-  component "Device Control UI" as FDevice
-  component "Energy Monitoring UI" as FEnergy
-  component "Notifications UI" as FNotifications
-  component "Reporting UI" as FReporting
-  component "Service Management UI" as FService
+rectangle "<b>ElectroCorp User</b>
+<size:12><i>[Person]</i></size>
+
+User who manages smart devices, routines, energy monitoring, reports, goals, support, maintenance and billing." as User <#0B5593>
+
+package "ElectroCorp Frontend / Angular SPA
+[container]" {
+  rectangle "<b>App Layout Component</b>
+<size:12><i>[Angular Component]</i></size>
+
+Main shell, topbar, theme, language switcher and router outlet." as Layout <#1ABC9C>
+  rectangle "<b>App Router</b>
+<size:12><i>[Angular Router]</i></size>
+
+Routes the user to each bounded context." as Router <#1ABC9C>
+  rectangle "<b>Language Switcher Component</b>
+<size:12><i>[Angular Component]</i></size>
+
+Switches UI language between ES, EN and PT." as Lang <#1ABC9C>
+  rectangle "<b>Workplace Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Locations, rooms and device assignments." as Workplace <#3498DB>
+  rectangle "<b>Energy Monitoring Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Energy dashboard, readings and history." as Energy <#3498DB>
+  rectangle "<b>Service Management Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Support tickets and maintenance tickets." as Service <#3498DB>
+  rectangle "<b>Device Control Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Devices, routines, operation modes and device groups." as Device <#3498DB>
+  rectangle "<b>IAM Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Authentication, registration, session and access profiles." as Iam <#3498DB>
+  rectangle "<b>Reporting Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Consumption reports and energy goals." as Reporting <#3498DB>
+  rectangle "<b>Billing Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Plans, subscriptions, payments and invoices." as Billing <#3498DB>
+  rectangle "<b>Notifications Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Alerts, alert rules and notification preferences." as Notifications <#3498DB>
+  rectangle "<b>Infrastructure API Clients</b>
+<size:12><i>[Angular HTTP Services]</i></size>
+
+Typed services that consume REST endpoints from the backend API." as Clients <#F39C12>
+  rectangle "<b>Shared Context</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Layout, session, preferences, base API service and shared infrastructure." as Shared <#3498DB>
 }
 
-package "Backend bounded contexts" {
-  component "IAM API" as BIam
-  component "Billing API" as BBilling
-  component "Workplace API" as BWorkplace
-  component "Device Control API" as BDevice
-  component "Energy Monitoring API" as BEnergy
-  component "Notifications API" as BNotifications
-  component "Reporting API" as BReporting
-  component "Service Management API" as BService
-  component "Shared Kernel" as BShared
-}
+rectangle "<b>ElectroCorp Backend API</b>
+<size:12><i>[Java / Spring Boot]</i></size>
 
-User --> Landing : opens public website
-Landing --> Router : selected plan / sign up path
-User --> Shell : authenticated navigation
-Shell --> Router
-Router --> FIam
-Router --> FBilling
-Router --> FWorkplace
-Router --> FDevice
-Router --> FEnergy
-Router --> FNotifications
-Router --> FReporting
-Router --> FService
-FIam --> HttpLayer
-FBilling --> HttpLayer
-FWorkplace --> HttpLayer
-FDevice --> HttpLayer
-FEnergy --> HttpLayer
-FNotifications --> HttpLayer
-FReporting --> HttpLayer
-FService --> HttpLayer
-HttpLayer --> Api
-Api --> BIam
-Api --> BBilling
-Api --> BWorkplace
-Api --> BDevice
-Api --> BEnergy
-Api --> BNotifications
-Api --> BReporting
-Api --> BService
-Api --> BShared
-BIam --> Db
-BBilling --> Db
-BWorkplace --> Db
-BDevice --> Db
-BEnergy --> Db
-BNotifications --> Db
-BReporting --> Db
-BService --> Db
-BShared ..> BIam
-BShared ..> BBilling
-BShared ..> BWorkplace
-BShared ..> BDevice
-BShared ..> BEnergy
-BShared ..> BNotifications
-BShared ..> BReporting
-BShared ..> BService
+REST API organized by DDD bounded contexts." as Backend <#E67E22>
+database "<b>ElectroCorp Database</b>
+<size:12><i>[Relational Database]</i></size>
+
+Stores users, devices, readings, reports, goals, subscriptions, alerts and tickets." as Database
+
+User --> Layout : Uses
+[Browser]
+Layout --> Router : Displays routed views through
+Layout --> Lang : Uses
+Router --> Workplace : Routes to
+Router --> Energy : Routes to
+Router --> Service : Routes to
+Router --> Device : Routes to
+Router --> Iam : Routes to
+Router --> Reporting : Routes to
+Router --> Billing : Routes to
+Router --> Notifications : Routes to
+Layout --> Shared : Uses shared services
+Workplace --> Clients : Uses
+Energy --> Clients : Uses
+Service --> Clients : Uses
+Device --> Clients : Uses
+Iam --> Clients : Uses
+Reporting --> Clients : Uses
+Billing --> Clients : Uses
+Notifications --> Clients : Uses
+Workplace --> Shared : Uses
+Energy --> Shared : Uses
+Service --> Shared : Uses
+Device --> Shared : Uses
+Iam --> Shared : Uses
+Reporting --> Shared : Uses
+Billing --> Shared : Uses
+Notifications --> Shared : Uses
+Clients --> Backend : Consumes REST endpoints (JSON / HTTPS)
+Backend --> Database : Reads and writes (JPA / SQL)
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#9B59B6> domain |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
 @enduml

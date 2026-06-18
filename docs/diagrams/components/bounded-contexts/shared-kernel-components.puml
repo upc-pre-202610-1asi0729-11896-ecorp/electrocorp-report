@@ -1,89 +1,138 @@
 @startuml
+!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam componentStyle rectangle
-skinparam packageStyle rectangle
+skinparam defaultFontName Arial
 skinparam wrapWidth 180
 skinparam maxMessageSize 90
-skinparam defaultFontName Arial
-skinparam ArrowColor #1F4E79
-skinparam component {
-  BackgroundColor #F8FBFF
-  BorderColor #1F4E79
-  FontColor #0B1F33
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
 }
 skinparam database {
-  BackgroundColor #FFF9E8
-  BorderColor #8A6D1D
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
 }
-skinparam actor {
-  BackgroundColor #EEF7FF
-  BorderColor #1F4E79
-}
-
-title ElectroCorp - Shared Kernel Components
+hide stereotype
+title ElectroCorp - Shared Kernel Components Diagram
 left to right direction
 
-actor "User" as User
-component "Angular Router" as Router
-component "HTTP API Layer" as Http
-component "Spring Boot API" as Api
-database "PostgreSQL tables" as Db
 
-package "Shared Kernel Frontend" {
-  component "App Layout" as Front_0
-  component "Shared UI Components" as Front_1
-  component "Base API Service" as Front_2
-  component "Auth Session Service" as Front_3
-  component "UI Preferences Service" as Front_4
+package "Shared Kernel Frontend Bounded Context
+[container]" {
+  rectangle "<b>App Layout Component</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents and coordinates user interaction." as F0 <#58A9E8>
+  rectangle "<b>Shared UI Components</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates frontend state and REST calls." as F1 <#58A9E8>
+  rectangle "<b>Auth Session Service</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates frontend state and REST calls." as F2 <#58A9E8>
 }
 
-package "Shared Kernel Backend" {
-  component "REST Interface" as Backend_shared_kernel
-  component "Health Controller" as Back_0
-  component "Global Exception Handler" as Back_1
-  component "Security Configuration" as Back_2
-  component "OpenAPI Configuration" as Back_3
-  component "Base Resources" as Back_4
+package "Shared Kernel Backend Bounded Context
+[container]" {
+  rectangle "<b>Health Controller</b>
+<size:12><i>[REST Controller]</i></size>
+
+Exposes HTTP endpoints for this bounded context." as B0 <#3498DB>
+  rectangle "<b>Global Exception Handler</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B1 <#3498DB>
+  rectangle "<b>Security Filter Chain</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B2 <#3498DB>
+  rectangle "<b>OpenAPI Configuration</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B3 <#3498DB>
+  rectangle "<b>Base API Configuration</b>
+<size:12><i>[Spring Data Repository]</i></size>
+
+Persists and retrieves bounded context data." as R0 <#F39C12>
 }
 
-package "Shared Kernel Persistence" {
-  database "Cross-context references" as Table_0
+database "<b>ElectroCorp Database</b>
+<size:12><i>[Relational Database]</i></size>
+
+Stores runtime configuration." as Database
+
+package "Connected Bounded Contexts
+[external containers]" {
+  rectangle "<b>IAM</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep0 <#7F8C8D>
+  rectangle "<b>Billing</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep1 <#7F8C8D>
+  rectangle "<b>Workplace</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep2 <#7F8C8D>
+  rectangle "<b>Device Control</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep3 <#7F8C8D>
+  rectangle "<b>Energy Monitoring</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep4 <#7F8C8D>
+  rectangle "<b>Notifications</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep5 <#7F8C8D>
+  rectangle "<b>Reporting</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep6 <#7F8C8D>
+  rectangle "<b>Service Management</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep7 <#7F8C8D>
 }
 
-package "Connected bounded contexts" {
-  component "IAM" as Dep0
-  component "Billing" as Dep1
-  component "Workplace" as Dep2
-  component "Device Control" as Dep3
-  component "Energy Monitoring" as Dep4
-  component "Notifications" as Dep5
-  component "Reporting" as Dep6
-  component "Service Management" as Dep7
-}
-
-User --> Router
-Router --> Front_0
-Front_0 --> Front_1
-Front_1 --> Front_2
-Front_2 --> Front_3
-Front_3 --> Front_4
-Front_4 --> Http
-Http --> Api
-Api --> Backend_shared_kernel
-Backend_shared_kernel --> Back_0
-Back_0 --> Back_1
-Back_1 --> Back_2
-Back_2 --> Back_3
-Back_3 --> Back_4
-Back_4 --> Table_0
-
-Backend_shared_kernel ..> Dep0 : uses / references
-Backend_shared_kernel ..> Dep1 : uses / references
-Backend_shared_kernel ..> Dep2 : uses / references
-Backend_shared_kernel ..> Dep3 : uses / references
-Backend_shared_kernel ..> Dep4 : uses / references
-Backend_shared_kernel ..> Dep5 : uses / references
-Backend_shared_kernel ..> Dep6 : uses / references
-Backend_shared_kernel ..> Dep7 : uses / references
+F0 --> F1 : Uses
+F1 --> F2 : Uses
+F2 --> B0 : Consumes REST endpoints (JSON / HTTPS)
+B0 --> B1 : Delegates to
+B0 --> B2 : Delegates to
+B0 --> B3 : Delegates to
+B1 --> R0 : Uses
+R0 --> Database : Reads and writes
+B0 ..> Dep0 : Coordinates with
+B0 ..> Dep1 : Coordinates with
+B0 ..> Dep2 : Coordinates with
+B0 ..> Dep3 : Coordinates with
+B0 ..> Dep4 : Coordinates with
+B0 ..> Dep5 : Coordinates with
+B0 ..> Dep6 : Coordinates with
+B0 ..> Dep7 : Coordinates with
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
 @enduml
