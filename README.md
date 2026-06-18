@@ -2052,6 +2052,172 @@ Los diagramas se renderizan con PlantUML Proxy desde los archivos fuente .puml a
 
 ![Backend Shared Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-shared-kernel-class-diagram.puml)
 
+#### Backend Layer Class Diagrams
+
+Estos diagramas dividen cada bounded context backend por capa para evitar imagenes demasiado largas. Cada vista conserva relaciones internas de la capa y dependencias explicitas para que ningun elemento quede aislado.
+
+##### Backend IAM Layers
+
+###### Application
+
+![Backend IAM Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-application-class-diagram.puml)
+
+###### Domain
+
+![Backend IAM Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend IAM Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend IAM Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-interfaces-rest-class-diagram.puml)
+
+##### Backend Billing Layers
+
+###### Application
+
+![Backend Billing Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Billing Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Billing Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Billing Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-interfaces-rest-class-diagram.puml)
+
+##### Backend Workplace Layers
+
+###### Application
+
+![Backend Workplace Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Workplace Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Workplace Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Workplace Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-interfaces-rest-class-diagram.puml)
+
+##### Backend Device Control Layers
+
+###### Application
+
+![Backend Device Control Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Device Control Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Device Control Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Device Control Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-interfaces-rest-class-diagram.puml)
+
+##### Backend Energy Monitoring Layers
+
+###### Application
+
+![Backend Energy Monitoring Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Energy Monitoring Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Energy Monitoring Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Energy Monitoring Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-interfaces-rest-class-diagram.puml)
+
+##### Backend Notifications Layers
+
+###### Application
+
+![Backend Notifications Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Notifications Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Notifications Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Notifications Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-interfaces-rest-class-diagram.puml)
+
+##### Backend Reporting Layers
+
+###### Application
+
+![Backend Reporting Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Reporting Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Reporting Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Reporting Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-interfaces-rest-class-diagram.puml)
+
+##### Backend Service Management Layers
+
+###### Application
+
+![Backend Service Management Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Service Management Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Service Management Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Service Management Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-interfaces-rest-class-diagram.puml)
+
+##### Backend Shared Kernel Layers
+
+###### Application
+
+![Backend Shared Kernel Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Shared Kernel Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Shared Kernel Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Shared Kernel Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-interfaces-rest-class-diagram.puml)
+
 #### Frontend Class Diagrams
 
 ##### Frontend General Bounded Contexts
