@@ -2,54 +2,77 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 145
+skinparam maxMessageSize 95
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
+skinparam rectangleFontStyle plain
+skinparam rectangle {
+  BorderThickness 0
+}
+skinparam rectangle<<BoundedContext>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
+}
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
+skinparam databaseFontStyle plain
 hide stereotype
-title ElectroCorp - Container Diagram
-top to bottom direction
+left to right direction
 
-rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUser who manages devices, routines, readings, reports, goals, support and billing." as User #0B5593
-rectangle "<b>Mailchimp</b>\n<i>[External System]</i>\n\nExternal email service used to send reports, notifications and critical alerts." as Mailchimp #58A9E8
-rectangle "<b>Stripe</b>\n<i>[External System]</i>\n\nExternal payment service used to process subscriptions and card payments." as Stripe #58A9E8
+title ElectroCorp - C4 Container Diagram
 
-package "ElectroCorp System\n[system]" {
-  rectangle "<b>Landing Page</b>\n<i>[HTML, CSS, JavaScript]</i>\n\nPublic marketing page with plans and call-to-action buttons that redirect users to the SPA." as Landing #1ABC9C
-  rectangle "<b>Single Page Application</b>\n<i>[Angular]</i>\n\nClient-side product interface for platform workflows." as Spa #27AE60
-  rectangle "<b>ElectroCorp API</b>\n<i>[Java, Spring Boot]</i>\n\nREST API implementing business rules across modular bounded contexts." as Api #F39C12
-  database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users, access profiles, devices, routines, readings, alerts, reports, goals, support tickets and subscriptions." as Database
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses smart energy management flows across website and web app." as User #0B5593
+
+rectangle "<b>ElectroCorp Product Boundary</b>\n<i>[Software System]</i>" as Product <<BoundedContext>> {
+  rectangle "<b>Landing Page</b>\n<i>[Static Website]</i>\n\nPublic marketing site hosted on GitHub Pages." as Website #3498DB
+  rectangle "<b>Angular Web App</b>\n<i>[Frontend Container]</i>\n\nSPA with routes, layout, facades, stores and API clients." as Spa #3498DB
+  rectangle "<b>Backend API</b>\n<i>[Backend Container]</i>\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api #3498DB
+  database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL Container]</i>\n\nPersists operational and analytical platform data." as Db
 }
 
-User --> Landing : Browses public information\nand plans\n[Browser]
-User --> Spa : Accesses application\ndirectly\n[Browser]
-Landing --> Spa : Redirects selected plan\n[CTA Link]
-Spa --> Api : Consumes backend services\n[JSON / HTTPS]
-Api --> Database : Reads and writes application\ndata\n[JPA / SQL]
-Api --> Stripe : Processes subscriptions\nand payments\n[HTTPS / API]
-Api --> Mailchimp : Sends reports and critical\nalerts\n[Email]
-Mailchimp --> User : Delivers notifications\nand reports\n[Email]
+rectangle "<b>GitHub Pages</b>\n<i>[External Container]</i>\n\nHosts the public website." as GithubPages #7F8C8D
+rectangle "<b>Render Web Service</b>\n<i>[External Container]</i>\n\nHosts Angular and Spring Boot deployments." as RenderWeb #7F8C8D
+rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nSupports subscription payment flow." as Payment #7F8C8D
+rectangle "<b>Email Provider</b>\n<i>[External System]</i>\n\nSupports notification delivery." as Mail #7F8C8D
+
+User --> Website : Browses plans\n[Browser]
+Website --> Spa : Redirects chosen plan\n[HTTPS]
+User --> Spa : Uses product features\n[Browser]
+Spa --> Api : Consumes REST endpoints\n[JSON / HTTPS]
+Api --> Db : Reads and writes\n[JPA / SQL]
+Website --> GithubPages : Is deployed on\n[Static hosting]
+Spa --> RenderWeb : Is deployed on\n[Web service]
+Api --> RenderWeb : Is deployed on\n[Web service]
+Api --> Payment : Requests payment status\n[HTTPS / API]
+Api --> Mail : Sends alerts and reports\n[HTTPS / API]
+
+Website -[hidden]right- Spa
+Spa -[hidden]right- Api
+Api -[hidden]right- Db
+GithubPages -[hidden]down- RenderWeb
+Payment -[hidden]down- Mail
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
+  |<#F39C12> infrastructure / external |
   |<#C9332B> database |
+  |<#7F8C8D> external container |
 endlegend
+
 @enduml

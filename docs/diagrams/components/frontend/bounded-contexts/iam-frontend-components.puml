@@ -38,14 +38,13 @@ rectangle "<b>IAM Frontend Bounded Context</b>\n<i>[Angular Feature Module]</i>"
   rectangle "<b>Application Layer</b>\n<i>[Facades / Stores]</i>\n\nCoordinates UI state, use cases and feature workflows." as Application #58A9E8
   rectangle "<b>Domain Layer</b>\n<i>[Models / Rules]</i>\n\nDefines frontend models, view rules and local domain decisions." as Domain #58A9E8
   rectangle "<b>Infrastructure Layer</b>\n<i>[API Clients / Mappers]</i>\n\nConsumes backend endpoints and maps resources into frontend models." as Infrastructure #58A9E8
-}
+};
 
 rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nREST API consumed by this frontend context." as Backend #7F8C8D
 rectangle "<b>Shared Kernel Frontend</b>\n<i>[Shared UI / Session]</i>\n\nProvides layout, session, preferences, UI primitives and base API behavior." as Shared #7F8C8D
-rectangle "<b>Shared Kernel</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep0 #7F8C8D
-rectangle "<b>Billing</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep1 #7F8C8D
-rectangle "<b>Workplace</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep2 #7F8C8D
-rectangle "<b>Service Management</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep3 #7F8C8D
+rectangle "<b>Billing</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep0 #7F8C8D
+rectangle "<b>Workplace</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep1 #7F8C8D
+rectangle "<b>Service Management</b>\n<i>[Frontend Context]</i>\n\nCoordinates navigation, shared state or referenced data." as Dep2 #7F8C8D
 
 Presentation --> Application : Dispatches UI actions
 Application --> Domain : Applies feature rules
@@ -56,7 +55,6 @@ Application ..> Shared : Uses session / preferences
 Application ..> Dep0 : Coordinates with
 Application ..> Dep1 : Coordinates with
 Application ..> Dep2 : Coordinates with
-Application ..> Dep3 : Coordinates with
 
 Presentation -[hidden]right- Application
 Application -[hidden]right- Domain

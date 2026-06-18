@@ -38,14 +38,13 @@ rectangle "<b>Energy Monitoring Backend Bounded Context</b>\n<i>[Spring Boot Mod
   rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
   rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
   rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
-}
+};
 
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores readings, sampling settings, statistics and energy dashboards." as Database
 rectangle "<b>Shared Kernel</b>\n<i>[Published Language]</i>\n\nProvides common errors, security context and shared platform configuration." as Shared #7F8C8D
 rectangle "<b>Device Control</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep0 #7F8C8D
 rectangle "<b>Notifications</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep1 #7F8C8D
 rectangle "<b>Reporting</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep2 #7F8C8D
-rectangle "<b>Shared Kernel</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep3 #7F8C8D
 
 Interfaces --> Application : Delegates use cases
 Application --> Domain : Enforces business rules
@@ -57,7 +56,6 @@ Application ..> Shared : Uses shared language
 Application ..> Dep0 : Coordinates with
 Application ..> Dep1 : Coordinates with
 Application ..> Dep2 : Coordinates with
-Application ..> Dep3 : Coordinates with
 
 Interfaces -[hidden]right- Application
 Application -[hidden]right- Domain

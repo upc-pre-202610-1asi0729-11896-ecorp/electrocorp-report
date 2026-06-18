@@ -38,7 +38,7 @@ rectangle "<b>Notifications Frontend Bounded Context</b>\n<i>[Angular Feature Mo
   rectangle "<b>Application Layer</b>\n<i>[Facades / Stores]</i>\n\nCoordinates UI state, use cases and feature workflows." as Application #58A9E8
   rectangle "<b>Domain Layer</b>\n<i>[Models / Rules]</i>\n\nDefines frontend models, view rules and local domain decisions." as Domain #58A9E8
   rectangle "<b>Infrastructure Layer</b>\n<i>[API Clients / Mappers]</i>\n\nConsumes backend endpoints and maps resources into frontend models." as Infrastructure #58A9E8
-}
+};
 
 rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nREST API consumed by this frontend context." as Backend #7F8C8D
 rectangle "<b>Shared Kernel Frontend</b>\n<i>[Shared UI / Session]</i>\n\nProvides layout, session, preferences, UI primitives and base API behavior." as Shared #7F8C8D

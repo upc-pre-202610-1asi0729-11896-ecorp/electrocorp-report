@@ -2,32 +2,42 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 145
+skinparam maxMessageSize 95
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
+skinparam rectangleFontStyle plain
+skinparam rectangle {
+  BorderThickness 0
+}
+skinparam rectangle<<BoundedContext>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
+}
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
+skinparam databaseFontStyle plain
 hide stereotype
-title ElectroCorp - C4 Context Diagram
 left to right direction
+
+title ElectroCorp - C4 Context Diagram
 
 rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nHomeowner or business owner who manages devices, energy, alerts, reports, support and billing." as User #0B5593
 
-package "ElectroCorp Digital Ecosystem\n[system]" {
-  rectangle "<b>ElectroCorp Website</b>\n<i>[Public Website]</i>\n\nPresents value proposition, pricing and calls to action." as Landing #1ABC9C
-  rectangle "<b>ElectroCorp Web App</b>\n<i>[Angular SPA]</i>\n\nOperational application for the complete energy management experience." as WebApp #27AE60
+rectangle "<b>ElectroCorp Digital Ecosystem</b>\n<i>[Software System Boundary]</i>" as Ecosystem <<BoundedContext>> {
+  rectangle "<b>ElectroCorp Website</b>\n<i>[Public Website]</i>\n\nPresents value proposition, pricing and calls to action." as Landing #0B6FB3
+  rectangle "<b>ElectroCorp Web App</b>\n<i>[Angular SPA]</i>\n\nOperational application for the complete energy management experience." as WebApp #0B6FB3
   rectangle "<b>ElectroCorp Platform API</b>\n<i>[Spring Boot System]</i>\n\nModular monolith that coordinates IAM, billing, workplaces, devices, monitoring, alerts, reporting and service." as Platform #0B6FB3
 }
 
@@ -42,14 +52,20 @@ WebApp --> Platform : Consumes platform services\n[JSON / HTTPS]
 Platform --> Database : Reads and writes\n[JPA / SQL]
 Platform --> PaymentProvider : Processes subscriptions\n[HTTPS / API]
 Platform --> NotificationProvider : Sends alerts and reports\n[HTTPS / API]
+
+Landing -[hidden]right- WebApp
+WebApp -[hidden]right- Platform
+PaymentProvider -[hidden]down- NotificationProvider
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
+  |<#F39C12> infrastructure / external |
   |<#C9332B> database |
+  |<#7F8C8D> external container |
 endlegend
+
 @enduml

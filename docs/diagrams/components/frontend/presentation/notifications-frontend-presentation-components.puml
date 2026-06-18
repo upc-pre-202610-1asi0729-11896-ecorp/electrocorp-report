@@ -42,7 +42,7 @@ rectangle "<b>Notifications Presentation Layer</b>\n<i>[Angular UI Surface]</i>"
   rectangle "<b>Preference Toggle</b>\n<i>[UI Component]</i>\n\nDisplays reusable interaction or visual state for the page flow." as Ui2 #58A9E8
   rectangle "<b>Alert Status Badge</b>\n<i>[UI Component]</i>\n\nDisplays reusable interaction or visual state for the page flow." as Ui3 #58A9E8
   rectangle "<b>Notifications Facade</b>\n<i>[Application Facade]</i>\n\nReceives UI events and exposes state for presentation components." as Facade #3498DB
-}
+};
 
 rectangle "<b>Shared UI Components</b>\n<i>[Shared Kernel]</i>\n\nCards, buttons, empty states, badges, layout and loading states." as Shared #7F8C8D
 rectangle "<b>Notifications Routes</b>\n<i>[Angular Router]</i>\n\nActivates routed pages for this presentation layer." as Routes #7F8C8D

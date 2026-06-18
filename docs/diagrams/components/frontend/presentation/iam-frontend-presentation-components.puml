@@ -42,7 +42,7 @@ rectangle "<b>IAM Presentation Layer</b>\n<i>[Angular UI Surface]</i>" as Bounda
   rectangle "<b>Profile Summary</b>\n<i>[UI Component]</i>\n\nDisplays reusable interaction or visual state for the page flow." as Ui2 #58A9E8
   rectangle "<b>Session Guard View</b>\n<i>[UI Component]</i>\n\nDisplays reusable interaction or visual state for the page flow." as Ui3 #58A9E8
   rectangle "<b>IAM Facade</b>\n<i>[Application Facade]</i>\n\nReceives UI events and exposes state for presentation components." as Facade #3498DB
-}
+};
 
 rectangle "<b>Shared UI Components</b>\n<i>[Shared Kernel]</i>\n\nCards, buttons, empty states, badges, layout and loading states." as Shared #7F8C8D
 rectangle "<b>IAM Routes</b>\n<i>[Angular Router]</i>\n\nActivates routed pages for this presentation layer." as Routes #7F8C8D
