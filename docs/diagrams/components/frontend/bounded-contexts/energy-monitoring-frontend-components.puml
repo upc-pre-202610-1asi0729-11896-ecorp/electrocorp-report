@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
@@ -8,72 +7,34 @@ skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
-skinparam rectangle {
-  RoundCorner 0
-  BorderThickness 1
-}
-skinparam package {
-  BorderColor #555555
-  BorderStyle dashed
-  BackgroundColor transparent
-  FontColor #444444
-  FontStyle bold
-}
-skinparam database {
-  BackgroundColor #C9332B
-  BorderColor #C9332B
-  FontColor #FFFFFF
-}
+skinparam rectangleRoundCorner 0
+skinparam rectangleBorderThickness 1
+skinparam packageStyle rectangle
+skinparam packageBorderColor #555555
+skinparam packageBackgroundColor transparent
+skinparam packageFontColor #444444
+skinparam packageFontStyle bold
+skinparam databaseBackgroundColor #C9332B
+skinparam databaseBorderColor #C9332B
+skinparam databaseFontColor #FFFFFF
 hide stereotype
 title ElectroCorp - Energy Monitoring Frontend Components Diagram
 left to right direction
 
 
-package "Energy Monitoring Frontend Bounded Context
-[container]" {
-  rectangle "<b>Energy Dashboard Page</b>
-<size:12><i>[Angular Component]</i></size>
-
-Presents user interaction for this bounded context." as F0 <#58A9E8>
-  rectangle "<b>Energy History Page</b>
-<size:12><i>[Angular Component]</i></size>
-
-Presents user interaction for this bounded context." as F1 <#58A9E8>
-  rectangle "<b>Metrics Components</b>
-<size:12><i>[Angular Component]</i></size>
-
-Presents user interaction for this bounded context." as F2 <#58A9E8>
-  rectangle "<b>Energy Monitoring Facade</b>
-<size:12><i>[Angular Service]</i></size>
-
-Coordinates state, use cases and REST calls." as F3 <#58A9E8>
-  rectangle "<b>Energy API Client</b>
-<size:12><i>[Angular Service]</i></size>
-
-Coordinates state, use cases and REST calls." as F4 <#58A9E8>
+package "Energy Monitoring Frontend Bounded Context\n[container]" {
+  rectangle "Energy Dashboard Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F0 <#58A9E8>
+  rectangle "Energy History Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F1 <#58A9E8>
+  rectangle "Metrics Components\n[Angular Component]\n\nPresents user interaction for this bounded context." as F2 <#58A9E8>
+  rectangle "Energy Monitoring Facade\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F3 <#58A9E8>
+  rectangle "Energy API Client\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F4 <#58A9E8>
 }
-rectangle "<b>ElectroCorp Backend API</b>
-<size:12><i>[External Container]</i></size>
-
-REST API consumed by this frontend context." as Backend <#7F8C8D>
-package "Connected Frontend Contexts
-[external containers]" {
-  rectangle "<b>Device Control</b>
-<size:12><i>[Frontend Context]</i></size>
-
-Provides shared navigation, session or referenced data." as Dep0 <#7F8C8D>
-  rectangle "<b>Reporting</b>
-<size:12><i>[Frontend Context]</i></size>
-
-Provides shared navigation, session or referenced data." as Dep1 <#7F8C8D>
-  rectangle "<b>Notifications</b>
-<size:12><i>[Frontend Context]</i></size>
-
-Provides shared navigation, session or referenced data." as Dep2 <#7F8C8D>
-  rectangle "<b>Shared Kernel</b>
-<size:12><i>[Frontend Context]</i></size>
-
-Provides shared navigation, session or referenced data." as Dep3 <#7F8C8D>
+rectangle "ElectroCorp Backend API\n[External Container]\n\nREST API consumed by this frontend context." as Backend <#7F8C8D>
+package "Connected Frontend Contexts\n[external containers]" {
+  rectangle "Device Control\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep0 <#7F8C8D>
+  rectangle "Reporting\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep1 <#7F8C8D>
+  rectangle "Notifications\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep2 <#7F8C8D>
+  rectangle "Shared Kernel\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep3 <#7F8C8D>
 }
 F0 --> F3 : Uses
 F1 --> F3 : Uses
