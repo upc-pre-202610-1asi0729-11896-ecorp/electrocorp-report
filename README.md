@@ -2264,46 +2264,6 @@ Los diagramas frontend por bounded context muestran solo capas y dependencias en
 
 ![Frontend Shared UI Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-shared-kernel-class-diagram.puml)
 
-#### Frontend Presentation Layer Diagrams
-
-Estos diagramas detallan la capa de presentacion del frontend por bounded context. Incluyen pages, components, route definitions, facades consumidas desde la UI y conexiones principales con shared UI cuando corresponde.
-
-##### IAM Presentation
-
-![IAM Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-iam-diagram.puml)
-
-##### Billing Presentation
-
-![Billing Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-billing-diagram.puml)
-
-##### Workplace Presentation
-
-![Workplace Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-workplace-diagram.puml)
-
-##### Device Control Presentation
-
-![Device Control Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-device-control-diagram.puml)
-
-##### Energy Monitoring Presentation
-
-![Energy Monitoring Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-energy-monitoring-diagram.puml)
-
-##### Notifications Presentation
-
-![Notifications Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-notifications-diagram.puml)
-
-##### Reporting Presentation
-
-![Reporting Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-reporting-diagram.puml)
-
-##### Service Management Presentation
-
-![Service Management Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-service-management-diagram.puml)
-
-##### Shared UI Kernel Presentation
-
-![Shared UI Kernel Presentation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/presentation/frontend-presentation-shared-kernel-diagram.puml)
-
 #### Frontend Layer Class Diagrams
 
 Estos diagramas dividen cada bounded context frontend por capa para mantener imagenes pequenas y revisables. Cada vista conserva relaciones internas de la capa y dependencias explicitas para que ningun elemento quede aislado.
