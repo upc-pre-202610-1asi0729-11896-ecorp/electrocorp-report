@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/UPC_logo_transparente.png"></img><br>
+<img src="assets/md-images-front-matter/upc-logo-transparente.png"></img><br>
 
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 <h4>Facultad de Ingeniería</h4>
@@ -77,11 +77,11 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/top-commiters.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/top-committers.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/commits.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/commits.png"></div><br><br>
 
 
     * **Commits**
@@ -90,25 +90,25 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/sebastian-commits.PNG?raw=true" >
+            <img src="assets/md-images-front-matter/sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jairo-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/diego-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jean-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jean-commits.png">
             </div><br>
         + **Timothy Documet**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/timothy-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/timothy-commits.png">
             </div><br><br>
 
 - Tavara Correa, Sebastian Oswaldo: Desarrollo de los capitulos 1, 2, 3 y 4.      <br>
@@ -120,11 +120,11 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/top-commiters.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/top-committers.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/commits.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/commits.png"></div><br><br>
 
 
     * **Commits**
@@ -133,25 +133,25 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/sebastian-commits.PNG?raw=true" >
+            <img src="assets/md-images-front-matter/sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jairo-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/diego-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jean-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jean-commits.png">
             </div><br>
         + **Timothy Documet**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/timothy-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/timothy-commits.png">
             </div><br><br>
 
 
@@ -316,11 +316,11 @@ Queremos que ElectroCorp sea el referente en el Perú en gestión energética re
 ### 1.1.2. Perfiles de integrantes del equipo
 | **Nombre Completo del integrante**    |	**Descripcion de la carrera** | **Fotografia** | **Conocimientos y habilidades**
 | :------------------------------------ |:------------------------------------ |:------------------------------------ |:------------------------------------ |
-| Tavara Correa, Sebastian Oswaldo      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
-| Santiago Atanacio, Jairo Mathias      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Jairo_Santiago.png"> | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
-| Cabrejos Chocco, Diego Alexander      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/Diego_Cabrejos.jpg"> | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
-| Loa Rojas, Jean Franck      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Jean_Loa.jpg"> | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
-| Documet Romero, Timothy     |Ingeniera de software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Timothy_Documet.jpeg"> | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
+| Tavara Correa, Sebastian Oswaldo      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
+| Santiago Atanacio, Jairo Mathias      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/jairo-santiago.png"> | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
+| Cabrejos Chocco, Diego Alexander      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/diego-cabrejos.jpg"> | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
+| Loa Rojas, Jean Franck      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/jean-loa.jpg"> | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
+| Documet Romero, Timothy     |Ingeniera de software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/timothy-documet.jpeg"> | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
 
 ## 1.2 *Solution Profile*
 ### 1.2.1 Antecedentes y problemática
@@ -538,10 +538,10 @@ A través de esta comparativa, buscamos determinar el valor diferencial de Elect
   </tr>
   <tr>
     <td colspan="2">Nombre y logo de competidor</td>
-    <td><b>ElectroCorp <img src="assets/logo_electrocorp.jpeg" alt="Smart" width="120" height="120" /> </b></td>
-    <td><b> Sonoff Peru</b> <img src="assets/sonoff.png" width="120" height="120" /> </td>
-    <td><b>Xiaomi Mi Smart Plug</b> <img src="assets/xiaomi.png" width="120" height="120" /> </td>
-    <td><b>Smart Plugs</b> <img src="assets/promart.png" width="120" height="120" /> </td>
+    <td><b>ElectroCorp <img src="assets/md-images-chapter2/logo-electrocorp.jpeg" alt="Smart" width="120" height="120" /> </b></td>
+    <td><b> Sonoff Peru</b> <img src="assets/md-images-chapter2/sonoff.png" width="120" height="120" /> </td>
+    <td><b>Xiaomi Mi Smart Plug</b> <img src="assets/md-images-chapter2/xiaomi.png" width="120" height="120" /> </td>
+    <td><b>Smart Plugs</b> <img src="assets/md-images-chapter2/promart.png" width="120" height="120" /> </td>
   </tr>
   <tr>
     <td rowspan="2"><b>Perfil</b></td>
@@ -756,10 +756,10 @@ Segmento 1: Hogares urbanos con viviendas antiguas
 
 | N | Datos |Descripción |Imagen referencial
 |--|--|--|--|
-|1  | Nombre: Sonia<br>Apellido: Rojas <br>Edad: 48<br>Distrito: Ate | Sonia Rojas, es una mujer de 48 años que reside en Lima, distrito de Vitarte. Cuenta con educación secundaria completa y se desempeña en un negocio dependiente, lo que sugiere ingresos relativamente estables pero limitados.<br><br>Se percibe como una persona:<br>- Práctica y conservadora, prioriza lo funcional sobre la innovación<br>- Confiada en el estado actual de su hogar, ya que considera que sus instalaciones eléctricas cumplen con los estándares.<br>- Poco exploradora en tecnología, no ha implementado soluciones de hogar inteligente.<br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas están en buen estado y cumplen con lo requerido por la empresa proveedora <br>- Tiene un hábito de revisión mensual del recibo de luz<br>Es de denotar que no existe una preocupación activa por el consumo energético, sin embargo, si hay una oportunidad de mejora.<br><br>Necesidades y Motivaciones<br>- Interés en control remoto de dispositivos (TV, lavadora)<br>- Interés en visualizar consumo en soles en tiempo real.<br>- Necesidad de facilidad de uso para toda la familia. |<img src="assets/seg1 - img1.jpg">
-|2  | Nombre: Victor<br>Apellido: Loa <br>Edad: 59<br>Distrito: Ate | Víctor Loa, es un hombre de 59 años que reside en Lima, distrito de Ate Vitarte. Cuenta con educación secundaria completa y se desempeña como trabajador independiente.<br><br>Se percibe como una persona<br>- Tranquila y conservadora, no muestra preocupación por su consumo actual.<br>- Confiada en su entorno, considera que sus instalaciones funcionan correctamente.<br>- Precavida, especialmente frente a desconocidos (técnicos).<br>Se denota que no busca implementar tecnología, sin embargo puede adoptarla si percibe utilidad clara.<br><br>Contexto del hogar y uso de energía<br>- Considera que sus instalaciones eléctricas están en buen estado.<br>- Revisa su recibo de luz mensualmente <br>- Percibe que el consumo es estable y no varía mucho<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos(principalmente TV).<br>- Visualización del consumo en dinero.<br>Se puede ver que su motivación principal es la comodidad, orientación y simplicidad.|<img src="assets/seg1 - img2.jpg">
-|3  | Nombre: Margarita<br>Apellido: Espinoza <br>Edad: 49<br>Distrito: Cieneguilla |Margarita representa a una ama de casa:<br>- Tener conectados los artefactos y servicios de cableado "normales"<br>- Controlar la energía empleada en ciertos artefactos<br>- Conocer técnicos especializados en mejorar experiencias de usuario|<img src="assets/Entrevista-Margarita_Espinoza.png">
-|4  | Nombre: Victor<br>Apellido: Documet <br>Edad: 52<br>Distrito: surco |Víctor Documet, es un hombre adulto (edad no especificada, pero inferida como adulto medio) que reside en un edificio con varios años de antigüedad.<br><br>Se percibe como una persona:<br>- Preocupado por los costos, espacialmente el consumo eléctrico.<br>- Realista y crítica, reconoce limitaciones en su vivienda (requiere mantenimiento).<br>- Interesada en la tecnología, pero con dificultades prácticas. <br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas son buenas en general, aunque requieren mantenimiento. <br>- Revisa su recibo de luz mensualmente.<br>- Percibe que el consumo aumenta constantemente.<br>Se percibe una preocupación activa y creciente por el gasto energético.<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos (Microondas, Olla arrocera).<br>- Visualización del consumo.<br>- Conocer como mejorar la interfaz de usuario|<img src="assets/seg1-img3.jpg">
+|1  | Nombre: Sonia<br>Apellido: Rojas <br>Edad: 48<br>Distrito: Ate | Sonia Rojas, es una mujer de 48 años que reside en Lima, distrito de Vitarte. Cuenta con educación secundaria completa y se desempeña en un negocio dependiente, lo que sugiere ingresos relativamente estables pero limitados.<br><br>Se percibe como una persona:<br>- Práctica y conservadora, prioriza lo funcional sobre la innovación<br>- Confiada en el estado actual de su hogar, ya que considera que sus instalaciones eléctricas cumplen con los estándares.<br>- Poco exploradora en tecnología, no ha implementado soluciones de hogar inteligente.<br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas están en buen estado y cumplen con lo requerido por la empresa proveedora <br>- Tiene un hábito de revisión mensual del recibo de luz<br>Es de denotar que no existe una preocupación activa por el consumo energético, sin embargo, si hay una oportunidad de mejora.<br><br>Necesidades y Motivaciones<br>- Interés en control remoto de dispositivos (TV, lavadora)<br>- Interés en visualizar consumo en soles en tiempo real.<br>- Necesidad de facilidad de uso para toda la familia. |<img src="assets/md-images-chapter2/seg1-img1.jpg">
+|2  | Nombre: Victor<br>Apellido: Loa <br>Edad: 59<br>Distrito: Ate | Víctor Loa, es un hombre de 59 años que reside en Lima, distrito de Ate Vitarte. Cuenta con educación secundaria completa y se desempeña como trabajador independiente.<br><br>Se percibe como una persona<br>- Tranquila y conservadora, no muestra preocupación por su consumo actual.<br>- Confiada en su entorno, considera que sus instalaciones funcionan correctamente.<br>- Precavida, especialmente frente a desconocidos (técnicos).<br>Se denota que no busca implementar tecnología, sin embargo puede adoptarla si percibe utilidad clara.<br><br>Contexto del hogar y uso de energía<br>- Considera que sus instalaciones eléctricas están en buen estado.<br>- Revisa su recibo de luz mensualmente <br>- Percibe que el consumo es estable y no varía mucho<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos(principalmente TV).<br>- Visualización del consumo en dinero.<br>Se puede ver que su motivación principal es la comodidad, orientación y simplicidad.|<img src="assets/md-images-chapter2/seg1-img2.jpg">
+|3  | Nombre: Margarita<br>Apellido: Espinoza <br>Edad: 49<br>Distrito: Cieneguilla |Margarita representa a una ama de casa:<br>- Tener conectados los artefactos y servicios de cableado "normales"<br>- Controlar la energía empleada en ciertos artefactos<br>- Conocer técnicos especializados en mejorar experiencias de usuario|<img src="assets/md-images-chapter2/entrevista-margarita-espinoza.png">
+|4  | Nombre: Victor<br>Apellido: Documet <br>Edad: 52<br>Distrito: surco |Víctor Documet, es un hombre adulto (edad no especificada, pero inferida como adulto medio) que reside en un edificio con varios años de antigüedad.<br><br>Se percibe como una persona:<br>- Preocupado por los costos, espacialmente el consumo eléctrico.<br>- Realista y crítica, reconoce limitaciones en su vivienda (requiere mantenimiento).<br>- Interesada en la tecnología, pero con dificultades prácticas. <br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas son buenas en general, aunque requieren mantenimiento. <br>- Revisa su recibo de luz mensualmente.<br>- Percibe que el consumo aumenta constantemente.<br>Se percibe una preocupación activa y creciente por el gasto energético.<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos (Microondas, Olla arrocera).<br>- Visualización del consumo.<br>- Conocer como mejorar la interfaz de usuario|<img src="assets/md-images-chapter2/seg1-img3.jpg">
 
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
@@ -767,9 +767,9 @@ Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
 | N | Datos |Descripción |Imagen referencial
 |--|--|--|--|
-|1  | Nombre: Orlando<br>Apellido: Trinidad <br>Edad: 48<br>Distrito: La Victoria |El entrevistado Orlando Trinidad Parra, es un hombre de 48 años que reside en La Victoria. Se desempeña como microempresario del rubro textil, específicamente en la confección, operando un taller con varias máquinas industriales. Su negocio se encuentra dentro del segmento de pequeñas y medianas empresas (PYME), lo que implica recursos limitados y alta sensibilidad a los costos operativos.<br><br>Se percibe como una persona:<br>- Responsable y organizada ya que tiene trabajadores que limpian y apagan la maquina que trabajan.<br>- Abierta al cambio tecnológico, pero con criterio económico.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Maquinas remalladoras.<br>- Maquinas rectas.<br>- Cortadora.<br>Se puede denotar que el consumo energético es alto y critico, impactando directamente la rentabilidad del negocio<br><br>Problemas detectados:<br>- Errores humanos frecuentes, especialmente en personal nuevo.<br>- Equipos que quedan encendidos o conectados innecesariamente.<br>- Desconocimiento del costo exacto por máquina, solo percibe el gasto total.<br><br>El entrevistado muestra interes en soluciones tecnologicas que le permitan:<br>- Medir el costo real por máquina (no solo consumo)<br>- Automatizar encendido/apagado<br>- Obtener reportes de desperdicio energético|<img src="assets/seg2 - img1.png">
-|2  | Nombre: Catherine<br>Apellido: Tejada <br>Edad: 39<br>Distrito: Villa el Salvador |La entrevistada, Katherine, es una mujer de 39 años que reside en Villa El Salvador. Es dueña de dos tiendas de vestidos de quinceañera, donde no solo comercializa, sino que también diseña y confecciona los productos.<br><br>Se percibe como una persona: <br>- Proactiva y emprendedora, al manejar dos tiendas y participar directamente en el diseño y confección.<br>- Organizada y preventiva, utiliza un sistema central (palanca general) para apagar todos los equipos.<br>- Digitalmente activa, aprovecha redes sociales para promoción.<br><br>Equipos electrónicos identificados:<br>- Remalladoras<br>- Maquina recta<br>- Maquina urbanera.<br>Equipos complementarios:<br>- Cámaras de seguridad.<br>- Ventiladores<br>- Reflectores y focos<br>Es de denotar que el negocio combina producción y exhibición de productos por lo que incrementa la variedad de consumo energético.<br><br>Problemas detectados:<br>- Ha tenido incidentes leves relacionados con el apagado (aunque sin consecuencias graves).<br>- Existe dependencia de un sistema manual (palanca general).<br>- No cuenta con monitoreo detallado del consumo energético.<br><br>Necesidades y motivaciones:<br>- Programación de encendido/apagado<br>- Alertas de actividad (saber cuándo se encienden equipos).<br>- Monitoreo de costos y consumo energético.|<img src="assets/seg2_entrevista2.PNG">
-|3  | Nombre: Lourdes<br>Apellido: Saldarriaga <br>Edad: 46<br>Distrito: La Victoria |Lourdes Saldarriaga, es una mujer de 46 años que reside en La Victoria. Es propietaria de una pequeña tintorería, lo que la ubica dentro del segmento de microempresas o negocios pequeños con operaciones intensivas en uso de equipos eléctricos.<br><br>Se percibe como una persona:<br>- Practica y operativa, enfocada en el funcionamiento diario del negocio más que en análisis detallados<br>- Consciente de riesgos, especialmente después de haber experimentado incidentes (recalentamiento de equipos).<br>- Precavida en inversión, muestra interés condicionado al costo.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Lavadoras industriales<br>- Posibles secadoras<br>El negocio tiene dependencia directa de maquinaria eléctrica continua, lo que hace critico el control energético<br><br>Problemas detectados:<br>-Errores humanos: un trabajador olvidó apagar un equipo.<br>- Consecuencia directa: recalentamiento de maquinaria, lo que implica riesgo operativo y económico.<br>- Dependencia del personal para tareas críticas.<br><br>Necesidades detectadas:<br>- Programación automática de encendido y apagado (su prioridad principal)<br>- Monitoreo del consumo energético por máquina y horario<br>- Identificación de picos de consumo| <img src="assets/seg2 - img3.png">
+|1  | Nombre: Orlando<br>Apellido: Trinidad <br>Edad: 48<br>Distrito: La Victoria |El entrevistado Orlando Trinidad Parra, es un hombre de 48 años que reside en La Victoria. Se desempeña como microempresario del rubro textil, específicamente en la confección, operando un taller con varias máquinas industriales. Su negocio se encuentra dentro del segmento de pequeñas y medianas empresas (PYME), lo que implica recursos limitados y alta sensibilidad a los costos operativos.<br><br>Se percibe como una persona:<br>- Responsable y organizada ya que tiene trabajadores que limpian y apagan la maquina que trabajan.<br>- Abierta al cambio tecnológico, pero con criterio económico.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Maquinas remalladoras.<br>- Maquinas rectas.<br>- Cortadora.<br>Se puede denotar que el consumo energético es alto y critico, impactando directamente la rentabilidad del negocio<br><br>Problemas detectados:<br>- Errores humanos frecuentes, especialmente en personal nuevo.<br>- Equipos que quedan encendidos o conectados innecesariamente.<br>- Desconocimiento del costo exacto por máquina, solo percibe el gasto total.<br><br>El entrevistado muestra interes en soluciones tecnologicas que le permitan:<br>- Medir el costo real por máquina (no solo consumo)<br>- Automatizar encendido/apagado<br>- Obtener reportes de desperdicio energético|<img src="assets/md-images-chapter2/seg2-img1.png">
+|2  | Nombre: Catherine<br>Apellido: Tejada <br>Edad: 39<br>Distrito: Villa el Salvador |La entrevistada, Katherine, es una mujer de 39 años que reside en Villa El Salvador. Es dueña de dos tiendas de vestidos de quinceañera, donde no solo comercializa, sino que también diseña y confecciona los productos.<br><br>Se percibe como una persona: <br>- Proactiva y emprendedora, al manejar dos tiendas y participar directamente en el diseño y confección.<br>- Organizada y preventiva, utiliza un sistema central (palanca general) para apagar todos los equipos.<br>- Digitalmente activa, aprovecha redes sociales para promoción.<br><br>Equipos electrónicos identificados:<br>- Remalladoras<br>- Maquina recta<br>- Maquina urbanera.<br>Equipos complementarios:<br>- Cámaras de seguridad.<br>- Ventiladores<br>- Reflectores y focos<br>Es de denotar que el negocio combina producción y exhibición de productos por lo que incrementa la variedad de consumo energético.<br><br>Problemas detectados:<br>- Ha tenido incidentes leves relacionados con el apagado (aunque sin consecuencias graves).<br>- Existe dependencia de un sistema manual (palanca general).<br>- No cuenta con monitoreo detallado del consumo energético.<br><br>Necesidades y motivaciones:<br>- Programación de encendido/apagado<br>- Alertas de actividad (saber cuándo se encienden equipos).<br>- Monitoreo de costos y consumo energético.|<img src="assets/md-images-chapter2/seg2-entrevista2.png">
+|3  | Nombre: Lourdes<br>Apellido: Saldarriaga <br>Edad: 46<br>Distrito: La Victoria |Lourdes Saldarriaga, es una mujer de 46 años que reside en La Victoria. Es propietaria de una pequeña tintorería, lo que la ubica dentro del segmento de microempresas o negocios pequeños con operaciones intensivas en uso de equipos eléctricos.<br><br>Se percibe como una persona:<br>- Practica y operativa, enfocada en el funcionamiento diario del negocio más que en análisis detallados<br>- Consciente de riesgos, especialmente después de haber experimentado incidentes (recalentamiento de equipos).<br>- Precavida en inversión, muestra interés condicionado al costo.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Lavadoras industriales<br>- Posibles secadoras<br>El negocio tiene dependencia directa de maquinaria eléctrica continua, lo que hace critico el control energético<br><br>Problemas detectados:<br>-Errores humanos: un trabajador olvidó apagar un equipo.<br>- Consecuencia directa: recalentamiento de maquinaria, lo que implica riesgo operativo y económico.<br>- Dependencia del personal para tareas críticas.<br><br>Necesidades detectadas:<br>- Programación automática de encendido y apagado (su prioridad principal)<br>- Monitoreo del consumo energético por máquina y horario<br>- Identificación de picos de consumo| <img src="assets/md-images-chapter2/seg2-img3.png">
 
 
 ### 2.2.3. Análisis de entrevistas 
@@ -877,11 +877,11 @@ el 100% acepta tecnología siempre que sea fácil de implementar, económica y n
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src="assets/User Persona - seg1 - Rosa Gutierrez.png" alt="UserPersona Rosa Gutierrez">
+<img src="assets/md-images-chapter2/user-persona-seg1-rosa-gutierrez.png" alt="UserPersona Rosa Gutierrez">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src="assets/User Persona - seg2 - Carlos Mendoza.png" alt="UserPersona Carlos Mendoza">
+<img src="assets/md-images-chapter2/user-persona-seg2-carlos-mendoza.png" alt="UserPersona Carlos Mendoza">
 
 ### 2.3.2. User Task Matrix 
 
@@ -916,24 +916,24 @@ Segmento 2:  Pequeños negocios y talleres en zonas urbanas.
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src = "assets/UserJourneyMap - seg1.png" alt = "User Journey Map segmento 1">
+<img src = "assets/md-images-chapter2/user-journey-map-seg1.png" alt = "User Journey Map segmento 1">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src = "assets/UserJourneyMap - seg2.png" alt = "User Journey Map segmento 2">
+<img src = "assets/md-images-chapter2/user-journey-map-seg2.png" alt = "User Journey Map segmento 2">
 
 ### 2.3.4. Empathy Mapping
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src = "assets/EmpathyMap - Seg1.png" alt = "EmpathyMap Segmento 1">
+<img src = "assets/md-images-chapter2/empathy-map-seg1.png" alt = "EmpathyMap Segmento 1">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src = "assets/EmpathyMap - Seg2.png" alt = "EmpathyMap Segmento 2">
+<img src = "assets/md-images-chapter2/empathy-map-seg2.png" alt = "EmpathyMap Segmento 2">
 
 ## 2.4. Big Picture Event Storming
-<img src = "assets/Big-Picture-Event-Storming.png">
+<img src = "assets/md-images-chapter2/big-picture-event-storming.png">
 
 ## 2.5. Ubiquitous Language
 
@@ -1071,7 +1071,7 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 
 
 ## 3.2. Impact Mapping
-<img src="assets/Impact Mapping.png">
+<img src="assets/md-images-chapter3/impact-mapping.png">
 
 ## 3.3. Product Backlog
 
@@ -1144,13 +1144,13 @@ La tipografía es el pilar de la comunicación digital en ElectroCorp. Hemos sel
     
 -   **Cuerpo de Texto:** Se define en 1.1rem con un interlineado de 1.6, optimizando la lectura de párrafos largos en la descripción de la startup y testimonios.
     
-<img src="assets/Typography.PNG">
+<img src="assets/md-images-chapter4/typography.png">
 
 #### **Colors**
 
 La paleta de colores de **ElectroCorp** ha sido diseñada bajo una estética de "Modo Oscuro" (Dark Mode), que evoca tecnología avanzada y eficiencia operativa.
 
-<img src="assets/paleta_colores.PNG">
+<img src="assets/md-images-chapter4/paleta-colores.png">
 
 #### **Spacing**
 
@@ -1162,7 +1162,7 @@ El sistema de espaciado sigue una progresión lógica para mantener el orden y l
     
 -   **Separadores (hr):** Se utilizan líneas de 3px de alto y 60px de ancho en color azul eléctrico para indicar el fin de un concepto y el inicio de otro de forma minimalista.
 
-<img src="assets/spacing.PNG">
+<img src="assets/md-images-chapter4/spacing.png">
 
 
 #### **Dimensions (Tone of Voice)**
@@ -1356,52 +1356,52 @@ En esta propuesta se consideran las principales secciones de la landing page: in
 **Home / Inicio:**  
 Presenta la estructura principal de bienvenida, incluyendo el encabezado de navegación, el mensaje principal, el botón de acceso al dashboard, una promoción inicial y una barra de búsqueda para consultas del usuario.
 
-<img src="assets/LandingPage-Wireframe-Home.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-home.png">
 
 **Pricing / Planes:**  
 Muestra la distribución de los planes de suscripción en tarjetas comparativas. Se incluyen los precios, beneficios principales y botones de selección de plan.
 
-<img src="assets/LandingPage-Wireframe-Pricing.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-pricing.png">
 
 **FAQ / Preguntas frecuentes:**  
 Define la estructura de preguntas desplegables para resolver dudas comunes sobre consumo eléctrico, ahorro energético y uso de enchufes inteligentes.
 
-<img src="assets/LandingPage-Wireframe-FAQ.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-faq.png">
 
 **Smart Plugs / Enchufes inteligentes:**  
 Representa la sección visual destinada a mostrar el uso de enchufes inteligentes en distintos contextos, mediante dos bloques de imagen principales.
 
-<img src="assets/LandingPage-Wireframe-SmartPlugs.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-smart-plugs.png">
 
 **Reviews / Reseñas:**  
 Organiza las opiniones de clientes en tarjetas tipo carrusel, incluyendo imagen, nombre, tipo de usuario y comentario.
 
-<img src="assets/LandingPage-Wireframe-Reviews.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-reviews.png">
 
 **Description / Descripción:**  
 Presenta la sección informativa donde se explica el problema, la propuesta de solución y el valor del ecosistema IoT de ElectroCorp.Web.
 
-<img src="assets/LandingPage-Wireframe-Description.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-description.png">
 
 **Goals / Objetivos:**  
 Muestra la estructura destinada a explicar los objetivos del proyecto, acompañada de imágenes referenciales sobre automatización y monitoreo energético.
 
-<img src="assets/LandingPage-Wireframe-Goals.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-goals.png">
 
 **About us / Sobre nosotros:**  
 Define la distribución de las tarjetas del equipo de desarrollo, mostrando los nombres, roles y responsabilidades de cada integrante.
 
-<img src="assets/LandingPage-Wireframe-About.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-about.png">
 
 **Direction / Dirección:**  
 Estructura la sección de ubicación, incluyendo una tarjeta con información de contacto y un bloque destinado al mapa de ubicación.
 
-<img src="assets/LandingPage-Wireframe-Direction.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-direction.png">
 
 **Support / Soporte:**  
 Presenta la sección final de suscripción y contacto, junto con el pie de página, enlaces sociales y copyright.
 
-<img src="assets/LandingPage-Wireframe-Support.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-support.png">
 
 ### 4.3.2. Landing Page Mock-up
 
@@ -1412,52 +1412,52 @@ La propuesta visual utiliza una estética tecnológica basada en tonos oscuros, 
 **Home / Inicio:**  
 El mock-up inicial presenta el mensaje principal de la plataforma, resaltando el control del consumo eléctrico del hogar y el beneficio de ahorro energético. También incluye el botón de acceso al dashboard, una promoción para nuevos usuarios y una barra de búsqueda.
 
-<img src="assets/LandingPage-Mockup-Home.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-home.png">
 
 **Pricing / Planes:**  
 Esta sección muestra los planes Starter, Professional y Enterprise con una presentación visual comparativa. El plan Professional se destaca como recomendado para guiar la decisión del usuario.
 
-<img src="assets/LandingPage-Mockup-Pricing.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-pricing.png">
 
 **FAQ / Preguntas frecuentes:**  
 El mock-up de preguntas frecuentes utiliza tarjetas desplegables con diseño oscuro y bordes sutiles, manteniendo una lectura clara y ordenada.
 
-<img src="assets/LandingPage-Mockup-FAQ.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-faq.png">
 
 **Smart Plugs / Enchufes inteligentes:**  
 Esta sección muestra imágenes del uso de enchufes inteligentes en el hogar y en espacios de trabajo, reforzando la idea de monitoreo y control energético en tiempo real.
 
-<img src="assets/LandingPage-Mockup-SmartPlugs.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-smart-plugs.png">
 
 **Reviews / Reseñas:**  
 El mock-up de reseñas presenta testimonios de usuarios mediante tarjetas visuales con fotografías, nombres, tipo de cliente y comentarios sobre la utilidad de la plataforma.
 
-<img src="assets/LandingPage-Mockup-Reviews.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-reviews.png">
 
 **Description / Descripción:**  
 La sección de descripción explica el enfoque de la startup, el problema del alto costo de automatización del hogar y la solución basada en un ecosistema IoT plug-and-play.
 
-<img src="assets/LandingPage-Mockup-Description.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-description.png">
 
 **Goals / Objetivos:**  
 El mock-up de objetivos presenta la meta principal del proyecto: facilitar el control del consumo eléctrico mediante una plataforma comprensible, accesible y orientada al ahorro.
 
-<img src="assets/LandingPage-Mockup-Goals.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-goals.png">
 
 **About us / Sobre nosotros:**  
 Esta sección muestra al equipo de desarrollo de ElectroCorp.Web mediante tarjetas individuales con nombre, orientación técnica y responsabilidades dentro del proyecto.
 
-<img src="assets/LandingPage-Mockup-About.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-about.png">
 
 **Direction / Dirección:**  
 El mock-up de dirección incluye la información de contacto, ubicación de referencia y un mapa integrado para ubicar la sede principal del proyecto.
 
-<img src="assets/LandingPage-Mockup-Direction.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-direction.png">
 
 **Support / Soporte:**  
 La sección final permite al usuario suscribirse para recibir novedades, consejos de ahorro y actualizaciones del producto. También incluye el footer con redes sociales y derechos reservados.
 
-<img src="assets/LandingPage-Mockup-Support.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-support.png">
 
 ## 4.4. Web Applications UX/UI Design
 ### 4.4.1. Web Applications Wireframes
@@ -1466,105 +1466,105 @@ Los siguientes wireframes representan la estructura de baja fidelidad de las pri
 
 ---
 
-![Wireframe-Login](assets/Webapp-Wireframe-Login.png)
+![Wireframe-Login](assets/md-images-chapter4/webapp-wireframe-login.png)
 
 **Login:**  
 Este wireframe muestra la pantalla de inicio de sesión de la aplicación web. Incluye los campos principales para ingresar correo electrónico y contraseña, así como las acciones para iniciar sesión o dirigirse al registro de una nueva cuenta. Esta vista funciona como punto de acceso inicial al sistema.
 
 ---
 
-![Wireframe-Register](assets/Webapp-Wireframe-Register.png)
+![Wireframe-Register](assets/md-images-chapter4/webapp-wireframe-register.png)
 
 **Register:**  
 Este wireframe representa la pantalla de registro de usuarios. Presenta los campos necesarios para crear una cuenta, como nombre completo, correo electrónico y contraseña. Además, incluye una opción para volver al login en caso el usuario ya tenga una cuenta registrada.
 
 ---
 
-![Wireframe-Home](assets/Webapp-Wireframe-Home.png)
+![Wireframe-Home](assets/md-images-chapter4/webapp-wireframe-home.png)
 
 **Home:**  
 Este wireframe corresponde al dashboard principal de ElectroCorp. En esta vista se organiza la información general del usuario, como dispositivos conectados, rutinas activas, consumo actual, alertas pendientes y estado de suscripción. También se incluyen accesos rápidos hacia las funcionalidades principales de la aplicación.
 
 ---
 
-![Wireframe-About](assets/Webapp-Wireframe-About.png)
+![Wireframe-About](assets/md-images-chapter4/webapp-wireframe-about.png)
 
 **About:**  
 Este wireframe muestra la sección informativa de la plataforma. Su objetivo es presentar una descripción breve de ElectroCorp, explicando su propósito como solución para monitoreo energético, gestión de dispositivos, configuración de rutinas y recepción de alertas.
 
 ---
 
-![Wireframe-Devices](assets/Webapp-Wireframe-Devices.png)
+![Wireframe-Devices](assets/md-images-chapter4/webapp-wireframe-devices.png)
 
 **Devices:**  
 Este wireframe representa la vista de control de dispositivos inteligentes. Incluye un formulario para agregar nuevos dispositivos, tarjetas resumen y un área destinada a listar los equipos registrados. Esta sección permite organizar la administración de enchufes, luces e interruptores inteligentes desde una sola interfaz.
 
 ---
 
-![Wireframe-Routines](assets/Webapp-Wireframe-Routines.png)
+![Wireframe-Routines](assets/md-images-chapter4/webapp-wireframe-routines.png)
 
 **Routines:**  
 Este wireframe corresponde al módulo de rutinas automáticas. Presenta un formulario para crear automatizaciones y una lista de rutinas registradas. Su finalidad es permitir que el usuario programe acciones como encender o apagar dispositivos en horarios definidos.
 
 ---
 
-![Wireframe-Energy](assets/Webapp-Wireframe-Energy.png)
+![Wireframe-Energy](assets/md-images-chapter4/webapp-wireframe-energy.png)
 
 **Energy:**  
 Este wireframe muestra la vista de monitoreo de consumo energético. Incluye indicadores clave como watts totales, promedio y pico máximo, además de filtros por fecha, recomendaciones de ahorro y un gráfico para visualizar el comportamiento del consumo. Esta sección facilita el análisis inicial de los datos energéticos.
 
 ---
 
-![Wireframe-History](assets/Webapp-Wireframe-History.png)
+![Wireframe-History](assets/md-images-chapter4/webapp-wireframe-history.png)
 
 **History:**  
 Este wireframe representa el historial de consumo energético. La vista contiene una tabla con registros organizados por dispositivo, consumo en watts, fecha y estado. También incluye una opción para exportar los datos en formato CSV, lo que permite generar reportes o análisis externos.
 
 ---
 
-![Wireframe-Sites](assets/Webapp-Wireframe-Sites.png)
+![Wireframe-Sites](assets/md-images-chapter4/webapp-wireframe-sites.png)
 
 **Sites:**  
 Este wireframe corresponde a la gestión de sedes y ambientes. Presenta indicadores sobre sedes, ambientes, asignaciones y cobertura, además de secciones para visualizar distribución de sedes, resumen operativo y tarjetas de ubicación. Esta vista permite organizar los espacios donde se encuentran instalados los dispositivos inteligentes.
 
 ---
 
-![Wireframe-Reports](assets/Webapp-Wireframe-Reports.png)
+![Wireframe-Reports](assets/md-images-chapter4/webapp-wireframe-reports.png)
 
 **Reports:**  
 Este wireframe muestra la sección de reportes de consumo. Incluye indicadores generales, comparación de reportes, periodo de mayor consumo y tarjetas de reportes generados. Su propósito es analizar la información energética registrada y mostrar recomendaciones basadas en el consumo.
 
 ---
 
-![Wireframe-Goals](assets/Webapp-Wireframe-Goals.png)
+![Wireframe-Goals](assets/md-images-chapter4/webapp-wireframe-goals.png)
 
 **Goals:**  
 Este wireframe representa la vista de metas energéticas. Incluye tarjetas de progreso, métricas generales y una lista de objetivos creados por el usuario. Esta sección permite definir metas de consumo y revisar el avance hacia el cumplimiento de los objetivos energéticos.
 
 ---
 
-![Wireframe-Support](assets/Webapp-Wireframe-Support.png)
+![Wireframe-Support](assets/md-images-chapter4/webapp-wireframe-support.png)
 
 **Support:**  
 Este wireframe corresponde al centro de soporte. Presenta indicadores de tickets, casos abiertos, casos críticos y tasa de resolución, además de una sección para visualizar el ticket más urgente y la lista de solicitudes registradas. Esta vista permite gestionar incidencias o problemas relacionados con el uso de la plataforma.
 
 ---
 
-![Wireframe-Maintenance](assets/Webapp-Wireframe-Maintenance.png)
+![Wireframe-Maintenance](assets/md-images-chapter4/webapp-wireframe-maintenance.png)
 
 **Maintenance:**  
 Este wireframe representa la sección de mantenimiento técnico. Incluye métricas sobre mantenimientos pendientes y completados, el mantenimiento más cercano, estado operativo y una lista de tareas programadas. Esta vista permite planificar revisiones preventivas o correctivas de los dispositivos inteligentes.
 
 ---
 
-![Wireframe-Alerts](assets/Webapp-Wireframe-Alerts.png)
+![Wireframe-Alerts](assets/md-images-chapter4/webapp-wireframe-alerts.png)
 
 **Alerts:**  
 Este wireframe corresponde al centro de alertas de ElectroCorp. Incluye un resumen de alertas no leídas, formularios para crear alertas y reglas, preferencias de notificación y una lista de alertas relacionadas con consumo elevado, sugerencias de automatización y eventos del sistema.
 
 ---
 
-![Wireframe-Plans](assets/Webapp-Wireframe-Plans.png)
+![Wireframe-Plans](assets/md-images-chapter4/webapp-wireframe-plans.png)
 
 **Plans:**  
 Este wireframe presenta la pantalla de planes de servicio. Se muestran diferentes opciones de suscripción con sus precios y características principales. Esta vista permite comparar planes, visualizar la suscripción activa y revisar el resumen de facturación del usuario.
@@ -1575,7 +1575,7 @@ Este wireframe presenta la pantalla de planes de servicio. Se muestran diferente
 
 El siguiente wireflow representa el flujo de navegación principal de la aplicación web de **ElectroCorp**. Este diagrama permite visualizar cómo el usuario se desplaza entre las pantallas principales del sistema, partiendo desde el proceso de autenticación hasta el acceso a los módulos funcionales de la plataforma.
 
-![Webapp-Wireflow](assets/Webapp-Wireflow.png)
+![Webapp-Wireflow](assets/md-images-chapter4/webapp-wireflow.png)
 
 **Web Application Wireflow:**  
 El flujo inicia en la pantalla de **Login**, desde donde el usuario puede iniciar sesión o acceder al formulario de **Register** para crear una nueva cuenta. Una vez autenticado, el usuario ingresa al **Home Dashboard**, que funciona como el punto central de navegación de la aplicación.
@@ -1588,105 +1588,105 @@ Los siguientes mock-ups representan la versión de mayor fidelidad de las interf
 
 ---
 
-![Mockup-Login](assets/Webapp-Mockup-Login.png)
+![Mockup-Login](assets/md-images-chapter4/webapp-mockup-login.png)
 
 **Login:**  
 Este mock-up muestra la pantalla final de inicio de sesión. Presenta una interfaz moderna con soporte para cambio de idioma y modo visual. La vista permite que el usuario acceda a la plataforma mediante correo electrónico y contraseña, manteniendo una experiencia clara y directa.
 
 ---
 
-![Mockup-Register](assets/Webapp-Mockup-Register.png)
+![Mockup-Register](assets/md-images-chapter4/webapp-mockup-register.png)
 
 **Register:**  
 Este mock-up representa la pantalla de registro final. La interfaz permite crear una cuenta nueva ingresando nombre completo, correo electrónico y contraseña. Además, mantiene una navegación sencilla hacia el login para usuarios que ya poseen una cuenta.
 
 ---
 
-![Mockup-Home](assets/Webapp-Mockup-Home.png)
+![Mockup-Home](assets/md-images-chapter4/webapp-mockup-home.png)
 
 **Home:**  
 Este mock-up presenta el dashboard principal de la aplicación. Se muestran tarjetas resumen sobre dispositivos conectados, rutinas activas, consumo actual, alertas pendientes y uso del plan. También incluye accesos rápidos hacia módulos importantes como control de dispositivos, consumo energético, historial, alertas y planes.
 
 ---
 
-![Mockup-About](assets/Webapp-Mockup-About.png)
+![Mockup-About](assets/md-images-chapter4/webapp-mockup-about.png)
 
 **About:**  
 Este mock-up corresponde a la sección informativa de ElectroCorp. La vista resume el propósito de la plataforma, explicando que permite monitorear consumo energético, gestionar dispositivos inteligentes, configurar rutinas automáticas y recibir alertas.
 
 ---
 
-![Mockup-Devices](assets/Webapp-Mockup-Devices.png)
+![Mockup-Devices](assets/md-images-chapter4/webapp-mockup-devices.png)
 
 **Devices:**  
 Este mock-up muestra el módulo de gestión de dispositivos inteligentes. Permite agregar nuevos equipos mediante un formulario y visualizar el estado general de los dispositivos registrados. Además, presenta métricas como total de dispositivos, dispositivos activos y consumo actual.
 
 ---
 
-![Mockup-Routines](assets/Webapp-Mockup-Routines.png)
+![Mockup-Routines](assets/md-images-chapter4/webapp-mockup-routines.png)
 
 **Routines:**  
 Este mock-up representa la vista de rutinas automáticas. El usuario puede crear nuevas rutinas, seleccionar dispositivos, definir una acción y establecer un horario. También se muestra una lista de rutinas existentes con opciones para activarlas, desactivarlas o eliminarlas.
 
 ---
 
-![Mockup-Energy](assets/Webapp-Mockup-Energy.png)
+![Mockup-Energy](assets/md-images-chapter4/webapp-mockup-energy.png)
 
 **Energy:**  
 Este mock-up corresponde al módulo de monitoreo energético. Presenta indicadores como watts totales, promedio y pico máximo. También incluye filtros por fecha, una recomendación de ahorro y un gráfico de barras que permite analizar visualmente el historial de consumo energético.
 
 ---
 
-![Mockup-History](assets/Webapp-Mockup-History.png)
+![Mockup-History](assets/md-images-chapter4/webapp-mockup-history.png)
 
 **History:**  
 Este mock-up muestra la vista de historial de consumo. La pantalla presenta una tabla con lecturas energéticas registradas, indicando dispositivo, consumo, fecha y estado. También incluye una opción para exportar la información en formato CSV.
 
 ---
 
-![Mockup-Sites](assets/Webapp-Mockup-Sites.png)
+![Mockup-Sites](assets/md-images-chapter4/webapp-mockup-sites.png)
 
 **Sites:**  
 Este mock-up representa el módulo de gestión de sedes y ambientes. Muestra indicadores sobre sedes, ambientes y asignaciones, además de una distribución por tipo de sede y tarjetas con información de cada ubicación. Esta vista permite supervisar la organización física de los dispositivos dentro de la plataforma.
 
 ---
 
-![Mockup-Reports](assets/Webapp-Mockup-Reports.png)
+![Mockup-Reports](assets/md-images-chapter4/webapp-mockup-reports.png)
 
 **Reports:**  
 Este mock-up muestra la vista de reportes de consumo. Presenta indicadores de reportes generados, watts totales, pico máximo, promedio por reporte y reportes críticos. Además, incluye una comparación visual de reportes y tarjetas con recomendaciones relacionadas al consumo energético.
 
 ---
 
-![Mockup-Goals](assets/Webapp-Mockup-Goals.png)
+![Mockup-Goals](assets/md-images-chapter4/webapp-mockup-goals.png)
 
 **Goals:**  
 Este mock-up corresponde a la sección de metas energéticas. Permite visualizar el número de metas creadas, metas activas, completadas, fallidas y el progreso promedio. También muestra metas individuales con barras de progreso y métricas asociadas al objetivo energético.
 
 ---
 
-![Mockup-Support](assets/Webapp-Mockup-Support.png)
+![Mockup-Support](assets/md-images-chapter4/webapp-mockup-support.png)
 
 **Support:**  
 Este mock-up muestra el centro de soporte de la aplicación. Incluye métricas sobre tickets, casos abiertos, casos críticos y resolución, además de una sección para destacar el ticket más urgente. También permite visualizar solicitudes registradas con su estado y prioridad.
 
 ---
 
-![Mockup-Maintenance](assets/Webapp-Mockup-Maintenance.png)
+![Mockup-Maintenance](assets/md-images-chapter4/webapp-mockup-maintenance.png)
 
 **Maintenance:**  
 Este mock-up representa la vista de mantenimiento técnico. Permite revisar mantenimientos pendientes, completados y tareas programadas. También destaca el mantenimiento más cercano y muestra información asociada al dispositivo, fecha programada y estado del servicio.
 
 ---
 
-![Mockup-Alerts](assets/Webapp-Mockup-Alerts.png)
+![Mockup-Alerts](assets/md-images-chapter4/webapp-mockup-alerts.png)
 
 **Alerts:**  
 Este mock-up muestra el centro de alertas de la aplicación. Incluye un contador de alertas sin leer, formularios para crear alertas y reglas de alerta, preferencias de notificación y una lista de eventos clasificados por nivel. Esta sección permite al usuario supervisar eventos importantes relacionados con consumo energético y automatización.
 
 ---
 
-![Mockup-Plans](assets/Webapp-Mockup-Plans.png)
+![Mockup-Plans](assets/md-images-chapter4/webapp-mockup-plans.png)
 
 **Plans:**  
 Este mock-up representa la vista de planes de servicio. Se presentan tres opciones de suscripción con sus respectivos precios y características. También se muestra la suscripción activa y un resumen de facturas, permitiendo al usuario comparar planes disponibles y gestionar su estado de facturación.
@@ -1698,7 +1698,7 @@ Este mock-up representa la vista de planes de servicio. Se presentan tres opcion
 
 El siguiente diagrama de flujo de usuario representa el recorrido principal que realiza una persona al interactuar con la aplicación web de **ElectroCorp**. Este flujo contempla el acceso desde la **Landing Page** o directamente desde la **Single Page Application (SPA)**, el proceso de autenticación, el registro de usuarios, la selección de planes, la navegación por los módulos principales y la gestión de funcionalidades como dispositivos, rutinas, consumo energético, reportes, metas, soporte, mantenimiento, alertas y facturación.
 
-![Webapp-Userflow](assets/Webapp-Userflow.png)
+![Webapp-Userflow](assets/md-images-chapter4/webapp-userflow.png)
 
 **Web Application User Flow:**  
 El flujo principal inicia cuando el usuario accede a ElectroCorp. Si ingresa desde la **Landing Page**, puede revisar información pública sobre la plataforma, conocer sus beneficios y seleccionar un plan. En caso seleccione un plan desde la landing, se recopilan los datos simulados de pago y se redirige al usuario hacia la SPA para completar su registro. Si el usuario accede directamente a la aplicación, puede iniciar sesión o crear una nueva cuenta.
@@ -1728,7 +1728,7 @@ El prototipo permite validar visualmente la experiencia de usuario, la navegaci�
 ## 4.6. Domain-Driven Software Architecture
 ### 4.6.1. Design-Level Event Storming
 
-<img src="assets/designLevelEventStorming.png">
+<img src="assets/md-images-chapter4/design-level-event-storming.png">
 
 ### 4.6.2. Software Architecture Context Diagram
 
@@ -2433,15 +2433,15 @@ En cuanto a nuestros archivos feature, creamos una nueva rama “feature/sprint-
 
 Enlace de la Landing Page en GitHub Pages: https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/<br><br> 
 
-<img src="assets/landing-page-link-prueba-1.PNG"></img><br>
+<img src="assets/md-images-chapter5/landing-page-link-prueba-1.png"></img><br>
 
 Repositorio GitHub de la Landing Page: https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website <br><br> 
 
-<img src="assets/respositorio-landing.PNG"></img><br>
+<img src="assets/md-images-chapter5/repositorio-landing.png"></img><br>
 
 Repositorio GitHub de los archivos feature: https://github.com/upc-pre-202610-1asi0729-11896-ecorp/Acceptance-Test/tree/feature/sprint-1 <br><br> 
 
-<img src="assets/repositorio-acceptance-test.PNG"></img><br>
+<img src="assets/md-images-chapter5/repositorio-acceptance-test.png"></img><br>
 
 
 ### 5.1.3 Source Code Style Guide & Conventions
@@ -3020,7 +3020,7 @@ Al momento de realizar el sprint 1, el equipo ElectroCorp decidió asignar Líde
 <p style="text-align: left; width: 90%; margin: 20px auto;">
     <b>Enlace de Seguimiento:</b> <a href="https://trello.com/invite/b/69ea69db3f7579b973a8f0d9/ATTIc10bfb6ee54361e0d44f1e36131317e252842AF0/sprint1-electrocorp" target="_blank">Tablero del Sprint 1 en Trello</a>
     <br><br>
-    <img src="assets/Tablero-Sprint1.png"></img>
+    <img src="assets/md-images-chapter5/tablero-sprint1.png"></img>
 </p>
 
 <table align="center" border="1" width="95%" style="text-align:center; border-collapse: collapse;">
@@ -3200,7 +3200,7 @@ Durante el primer sprint, se lograron varios hitos importantes en el desarrollo 
 
 - Establecimiento de repositorios: Se crearon y configuraron repositorios en GitHub para gestionar el código y las pruebas, asegurando una correcta organización y control de versiones, ademas de separar en main y developer para evitar posibles errores. <br>
 
-<img src="assets/Repositorios.png"></img><br>
+<img src="assets/md-images-chapter5/repositorios.png"></img><br>
 
 - Implementación del Landing Page: Se diseño y se estructuro la landing page de ElectroCorp implementando funcionalidades claves y asegurando que cumpla con lo dictado en la rubrica, como el agregarle un boton de traduccion de idioma y que este en ingles por defecto
 
@@ -3210,31 +3210,31 @@ Durante el primer sprint, se lograron varios hitos importantes en el desarrollo 
   
   * Home
     
-    <img src="assets/LandingPageMockUps1.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups1.png"></img><br>
   
   * Description:
 
-    <img src="assets/LandingPageMockUps2.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups2.png"></img><br>
     
   * Goals:
 
-    <img src="assets/LandingPageMockUps3.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups3.png"></img><br>
     
   * Smart Plugs:
     
-    <img src="assets/LandingPageMockUps4.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups4.png"></img><br>
  
   * Pricing:
 
-    <img src="assets/LandingPageMockUps5.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups5.png"></img><br>
     
   * Reviews:
     
-    <img src="assets/LandingPageMockUps6.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups6.png"></img><br>
 
   * Support:
     
-    <img src="assets/LandingPageMockUps7.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups7.png"></img><br>
 
     
 
@@ -3249,20 +3249,20 @@ Creación de Repositorios y Configuración en GitHub
 * Preparación del Entorno: Se realizó la configuración técnica de los repositorios para automatizar los flujos de despliegue mediante el uso de GitHub Pages.
 * GitHub Pages:: Se utilizó GitHub Pages como infraestructura de hosting estático, permitiendo que la Landing Page sea accesible de forma pública y segura directamente desde la rama principal del repositorio.
 
-  <img src="assets/GitHubPages1.png"></img><br>
+  <img src="assets/md-images-chapter5/git-hub-pages1.png"></img><br>
 
 Proceso de Despliegue
 Despliegue de la Landing Page:
 * Se subió el código de la Landing Page al repositorio correspondiente en GitHub.
 * Se configuró GitHub Pages para publicar el sitio en línea.
 
-  <img src="assets/GitHubPages2.png"></img><br>
+  <img src="assets/md-images-chapter5/git-hub-pages2.png"></img><br>
 
 Verificación del Despliegue:
 Se hizo una comprobacion sitio publicado en GitHub Pages para asegurar que todos los elementos funcionaran correctamente.
 Se ejecutaron pruebas de funcionalidad para verificar la correcta carga del sitio y la ausencia de errores en el contenido desplegado
 
-  <img src="assets/LandingPageMockUps1.png"></img><br>
+  <img src="assets/md-images-chapter5/landing-page-mockups1.png"></img><br>
 
 Durante el Sprint 1, logramos consolidar la infraestructura de publicación del proyecto mediante la implementación de GitHub Pages. Este flujo de trabajo no solo optimizó el despliegue, sino que estableció un ciclo de integración continua eficiente, dejando el camino preparado para escalar la aplicación web de manera ágil en las próximas fases
 
@@ -3282,15 +3282,15 @@ Durante este Sprint 1, el equipo llevó a cabo un trabajo colaborativo enfocado 
 * **Link de commits del repositorio del reporte:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/develop/README.md]
 * **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
 
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/Commits1.png"></img><br>
-   <img src="assets/Commits2.png"></img><br>
-   <img src="assets/Commits3.png"></img><br>
-   <img src="assets/Commits4.png"></img><br>
+   <img src="assets/md-images-chapter5/contributors-rep.png"></img><br>
+   <img src="assets/md-images-chapter5/commits1.png"></img><br>
+   <img src="assets/md-images-chapter5/commits2.png"></img><br>
+   <img src="assets/md-images-chapter5/commits3.png"></img><br>
+   <img src="assets/md-images-chapter5/commits4.png"></img><br>
    <br>
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/ComitsWeb1.png"></img><br>
-   <img src="assets/ComitsWeb2.png"></img><br>
+   <img src="assets/md-images-chapter5/contributors-rep.png"></img><br>
+   <img src="assets/md-images-chapter5/commits-web1.png"></img><br>
+   <img src="assets/md-images-chapter5/commits-web2.png"></img><br>
 
 
 ### 5.2.2. Sprint 2 
@@ -3427,7 +3427,7 @@ El objetivo principal de este segundo Sprint es dar el salto desde el sitio est�
 <p style="text-align: left; width: 90%; margin: 20px auto;">
     <b>Enlace de Seguimiento:</b> <a href="https://trello.com/invite/b/6a03f7421c316f3c5d885e7f/ATTI5a49117f1b9d8c247078bac2838d81a9E7DF4656/sprint2-electro" target="_blank">Tablero del Sprint 2 en Trello</a>
     <br><br>
-    <img src="assets/Tablero-Sprint2.png" alt="Sprint 2 Trello Board"></img>
+    <img src="assets/md-images-chapter5/tablero-sprint2.png" alt="Sprint 2 Trello Board"></img>
 </p>
 
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
@@ -3618,62 +3618,62 @@ Imagenes del Web App:
 
  * Login
     
-    <img src="assets/Webapp-Mockup_Login.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-login.png"></img><br>
   
   * Register:
 
-    <img src="assets/Webapp-Mockup_Register.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-register.png"></img><br>
     
   * Planes desde Landing:
 
-    <img src="assets/Webapp-Mockup_Plans.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-plans.png"></img><br>
 
   * Planes:
 
-    <img src="assets/Webapp-Mock_Ups_Planes.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockups-planes.png"></img><br>
 
 
 Imágenes del Landing Page Actualizada:
   
 * Home
 
-  <img src="assets/LandingPage-Mockup-Home.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-home.png"></img><br>
 
 * Pricing:
 
-  <img src="assets/LandingPage-Mockup-Pricing.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-pricing.png"></img><br>
 
 * FAQ:
 
-  <img src="assets/LandingPage-Mockup-FAQ.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-faq.png"></img><br>
 
 * Smart Plugs:
 
-  <img src="assets/LandingPage-Mockup-SmartPlugs.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-smart-plugs.png"></img><br>
 
 * Reviews:
 
-  <img src="assets/LandingPage-Mockup-Reviews.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-reviews.png"></img><br>
 
 * Description:
 
-  <img src="assets/LandingPage-Mockup-Description.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-description.png"></img><br>
 
 * Goals:
 
-  <img src="assets/LandingPage-Mockup-Goals.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-goals.png"></img><br>
 
 * About Us:
 
-  <img src="assets/LandingPage-Mockup-About.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-about.png"></img><br>
 
 * Direction:
 
-  <img src="assets/LandingPage-Mockup-Direction.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-direction.png"></img><br>
 
 * Support:
 
-  <img src="assets/LandingPage-Mockup-Support.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-support.png"></img><br>
     
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -3686,11 +3686,11 @@ Durante este Sprint, el equipo gestionó el despliegue continuo de dos productos
 
 1. **Landing Page (Actualización):** Se mantuvo y actualizó el despliegue estático a través de **GitHub Pages**, asegurando que los nuevos Call-to-Action apunten correctamente a la Web App.
    * *URL:* https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/
-   <img src="assets/LandingPageMockUps2.1.png" alt="Deploy Landing Page V2">
+   <img src="assets/md-images-chapter5/landing-page-mockups2.png" alt="Deploy Landing Page V2">
 
 2. **Frontend Web Application (SPA):** Se configuró un nuevo entorno de despliegue en la nube utilizando **Render** (o tu proveedor en la nube correspondiente, ej. Vercel/Netlify), conectándolo directamente a la rama `main` del repositorio `electrocorp-webapp` para habilitar un flujo de Integración y Despliegue Continuo (CI/CD).
    * *URL:* https://electrocorp-webapp.onrender.com/billing/plans
-   <img src="assets/Webapp-Mock_Ups_Planes.png" alt="Deploy Web App">
+   <img src="assets/md-images-chapter5/webapp-mockups-planes.png" alt="Deploy Web App">
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
 
@@ -3708,14 +3708,14 @@ Durante el Sprint 2, la colaboración del equipo se intensificó al tener que ma
 * **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
 * **Link de commits del repositorio del frontend:** [https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/main/]
 
-   <img src="assets/Evidence5.2.8..png"></img><br>
-   <img src="assets/ReportCommit.png"></img><br>
+   <img src="assets/md-images-chapter5/evidence5-2-8.png"></img><br>
+   <img src="assets/md-images-chapter5/report-commit.png"></img><br>
 
-   <img src="assets/Evidence5.2.8.3.png"></img><br>
-   <img src="assets/LandingCommit.png"></img><br>
+   <img src="assets/md-images-chapter5/evidence5-2-8-3.png"></img><br>
+   <img src="assets/md-images-chapter5/landing-commit.png"></img><br>
    
-   <img src="assets/Evidence5.2.8.2.png"></img><br>
-   <img src="assets/FronendCommit.png"></img><br>
+   <img src="assets/md-images-chapter5/evidence5-2-8-2.png"></img><br>
+   <img src="assets/md-images-chapter5/frontend-commit.png"></img><br>
 
 ### 5.2.3. Sprint 3
 En este Sprint se consolida la entrega AV2 del producto, incorporando el primer entregable funcional del backend, la integracion entre frontend y backend, la documentacion tecnica de servicios y la revision del informe academico. El foco principal fue pasar de una aplicacion navegable a una plataforma con contratos de API, despliegue backend y trazabilidad entre bounded contexts.
