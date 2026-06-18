@@ -56,7 +56,7 @@ title ElectroCorp - Backend General Components Diagram
 
 rectangle "<b>ElectroCorp Web App</b>\n<i>[External Container]</i>\n\nAngular SPA that\nconsumes backend\nservices." as WebApp #7F8C8D
 
-rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" as Backend <<BoundedContext>> {
+rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" <<BoundedContext>> {
 
   rectangle "<b>REST API Entry Point</b>\n<i>[Spring Boot Application]</i>\n\nReceives HTTP requests\nand delegates them to\nthe bounded contexts." as Api #3498DB
 

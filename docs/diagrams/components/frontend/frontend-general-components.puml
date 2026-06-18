@@ -54,7 +54,7 @@ left to right direction
 title ElectroCorp - Frontend General Components Diagram
 
 rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses the Angular SPA to operate the product." as User #0B5593
-rectangle "<b>ElectroCorp Frontend Bounded Context Map</b>\n<i>[Angular SPA / Frontend Container]</i>" as Frontend <<BoundedContext>> {
+rectangle "<b>ElectroCorp Frontend Bounded Context Map</b>\n<i>[Angular SPA / Frontend Container]</i>" <<BoundedContext>> {
   rectangle "<b>App Layout Component</b>\n<i>[Angular Shell]</i>\n\nProvides topbar, navigation, language selector and router outlet." as Layout #3498DB
   rectangle "<b>App Router</b>\n<i>[Angular Router]</i>\n\nRoutes users to each frontend bounded context." as Router #3498DB
   rectangle "<b>Shared Kernel Context</b>\n<i>[Bounded Context Component]</i>\n\nOwns shared security, layout, session, configuration and platform services." as F0 #58A9E8
