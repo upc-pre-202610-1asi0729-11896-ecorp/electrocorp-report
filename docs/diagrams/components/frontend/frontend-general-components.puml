@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,58 +23,62 @@ hide stereotype
 title ElectroCorp - Frontend General Components Diagram
 left to right direction
 
-
-rectangle "ElectroCorp User\n[Person]\n\nUses the Angular SPA to manage energy operations." as User #0B5593
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUser who manages smart devices, routines, monitoring, reports, goals, support, maintenance and billing." as User #0B5593
 package "ElectroCorp Frontend / Angular SPA\n[container]" {
-  rectangle "App Layout Component\n[Angular Component]\n\nMain shell, topbar, language switcher and router outlet." as Layout #58A9E8
-  rectangle "App Router\n[Angular Router]\n\nRoutes users to each bounded context." as Router #58A9E8
-  rectangle "Shared Kernel Context\n[Bounded Context]\n\nApp Layout Component, Shared UI Components, Language Switcher Component." as C0 #3498DB
-  rectangle "IAM Context\n[Bounded Context]\n\nLogin/Register Pages, Account/Profile Pages, IAM Facade." as C1 #3498DB
-  rectangle "Billing Context\n[Bounded Context]\n\nPlans Page, Billing History Page, Plan Card Component." as C2 #3498DB
-  rectangle "Workplace Context\n[Bounded Context]\n\nLocations Page, Rooms Page, Device Assignments Page." as C3 #3498DB
-  rectangle "Device Control Context\n[Bounded Context]\n\nDevices Page, Device Groups Page, Routines Page." as C4 #3498DB
-  rectangle "Energy Monitoring Context\n[Bounded Context]\n\nEnergy Dashboard Page, Energy History Page, Metrics Components." as C5 #3498DB
-  rectangle "Notifications Context\n[Bounded Context]\n\nAlerts Page, Alert Rules Page, Notification Preferences Page." as C6 #3498DB
-  rectangle "Reporting Context\n[Bounded Context]\n\nReports Page, Energy Goals Page, Report Components." as C7 #3498DB
-  rectangle "Service Management Context\n[Bounded Context]\n\nSupport Tickets Page, Maintenance Tickets Page, Ticket Components." as C8 #3498DB
-  rectangle "Infrastructure API Clients\n[Angular HTTP Services]\n\nTyped services that call backend REST endpoints." as Clients #F39C12
+  rectangle "<b>App Layout Component</b>\n<i>[Angular Component]</i>\n\nMain shell, topbar, theme, language switcher and router outlet." as Layout #1ABC9C
+  rectangle "<b>App Router</b>\n<i>[Angular Router]</i>\n\nRoutes the user to each bounded context." as Router #1ABC9C
+  rectangle "<b>Shared Kernel Context</b>\n<i>[Bounded Context]</i>\n\nApp Layout Component, Shared UI Components and context services." as F0 #3498DB
+  rectangle "<b>IAM Context</b>\n<i>[Bounded Context]</i>\n\nLogin Page, Register Page and context services." as F1 #3498DB
+  rectangle "<b>Billing Context</b>\n<i>[Bounded Context]</i>\n\nPlans Page, Billing History Page and context services." as F2 #3498DB
+  rectangle "<b>Workplace Context</b>\n<i>[Bounded Context]</i>\n\nLocations Page, Rooms Page and context services." as F3 #3498DB
+  rectangle "<b>Device Control Context</b>\n<i>[Bounded Context]</i>\n\nDevices Page, Device Groups Page and context services." as F4 #3498DB
+  rectangle "<b>Energy Monitoring Context</b>\n<i>[Bounded Context]</i>\n\nEnergy Dashboard Page, Energy History Page and context services." as F5 #3498DB
+  rectangle "<b>Notifications Context</b>\n<i>[Bounded Context]</i>\n\nAlerts Page, Alert Rules Page and context services." as F6 #3498DB
+  rectangle "<b>Reporting Context</b>\n<i>[Bounded Context]</i>\n\nReports Page, Energy Goals Page and context services." as F7 #3498DB
+  rectangle "<b>Service Management Context</b>\n<i>[Bounded Context]</i>\n\nSupport Tickets Page, Maintenance Tickets Page and context services." as F8 #3498DB
+  rectangle "<b>Infrastructure API Clients</b>\n<i>[Angular HTTP Services]</i>\n\nTyped services that consume REST endpoints from the backend API." as Clients #F39C12
+  rectangle "<b>Shared Context</b>\n<i>[Bounded Context]</i>\n\nLayout, session, preferences, base API service and shared infrastructure." as Shared #3498DB
 }
-rectangle "ElectroCorp Backend API\n[External Container]\n\nSpring Boot REST API consumed by Angular." as Backend #7F8C8D
-User --> Layout : Uses
-Layout --> Router : Displays routed views through
-Router --> C0 : Routes to
-Router --> C1 : Routes to
-Router --> C2 : Routes to
-Router --> C3 : Routes to
-Router --> C4 : Routes to
-Router --> C5 : Routes to
-Router --> C6 : Routes to
-Router --> C7 : Routes to
-Router --> C8 : Routes to
-C0 --> Clients : Uses
-C1 --> Clients : Uses
-C2 --> Clients : Uses
-C3 --> Clients : Uses
-C4 --> Clients : Uses
-C5 --> Clients : Uses
-C6 --> Clients : Uses
-C7 --> Clients : Uses
-C8 --> Clients : Uses
-C1 --> C0 : Uses shared UI/services
-C2 --> C0 : Uses shared UI/services
-C3 --> C0 : Uses shared UI/services
-C4 --> C0 : Uses shared UI/services
-C5 --> C0 : Uses shared UI/services
-C6 --> C0 : Uses shared UI/services
-C7 --> C0 : Uses shared UI/services
-C8 --> C0 : Uses shared UI/services
-Clients --> Backend : Consumes REST endpoints (JSON / HTTPS)
+rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nSpring Boot REST API organized by DDD bounded contexts." as Backend #F39C12
+database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users, devices, readings, reports, goals, subscriptions, alerts and tickets." as Database
+User --> Layout : Uses\n[Browser]
+Layout --> Router : Displays routed views
+Router --> F0 : Routes to
+Router --> F1 : Routes to
+Router --> F2 : Routes to
+Router --> F3 : Routes to
+Router --> F4 : Routes to
+Router --> F5 : Routes to
+Router --> F6 : Routes to
+Router --> F7 : Routes to
+Router --> F8 : Routes to
+F0 --> Clients : Uses
+F1 --> Clients : Uses
+F2 --> Clients : Uses
+F3 --> Clients : Uses
+F4 --> Clients : Uses
+F5 --> Clients : Uses
+F6 --> Clients : Uses
+F7 --> Clients : Uses
+F8 --> Clients : Uses
+F0 --> Shared : Uses
+F1 --> Shared : Uses
+F2 --> Shared : Uses
+F3 --> Shared : Uses
+F4 --> Shared : Uses
+F5 --> Shared : Uses
+F6 --> Shared : Uses
+F7 --> Shared : Uses
+F8 --> Shared : Uses
+Clients --> Backend : Consumes REST endpoints\n[JSON / HTTPS]
+Backend --> Database : Reads and writes\n[JPA / SQL]
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
+  |<#9B59B6> domain |
   |<#F39C12> repository / external |
   |<#C9332B> database |
 endlegend

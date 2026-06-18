@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,36 +23,36 @@ hide stereotype
 title ElectroCorp - Energy Monitoring Frontend Components Diagram
 left to right direction
 
-
 package "Energy Monitoring Frontend Bounded Context\n[container]" {
-  rectangle "Energy Dashboard Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F0 #58A9E8
-  rectangle "Energy History Page\n[Angular Component]\n\nPresents user interaction for this bounded context." as F1 #58A9E8
-  rectangle "Metrics Components\n[Angular Component]\n\nPresents user interaction for this bounded context." as F2 #58A9E8
-  rectangle "Energy Monitoring Facade\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F3 #58A9E8
-  rectangle "Energy API Client\n[Angular Service]\n\nCoordinates state, use cases and REST calls." as F4 #58A9E8
+  rectangle "<b>Energy Dashboard Page</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P0 #58A9E8
+  rectangle "<b>Energy History Page</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P1 #58A9E8
+  rectangle "<b>Metrics Components</b>\n<i>[Angular Component]</i>\n\nPresents user interaction for this bounded context." as P2 #58A9E8
+  rectangle "<b>Energy Monitoring Facade</b>\n<i>[Angular Service]</i>\n\nCoordinates state, use cases and REST calls." as Facade #58A9E8
+  rectangle "<b>Energy API Client</b>\n<i>[Angular Service]</i>\n\nConsumes backend endpoints for this context." as Client #58A9E8
 }
-rectangle "ElectroCorp Backend API\n[External Container]\n\nREST API consumed by this frontend context." as Backend #7F8C8D
+rectangle "<b>ElectroCorp Backend API</b>\n<i>[External Container]</i>\n\nREST API consumed by this frontend context." as Backend #7F8C8D
 package "Connected Frontend Contexts\n[external containers]" {
-  rectangle "Device Control\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep0 #7F8C8D
-  rectangle "Reporting\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep1 #7F8C8D
-  rectangle "Notifications\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep2 #7F8C8D
-  rectangle "Shared Kernel\n[Frontend Context]\n\nProvides shared navigation, session or referenced data." as Dep3 #7F8C8D
+  rectangle "<b>Device Control</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep0 #7F8C8D
+  rectangle "<b>Reporting</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep1 #7F8C8D
+  rectangle "<b>Notifications</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep2 #7F8C8D
+  rectangle "<b>Shared Kernel</b>\n<i>[Frontend Context]</i>\n\nProvides shared navigation, session or referenced data." as Dep3 #7F8C8D
 }
-F0 --> F3 : Uses
-F1 --> F3 : Uses
-F2 --> F3 : Uses
-F3 --> F4 : Uses
-F4 --> Backend : Consumes REST endpoints (JSON / HTTPS)
-F3 ..> Dep0 : Coordinates with
-F3 ..> Dep1 : Coordinates with
-F3 ..> Dep2 : Coordinates with
-F3 ..> Dep3 : Coordinates with
+P0 --> Facade : Uses
+P1 --> Facade : Uses
+P2 --> Facade : Uses
+Facade --> Client : Uses
+Client --> Backend : Consumes REST endpoints\n[JSON / HTTPS]
+Facade ..> Dep0 : Coordinates with
+Facade ..> Dep1 : Coordinates with
+Facade ..> Dep2 : Coordinates with
+Facade ..> Dep3 : Coordinates with
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
+  |<#9B59B6> domain |
   |<#F39C12> repository / external |
   |<#C9332B> database |
 endlegend
