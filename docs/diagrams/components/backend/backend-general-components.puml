@@ -2,13 +2,15 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 180
+skinparam wrapWidth 170
 skinparam maxMessageSize 90
 skinparam ArrowColor #6B6B6B
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
 skinparam rectangleRoundCorner 0
-skinparam rectangleBorderThickness 1
+skinparam rectangleBorderThickness 0
+skinparam rectangleFontColor #FFFFFF
+skinparam rectangleFontStyle bold
 skinparam packageStyle rectangle
 skinparam packageBorderColor #555555
 skinparam packageBackgroundColor transparent
@@ -21,54 +23,46 @@ hide stereotype
 title ElectroCorp - Backend General Components Diagram
 left to right direction
 
-
-rectangle "ElectroCorp Web App\n[External Container]\n\nAngular SPA consuming backend services." as WebApp #7F8C8D
+rectangle "<b>ElectroCorp Web App</b>\n<i>[External Container]</i>\n\nAngular SPA consuming backend services." as WebApp #7F8C8D
 package "ElectroCorp Backend API / Spring Boot\n[container]" {
-  rectangle "REST API Entry Point\n[Spring Boot Application]\n\nReceives HTTP requests and delegates to bounded contexts." as Api #3498DB
-  rectangle "Shared Kernel API\n[Bounded Context Component]\n\nHealth Controller, Global Exception Handler, Security Filter Chain." as B0 #3498DB
-  rectangle "IAM API\n[Bounded Context Component]\n\nAuth Controller, User Controller, Authentication Application Service." as B1 #3498DB
-  rectangle "Billing API\n[Bounded Context Component]\n\nBilling Controller, Plan Application Service, Subscription Application Service." as B2 #3498DB
-  rectangle "Workplace API\n[Bounded Context Component]\n\nWorkplace Controller, Location Application Service, Room Application Service." as B3 #3498DB
-  rectangle "Device Control API\n[Bounded Context Component]\n\nDevice Control Controller, Device Application Service, Device Group Application Service." as B4 #3498DB
-  rectangle "Energy Monitoring API\n[Bounded Context Component]\n\nEnergy Monitoring Controller, Reading Application Service, Dashboard Query Service." as B5 #3498DB
-  rectangle "Notifications API\n[Bounded Context Component]\n\nNotifications Controller, Alert Application Service, Alert Rule Application Service." as B6 #3498DB
-  rectangle "Reporting API\n[Bounded Context Component]\n\nReporting Controller, Platform Insight Controller, Report Application Service." as B7 #3498DB
-  rectangle "Service Management API\n[Bounded Context Component]\n\nService Management Controller, Support Ticket Application Service, Maintenance Ticket Application Service." as B8 #3498DB
+  rectangle "<b>REST API Entry Point</b>\n<i>[Spring Boot Application]</i>\n\nReceives HTTP requests and delegates them to bounded contexts." as Api #3498DB
+  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nShared Platform Service, controllers, services and repositories." as B0 #58A9E8
+  rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nIdentity Access Service, controllers, services and repositories." as B1 #58A9E8
+  rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nBilling Service, controllers, services and repositories." as B2 #58A9E8
+  rectangle "<b>Workplace API</b>\n<i>[Bounded Context Component]</i>\n\nWorkplace Management Service, controllers, services and repositories." as B3 #58A9E8
+  rectangle "<b>Device Control API</b>\n<i>[Bounded Context Component]</i>\n\nDevice Management Service, controllers, services and repositories." as B4 #58A9E8
+  rectangle "<b>Energy Monitoring API</b>\n<i>[Bounded Context Component]</i>\n\nEnergy Monitoring Service, controllers, services and repositories." as B5 #58A9E8
+  rectangle "<b>Notifications API</b>\n<i>[Bounded Context Component]</i>\n\nNotification Service, controllers, services and repositories." as B6 #58A9E8
+  rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nReporting Service, controllers, services and repositories." as B7 #58A9E8
+  rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nService Management Service, controllers, services and repositories." as B8 #58A9E8
 }
-database "ElectroCorp Database\n[Relational Database]\n\nStores backend data for every bounded context." as Database
-WebApp --> Api : Consumes REST endpoints (JSON / HTTPS)
-Api --> B0 : Routes request
-Api --> B1 : Routes request
-Api --> B2 : Routes request
-Api --> B3 : Routes request
-Api --> B4 : Routes request
-Api --> B5 : Routes request
-Api --> B6 : Routes request
-Api --> B7 : Routes request
-Api --> B8 : Routes request
-B0 --> Database : Persists data
-B1 --> Database : Persists data
-B2 --> Database : Persists data
-B3 --> Database : Persists data
-B4 --> Database : Persists data
-B5 --> Database : Persists data
-B6 --> Database : Persists data
-B7 --> Database : Persists data
-B8 --> Database : Persists data
-B0 ..> B1 : Shared capabilities
-B0 ..> B2 : Shared capabilities
-B0 ..> B3 : Shared capabilities
-B0 ..> B4 : Shared capabilities
-B0 ..> B5 : Shared capabilities
-B0 ..> B6 : Shared capabilities
-B0 ..> B7 : Shared capabilities
-B0 ..> B8 : Shared capabilities
+database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores backend data for every bounded context." as Database
+WebApp --> Api : Consumes REST endpoints\n[JSON / HTTPS]
+Api --> B0 : Routes requests
+Api --> B1 : Routes requests
+Api --> B2 : Routes requests
+Api --> B3 : Routes requests
+Api --> B4 : Routes requests
+Api --> B5 : Routes requests
+Api --> B6 : Routes requests
+Api --> B7 : Routes requests
+Api --> B8 : Routes requests
+B0 --> Database : Reads and writes
+B1 --> Database : Reads and writes
+B2 --> Database : Reads and writes
+B3 --> Database : Reads and writes
+B4 --> Database : Reads and writes
+B5 --> Database : Reads and writes
+B6 --> Database : Reads and writes
+B7 --> Database : Reads and writes
+B8 --> Database : Reads and writes
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
+  |<#9B59B6> domain |
   |<#F39C12> repository / external |
   |<#C9332B> database |
 endlegend
