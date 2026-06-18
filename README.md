@@ -2222,6 +2222,8 @@ Estos diagramas dividen cada bounded context backend por capa para evitar imagen
 
 #### Frontend Class Diagrams
 
+Los diagramas frontend por bounded context muestran solo capas y dependencias entre capas. El detalle de clases queda en los diagramas frontend por capa.
+
 ##### Frontend General Bounded Contexts
 
 ![Frontend General Bounded Contexts](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-general-bounded-contexts.puml)
