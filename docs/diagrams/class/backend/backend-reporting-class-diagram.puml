@@ -216,8 +216,6 @@ package "Reporting" {
     }
   }
   package "Infrastructure / JPA" {
-    class "for" as Backend_reporting_for <<Class>> {
-    }
     class "ReportingJpaTableNames" as Backend_reporting_ReportingJpaTableNames <<Class>> {
       + CONSUMPTION_REPORTS: String
       + ENERGY_GOALS: String
@@ -413,5 +411,19 @@ Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_ReportingAppli
 Backend_reporting_ReportingQueryServiceImpl ..> Backend_reporting_ReportingQueryService
 Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_UpdateEnergyGoalCommand
 Backend_reporting_UpdateEnergyGoalCommandFromResourceAssembler ..> Backend_reporting_UpdateEnergyGoalResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_reporting_PlatformInsightController ..> Backend_reporting_DeleteEnergyGoalCommand
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ExportReportCommand
+Backend_reporting_PlatformInsightController ..> Backend_reporting_GenerateConsumptionReportCommand
+Backend_reporting_PlatformInsightController ..> Backend_reporting_EnergyGoalPolicyService
+Backend_reporting_PlatformInsightController ..> Backend_reporting_EnergyGoalProgressService
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ReportFormatPolicyService
+Backend_reporting_PlatformInsightController ..> Backend_reporting_EnergyGoalTitle
+Backend_reporting_PlatformInsightController ..> Backend_reporting_GoalTargetWatts
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ReportEstimatedCost
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ReportPeriod
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ReportingJpaTableNames
+Backend_reporting_PlatformInsightController ..> Backend_reporting_ReportingQueryHints
 
 @enduml

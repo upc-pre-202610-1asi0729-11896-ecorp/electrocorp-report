@@ -118,8 +118,6 @@ package "IAM" {
     }
   }
   package "Infrastructure / JPA" {
-    class "for" as Backend_iam_for <<Class>> {
-    }
   }
   package "Infrastructure / JPA Repositories" {
     interface "JpaAccessProfileRepository" as Backend_iam_JpaAccessProfileRepository <<interface>> {
@@ -285,5 +283,19 @@ Backend_iam_UserRepository ..> Backend_iam_User
 Backend_iam_UserResource ..> Backend_iam_User
 Backend_iam_UserResourceFromEntityAssembler ..> Backend_iam_User
 Backend_iam_UserResourceFromEntityAssembler ..> Backend_iam_UserResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_iam_AuthController ..> Backend_iam_DeleteAccountCommand
+Backend_iam_AuthController ..> Backend_iam_UserRegisteredEvent
+Backend_iam_AuthController ..> Backend_iam_EmailPolicyService
+Backend_iam_AuthController ..> Backend_iam_PasswordPolicyService
+Backend_iam_AuthController ..> Backend_iam_UserProfilePolicyService
+Backend_iam_AuthController ..> Backend_iam_AccessProfileName
+Backend_iam_AuthController ..> Backend_iam_PasswordHash
+Backend_iam_AuthController ..> Backend_iam_RoleName
+Backend_iam_AuthController ..> Backend_iam_CurrentSessionService
+Backend_iam_AuthController ..> Backend_iam_JwtAuthenticationFilter
+Backend_iam_AuthController ..> Backend_iam_MessageDigestHelper
+Backend_iam_AuthController ..> Backend_iam_PasswordHashingService
 
 @enduml
