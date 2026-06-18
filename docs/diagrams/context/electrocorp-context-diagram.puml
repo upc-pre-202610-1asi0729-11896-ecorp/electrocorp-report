@@ -1,0 +1,52 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - C4 Context Diagram
+left to right direction
+
+actor "Home Owner" as HomeOwner
+actor "Business Owner" as BusinessOwner
+rectangle "ElectroCorp Platform" as ElectroCorp {
+  component "Landing Page" as Landing
+  component "Web Application" as WebApp
+  component "Backend API" as Api
+}
+cloud "Render" as Render
+cloud "GitHub Pages" as GitHubPages
+cloud "Payment Provider" as PaymentProvider
+cloud "Email / Notification Provider" as NotificationProvider
+database "PostgreSQL Database" as Db
+
+HomeOwner --> Landing : discovers plans and value proposition
+BusinessOwner --> Landing : compares energy management plans
+HomeOwner --> WebApp : manages homes, devices and energy usage
+BusinessOwner --> WebApp : manages business locations and reports
+Landing --> WebApp : redirects to account and plan flow
+WebApp --> Api : HTTPS / JSON REST
+Api --> Db : persists platform data
+Api --> PaymentProvider : processes subscriptions and payments
+Api --> NotificationProvider : sends alerts and reports
+GitHubPages --> Landing : hosts public website
+Render --> WebApp : hosts SPA
+Render --> Api : hosts Spring Boot API
+@enduml
