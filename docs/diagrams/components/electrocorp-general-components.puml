@@ -1,0 +1,104 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - General Components Diagram
+left to right direction
+
+actor "User" as User
+component "Landing Page" as Landing
+component "Angular Router" as Router
+component "Shared UI Shell" as Shell
+component "HTTP API Layer" as HttpLayer
+component "Spring Boot REST API" as Api
+database "PostgreSQL" as Db
+
+package "Frontend bounded contexts" {
+  component "IAM UI" as FIam
+  component "Billing UI" as FBilling
+  component "Workplace UI" as FWorkplace
+  component "Device Control UI" as FDevice
+  component "Energy Monitoring UI" as FEnergy
+  component "Notifications UI" as FNotifications
+  component "Reporting UI" as FReporting
+  component "Service Management UI" as FService
+}
+
+package "Backend bounded contexts" {
+  component "IAM API" as BIam
+  component "Billing API" as BBilling
+  component "Workplace API" as BWorkplace
+  component "Device Control API" as BDevice
+  component "Energy Monitoring API" as BEnergy
+  component "Notifications API" as BNotifications
+  component "Reporting API" as BReporting
+  component "Service Management API" as BService
+  component "Shared Kernel" as BShared
+}
+
+User --> Landing : opens public website
+Landing --> Router : selected plan / sign up path
+User --> Shell : authenticated navigation
+Shell --> Router
+Router --> FIam
+Router --> FBilling
+Router --> FWorkplace
+Router --> FDevice
+Router --> FEnergy
+Router --> FNotifications
+Router --> FReporting
+Router --> FService
+FIam --> HttpLayer
+FBilling --> HttpLayer
+FWorkplace --> HttpLayer
+FDevice --> HttpLayer
+FEnergy --> HttpLayer
+FNotifications --> HttpLayer
+FReporting --> HttpLayer
+FService --> HttpLayer
+HttpLayer --> Api
+Api --> BIam
+Api --> BBilling
+Api --> BWorkplace
+Api --> BDevice
+Api --> BEnergy
+Api --> BNotifications
+Api --> BReporting
+Api --> BService
+Api --> BShared
+BIam --> Db
+BBilling --> Db
+BWorkplace --> Db
+BDevice --> Db
+BEnergy --> Db
+BNotifications --> Db
+BReporting --> Db
+BService --> Db
+BShared ..> BIam
+BShared ..> BBilling
+BShared ..> BWorkplace
+BShared ..> BDevice
+BShared ..> BEnergy
+BShared ..> BNotifications
+BShared ..> BReporting
+BShared ..> BService
+@enduml

@@ -1,0 +1,82 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - Workplace Components
+left to right direction
+
+actor "User" as User
+component "Angular Router" as Router
+component "HTTP API Layer" as Http
+component "Spring Boot API" as Api
+database "PostgreSQL tables" as Db
+
+package "Workplace Frontend" {
+  component "Locations Page" as Front_0
+  component "Rooms Page" as Front_1
+  component "Device Assignments Page" as Front_2
+  component "Workplace Facade" as Front_3
+  component "Active Workplace Context" as Front_4
+}
+
+package "Workplace Backend" {
+  component "REST Interface" as Backend_workplace
+  component "Workplace Controller" as Back_0
+  component "Location Command Service" as Back_1
+  component "Room Command Service" as Back_2
+  component "Device Assignment Command Service" as Back_3
+  component "Workplace Query Service" as Back_4
+}
+
+package "Workplace Persistence" {
+  database "locations" as Table_0
+  database "rooms" as Table_1
+  database "device_assignments" as Table_2
+}
+
+package "Connected bounded contexts" {
+  component "IAM" as Dep0
+  component "Device Control" as Dep1
+  component "Shared Kernel" as Dep2
+}
+
+User --> Router
+Router --> Front_0
+Front_0 --> Front_1
+Front_1 --> Front_2
+Front_2 --> Front_3
+Front_3 --> Front_4
+Front_4 --> Http
+Http --> Api
+Api --> Backend_workplace
+Backend_workplace --> Back_0
+Back_0 --> Back_1
+Back_1 --> Back_2
+Back_2 --> Back_3
+Back_3 --> Back_4
+Back_4 --> Table_0
+Table_0 ..> Table_1
+Table_1 ..> Table_2
+Backend_workplace ..> Dep0 : uses / references
+Backend_workplace ..> Dep1 : uses / references
+Backend_workplace ..> Dep2 : uses / references
+@enduml

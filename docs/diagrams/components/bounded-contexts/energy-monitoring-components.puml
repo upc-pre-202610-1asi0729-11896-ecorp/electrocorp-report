@@ -1,0 +1,82 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - Energy Monitoring Components
+left to right direction
+
+actor "User" as User
+component "Angular Router" as Router
+component "HTTP API Layer" as Http
+component "Spring Boot API" as Api
+database "PostgreSQL tables" as Db
+
+package "Energy Monitoring Frontend" {
+  component "Energy Dashboard Page" as Front_0
+  component "Energy History Page" as Front_1
+  component "Metrics Cards" as Front_2
+  component "Usage Chart" as Front_3
+  component "Energy Monitoring Facade" as Front_4
+}
+
+package "Energy Monitoring Backend" {
+  component "REST Interface" as Backend_energy_monitoring
+  component "Energy Monitoring Controller" as Back_0
+  component "Energy Reading Command Service" as Back_1
+  component "Dashboard Query Service" as Back_2
+  component "Sampling Settings Service" as Back_3
+  component "Reading Policy Service" as Back_4
+}
+
+package "Energy Monitoring Persistence" {
+  database "energy_readings" as Table_0
+  database "energy_sampling_settings" as Table_1
+}
+
+package "Connected bounded contexts" {
+  component "Device Control" as Dep0
+  component "Reporting" as Dep1
+  component "Notifications" as Dep2
+  component "Shared Kernel" as Dep3
+}
+
+User --> Router
+Router --> Front_0
+Front_0 --> Front_1
+Front_1 --> Front_2
+Front_2 --> Front_3
+Front_3 --> Front_4
+Front_4 --> Http
+Http --> Api
+Api --> Backend_energy_monitoring
+Backend_energy_monitoring --> Back_0
+Back_0 --> Back_1
+Back_1 --> Back_2
+Back_2 --> Back_3
+Back_3 --> Back_4
+Back_4 --> Table_0
+Table_0 ..> Table_1
+Backend_energy_monitoring ..> Dep0 : uses / references
+Backend_energy_monitoring ..> Dep1 : uses / references
+Backend_energy_monitoring ..> Dep2 : uses / references
+Backend_energy_monitoring ..> Dep3 : uses / references
+@enduml
