@@ -1,0 +1,75 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - C4 Container Diagram
+left to right direction
+
+actor "ElectroCorp User" as User
+node "Client Browser" {
+  component "Landing Page
+HTML/CSS/JS" as Landing
+  component "Angular Web App
+SPA" as Spa
+}
+node "Render" {
+  component "Spring Boot Backend API
+Modular Monolith" as Backend
+}
+database "PostgreSQL
+Relational Database" as Postgres
+cloud "Payment Provider" as Payments
+cloud "Email / Notification Provider" as Emails
+cloud "PlantUML Proxy" as PlantUml
+component "Report Repository
+README + PUML sources" as ReportRepo
+
+User --> Landing : reads value proposition
+Landing --> Spa : redirects CTA and selected plan
+User --> Spa : authenticates and manages platform
+Spa --> Backend : consumes REST endpoints
+Backend --> Postgres : JPA repositories
+Backend --> Payments : billing checkout and payment status
+Backend --> Emails : alert and report delivery
+ReportRepo --> PlantUml : renders diagrams from main branch
+
+package "Backend bounded contexts" {
+  component "IAM" as Iam
+  component "Billing" as Billing
+  component "Workplace" as Workplace
+  component "Device Control" as DeviceControl
+  component "Energy Monitoring" as Energy
+  component "Notifications" as Notifications
+  component "Reporting" as Reporting
+  component "Service Management" as Service
+  component "Shared Kernel" as Shared
+}
+Backend --> Iam
+Backend --> Billing
+Backend --> Workplace
+Backend --> DeviceControl
+Backend --> Energy
+Backend --> Notifications
+Backend --> Reporting
+Backend --> Service
+Backend --> Shared
+@enduml

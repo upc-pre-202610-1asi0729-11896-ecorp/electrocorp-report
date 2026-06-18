@@ -1,0 +1,89 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - Shared Kernel Components
+left to right direction
+
+actor "User" as User
+component "Angular Router" as Router
+component "HTTP API Layer" as Http
+component "Spring Boot API" as Api
+database "PostgreSQL tables" as Db
+
+package "Shared Kernel Frontend" {
+  component "App Layout" as Front_0
+  component "Shared UI Components" as Front_1
+  component "Base API Service" as Front_2
+  component "Auth Session Service" as Front_3
+  component "UI Preferences Service" as Front_4
+}
+
+package "Shared Kernel Backend" {
+  component "REST Interface" as Backend_shared_kernel
+  component "Health Controller" as Back_0
+  component "Global Exception Handler" as Back_1
+  component "Security Configuration" as Back_2
+  component "OpenAPI Configuration" as Back_3
+  component "Base Resources" as Back_4
+}
+
+package "Shared Kernel Persistence" {
+  database "Cross-context references" as Table_0
+}
+
+package "Connected bounded contexts" {
+  component "IAM" as Dep0
+  component "Billing" as Dep1
+  component "Workplace" as Dep2
+  component "Device Control" as Dep3
+  component "Energy Monitoring" as Dep4
+  component "Notifications" as Dep5
+  component "Reporting" as Dep6
+  component "Service Management" as Dep7
+}
+
+User --> Router
+Router --> Front_0
+Front_0 --> Front_1
+Front_1 --> Front_2
+Front_2 --> Front_3
+Front_3 --> Front_4
+Front_4 --> Http
+Http --> Api
+Api --> Backend_shared_kernel
+Backend_shared_kernel --> Back_0
+Back_0 --> Back_1
+Back_1 --> Back_2
+Back_2 --> Back_3
+Back_3 --> Back_4
+Back_4 --> Table_0
+
+Backend_shared_kernel ..> Dep0 : uses / references
+Backend_shared_kernel ..> Dep1 : uses / references
+Backend_shared_kernel ..> Dep2 : uses / references
+Backend_shared_kernel ..> Dep3 : uses / references
+Backend_shared_kernel ..> Dep4 : uses / references
+Backend_shared_kernel ..> Dep5 : uses / references
+Backend_shared_kernel ..> Dep6 : uses / references
+Backend_shared_kernel ..> Dep7 : uses / references
+@enduml

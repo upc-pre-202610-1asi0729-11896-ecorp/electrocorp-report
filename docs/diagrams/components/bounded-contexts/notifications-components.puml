@@ -1,0 +1,86 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - Notifications Components
+left to right direction
+
+actor "User" as User
+component "Angular Router" as Router
+component "HTTP API Layer" as Http
+component "Spring Boot API" as Api
+database "PostgreSQL tables" as Db
+
+package "Notifications Frontend" {
+  component "Alerts Page" as Front_0
+  component "Alert Rules Page" as Front_1
+  component "Notification Preferences Page" as Front_2
+  component "Alert Cards" as Front_3
+  component "Notifications Facade" as Front_4
+}
+
+package "Notifications Backend" {
+  component "REST Interface" as Backend_notifications
+  component "Notifications Controller" as Back_0
+  component "Alert Command Service" as Back_1
+  component "Alert Rule Service" as Back_2
+  component "Preference Service" as Back_3
+  component "Rule Evaluation Service" as Back_4
+}
+
+package "Notifications Persistence" {
+  database "alerts" as Table_0
+  database "alert_rules" as Table_1
+  database "alert_rule_profiles" as Table_2
+  database "notification_preferences" as Table_3
+}
+
+package "Connected bounded contexts" {
+  component "Energy Monitoring" as Dep0
+  component "Device Control" as Dep1
+  component "IAM" as Dep2
+  component "Shared Kernel" as Dep3
+}
+
+User --> Router
+Router --> Front_0
+Front_0 --> Front_1
+Front_1 --> Front_2
+Front_2 --> Front_3
+Front_3 --> Front_4
+Front_4 --> Http
+Http --> Api
+Api --> Backend_notifications
+Backend_notifications --> Back_0
+Back_0 --> Back_1
+Back_1 --> Back_2
+Back_2 --> Back_3
+Back_3 --> Back_4
+Back_4 --> Table_0
+Table_0 ..> Table_1
+Table_1 ..> Table_2
+Table_2 ..> Table_3
+Backend_notifications ..> Dep0 : uses / references
+Backend_notifications ..> Dep1 : uses / references
+Backend_notifications ..> Dep2 : uses / references
+Backend_notifications ..> Dep3 : uses / references
+@enduml

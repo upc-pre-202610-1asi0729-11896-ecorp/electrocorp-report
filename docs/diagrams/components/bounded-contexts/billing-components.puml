@@ -1,0 +1,82 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam wrapWidth 180
+skinparam maxMessageSize 90
+skinparam defaultFontName Arial
+skinparam ArrowColor #1F4E79
+skinparam component {
+  BackgroundColor #F8FBFF
+  BorderColor #1F4E79
+  FontColor #0B1F33
+}
+skinparam database {
+  BackgroundColor #FFF9E8
+  BorderColor #8A6D1D
+}
+skinparam actor {
+  BackgroundColor #EEF7FF
+  BorderColor #1F4E79
+}
+
+title ElectroCorp - Billing Components
+left to right direction
+
+actor "User" as User
+component "Angular Router" as Router
+component "HTTP API Layer" as Http
+component "Spring Boot API" as Api
+database "PostgreSQL tables" as Db
+
+package "Billing Frontend" {
+  component "Plans Page" as Front_0
+  component "Billing History Page" as Front_1
+  component "Plan Card" as Front_2
+  component "Payment Form" as Front_3
+  component "Billing Facade" as Front_4
+}
+
+package "Billing Backend" {
+  component "REST Interface" as Backend_billing
+  component "Billing Controller" as Back_0
+  component "Plan Query Service" as Back_1
+  component "Subscription Command Service" as Back_2
+  component "Payment Command Service" as Back_3
+  component "Invoice Query Service" as Back_4
+}
+
+package "Billing Persistence" {
+  database "plans" as Table_0
+  database "subscriptions" as Table_1
+  database "payments" as Table_2
+  database "invoices" as Table_3
+}
+
+package "Connected bounded contexts" {
+  component "IAM" as Dep0
+  component "Shared Kernel" as Dep1
+}
+
+User --> Router
+Router --> Front_0
+Front_0 --> Front_1
+Front_1 --> Front_2
+Front_2 --> Front_3
+Front_3 --> Front_4
+Front_4 --> Http
+Http --> Api
+Api --> Backend_billing
+Backend_billing --> Back_0
+Back_0 --> Back_1
+Back_1 --> Back_2
+Back_2 --> Back_3
+Back_3 --> Back_4
+Back_4 --> Table_0
+Table_0 ..> Table_1
+Table_1 ..> Table_2
+Table_2 ..> Table_3
+Backend_billing ..> Dep0 : uses / references
+Backend_billing ..> Dep1 : uses / references
+@enduml
