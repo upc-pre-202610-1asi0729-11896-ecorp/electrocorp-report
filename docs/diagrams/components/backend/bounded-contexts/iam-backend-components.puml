@@ -2,74 +2,76 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 145
+skinparam maxMessageSize 95
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
+skinparam rectangleFontStyle plain
+skinparam rectangle {
+  BorderThickness 0
+}
+skinparam rectangle<<BoundedContext>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
+}
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
+skinparam databaseFontStyle plain
 hide stereotype
-title ElectroCorp - IAM Backend Components Diagram
 left to right direction
 
-package "IAM Backend Bounded Context\n[container]" {
-  rectangle "<b>Identity Access Service</b>\n<i>[Application Service]</i>\n\nCoordinates authentication, users and access profiles." as Service #3498DB
-  rectangle "<b>Sign In Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C0 #3498DB
-  rectangle "<b>Register User Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C1 #3498DB
-  rectangle "<b>Update Access Profile Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C2 #3498DB
-  rectangle "<b>Password Policy</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D0 #9B59B6
-  rectangle "<b>Access Policy</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D1 #9B59B6
-  rectangle "<b>User</b>\n<i>[Domain Entity]</i>\n\nRepresents user business state." as E0 #9B59B6
-  rectangle "<b>Access Profile</b>\n<i>[Domain Entity]</i>\n\nRepresents access profile business state." as E1 #9B59B6
-  rectangle "<b>Email Address</b>\n<i>[Value Object]</i>\n\nRepresents email address value." as V0 #9B59B6
-  rectangle "<b>Role Name</b>\n<i>[Value Object]</i>\n\nRepresents role name value." as V1 #9B59B6
-  rectangle "<b>User Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists user data." as R0 #F39C12
-  rectangle "<b>Access Profile Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists access profile data." as R1 #F39C12
+title ElectroCorp - IAM Backend Components Diagram
+
+rectangle "<b>IAM Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" as Boundary <<BoundedContext>> {
+  rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
+  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
+  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
 }
-database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users and access profiles." as Database
-package "Connected Bounded Contexts\n[external containers]" {
-  rectangle "<b>Billing</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep0 #7F8C8D
-  rectangle "<b>Workplace</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep1 #7F8C8D
-  rectangle "<b>Service Management</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep2 #7F8C8D
-  rectangle "<b>Shared Kernel</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep3 #7F8C8D
-}
-Service --> C0 : Receives
-Service --> C1 : Receives
-Service --> C2 : Receives
-Service --> D0 : Uses
-Service --> D1 : Uses
-Service --> R0 : Uses
-Service --> R1 : Uses
-D0 --> E0 : Validates
-D1 --> E1 : Validates
-E0 --> V0 : Has
-E0 --> V1 : Has
-E1 --> V1 : Has
-R0 --> Database : Reads and writes
-R1 --> Database : Reads and writes
-Service ..> Dep0 : Coordinates with
-Service ..> Dep1 : Coordinates with
-Service ..> Dep2 : Coordinates with
-Service ..> Dep3 : Coordinates with
+
+database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores authentication, users, profiles and access control." as Database
+rectangle "<b>Shared Kernel</b>\n<i>[Published Language]</i>\n\nProvides common errors, security context and shared platform configuration." as Shared #7F8C8D
+rectangle "<b>Shared Kernel</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep0 #7F8C8D
+rectangle "<b>Billing</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep1 #7F8C8D
+rectangle "<b>Workplace</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep2 #7F8C8D
+rectangle "<b>Service Management</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep3 #7F8C8D
+
+Interfaces --> Application : Delegates use cases
+Application --> Domain : Enforces business rules
+Application --> Infrastructure : Uses ports / repositories
+Infrastructure --> Domain : Maps persisted state
+Infrastructure --> Database : Reads and writes
+Interfaces ..> Shared : Uses platform contracts
+Application ..> Shared : Uses shared language
+Application ..> Dep0 : Coordinates with
+Application ..> Dep1 : Coordinates with
+Application ..> Dep2 : Coordinates with
+Application ..> Dep3 : Coordinates with
+
+Interfaces -[hidden]right- Application
+Application -[hidden]right- Domain
+Domain -[hidden]right- Infrastructure
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
+  |<#F39C12> infrastructure / external |
   |<#C9332B> database |
+  |<#7F8C8D> external container |
 endlegend
+
 @enduml

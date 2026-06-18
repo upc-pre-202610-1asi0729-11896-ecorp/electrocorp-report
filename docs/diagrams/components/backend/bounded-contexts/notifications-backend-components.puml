@@ -2,78 +2,76 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 145
+skinparam maxMessageSize 95
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
+skinparam rectangleFontStyle plain
+skinparam rectangle {
+  BorderThickness 0
+}
+skinparam rectangle<<BoundedContext>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
+}
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
+skinparam databaseFontStyle plain
 hide stereotype
-title ElectroCorp - Notifications Backend Components Diagram
 left to right direction
 
-package "Notifications Backend Bounded Context\n[container]" {
-  rectangle "<b>Notification Service</b>\n<i>[Application Service]</i>\n\nCoordinates alerts, rules and notification preferences." as Service #3498DB
-  rectangle "<b>Create Alert Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C0 #3498DB
-  rectangle "<b>Create Alert Rule Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C1 #3498DB
-  rectangle "<b>Update Preference Command</b>\n<i>[Command]</i>\n\nInput data to execute this use case." as C2 #3498DB
-  rectangle "<b>Alert Policy</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D0 #9B59B6
-  rectangle "<b>Delivery Policy</b>\n<i>[Domain Service]</i>\n\nApplies business rules for this bounded context." as D1 #9B59B6
-  rectangle "<b>Alert</b>\n<i>[Domain Entity]</i>\n\nRepresents alert business state." as E0 #9B59B6
-  rectangle "<b>Alert Rule</b>\n<i>[Domain Entity]</i>\n\nRepresents alert rule business state." as E1 #9B59B6
-  rectangle "<b>Notification Preference</b>\n<i>[Domain Entity]</i>\n\nRepresents notification preference business state." as E2 #9B59B6
-  rectangle "<b>Severity Level</b>\n<i>[Value Object]</i>\n\nRepresents severity level value." as V0 #9B59B6
-  rectangle "<b>Channel Type</b>\n<i>[Value Object]</i>\n\nRepresents channel type value." as V1 #9B59B6
-  rectangle "<b>Alert Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists alert data." as R0 #F39C12
-  rectangle "<b>Alert Rule Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists alert rule data." as R1 #F39C12
-  rectangle "<b>Notification Preference Repository</b>\n<i>[Spring Data Repository]</i>\n\nPersists notification preference data." as R2 #F39C12
+title ElectroCorp - Notifications Backend Components Diagram
+
+rectangle "<b>Notifications Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" as Boundary <<BoundedContext>> {
+  rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
+  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
+  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
 }
-database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores alerts, rules and notification preferences." as Database
-package "Connected Bounded Contexts\n[external containers]" {
-  rectangle "<b>Energy Monitoring</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep0 #7F8C8D
-  rectangle "<b>Device Control</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep1 #7F8C8D
-  rectangle "<b>IAM</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep2 #7F8C8D
-  rectangle "<b>Shared Kernel</b>\n<i>[Bounded Context]</i>\n\nProvides referenced capability or published language." as Dep3 #7F8C8D
-}
-Service --> C0 : Receives
-Service --> C1 : Receives
-Service --> C2 : Receives
-Service --> D0 : Uses
-Service --> D1 : Uses
-Service --> R0 : Uses
-Service --> R1 : Uses
-Service --> R2 : Uses
-D0 --> E0 : Validates
-D1 --> E1 : Validates
-E0 --> V0 : Has
-E0 --> V1 : Has
-E1 --> V1 : Has
-R0 --> Database : Reads and writes
-R1 --> Database : Reads and writes
-R2 --> Database : Reads and writes
-Service ..> Dep0 : Coordinates with
-Service ..> Dep1 : Coordinates with
-Service ..> Dep2 : Coordinates with
-Service ..> Dep3 : Coordinates with
+
+database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores alerts, alert rules, preferences and notification evaluation." as Database
+rectangle "<b>Shared Kernel</b>\n<i>[Published Language]</i>\n\nProvides common errors, security context and shared platform configuration." as Shared #7F8C8D
+rectangle "<b>Energy Monitoring</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep0 #7F8C8D
+rectangle "<b>Device Control</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep1 #7F8C8D
+rectangle "<b>IAM</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep2 #7F8C8D
+rectangle "<b>Reporting</b>\n<i>[External Bounded Context]</i>\n\nCollaborates through IDs, published language or REST/application contracts." as Dep3 #7F8C8D
+
+Interfaces --> Application : Delegates use cases
+Application --> Domain : Enforces business rules
+Application --> Infrastructure : Uses ports / repositories
+Infrastructure --> Domain : Maps persisted state
+Infrastructure --> Database : Reads and writes
+Interfaces ..> Shared : Uses platform contracts
+Application ..> Shared : Uses shared language
+Application ..> Dep0 : Coordinates with
+Application ..> Dep1 : Coordinates with
+Application ..> Dep2 : Coordinates with
+Application ..> Dep3 : Coordinates with
+
+Interfaces -[hidden]right- Application
+Application -[hidden]right- Domain
+Domain -[hidden]right- Infrastructure
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
+  |<#F39C12> infrastructure / external |
   |<#C9332B> database |
+  |<#7F8C8D> external container |
 endlegend
+
 @enduml

@@ -2,68 +2,126 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 145
+skinparam maxMessageSize 95
+
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
+
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
+skinparam rectangleFontStyle plain
+
+skinparam rectangle {
+  BorderThickness 0
+}
+
+skinparam rectangle<<BoundedContext>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
+}
+
 skinparam databaseBackgroundColor #C9332B
 skinparam databaseBorderColor #C9332B
 skinparam databaseFontColor #FFFFFF
+skinparam databaseFontStyle plain
+
 hide stereotype
-title ElectroCorp - Backend General Components Diagram
 left to right direction
 
-rectangle "<b>ElectroCorp Web App</b>\n<i>[External Container]</i>\n\nAngular SPA consuming backend services." as WebApp #7F8C8D
-package "ElectroCorp Backend API / Spring Boot\n[container]" {
-  rectangle "<b>REST API Entry Point</b>\n<i>[Spring Boot Application]</i>\n\nReceives HTTP requests and delegates them to bounded contexts." as Api #3498DB
-  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nShared Platform Service, controllers, services and repositories." as B0 #58A9E8
-  rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nIdentity Access Service, controllers, services and repositories." as B1 #58A9E8
-  rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nBilling Service, controllers, services and repositories." as B2 #58A9E8
-  rectangle "<b>Workplace API</b>\n<i>[Bounded Context Component]</i>\n\nWorkplace Management Service, controllers, services and repositories." as B3 #58A9E8
-  rectangle "<b>Device Control API</b>\n<i>[Bounded Context Component]</i>\n\nDevice Management Service, controllers, services and repositories." as B4 #58A9E8
-  rectangle "<b>Energy Monitoring API</b>\n<i>[Bounded Context Component]</i>\n\nEnergy Monitoring Service, controllers, services and repositories." as B5 #58A9E8
-  rectangle "<b>Notifications API</b>\n<i>[Bounded Context Component]</i>\n\nNotification Service, controllers, services and repositories." as B6 #58A9E8
-  rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nReporting Service, controllers, services and repositories." as B7 #58A9E8
-  rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nService Management Service, controllers, services and repositories." as B8 #58A9E8
+title ElectroCorp - Backend General Components Diagram
+
+rectangle "<b>ElectroCorp Web App</b>\n<i>[External Container]</i>\n\nAngular SPA that\nconsumes backend\nservices." as WebApp #7F8C8D
+
+rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" as Backend <<BoundedContext>> {
+
+  rectangle "<b>REST API Entry Point</b>\n<i>[Spring Boot Application]</i>\n\nReceives HTTP requests\nand delegates them to\nthe bounded contexts." as Api #3498DB
+
+  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nProvides shared security,\nOpenAPI, CORS, health\nchecks and common\nplatform configuration." as Shared #58A9E8
+
+  rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nManages authentication,\nusers, profiles and\naccess control." as IAM #58A9E8
+
+  rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates plans,\nsubscriptions, payments\nand invoices." as Billing #58A9E8
+
+  rectangle "<b>Workplace API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates locations,\nrooms and device\nassignments." as Workplace #58A9E8
+
+  rectangle "<b>Device Control API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates devices,\ngroups, routines and\noperation modes." as Device #58A9E8
+
+  rectangle "<b>Energy Monitoring API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates readings,\nsampling settings,\nstatistics and energy\ndashboards." as Energy #58A9E8
+
+  rectangle "<b>Notifications API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates alerts,\nrules, preferences and\nnotification evaluation." as Notifications #58A9E8
+
+  rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates reports,\nenergy goals, exports\nand platform insights." as Reporting #58A9E8
+
+  rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nCoordinates support\ntickets, maintenance\ntickets and service\nfollow-up." as Service #58A9E8
 }
-database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores backend data for every bounded context." as Database
-WebApp --> Api : Consumes REST endpoints\n[JSON / HTTPS]
-Api --> B0 : Routes requests
-Api --> B1 : Routes requests
-Api --> B2 : Routes requests
-Api --> B3 : Routes requests
-Api --> B4 : Routes requests
-Api --> B5 : Routes requests
-Api --> B6 : Routes requests
-Api --> B7 : Routes requests
-Api --> B8 : Routes requests
-B0 --> Database : Reads and writes
-B1 --> Database : Reads and writes
-B2 --> Database : Reads and writes
-B3 --> Database : Reads and writes
-B4 --> Database : Reads and writes
-B5 --> Database : Reads and writes
-B6 --> Database : Reads and writes
-B7 --> Database : Reads and writes
-B8 --> Database : Reads and writes
+
+database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores application data\nused by every bounded\ncontext." as Database
+
+WebApp --> Api : Consumes backend\nservices\n[JSON / HTTPS]
+
+Api --> Shared : Routes shared\nplatform requests
+Api --> IAM : Routes identity\nrequests
+Api --> Billing : Routes billing\nrequests
+Api --> Workplace : Routes workplace\nrequests
+Api --> Device : Routes operation\nrequests
+Api --> Energy : Routes energy\nrequests
+Api --> Notifications : Routes notification\nrequests
+Api --> Reporting : Routes reporting\nrequests
+Api --> Service : Routes service\nrequests
+
+Shared --> Database : Reads and writes\n[JPA / SQL]
+IAM --> Database : Reads and writes\n[JPA / SQL]
+Billing --> Database : Reads and writes\n[JPA / SQL]
+Workplace --> Database : Reads and writes\n[JPA / SQL]
+Device --> Database : Reads and writes\n[JPA / SQL]
+Energy --> Database : Reads and writes\n[JPA / SQL]
+Notifications --> Database : Reads and writes\n[JPA / SQL]
+Reporting --> Database : Reads and writes\n[JPA / SQL]
+Service --> Database : Reads and writes\n[JPA / SQL]
+
+Billing --> IAM : Validates user\nownership
+Workplace --> IAM : Validates user\nownership
+Device --> Workplace : Uses assigned\nspaces
+Energy --> Device : Records device\nreadings
+Notifications --> Energy : Evaluates energy\nconditions
+Reporting --> Billing : Reads subscription\nmetrics
+Reporting --> Workplace : Reads workplace\nmetrics
+Reporting --> Device : Reads operation\nmetrics
+Reporting --> Energy : Reads energy\nmetrics
+Reporting --> Notifications : Reads alert\nmetrics
+Reporting --> Service : Reads service\nmetrics
+
+' Visual hierarchy similar to the Billing diagram
+Api -[hidden]down- Billing
+
+Shared -[hidden]right- IAM
+IAM -[hidden]right- Billing
+Billing -[hidden]right- Workplace
+Workplace -[hidden]right- Device
+
+Device -[hidden]down- Energy
+
+Energy -[hidden]right- Notifications
+Notifications -[hidden]right- Reporting
+Reporting -[hidden]right- Service
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
   |<#3498DB> container |
   |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
   |<#C9332B> database |
+  |<#7F8C8D> external container |
 endlegend
+
 @enduml
