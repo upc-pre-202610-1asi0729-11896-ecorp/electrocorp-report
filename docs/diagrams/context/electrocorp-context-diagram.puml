@@ -2,54 +2,54 @@
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam wrapWidth 170
-skinparam maxMessageSize 90
-skinparam ArrowColor #6B6B6B
+skinparam defaultTextAlignment center
+skinparam wrapWidth 135
+skinparam maxMessageSize 70
+skinparam nodesep 35
+skinparam ranksep 45
+skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
+skinparam ArrowThickness 1
 skinparam rectangleRoundCorner 0
 skinparam rectangleBorderThickness 0
 skinparam rectangleFontColor #FFFFFF
-skinparam rectangleFontStyle bold
-skinparam packageStyle rectangle
-skinparam packageBorderColor #555555
-skinparam packageBackgroundColor transparent
-skinparam packageFontColor #444444
-skinparam packageFontStyle bold
-skinparam databaseBackgroundColor #C9332B
-skinparam databaseBorderColor #C9332B
-skinparam databaseFontColor #FFFFFF
-hide stereotype
-title ElectroCorp - C4 Context Diagram
-left to right direction
-
-rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nHomeowner or business owner who manages devices, energy, alerts, reports, support and billing." as User #0B5593
-
-package "ElectroCorp Digital Ecosystem\n[system]" {
-  rectangle "<b>ElectroCorp Website</b>\n<i>[Public Website]</i>\n\nPresents value proposition, pricing and calls to action." as Landing #1ABC9C
-  rectangle "<b>ElectroCorp Web App</b>\n<i>[Angular SPA]</i>\n\nOperational application for the complete energy management experience." as WebApp #27AE60
-  rectangle "<b>ElectroCorp Platform API</b>\n<i>[Spring Boot System]</i>\n\nModular monolith that coordinates IAM, billing, workplaces, devices, monitoring, alerts, reporting and service." as Platform #0B6FB3
+skinparam rectangleFontStyle plain
+skinparam rectangle {
+  BorderThickness 0
+  MinimumWidth 155
+  Padding 8
 }
+hide stereotype
+top to bottom direction
 
-rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nProcesses subscription payments and checkout status." as PaymentProvider #7F8C8D
-rectangle "<b>Email / Notification Provider</b>\n<i>[External System]</i>\n\nDelivers alerts, reports and support notifications." as NotificationProvider #7F8C8D
-database "<b>ElectroCorp Database</b>\n<i>[Relational Database]</i>\n\nStores users, plans, workplaces, devices, readings, alerts, reports and tickets." as Database
+title ElectroCorp - C4 Context Diagram
 
-User --> Landing : Browses public information\nand plans\n[Browser]
-User --> WebApp : Uses authenticated\napplication flows\n[Browser]
-Landing --> WebApp : Redirects selected plan\n[CTA Link]
-WebApp --> Platform : Consumes platform services\n[JSON / HTTPS]
-Platform --> Database : Reads and writes\n[JPA / SQL]
-Platform --> PaymentProvider : Processes subscriptions\n[HTTPS / API]
-Platform --> NotificationProvider : Sends alerts and reports\n[HTTPS / API]
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nHomeowner or business owner who manages energy, devices, reports, support and billing." as User #0B5593
+
+rectangle "<b>ElectroCorp System</b>\n<i>[Software System]</i>\n\nPlatform for energy monitoring, automation, billing, notifications, reporting and service management." as System #0B6FB3
+
+rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nProcesses subscriptions and checkout status." as Payment #7F8C8D
+rectangle "<b>Email Provider</b>\n<i>[External System]</i>\n\nDelivers alerts, reports and support messages." as Mail #7F8C8D
+rectangle "<b>Cloud Hosting</b>\n<i>[External Platform]</i>\n\nHosts public site, SPA and backend services." as Hosting #7F8C8D
+
+User --> System : uses\n[Browser]
+System --> Payment : payments\n[HTTPS / API]
+System --> Mail : notifications\n[HTTPS / API]
+System --> Hosting : deployed on\n[Cloud]
+Payment --> User : payment status
+Mail --> User : emails
+
+Payment -[hidden]right- Mail
+Mail -[hidden]right- Hosting
+User -[hidden]down- System
+System -[hidden]down- Mail
+
 legend right
   <b>Legend</b>
   |<#0B5593> person |
   |<#0B6FB3> system |
-  |<#3498DB> container |
-  |<#58A9E8> component |
-  |<#9B59B6> domain |
-  |<#F39C12> repository / external |
-  |<#C9332B> database |
+  |<#7F8C8D> external system |
 endlegend
+
 @enduml
