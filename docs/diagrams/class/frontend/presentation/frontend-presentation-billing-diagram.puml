@@ -84,4 +84,9 @@ package "Billing Presentation" {
 FrontendPresentation_billing_PlansPageComponent ..> FrontendPresentation_billing_PaymentFormComponent
 FrontendPresentation_billing_PlansPageComponent ..> FrontendPresentation_billing_PlanCardComponent
 
+' Relationship completion: every declared type participates in the frontend diagram.
+FrontendPresentation_billing_PlansPageComponent ..> FrontendPresentation_billing_InvoiceCardComponent
+FrontendPresentation_billing_PlansPageComponent ..> FrontendPresentation_billing_BillingHistoryPageComponent
+FrontendPresentation_billing_PlansPageComponent ..> FrontendPresentation_billing_BILLING_ROUTES
+
 @enduml

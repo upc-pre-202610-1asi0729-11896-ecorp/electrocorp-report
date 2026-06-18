@@ -157,8 +157,6 @@ package "Service Management" {
     }
   }
   package "Infrastructure / JPA" {
-    class "for" as Backend_servicemanagement_for <<Class>> {
-    }
     class "ServiceManagementJpaTableNames" as Backend_servicemanagement_ServiceManagementJpaTableNames <<Class>> {
       + SUPPORT_TICKETS: String
       + MAINTENANCE_TICKETS: String
@@ -285,5 +283,21 @@ Backend_servicemanagement_TicketSummaryService ..> Backend_servicemanagement_Mai
 Backend_servicemanagement_TicketSummaryService ..> Backend_servicemanagement_SupportTicket
 Backend_servicemanagement_UpdateTicketStatusCommandFromResourceAssembler ..> Backend_servicemanagement_UpdateTicketStatusCommand
 Backend_servicemanagement_UpdateTicketStatusCommandFromResourceAssembler ..> Backend_servicemanagement_UpdateTicketStatusResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_ScheduleMaintenanceTicketCommand
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_MaintenanceTicketCreatedEvent
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_SupportTicketCreatedEvent
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_MaintenanceSchedulePolicyService
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_MaintenanceTicketPolicyService
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_SupportTicketPolicyService
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_TicketPriorityPolicyService
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_TicketStatusPolicyService
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_OpenTicketSpecification
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_TicketCode
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_ServiceManagementJpaTableNames
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_ServiceManagementQueryHints
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_ConsoleTicketNotificationAdapter
+Backend_servicemanagement_ServiceManagementController ..> Backend_servicemanagement_TicketNotificationPort
 
 @enduml

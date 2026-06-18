@@ -482,8 +482,6 @@ package "Device Control" {
       - dropStatusCheckConstraints() : void
       - quoteIdentifier(String identifier) : String
     }
-    class "for" as Backend_devicecontrol_for <<Class>> {
-    }
   }
   package "Infrastructure / JPA Repositories" {
     interface "JpaDeviceGroupDeviceRepository" as Backend_devicecontrol_JpaDeviceGroupDeviceRepository <<interface>> {
@@ -910,5 +908,25 @@ Backend_devicecontrol_UpdateDeviceStatusCommandFromResourceAssembler ..> Backend
 Backend_devicecontrol_UpdateDeviceStatusResource ..> Backend_devicecontrol_DeviceStatus
 Backend_devicecontrol_UpdateRoutineStatusCommandFromResourceAssembler ..> Backend_devicecontrol_UpdateRoutineStatusCommand
 Backend_devicecontrol_UpdateRoutineStatusCommandFromResourceAssembler ..> Backend_devicecontrol_UpdateRoutineStatusResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_AddDeviceToGroupCommand
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_RemoveDeviceFromGroupCommand
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_ToggleRoutineCommand
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_UpdateDeviceCommand
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceCreatedEvent
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceGroupPolicyService
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DevicePolicyService
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DevicePowerPolicyService
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_RoutinePolicyService
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceGroupName
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceName
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceSerialNumber
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_PowerWatts
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_RoutineName
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceControlJpaTableNames
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceControlQueryHints
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_DeviceControlSchemaRepairService
+Backend_devicecontrol_DeviceControlController ..> Backend_devicecontrol_CsvIds
 
 @enduml

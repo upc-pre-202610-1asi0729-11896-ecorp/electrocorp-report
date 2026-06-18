@@ -2138,12 +2138,43 @@ Estos diagramas detallan la capa de presentacion del frontend por bounded contex
 
 ### 4.8.1. Database Diagram
 
-El diagrama de base de datos de ElectroCorp representa la estructura persistente actual del backend Spring Boot. Fue actualizado a partir de las entidades JPA, aggregates persistentes, columnas, relaciones y tablas auxiliares presentes en `electrocorp-platform`.
+El modelo de base de datos de ElectroCorp se presenta en dos niveles para mantener la lectura manejable. Primero se muestra una vista general por bounded context y luego se detalla cada contexto con sus tablas, foreign keys locales y referencias externas relevantes.
 
-La estructura incluye IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management. Tambien muestra relaciones relevantes como usuarios con perfiles de acceso, suscripciones con planes, pagos con facturas, sedes con rooms, rooms con asignaciones de dispositivos, grupos con dispositivos, lecturas energeticas, alertas, reglas, preferencias, metas y tickets de soporte o mantenimiento.
+#### Database General Overview
 
-![Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-diagram.puml)
+![Database General Overview](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-diagram.puml)
 
+#### IAM Database Diagram
+
+![IAM Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-iam-diagram.puml)
+
+#### Billing Database Diagram
+
+![Billing Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-billing-diagram.puml)
+
+#### Workplace Database Diagram
+
+![Workplace Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-workplace-diagram.puml)
+
+#### Device Control Database Diagram
+
+![Device Control Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-device-control-diagram.puml)
+
+#### Energy Monitoring Database Diagram
+
+![Energy Monitoring Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-energy-monitoring-diagram.puml)
+
+#### Notifications Database Diagram
+
+![Notifications Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-notifications-diagram.puml)
+
+#### Reporting Database Diagram
+
+![Reporting Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-reporting-diagram.puml)
+
+#### Service Management Database Diagram
+
+![Service Management Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-service-management-diagram.puml)
 # Capitulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management
 

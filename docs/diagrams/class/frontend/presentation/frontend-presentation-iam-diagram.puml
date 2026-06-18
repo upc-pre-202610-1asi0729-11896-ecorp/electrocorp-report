@@ -98,4 +98,14 @@ package "IAM Presentation" {
 }
 
 
+' Relationship completion: every declared type participates in the frontend diagram.
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_LoginPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_LoginPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_PlatformPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_ProfilePageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_RecoverPasswordPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_RegisterPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_SecurityPageComponent
+FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_IAM_ROUTES
+
 @enduml

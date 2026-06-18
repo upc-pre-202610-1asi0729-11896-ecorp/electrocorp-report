@@ -301,4 +301,8 @@ Frontend_iam_UsersApiService ..> Frontend_iam_UserAssembler
 Frontend_iam_UsersApiService ..> Frontend_iam_UserResource
 Frontend_iam_UsersApiService ..> Frontend_iam_UserResponse
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_iam_AccountPageComponent ..> Frontend_iam_PlatformPageComponent
+Frontend_iam_AccountPageComponent ..> Frontend_iam_IamRoutes
+
 @enduml

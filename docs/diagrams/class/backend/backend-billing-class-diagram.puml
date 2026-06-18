@@ -220,8 +220,6 @@ package "Billing" {
       + INVOICES: String
       - BillingJpaTableNames()
     }
-    class "for" as Backend_billing_for <<Class>> {
-    }
   }
   package "Infrastructure / JPA Repositories" {
     interface "JpaInvoiceRepository" as Backend_billing_JpaInvoiceRepository <<interface>> {
@@ -436,5 +434,17 @@ Backend_billing_SubscriptionRepository ..> Backend_billing_SubscriptionStatus
 Backend_billing_SubscriptionResource ..> Backend_billing_Subscription
 Backend_billing_SubscriptionResourceFromEntityAssembler ..> Backend_billing_Subscription
 Backend_billing_SubscriptionResourceFromEntityAssembler ..> Backend_billing_SubscriptionResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_billing_BillingController ..> Backend_billing_PaymentRegisteredEvent
+Backend_billing_BillingController ..> Backend_billing_SubscriptionActivatedEvent
+Backend_billing_BillingController ..> Backend_billing_PaymentStatus
+Backend_billing_BillingController ..> Backend_billing_BillingAmountPolicyService
+Backend_billing_BillingController ..> Backend_billing_BillingPeriod
+Backend_billing_BillingController ..> Backend_billing_InvoiceNumber
+Backend_billing_BillingController ..> Backend_billing_PaymentAmount
+Backend_billing_BillingController ..> Backend_billing_PlanName
+Backend_billing_BillingController ..> Backend_billing_SubscriptionId
+Backend_billing_BillingController ..> Backend_billing_BillingJpaTableNames
 
 @enduml

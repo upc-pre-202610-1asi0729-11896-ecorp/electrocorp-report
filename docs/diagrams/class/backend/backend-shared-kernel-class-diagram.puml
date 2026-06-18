@@ -63,7 +63,7 @@ package "Shared Kernel" {
       + Long value
       + EntityId(Long value) : record
     }
-    class "public" as Backend_shared_public <<Class>> {
+    class "AuditableEntity" as Backend_shared_AuditableEntity <<abstract>> {
       # id: Long
       # createdAt: LocalDateTime
       # updatedAt: LocalDateTime
@@ -259,5 +259,30 @@ Backend_shared_SpringDomainEventPublisher ..> Backend_shared_DomainEvent
 Backend_shared_SpringDomainEventPublisher ..> Backend_shared_DomainEventPublisher
 Backend_shared_UserPlatformSummary ..> Backend_shared_EnergyUsage
 Backend_shared_UserPlatformSummary ..> Backend_shared_UserId
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_shared_HealthController ..> Backend_shared_Result
+Backend_shared_HealthController ..> Backend_shared_DateTimeService
+Backend_shared_HealthController ..> Backend_shared_StringNormalizerService
+Backend_shared_HealthController ..> Backend_shared_EntityId
+Backend_shared_HealthController ..> Backend_shared_AuditableEntity
+Backend_shared_HealthController ..> Backend_shared_DateRange
+Backend_shared_HealthController ..> Backend_shared_DeviceId
+Backend_shared_HealthController ..> Backend_shared_EmailAddress
+Backend_shared_HealthController ..> Backend_shared_LocationId
+Backend_shared_HealthController ..> Backend_shared_Money
+Backend_shared_HealthController ..> Backend_shared_NonBlankText
+Backend_shared_HealthController ..> Backend_shared_Percentage
+Backend_shared_HealthController ..> Backend_shared_PhoneNumber
+Backend_shared_HealthController ..> Backend_shared_CorsConfig
+Backend_shared_HealthController ..> Backend_shared_OpenApiConfig
+Backend_shared_HealthController ..> Backend_shared_JpaAuditingConfiguration
+Backend_shared_HealthController ..> Backend_shared_PersistenceConstants
+Backend_shared_HealthController ..> Backend_shared_SnakeCasePhysicalNamingStrategy
+Backend_shared_HealthController ..> Backend_shared_CurrentUserProvider
+Backend_shared_HealthController ..> Backend_shared_SecurityConfig
+Backend_shared_HealthController ..> Backend_shared_DomainEventPublisher
+Backend_shared_HealthController ..> Backend_shared_ApiResource
+Backend_shared_HealthController ..> Backend_shared_PageResource
 
 @enduml

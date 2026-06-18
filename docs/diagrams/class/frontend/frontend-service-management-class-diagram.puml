@@ -359,4 +359,7 @@ Frontend_service_management_TicketPriorityService ..> Frontend_service_managemen
 Frontend_service_management_UpdateMaintenanceTicketStatusCommand ..> Frontend_service_management_MaintenanceTicketStatus
 Frontend_service_management_UpdateSupportTicketStatusCommand ..> Frontend_service_management_SupportTicketStatus
 
+' Relationship completion: every declared type participates in the frontend diagram.
+Frontend_service_management_MaintenanceTicketsPageComponent ..> Frontend_service_management_ServiceManagementRoutes
+
 @enduml

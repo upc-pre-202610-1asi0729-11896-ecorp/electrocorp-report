@@ -488,8 +488,6 @@ package "Notifications" {
     }
   }
   package "Infrastructure / JPA" {
-    class "for" as Backend_notifications_for <<Class>> {
-    }
     class "NotificationsJpaTableNames" as Backend_notifications_NotificationsJpaTableNames <<Class>> {
       + ALERTS: String
       + ALERT_RULES: String
@@ -884,5 +882,14 @@ Backend_notifications_RuleEvaluationService ..> Backend_notifications_RuleScopeT
 Backend_notifications_RuleSeverityPolicyService ..> Backend_notifications_AlertLevel
 Backend_notifications_UpdateNotificationPreferenceCommandFromResourceAssembler ..> Backend_notifications_UpdateNotificationPreferenceCommand
 Backend_notifications_UpdateNotificationPreferenceCommandFromResourceAssembler ..> Backend_notifications_UpdateNotificationPreferenceResource
+
+' Relationship completion: every declared type participates in the backend diagram.
+Backend_notifications_NotificationController ..> Backend_notifications_AlertCreatedEvent
+Backend_notifications_NotificationController ..> Backend_notifications_AlertRulePolicyService
+Backend_notifications_NotificationController ..> Backend_notifications_AlertTitle
+Backend_notifications_NotificationController ..> Backend_notifications_NotificationChannel
+Backend_notifications_NotificationController ..> Backend_notifications_NotificationsJpaTableNames
+Backend_notifications_NotificationController ..> Backend_notifications_NotificationsQueryHints
+Backend_notifications_NotificationController ..> Backend_notifications_EvaluateAlertRulesResource
 
 @enduml
