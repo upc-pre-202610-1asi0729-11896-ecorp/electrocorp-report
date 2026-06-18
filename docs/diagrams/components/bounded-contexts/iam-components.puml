@@ -1,78 +1,119 @@
 @startuml
+!pragma layout smetana
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam componentStyle rectangle
-skinparam packageStyle rectangle
+skinparam defaultFontName Arial
 skinparam wrapWidth 180
 skinparam maxMessageSize 90
-skinparam defaultFontName Arial
-skinparam ArrowColor #1F4E79
-skinparam component {
-  BackgroundColor #F8FBFF
-  BorderColor #1F4E79
-  FontColor #0B1F33
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontColor #666666
+skinparam ArrowFontStyle bold
+skinparam rectangle {
+  RoundCorner 0
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #555555
+  BorderStyle dashed
+  BackgroundColor transparent
+  FontColor #444444
+  FontStyle bold
 }
 skinparam database {
-  BackgroundColor #FFF9E8
-  BorderColor #8A6D1D
+  BackgroundColor #C9332B
+  BorderColor #C9332B
+  FontColor #FFFFFF
 }
-skinparam actor {
-  BackgroundColor #EEF7FF
-  BorderColor #1F4E79
-}
-
-title ElectroCorp - IAM Components
+hide stereotype
+title ElectroCorp - IAM Components Diagram
 left to right direction
 
-actor "User" as User
-component "Angular Router" as Router
-component "HTTP API Layer" as Http
-component "Spring Boot API" as Api
-database "PostgreSQL tables" as Db
 
-package "IAM Frontend" {
-  component "Login/Register Pages" as Front_0
-  component "Account/Profile Pages" as Front_1
-  component "IAM Facade" as Front_2
-  component "IAM Store" as Front_3
-  component "Auth API Service" as Front_4
+package "IAM Frontend Bounded Context
+[container]" {
+  rectangle "<b>Login/Register Pages</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents and coordinates user interaction." as F0 <#58A9E8>
+  rectangle "<b>Account/Profile Pages</b>
+<size:12><i>[Angular Component]</i></size>
+
+Presents and coordinates user interaction." as F1 <#58A9E8>
+  rectangle "<b>IAM Facade</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates frontend state and REST calls." as F2 <#58A9E8>
+  rectangle "<b>IAM API Client</b>
+<size:12><i>[Angular Service]</i></size>
+
+Coordinates frontend state and REST calls." as F3 <#58A9E8>
 }
 
-package "IAM Backend" {
-  component "REST Interface" as Backend_iam
-  component "Auth Controller" as Back_0
-  component "User Controller" as Back_1
-  component "Sign In/Sign Up Command Services" as Back_2
-  component "User Query Service" as Back_3
-  component "JWT Token Service" as Back_4
+package "IAM Backend Bounded Context
+[container]" {
+  rectangle "<b>Auth Controller</b>
+<size:12><i>[REST Controller]</i></size>
+
+Exposes HTTP endpoints for this bounded context." as B0 <#3498DB>
+  rectangle "<b>User Controller</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B1 <#3498DB>
+  rectangle "<b>Authentication Application Service</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B2 <#3498DB>
+  rectangle "<b>User Profile Application Service</b>
+<size:12><i>[Application Service]</i></size>
+
+Coordinates commands, queries and use cases." as B3 <#3498DB>
+  rectangle "<b>User Repository</b>
+<size:12><i>[Spring Data Repository]</i></size>
+
+Persists and retrieves bounded context data." as R0 <#F39C12>
+  rectangle "<b>Access Profile Repository</b>
+<size:12><i>[Spring Data Repository]</i></size>
+
+Persists and retrieves bounded context data." as R1 <#F39C12>
 }
 
-package "IAM Persistence" {
-  database "users" as Table_0
-  database "access_profiles" as Table_1
+database "<b>ElectroCorp Database</b>
+<size:12><i>[Relational Database]</i></size>
+
+Stores users and access profiles." as Database
+
+package "Connected Bounded Contexts
+[external containers]" {
+  rectangle "<b>Billing</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep0 <#7F8C8D>
+  rectangle "<b>Shared Kernel</b>
+<size:12><i>[Bounded Context]</i></size>
+
+Provides referenced capability or published language." as Dep1 <#7F8C8D>
 }
 
-package "Connected bounded contexts" {
-  component "Billing" as Dep0
-  component "Shared Kernel" as Dep1
-}
-
-User --> Router
-Router --> Front_0
-Front_0 --> Front_1
-Front_1 --> Front_2
-Front_2 --> Front_3
-Front_3 --> Front_4
-Front_4 --> Http
-Http --> Api
-Api --> Backend_iam
-Backend_iam --> Back_0
-Back_0 --> Back_1
-Back_1 --> Back_2
-Back_2 --> Back_3
-Back_3 --> Back_4
-Back_4 --> Table_0
-Table_0 ..> Table_1
-Backend_iam ..> Dep0 : uses / references
-Backend_iam ..> Dep1 : uses / references
+F0 --> F2 : Uses
+F1 --> F2 : Uses
+F2 --> F3 : Uses
+F3 --> B0 : Consumes REST endpoints (JSON / HTTPS)
+B0 --> B1 : Delegates to
+B0 --> B2 : Delegates to
+B0 --> B3 : Delegates to
+B1 --> R0 : Uses
+B2 --> R1 : Uses
+R0 --> Database : Reads and writes
+R1 --> Database : Reads and writes
+B0 ..> Dep0 : Coordinates with
+B0 ..> Dep1 : Coordinates with
+legend right
+  <b>Legend</b>
+  |<#0B5593> person |
+  |<#0B6FB3> system |
+  |<#3498DB> container |
+  |<#58A9E8> component |
+  |<#F39C12> repository / external |
+  |<#C9332B> database |
+endlegend
 @enduml
