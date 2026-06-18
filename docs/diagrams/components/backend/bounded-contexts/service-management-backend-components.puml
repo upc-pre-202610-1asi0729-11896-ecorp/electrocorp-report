@@ -25,74 +25,52 @@ skinparam database {
   FontColor #FFFFFF
 }
 hide stereotype
-title ElectroCorp - Energy Monitoring Components Diagram
+title ElectroCorp - Service Management Backend Components Diagram
 left to right direction
 
 
-package "Energy Monitoring Frontend Bounded Context
+package "Service Management Backend Bounded Context
 [container]" {
-  rectangle "<b>Energy Dashboard Page</b>
-<size:12><i>[Angular Component]</i></size>
-
-Presents and coordinates user interaction." as F0 <#58A9E8>
-  rectangle "<b>Energy History Page</b>
-<size:12><i>[Angular Component]</i></size>
-
-Presents and coordinates user interaction." as F1 <#58A9E8>
-  rectangle "<b>Energy Monitoring Facade</b>
-<size:12><i>[Angular Service]</i></size>
-
-Coordinates frontend state and REST calls." as F2 <#58A9E8>
-  rectangle "<b>Energy API Client</b>
-<size:12><i>[Angular Service]</i></size>
-
-Coordinates frontend state and REST calls." as F3 <#58A9E8>
-}
-
-package "Energy Monitoring Backend Bounded Context
-[container]" {
-  rectangle "<b>Energy Monitoring Controller</b>
+  rectangle "<b>Service Management Controller</b>
 <size:12><i>[REST Controller]</i></size>
 
 Exposes HTTP endpoints for this bounded context." as B0 <#3498DB>
-  rectangle "<b>Reading Application Service</b>
+  rectangle "<b>Support Ticket Application Service</b>
 <size:12><i>[Application Service]</i></size>
 
 Coordinates commands, queries and use cases." as B1 <#3498DB>
-  rectangle "<b>Dashboard Query Service</b>
+  rectangle "<b>Maintenance Ticket Application Service</b>
 <size:12><i>[Application Service]</i></size>
 
 Coordinates commands, queries and use cases." as B2 <#3498DB>
-  rectangle "<b>Sampling Settings Service</b>
+  rectangle "<b>Ticket Status Application Service</b>
 <size:12><i>[Application Service]</i></size>
 
 Coordinates commands, queries and use cases." as B3 <#3498DB>
-  rectangle "<b>Energy Reading Repository</b>
+  rectangle "<b>Support Ticket Repository</b>
 <size:12><i>[Spring Data Repository]</i></size>
 
 Persists and retrieves bounded context data." as R0 <#F39C12>
-  rectangle "<b>Sampling Settings Repository</b>
+  rectangle "<b>Maintenance Ticket Repository</b>
 <size:12><i>[Spring Data Repository]</i></size>
 
 Persists and retrieves bounded context data." as R1 <#F39C12>
 }
-
 database "<b>ElectroCorp Database</b>
 <size:12><i>[Relational Database]</i></size>
 
-Stores energy readings and sampling settings." as Database
-
+Stores support tickets and maintenance tickets." as Database
 package "Connected Bounded Contexts
 [external containers]" {
-  rectangle "<b>Device Control</b>
+  rectangle "<b>IAM</b>
 <size:12><i>[Bounded Context]</i></size>
 
 Provides referenced capability or published language." as Dep0 <#7F8C8D>
-  rectangle "<b>Reporting</b>
+  rectangle "<b>Device Control</b>
 <size:12><i>[Bounded Context]</i></size>
 
 Provides referenced capability or published language." as Dep1 <#7F8C8D>
-  rectangle "<b>Notifications</b>
+  rectangle "<b>Workplace</b>
 <size:12><i>[Bounded Context]</i></size>
 
 Provides referenced capability or published language." as Dep2 <#7F8C8D>
@@ -101,11 +79,6 @@ Provides referenced capability or published language." as Dep2 <#7F8C8D>
 
 Provides referenced capability or published language." as Dep3 <#7F8C8D>
 }
-
-F0 --> F2 : Uses
-F1 --> F2 : Uses
-F2 --> F3 : Uses
-F3 --> B0 : Consumes REST endpoints (JSON / HTTPS)
 B0 --> B1 : Delegates to
 B0 --> B2 : Delegates to
 B0 --> B3 : Delegates to
