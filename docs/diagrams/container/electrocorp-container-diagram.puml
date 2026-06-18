@@ -3,8 +3,8 @@ skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam defaultTextAlignment center
-skinparam wrapWidth 145
-skinparam maxMessageSize 95
+skinparam wrapWidth 120
+skinparam maxMessageSize 80
 skinparam ArrowColor #8A8A8A
 skinparam ArrowFontColor #666666
 skinparam ArrowFontStyle bold
@@ -15,6 +15,14 @@ skinparam rectangleFontColor #FFFFFF
 skinparam rectangleFontStyle plain
 skinparam rectangle {
   BorderThickness 0
+}
+skinparam rectangle<<SystemBoundary>> {
+  BackgroundColor transparent
+  BorderColor #4A4A4A
+  BorderThickness 2
+  BorderStyle dashed
+  FontColor #333333
+  FontStyle bold
 }
 skinparam rectangle<<BoundedContext>> {
   BackgroundColor transparent
@@ -33,35 +41,40 @@ left to right direction
 
 title ElectroCorp - C4 Container Diagram
 
-rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses smart energy management flows across website and web app." as User #0B5593
+rectangle "<b>ElectroCorp User</b>\n<i>[Person]</i>\n\nUses public and authenticated\nenergy management flows." as User #0B5593
 
-rectangle "<b>ElectroCorp Product Boundary</b>\n<i>[Software System]</i>" as Product <<BoundedContext>> {
-  rectangle "<b>Landing Page</b>\n<i>[Static Website]</i>\n\nPublic marketing site hosted on GitHub Pages." as Website #3498DB
-  rectangle "<b>Angular Web App</b>\n<i>[Frontend Container]</i>\n\nSPA with routes, layout, facades, stores and API clients." as Spa #3498DB
-  rectangle "<b>Backend API</b>\n<i>[Backend Container]</i>\n\nSpring Boot modular monolith organized by DDD bounded contexts." as Api #3498DB
-  database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL Container]</i>\n\nPersists operational and analytical platform data." as Db
+rectangle "<b>ElectroCorp Product Boundary</b>\n<i>[Software System]</i>" as Product <<SystemBoundary>> {
+  rectangle "<b>Landing Page</b>\n<i>[Static Website]</i>\n\nPublic site for value\nproposition, plans and\ncall-to-action flows." as Website #3498DB
+  rectangle "<b>ElectroCorp WebApp</b>\n<i>[Angular Source App]</i>\n\nFrontend application source\nwith routes, views, facades,\nstores and API clients." as WebApp #3498DB
+  rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime produced\nfrom the WebApp build and\nserved as static files." as Spa #3498DB
+  rectangle "<b>Backend API</b>\n<i>[Spring Boot Container]</i>\n\nModular monolith organized\nby DDD bounded contexts." as Api #3498DB
+  database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL Container]</i>\n\nPersists users, plans,\nworkplaces, devices,\nreadings, reports and tickets." as Db
 }
 
-rectangle "<b>GitHub Pages</b>\n<i>[External Container]</i>\n\nHosts the public website." as GithubPages #7F8C8D
-rectangle "<b>Render Web Service</b>\n<i>[External Container]</i>\n\nHosts Angular and Spring Boot deployments." as RenderWeb #7F8C8D
-rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nSupports subscription payment flow." as Payment #7F8C8D
-rectangle "<b>Email Provider</b>\n<i>[External System]</i>\n\nSupports notification delivery." as Mail #7F8C8D
+rectangle "<b>GitHub Pages</b>\n<i>[External Container]</i>\n\nHosts the landing page." as GithubPages #7F8C8D
+rectangle "<b>Render Static Site</b>\n<i>[External Container]</i>\n\nServes the compiled SPA." as RenderSpa #7F8C8D
+rectangle "<b>Render Web Service</b>\n<i>[External Container]</i>\n\nRuns the backend API." as RenderApi #7F8C8D
+rectangle "<b>Payment Provider</b>\n<i>[External System]</i>\n\nSupports subscription\npayment flow." as Payment #7F8C8D
+rectangle "<b>Email Provider</b>\n<i>[External System]</i>\n\nSupports alert and\nreport delivery." as Mail #7F8C8D
 
 User --> Website : Browses plans\n[Browser]
-Website --> Spa : Redirects chosen plan\n[HTTPS]
-User --> Spa : Uses product features\n[Browser]
-Spa --> Api : Consumes REST endpoints\n[JSON / HTTPS]
+Website --> Spa : Redirects selected\nplan\n[CTA Link]
+User --> Spa : Opens app directly\n[Browser]
+WebApp --> Spa : Builds into\n[Angular build]
+Spa --> Api : Consumes REST\nendpoints\n[JSON / HTTPS]
 Api --> Db : Reads and writes\n[JPA / SQL]
-Website --> GithubPages : Is deployed on\n[Static hosting]
-Spa --> RenderWeb : Is deployed on\n[Web service]
-Api --> RenderWeb : Is deployed on\n[Web service]
-Api --> Payment : Requests payment status\n[HTTPS / API]
-Api --> Mail : Sends alerts and reports\n[HTTPS / API]
+Website --> GithubPages : Deployed on\n[Static hosting]
+Spa --> RenderSpa : Served by\n[Static site]
+Api --> RenderApi : Runs on\n[Web service]
+Api --> Payment : Checks payment\nstatus\n[HTTPS / API]
+Api --> Mail : Sends messages\n[HTTPS / API]
 
-Website -[hidden]right- Spa
+Website -[hidden]right- WebApp
+WebApp -[hidden]right- Spa
 Spa -[hidden]right- Api
 Api -[hidden]right- Db
-GithubPages -[hidden]down- RenderWeb
+GithubPages -[hidden]down- RenderSpa
+RenderSpa -[hidden]down- RenderApi
 Payment -[hidden]down- Mail
 
 legend right
