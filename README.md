@@ -118,7 +118,7 @@ Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción f
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="assets/md-images-front-matter/tb1-top-committers.png"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
