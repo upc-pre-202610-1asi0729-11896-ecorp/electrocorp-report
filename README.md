@@ -3916,6 +3916,8 @@ En esta seccion se presenta la matriz de Liderazgo y Colaboracion definida para 
 
 El Sprint Backlog 3 prioriza la implementacion de la plataforma como sistema integrado. Las tareas se organizaron para cubrir autenticacion, facturacion, sedes, habitaciones, control de dispositivos, monitoreo energetico, reportes, servicios, documentacion OpenAPI y despliegue.
 
+https://trello.com/b/Ox2SHhpy/sprint3-electro
+
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
   <tr><td colspan="2"><b>Sprint #</b></td><td colspan="6"><b>Sprint 3</b></td></tr>
   <tr><td colspan="2"><b>User Story</b></td><td colspan="6"><b>Work-Item / Task</b></td></tr>
