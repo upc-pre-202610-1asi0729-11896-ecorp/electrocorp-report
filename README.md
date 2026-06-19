@@ -33,7 +33,7 @@
 |   AV1   | 03/04/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
 |   TB1   | 09/05/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
 |   AV2   | 12/06/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
-|   TF1   |            |       |                                                            |
+|   TB2   |            |       |                                                            |
 
 <div style="page-break-after: always;"></div>
 
@@ -56,15 +56,8 @@ A continuación, se detallan los repositorios utilizados a lo largo del proyecto
 
 - https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
 
-
-
-### **Entrega TB1:**
+### **Entrega AV1:**
 Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
-Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
 
 ##### Participación por integrante:
 
@@ -111,20 +104,25 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
             <img src="assets/md-images-front-matter/timothy-commits.png">
             </div><br><br>
 
-- Tavara Correa, Sebastian Oswaldo: Desarrollo de los capitulos 1, 2, 3 y 4.      <br>
-- Santiago Atanacio, Jairo Mathias: Desarrollo de los capitulos 1, 2, 4 y 5. 
-- Cabrejos Chocco, Diego Alexander: Desarrollo de los capitulos 2,4, 5 y landing page.  
-- Loa Rojas, Jean Franck: Desarrollo de los capitulos 1, 2, 4 y Aplicación web.
-- Documet Romero, Timothy: Desarrollo de capitulo 1.    
+### **Entrega TB1:**
+Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub cada uno en su debida rama, asegurando así un seguimiento claro de los avances y la colaboración conjunta. Ademas hicimos mejoras en la parte del frontend y la landing page.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Dirigir y distribuir las tareas según la capacidad de cada miembro.      <br>
+- Santiago Atanacio, Jairo Mathias: Se corrigieron los errores presentes en las tablas y diagramas del trabajo. 
+- Cabrejos Chocco, Diego Alexander: Crea y mejora versiones de la página de inicio, que a su vez se conecta con la aplicación web.  
+- Loa Rojas, Jean Franck: Desarrollar e implementar la primera versión de la aplicación web, asegurando de que se desplegara sin errores y se conectara a la landing page 
+- Documet Romero, Timothy: Historias técnicas, corregir historias de usuario   
 
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="assets/md-images-front-matter/top-committers.png"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="assets/md-images-front-matter/commits.png"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-commits.png"></div><br><br>
 
 
     * **Commits**
@@ -133,26 +131,65 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/sebastian-commits.png" >
+            <img src="assets/md-images-front-matter/tb1-sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/jairo-commits.png">
+            <img src="assets/md-images-front-matter/tb1-jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/diego-commits.png">
+            <img src="assets/md-images-front-matter/tb1-diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/jean-commits.png">
+            <img src="assets/md-images-front-matter/tb1-jean-commits.png">
             </div><br>
-        + **Timothy Documet**
+
+### **Entrega AV2:**
+Se hicieron las correcion a la parte del frontend y a la parte de la landing page, tambien se hicieron algunas correciones en el reporte ademas de agregar el nuevo sprint. Tambien se avanzo la parte del backend dejandolo completamente operativo.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Event Storming, Correciones en el report y parte del backend      <br>
+- Santiago Atanacio, Jairo Mathias: Parte del backend y correcion del frontend
+- Cabrejos Chocco, Diego Alexander: Correcion de la landing page y agregar el sprint 3
+- Loa Rojas, Jean Franck: Desarrollo y despliegue del backend, ademas correcion del frontend
+
++ **Evidencias de colaboración y commits - Github:**
+    * **Análiticos de colaboración** <br><br>
+        + **Pulse Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
+
+
+        + **Contributors Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/av2-commits.png"></div><br><br>
+
+
+    * **Commits**
+
+         A continuación se muestran algunos commits realizados en este entrega de TB1.
+
+        + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/timothy-commits.png">
-            </div><br><br>
+            <img src="assets/md-images-front-matter/av2-sebastian-commits.png" >
+            </div><br>
+
+        + **Jairo Santiago**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jairo-commits.png">
+            </div><br>
+
+        + **Diego Cabrejos**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-diego-commits.png">
+            </div><br>
+        + **Jean Loa**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jean-commits.png">
+            </div><br>
 
 
 # Contenido
