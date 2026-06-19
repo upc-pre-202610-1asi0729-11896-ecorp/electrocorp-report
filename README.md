@@ -148,6 +148,50 @@ Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción f
             <img src="assets/md-images-front-matter/tb1-jean-commits.png">
             </div><br>
 
+### **Entrega AV1:**
+Se hicieron las correcion a la parte del frontend y a la parte de la landing page, tambien se hicieron algunas correciones en el reporte ademas de agregar el nuevo sprint. Tambien se avanzo la parte del backend dejandolo completamente operativo.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Event Storming, Correciones en el report y parte del backend      <br>
+- Santiago Atanacio, Jairo Mathias: Parte del backend y correcion del frontend
+- Cabrejos Chocco, Diego Alexander: Correcion de la landing page y agregar el sprint 3
+- Loa Rojas, Jean Franck: Desarrollo y despliegue del backend, ademas correcion del frontend
+
++ **Evidencias de colaboración y commits - Github:**
+    * **Análiticos de colaboración** <br><br>
+        + **Pulse Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
+
+
+        + **Contributors Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/av2-commits.png"></div><br><br>
+
+
+    * **Commits**
+
+         A continuación se muestran algunos commits realizados en este entrega de TB1.
+
+        + **Sebastian Tavara**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-sebastian-commits.png" >
+            </div><br>
+
+        + **Jairo Santiago**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jairo-commits.png">
+            </div><br>
+
+        + **Diego Cabrejos**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-diego-commits.png">
+            </div><br>
+        + **Jean Loa**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jean-commits.png">
+            </div><br>
+
+
 # Contenido
 
 ## Índice
