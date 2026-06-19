@@ -148,7 +148,7 @@ Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción f
             <img src="assets/md-images-front-matter/tb1-jean-commits.png">
             </div><br>
 
-### **Entrega AV1:**
+### **Entrega AV2:**
 Se hicieron las correcion a la parte del frontend y a la parte de la landing page, tambien se hicieron algunas correciones en el reporte ademas de agregar el nuevo sprint. Tambien se avanzo la parte del backend dejandolo completamente operativo.
 
 ##### Participación por integrante:
