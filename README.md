@@ -4040,7 +4040,7 @@ Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion re
 
 ## Video About-the-Team.
 
-* *URL:* https://www.youtube.com/watch?v=aAg-_-4vc2c
+* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
 
 # Bibliografía 
 
