@@ -2,17 +2,31 @@
 
 <img src="assets/md-images-front-matter/upc-logo-transparente.png"></img><br>
 
-<h3>Universidad Peruana de Ciencias Aplicadas</h3>
-<h4>Facultad de Ingeniería</h4>
-<h4>Carrera de Ingeniería de Software</h4>
-<h4>Periodo 202610</h4>
-<h4>1ASI0729 Desarrollo de Aplicaciones Open Source</h4>
-<h4>NRC 11896</h4>
-<h4>Docente: Efraín Ricardo Bautista Ubillús</h4>
-<h4>Informe del Trabajo Final</h4>
-<h4>Startup: ElectroCorp</h4>
-<h4>Producto: Smart</h4>
+Universidad Peruana de Ciencias Aplicadas  
 
+Carrera de Ingeniería de Software
+  
+<br>
+
+**1ASI0729**
+
+### **Desarrollo de Aplicaciones Open Source**  
+
+NRC  
+
+### **11896**
+## Informe del Trabajo Final
+Docente
+### Docente: Efraín Ricardo Bautista Ubillús
+Equipo
+### ElectroCorp
+Proyecto
+### Smart
+  
+  
+<br>
+
+#### Integrantes
 | **Código** | **Apellidos y Nombres**               |
 | :--------: | :------------------------------------ |
 | U20241e179 | Tavara Correa, Sebastian Oswaldo      |
@@ -20,8 +34,10 @@
 | U20241e014 | Cabrejos Chocco, Diego Alexander      |
 | U20241e406 | Loa Rojas, Jean Franck                |
 | U202318828 | Documet Romero, Timothy               |
-
-### Junio 2026
+| U20241b962 | Navarro Aldoradin, Carolina Celeste   |  
+  
+### Periodo 202610 
+### Julio 2026
 </div>
 <div style="page-break-after: always;"></div>
 
