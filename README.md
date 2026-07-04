@@ -1,27 +1,59 @@
 <div align="center">
 
-<img src="assets/md-images-front-matter/upc-logo-transparente.png"></img><br>
+<img src="assets/md-images-front-matter/upc-logo-transparente.png" width="52"></img><br>
 
-<h3>Universidad Peruana de Ciencias Aplicadas</h3>
-<h4>Facultad de Ingeniería</h4>
-<h4>Carrera de Ingeniería de Software</h4>
-<h4>Periodo 202610</h4>
-<h4>1ASI0729 Desarrollo de Aplicaciones Open Source</h4>
-<h4>NRC 11896</h4>
-<h4>Docente: Efraín Ricardo Bautista Ubillús</h4>
-<h4>Informe del Trabajo Final</h4>
-<h4>Startup: ElectroCorp</h4>
-<h4>Producto: Smart</h4>
+Universidad Peruana de Ciencias Aplicadas<br>
+Carrera de Ingeniería de Software<br><br>
 
-| **Código** | **Apellidos y Nombres**               |
-| :--------: | :------------------------------------ |
-| U20241e179 | Tavara Correa, Sebastian Oswaldo      |
-| U202418755 | Santiago Atanacio, Jairo Mathias      |
-| U20241e014 | Cabrejos Chocco, Diego Alexander      |
-| U20241e406 | Loa Rojas, Jean Franck                |
-| U202318828 | Documet Romero, Timothy               |
+<strong>1ASI0729</strong><br>
+<strong>Desarrollo de Aplicaciones Open Source</strong><br>
+NRC<br>
+<strong>11896</strong><br>
+<strong>Informe del Trabajo Final</strong><br>
+Docente<br>
+<strong>Bautista Ubillús, Efraín Ricardo</strong><br>
+Equipo<br>
+<strong>ElectroCorp</strong><br><br>
 
-### Junio 2026
+Proyecto<br>
+<strong>Smart</strong><br><br>
+
+<strong>Integrantes</strong>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Apellidos y Nombres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U20241e179</td>
+      <td>Tavara Correa, Sebastian Oswaldo</td>
+    </tr>
+    <tr>
+      <td>U202418755</td>
+      <td>Santiago Atanacio, Jairo Mathias</td>
+    </tr>
+    <tr>
+      <td>U20241e014</td>
+      <td>Cabrejos Chocco, Diego Alexander</td>
+    </tr>
+    <tr>
+      <td>U20241e406</td>
+      <td>Loa Rojas, Jean Franck</td>
+    </tr>
+    <tr>
+      <td>U202318828</td>
+      <td>Documet Romero, Timothy</td>
+    </tr>
+  </tbody>
+</table>
+
+<strong>Período 202610</strong><br><br>
+
+<strong>Junio 2026</strong>
 </div>
 <div style="page-break-after: always;"></div>
 
