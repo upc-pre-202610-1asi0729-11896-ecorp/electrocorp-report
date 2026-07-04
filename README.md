@@ -3110,9 +3110,9 @@ Las variables sensibles y configuraciones propias del entorno productivo deben a
     <tr>
         <td><b>Sprint 1 Goal</b></td>
         <td>
-            <b>Estamos concentrados en</b> desarrollar y desplegar la primera versión funcional de la Landing Page de ElectroCorp en Github Pages.<br><br>
-            <b>Creemos que entregar</b> una comunicación clara de nuestra propuesta de valor (ecosistema IoT plug-and-play) a los visitantes, generando interés y prospectos.<br><br>
-            <b>Esto será confirmado cuando</b> los usuarios puedan navegar fluidamente por las secciones informativas, visualizar testimonios, interactuar con el cambio de idiomas y suscribirse al boletín.
+            <b>Estamos concentrados en</b> presentar nuestra propuesta de valor al mercado mediante un sitio web informativo que capte la atención de familias y dueños de negocios interesados en el ahorro energético.<br><br>
+            <b>Creemos que entregar</b> una experiencia clara sobre los beneficios de nuestro ecosistema IoT plug-and-play generará interés real y nos permitirá captar a nuestros primeros clientes potenciales.<br><br>
+            <b>Esto será confirmado cuando</b> los visitantes logren comprender el impacto del producto en sus finanzas, comparen los planes de servicio disponibles y logren suscribirse exitosamente para recibir novedades y ofertas.
         </td>
     </tr>
     <tr>
@@ -3515,9 +3515,9 @@ En este Sprint se marca la transición hacia el desarrollo interactivo, enfocán
     <tr>
         <td><b>Sprint 2 Goal</b></td>
         <td>
-            <b>Estamos concentrados en</b> desarrollar la primera versión de la Frontend Web Application (SPA) y aplicar mejoras a la Landing Page actual.<br><br>
-            <b>Creemos que entregar</b> el entorno base para que los usuarios puedan registrarse, iniciar sesión y visualizar la maqueta interactiva del dashboard principal de gestión energética de ElectroCorp.<br><br>
-            <b>Esto será confirmado cuando</b> la Web Application esté desplegada, los flujos de navegación entre el Login, Register y Dashboard operen correctamente (ruteo) y se conecten exitosamente mediante enlaces desde los call-to-action del Landing Page.
+            <b>Estamos concentrados en</b> proveer a los usuarios un entorno interactivo y seguro donde puedan crear su cuenta y dar sus primeros pasos dentro de la plataforma de gestión de ElectroCorp.<br><br>
+            <b>Creemos que entregar</b> un proceso de registro sencillo y una vista previa de su panel de control permitirá a los clientes familiarizarse rápidamente con la herramienta que les ayudará a monitorear su consumo.<br><br>
+            <b>Esto será confirmado cuando</b> las personas puedan registrarse sin incovenientes, iniciar sesión de forma segura y navegar intuitivamente hacia su panel principal para explorar las opciones de ahorro energético.
         </td>
     </tr>
     <tr>
@@ -3910,7 +3910,7 @@ En este Sprint se consolida la entrega AV2 del producto, incorporando el primer 
     <tr><td><b>Sprint 2 Review Summary</b></td><td>El equipo completo la primera version desplegada de la Web Application y mantuvo conectada la Landing Page con los flujos principales. Se identifico como siguiente prioridad implementar el backend, documentar los endpoints y preparar la integracion funcional con los planes, usuarios, sedes, dispositivos y reportes.</td></tr>
     <tr><td><b>Sprint 2 Retrospective Summary</b></td><td>El equipo acordo reforzar la disciplina de ramas, mejorar la trazabilidad de commits por bounded context, validar los contratos antes de integrar y documentar los servicios para que el frontend pueda consumirlos sin romper la navegacion existente.</td></tr>
     <tr><td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td></tr>
-    <tr><td><b>Sprint 3 Goal</b></td><td><b>Estamos concentrados en</b> implementar el primer entregable del backend, conectar la Web Application con los contratos disponibles y completar la documentacion AV2 del producto.<br><br><b>Creemos que entregar</b> una base tecnica verificable para autenticar usuarios, activar planes, organizar sedes, habitaciones, grupos de dispositivos y consultar informacion energetica mediante endpoints documentados.<br><br><b>Esto será confirmado cuando</b> el backend compile, el despliegue en Render responda en rutas publicas, Swagger/OpenAPI documente los servicios y el informe incluya Sprint 3, validacion, diagramas y evidencias actualizadas.</td></tr>
+    <tr><td><b>Sprint 3 Goal</b></td><td><b>Estamos concentrados en</b> habilitar las funcionalidades centrales del sistema para que los usuarios puedan gestionar de manera real su infraestructura eléctrica, desde la selección de su suscripción hasta la organización de sus locales.<br><br><b>Creemos que entregar</b> la capacidad de activar planes de servicio y estructurar digitalmente sus hogares o negocios (sedes y habitaciones) brindará a los clientes el control total sobre los espacios exactos que desean monitorear.<br><br><b>Esto será confirmado cuando</b> el usuario final sea capaz de ingresar con sus credenciales, escoger un plan que se adapte a sus necesidades, configurar sus ambientes y visualizar la estructura donde operarán sus dispositivos inteligentes.</td></tr>
     <tr><td><b>Sprint 3 Velocity</b></td><td>60</td></tr>
     <tr><td><b>Sum of Story Points</b></td><td>60</td></tr>
 </table>
@@ -3931,6 +3931,8 @@ En esta seccion se presenta la matriz de Liderazgo y Colaboracion definida para 
 #### 5.2.3.3. Sprint Backlog 3
 
 El Sprint Backlog 3 prioriza la implementacion de la plataforma como sistema integrado. Las tareas se organizaron para cubrir autenticacion, facturacion, sedes, habitaciones, control de dispositivos, monitoreo energetico, reportes, servicios, documentacion OpenAPI y despliegue.
+
+https://trello.com/b/Ox2SHhpy/sprint3-electro
 
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
   <tr><td colspan="2"><b>Sprint #</b></td><td colspan="6"><b>Sprint 3</b></td></tr>
@@ -4044,7 +4046,7 @@ Pendiente de completar despues de ejecutar las entrevistas de validacion con usu
 
 Pendiente de completar despues de registrar y analizar las entrevistas de validacion.
 ## 5.4. Video About-the-Product.
-* *URL:* https://youtu.be/Z5hOonQ95rI
+* *URL:* https://1drv.ms/v/c/0e85bddd31a5a6b2/IQAMcGRaMpY2QYekFq7IQc4kAf0y43rmfir6a1GspY7zxFg?e=GWPLut
 # Conclusiones
 ## Conclusiones y recomendaciones
 
@@ -4054,7 +4056,7 @@ Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion re
 
 ## Video About-the-Team.
 
-* *URL:* https://www.youtube.com/watch?v=aAg-_-4vc2c
+* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
 
 # Bibliografía 
 
