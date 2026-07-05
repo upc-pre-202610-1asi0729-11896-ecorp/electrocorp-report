@@ -56,6 +56,7 @@ entity "Notifications" as db_notifications <<bounded context>> {
 entity "Reporting" as db_reporting <<bounded context>> {
   consumption_reports
   energy_goals
+  reporting_events
 }
 
 entity "Service Management" as db_service_management <<bounded context>> {

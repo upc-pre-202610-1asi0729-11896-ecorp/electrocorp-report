@@ -1,27 +1,59 @@
 <div align="center">
 
-<img src="assets/md-images-front-matter/upc-logo-transparente.png"></img><br>
+<img src="assets/md-images-front-matter/upc-logo-transparente.png" width="52"></img><br>
 
-<h3>Universidad Peruana de Ciencias Aplicadas</h3>
-<h4>Facultad de Ingeniería</h4>
-<h4>Carrera de Ingeniería de Software</h4>
-<h4>Periodo 202610</h4>
-<h4>1ASI0729 Desarrollo de Aplicaciones Open Source</h4>
-<h4>NRC 11896</h4>
-<h4>Docente: Efraín Ricardo Bautista Ubillús</h4>
-<h4>Informe del Trabajo Final</h4>
-<h4>Startup: ElectroCorp</h4>
-<h4>Producto: Smart</h4>
+Universidad Peruana de Ciencias Aplicadas<br>
+Carrera de Ingeniería de Software<br><br>
 
-| **Código** | **Apellidos y Nombres**               |
-| :--------: | :------------------------------------ |
-| U20241e179 | Tavara Correa, Sebastian Oswaldo      |
-| U202418755 | Santiago Atanacio, Jairo Mathias      |
-| U20241e014 | Cabrejos Chocco, Diego Alexander      |
-| U20241e406 | Loa Rojas, Jean Franck                |
-| U202318828 | Documet Romero, Timothy               |
+<strong>1ASI0729</strong><br>
+<strong>Desarrollo de Aplicaciones Open Source</strong><br>
+NRC<br>
+<strong>11896</strong><br>
+<strong>Informe del Trabajo Final</strong><br>
+Docente<br>
+<strong>Bautista Ubillús, Efraín Ricardo</strong><br>
+Equipo<br>
+<strong>ElectroCorp</strong><br><br>
 
-### Junio 2026
+Proyecto<br>
+<strong>Smart</strong><br><br>
+
+<strong>Integrantes</strong>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Apellidos y Nombres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U20241e179</td>
+      <td>Tavara Correa, Sebastian Oswaldo</td>
+    </tr>
+    <tr>
+      <td>U202418755</td>
+      <td>Santiago Atanacio, Jairo Mathias</td>
+    </tr>
+    <tr>
+      <td>U20241e014</td>
+      <td>Cabrejos Chocco, Diego Alexander</td>
+    </tr>
+    <tr>
+      <td>U20241e406</td>
+      <td>Loa Rojas, Jean Franck</td>
+    </tr>
+    <tr>
+      <td>U202318828</td>
+      <td>Documet Romero, Timothy</td>
+    </tr>
+  </tbody>
+</table>
+
+<strong>Período 202610</strong><br><br>
+
+<strong>Junio 2026</strong>
 </div>
 <div style="page-break-after: always;"></div>
 
@@ -33,7 +65,7 @@
 |   AV1   | 03/04/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
 |   TB1   | 09/05/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
 |   AV2   | 12/06/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
-|   TF1   |            |       |                                                            |
+|   TB2   |            |       |                                                            |
 
 <div style="page-break-after: always;"></div>
 
@@ -56,15 +88,8 @@ A continuación, se detallan los repositorios utilizados a lo largo del proyecto
 
 - https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
 
-
-
-### **Entrega TB1:**
+### **Entrega AV1:**
 Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
-Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
 
 ##### Participación por integrante:
 
@@ -111,20 +136,25 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
             <img src="assets/md-images-front-matter/timothy-commits.png">
             </div><br><br>
 
-- Tavara Correa, Sebastian Oswaldo: Desarrollo de los capitulos 1, 2, 3 y 4.      <br>
-- Santiago Atanacio, Jairo Mathias: Desarrollo de los capitulos 1, 2, 4 y 5. 
-- Cabrejos Chocco, Diego Alexander: Desarrollo de los capitulos 2,4, 5 y landing page.  
-- Loa Rojas, Jean Franck: Desarrollo de los capitulos 1, 2, 4 y Aplicación web.
-- Documet Romero, Timothy: Desarrollo de capitulo 1.    
+### **Entrega TB1:**
+Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub cada uno en su debida rama, asegurando así un seguimiento claro de los avances y la colaboración conjunta. Ademas hicimos mejoras en la parte del frontend y la landing page.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Dirigir y distribuir las tareas según la capacidad de cada miembro.      <br>
+- Santiago Atanacio, Jairo Mathias: Se corrigieron los errores presentes en las tablas y diagramas del trabajo. 
+- Cabrejos Chocco, Diego Alexander: Crea y mejora versiones de la página de inicio, que a su vez se conecta con la aplicación web.  
+- Loa Rojas, Jean Franck: Desarrollar e implementar la primera versión de la aplicación web, asegurando de que se desplegara sin errores y se conectara a la landing page 
+- Documet Romero, Timothy: Historias técnicas, corregir historias de usuario   
 
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="assets/md-images-front-matter/top-committers.png"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="assets/md-images-front-matter/commits.png"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-commits.png"></div><br><br>
 
 
     * **Commits**
@@ -133,26 +163,65 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/sebastian-commits.png" >
+            <img src="assets/md-images-front-matter/tb1-sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/jairo-commits.png">
+            <img src="assets/md-images-front-matter/tb1-jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/diego-commits.png">
+            <img src="assets/md-images-front-matter/tb1-diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/jean-commits.png">
+            <img src="assets/md-images-front-matter/tb1-jean-commits.png">
             </div><br>
-        + **Timothy Documet**
+
+### **Entrega AV2:**
+Se hicieron las correcion a la parte del frontend y a la parte de la landing page, tambien se hicieron algunas correciones en el reporte ademas de agregar el nuevo sprint. Tambien se avanzo la parte del backend dejandolo completamente operativo.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Event Storming, Correciones en el report y parte del backend      <br>
+- Santiago Atanacio, Jairo Mathias: Parte del backend y correcion del frontend
+- Cabrejos Chocco, Diego Alexander: Correcion de la landing page y agregar el sprint 3
+- Loa Rojas, Jean Franck: Desarrollo y despliegue del backend, ademas correcion del frontend
+
++ **Evidencias de colaboración y commits - Github:**
+    * **Análiticos de colaboración** <br><br>
+        + **Pulse Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
+
+
+        + **Contributors Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/av2-commits.png"></div><br><br>
+
+
+    * **Commits**
+
+         A continuación se muestran algunos commits realizados en este entrega de TB1.
+
+        + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/timothy-commits.png">
-            </div><br><br>
+            <img src="assets/md-images-front-matter/av2-sebastian-commits.png" >
+            </div><br>
+
+        + **Jairo Santiago**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jairo-commits.png">
+            </div><br>
+
+        + **Diego Cabrejos**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-diego-commits.png">
+            </div><br>
+        + **Jean Loa**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jean-commits.png">
+            </div><br>
 
 
 # Contenido
@@ -1719,7 +1788,7 @@ Finalmente, el módulo de **Plans** permite visualizar los planes disponibles, r
 
 En esta sección se presenta el prototipo funcional de la aplicación web de **ElectroCorp**, incluyendo la integración entre la webapp y el servicio temporal `electrocorp-platform`. El video muestra el flujo general de uso de la plataforma, desde el acceso del usuario hasta la navegación por los principales módulos del sistema.
 
-El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la Fake API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
+El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la REST API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
 
 **Video de presentación del prototipo:**  
 [Ver video del prototipo de ElectroCorp](https://1drv.ms/v/c/0e85bddd31a5a6b2/IQCP8SBS3IW5S5o6jAGWF7XLARHP0FJrkJaB8oKVd_Yd1Bo?e=y85xUO)
@@ -1731,6 +1800,20 @@ El prototipo permite validar visualmente la experiencia de usuario, la navegaci�
 El Design-Level Event Storming de ElectroCorp se organiza por bounded contexts para mantener coherencia con la arquitectura DDD implementada en el backend y en la web application. En lugar de representar todo el dominio en una sola imagen, los eventos, comandos, agregados y reglas se separan por contexto para facilitar la trazabilidad con el codigo actual.
 
 La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management.
+
+Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces. Los consumidores principales son Notifications, que crea alertas operativas, y Reporting, que persiste una proyeccion de actividad en `reporting_events` para trazabilidad y analisis sin acoplar controllers entre contextos.
+
+| Domain event | Integration event | Consumer context | Resultado funcional |
+|--|--|--|--|
+| UserRegisteredEvent | UserRegisteredIntegrationEvent | Notifications, Reporting | Alerta de cuenta creada y registro de actividad IAM. |
+| SubscriptionActivatedEvent | SubscriptionActivatedIntegrationEvent | Notifications, Reporting | Alerta de plan activado y actividad Billing. |
+| PaymentRegisteredEvent | PaymentRegisteredIntegrationEvent | Notifications, Reporting | Alerta de pago registrado y actividad financiera. |
+| DeviceCreatedEvent | DeviceCreatedIntegrationEvent | Notifications, Reporting | Alerta de dispositivo disponible y actividad Device Control. |
+| OperationModeActivatedEvent | OperationModeActivatedIntegrationEvent | Notifications, Reporting | Alerta de modo operativo aplicado y actividad de automatizacion. |
+| DeviceAssignedToRoomEvent | DeviceAssignedToRoomIntegrationEvent | Notifications, Reporting | Alerta de asignacion y sincronizacion Workplace-Device Control. |
+| EnergyThresholdExceededEvent | EnergyThresholdExceededIntegrationEvent | Notifications, Reporting | Evaluacion de reglas, alerta de consumo elevado y actividad energetica. |
+| SupportTicketCreatedEvent | SupportTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de ticket de soporte creado y actividad de servicio. |
+| MaintenanceTicketCreatedEvent | MaintenanceTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de mantenimiento asociado a dispositivo y actividad tecnica. |
 
 #### 4.6.1.1. Bounded Contexts Overview
 
@@ -3020,6 +3103,8 @@ Para el backend se considero el perfil productivo de Spring Boot, el despliegue 
 
 Las variables sensibles y configuraciones propias del entorno productivo deben administrarse desde Render, no desde el repositorio. Esto permite mantener separados los secretos, credenciales y valores de conexion a base de datos respecto al codigo fuente versionado.
 
+La configuracion actual del backend documenta el esquema JWT Bearer en OpenAPI, mantiene las claves con BCrypt mediante un puerto de hashing en IAM y expone los endpoints protegidos sin cambiar las rutas publicas existentes. La seguridad se valida con token Bearer en el header `Authorization`, mientras que `/api/v1/auth/**`, health check y Swagger permanecen accesibles para pruebas y documentacion.
+
 ## 5.2. Landing Page, Services & Applications Implementation
 ### 5.2.1. Sprint 1 
 #### 5.2.1.1. Sprint Planning 1
@@ -3879,6 +3964,8 @@ En esta seccion se presenta la matriz de Liderazgo y Colaboracion definida para 
 
 El Sprint Backlog 3 prioriza la implementacion de la plataforma como sistema integrado. Las tareas se organizaron para cubrir autenticacion, facturacion, sedes, habitaciones, control de dispositivos, monitoreo energetico, reportes, servicios, documentacion OpenAPI y despliegue.
 
+https://trello.com/b/Ox2SHhpy/sprint3-electro
+
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
   <tr><td colspan="2"><b>Sprint #</b></td><td colspan="6"><b>Sprint 3</b></td></tr>
   <tr><td colspan="2"><b>User Story</b></td><td colspan="6"><b>Work-Item / Task</b></td></tr>
@@ -3903,6 +3990,8 @@ Durante este Sprint, el equipo trabajo en la implementacion del backend, la inte
 * **Landing Page:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/
 * **Report:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/main/
 
+Como ajuste de cierre, el backend se alineo con el proyecto de referencia mediante command/query services por contexto, puertos de hashing/token en IAM, integration events entre bounded contexts, OpenAPI con Bearer JWT y pruebas unitarias para hashing y publicacion de eventos. Notifications consume los integration events para generar alertas y Reporting los consume para persistir actividad consultable desde `/api/v1/reports/activity`. En la Web Application se mantuvo la arquitectura por contexto y se movio el geocoding de Workplace desde presentation hacia application/infrastructure.
+
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
 La ejecucion del Sprint se valido mediante rutas publicas del backend, navegacion de frontend y revision de los enlaces principales del producto.
@@ -3923,7 +4012,9 @@ Para la documentacion de servicios se utilizo Swagger/OpenAPI como mecanismo pri
 * **Swagger UI:** https://electrocorp-platform.onrender.com/swagger-ui/index.html
 * **OpenAPI JSON:** https://electrocorp-platform.onrender.com/v3/api-docs
 * **Rutas publicas habilitadas:** /, /health, /swagger-ui/**, /swagger-ui.html, /v3/api-docs/**, /api/v1/auth/**.
-* **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes y soporte.
+* **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes, actividad de reporting y soporte.
+* **Seguridad documentada:** OpenAPI incluye esquema HTTP Bearer con formato JWT para probar endpoints protegidos desde Swagger UI.
+* **Credenciales:** las contrasenas se almacenan como hash BCrypt en `password_hash`, no como texto plano.
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
@@ -3991,7 +4082,7 @@ Pendiente de completar despues de ejecutar las entrevistas de validacion con usu
 
 Pendiente de completar despues de registrar y analizar las entrevistas de validacion.
 ## 5.4. Video About-the-Product.
-* *URL:* https://youtu.be/Z5hOonQ95rI
+* *URL:* https://1drv.ms/v/c/0e85bddd31a5a6b2/IQAMcGRaMpY2QYekFq7IQc4kAf0y43rmfir6a1GspY7zxFg?e=GWPLut
 # Conclusiones
 ## Conclusiones y recomendaciones
 
