@@ -1788,7 +1788,7 @@ Finalmente, el módulo de **Plans** permite visualizar los planes disponibles, r
 
 En esta sección se presenta el prototipo funcional de la aplicación web de **ElectroCorp**, incluyendo la integración entre la webapp y el servicio temporal `electrocorp-platform`. El video muestra el flujo general de uso de la plataforma, desde el acceso del usuario hasta la navegación por los principales módulos del sistema.
 
-El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la Fake API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
+El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la REST API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
 
 **Video de presentación del prototipo:**  
 [Ver video del prototipo de ElectroCorp](https://1drv.ms/v/c/0e85bddd31a5a6b2/IQCP8SBS3IW5S5o6jAGWF7XLARHP0FJrkJaB8oKVd_Yd1Bo?e=y85xUO)
@@ -1800,6 +1800,20 @@ El prototipo permite validar visualmente la experiencia de usuario, la navegaci�
 El Design-Level Event Storming de ElectroCorp se organiza por bounded contexts para mantener coherencia con la arquitectura DDD implementada en el backend y en la web application. En lugar de representar todo el dominio en una sola imagen, los eventos, comandos, agregados y reglas se separan por contexto para facilitar la trazabilidad con el codigo actual.
 
 La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management.
+
+Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces. El consumidor principal es Notifications, que crea alertas operativas sin que los controllers cambien sus contratos publicos.
+
+| Domain event | Integration event | Consumer context | Resultado funcional |
+|--|--|--|--|
+| UserRegisteredEvent | UserRegisteredIntegrationEvent | Notifications | Alerta de cuenta creada y trazabilidad de IAM. |
+| SubscriptionActivatedEvent | SubscriptionActivatedIntegrationEvent | Notifications | Alerta de plan activado desde Billing. |
+| PaymentRegisteredEvent | PaymentRegisteredIntegrationEvent | Notifications | Alerta de pago registrado. |
+| DeviceCreatedEvent | DeviceCreatedIntegrationEvent | Notifications | Alerta de dispositivo disponible para control y monitoreo. |
+| OperationModeActivatedEvent | OperationModeActivatedIntegrationEvent | Notifications | Alerta de modo operativo aplicado. |
+| DeviceAssignedToRoomEvent | DeviceAssignedToRoomIntegrationEvent | Notifications | Alerta de asignacion y sincronizacion Workplace-Device Control. |
+| EnergyThresholdExceededEvent | EnergyThresholdExceededIntegrationEvent | Notifications | Evaluacion de reglas o alerta de consumo elevado. |
+| SupportTicketCreatedEvent | SupportTicketCreatedIntegrationEvent | Notifications | Alerta de ticket de soporte creado. |
+| MaintenanceTicketCreatedEvent | MaintenanceTicketCreatedIntegrationEvent | Notifications | Alerta de mantenimiento asociado a dispositivo. |
 
 #### 4.6.1.1. Bounded Contexts Overview
 
@@ -3089,6 +3103,8 @@ Para el backend se considero el perfil productivo de Spring Boot, el despliegue 
 
 Las variables sensibles y configuraciones propias del entorno productivo deben administrarse desde Render, no desde el repositorio. Esto permite mantener separados los secretos, credenciales y valores de conexion a base de datos respecto al codigo fuente versionado.
 
+La configuracion actual del backend documenta el esquema JWT Bearer en OpenAPI, mantiene las claves con BCrypt mediante un puerto de hashing en IAM y expone los endpoints protegidos sin cambiar las rutas publicas existentes. La seguridad se valida con token Bearer en el header `Authorization`, mientras que `/api/v1/auth/**`, health check y Swagger permanecen accesibles para pruebas y documentacion.
+
 ## 5.2. Landing Page, Services & Applications Implementation
 ### 5.2.1. Sprint 1 
 #### 5.2.1.1. Sprint Planning 1
@@ -3974,6 +3990,8 @@ Durante este Sprint, el equipo trabajo en la implementacion del backend, la inte
 * **Landing Page:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/
 * **Report:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/main/
 
+Como ajuste de cierre, el backend se alineo con el proyecto de referencia mediante command/query services por contexto, puertos de hashing/token en IAM, integration events entre bounded contexts, OpenAPI con Bearer JWT y pruebas unitarias para hashing y publicacion de eventos. En la Web Application se mantuvo la arquitectura por contexto y se movio el geocoding de Workplace desde presentation hacia application/infrastructure.
+
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
 La ejecucion del Sprint se valido mediante rutas publicas del backend, navegacion de frontend y revision de los enlaces principales del producto.
@@ -3995,6 +4013,8 @@ Para la documentacion de servicios se utilizo Swagger/OpenAPI como mecanismo pri
 * **OpenAPI JSON:** https://electrocorp-platform.onrender.com/v3/api-docs
 * **Rutas publicas habilitadas:** /, /health, /swagger-ui/**, /swagger-ui.html, /v3/api-docs/**, /api/v1/auth/**.
 * **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes y soporte.
+* **Seguridad documentada:** OpenAPI incluye esquema HTTP Bearer con formato JWT para probar endpoints protegidos desde Swagger UI.
+* **Credenciales:** las contrasenas se almacenan como hash BCrypt en `password_hash`, no como texto plano.
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
