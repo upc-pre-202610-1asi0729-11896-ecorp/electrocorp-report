@@ -48,24 +48,28 @@ Proyecto<br>
       <td>U202318828</td>
       <td>Documet Romero, Timothy</td>
     </tr>
+    <tr>
+      <td>U20241b962</td>
+      <td>Navarro Aldoradin, Carolina Celeste</td>
+    </tr>
   </tbody>
 </table>
 
 <strong>Período 202610</strong><br><br>
 
-<strong>Junio 2026</strong>
+<strong>Julio 2026</strong>
 </div>
 <div style="page-break-after: always;"></div>
 
 
 ## Registro de Versiones del Informe
 
-| Versión |  Fecha   |                                       Autor                                        |                                                  Descripción de modificación                                                   |
-| :-----: | :------: | :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
-|   AV1   | 03/04/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
-|   TB1   | 09/05/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
-|   AV2   | 12/06/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
-|   TB2   |            |       |                                                            |
+| Versión |   Fecha    |                                                                               Autor                                                                               |                                                  Descripción de modificación                                                   |
+| :-----: |:----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------------------------------------------------------------------------: |
+|   AV1   | 03/04/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
+|   TB1   | 09/05/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
+|   AV2   | 12/06/2026 |                   Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck                    | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
+|   TB2   | 05/07/2026 | Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste | Corrección de coherencia entre informe e implementación: suscripciones con checkout y validación de pago interna, alertas in-app, y documentación de OpenStreetMap/Nominatim como servicio externo de terceros. |
 
 <div style="page-break-after: always;"></div>
 
@@ -347,6 +351,9 @@ Se hicieron las correcion a la parte del frontend y a la parte de la landing pag
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Links importantes](#links-importantes)
+  - [Credenciales de prueba](#credenciales-de-prueba)
+
 
 <div style="page-break-after: always;"></div>
 
@@ -383,14 +390,14 @@ Nuestra misión es brindar a las familias peruanas soluciones de domótica acces
 Queremos que ElectroCorp sea el referente en el Perú en gestión energética residencial, transformando los hogares tradicionales en espacios eficientes y sostenibles que alivien la economía familiar y contribuyan al cuidado del medio ambiente.
 
 ### 1.1.2. Perfiles de integrantes del equipo
-| **Nombre Completo del integrante**    |	**Descripcion de la carrera** | **Fotografia** | **Conocimientos y habilidades**
-| :------------------------------------ |:------------------------------------ |:------------------------------------ |:------------------------------------ |
-| Tavara Correa, Sebastian Oswaldo      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
-| Santiago Atanacio, Jairo Mathias      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/jairo-santiago.png"> | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
-| Cabrejos Chocco, Diego Alexander      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/diego-cabrejos.jpg"> | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
-| Loa Rojas, Jean Franck      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/jean-loa.jpg"> | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
-| Documet Romero, Timothy     |Ingeniera de software Universidad Peruana de Ciencias Aplicadas| <img src="assets/md-images-chapter1/timothy-documet.jpeg"> | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
-
+| **Nombre Completo del integrante**    | 	**Descripcion de la carrera**                                   | **Fotografia**                                                         | **Conocimientos y habilidades**
+| :------------------------------------ |:-----------------------------------------------------------------|:-----------------------------------------------------------------------|:------------------------------------ |
+| Tavara Correa, Sebastian Oswaldo      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
+| Santiago Atanacio, Jairo Mathias      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/jairo-santiago.png">               | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
+| Cabrejos Chocco, Diego Alexander      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/diego-cabrejos.jpg">               | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
+| Loa Rojas, Jean Franck      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/jean-loa.jpg">                     | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
+| Documet Romero, Timothy     | Ingeniería de software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/timothy-documet.jpeg">             | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
+| Navarro Aldoradin, Carolina Celeste | Ingeniería de software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/carolina-navarro.jpg"> | Soy Carolina Navarro, estudiante de Ingeniería de Software, me encuentro cursando el 5to ciclo y cuento con una base sólida en el pensamiento de sistemas, lenguajes como C++, JavaScript, Java, Python, Assembler, CSS y HTML, bases relacionales y no relacionales, y experiencia en sistemas industrias, IoT y maquinaria pesada. Me apasiona entender sistemas que conectan elementos de diferentes disciplinas y convertir black boxes en puzzles por resolver y entender.
 ## 1.2 *Solution Profile*
 ### 1.2.1 Antecedentes y problemática
 La energía eléctrica, es uno de los recursos más importantes de nuestra sociedad actual, ayudándonos a desarrollar multiplicidad de tareas, ya sea en hogares, instituciones educativas, espacios publicos, sector empresarial, etc.
@@ -419,7 +426,7 @@ Impacto Económico: Desarrollar un algoritmo de análisis de datos que proporcio
 
 ## Restricciones
 Restricciones de Alcance (Scope)
-Integración de terceros: En su primera versión, el ecosistema IoT operará exclusivamente a través de la plataforma web y móvil propietaria de ElectroCorp. No se contemplará la integración con asistentes de voz de terceros (como Amazon Alexa, Google Assistant o Apple HomeKit) para mantener el enfoque en la robustez de la interfaz nativa.
+Integración de terceros: En su primera versión, el ecosistema IoT operará a través de la plataforma web propietaria de ElectroCorp. No se contempla la integración con asistentes de voz de terceros (como Amazon Alexa, Google Assistant o Apple HomeKit) para mantener el enfoque en la robustez de la interfaz nativa. Sí se contempla la integración con el servicio externo de terceros **OpenStreetMap / Nominatim**, utilizado por la Web Application para la geolocalización, la geocodificación de direcciones y la visualización de mapas en la gestión de sedes.
 
 Restricciones de Tiempo y Costo
 Cronograma de Desarrollo: El ciclo de vida del proyecto está estrictamente sujeto al calendario académico regular. Todas las fases de diseño, desarrollo, pruebas y despliegue deben completarse y documentarse para coincidir con los hitos de entrega programados (TB1, TP1, TB2 y TF1).
@@ -1061,8 +1068,8 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 |**EP-03**|**Monitoreo y ahorro de energía**|Como usuario, quiero visualizar y comparar el consumo de mis dispositivos en tiempo real e histórico para identificar oportunidades de ahorro.|<p>**Escenario 1: Ver consumo actual**</p><p>Dado que el usuario accede al dashboard,</p><p>Cuando selecciona la pestaña de métricas,</p><p>Entonces el sistema muestra los Watts consumidos.</p><br><p>**Escenario 2: Reporte Histórico**</p><p>Dado que el usuario solicita el reporte,</p><p>Cuando selecciona el mes de interés,</p><p>Entonces se genera un gráfico comparativo.</p>||
 |**EP-04**|**Seguridad, accesos y gestión de usuarios**|Como usuario administrador, quiero controlar los accesos y permisos de quienes usan la plataforma para mantener la seguridad y trazabilidad.|<p>**Escenario 1: Creación de perfiles**</p><p>Dado que el administrador accede a la sección de accesos,</p><p>Cuando invita a un nuevo correo,</p><p>Entonces se crea un perfil con permisos restringidos.</p><br><p>**Escenario 2: Trazabilidad**</p><p>Dado que un empleado realiza una acción,</p><p>Cuando el administrador revisa el historial,</p><p>Entonces ve quién realizó el cambio.</p>||
 |**EP-05**|**Información y Navegación de Landing Page**|Como usuario visitante, deseo acceder a información, cambiar el idioma y navegar dinámicamente por la landing page mediante búsquedas inteligentes.|<p>**Escenario 1: Navegación por Búsqueda**</p><p>Dado que el visitante busca un tema específico,</p><p>Cuando usa la barra de búsqueda,</p><p>Entonces la vista se desplaza a la sección correspondiente.</p><br><p>**Escenario 2: Traducción**</p><p>Dado que el visitante prefiere otro idioma,</p><p>Cuando interactúa con el botón de idioma,</p><p>Entonces el texto cambia inmediatamente entre ES/EN.</p>||
-|**EP-06**|**Gestión de Suscripciones (Stripe)**|Como usuario, quiero gestionar mi plan de suscripción premium mediante pagos seguros para acceder a funciones avanzadas.|<p>**Escenario 1: Pago exitoso**</p><p>Dado que el usuario elige el Plan Enterprise,</p><p>Cuando ingresa los datos de su tarjeta,</p><p>Entonces su cuenta se actualiza con dispositivos ilimitados.</p><br><p>**Escenario 2: Cancelación**</p><p>Dado que el usuario es Premium,</p><p>Cuando hace clic en anular suscripción,</p><p>Entonces su plan vuelve a ser Free el próximo mes.</p>||
-|**EP-07**|**Notificaciones y Soporte (Mailchimp)**|Como usuario, quiero recibir alertas por correo electrónico y acceder a soporte técnico para resolver problemas o ver picos de consumo.|<p>**Escenario 1: Alerta de alto consumo**</p><p>Dado que un dispositivo supera el umbral configurado,</p><p>Cuando el sistema detecta la anomalía,</p><p>Entonces se envía un correo de alerta mediante Mailchimp.</p><br><p>**Escenario 2: Soporte**</p><p>Dado que el usuario tiene dudas,</p><p>Cuando ingresa a ayuda,</p><p>Entonces visualiza las FAQ y contacto.</p>||
+|**EP-06**|**Gestión de Suscripciones y Pagos**|Como usuario, quiero gestionar mi plan de suscripción mediante un proceso de checkout con validación de pago para acceder a funciones avanzadas.|<p>**Escenario 1: Checkout exitoso**</p><p>Dado que el usuario elige el Plan Enterprise,</p><p>Cuando completa el checkout con datos de tarjeta válidos,</p><p>Entonces el sistema valida el pago y activa su suscripción.</p><br><p>**Escenario 2: Cancelación**</p><p>Dado que el usuario tiene una suscripción activa,</p><p>Cuando cancela su suscripción,</p><p>Entonces su plan se marca como cancelado.</p>||
+|**EP-07**|**Notificaciones y Soporte**|Como usuario, quiero recibir alertas dentro de la aplicación y acceder a soporte técnico para resolver problemas o ver picos de consumo.|<p>**Escenario 1: Alerta de alto consumo**</p><p>Dado que un dispositivo supera el umbral configurado,</p><p>Cuando el sistema evalúa las reglas de alerta,</p><p>Entonces se genera una alerta visible en el centro de notificaciones de la aplicación.</p><br><p>**Escenario 2: Soporte**</p><p>Dado que el usuario tiene dudas,</p><p>Cuando registra un ticket de soporte,</p><p>Entonces el sistema crea el ticket y le da seguimiento.</p>||
 
 <br><br>
 
@@ -1096,7 +1103,7 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 |**US-24**|Programar equipos por horario comercial|<p>Como dueño, quiero automatizar el local según el horario de atención.</p>|<p>**Escenario 1:** Automatización de horario</p><p>Dado que el horario es de 9am a 6pm,</p><p>Cuando se activa la rutina comercial,</p><p>Entonces los equipos siguen automáticamente el horario.</p>|**EP-02**|
 |**US-25**|Revisar consumo por área o equipo|<p>Como dueño, quiero identificar qué áreas consumen más.</p>|<p>**Escenario 1:** Desglose por zona</p><p>Dado que hay varios equipos registrados,</p><p>Cuando revisa el reporte corporativo,</p><p>Entonces visualiza un gráfico detallado por zonas.</p>|**EP-03**|
 |**US-26**|Compartir acceso con personal|<p>Como dueño, quiero permitir que empleados controlen ciertos equipos.</p>|<p>**Escenario 1:** Control limitado</p><p>Dado que un empleado de almacén entra a la app,</p><p>Cuando visualiza el dashboard principal,</p><p>Entonces solo ve el control de su área correspondiente.</p>|**EP-04**|
-|**US-27**|Pagar suscripción con tarjeta|<p>Como usuario, quiero ingresar mi tarjeta de forma segura para adquirir el plan Premium.</p>|<p>**Escenario 1:** Pasarela Stripe</p><p>Dado que el usuario elige el plan Enterprise,</p><p>Cuando ingresa sus datos válidos,</p><p>Entonces Stripe procesa exitosamente el cobro mensual.</p>|**EP-06**|
+|**US-27**|Contratar suscripción con checkout|<p>Como usuario, quiero completar un checkout con mis datos de tarjeta para contratar el plan Enterprise.</p>|<p>**Escenario 1:** Checkout interno</p><p>Dado que el usuario elige el plan Enterprise,</p><p>Cuando ingresa datos de tarjeta válidos en el checkout,</p><p>Entonces el sistema valida el pago internamente y activa la suscripción.</p>|**EP-06**|
 |**US-28**|Cancelar suscripción Premium|<p>Como usuario, quiero anular mi suscripción para detener cobros.</p>|<p>**Escenario 1:** Detención de cobros</p><p>Dado que el usuario accede a configuración de facturación,</p><p>Cuando confirma la cancelación del servicio,</p><p>Entonces el plan se degrada a final de mes.</p>|**EP-06**|
 |**US-29**|Recibir alertas por correo|<p>Como usuario, quiero que el sistema me notifique a mi correo si algo inusual pasa con mi consumo.</p>|<p>**Escenario 1:** Despacho vía Mailchimp</p><p>Dado que hay un evento crítico registrado,</p><p>Cuando el backend lo procesa,</p><p>Entonces recibo un email de alerta inmediata.</p>|**EP-07**|
 |**US-30**|Recibir reporte mensual|<p>Como usuario, quiero recibir un resumen mensual en mi email para saber cuánto ahorré.</p>|<p>**Escenario 1:** Envío automatizado</p><p>Dado que es el último día del mes,</p><p>Cuando el cronjob se activa,</p><p>Entonces me envía un correo con mis estadísticas.</p>|**EP-07**|
@@ -1133,6 +1140,7 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 |**TS-14**|Visualización de consumo energético|<p>**Como** frontend developer</p><p>**Quiero** representar lecturas y métricas desde la capa de reporting/energía</p><p>**Para** visualizar consumo actual, histórico y recomendaciones.</p>|<p>Escenario 1: Render de métricas</p><p>Dado un conjunto de lecturas obtenido desde la API,</p><p>Cuando se arma la vista,</p><p>Entonces la aplicación muestra indicadores y gráficos consistentes.</p>|**EP-03**|
 |**TS-15**|Cifrado BCrypt mediante puerto IAM|<p>**Como** backend developer</p><p>**Quiero** usar un HashingService implementado con BCrypt</p><p>**Para** proteger credenciales sin acoplar la aplicación a Spring Security.</p>|<p>**Escenario 1: Hash**</p><p>Dado el formulario de registro,</p><p>Cuando llega una clave válida,</p><p>Entonces se guarda como hash BCrypt y nunca como texto plano.</p>|**EP-04**|
 |**TS-16**|Preferencias UI persistidas|<p>**Como** frontend developer</p><p>**Quiero** sincronizar idioma y tema con la preferencia del usuario</p><p>**Para** mantener la experiencia visual entre sesiones.</p>|<p>**Escenario 1: Preferencia visual**</p><p>Dado que el usuario cambia idioma o tema,</p><p>Cuando se guarda la configuración,</p><p>Entonces la aplicación aplica la preferencia y la conserva para próximos accesos.</p>|**EP-05**|
+|**TS-17**|Geocoding OpenStreetMap/Nominatim desde infraestructura frontend|<p>**Como** frontend developer</p><p>**Quiero** encapsular la geocodificación de sedes en servicios de application/infrastructure</p><p>**Para** resolver direcciones y coordenadas sin llamadas directas desde componentes de presentation.</p>|<p>**Escenario 1: Búsqueda de dirección**</p><p>Dado que el usuario escribe una dirección en Workplace,</p><p>Cuando la Web Application consulta Nominatim desde `GeocodingApiService`,</p><p>Entonces la pantalla recibe sugerencias normalizadas mediante `WorkplaceGeocodingService`.</p>|**EP-04**|
 
 
 
@@ -1152,12 +1160,12 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 | 4 | US-04 | Suscripción al boletín | Como visitante, quiero llenar un input de email sin recargar la web. | 3 |
 | 5 | US-05 | Interfaz interactiva | Como visitante, quiero navegar fluído y pausar la música con un botón. | 3 |
 | 6 | US-06 | Comparar planes de servicio | Como visitante, quiero leer las diferencias del plan Free y Enterprise. | 2 |
-| 7 | US-07 | Registro inicial del usuario | Como usuario, quiero crear una cuenta en la plataforma base de datos. | 5 |
-| 8 | US-08 | Emparejar dispositivo plug-and-play | Como usuario, quiero vincular mi enchufe inteligente simulado. | 8 |
-| 9 | US-09 | Asistente de instalación guiada | Como usuario, quiero un tutorial rápido para empezar. | 5 |
-| 10 | US-10 | Nombrar dispositivos | Como usuario, quiero asignarle un alias a mi equipo. | 2 |
-| 11 | US-11 | Ver estado en tiempo real | Como usuario, quiero verificar si mi foco virtual está ON u OFF. | 3 |
-| 12 | US-12 | Encender y apagar remotamente | Como usuario, quiero enviar señales de apagado por internet. | 5 |
+| 7 | US-07 | Registro inicial del usuario | Como usuario, quiero crear una cuenta segura en la plataforma. | 5 |
+| 8 | US-08 | Emparejar dispositivo plug-and-play | Como usuario, quiero vincular un dispositivo inteligente a mi cuenta. | 8 |
+| 9 | US-09 | Asistente de instalación guiada | Como usuario, quiero una guía rápida para configurar mi primera sede y equipo. | 5 |
+| 10 | US-10 | Nombrar dispositivos | Como usuario, quiero asignarle un alias reconocible a mi equipo. | 2 |
+| 11 | US-11 | Ver estado en tiempo real | Como usuario, quiero verificar si mi dispositivo está encendido, apagado o en mantenimiento. | 3 |
+| 12 | US-12 | Encender y apagar remotamente | Como usuario, quiero controlar mis dispositivos desde la plataforma. | 5 |
 | 13 | US-13 | Programar horarios de encendido | Como usuario, quiero definir a qué hora se enciende mi luz. | 5 |
 | 14 | US-14 | Crear rutinas automáticas | Como usuario, quiero configurar grupos de acciones masivas. | 5 |
 | 15 | US-15 | Ver consumo en tiempo real | Como usuario, quiero ver una gráfica con el consumo de Watts vivo. | 5 |
@@ -1165,22 +1173,22 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 | 17 | US-17 | Recibir alertas por alto consumo | Como usuario, quiero notificaciones si mis aparatos gastan demasiado. | 3 |
 | 18 | US-18 | Ver recomendaciones de ahorro | Como usuario, quiero leer pequeños tips basados en mis propios datos. | 5 |
 | 19 | US-19 | Administrar múltiples dispositivos | Como usuario, quiero ver la lista completa de lo que he enlazado. | 3 |
-| 20 | US-20 | Crear perfiles de acceso | Como administrador, quiero que otros en casa puedan apagar las luces. | 5 |
-| 21 | US-21 | Bloquear acceso no autorizado | Como usuario, quiero que la plataforma se cierre si me olvido abierta. | 3 |
-| 22 | US-22 | Registrar actividad de control | Como administrador, quiero revisar un registro de qué se prendió. | 3 |
+| 20 | US-20 | Gestionar perfiles de acceso | Como administrador, quiero asignar permisos diferenciados a usuarios registrados. | 5 |
+| 21 | US-21 | Bloquear acceso no autorizado | Como usuario, quiero proteger rutas y módulos con autenticación y permisos. | 3 |
+| 22 | US-22 | Registrar actividad relevante | Como administrador, quiero consultar eventos importantes para trazabilidad operativa. | 3 |
 | 23 | US-23 | Controlar equipos del negocio | Como dueño, quiero gestionar mi pequeño local desde la casa. | 3 |
 | 24 | US-24 | Programar equipos por horario comercial | Como dueño, quiero que el local se active de 9 a 6 automatizado. | 5 |
 | 25 | US-25 | Revisar consumo por área o equipo | Como dueño, quiero saber si un sector de la oficina consume más luz. | 5 |
 | 26 | US-26 | Compartir acceso con personal | Como dueño, quiero aislar los permisos de los empleados a sus sectores. | 5 |
-| 27 | US-27 | Pagar suscripción con tarjeta | Como usuario, quiero contratar el Enterprise plan con Stripe. | 8 |
+| 27 | US-27 | Contratar suscripción con checkout | Como usuario, quiero contratar el plan Enterprise mediante checkout con validación de pago interna. | 8 |
 | 28 | US-28 | Cancelar suscripción Premium | Como usuario, quiero regresar al plan Free sin que me sigan cobrando. | 3 |
-| 29 | US-29 | Recibir alertas por correo | Como usuario, quiero que un pico de consumo me llegue vía Mailchimp. | 5 |
-| 30 | US-30 | Recibir reporte mensual | Como usuario, quiero que en fin de mes se manden mis estadísticas al mail. | 5 |
-| 31 | US-31 | Recuperar contraseña | Como usuario, quiero que se envíe un token de reset a mi correo. | 5 |
-| 32 | US-32 | Editar perfil de usuario | Como usuario, quiero rectificar mi número de contacto o nombre de perfil. | 2 |
-| 33 | US-33 | Eliminar cuenta | Como usuario, quiero un botón rojo para purgar absolutamente todos mis datos. | 3 |
-| 34 | US-34 | Configurar preferencias | Como usuario, quiero poder rechazar los boletines desde mi perfil. | 2 |
-| 35 | US-35 | Simular conexión de equipo | Como desarrollador, quiero inyectar equipos falsos para probar el sistema. | 5 |
+| 29 | US-29 | Recibir alertas en la aplicación | Como usuario, quiero que un pico de consumo me aparezca como alerta in-app. | 5 |
+| 30 | US-30 | Consultar reporte mensual | Como usuario, quiero consultar mi resumen de consumo del mes en la app. | 5 |
+| 31 | US-31 | Recuperar contraseña | Como usuario, quiero generar un token seguro para restablecer mi contraseña. | 5 |
+| 32 | US-32 | Editar perfil de usuario | Como usuario, quiero actualizar mis datos personales de perfil. | 2 |
+| 33 | US-33 | Desactivar cuenta | Como usuario, quiero cerrar mi cuenta para impedir nuevos accesos. | 3 |
+| 34 | US-34 | Configurar preferencias | Como usuario, quiero elegir canales, tema, idioma y niveles de alerta. | 2 |
+| 35 | US-35 | Registrar telemetría energética | Como desarrollador, quiero registrar lecturas para monitoreo, alertas y reportes. | 5 |
 | 36 | US-36 | Filtrar historial por fechas | Como usuario, quiero un calendario de inicio y fin para mis reportes. | 3 |
 | 37 | US-37 | Exportar historial a Excel | Como usuario corporativo, quiero bajar una tabla de mis métricas en CSV. | 3 |
 | 38 | US-38 | Agrupar dispositivos | Como usuario, quiero juntar varios enchufes bajo la etiqueta "Sala". | 5 |
@@ -1885,7 +1893,9 @@ En esta seccion se presenta el Diagrama de Contexto correspondiente al Nivel 1 d
 
 ![ElectroCorp - C4 Context Diagram](https://www.plantuml.com/plantuml/svg/bPL1Rziu48Nl_1M3vcetALgtQM08TPm6MQ1P67KMUuXpeCInJ9ZY24CgZhlP_xuWHTboR1HO-IBCFF5zd4V9tvoNx9lA2BVMjfOiAyXbiIwP6gkcP8ZXx3PUFOLRIKKRRKjOIkEmrr6ub8tnjsJzdx92cB2MvhZ_W2z-OdHfAxGU2hGUkQVQiAp_rigluCF7KQzUoPTxT4wMEDU_4BvSz7gM53giuU01bdOTYf_wnGapRTBMBYVXzxOPy9FWSxnE2UP-Qn1oCkfjzs6bYxL5v-13dmKBBsrfy6SxMhR8S75AS4siaFUhd1Jr68_oEH2rdBMHsfwIm3y2uDWHu5vRNJLLoc4q4W0pgLH8_LByArPQ8JYFZEItDGfFDNY2dBod2fGE1fgi45vxW_3TOE6PfiGr367w2QPaFRvukD6oP5a9iITwDywpllulXpm-pxE57UliSORio3wDptMsi0jxHnNI9ioI6FB6wRY1jh9P4LJIoX8Te4KkjmDG-AmBT0DWh8cz6u1hwd07qYh8jJ7Qbk_VWNJH5yukhaUZhnz_npVVEe_Ldd1EIx-HZAcnGvqPwPV45Io94mzKPBKdrhOSW6myLJ9CRT213C2IrqjTnFAEEeGGS1ros4tQP7YPMlBMEB1_lhq-Of_9RNplPapFMlLd-_t58rjfZiYP2dGE7RWcTmNhEk94XcA5nPeQ3yvBtxWMeBCu-t9xERsyUJkyIchpF-nlqEXdP0VIO8miPTVE8CLNjL-6170V74wxJmqr2kx8XJ6UCEzYwXqnvntKJMvq0Kvx7C1yDcdFYopMk0yYcQUrT_uYdgJXCEk2kOB6eLlOnskcZKD-4gaHDDtihg1kxuBmxk5XDeTpcCp-E137VLuTdfBVo3koAr1O6zgY0h8B-nXdyYGwwo2Dp3k6bAw8VhqsXYYTs3_vkD9AeNrYNQxyCFAbXzvq4agQJTTKjB73DAOT-64pBYaCbc7mSJ41CCwp7x4I0XK0h-FqucPGnmy6l7RLy4fauDgrKxKDAWFi3i6kZLQrLa9yGwl2N-L_)
 
-El contexto muestra a ElectroCorp como un sistema unico frente al usuario y a los servicios externos que necesita para pagos, notificaciones y despliegue. El detalle interno de website, SPA, backend y base de datos se separa en el diagrama de contenedores.
+El contexto muestra a ElectroCorp como un sistema unico frente al usuario, el servicio externo de terceros y los entornos de despliegue. El detalle interno de website, SPA, backend y base de datos se separa en el diagrama de contenedores.
+
+Como parte del contexto, la solucion integra un servicio externo de terceros: **OpenStreetMap (Nominatim)**. La Web Application consume sus endpoints publicos de geocodificacion (`/search`), geocodificacion inversa (`/reverse`) y sus *tiles* de mapa (`tile.openstreetmap.org`) para permitir a los usuarios ubicar y registrar la direccion de sus sedes sobre un mapa interactivo. Esta integracion satisface el requisito de acceso a un servicio externo de terceros, complementando al RESTful API de desarrollo interno de ElectroCorp. Los pagos de suscripciones se procesan mediante un servicio de validacion interno (checkout propio) y las notificaciones se entregan como alertas dentro de la aplicacion, sin depender de pasarelas o servicios de correo externos en esta version.
 
 ### 4.6.3. Software Architecture Container Diagrams
 
@@ -3142,9 +3152,9 @@ La configuracion actual del backend documenta el esquema JWT Bearer en OpenAPI, 
     <tr>
         <td><b>Sprint 1 Goal</b></td>
         <td>
-            <b>Estamos concentrados en</b> desarrollar y desplegar la primera versión funcional de la Landing Page de ElectroCorp en Github Pages.<br><br>
-            <b>Creemos que entregar</b> una comunicación clara de nuestra propuesta de valor (ecosistema IoT plug-and-play) a los visitantes, generando interés y prospectos.<br><br>
-            <b>Esto será confirmado cuando</b> los usuarios puedan navegar fluidamente por las secciones informativas, visualizar testimonios, interactuar con el cambio de idiomas y suscribirse al boletín.
+            <b>Estamos concentrados en</b> presentar nuestra propuesta de valor al mercado mediante un sitio web informativo que capte la atención de familias y dueños de negocios interesados en el ahorro energético.<br><br>
+            <b>Creemos que entregar</b> una experiencia clara sobre los beneficios de nuestro ecosistema IoT plug-and-play generará interés real y nos permitirá captar a nuestros primeros clientes potenciales.<br><br>
+            <b>Esto será confirmado cuando</b> los visitantes logren comprender el impacto del producto en sus finanzas, comparen los planes de servicio disponibles y logren suscribirse exitosamente para recibir novedades y ofertas.
         </td>
     </tr>
     <tr>
@@ -3547,9 +3557,9 @@ En este Sprint se marca la transición hacia el desarrollo interactivo, enfocán
     <tr>
         <td><b>Sprint 2 Goal</b></td>
         <td>
-            <b>Estamos concentrados en</b> desarrollar la primera versión de la Frontend Web Application (SPA) y aplicar mejoras a la Landing Page actual.<br><br>
-            <b>Creemos que entregar</b> el entorno base para que los usuarios puedan registrarse, iniciar sesión y visualizar la maqueta interactiva del dashboard principal de gestión energética de ElectroCorp.<br><br>
-            <b>Esto será confirmado cuando</b> la Web Application esté desplegada, los flujos de navegación entre el Login, Register y Dashboard operen correctamente (ruteo) y se conecten exitosamente mediante enlaces desde los call-to-action del Landing Page.
+            <b>Estamos concentrados en</b> proveer a los usuarios un entorno interactivo y seguro donde puedan crear su cuenta y dar sus primeros pasos dentro de la plataforma de gestión de ElectroCorp.<br><br>
+            <b>Creemos que entregar</b> un proceso de registro sencillo y una vista previa de su panel de control permitirá a los clientes familiarizarse rápidamente con la herramienta que les ayudará a monitorear su consumo.<br><br>
+            <b>Esto será confirmado cuando</b> las personas puedan registrarse sin incovenientes, iniciar sesión de forma segura y navegar intuitivamente hacia su panel principal para explorar las opciones de ahorro energético.
         </td>
     </tr>
     <tr>
@@ -3942,7 +3952,7 @@ En este Sprint se consolida la entrega AV2 del producto, incorporando el primer 
     <tr><td><b>Sprint 2 Review Summary</b></td><td>El equipo completo la primera version desplegada de la Web Application y mantuvo conectada la Landing Page con los flujos principales. Se identifico como siguiente prioridad implementar el backend, documentar los endpoints y preparar la integracion funcional con los planes, usuarios, sedes, dispositivos y reportes.</td></tr>
     <tr><td><b>Sprint 2 Retrospective Summary</b></td><td>El equipo acordo reforzar la disciplina de ramas, mejorar la trazabilidad de commits por bounded context, validar los contratos antes de integrar y documentar los servicios para que el frontend pueda consumirlos sin romper la navegacion existente.</td></tr>
     <tr><td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td></tr>
-    <tr><td><b>Sprint 3 Goal</b></td><td><b>Estamos concentrados en</b> implementar el primer entregable del backend, conectar la Web Application con los contratos disponibles y completar la documentacion AV2 del producto.<br><br><b>Creemos que entregar</b> una base tecnica verificable para autenticar usuarios, activar planes, organizar sedes, habitaciones, grupos de dispositivos y consultar informacion energetica mediante endpoints documentados.<br><br><b>Esto será confirmado cuando</b> el backend compile, el despliegue en Render responda en rutas publicas, Swagger/OpenAPI documente los servicios y el informe incluya Sprint 3, validacion, diagramas y evidencias actualizadas.</td></tr>
+    <tr><td><b>Sprint 3 Goal</b></td><td><b>Estamos concentrados en</b> habilitar las funcionalidades centrales del sistema para que los usuarios puedan gestionar de manera real su infraestructura eléctrica, desde la selección de su suscripción hasta la organización de sus locales.<br><br><b>Creemos que entregar</b> la capacidad de activar planes de servicio y estructurar digitalmente sus hogares o negocios (sedes y habitaciones) brindará a los clientes el control total sobre los espacios exactos que desean monitorear.<br><br><b>Esto será confirmado cuando</b> el usuario final sea capaz de ingresar con sus credenciales, escoger un plan que se adapte a sus necesidades, configurar sus ambientes y visualizar la estructura donde operarán sus dispositivos inteligentes.</td></tr>
     <tr><td><b>Sprint 3 Velocity</b></td><td>60</td></tr>
     <tr><td><b>Sum of Story Points</b></td><td>60</td></tr>
 </table>
@@ -4090,9 +4100,18 @@ En AV2, ElectroCorp evoluciono desde una propuesta validada y una Web Applicatio
 
 Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion real de las entrevistas de validacion, el registro de hallazgos con evidencia y la refinacion de los flujos conectados: seleccion de plan, creacion de cuenta, gestion de sedes, habitaciones, grupos de dispositivos, rutinas, alertas, metas y reportes. Tambien se recomienda mantener los despliegues sincronizados con la documentacion para que Swagger/OpenAPI y el README sigan reflejando el estado real del producto.
 
+### Roadmap y funcionalidades fuera del alcance de la versión actual
+
+Como parte de la priorización del alcance para esta versión, el equipo decidió posponer las capacidades de gestión multiusuario, que quedan documentadas en el roadmap para futuras iteraciones del producto:
+
+- **US-20 (Crear perfiles de acceso / invitar a familiares):** la administración de múltiples usuarios por cuenta, con invitación por correo y perfiles de permisos restringidos, se considera **fuera del alcance de la versión actual**. La versión entregada opera bajo un modelo de cuenta única por titular. Esta capacidad se contempla para una iteración posterior, junto con la definición de roles y niveles de permiso.
+- **US-26 (Compartir acceso con personal):** de forma análoga a US-20, la compartición de control de dispositivos por área o sector con empleados requiere el mismo soporte multiusuario y de permisos, por lo que también se posterga como parte del **roadmap** y no forma parte del alcance de esta versión.
+
+El resto de las historias comprometidas para el negocio (autenticación, suscripciones, gestión de sedes y dispositivos, monitoreo energético, alertas, reportes y soporte) sí forman parte del alcance implementado y desplegado.
+
 ## Video About-the-Team.
 
-* *URL:* https://www.youtube.com/watch?v=aAg-_-4vc2c
+* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
 
 # Bibliografía 
 
@@ -4100,3 +4119,29 @@ Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion re
 - Instituto Nacional de Estadística e Informática. (2018). Perú: Características de las viviendas particulares y los hogares. Acceso a servicios básicos (Publicación Digital Lib1538). https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1538/parte01.pdf
 
 # Anexos
+
+## Links importantes
+
+#### Link del repositorio del Reporte:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report
+
+#### Link del repositorio del Website:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website
+
+#### Link del repositorio de la Webapp:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp
+
+#### Link del repositorio del Platform:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
+
+#### Link del Swagger
+
+- https://electrocorp-platform.onrender.com/swagger-ui/index.html
+
+## Credenciales de prueba
+
+-- Añadir credenciales de usuarios predeterminados
