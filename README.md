@@ -4166,6 +4166,21 @@ La ejecucion del Sprint 4 se valida mediante rutas publicas, pantallas funcional
 | Web App Energy Reports | https://electrocorp-webapp.onrender.com/energy/reports | Visualizacion de reportes, consumo energetico y metas. |
 | Landing Page | https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/ | Sitio publico con propuesta de valor, CTA y acceso hacia la Web Application. |
 
+**Backend Platform execution evidence**
+
+<img src="assets/md-images-chapter5/platform-deployed.jpeg" alt="Backend deployed root evidence"></img><br>
+<img src="assets/md-images-chapter5/platform-deployed-health.jpeg" alt="Backend deployed health evidence"></img><br>
+<img src="assets/md-images-chapter5/platform-deployed-swagger.jpeg" alt="Backend deployed Swagger UI evidence"></img><br>
+<img src="assets/md-images-chapter5/platform-deployed-api-docs.jpeg" alt="Backend deployed OpenAPI JSON evidence"></img><br>
+
+**Frontend Web Application execution evidence**
+
+<img src="assets/md-images-chapter5/webapp-deployed.jpeg" alt="Frontend Web Application deployed evidence"></img><br>
+
+**Landing Page execution evidence**
+
+<img src="assets/md-images-chapter5/website-deployed.jpeg" alt="Landing Page deployed evidence"></img><br>
+
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
 La documentacion de servicios se mantiene mediante Swagger/OpenAPI y se complementa con la estructura del codigo por bounded contexts. Esto permite revisar rutas, recursos, seguridad y ejemplos de interaccion sin depender unicamente del informe.
