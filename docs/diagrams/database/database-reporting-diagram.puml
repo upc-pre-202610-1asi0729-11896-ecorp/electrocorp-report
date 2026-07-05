@@ -33,6 +33,20 @@ package "Reporting" {
     active_from : LocalTime
     active_to : LocalTime
   }
+  entity "reporting_events" as reporting_events {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    user_id : bigint
+    event_key : varchar
+    event_name : varchar
+    source_context : varchar
+    subject_type : varchar
+    subject_id : varchar
+    summary : varchar
+    detail : varchar
+    occurred_on : timestamp
+  }
 }
 
 package "External References" {
@@ -43,5 +57,6 @@ package "External References" {
 
 users ||--o{ consumption_reports : user_id
 users ||--o{ energy_goals : user_id
+users ||--o{ reporting_events : user_id
 
 @enduml

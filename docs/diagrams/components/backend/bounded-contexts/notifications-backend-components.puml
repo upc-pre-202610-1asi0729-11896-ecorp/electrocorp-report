@@ -57,24 +57,30 @@ rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runt
 
 rectangle "<b>Notifications Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" <<BoundedContext>> {
   rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
-  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
-  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
-  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
+  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Delivery Port]</i>\n\nCreates alerts, evaluates rules, applies preferences and dispatches delivery decisions." as Application #58A9E8
+  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns alerts, rules, profiles, notification preferences and delivery policy decisions." as Domain #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[JPA / Mailchimp Adapter]</i>\n\nImplements persistence and email delivery through Mailchimp/Mandrill when credentials are configured." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores alerts, alert rules, preferences and notification evaluation." as Database
+rectangle "<b>Mailchimp Transactional</b>\n<i>[External Messaging Provider]</i>\n\nReceives alert email delivery requests for enabled user preferences." as Mailchimp #F39C12
+rectangle "<b>Integration Events</b>\n<i>[Internal Spring Events]</i>\n\nDomain activity from IAM, Billing, Workplace, Device Control, Energy and Service Management." as Events #7F8C8D
 
 Spa --> Interfaces : Calls REST endpoints\n[JSON / HTTPS]
+Events --> Application : AFTER_COMMIT handlers\nREQUIRES_NEW transaction
 Interfaces --> Application : Delegates use cases
 Application --> Domain : Enforces business rules
 Application --> Infrastructure : Uses ports / repositories
 Infrastructure --> Domain : Maps persisted state
 Infrastructure --> Database : Reads and writes
+Infrastructure --> Mailchimp : Sends alert emails
 
 Spa -[hidden]down- Interfaces
+Events -[hidden]right- Application
 Interfaces -[hidden]down- Application
 Application -[hidden]down- Domain
 Domain -[hidden]right- Infrastructure
 Infrastructure -[hidden]down- Database
+Infrastructure -[hidden]right- Mailchimp
 
 legend right
   <b>Legend</b>

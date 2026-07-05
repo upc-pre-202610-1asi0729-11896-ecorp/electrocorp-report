@@ -32,8 +32,12 @@ package "Device Control / Application" {
     }
   }
   package "Application / Event Handlers" {
+    class "DeviceCreatedEventHandler" as Backend_devicecontrol_DeviceCreatedEventHandler <<Class>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(DeviceCreatedEvent event) : void
+    }
     class "OperationModeActivatedEventHandler" as Backend_devicecontrol_OperationModeActivatedEventHandler <<Class>> {
-      - notificationApplicationService: NotificationApplicationService
+      - integrationEventPublisher: IntegrationEventPublisher
       + on(OperationModeActivatedEvent event) : void
     }
   }
@@ -145,6 +149,7 @@ Backend_devicecontrol_DeviceControlQueryServiceImpl ..> Backend_devicecontrol_Op
 Backend_devicecontrol_DeviceControlQueryServiceImpl ..> Backend_devicecontrol_RoutineDetails
 
 ' Layer relationship completion: every declared type participates in this layer diagram.
+Backend_devicecontrol_DeviceControlCommandServiceImpl ..> Backend_devicecontrol_DeviceCreatedEventHandler
 Backend_devicecontrol_DeviceControlCommandServiceImpl ..> Backend_devicecontrol_OperationModeActivatedEventHandler
 
 @enduml

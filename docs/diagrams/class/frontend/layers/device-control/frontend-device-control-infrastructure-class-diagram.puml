@@ -18,7 +18,7 @@ package "Device Control / Infrastructure" {
       + patch: (
       + groupId: number
       + resource: Partial<DeviceGroupResource>
-      + executeAction: (payload:
+      + executeAction: (resource:
       + delete(id: number) : Observable<void>
     }
     class "DevicesApiService" as Frontend_device_control_DevicesApiService <<API Service>> {
@@ -26,8 +26,8 @@ package "Device Control / Infrastructure" {
       + http: HttpClient
       + apiBaseUrl: string
       + findAllForCurrentUser() : Observable<DeviceResponse[]>
-      + toggle: (payload:
-      + updateStatus: (payload:
+      + toggle: (resource:
+      + updateStatus: (resource:
     }
     class "OperationModesApiService" as Frontend_device_control_OperationModesApiService <<API Service>> {
       - endpoint: string
@@ -47,7 +47,7 @@ package "Device Control / Infrastructure" {
       + apiBaseUrl: string
       + findAllForCurrentUser() : Observable<RoutineResponse[]>
       + create(resource: RoutineResource) : Observable<RoutineResponse>
-      + updateStatus: (payload:
+      + updateStatus: (resource:
       + execute(routineId: number) : Observable<RoutineResponse>
       + delete(routineId: number) : Observable<void>
     }

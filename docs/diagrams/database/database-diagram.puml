@@ -17,6 +17,8 @@ skinparam entity {
 entity "IAM" as db_iam <<bounded context>> {
   access_profiles
   users
+  password_reset_tokens
+  user_ui_preferences
 }
 
 entity "Billing" as db_billing <<bounded context>> {
@@ -56,6 +58,7 @@ entity "Notifications" as db_notifications <<bounded context>> {
 entity "Reporting" as db_reporting <<bounded context>> {
   consumption_reports
   energy_goals
+  reporting_events
 }
 
 entity "Service Management" as db_service_management <<bounded context>> {

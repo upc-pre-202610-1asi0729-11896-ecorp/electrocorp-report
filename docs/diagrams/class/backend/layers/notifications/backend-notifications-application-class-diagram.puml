@@ -41,6 +41,25 @@ package "Notifications / Application" {
       + handle(GetNotificationPreferenceQuery query) : NotificationPreference
     }
   }
+  package "Application / Delivery Port" {
+    interface "NotificationDeliveryPort" as Backend_notifications_NotificationDeliveryPort <<Port>> {
+      + send(Alert alert, NotificationPreference preference, NotificationDeliveryDecision decision) : void
+    }
+  }
+  package "Application / Event Handlers" {
+    class "NotificationIntegrationEventHandler" as Backend_notifications_NotificationIntegrationEventHandler <<Event Handler>> {
+      - notificationApplicationService: NotificationApplicationService
+      + on(UserRegisteredIntegrationEvent event) : void
+      + on(SubscriptionActivatedIntegrationEvent event) : void
+      + on(PaymentRegisteredIntegrationEvent event) : void
+      + on(DeviceCreatedIntegrationEvent event) : void
+      + on(OperationModeActivatedIntegrationEvent event) : void
+      + on(DeviceAssignedToRoomIntegrationEvent event) : void
+      + on(EnergyThresholdExceededIntegrationEvent event) : void
+      + on(SupportTicketCreatedIntegrationEvent event) : void
+      + on(MaintenanceTicketCreatedIntegrationEvent event) : void
+    }
+  }
   package "Application / Services" {
     class "NotificationApplicationService" as Backend_notifications_NotificationApplicationService <<Application Service>> {
       - alertRepository: AlertRepository
@@ -51,29 +70,22 @@ package "Notifications / Application" {
       - alertSourceOwnershipService: AlertSourceOwnershipService
       - ruleEvaluationService: RuleEvaluationService
       - notificationPreferencePolicyService: NotificationPreferencePolicyService
+      - notificationDeliveryPolicyService: NotificationDeliveryPolicyService
+      - notificationDeliveryPort: NotificationDeliveryPort
       + getAlerts(Long userId) : List<Alert>
       + createAlert(CreateAlertCommand command) : Alert
       + markAsRead(Long userId, Long alertId) : Alert
       + dismissAlert(Long userId, Long alertId, Integer minutes) : Alert
       + resolveAlert(Long userId, Long alertId) : Alert
       + deleteAlert(Long userId, Long alertId) : void
-      - buildThreadKey(CreateAlertCommand command, AlertSourceType sourceType, AlertEventType eventType) : String
-      - parseOptionalDateTime(String value) : LocalDateTime
-      - normalizeOptional(String value) : String
-      - validateRuleScope(Long userId, RuleScopeType scopeType, String scopeId) : void
-      - parseEnum(String value, T defaultValue, Class<T> enumType, String errorMessage) : <T extends Enum<T>> T
       + getRules(Long userId) : List<AlertRule>
       + createRule(CreateAlertRuleCommand command) : AlertRule
       + toggleRule(Long userId, Long ruleId) : AlertRule
       + deleteRule(Long userId, Long ruleId) : void
       + getRuleProfiles(Long userId) : List<AlertRuleProfile>
-    }
-  }
-  package "Application Root" {
-    class "ConsoleNotificationDeliveryAdapter" as Backend_notifications_ConsoleNotificationDeliveryAdapter <<Class>> {
-      + send(Alert alert, NotificationPreference preference) : void
-    }
-    interface "NotificationDeliveryPort" as Backend_notifications_NotificationDeliveryPort <<interface>> {
+      + getPreference(Long userId) : NotificationPreference
+      + updatePreference(UpdateNotificationPreferenceCommand command) : NotificationPreference
+      - deliverAlert(Alert alert) : void
     }
   }
 }
@@ -82,9 +94,7 @@ Backend_notifications_NotificationCommandServiceImpl ..> Backend_notifications_N
 Backend_notifications_NotificationCommandServiceImpl ..> Backend_notifications_NotificationCommandService
 Backend_notifications_NotificationQueryServiceImpl ..> Backend_notifications_NotificationApplicationService
 Backend_notifications_NotificationQueryServiceImpl ..> Backend_notifications_NotificationQueryService
-
-' Layer relationship completion: every declared type participates in this layer diagram.
-Backend_notifications_NotificationCommandServiceImpl ..> Backend_notifications_ConsoleNotificationDeliveryAdapter
-Backend_notifications_NotificationCommandServiceImpl ..> Backend_notifications_NotificationDeliveryPort
+Backend_notifications_NotificationApplicationService ..> Backend_notifications_NotificationDeliveryPort
+Backend_notifications_NotificationIntegrationEventHandler ..> Backend_notifications_NotificationApplicationService
 
 @enduml

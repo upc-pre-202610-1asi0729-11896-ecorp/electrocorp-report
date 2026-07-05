@@ -10,17 +10,24 @@ package "Shared Kernel / Infrastructure" {
   package "Infrastructure / Configuration" {
     class "CorsConfig" as Backend_shared_CorsConfig <<Configuration>> {
       - allowedOrigins: String[]
-      + CorsConfig(("$app.cors.allowed-origins:http://localhost:4200")
+      + CorsConfig(allowedOrigins: String[])
       + corsConfigurer() : WebMvcConfigurer
       + addCorsMappings(CorsRegistry registry) : void
     }
     class "OpenApiConfig" as Backend_shared_OpenApiConfig <<Configuration>> {
     }
+    class "RestClientConfig" as Backend_shared_RestClientConfig <<Configuration>> {
+      + restClientBuilder() : RestClient.Builder
+    }
   }
   package "Infrastructure / Events" {
-    class "SpringDomainEventPublisher" as Backend_shared_SpringDomainEventPublisher <<Domain Event>> {
+    class "SpringDomainEventPublisher" as Backend_shared_SpringDomainEventPublisher <<Event Publisher>> {
       - applicationEventPublisher: ApplicationEventPublisher
       + publish(DomainEvent event) : void
+    }
+    class "SpringIntegrationEventPublisher" as Backend_shared_SpringIntegrationEventPublisher <<Event Publisher>> {
+      - applicationEventPublisher: ApplicationEventPublisher
+      + publish(IntegrationEvent event) : void
     }
   }
   package "Infrastructure / JPA" {
@@ -61,7 +68,9 @@ package "Shared Kernel / Infrastructure" {
 ' Layer relationship completion: every declared type participates in this layer diagram.
 Backend_shared_CorsConfig ..> Backend_shared_OpenApiConfig
 Backend_shared_CorsConfig ..> Backend_shared_OpenApiConfig
+Backend_shared_CorsConfig ..> Backend_shared_RestClientConfig
 Backend_shared_CorsConfig ..> Backend_shared_SpringDomainEventPublisher
+Backend_shared_CorsConfig ..> Backend_shared_SpringIntegrationEventPublisher
 Backend_shared_CorsConfig ..> Backend_shared_JpaAuditingConfiguration
 Backend_shared_CorsConfig ..> Backend_shared_JpaUnitOfWork
 Backend_shared_CorsConfig ..> Backend_shared_PersistenceConstants

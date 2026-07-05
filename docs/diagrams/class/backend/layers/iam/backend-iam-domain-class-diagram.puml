@@ -21,13 +21,38 @@ package "IAM / Domain" {
       + deactivate() : void
       + isActive() : boolean
     }
+    class "UserUiPreference" as Backend_iam_UserUiPreference <<Aggregate>> {
+      - userId: Long
+      - language: String
+      - theme: String
+      + update(String language, String theme) : void
+    }
+  }
+  package "Domain / Entities" {
+    class "PasswordResetToken" as Backend_iam_PasswordResetToken <<Entity>> {
+      - userId: Long
+      - tokenHash: String
+      - expiresAt: LocalDateTime
+      - usedAt: LocalDateTime
+      + isUsableAt(LocalDateTime dateTime) : boolean
+      + markUsed(LocalDateTime usedAt) : void
+    }
   }
   package "Domain / Commands" {
+    class "AssignAccessProfileCommand" as Backend_iam_AssignAccessProfileCommand <<record>> {
+      + Long actorUserId
+      + Long targetUserId
+      + Long accessProfileId
+    }
     class "DeleteAccountCommand" as Backend_iam_DeleteAccountCommand <<record>> {
       + Long userId
     }
     class "RecoverPasswordCommand" as Backend_iam_RecoverPasswordCommand <<record>> {
       + String email
+    }
+    class "ResetPasswordCommand" as Backend_iam_ResetPasswordCommand <<record>> {
+      + String token
+      + String password
     }
     class "SignInCommand" as Backend_iam_SignInCommand <<record>> {
       + String email
@@ -42,29 +67,66 @@ package "IAM / Domain" {
       + String fullName
       + String email
     }
+    class "UpdateUiPreferenceCommand" as Backend_iam_UpdateUiPreferenceCommand <<record>> {
+      + String language
+      + String theme
+    }
   }
   package "Domain / Events" {
     class "UserRegisteredEvent" as Backend_iam_UserRegisteredEvent <<record>> {
       + Long userId
       + String email
       + LocalDateTime occurredOn
-      + UserRegisteredEvent(Long userId, String email, LocalDateTime occurredOn) : record
-      + UserRegisteredEvent(Long userId, String email)
     }
   }
   package "Domain / Model" {
+    enum "AccessPermission" as Backend_iam_AccessPermission <<enum>> {
+      + VIEW_HOME
+      + CONTROL_DEVICES
+      + MANAGE_DEVICES
+      + MANAGE_ROUTINES
+      + MANAGE_SPACES
+      + VIEW_ENERGY
+      + VIEW_REPORTS
+      + MANAGE_ALERTS
+      + MANAGE_SUPPORT
+      + MANAGE_ACCESS
+    }
     enum "AccountStatus" as Backend_iam_AccountStatus <<enum>> {
       + ACTIVE
       + INACTIVE
     }
   }
   package "Domain / Repositories" {
-    interface "AccessProfileRepository" as Backend_iam_AccessProfileRepository <<interface>> {
+    interface "AccessProfileRepository" as Backend_iam_AccessProfileRepository <<Repository>> {
+      + findByName(String name) : Optional<AccessProfile>
+      + findAll() : List<AccessProfile>
+      + save(AccessProfile profile) : AccessProfile
     }
-    interface "UserRepository" as Backend_iam_UserRepository <<interface>> {
+    interface "UserRepository" as Backend_iam_UserRepository <<Repository>> {
+      + findById(Long id) : Optional<User>
+      + findByEmail(String email) : Optional<User>
+      + findAll() : List<User>
+      + existsByEmail(String email) : boolean
+      + save(User user) : User
+    }
+    interface "PasswordResetTokenRepository" as Backend_iam_PasswordResetTokenRepository <<Repository>> {
+      + findByTokenHashAndUsedAtIsNull(String tokenHash) : Optional<PasswordResetToken>
+      + findByUserIdAndUsedAtIsNull(Long userId) : List<PasswordResetToken>
+      + save(PasswordResetToken token) : PasswordResetToken
+      + deleteByExpiresAtBefore(LocalDateTime expiresAt) : void
+    }
+    interface "UserUiPreferenceRepository" as Backend_iam_UserUiPreferenceRepository <<Repository>> {
+      + findByUserId(Long userId) : Optional<UserUiPreference>
+      + save(UserUiPreference preference) : UserUiPreference
     }
   }
   package "Domain / Services" {
+    class "AccessProfilePolicyService" as Backend_iam_AccessProfilePolicyService <<Domain Service>> {
+      + resolvePermissions(AccessProfile profile) : Set<AccessPermission>
+      + resolvePermissions(String profileName) : Set<AccessPermission>
+      + hasPermission(AccessProfile profile, AccessPermission permission) : boolean
+    }
     class "EmailPolicyService" as Backend_iam_EmailPolicyService <<Domain Service>> {
       + isAllowedEmail(String email) : boolean
     }
@@ -79,36 +141,23 @@ package "IAM / Domain" {
   package "Domain / Value Objects" {
     class "AccessProfileName" as Backend_iam_AccessProfileName <<record>> {
       + String value
-      + AccessProfileName(String value) : record
     }
     class "PasswordHash" as Backend_iam_PasswordHash <<record>> {
       + String value
-      + PasswordHash(String value) : record
     }
     class "RoleName" as Backend_iam_RoleName <<record>> {
       + String value
-      + RoleName(String value) : record
-      - PATTERN: Pattern
     }
   }
 }
 
+Backend_iam_User --> Backend_iam_AccessProfile
+Backend_iam_User --> Backend_iam_AccountStatus
+Backend_iam_AccessProfilePolicyService ..> Backend_iam_AccessPermission
+Backend_iam_AccessProfilePolicyService ..> Backend_iam_AccessProfile
 Backend_iam_AccessProfileRepository ..> Backend_iam_AccessProfile
 Backend_iam_UserRepository ..> Backend_iam_User
-
-' Layer relationship completion: every declared type participates in this layer diagram.
-Backend_iam_AccessProfileRepository ..> Backend_iam_DeleteAccountCommand
-Backend_iam_AccessProfileRepository ..> Backend_iam_RecoverPasswordCommand
-Backend_iam_AccessProfileRepository ..> Backend_iam_SignInCommand
-Backend_iam_AccessProfileRepository ..> Backend_iam_SignUpCommand
-Backend_iam_AccessProfileRepository ..> Backend_iam_UpdateProfileCommand
-Backend_iam_AccessProfileRepository ..> Backend_iam_UserRegisteredEvent
-Backend_iam_AccessProfileRepository ..> Backend_iam_AccountStatus
-Backend_iam_AccessProfileRepository ..> Backend_iam_EmailPolicyService
-Backend_iam_AccessProfileRepository ..> Backend_iam_PasswordPolicyService
-Backend_iam_AccessProfileRepository ..> Backend_iam_UserProfilePolicyService
-Backend_iam_AccessProfileRepository ..> Backend_iam_AccessProfileName
-Backend_iam_AccessProfileRepository ..> Backend_iam_PasswordHash
-Backend_iam_AccessProfileRepository ..> Backend_iam_RoleName
+Backend_iam_PasswordResetTokenRepository ..> Backend_iam_PasswordResetToken
+Backend_iam_UserUiPreferenceRepository ..> Backend_iam_UserUiPreference
 
 @enduml

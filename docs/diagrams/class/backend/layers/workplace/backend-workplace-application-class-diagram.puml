@@ -13,6 +13,7 @@ package "Workplace / Application" {
       - roomRepository: RoomRepository
       - assignmentRepository: DeviceAssignmentRepository
       - deviceRepository: DeviceRepository
+      - domainEventPublisher: DomainEventPublisher
       + getLocations(Long userId) : List<Location>
       + createLocation(CreateLocationCommand command) : Location
       + getRooms(Long userId, Long locationId) : List<Room>
@@ -32,12 +33,18 @@ package "Workplace / Application" {
       - validateRoomBelongsToLocation(Long roomId, Long locationId) : void
     }
   }
+  package "Application / Event Handlers" {
+    class "DeviceAssignedToRoomEventHandler" as Backend_workplace_DeviceAssignedToRoomEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(DeviceAssignedToRoomEvent event) : void
+    }
+  }
 }
 
 
 
 
 ' Single-class layer participation.
-Backend_workplace_WorkplaceApplicationService ..> Backend_workplace_WorkplaceApplicationService
+Backend_workplace_WorkplaceApplicationService ..> Backend_workplace_DeviceAssignedToRoomEventHandler : after commit
 
 @enduml
