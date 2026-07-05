@@ -4060,6 +4060,15 @@ En AV2, ElectroCorp evoluciono desde una propuesta validada y una Web Applicatio
 
 Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion real de las entrevistas de validacion, el registro de hallazgos con evidencia y la refinacion de los flujos conectados: seleccion de plan, creacion de cuenta, gestion de sedes, habitaciones, grupos de dispositivos, rutinas, alertas, metas y reportes. Tambien se recomienda mantener los despliegues sincronizados con la documentacion para que Swagger/OpenAPI y el README sigan reflejando el estado real del producto.
 
+### Roadmap y funcionalidades fuera del alcance de la versión actual
+
+Como parte de la priorización del alcance para esta versión, el equipo decidió posponer las capacidades de gestión multiusuario, que quedan documentadas en el roadmap para futuras iteraciones del producto:
+
+- **US-20 (Crear perfiles de acceso / invitar a familiares):** la administración de múltiples usuarios por cuenta, con invitación por correo y perfiles de permisos restringidos, se considera **fuera del alcance de la versión actual**. La versión entregada opera bajo un modelo de cuenta única por titular. Esta capacidad se contempla para una iteración posterior, junto con la definición de roles y niveles de permiso.
+- **US-26 (Compartir acceso con personal):** de forma análoga a US-20, la compartición de control de dispositivos por área o sector con empleados requiere el mismo soporte multiusuario y de permisos, por lo que también se posterga como parte del **roadmap** y no forma parte del alcance de esta versión.
+
+El resto de las historias comprometidas para el negocio (autenticación, suscripciones, gestión de sedes y dispositivos, monitoreo energético, alertas, reportes y soporte) sí forman parte del alcance implementado y desplegado.
+
 ## Video About-the-Team.
 
 * *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
