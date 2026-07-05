@@ -4193,6 +4193,10 @@ La documentacion de servicios se mantiene mediante Swagger/OpenAPI y se compleme
 * **Event Integration:** los integration events conectan IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management sin agregar endpoints publicos innecesarios.
 * **Error handling:** se conserva `ErrorResource` como contrato publico y se centraliza la respuesta de errores mediante el manejo global compartido.
 
+**Bearer JWT authorization evidence**
+
+<img src="assets/md-images-chapter5/platform-bearer.jpeg" alt="Swagger Bearer JWT authorization evidence"></img><br>
+
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
 El despliegue final considera las tres superficies principales del producto y el repositorio del informe. Cada repositorio mantiene ramas de desarrollo, release o main segun corresponda al flujo Gitflow aplicado durante el cierre.
@@ -4202,7 +4206,24 @@ El despliegue final considera las tres superficies principales del producto y el
 | Landing Page | GitHub Pages | Publicacion desde `main` y release `v4.0.0`, con CTA hacia la Web Application. |
 | Web Application | Render | Release `v4.0.0` integrada a `main`, con rutas de IAM, Billing, Workplace, Energy, Notifications, Reporting y Service Management. |
 | Backend Platform | Render | Release `v2.0.0` integrada a `main`, con health check, Swagger/OpenAPI y API REST por bounded contexts. |
+| Database | Render PostgreSQL | Base de datos PostgreSQL disponible para persistencia de usuarios, planes, sedes, dispositivos, lecturas, alertas, reportes y tickets. |
 | Project Report | GitHub Repository | Informe actualizado en ramas de documentacion y Gitflow hasta `main`, con diagramas y secciones finales sincronizadas. |
+
+**Backend Platform deployment evidence**
+
+<img src="assets/md-images-chapter5/platform-deployment.jpeg" alt="Backend platform deployment evidence"></img><br>
+
+**Database deployment evidence**
+
+<img src="assets/md-images-chapter5/database-deployment.jpeg" alt="Render PostgreSQL database deployment evidence"></img><br>
+
+**Frontend Web Application deployment evidence**
+
+<img src="assets/md-images-chapter5/webapp-deployment.jpeg" alt="Frontend Web Application deployment evidence"></img><br>
+
+**Landing Page deployment evidence**
+
+<img src="assets/md-images-chapter5/website-deployment.jpeg" alt="Landing Page deployment evidence"></img><br>
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
