@@ -4120,6 +4120,32 @@ Durante este Sprint, el equipo trabajo en el cierre final de los repositorios pr
 * **Frontend Release v4.0.0:** https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/releases/tag/v4.0.0
 * **Landing Page Release v4.0.0:** https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website/releases/tag/v4.0.0
 
+**Backend Platform development evidence**
+
+<img src="assets/md-images-chapter5/commits-1-platform-sprint-4.jpeg" alt="Backend Sprint 4 commits evidence 1"></img><br>
+<img src="assets/md-images-chapter5/commits-2-platform-sprint-4.jpeg" alt="Backend Sprint 4 commits evidence 2"></img><br>
+<img src="assets/md-images-chapter5/releases-platform-sprint-4.jpeg" alt="Backend Sprint 4 release evidence"></img><br>
+<img src="assets/md-images-chapter5/tags-platform-sprint-4.jpeg" alt="Backend Sprint 4 tags evidence"></img><br>
+
+**Frontend Web Application development evidence**
+
+<img src="assets/md-images-chapter5/commits-1-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 commits evidence 1"></img><br>
+<img src="assets/md-images-chapter5/commits-2-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 commits evidence 2"></img><br>
+<img src="assets/md-images-chapter5/releases-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 release evidence"></img><br>
+<img src="assets/md-images-chapter5/tags-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 tags evidence"></img><br>
+
+**Landing Page development evidence**
+
+<img src="assets/md-images-chapter5/commits-1-website-sprint-4.jpeg" alt="Landing Page Sprint 4 commits evidence 1"></img><br>
+<img src="assets/md-images-chapter5/commits-2-website-sprint-4.jpeg" alt="Landing Page Sprint 4 commits evidence 2"></img><br>
+<img src="assets/md-images-chapter5/releases-website-sprint-4.jpeg" alt="Landing Page Sprint 4 release evidence"></img><br>
+<img src="assets/md-images-chapter5/tags-website-sprint-4.jpeg" alt="Landing Page Sprint 4 tags evidence"></img><br>
+
+**Project Report development evidence**
+
+<img src="assets/md-images-chapter5/commits-1-report-sprint-4.jpeg" alt="Report Sprint 4 commits evidence 1"></img><br>
+<img src="assets/md-images-chapter5/commits-2-report-sprint-4.jpeg" alt="Report Sprint 4 commits evidence 2"></img><br>
+
 Como cierre tecnico, el backend incorpora un flujo de Event Integration interno: los eventos de dominio se mantienen dentro de cada bounded context, se traducen a integration events desde application/interfaces y se consumen despues del commit transaccional. Los eventos reforzados incluyen `OperationModeActivatedEvent`, `UserRegisteredEvent`, `SubscriptionActivatedEvent`, `PaymentRegisteredEvent`, `DeviceAssignedToRoomEvent`, `EnergyThresholdExceededEvent`, `SupportTicketCreatedEvent` y `MaintenanceTicketCreatedEvent`. Notifications los usa para crear alertas y Reporting los conserva como actividad para auditoria funcional.
 
 En IAM se refuerzan los puertos `HashingService` y `TokenService`, manteniendo BCrypt para credenciales y JWT Bearer para autenticacion. En la Web Application se mantiene la organizacion por bounded contexts y se corrige Workplace para que el geocoding sea resuelto por servicios de application/infrastructure. El informe se actualiza para que diagramas, README, backlog, deployment y evidencias reflejen el producto final y no una version parcial.
