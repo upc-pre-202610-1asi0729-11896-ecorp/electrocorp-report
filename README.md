@@ -1,39 +1,75 @@
 <div align="center">
 
-<img src="assets/UPC_logo_transparente.png"></img><br>
+<img src="assets/md-images-front-matter/upc-logo-transparente.png" width="52"></img><br>
 
-<h3>Universidad Peruana de Ciencias Aplicadas</h3>
-<h4>Facultad de Ingeniería</h4>
-<h4>Carrera de Ingeniería de Software</h4>
-<h4>Periodo 202610</h4>
-<h4>1ASI0729 Desarrollo de Aplicaciones Open Source</h4>
-<h4>NRC 11896</h4>
-<h4>Docente: Efraín Ricardo Bautista Ubillús</h4>
-<h4>Informe del Trabajo Final</h4>
-<h4>Startup: ElectroCorp</h4>
-<h4>Producto: Smart</h4>
+Universidad Peruana de Ciencias Aplicadas<br>
+Carrera de Ingeniería de Software<br><br>
 
-| **Código** | **Apellidos y Nombres**               |
-| :--------: | :------------------------------------ |
-| U20241e179 | Tavara Correa, Sebastian Oswaldo      |
-| U202418755 | Santiago Atanacio, Jairo Mathias      |
-| U20241e014 | Cabrejos Chocco, Diego Alexander      |
-| U20241e406 | Loa Rojas, Jean Franck                |
-| U202318828 | Documet Romero, Timothy               |
+<strong>1ASI0729</strong><br>
+<strong>Desarrollo de Aplicaciones Open Source</strong><br>
+NRC<br>
+<strong>11896</strong><br>
+<strong>Informe del Trabajo Final</strong><br>
+Docente<br>
+<strong>Bautista Ubillús, Efraín Ricardo</strong><br>
+Equipo<br>
+<strong>ElectroCorp</strong><br><br>
 
-### Mayo 2026
+Proyecto<br>
+<strong>Smart</strong><br><br>
+
+<strong>Integrantes</strong>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Apellidos y Nombres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U20241e179</td>
+      <td>Tavara Correa, Sebastian Oswaldo</td>
+    </tr>
+    <tr>
+      <td>U202418755</td>
+      <td>Santiago Atanacio, Jairo Mathias</td>
+    </tr>
+    <tr>
+      <td>U20241e014</td>
+      <td>Cabrejos Chocco, Diego Alexander</td>
+    </tr>
+    <tr>
+      <td>U20241e406</td>
+      <td>Loa Rojas, Jean Franck</td>
+    </tr>
+    <tr>
+      <td>U202318828</td>
+      <td>Documet Romero, Timothy</td>
+    </tr>
+    <tr>
+      <td>U20241b962</td>
+      <td>Navarro Aldoradin, Carolina Celeste</td>
+    </tr>
+  </tbody>
+</table>
+
+<strong>Período 202610</strong><br><br>
+
+<strong>Julio 2026</strong>
 </div>
 <div style="page-break-after: always;"></div>
 
 
 ## Registro de Versiones del Informe
 
-| Versión |  Fecha   |                                       Autor                                        |                                                  Descripción de modificación                                                   |
-| :-----: | :------: | :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
-|   AV1   | 03/04/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
-|   TP1   | 09/05/2026 |Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy| Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
-|   AV2   |            |       |                                                            |
-|   TF1   |            |       |                                                            |
+| Versión |   Fecha    |                                                                               Autor                                                                               |                                                  Descripción de modificación                                                   |
+| :-----: |:----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------------------------------------------------------------------------: |
+|   AV1   | 03/04/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
+|   TB1   | 09/05/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
+|   AV2   | 12/06/2026 |                   Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck                    | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
+|   TB2   | 05/07/2026 | Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste | Corrección de coherencia entre informe e implementación: suscripciones con checkout y validación de pago interna, alertas in-app, y documentación de OpenStreetMap/Nominatim como servicio externo de terceros. |
 
 <div style="page-break-after: always;"></div>
 
@@ -56,15 +92,8 @@ A continuación, se detallan los repositorios utilizados a lo largo del proyecto
 
 - https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
 
-
-
-### **Entrega TB1:**
+### **Entrega AV1:**
 Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
-Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de desarrollar sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub, asegurando así un seguimiento claro de los avances y la colaboración conjunta.
-
-
 
 ##### Participación por integrante:
 
@@ -77,11 +106,11 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/top-commiters.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/top-committers.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/commits.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/commits.png"></div><br><br>
 
 
     * **Commits**
@@ -90,41 +119,46 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/sebastian-commits.PNG?raw=true" >
+            <img src="assets/md-images-front-matter/sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jairo-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/diego-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jean-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/jean-commits.png">
             </div><br>
         + **Timothy Documet**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/timothy-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/timothy-commits.png">
             </div><br><br>
 
-- Tavara Correa, Sebastian Oswaldo: Desarrollo de los capitulos 1, 2, 3 y 4.      <br>
-- Santiago Atanacio, Jairo Mathias: Desarrollo de los capitulos 1, 2, 4 y 5. 
-- Cabrejos Chocco, Diego Alexander: Desarrollo de los capitulos 2,4, 5 y landing page.  
-- Loa Rojas, Jean Franck: Desarrollo de los capitulos 1, 2, 4 y Aplicación web.
-- Documet Romero, Timothy: Desarrollo de capitulo 1.    
+### **Entrega TB1:**
+Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub cada uno en su debida rama, asegurando así un seguimiento claro de los avances y la colaboración conjunta. Ademas hicimos mejoras en la parte del frontend y la landing page.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Dirigir y distribuir las tareas según la capacidad de cada miembro.      <br>
+- Santiago Atanacio, Jairo Mathias: Se corrigieron los errores presentes en las tablas y diagramas del trabajo. 
+- Cabrejos Chocco, Diego Alexander: Crea y mejora versiones de la página de inicio, que a su vez se conecta con la aplicación web.  
+- Loa Rojas, Jean Franck: Desarrollar e implementar la primera versión de la aplicación web, asegurando de que se desplegara sin errores y se conectara a la landing page 
+- Documet Romero, Timothy: Historias técnicas, corregir historias de usuario   
 
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
         + **Pulse Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/top-commiters.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
 
 
         + **Contributors Image of Github Insights**
-        <div align="center"><img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/commits.PNG?raw=true"></div><br><br>
+        <div align="center"><img src="assets/md-images-front-matter/tb1-commits.png"></div><br><br>
 
 
     * **Commits**
@@ -133,26 +167,65 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 
         + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/sebastian-commits.PNG?raw=true" >
+            <img src="assets/md-images-front-matter/tb1-sebastian-commits.png" >
             </div><br>
 
         + **Jairo Santiago**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jairo-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/tb1-jairo-commits.png">
             </div><br>
 
         + **Diego Cabrejos**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/diego-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/tb1-diego-commits.png">
             </div><br>
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/jean-commits.PNG?raw=true">
+            <img src="assets/md-images-front-matter/tb1-jean-commits.png">
             </div><br>
-        + **Timothy Documet**
+
+### **Entrega AV2:**
+Se hicieron las correcion a la parte del frontend y a la parte de la landing page, tambien se hicieron algunas correciones en el reporte ademas de agregar el nuevo sprint. Tambien se avanzo la parte del backend dejandolo completamente operativo.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Event Storming, Correciones en el report y parte del backend      <br>
+- Santiago Atanacio, Jairo Mathias: Parte del backend y correcion del frontend
+- Cabrejos Chocco, Diego Alexander: Correcion de la landing page y agregar el sprint 3
+- Loa Rojas, Jean Franck: Desarrollo y despliegue del backend, ademas correcion del frontend
+
++ **Evidencias de colaboración y commits - Github:**
+    * **Análiticos de colaboración** <br><br>
+        + **Pulse Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb1-top-commiters.png"></div><br><br>
+
+
+        + **Contributors Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/av2-commits.png"></div><br><br>
+
+
+    * **Commits**
+
+         A continuación se muestran algunos commits realizados en este entrega de TB1.
+
+        + **Sebastian Tavara**
             <div style="display: flex; align-items: center;">
-            <img src="https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/blob/main/assets/timothy-commits.PNG?raw=true">
-            </div><br><br>
+            <img src="assets/md-images-front-matter/av2-sebastian-commits.png" >
+            </div><br>
+
+        + **Jairo Santiago**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jairo-commits.png">
+            </div><br>
+
+        + **Diego Cabrejos**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-diego-commits.png">
+            </div><br>
+        + **Jean Loa**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/av2-jean-commits.png">
+            </div><br>
 
 
 # Contenido
@@ -278,6 +351,9 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Links importantes](#links-importantes)
+  - [Credenciales de prueba](#credenciales-de-prueba)
+
 
 <div style="page-break-after: always;"></div>
 
@@ -286,8 +362,8 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 Objetivo general, ABET – EAC - Student Outcome 3: Capacidad de comunicarse efectivamente con un rango de audiencias.
 | Criterio Especifico | Acciones realizadas | Conclusiones |
 |--|--|--|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | Sebastian Tavara <br>AV1: Realizo entrevistas clave para poder entender al usuario<br> TP1: Comunicó al equipo los hallazgos de las pruebas iniciales sobre la App Web desplegada, sugiriendo ajustes desde la perspectiva del usuario final.<br> AV2: <br> TF1: <br> <br> Diego Cabrejos <br>AV1: Expuso la estructura y los avances del desarrollo de la Landing Page durante las reuniones del equipo<br> TP1: Expuso las actualizaciones implementadas en la Landing Page de ElectroCorp, explicando las correcciones de errores y las mejoras visuales realizadas para esta entrega.<br> AV2: <br> TF1: <br> <br> Jean Loa <br> AV1: Expuso la estructura general de la aplicación, explicó la función de los módulos principales del sistema y comunicó al equipo cómo se relacionaban las secciones del frontend con la lógica del backend durante el desarrollo inicial del proyecto.<br> TP1: Explicó el proceso y la configuración técnica requerida para realizar el primer despliegue de la App Web, asegurando que el equipo comprendiera el entorno de producción.<br> AV2: <br> TF1: <br> <br> Timothy Documet <br>AV1: Realizo entrevistas clave para el proyecto, así como las user stories, el product backlog y el ubiquitous language.<br> TP1: Comunicó el estado de avance de las historias de usuario durante la revisión del sprint, validando qué requerimientos se cumplieron con el despliegue.<br> AV2: <br> TF1:<br> <br> Jairo Santiago <br> AV1: Expuso en las reuniones de equipo la estructura de las historias de usuario y los criterios de aceptación para el proyecto ElectroCorp. Explicó detalladamente el diseño y las interacciones de los Diagramas de Contexto y Contenedores (Modelo C4) de la arquitectura del software. Además, comunicó oralmente las normativas de la Guía de Estilos de Código, asegurando que todos los miembros comprendieran las convenciones a seguir durante el desarrollo. <br> TP1: Sustentó los ajustes arquitectónicos necesarios durante el paso a producción de la App Web, guiando al equipo para mantener los estándares técnicos.<br> AV2: <br> TF1: <br> <br>| Sebastian Tavara <br> Fue muy interesante poder estar cerca al usuario y poder tener una mejor vision del problema al que nos enfrentabamos. <br><br> Jean Loa <br> La comunicación oral en la etapa inicial permitió transmitir con claridad la estructura funcional del sistema y facilitó que el equipo comprendiera mejor cómo se integraban las principales partes de la aplicación.<br> <br> Jairo Santiago <br> AV1: Durante esta primera etapa, el equipo logró establecer un canal de comunicación oral constante y efectivo. A través de exposiciones en reuniones regulares, los integrantes lograron articular y transmitir ideas complejas sobre la arquitectura del sistema, el flujo de desarrollo y las normas de codificación. Esto permitió alinear la visión del proyecto (ElectroCorp), resolver dudas técnicas en tiempo real y asegurar que todos los miembros compartieran un entendimiento claro de los objetivos iniciales.<br><br> TP1 (Grupal): El primer despliegue de la App Web y la actualización de la Landing Page exigieron una coordinación oral precisa. El equipo logró discutir y resolver en tiempo real los retos técnicos de llevar el proyecto a producción, manteniendo una división de tareas clara y efectiva entre el código estático y la lógica desplegada.<br> AV2: <br> TF1: <br> <br> |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia | Sebastian Tavara <br>AV1: Analisis de entrevista, User Persona<br> TP1: Documentó los reportes de usabilidad y los posibles bugs encontrados al interactuar con el primer despliegue de la aplicación.<br> AV2: <br> TF1: <br> <br> Diego Cabrejos <br>AV1: Redactó y estructuró la documentación técnica del Sprint 1 (Sprint Planning y Sprint Backlog) en el informe del proyecto. Además, comunicó el progreso del desarrollo a través de código semántico y descriptivo en la Landing Page, documentando los cambios mediante mensajes de commit claros en el repositorio de GitHub.<br> TP1: Documentó los cambios y correcciones de la Landing Page mediante mensajes de commit claros en el repositorio, y actualizó la documentación técnica de la interfaz.<br> AV2: <br> TF1: <br> <br> Jean Loa <br> AV1: Redactó contenido técnico relacionado con la estructura funcional de la aplicación, describió la organización inicial del sistema y documentó por escrito la lógica general de los módulos implementados en el proyecto.<br> TP1: Redactó la documentación técnica sobre el despliegue de la App Web, incluyendo las configuraciones de entorno y dependencias utilizadas en producción.<br> AV2: <br> TF1: <br> <br> Timothy Documet <br>AV1:<br> TP1: Actualizó el Sprint Backlog marcando las tareas completadas y redactó las notas de la versión (Release Notes) correspondientes a esta primera entrega.<br> AV2: <br> TF1:<br> <br> Jairo Santiago <br> AV1: Redactó y estructuró el Product Backlog y las historias de usuario (User Stories y Technical Stories) utilizando el lenguaje Gherkin para asegurar la claridad de los requisitos. Diseñó y documentó la arquitectura del sistema elaborando los Diagramas de Contexto y de Contenedores. También redactó la Guía de Estilos y Convenciones de Código para estandarizar el desarrollo del proyecto en HTML, CSS, JavaScript y Java dentro del informe técnico.<br> TP1: Actualizó los diagramas de arquitectura para reflejar el entorno de despliegue y registró las nuevas normativas de código adoptadas en esta fase.<br> AV2: <br> TF1: <br> <br>| Sebastian Tavara <br> Ayudo muchisimo el crear el User Persona para poder modelar el modelo de cada segmento en una sola persona. <br><br> Jean Loa <br> La comunicación escrita en la etapa inicial ayudó a dejar organizada la estructura del sistema y permitió describir con claridad la función de los módulos principales, facilitando la comprensión del proyecto desde una perspectiva técnica y académica. <br> <br> Jairo Santiago <br> AV1: En este primer avance, el equipo demostró una sólida capacidad para documentar técnicamente el proyecto con gran nivel de detalle y profesionalismo. Mediante la redacción de artefactos clave como el Product Backlog, las historias de usuario bajo el estándar Gherkin, los diagramas de arquitectura C4 y las guías de estilo, se logró plasmar por escrito la complejidad técnica y los requisitos del sistema. Esta documentación clara y estructurada garantiza que cualquier perfil técnico o de negocio pueda comprender el alcance y las bases del desarrollo de ElectroCorp.<br><br> TP1 (Grupal): La comunicación escrita fue fundamental para el control de versiones en esta etapa. Registrar las actualizaciones del código, los pasos de despliegue y la actualización del backlog permitió mantener la trazabilidad del proyecto y asegurar la replicabilidad técnica del entorno.<br> AV2: <br> TF1: <br> <br>|
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | Sebastian Tavara <br>AV1: Realizo entrevistas clave para poder entender al usuario<br> TP1: Comunicó al equipo los hallazgos de las pruebas iniciales sobre la App Web desplegada, sugiriendo ajustes desde la perspectiva del usuario final.<br> AV2: Presento los avances de integracion frontend-backend y explico al equipo como los flujos de sedes, dispositivos y dashboard debian validarse desde la experiencia del usuario.<br> TF1: <br> <br> Diego Cabrejos <br>AV1: Expuso la estructura y los avances del desarrollo de la Landing Page durante las reuniones del equipo<br> TP1: Expuso las actualizaciones implementadas en la Landing Page de ElectroCorp, explicando las correcciones de errores y las mejoras visuales realizadas para esta entrega.<br> AV2: Expuso el avance de monitoreo energetico, notificaciones y reporting, comunicando como estos modulos apoyan la toma de decisiones de consumo.<br> TF1: <br> <br> Jean Loa <br> AV1: Expuso la estructura general de la aplicación, explicó la función de los módulos principales del sistema y comunicó al equipo cómo se relacionaban las secciones del frontend con la lógica del backend durante el desarrollo inicial del proyecto.<br> TP1: Explicó el proceso y la configuración técnica requerida para realizar el primer despliegue de la App Web, asegurando que el equipo comprendiera el entorno de producción.<br> AV2: Explico la arquitectura del backend, el despliegue en Render y la habilitacion de rutas publicas, health check y Swagger/OpenAPI para la validacion tecnica.<br> TF1: <br> <br> Timothy Documet <br>AV1: Realizo entrevistas clave para el proyecto, así como las user stories, el product backlog y el ubiquitous language.<br> TP1: Comunicó el estado de avance de las historias de usuario durante la revisión del sprint, validando qué requerimientos se cumplieron con el despliegue.<br> AV2: Comunico los avances de Service Management y apoyo en la revision de evidencias del informe para mantener coherencia con los requerimientos de AV2.<br> TF1:<br> <br> Jairo Santiago <br> AV1: Expuso en las reuniones de equipo la estructura de las historias de usuario y los criterios de aceptación para el proyecto ElectroCorp. Explicó detalladamente el diseño y las interacciones de los Diagramas de Contexto y Contenedores (Modelo C4) de la arquitectura del software. Además, comunicó oralmente las normativas de la Guía de Estilos de Código, asegurando que todos los miembros comprendieran las convenciones a seguir durante el desarrollo. <br> TP1: Sustentó los ajustes arquitectónicos necesarios durante el paso a producción de la App Web, guiando al equipo para mantener los estándares técnicos.<br> AV2: Sustento los avances de IAM y Billing, explicando la relacion entre registro, seleccion de plan y activacion de la cuenta dentro del flujo principal.<br> TF1: <br> <br>| AV1: Durante esta primera etapa, se establecio un canal de comunicacion oral constante para alinear la vision del proyecto, explicar el problema identificado y coordinar la estructura inicial de ElectroCorp.<br><br> TB1: El primer despliegue de la App Web y la actualizacion de la Landing Page exigieron una coordinacion oral precisa para resolver retos tecnicos de publicacion, navegacion y presentacion del producto.<br><br> AV2: En AV2, la comunicacion oral permitio explicar el avance integral de ElectroCorp, conectando backend, frontend, despliegue, validacion y documentacion tecnica para distintos tipos de audiencia.<br><br> TB2: <br><br> |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia | Sebastian Tavara <br>AV1: Analisis de entrevista, User Persona<br> TP1: Documentó los reportes de usabilidad y los posibles bugs encontrados al interactuar con el primer despliegue de la aplicación.<br> AV2: Documento los criterios de navegacion e integracion de la Web Application, dejando evidencia del rol de las pantallas en los flujos de usuario.<br> TF1: <br> <br> Diego Cabrejos <br>AV1: Redactó y estructuró la documentación técnica del Sprint 1 (Sprint Planning y Sprint Backlog) en el informe del proyecto. Además, comunicó el progreso del desarrollo a través de código semántico y descriptivo en la Landing Page, documentando los cambios mediante mensajes de commit claros en el repositorio de GitHub.<br> TB1: Documentó los cambios y correcciones de la Landing Page mediante mensajes de commit claros en el repositorio, y actualizó la documentación técnica de la interfaz.<br> AV2: Registro cambios relacionados con dashboard, notificaciones y reportes, manteniendo trazabilidad escrita en commits, tablas y evidencias del Sprint 3.<br> TF1: <br> <br> Jean Loa <br> AV1: Redactó contenido técnico relacionado con la estructura funcional de la aplicación, describió la organización inicial del sistema y documentó por escrito la lógica general de los módulos implementados en el proyecto.<br> TP1: Redactó la documentación técnica sobre el despliegue de la App Web, incluyendo las configuraciones de entorno y dependencias utilizadas en producción.<br> AV2: Documento configuraciones de backend, rutas publicas, despliegue en Render y contratos OpenAPI para facilitar la revision tecnica del proyecto.<br> TF1: <br> <br> Timothy Documet <br>AV1:<br> TP1: Actualizó el Sprint Backlog marcando las tareas completadas y redactó las notas de la versión (Release Notes) correspondientes a esta primera entrega.<br> AV2: Actualizo evidencias del informe y organizo informacion de soporte, servicios y diagramas para mantener continuidad con las entregas anteriores.<br> TF1:<br> <br> Jairo Santiago <br> AV1: Redactó y estructuró el Product Backlog y las historias de usuario (User Stories y Technical Stories) utilizando el lenguaje Gherkin para asegurar la claridad de los requisitos. Diseñó y documentó la arquitectura del sistema elaborando los Diagramas de Contexto y de Contenedores. También redactó la Guía de Estilos y Convenciones de Código para estandarizar el desarrollo del proyecto en HTML, CSS, JavaScript y Java dentro del informe técnico.<br> TP1: Actualizó los diagramas de arquitectura para reflejar el entorno de despliegue y registró las nuevas normativas de código adoptadas en esta fase.<br> AV2: Documento historias, criterios y componentes asociados a IAM y Billing, reforzando la claridad del flujo de registro y seleccion de plan.<br> TF1: <br> <br>| AV1: En el primer avance, la documentacion permitio organizar el problema, los segmentos objetivo, las historias de usuario, los criterios de aceptacion, la arquitectura inicial y las decisiones de estilo del proyecto.<br><br> TB1: La comunicacion escrita fue clave para registrar avances de versionamiento, despliegue, backlog y evidencias de la Landing Page y la Web Application, manteniendo trazabilidad tecnica del producto.<br><br> AV2: La documentacion de AV2 se fortalecio con Sprint 3, diagramas por bounded context, evidencias de despliegue, validacion, contratos de backend y actualizacion del README para revision tecnica y academica.<br><br> TB2: <br><br> |
 
 
 # Capitulo I: Introducción
@@ -314,14 +390,14 @@ Nuestra misión es brindar a las familias peruanas soluciones de domótica acces
 Queremos que ElectroCorp sea el referente en el Perú en gestión energética residencial, transformando los hogares tradicionales en espacios eficientes y sostenibles que alivien la economía familiar y contribuyan al cuidado del medio ambiente.
 
 ### 1.1.2. Perfiles de integrantes del equipo
-| **Nombre Completo del integrante**    |	**Descripcion de la carrera** | **Fotografia** | **Conocimientos y habilidades**
-| :------------------------------------ |:------------------------------------ |:------------------------------------ |:------------------------------------ |
-| Tavara Correa, Sebastian Oswaldo      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
-| Santiago Atanacio, Jairo Mathias      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Jairo_Santiago.png"> | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
-| Cabrejos Chocco, Diego Alexander      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/Diego_Cabrejos.jpg"> | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
-| Loa Rojas, Jean Franck      |Ingeniería de Software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Jean_Loa.jpg"> | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
-| Documet Romero, Timothy     |Ingeniera de software Universidad Peruana de Ciencias Aplicadas| <img src="assets/Timothy_Documet.jpeg"> | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
-
+| **Nombre Completo del integrante**    | 	**Descripcion de la carrera**                                   | **Fotografia**                                                         | **Conocimientos y habilidades**
+| :------------------------------------ |:-----------------------------------------------------------------|:-----------------------------------------------------------------------|:------------------------------------ |
+| Tavara Correa, Sebastian Oswaldo      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/foto-carnet-sebastian-tavara.jpg"> | Soy Sebastian Oswaldo Tavara Correa estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, me considero una persona estudiosa y muy colaborativa al trabajar en grupo. Me adapto rápidamente a cualquier entorno. Me interesa desarrollar soluciones tecnológicas que tengan un impacto positivo. Creo que el desarrollo de software no debe limitarse en buscar la mayor funcionalidad, sino que también en generar bienestar en la sociedad.
+| Santiago Atanacio, Jairo Mathias      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/jairo-santiago.png">               | Soy Jairo Mathias Santiago Atanacio, estudiante de 5to ciclo de Ingeniería de Software. Cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, y el dominio de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona transformar problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que me permite integrarme fácilmente en equipos colaborativos bajo metodologías ágiles.
+| Cabrejos Chocco, Diego Alexander      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/diego-cabrejos.jpg">               | Soy Diego Alexander Cabrejos Chocco estudiante de la carrera de ingeniería de software, actualmente cursando el 5to ciclo, soy una persona sociable, creativa, que trabaja bien en equipo y busco que todo el equipo participe en las actividades activamente. Me adapto rapidamente a la modalidad de trabajo. Mi meta es poder crear y desarrollar proyectos tecnologicos que tenga un impacto positivo y que sea entretenido. Lo mas interesante de la Software es que cada vez se va expandiendo, y las opciones para poder desarrollar algun proyecto por mas interesante o loco que paresca el tema, no es impedimento para desarrollar lo que desees. (claro que siempre siguiendo el tema legal)
+| Loa Rojas, Jean Franck      | Ingeniería de Software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/jean-loa.jpg">                     | Soy Jean Franck Loa Rojas, estudiante de 5to ciclo de la carrera de Ingeniería de Software. Actualmente estoy abierto a oportunidades laborales para emplear mis conocimientos en programación y obtener experiencia trabajando de la mano con conocedores y profesionales de mi rubro académico. Estoy emocionado por todo lo que puede venir en el futuro, y las colaboraciones tecnológicas entre países para compartir conocimiento y prosperar una nación unida y pacífica.
+| Documet Romero, Timothy     | Ingeniería de software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/timothy-documet.jpeg">             | Soy Timothy Documet Romero, estudiante de Ingeniería de Software, cuento con una base sólida en el desarrollo de algoritmos en C++, la creación de interfaces web interactivas mediante HTML, CSS y JavaScript, así como en el manejo de bases de datos relacionales (MySQL) y no relacionales (MongoDB). Me apasiona convertir problemas complejos en soluciones de software eficientes, escalables y con una gestión de datos versátil. Mi enfoque combina la rigurosidad técnica con habilidades blandas como la proactividad y la empatía, lo que le permite integrarse con facilidad en equipos colaborativos bajo metodologías ágiles.
+| Navarro Aldoradin, Carolina Celeste | Ingeniería de software Universidad Peruana de Ciencias Aplicadas | <img src="assets/md-images-chapter1/carolina-navarro.jpg"> | Soy Carolina Navarro, estudiante de Ingeniería de Software, me encuentro cursando el 5to ciclo y cuento con una base sólida en el pensamiento de sistemas, lenguajes como C++, JavaScript, Java, Python, Assembler, CSS y HTML, bases relacionales y no relacionales, y experiencia en sistemas industrias, IoT y maquinaria pesada. Me apasiona entender sistemas que conectan elementos de diferentes disciplinas y convertir black boxes en puzzles por resolver y entender.
 ## 1.2 *Solution Profile*
 ### 1.2.1 Antecedentes y problemática
 La energía eléctrica, es uno de los recursos más importantes de nuestra sociedad actual, ayudándonos a desarrollar multiplicidad de tareas, ya sea en hogares, instituciones educativas, espacios publicos, sector empresarial, etc.
@@ -350,7 +426,7 @@ Impacto Económico: Desarrollar un algoritmo de análisis de datos que proporcio
 
 ## Restricciones
 Restricciones de Alcance (Scope)
-Integración de terceros: En su primera versión, el ecosistema IoT operará exclusivamente a través de la plataforma web y móvil propietaria de ElectroCorp. No se contemplará la integración con asistentes de voz de terceros (como Amazon Alexa, Google Assistant o Apple HomeKit) para mantener el enfoque en la robustez de la interfaz nativa.
+Integración de terceros: En su primera versión, el ecosistema IoT operará a través de la plataforma web propietaria de ElectroCorp. No se contempla la integración con asistentes de voz de terceros (como Amazon Alexa, Google Assistant o Apple HomeKit) para mantener el enfoque en la robustez de la interfaz nativa. Sí se contempla la integración con el servicio externo de terceros **OpenStreetMap / Nominatim**, utilizado por la Web Application para la geolocalización, la geocodificación de direcciones y la visualización de mapas en la gestión de sedes.
 
 Restricciones de Tiempo y Costo
 Cronograma de Desarrollo: El ciclo de vida del proyecto está estrictamente sujeto al calendario académico regular. Todas las fases de diseño, desarrollo, pruebas y despliegue deben completarse y documentarse para coincidir con los hitos de entrega programados (TB1, TP1, TB2 y TF1).
@@ -538,10 +614,10 @@ A través de esta comparativa, buscamos determinar el valor diferencial de Elect
   </tr>
   <tr>
     <td colspan="2">Nombre y logo de competidor</td>
-    <td><b>ElectroCorp <img src="assets/logo_electrocorp.jpeg" alt="Smart" width="120" height="120" /> </b></td>
-    <td><b> Sonoff Peru</b> <img src="assets/sonoff.png" width="120" height="120" /> </td>
-    <td><b>Xiaomi Mi Smart Plug</b> <img src="assets/xiaomi.png" width="120" height="120" /> </td>
-    <td><b>Smart Plugs</b> <img src="assets/promart.png" width="120" height="120" /> </td>
+    <td><b>ElectroCorp <img src="assets/md-images-chapter2/logo-electrocorp.jpeg" alt="Smart" width="120" height="120" /> </b></td>
+    <td><b> Sonoff Peru</b> <img src="assets/md-images-chapter2/sonoff.png" width="120" height="120" /> </td>
+    <td><b>Xiaomi Mi Smart Plug</b> <img src="assets/md-images-chapter2/xiaomi.png" width="120" height="120" /> </td>
+    <td><b>Smart Plugs</b> <img src="assets/md-images-chapter2/promart.png" width="120" height="120" /> </td>
   </tr>
   <tr>
     <td rowspan="2"><b>Perfil</b></td>
@@ -756,10 +832,10 @@ Segmento 1: Hogares urbanos con viviendas antiguas
 
 | N | Datos |Descripción |Imagen referencial
 |--|--|--|--|
-|1  | Nombre: Sonia<br>Apellido: Rojas <br>Edad: 48<br>Distrito: Ate | Sonia Rojas, es una mujer de 48 años que reside en Lima, distrito de Vitarte. Cuenta con educación secundaria completa y se desempeña en un negocio dependiente, lo que sugiere ingresos relativamente estables pero limitados.<br><br>Se percibe como una persona:<br>- Práctica y conservadora, prioriza lo funcional sobre la innovación<br>- Confiada en el estado actual de su hogar, ya que considera que sus instalaciones eléctricas cumplen con los estándares.<br>- Poco exploradora en tecnología, no ha implementado soluciones de hogar inteligente.<br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas están en buen estado y cumplen con lo requerido por la empresa proveedora <br>- Tiene un hábito de revisión mensual del recibo de luz<br>Es de denotar que no existe una preocupación activa por el consumo energético, sin embargo, si hay una oportunidad de mejora.<br><br>Necesidades y Motivaciones<br>- Interés en control remoto de dispositivos (TV, lavadora)<br>- Interés en visualizar consumo en soles en tiempo real.<br>- Necesidad de facilidad de uso para toda la familia. |<img src="assets/seg1 - img1.jpg">
-|2  | Nombre: Victor<br>Apellido: Loa <br>Edad: 59<br>Distrito: Ate | Víctor Loa, es un hombre de 59 años que reside en Lima, distrito de Ate Vitarte. Cuenta con educación secundaria completa y se desempeña como trabajador independiente.<br><br>Se percibe como una persona<br>- Tranquila y conservadora, no muestra preocupación por su consumo actual.<br>- Confiada en su entorno, considera que sus instalaciones funcionan correctamente.<br>- Precavida, especialmente frente a desconocidos (técnicos).<br>Se denota que no busca implementar tecnología, sin embargo puede adoptarla si percibe utilidad clara.<br><br>Contexto del hogar y uso de energía<br>- Considera que sus instalaciones eléctricas están en buen estado.<br>- Revisa su recibo de luz mensualmente <br>- Percibe que el consumo es estable y no varía mucho<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos(principalmente TV).<br>- Visualización del consumo en dinero.<br>Se puede ver que su motivación principal es la comodidad, orientación y simplicidad.|<img src="assets/seg1 - img2.jpg">
-|3  | Nombre: Margarita<br>Apellido: Espinoza <br>Edad: 49<br>Distrito: Cieneguilla |Margarita representa a una ama de casa:<br>- Tener conectados los artefactos y servicios de cableado "normales"<br>- Controlar la energía empleada en ciertos artefactos<br>- Conocer técnicos especializados en mejorar experiencias de usuario|<img src="assets/Entrevista-Margarita_Espinoza.png">
-|4  | Nombre: Victor<br>Apellido: Documet <br>Edad: 52<br>Distrito: surco |Víctor Documet, es un hombre adulto (edad no especificada, pero inferida como adulto medio) que reside en un edificio con varios años de antigüedad.<br><br>Se percibe como una persona:<br>- Preocupado por los costos, espacialmente el consumo eléctrico.<br>- Realista y crítica, reconoce limitaciones en su vivienda (requiere mantenimiento).<br>- Interesada en la tecnología, pero con dificultades prácticas. <br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas son buenas en general, aunque requieren mantenimiento. <br>- Revisa su recibo de luz mensualmente.<br>- Percibe que el consumo aumenta constantemente.<br>Se percibe una preocupación activa y creciente por el gasto energético.<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos (Microondas, Olla arrocera).<br>- Visualización del consumo.<br>- Conocer como mejorar la interfaz de usuario|<img src="assets/seg1-img3.jpg">
+|1  | Nombre: Sonia<br>Apellido: Rojas <br>Edad: 48<br>Distrito: Ate | Sonia Rojas, es una mujer de 48 años que reside en Lima, distrito de Vitarte. Cuenta con educación secundaria completa y se desempeña en un negocio dependiente, lo que sugiere ingresos relativamente estables pero limitados.<br><br>Se percibe como una persona:<br>- Práctica y conservadora, prioriza lo funcional sobre la innovación<br>- Confiada en el estado actual de su hogar, ya que considera que sus instalaciones eléctricas cumplen con los estándares.<br>- Poco exploradora en tecnología, no ha implementado soluciones de hogar inteligente.<br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas están en buen estado y cumplen con lo requerido por la empresa proveedora <br>- Tiene un hábito de revisión mensual del recibo de luz<br>Es de denotar que no existe una preocupación activa por el consumo energético, sin embargo, si hay una oportunidad de mejora.<br><br>Necesidades y Motivaciones<br>- Interés en control remoto de dispositivos (TV, lavadora)<br>- Interés en visualizar consumo en soles en tiempo real.<br>- Necesidad de facilidad de uso para toda la familia. |<img src="assets/md-images-chapter2/seg1-img1.jpg">
+|2  | Nombre: Victor<br>Apellido: Loa <br>Edad: 59<br>Distrito: Ate | Víctor Loa, es un hombre de 59 años que reside en Lima, distrito de Ate Vitarte. Cuenta con educación secundaria completa y se desempeña como trabajador independiente.<br><br>Se percibe como una persona<br>- Tranquila y conservadora, no muestra preocupación por su consumo actual.<br>- Confiada en su entorno, considera que sus instalaciones funcionan correctamente.<br>- Precavida, especialmente frente a desconocidos (técnicos).<br>Se denota que no busca implementar tecnología, sin embargo puede adoptarla si percibe utilidad clara.<br><br>Contexto del hogar y uso de energía<br>- Considera que sus instalaciones eléctricas están en buen estado.<br>- Revisa su recibo de luz mensualmente <br>- Percibe que el consumo es estable y no varía mucho<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos(principalmente TV).<br>- Visualización del consumo en dinero.<br>Se puede ver que su motivación principal es la comodidad, orientación y simplicidad.|<img src="assets/md-images-chapter2/seg1-img2.jpg">
+|3  | Nombre: Margarita<br>Apellido: Espinoza <br>Edad: 49<br>Distrito: Cieneguilla |Margarita representa a una ama de casa:<br>- Tener conectados los artefactos y servicios de cableado "normales"<br>- Controlar la energía empleada en ciertos artefactos<br>- Conocer técnicos especializados en mejorar experiencias de usuario|<img src="assets/md-images-chapter2/entrevista-margarita-espinoza.png">
+|4  | Nombre: Victor<br>Apellido: Documet <br>Edad: 52<br>Distrito: surco |Víctor Documet, es un hombre adulto (edad no especificada, pero inferida como adulto medio) que reside en un edificio con varios años de antigüedad.<br><br>Se percibe como una persona:<br>- Preocupado por los costos, espacialmente el consumo eléctrico.<br>- Realista y crítica, reconoce limitaciones en su vivienda (requiere mantenimiento).<br>- Interesada en la tecnología, pero con dificultades prácticas. <br><br>Contexto del hogar y uso de la energía<br>- Considera que sus instalaciones eléctricas son buenas en general, aunque requieren mantenimiento. <br>- Revisa su recibo de luz mensualmente.<br>- Percibe que el consumo aumenta constantemente.<br>Se percibe una preocupación activa y creciente por el gasto energético.<br><br>Necesidades y Motivaciones<br>- Control remoto de dispositivos (Microondas, Olla arrocera).<br>- Visualización del consumo.<br>- Conocer como mejorar la interfaz de usuario|<img src="assets/md-images-chapter2/seg1-img3.jpg">
 
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
@@ -767,9 +843,9 @@ Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
 | N | Datos |Descripción |Imagen referencial
 |--|--|--|--|
-|1  | Nombre: Orlando<br>Apellido: Trinidad <br>Edad: 48<br>Distrito: La Victoria |El entrevistado Orlando Trinidad Parra, es un hombre de 48 años que reside en La Victoria. Se desempeña como microempresario del rubro textil, específicamente en la confección, operando un taller con varias máquinas industriales. Su negocio se encuentra dentro del segmento de pequeñas y medianas empresas (PYME), lo que implica recursos limitados y alta sensibilidad a los costos operativos.<br><br>Se percibe como una persona:<br>- Responsable y organizada ya que tiene trabajadores que limpian y apagan la maquina que trabajan.<br>- Abierta al cambio tecnológico, pero con criterio económico.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Maquinas remalladoras.<br>- Maquinas rectas.<br>- Cortadora.<br>Se puede denotar que el consumo energético es alto y critico, impactando directamente la rentabilidad del negocio<br><br>Problemas detectados:<br>- Errores humanos frecuentes, especialmente en personal nuevo.<br>- Equipos que quedan encendidos o conectados innecesariamente.<br>- Desconocimiento del costo exacto por máquina, solo percibe el gasto total.<br><br>El entrevistado muestra interes en soluciones tecnologicas que le permitan:<br>- Medir el costo real por máquina (no solo consumo)<br>- Automatizar encendido/apagado<br>- Obtener reportes de desperdicio energético|<img src="assets/seg2 - img1.png">
-|2  | Nombre: Catherine<br>Apellido: Tejada <br>Edad: 39<br>Distrito: Villa el Salvador |La entrevistada, Katherine, es una mujer de 39 años que reside en Villa El Salvador. Es dueña de dos tiendas de vestidos de quinceañera, donde no solo comercializa, sino que también diseña y confecciona los productos.<br><br>Se percibe como una persona: <br>- Proactiva y emprendedora, al manejar dos tiendas y participar directamente en el diseño y confección.<br>- Organizada y preventiva, utiliza un sistema central (palanca general) para apagar todos los equipos.<br>- Digitalmente activa, aprovecha redes sociales para promoción.<br><br>Equipos electrónicos identificados:<br>- Remalladoras<br>- Maquina recta<br>- Maquina urbanera.<br>Equipos complementarios:<br>- Cámaras de seguridad.<br>- Ventiladores<br>- Reflectores y focos<br>Es de denotar que el negocio combina producción y exhibición de productos por lo que incrementa la variedad de consumo energético.<br><br>Problemas detectados:<br>- Ha tenido incidentes leves relacionados con el apagado (aunque sin consecuencias graves).<br>- Existe dependencia de un sistema manual (palanca general).<br>- No cuenta con monitoreo detallado del consumo energético.<br><br>Necesidades y motivaciones:<br>- Programación de encendido/apagado<br>- Alertas de actividad (saber cuándo se encienden equipos).<br>- Monitoreo de costos y consumo energético.|<img src="assets/seg2_entrevista2.PNG">
-|3  | Nombre: Lourdes<br>Apellido: Saldarriaga <br>Edad: 46<br>Distrito: La Victoria |Lourdes Saldarriaga, es una mujer de 46 años que reside en La Victoria. Es propietaria de una pequeña tintorería, lo que la ubica dentro del segmento de microempresas o negocios pequeños con operaciones intensivas en uso de equipos eléctricos.<br><br>Se percibe como una persona:<br>- Practica y operativa, enfocada en el funcionamiento diario del negocio más que en análisis detallados<br>- Consciente de riesgos, especialmente después de haber experimentado incidentes (recalentamiento de equipos).<br>- Precavida en inversión, muestra interés condicionado al costo.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Lavadoras industriales<br>- Posibles secadoras<br>El negocio tiene dependencia directa de maquinaria eléctrica continua, lo que hace critico el control energético<br><br>Problemas detectados:<br>-Errores humanos: un trabajador olvidó apagar un equipo.<br>- Consecuencia directa: recalentamiento de maquinaria, lo que implica riesgo operativo y económico.<br>- Dependencia del personal para tareas críticas.<br><br>Necesidades detectadas:<br>- Programación automática de encendido y apagado (su prioridad principal)<br>- Monitoreo del consumo energético por máquina y horario<br>- Identificación de picos de consumo| <img src="assets/seg2 - img3.png">
+|1  | Nombre: Orlando<br>Apellido: Trinidad <br>Edad: 48<br>Distrito: La Victoria |El entrevistado Orlando Trinidad Parra, es un hombre de 48 años que reside en La Victoria. Se desempeña como microempresario del rubro textil, específicamente en la confección, operando un taller con varias máquinas industriales. Su negocio se encuentra dentro del segmento de pequeñas y medianas empresas (PYME), lo que implica recursos limitados y alta sensibilidad a los costos operativos.<br><br>Se percibe como una persona:<br>- Responsable y organizada ya que tiene trabajadores que limpian y apagan la maquina que trabajan.<br>- Abierta al cambio tecnológico, pero con criterio económico.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Maquinas remalladoras.<br>- Maquinas rectas.<br>- Cortadora.<br>Se puede denotar que el consumo energético es alto y critico, impactando directamente la rentabilidad del negocio<br><br>Problemas detectados:<br>- Errores humanos frecuentes, especialmente en personal nuevo.<br>- Equipos que quedan encendidos o conectados innecesariamente.<br>- Desconocimiento del costo exacto por máquina, solo percibe el gasto total.<br><br>El entrevistado muestra interes en soluciones tecnologicas que le permitan:<br>- Medir el costo real por máquina (no solo consumo)<br>- Automatizar encendido/apagado<br>- Obtener reportes de desperdicio energético|<img src="assets/md-images-chapter2/seg2-img1.png">
+|2  | Nombre: Catherine<br>Apellido: Tejada <br>Edad: 39<br>Distrito: Villa el Salvador |La entrevistada, Katherine, es una mujer de 39 años que reside en Villa El Salvador. Es dueña de dos tiendas de vestidos de quinceañera, donde no solo comercializa, sino que también diseña y confecciona los productos.<br><br>Se percibe como una persona: <br>- Proactiva y emprendedora, al manejar dos tiendas y participar directamente en el diseño y confección.<br>- Organizada y preventiva, utiliza un sistema central (palanca general) para apagar todos los equipos.<br>- Digitalmente activa, aprovecha redes sociales para promoción.<br><br>Equipos electrónicos identificados:<br>- Remalladoras<br>- Maquina recta<br>- Maquina urbanera.<br>Equipos complementarios:<br>- Cámaras de seguridad.<br>- Ventiladores<br>- Reflectores y focos<br>Es de denotar que el negocio combina producción y exhibición de productos por lo que incrementa la variedad de consumo energético.<br><br>Problemas detectados:<br>- Ha tenido incidentes leves relacionados con el apagado (aunque sin consecuencias graves).<br>- Existe dependencia de un sistema manual (palanca general).<br>- No cuenta con monitoreo detallado del consumo energético.<br><br>Necesidades y motivaciones:<br>- Programación de encendido/apagado<br>- Alertas de actividad (saber cuándo se encienden equipos).<br>- Monitoreo de costos y consumo energético.|<img src="assets/md-images-chapter2/seg2-entrevista2.png">
+|3  | Nombre: Lourdes<br>Apellido: Saldarriaga <br>Edad: 46<br>Distrito: La Victoria |Lourdes Saldarriaga, es una mujer de 46 años que reside en La Victoria. Es propietaria de una pequeña tintorería, lo que la ubica dentro del segmento de microempresas o negocios pequeños con operaciones intensivas en uso de equipos eléctricos.<br><br>Se percibe como una persona:<br>- Practica y operativa, enfocada en el funcionamiento diario del negocio más que en análisis detallados<br>- Consciente de riesgos, especialmente después de haber experimentado incidentes (recalentamiento de equipos).<br>- Precavida en inversión, muestra interés condicionado al costo.<br><br>El taller usa diferentes equipos eléctricos tales como:<br>- Lavadoras industriales<br>- Posibles secadoras<br>El negocio tiene dependencia directa de maquinaria eléctrica continua, lo que hace critico el control energético<br><br>Problemas detectados:<br>-Errores humanos: un trabajador olvidó apagar un equipo.<br>- Consecuencia directa: recalentamiento de maquinaria, lo que implica riesgo operativo y económico.<br>- Dependencia del personal para tareas críticas.<br><br>Necesidades detectadas:<br>- Programación automática de encendido y apagado (su prioridad principal)<br>- Monitoreo del consumo energético por máquina y horario<br>- Identificación de picos de consumo| <img src="assets/md-images-chapter2/seg2-img3.png">
 
 
 ### 2.2.3. Análisis de entrevistas 
@@ -877,11 +953,11 @@ el 100% acepta tecnología siempre que sea fácil de implementar, económica y n
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src="assets/User Persona - seg1 - Rosa Gutierrez.png" alt="UserPersona Rosa Gutierrez">
+<img src="assets/md-images-chapter2/user-persona-seg1-rosa-gutierrez.png" alt="UserPersona Rosa Gutierrez">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src="assets/User Persona - seg2 - Carlos Mendoza.png" alt="UserPersona Carlos Mendoza">
+<img src="assets/md-images-chapter2/user-persona-seg2-carlos-mendoza.png" alt="UserPersona Carlos Mendoza">
 
 ### 2.3.2. User Task Matrix 
 
@@ -916,24 +992,24 @@ Segmento 2:  Pequeños negocios y talleres en zonas urbanas.
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src = "assets/UserJourneyMap - seg1.png" alt = "User Journey Map segmento 1">
+<img src = "assets/md-images-chapter2/user-journey-map-seg1.png" alt = "User Journey Map segmento 1">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src = "assets/UserJourneyMap - seg2.png" alt = "User Journey Map segmento 2">
+<img src = "assets/md-images-chapter2/user-journey-map-seg2.png" alt = "User Journey Map segmento 2">
 
 ### 2.3.4. Empathy Mapping
 
 Segmento 1: Hogares urbanos con viviendas antiguas
 
-<img src = "assets/EmpathyMap - Seg1.png" alt = "EmpathyMap Segmento 1">
+<img src = "assets/md-images-chapter2/empathy-map-seg1.png" alt = "EmpathyMap Segmento 1">
 
 Segmento 2: Pequeños negocios y talleres en zonas urbanas.
 
-<img src = "assets/EmpathyMap - Seg2.png" alt = "EmpathyMap Segmento 2">
+<img src = "assets/md-images-chapter2/empathy-map-seg2.png" alt = "EmpathyMap Segmento 2">
 
 ## 2.4. Big Picture Event Storming
-<img src = "assets/Big-Picture-Event-Storming.png">
+<img src = "assets/md-images-chapter2/big-picture-event-storming.png">
 
 ## 2.5. Ubiquitous Language
 
@@ -987,13 +1063,13 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 
 |**Epic ID**|**Título**|**Descripción**|**Criterio de aceptación**|**Relación (EPIC ID)**|
 | - | - | - | - | - |
-|**EP-01**|**Instalación y configuración inicial**|Como usuario de un hogar o pequeño negocio, quiero instalar y configurar mis dispositivos inteligentes simulados fácilmente para comenzar a usar la solución de forma rápida.|<p>**Escenario 1: Registro de usuario**</p><p>Dado que el usuario accede a la plataforma,</p><p>Cuando completa sus datos de registro,</p><p>Entonces el sistema crea su cuenta y le permite iniciar sesión.</p><br><p>**Escenario 2: Vinculación de dispositivo**</p><p>Dado que el usuario ha iniciado sesión,</p><p>Cuando ingresa el código del dispositivo,</p><p>Entonces el sistema vincula el equipo a su cuenta.</p>||
+|**EP-01**|**Instalación y configuración inicial**|Como usuario de un hogar o pequeño negocio, quiero instalar y configurar mis dispositivos inteligentes de forma guiada para comenzar a usar la solución rápidamente.|<p>**Escenario 1: Registro de usuario**</p><p>Dado que el usuario accede a la plataforma,</p><p>Cuando completa sus datos de registro,</p><p>Entonces el sistema crea su cuenta y le permite iniciar sesión.</p><br><p>**Escenario 2: Vinculación de dispositivo**</p><p>Dado que el usuario ha iniciado sesión,</p><p>Cuando ingresa el código del dispositivo,</p><p>Entonces el sistema vincula el equipo a su cuenta.</p>||
 |**EP-02**|**Control y automatización de dispositivos**|Como usuario, quiero controlar y automatizar mis dispositivos eléctricos desde la plataforma para mejorar la comodidad y optimizar energía.|<p>**Escenario 1: Control Remoto**</p><p>Dado que el usuario está en su panel principal,</p><p>Cuando presiona el botón de encendido/apagado,</p><p>Entonces el estado del dispositivo cambia en la base de datos.</p><br><p>**Escenario 2: Programación**</p><p>Dado que el usuario selecciona un dispositivo,</p><p>Cuando define una hora de encendido automático,</p><p>Entonces el sistema guarda la rutina y la ejecuta.</p>||
 |**EP-03**|**Monitoreo y ahorro de energía**|Como usuario, quiero visualizar y comparar el consumo de mis dispositivos en tiempo real e histórico para identificar oportunidades de ahorro.|<p>**Escenario 1: Ver consumo actual**</p><p>Dado que el usuario accede al dashboard,</p><p>Cuando selecciona la pestaña de métricas,</p><p>Entonces el sistema muestra los Watts consumidos.</p><br><p>**Escenario 2: Reporte Histórico**</p><p>Dado que el usuario solicita el reporte,</p><p>Cuando selecciona el mes de interés,</p><p>Entonces se genera un gráfico comparativo.</p>||
 |**EP-04**|**Seguridad, accesos y gestión de usuarios**|Como usuario administrador, quiero controlar los accesos y permisos de quienes usan la plataforma para mantener la seguridad y trazabilidad.|<p>**Escenario 1: Creación de perfiles**</p><p>Dado que el administrador accede a la sección de accesos,</p><p>Cuando invita a un nuevo correo,</p><p>Entonces se crea un perfil con permisos restringidos.</p><br><p>**Escenario 2: Trazabilidad**</p><p>Dado que un empleado realiza una acción,</p><p>Cuando el administrador revisa el historial,</p><p>Entonces ve quién realizó el cambio.</p>||
 |**EP-05**|**Información y Navegación de Landing Page**|Como usuario visitante, deseo acceder a información, cambiar el idioma y navegar dinámicamente por la landing page mediante búsquedas inteligentes.|<p>**Escenario 1: Navegación por Búsqueda**</p><p>Dado que el visitante busca un tema específico,</p><p>Cuando usa la barra de búsqueda,</p><p>Entonces la vista se desplaza a la sección correspondiente.</p><br><p>**Escenario 2: Traducción**</p><p>Dado que el visitante prefiere otro idioma,</p><p>Cuando interactúa con el botón de idioma,</p><p>Entonces el texto cambia inmediatamente entre ES/EN.</p>||
-|**EP-06**|**Gestión de Suscripciones (Stripe)**|Como usuario, quiero gestionar mi plan de suscripción premium mediante pagos seguros para acceder a funciones avanzadas.|<p>**Escenario 1: Pago exitoso**</p><p>Dado que el usuario elige el Plan Enterprise,</p><p>Cuando ingresa los datos de su tarjeta,</p><p>Entonces su cuenta se actualiza con dispositivos ilimitados.</p><br><p>**Escenario 2: Cancelación**</p><p>Dado que el usuario es Premium,</p><p>Cuando hace clic en anular suscripción,</p><p>Entonces su plan vuelve a ser Free el próximo mes.</p>||
-|**EP-07**|**Notificaciones y Soporte (Mailchimp)**|Como usuario, quiero recibir alertas por correo electrónico y acceder a soporte técnico para resolver problemas o ver picos de consumo.|<p>**Escenario 1: Alerta de alto consumo**</p><p>Dado que un dispositivo supera el umbral configurado,</p><p>Cuando el sistema detecta la anomalía,</p><p>Entonces se envía un correo de alerta mediante Mailchimp.</p><br><p>**Escenario 2: Soporte**</p><p>Dado que el usuario tiene dudas,</p><p>Cuando ingresa a ayuda,</p><p>Entonces visualiza las FAQ y contacto.</p>||
+|**EP-06**|**Gestión de Suscripciones y Pagos**|Como usuario, quiero gestionar mi plan de suscripción mediante un proceso de checkout con validación de pago para acceder a funciones avanzadas.|<p>**Escenario 1: Checkout exitoso**</p><p>Dado que el usuario elige el Plan Enterprise,</p><p>Cuando completa el checkout con datos de tarjeta válidos,</p><p>Entonces el sistema valida el pago y activa su suscripción.</p><br><p>**Escenario 2: Cancelación**</p><p>Dado que el usuario tiene una suscripción activa,</p><p>Cuando cancela su suscripción,</p><p>Entonces su plan se marca como cancelado.</p>||
+|**EP-07**|**Notificaciones y Soporte**|Como usuario, quiero recibir alertas dentro de la aplicación y acceder a soporte técnico para resolver problemas o ver picos de consumo.|<p>**Escenario 1: Alerta de alto consumo**</p><p>Dado que un dispositivo supera el umbral configurado,</p><p>Cuando el sistema evalúa las reglas de alerta,</p><p>Entonces se genera una alerta visible en el centro de notificaciones de la aplicación.</p><br><p>**Escenario 2: Soporte**</p><p>Dado que el usuario tiene dudas,</p><p>Cuando registra un ticket de soporte,</p><p>Entonces el sistema crea el ticket y le da seguimiento.</p>||
 
 <br><br>
 
@@ -1020,22 +1096,22 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 |**US-17**|Recibir alertas por alto consumo|<p>Como usuario, quiero recibir alertas por consumos inusuales de energía.</p>|<p>**Escenario 1:** Alerta en app</p><p>Dado que el límite es 500W,</p><p>Cuando se supera la cifra de manera sostenida,</p><p>Entonces aparece una notificación push.</p>|**EP-03**|
 |**US-18**|Ver recomendaciones de ahorro|<p>Como usuario, quiero recibir sugerencias para ahorrar energía.</p>|<p>**Escenario 1:** Tips inteligentes</p><p>Dado que el consumo es ineficiente en cierto horario,</p><p>Cuando revisa el panel de sugerencias,</p><p>Entonces el sistema recomienda crear nuevas rutinas.</p>|**EP-03**|
 |**US-19**|Administrar múltiples dispositivos|<p>Como usuario, quiero visualizar todos mis dispositivos en una sola pantalla.</p>|<p>**Escenario 1:** Vista general</p><p>Dado que el usuario tiene 5 equipos,</p><p>Cuando ingresa al inicio,</p><p>Entonces visualiza las 5 tarjetas operables.</p>|**EP-04**|
-|**US-20**|Crear perfiles de acceso|<p>Como administrador, quiero dar acceso a familiares con permisos limitados.</p>|<p>**Escenario 1:** Rol de invitado</p><p>Dado que el administrador invita a un familiar,</p><p>Cuando este inicia sesión en su dispositivo,</p><p>Entonces solo puede apagar/encender equipos.</p>|**EP-04**|
-|**US-21**|Bloquear acceso no autorizado|<p>Como usuario, quiero proteger mi cuenta de extraños.</p>|<p>**Escenario 1:** Timeout por inactividad</p><p>Dado que la app web queda abierta sin interactuar,</p><p>Cuando pasan 30 minutos sin uso,</p><p>Entonces la sesión expira.</p>|**EP-04**|
-|**US-22**|Registrar actividad de control|<p>Como administrador, quiero ver quién controló un equipo.</p>|<p>**Escenario 1:** Log de auditoría</p><p>Dado que se ejecutó una acción,</p><p>Cuando se revisa el log de eventos,</p><p>Entonces se detalla el nombre del usuario y la hora.</p>|**EP-04**|
+|**US-20**|Gestionar perfiles de acceso|<p>Como administrador, quiero asignar perfiles con permisos diferenciados a los usuarios registrados.</p>|<p>**Escenario 1:** Asignación de perfil</p><p>Dado que el administrador entra a la sección de accesos,</p><p>Cuando selecciona un usuario activo y cambia su perfil,</p><p>Entonces el sistema guarda el nuevo perfil y actualiza sus permisos.</p>|**EP-04**|
+|**US-21**|Bloquear acceso no autorizado|<p>Como usuario, quiero proteger mi cuenta y mis módulos para que solo entren personas autenticadas y con permiso.</p>|<p>**Escenario 1:** Acceso protegido</p><p>Dado que una persona intenta abrir una ruta privada,</p><p>Cuando no tiene token válido o permiso suficiente,</p><p>Entonces la aplicación redirige o bloquea la navegación.</p>|**EP-04**|
+|**US-22**|Registrar actividad relevante|<p>Como administrador, quiero consultar eventos importantes del sistema para revisar trazabilidad operativa.</p>|<p>**Escenario 1:** Historial de actividad</p><p>Dado que ocurre una acción relevante del producto,</p><p>Cuando el sistema publica el evento correspondiente,</p><p>Entonces Reporting lo conserva para consulta desde la sección de actividad.</p>|**EP-04**|
 |**US-23**|Controlar equipos del negocio|<p>Como dueño de negocio, quiero controlar equipos del local desde mi móvil.</p>|<p>**Escenario 1:** Control comercial</p><p>Dado que el dueño está en su domicilio,</p><p>Cuando apaga el grupo de luz del local,</p><p>Entonces se refleja instantáneamente en el negocio.</p>|**EP-02**|
 |**US-24**|Programar equipos por horario comercial|<p>Como dueño, quiero automatizar el local según el horario de atención.</p>|<p>**Escenario 1:** Automatización de horario</p><p>Dado que el horario es de 9am a 6pm,</p><p>Cuando se activa la rutina comercial,</p><p>Entonces los equipos siguen automáticamente el horario.</p>|**EP-02**|
 |**US-25**|Revisar consumo por área o equipo|<p>Como dueño, quiero identificar qué áreas consumen más.</p>|<p>**Escenario 1:** Desglose por zona</p><p>Dado que hay varios equipos registrados,</p><p>Cuando revisa el reporte corporativo,</p><p>Entonces visualiza un gráfico detallado por zonas.</p>|**EP-03**|
 |**US-26**|Compartir acceso con personal|<p>Como dueño, quiero permitir que empleados controlen ciertos equipos.</p>|<p>**Escenario 1:** Control limitado</p><p>Dado que un empleado de almacén entra a la app,</p><p>Cuando visualiza el dashboard principal,</p><p>Entonces solo ve el control de su área correspondiente.</p>|**EP-04**|
-|**US-27**|Pagar suscripción con tarjeta|<p>Como usuario, quiero ingresar mi tarjeta de forma segura para adquirir el plan Premium.</p>|<p>**Escenario 1:** Pasarela Stripe</p><p>Dado que el usuario elige el plan Enterprise,</p><p>Cuando ingresa sus datos válidos,</p><p>Entonces Stripe procesa exitosamente el cobro mensual.</p>|**EP-06**|
+|**US-27**|Contratar suscripción con checkout|<p>Como usuario, quiero completar un checkout con mis datos de tarjeta para contratar el plan Enterprise.</p>|<p>**Escenario 1:** Checkout interno</p><p>Dado que el usuario elige el plan Enterprise,</p><p>Cuando ingresa datos de tarjeta válidos en el checkout,</p><p>Entonces el sistema valida el pago internamente y activa la suscripción.</p>|**EP-06**|
 |**US-28**|Cancelar suscripción Premium|<p>Como usuario, quiero anular mi suscripción para detener cobros.</p>|<p>**Escenario 1:** Detención de cobros</p><p>Dado que el usuario accede a configuración de facturación,</p><p>Cuando confirma la cancelación del servicio,</p><p>Entonces el plan se degrada a final de mes.</p>|**EP-06**|
 |**US-29**|Recibir alertas por correo|<p>Como usuario, quiero que el sistema me notifique a mi correo si algo inusual pasa con mi consumo.</p>|<p>**Escenario 1:** Despacho vía Mailchimp</p><p>Dado que hay un evento crítico registrado,</p><p>Cuando el backend lo procesa,</p><p>Entonces recibo un email de alerta inmediata.</p>|**EP-07**|
 |**US-30**|Recibir reporte mensual|<p>Como usuario, quiero recibir un resumen mensual en mi email para saber cuánto ahorré.</p>|<p>**Escenario 1:** Envío automatizado</p><p>Dado que es el último día del mes,</p><p>Cuando el cronjob se activa,</p><p>Entonces me envía un correo con mis estadísticas.</p>|**EP-07**|
-|**US-31**|Recuperar contraseña|<p>Como usuario, quiero poder restablecer mi contraseña si la olvido.</p>|<p>**Escenario 1:** Email de recuperación</p><p>Dado que el usuario hace clic en "Olvidé mi contraseña",</p><p>Cuando ingresa su email,</p><p>Entonces recibe un enlace seguro por tiempo limitado.</p>|**EP-04**|
-|**US-32**|Editar perfil de usuario|<p>Como usuario, quiero cambiar mis datos personales de perfil.</p>|<p>**Escenario 1:** Guardado de cambios</p><p>Dado que el usuario edita su nombre o teléfono,</p><p>Cuando da clic en guardar,</p><p>Entonces la información se actualiza en la base de datos MySQL.</p>|**EP-04**|
-|**US-33**|Eliminar cuenta|<p>Como usuario, quiero borrar definitivamente mi cuenta y datos.</p>|<p>**Escenario 1:** Purga de información</p><p>Dado que el usuario confirma la eliminación total,</p><p>Cuando el sistema procesa la solicitud,</p><p>Entonces sus datos se borran irreversiblemente.</p>|**EP-04**|
-|**US-34**|Configurar preferencias|<p>Como usuario, quiero elegir qué tipo de alertas me llegan.</p>|<p>**Escenario 1:** Switch de preferencias</p><p>Dado que el usuario apaga el interruptor de correos mensuales,</p><p>Cuando se guarda la preferencia,</p><p>Entonces su email es removido de la lista de envíos de resúmenes.</p>|**EP-07**|
-|**US-35**|Simular conexión de equipo|<p>Como desarrollador, quiero simular un dispositivo nuevo para pruebas de la plataforma.</p>|<p>**Escenario 1:** Inyección de dispositivo virtual</p><p>Dado que se dispara el evento simulador mediante API,</p><p>Cuando ocurre la validación,</p><p>Entonces el equipo aparece en la cuenta del usuario.</p>|**EP-01**|
+|**US-31**|Recuperar contraseña|<p>Como usuario, quiero poder restablecer mi contraseña si la olvido.</p>|<p>**Escenario 1:** Enlace seguro de recuperación</p><p>Dado que el usuario hace clic en "Olvidé mi contraseña",</p><p>Cuando ingresa su email registrado,</p><p>Entonces el sistema genera un token seguro, limitado por tiempo, y habilita el cambio de clave.</p>|**EP-04**|
+|**US-32**|Editar perfil de usuario|<p>Como usuario, quiero cambiar mis datos personales de perfil.</p>|<p>**Escenario 1:** Guardado de cambios</p><p>Dado que el usuario edita su nombre o correo,</p><p>Cuando da clic en guardar,</p><p>Entonces la información se actualiza en PostgreSQL y se refleja en la sesión activa.</p>|**EP-04**|
+|**US-33**|Desactivar cuenta|<p>Como usuario, quiero cerrar mi cuenta para impedir nuevos accesos.</p>|<p>**Escenario 1:** Desactivación segura</p><p>Dado que el usuario confirma la acción,</p><p>Cuando el sistema procesa la solicitud,</p><p>Entonces la cuenta queda inactiva y ya no puede iniciar sesión.</p>|**EP-04**|
+|**US-34**|Configurar preferencias|<p>Como usuario, quiero elegir qué tipo de alertas me llegan.</p>|<p>**Escenario 1:** Preferencias de notificación</p><p>Dado que el usuario cambia canales, horarios silenciosos o niveles permitidos,</p><p>Cuando se guarda la preferencia,</p><p>Entonces las alertas posteriores respetan esa configuración.</p>|**EP-07**|
+|**US-35**|Registrar telemetría energética|<p>Como desarrollador, quiero que la plataforma registre lecturas energéticas para alimentar monitoreo, alertas y reportes.</p>|<p>**Escenario 1:** Lectura disponible</p><p>Dado que existe un dispositivo asociado a la cuenta,</p><p>Cuando se registra una lectura de consumo,</p><p>Entonces la información queda disponible para gráficos, reglas y reportes.</p>|**EP-03**|
 |**US-36**|Filtrar historial por fechas|<p>Como usuario, quiero establecer un rango de fechas para ver consumos pasados.</p>|<p>**Escenario 1:** Filtro de calendario</p><p>Dado que el usuario abre la herramienta de fechas,</p><p>Cuando selecciona desde y hasta,</p><p>Entonces la gráfica se redibuja excluyendo el resto de días.</p>|**EP-03**|
 |**US-37**|Exportar historial a Excel|<p>Como usuario corporativo, quiero descargar mis datos de consumo.</p>|<p>**Escenario 1:** Generación de CSV</p><p>Dado que se visualiza la tabla en pantalla,</p><p>Cuando se hace clic en Exportar,</p><p>Entonces el navegador descarga un archivo CSV estructurado.</p>|**EP-03**|
 |**US-38**|Agrupar dispositivos|<p>Como usuario, quiero agrupar mis enchufes por habitaciones.</p>|<p>**Escenario 1:** Operación masiva por grupo</p><p>Dado que el usuario ha creado el grupo "Iluminación Sala",</p><p>Cuando apaga el grupo,</p><p>Entonces todos los enchufes asignados a la sala se apagan simultáneamente.</p>|**EP-02**|
@@ -1048,22 +1124,23 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 
 |**Technical story ID**|**Título**|**Descripción**|**Criterios de Aceptación**|**Epica**|
 | - | - | - | - | - |
-|**TS-01**|Frontend Consumidor REST API|<p>**Como** desarrollador frontend</p><p>**Quiero** consumir endpoints REST mediante fetch/API calls</p><p>**Para** renderizar contenido dinámico y responsive desde el backend (US-01, US-06).</p>|<p>**Escenario 1: Consumo API Responsive**</p><p>Dado el endpoint de configuración visual,</p><p>Cuando la aplicación obtiene los datos del backend,</p><p>Entonces el diseño cambia dinámicamente según el tamaño de pantalla.</p>|**EP-05**|
-|**TS-02**|API REST de Traducciones i18n|<p>**Como** desarrollador frontend</p><p>**Quiero** consumir un endpoint REST de traducciones</p><p>**Para** cambiar idiomas dinámicamente desde el servidor (US-03).</p>|<p>**Escenario 1: Traducción dinámica**</p><p>Dado el endpoint /api/v1/translations,</p><p>Cuando se llama toggleLanguage(),</p><p>Entonces la API devuelve los textos traducidos correctamente.</p>|**EP-05**|
-|**TS-03**|API REST de Búsqueda Inteligente|<p>**Como** desarrollador frontend</p><p>**Quiero** consumir un endpoint REST con palabras clave</p><p>**Para** realizar búsquedas dinámicas y navegación automática (US-02).</p>|<p>**Escenario 1: Búsqueda desde API**</p><p>Dado el request al endpoint de búsqueda,</p><p>Cuando el término existe en la base de datos,</p><p>Entonces el backend devuelve la sección correspondiente.</p>|**EP-05**|
-|**TS-04**|API REST Newsletter|<p>**Como** desarrollador frontend</p><p>**Quiero** enviar formularios mediante peticiones HTTP POST</p><p>**Para** registrar suscripciones sin recargar la web (US-04).</p>|<p>**Escenario 1: Registro Newsletter**</p><p>Dado el formulario completado,</p><p>Cuando se envía la petición POST al backend,</p><p>Entonces la API registra el correo y devuelve una respuesta exitosa.</p>|**EP-05**|
-|**TS-05**|REST API de Configuración Multimedia|<p>**Como** desarrollador frontend</p><p>**Quiero** consumir endpoints REST de configuración multimedia</p><p>**Para** sincronizar el estado del menú y audio de la aplicación (US-05).</p>|<p>**Escenario 1: Configuración dinámica**</p><p>Dado el request al endpoint multimedia,</p><p>Cuando el usuario interactúa con la interfaz,</p><p>Entonces el sistema actualiza el estado del audio y navegación.</p>|**EP-05**|
-|**TS-06**|Setup Spring Boot API|<p>**Como** backend developer</p><p>**Quiero** iniciar el servidor web Java</p><p>**Para** alojar los endpoints REST del sistema core.</p>|<p>**Escenario 1: Deploy inicial**</p><p>Dado el pom.xml con dependencias web,</p><p>Cuando compila el proyecto,</p><p>Entonces el contenedor Tomcat levanta en el puerto 8080.</p>|**EP-01**|
-|**TS-07**|Conexión JPA - MySQL|<p>**Como** Database Admin</p><p>**Quiero** crear entidades Java anotadas con @Entity</p><p>Para persistir la información consumida por la REST API (US-07).</p>|<p>**Escenario 1: Data Source**</p><p>Dado el application.properties configurado,</p><p>Cuando inicia el contexto de Spring,</p><p>Entonces Hibernate realiza la migración DDL en el esquema MySQL.</p>|**EP-01**|
-|**TS-08**|Integración Stripe REST API|<p>**Como** backend developer</p><p>**Quiero** incorporar las librerías oficiales de Stripe</p><p>**Para** validar pagos mediante endpoints REST seguros (US-27).</p>|<p>**Escenario 1: Charge API**</p><p>Dado un payload de pago válido,</p><p>Cuando invoca el endpoint createCharge(),</p><p>Entonces Stripe retorna el id de transacción HTTP 200.</p>|EP-06|
-|**TS-09**|Integración Mailchimp REST|<p>**Como** backend developer</p><p>**Quiero** programar servicios REST de integración</p><p>**Para** disparar emails automatizados desde la API (US-29).</p>|<p>**Escenario 1: Post Payload**</p><p>Dado que se dispara una alerta,</p><p>Cuando se construye el JSON del email,</p><p>Entonces hace un POST a la API de Mailchimp y se registra el envío.</p>|**EP-07**|
-|**TS-10**|REST API de Telemetría|<p>**Como** backend developer</p><p>**Quiero** usar anotaciones @Scheduled en Spring Boot</p><p>**Para** exponer datos simulados de consumo mediante endpoints REST (US-35).</p>|<p>Escenario 1: Tarea en background</p><p>Dado el servidor en ejecución,</p><p>Cuando pasa el tiempo definido en el cron,</p><p>Entonces se insertan registros consumidos posteriormente por la API.</p>|**EP-03**|
-|**TS-11**|Endpoints CRUD Dispositivos|<p>**Como** backend developer</p><p>**Quiero** programar controladores @RestController</p><p>**Para** manejar el listado y actualización de enchufes (US-19).</p>|<p>**Escenario 1: GetMapping**</p><p>Dado el request a /api/v1/devices,</p><p>Cuando se procesa la solicitud,</p><p>Entonces devuelve un ResponseEntity con el JSON del listado.</p>|**EP-02**|
-|**TS-12**|Frontend SPA Consumidor REST|<p>**Como** frontend developer</p><p>**Quiero** iniciar el framework SPA (Angular/React)</p><p>**Para** consumir endpoints REST del dashboard de monitoreo.</p>|<p>**Escenario 1: Router Guard**</p><p>Dado el acceso a /dashboard,</p><p>Cuando el token no existe,</p><p>Entonces el sistema redirige al /login.</p>|**EP-04**|
-|**TS-13**|Generación y Filtro de JWT|<p>**Como** fullstack developer</p><p>**Quiero** configurar Spring Security con un filtro JWT</p><p>**Para** autenticar cada petición HTTP de la REST API (US-07).</p>|**<p>Escenario 1: Token Auth**</p><p>Dado el Bearer token en el Header,</p><p>Cuando pasa por el filtro de seguridad,</p><p>Entonces desencripta la firma y autoriza el request.</p>|EP-04|
-|**TS-14**|Dashboard REST con Chart.js|<p>**Como** frontend developer</p><p>**Quiero** consumir datos desde la REST API usando Chart.js</p><p>**Para** visualizar gráficamente el consumo eléctrico (US-15).</p>|<p>Escenario 1: Render del Canvas</p><p>Dado el array numérico obtenido desde la API,</p><p>Cuando se pasan como datasets,</p><p>Entonces Chart.js dibuja visualmente la progresión.</p>|**EP-03**|
-|**TS-15**|Cifrado BCrypt para REST API|<p>**Como** backend developer</p><p>**Quiero** usar BCryptPasswordEncoder</p><p>**Para** proteger las credenciales consumidas por la REST API (US-07).</p>|<p>**Escenario 1: Hash**</p><p>Dado el formulario de registro,</p><p>Cuando llega la clave 123456,</p><p>Entonces se guarda como un hash seguro tipo $2a$10$....</p>|**EP-04**|
-|**TS-16**|REST API Configuración UI|<p>**Como** frontend developer</p><p>**Quiero** consumir configuraciones visuales desde endpoints REST</p><p>**Para** alternar dinámicamente el modo oscuro en la aplicación (US-39).</p>|<p>**Escenario 1: Clase global**</p><p>Dado que el usuario presiona el switch,</p><p>Cuando la configuración cambia en el backend,</p><p>Entonces se añade la clase .dark-theme al document root.</p>|**EP-05**|
+|**TS-01**|Frontend por bounded contexts|<p>**Como** desarrollador frontend</p><p>**Quiero** organizar la Web Application por capas de presentación, aplicación, dominio e infraestructura</p><p>**Para** mantener rutas y casos de uso trazables con las historias del producto.</p>|<p>**Escenario 1: Consumo organizado**</p><p>Dado un flujo como IAM, Billing o Device Control,</p><p>Cuando la pantalla necesita datos,</p><p>Entonces delega en facade/store y servicios de infraestructura sin llamadas directas desde componentes.</p>|**EP-05**|
+|**TS-02**|i18n de Landing y Web App|<p>**Como** desarrollador frontend</p><p>**Quiero** mantener diccionarios de traducción en los recursos de la interfaz</p><p>**Para** cambiar idioma sin depender de servicios inexistentes.</p>|<p>**Escenario 1: Traducción dinámica**</p><p>Dado que el usuario cambia de idioma,</p><p>Cuando la aplicación actualiza la preferencia,</p><p>Entonces los textos se renderizan con las claves ES/EN/PT disponibles.</p>|**EP-05**|
+|**TS-03**|Búsqueda y navegación de Landing|<p>**Como** desarrollador frontend</p><p>**Quiero** resolver la búsqueda de secciones desde el contenido de la landing</p><p>**Para** guiar al visitante sin requerir un servicio adicional.</p>|<p>**Escenario 1: Búsqueda local**</p><p>Dado que el visitante escribe una palabra clave,</p><p>Cuando coincide con una sección publicada,</p><p>Entonces la landing navega suavemente hacia esa sección.</p>|**EP-05**|
+|**TS-04**|Formulario Newsletter de Landing|<p>**Como** desarrollador frontend</p><p>**Quiero** validar y registrar la intención de suscripción desde la landing</p><p>**Para** entregar una experiencia clara sin recargar la página.</p>|<p>**Escenario 1: Registro de interés**</p><p>Dado el formulario completado,</p><p>Cuando el visitante envía su correo,</p><p>Entonces la landing confirma la acción y limpia el campo.</p>|**EP-05**|
+|**TS-05**|Interacciones multimedia de Landing|<p>**Como** desarrollador frontend</p><p>**Quiero** controlar menú, navegación y audio desde módulos JavaScript encapsulados</p><p>**Para** mantener una experiencia interactiva y mantenible.</p>|<p>**Escenario 1: Estado de interfaz**</p><p>Dado que el usuario interactúa con navegación o audio,</p><p>Cuando cambia el estado,</p><p>Entonces la interfaz refleja el cambio sin recargar la página.</p>|**EP-05**|
+|**TS-06**|Setup Spring Boot API|<p>**Como** backend developer</p><p>**Quiero** iniciar el servidor web Java con configuración por perfiles</p><p>**Para** alojar los bounded contexts del sistema.</p>|<p>**Escenario 1: Compilación y despliegue**</p><p>Dado el pom.xml con dependencias web, seguridad y persistencia,</p><p>Cuando compila el proyecto,</p><p>Entonces Spring Boot levanta la API y expone health/OpenAPI.</p>|**EP-01**|
+|**TS-07**|Persistencia JPA - PostgreSQL|<p>**Como** Database Admin</p><p>**Quiero** crear entidades Java anotadas con JPA</p><p>Para persistir usuarios, planes, sedes, dispositivos, lecturas, alertas y reportes.</p>|<p>**Escenario 1: Data Source**</p><p>Dado el datasource PostgreSQL configurado,</p><p>Cuando inicia el contexto de Spring,</p><p>Entonces Hibernate prepara las tablas de los bounded contexts.</p>|**EP-01**|
+|**TS-08**|Integración Stripe por puerto de pago|<p>**Como** backend developer</p><p>**Quiero** aislar Stripe detrás de un PaymentGatewayPort</p><p>**Para** validar pagos sin acoplar Billing a la implementación externa.</p>|<p>**Escenario 1: Payment Intent**</p><p>Dado un checkout válido,</p><p>Cuando Billing solicita el cobro,</p><p>Entonces el adaptador Stripe registra proveedor, estado e identificador de transacción.</p>|EP-06|
+|**TS-09**|Integración Mailchimp para alertas|<p>**Como** backend developer</p><p>**Quiero** entregar emails mediante un adaptador Mailchimp</p><p>**Para** despachar alertas respetando las preferencias del usuario.</p>|<p>**Escenario 1: Email de alerta**</p><p>Dado que se crea una alerta permitida por preferencias,</p><p>Cuando Notifications calcula la decisión de entrega,</p><p>Entonces el adaptador intenta enviar el correo y registra el resultado.</p>|**EP-07**|
+|**TS-10**|Telemetría y eventos de energía|<p>**Como** backend developer</p><p>**Quiero** persistir lecturas energéticas y evaluar umbrales</p><p>**Para** alimentar monitoreo, notificaciones y reporting.</p>|<p>Escenario 1: Lectura procesada</p><p>Dado el servidor en ejecución,</p><p>Cuando se registra una lectura de consumo,</p><p>Entonces queda disponible para consultas, reglas y reportes.</p>|**EP-03**|
+|**TS-11**|Servicios de Device Control|<p>**Como** backend developer</p><p>**Quiero** exponer controladores delgados para dispositivos, grupos, rutinas y modos</p><p>**Para** manejar operaciones de control mediante commands y queries.</p>|<p>**Escenario 1: Operación de dispositivo**</p><p>Dado un recurso válido,</p><p>Cuando el controller recibe la solicitud,</p><p>Entonces delega al command service y devuelve el recurso actualizado.</p>|**EP-02**|
+|**TS-12**|Angular SPA con guards|<p>**Como** frontend developer</p><p>**Quiero** proteger rutas con guards de autenticación, suscripción y permisos</p><p>**Para** evitar acceso a módulos no autorizados.</p>|<p>**Escenario 1: Router Guard**</p><p>Dado el acceso a una ruta privada,</p><p>Cuando el token o permiso requerido no existe,</p><p>Entonces el sistema redirige o bloquea la navegación.</p>|**EP-04**|
+|**TS-13**|JWT Bearer Security|<p>**Como** fullstack developer</p><p>**Quiero** configurar Spring Security con filtro JWT</p><p>**Para** autenticar cada petición protegida de la REST API.</p>|<p>Escenario 1: Token Auth</p><p>Dado el Bearer token en el header Authorization,</p><p>Cuando pasa por el filtro de seguridad,</p><p>Entonces valida la firma y registra el usuario autenticado.</p>|EP-04|
+|**TS-14**|Visualización de consumo energético|<p>**Como** frontend developer</p><p>**Quiero** representar lecturas y métricas desde la capa de reporting/energía</p><p>**Para** visualizar consumo actual, histórico y recomendaciones.</p>|<p>Escenario 1: Render de métricas</p><p>Dado un conjunto de lecturas obtenido desde la API,</p><p>Cuando se arma la vista,</p><p>Entonces la aplicación muestra indicadores y gráficos consistentes.</p>|**EP-03**|
+|**TS-15**|Cifrado BCrypt mediante puerto IAM|<p>**Como** backend developer</p><p>**Quiero** usar un HashingService implementado con BCrypt</p><p>**Para** proteger credenciales sin acoplar la aplicación a Spring Security.</p>|<p>**Escenario 1: Hash**</p><p>Dado el formulario de registro,</p><p>Cuando llega una clave válida,</p><p>Entonces se guarda como hash BCrypt y nunca como texto plano.</p>|**EP-04**|
+|**TS-16**|Preferencias UI persistidas|<p>**Como** frontend developer</p><p>**Quiero** sincronizar idioma y tema con la preferencia del usuario</p><p>**Para** mantener la experiencia visual entre sesiones.</p>|<p>**Escenario 1: Preferencia visual**</p><p>Dado que el usuario cambia idioma o tema,</p><p>Cuando se guarda la configuración,</p><p>Entonces la aplicación aplica la preferencia y la conserva para próximos accesos.</p>|**EP-05**|
+|**TS-17**|Geocoding OpenStreetMap/Nominatim desde infraestructura frontend|<p>**Como** frontend developer</p><p>**Quiero** encapsular la geocodificación de sedes en servicios de application/infrastructure</p><p>**Para** resolver direcciones y coordenadas sin llamadas directas desde componentes de presentation.</p>|<p>**Escenario 1: Búsqueda de dirección**</p><p>Dado que el usuario escribe una dirección en Workplace,</p><p>Cuando la Web Application consulta Nominatim desde `GeocodingApiService`,</p><p>Entonces la pantalla recibe sugerencias normalizadas mediante `WorkplaceGeocodingService`.</p>|**EP-04**|
 
 
 
@@ -1071,7 +1148,7 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 
 
 ## 3.2. Impact Mapping
-<img src="assets/Impact Mapping.png">
+<img src="assets/md-images-chapter3/impact-mapping.png">
 
 ## 3.3. Product Backlog
 
@@ -1083,12 +1160,12 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 | 4 | US-04 | Suscripción al boletín | Como visitante, quiero llenar un input de email sin recargar la web. | 3 |
 | 5 | US-05 | Interfaz interactiva | Como visitante, quiero navegar fluído y pausar la música con un botón. | 3 |
 | 6 | US-06 | Comparar planes de servicio | Como visitante, quiero leer las diferencias del plan Free y Enterprise. | 2 |
-| 7 | US-07 | Registro inicial del usuario | Como usuario, quiero crear una cuenta en la plataforma base de datos. | 5 |
-| 8 | US-08 | Emparejar dispositivo plug-and-play | Como usuario, quiero vincular mi enchufe inteligente simulado. | 8 |
-| 9 | US-09 | Asistente de instalación guiada | Como usuario, quiero un tutorial rápido para empezar. | 5 |
-| 10 | US-10 | Nombrar dispositivos | Como usuario, quiero asignarle un alias a mi equipo. | 2 |
-| 11 | US-11 | Ver estado en tiempo real | Como usuario, quiero verificar si mi foco virtual está ON u OFF. | 3 |
-| 12 | US-12 | Encender y apagar remotamente | Como usuario, quiero enviar señales de apagado por internet. | 5 |
+| 7 | US-07 | Registro inicial del usuario | Como usuario, quiero crear una cuenta segura en la plataforma. | 5 |
+| 8 | US-08 | Emparejar dispositivo plug-and-play | Como usuario, quiero vincular un dispositivo inteligente a mi cuenta. | 8 |
+| 9 | US-09 | Asistente de instalación guiada | Como usuario, quiero una guía rápida para configurar mi primera sede y equipo. | 5 |
+| 10 | US-10 | Nombrar dispositivos | Como usuario, quiero asignarle un alias reconocible a mi equipo. | 2 |
+| 11 | US-11 | Ver estado en tiempo real | Como usuario, quiero verificar si mi dispositivo está encendido, apagado o en mantenimiento. | 3 |
+| 12 | US-12 | Encender y apagar remotamente | Como usuario, quiero controlar mis dispositivos desde la plataforma. | 5 |
 | 13 | US-13 | Programar horarios de encendido | Como usuario, quiero definir a qué hora se enciende mi luz. | 5 |
 | 14 | US-14 | Crear rutinas automáticas | Como usuario, quiero configurar grupos de acciones masivas. | 5 |
 | 15 | US-15 | Ver consumo en tiempo real | Como usuario, quiero ver una gráfica con el consumo de Watts vivo. | 5 |
@@ -1096,22 +1173,22 @@ En esta sección, profundizaremos en la definición y elaboración de las User S
 | 17 | US-17 | Recibir alertas por alto consumo | Como usuario, quiero notificaciones si mis aparatos gastan demasiado. | 3 |
 | 18 | US-18 | Ver recomendaciones de ahorro | Como usuario, quiero leer pequeños tips basados en mis propios datos. | 5 |
 | 19 | US-19 | Administrar múltiples dispositivos | Como usuario, quiero ver la lista completa de lo que he enlazado. | 3 |
-| 20 | US-20 | Crear perfiles de acceso | Como administrador, quiero que otros en casa puedan apagar las luces. | 5 |
-| 21 | US-21 | Bloquear acceso no autorizado | Como usuario, quiero que la plataforma se cierre si me olvido abierta. | 3 |
-| 22 | US-22 | Registrar actividad de control | Como administrador, quiero revisar un registro de qué se prendió. | 3 |
+| 20 | US-20 | Gestionar perfiles de acceso | Como administrador, quiero asignar permisos diferenciados a usuarios registrados. | 5 |
+| 21 | US-21 | Bloquear acceso no autorizado | Como usuario, quiero proteger rutas y módulos con autenticación y permisos. | 3 |
+| 22 | US-22 | Registrar actividad relevante | Como administrador, quiero consultar eventos importantes para trazabilidad operativa. | 3 |
 | 23 | US-23 | Controlar equipos del negocio | Como dueño, quiero gestionar mi pequeño local desde la casa. | 3 |
 | 24 | US-24 | Programar equipos por horario comercial | Como dueño, quiero que el local se active de 9 a 6 automatizado. | 5 |
 | 25 | US-25 | Revisar consumo por área o equipo | Como dueño, quiero saber si un sector de la oficina consume más luz. | 5 |
 | 26 | US-26 | Compartir acceso con personal | Como dueño, quiero aislar los permisos de los empleados a sus sectores. | 5 |
-| 27 | US-27 | Pagar suscripción con tarjeta | Como usuario, quiero contratar el Enterprise plan con Stripe. | 8 |
+| 27 | US-27 | Contratar suscripción con checkout | Como usuario, quiero contratar el plan Enterprise mediante checkout con validación de pago interna. | 8 |
 | 28 | US-28 | Cancelar suscripción Premium | Como usuario, quiero regresar al plan Free sin que me sigan cobrando. | 3 |
-| 29 | US-29 | Recibir alertas por correo | Como usuario, quiero que un pico de consumo me llegue vía Mailchimp. | 5 |
-| 30 | US-30 | Recibir reporte mensual | Como usuario, quiero que en fin de mes se manden mis estadísticas al mail. | 5 |
-| 31 | US-31 | Recuperar contraseña | Como usuario, quiero que se envíe un token de reset a mi correo. | 5 |
-| 32 | US-32 | Editar perfil de usuario | Como usuario, quiero rectificar mi número de contacto o nombre de perfil. | 2 |
-| 33 | US-33 | Eliminar cuenta | Como usuario, quiero un botón rojo para purgar absolutamente todos mis datos. | 3 |
-| 34 | US-34 | Configurar preferencias | Como usuario, quiero poder rechazar los boletines desde mi perfil. | 2 |
-| 35 | US-35 | Simular conexión de equipo | Como desarrollador, quiero inyectar equipos falsos para probar el sistema. | 5 |
+| 29 | US-29 | Recibir alertas en la aplicación | Como usuario, quiero que un pico de consumo me aparezca como alerta in-app. | 5 |
+| 30 | US-30 | Consultar reporte mensual | Como usuario, quiero consultar mi resumen de consumo del mes en la app. | 5 |
+| 31 | US-31 | Recuperar contraseña | Como usuario, quiero generar un token seguro para restablecer mi contraseña. | 5 |
+| 32 | US-32 | Editar perfil de usuario | Como usuario, quiero actualizar mis datos personales de perfil. | 2 |
+| 33 | US-33 | Desactivar cuenta | Como usuario, quiero cerrar mi cuenta para impedir nuevos accesos. | 3 |
+| 34 | US-34 | Configurar preferencias | Como usuario, quiero elegir canales, tema, idioma y niveles de alerta. | 2 |
+| 35 | US-35 | Registrar telemetría energética | Como desarrollador, quiero registrar lecturas para monitoreo, alertas y reportes. | 5 |
 | 36 | US-36 | Filtrar historial por fechas | Como usuario, quiero un calendario de inicio y fin para mis reportes. | 3 |
 | 37 | US-37 | Exportar historial a Excel | Como usuario corporativo, quiero bajar una tabla de mis métricas en CSV. | 3 |
 | 38 | US-38 | Agrupar dispositivos | Como usuario, quiero juntar varios enchufes bajo la etiqueta "Sala". | 5 |
@@ -1144,13 +1221,13 @@ La tipografía es el pilar de la comunicación digital en ElectroCorp. Hemos sel
     
 -   **Cuerpo de Texto:** Se define en 1.1rem con un interlineado de 1.6, optimizando la lectura de párrafos largos en la descripción de la startup y testimonios.
     
-<img src="assets/Typography.PNG">
+<img src="assets/md-images-chapter4/typography.png">
 
 #### **Colors**
 
 La paleta de colores de **ElectroCorp** ha sido diseñada bajo una estética de "Modo Oscuro" (Dark Mode), que evoca tecnología avanzada y eficiencia operativa.
 
-<img src="assets/paleta_colores.PNG">
+<img src="assets/md-images-chapter4/paleta-colores.png">
 
 #### **Spacing**
 
@@ -1162,7 +1239,7 @@ El sistema de espaciado sigue una progresión lógica para mantener el orden y l
     
 -   **Separadores (hr):** Se utilizan líneas de 3px de alto y 60px de ancho en color azul eléctrico para indicar el fin de un concepto y el inicio de otro de forma minimalista.
 
-<img src="assets/spacing.PNG">
+<img src="assets/md-images-chapter4/spacing.png">
 
 
 #### **Dimensions (Tone of Voice)**
@@ -1356,52 +1433,52 @@ En esta propuesta se consideran las principales secciones de la landing page: in
 **Home / Inicio:**  
 Presenta la estructura principal de bienvenida, incluyendo el encabezado de navegación, el mensaje principal, el botón de acceso al dashboard, una promoción inicial y una barra de búsqueda para consultas del usuario.
 
-<img src="assets/LandingPage-Wireframe-Home.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-home.png">
 
 **Pricing / Planes:**  
 Muestra la distribución de los planes de suscripción en tarjetas comparativas. Se incluyen los precios, beneficios principales y botones de selección de plan.
 
-<img src="assets/LandingPage-Wireframe-Pricing.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-pricing.png">
 
 **FAQ / Preguntas frecuentes:**  
 Define la estructura de preguntas desplegables para resolver dudas comunes sobre consumo eléctrico, ahorro energético y uso de enchufes inteligentes.
 
-<img src="assets/LandingPage-Wireframe-FAQ.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-faq.png">
 
 **Smart Plugs / Enchufes inteligentes:**  
 Representa la sección visual destinada a mostrar el uso de enchufes inteligentes en distintos contextos, mediante dos bloques de imagen principales.
 
-<img src="assets/LandingPage-Wireframe-SmartPlugs.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-smart-plugs.png">
 
 **Reviews / Reseñas:**  
 Organiza las opiniones de clientes en tarjetas tipo carrusel, incluyendo imagen, nombre, tipo de usuario y comentario.
 
-<img src="assets/LandingPage-Wireframe-Reviews.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-reviews.png">
 
 **Description / Descripción:**  
 Presenta la sección informativa donde se explica el problema, la propuesta de solución y el valor del ecosistema IoT de ElectroCorp.Web.
 
-<img src="assets/LandingPage-Wireframe-Description.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-description.png">
 
 **Goals / Objetivos:**  
 Muestra la estructura destinada a explicar los objetivos del proyecto, acompañada de imágenes referenciales sobre automatización y monitoreo energético.
 
-<img src="assets/LandingPage-Wireframe-Goals.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-goals.png">
 
 **About us / Sobre nosotros:**  
 Define la distribución de las tarjetas del equipo de desarrollo, mostrando los nombres, roles y responsabilidades de cada integrante.
 
-<img src="assets/LandingPage-Wireframe-About.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-about.png">
 
 **Direction / Dirección:**  
 Estructura la sección de ubicación, incluyendo una tarjeta con información de contacto y un bloque destinado al mapa de ubicación.
 
-<img src="assets/LandingPage-Wireframe-Direction.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-direction.png">
 
 **Support / Soporte:**  
 Presenta la sección final de suscripción y contacto, junto con el pie de página, enlaces sociales y copyright.
 
-<img src="assets/LandingPage-Wireframe-Support.png">
+<img src="assets/md-images-chapter4/landing-page-wireframe-support.png">
 
 ### 4.3.2. Landing Page Mock-up
 
@@ -1412,52 +1489,52 @@ La propuesta visual utiliza una estética tecnológica basada en tonos oscuros, 
 **Home / Inicio:**  
 El mock-up inicial presenta el mensaje principal de la plataforma, resaltando el control del consumo eléctrico del hogar y el beneficio de ahorro energético. También incluye el botón de acceso al dashboard, una promoción para nuevos usuarios y una barra de búsqueda.
 
-<img src="assets/LandingPage-Mockup-Home.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-home.png">
 
 **Pricing / Planes:**  
 Esta sección muestra los planes Starter, Professional y Enterprise con una presentación visual comparativa. El plan Professional se destaca como recomendado para guiar la decisión del usuario.
 
-<img src="assets/LandingPage-Mockup-Pricing.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-pricing.png">
 
 **FAQ / Preguntas frecuentes:**  
 El mock-up de preguntas frecuentes utiliza tarjetas desplegables con diseño oscuro y bordes sutiles, manteniendo una lectura clara y ordenada.
 
-<img src="assets/LandingPage-Mockup-FAQ.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-faq.png">
 
 **Smart Plugs / Enchufes inteligentes:**  
 Esta sección muestra imágenes del uso de enchufes inteligentes en el hogar y en espacios de trabajo, reforzando la idea de monitoreo y control energético en tiempo real.
 
-<img src="assets/LandingPage-Mockup-SmartPlugs.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-smart-plugs.png">
 
 **Reviews / Reseñas:**  
 El mock-up de reseñas presenta testimonios de usuarios mediante tarjetas visuales con fotografías, nombres, tipo de cliente y comentarios sobre la utilidad de la plataforma.
 
-<img src="assets/LandingPage-Mockup-Reviews.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-reviews.png">
 
 **Description / Descripción:**  
 La sección de descripción explica el enfoque de la startup, el problema del alto costo de automatización del hogar y la solución basada en un ecosistema IoT plug-and-play.
 
-<img src="assets/LandingPage-Mockup-Description.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-description.png">
 
 **Goals / Objetivos:**  
 El mock-up de objetivos presenta la meta principal del proyecto: facilitar el control del consumo eléctrico mediante una plataforma comprensible, accesible y orientada al ahorro.
 
-<img src="assets/LandingPage-Mockup-Goals.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-goals.png">
 
 **About us / Sobre nosotros:**  
 Esta sección muestra al equipo de desarrollo de ElectroCorp.Web mediante tarjetas individuales con nombre, orientación técnica y responsabilidades dentro del proyecto.
 
-<img src="assets/LandingPage-Mockup-About.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-about.png">
 
 **Direction / Dirección:**  
 El mock-up de dirección incluye la información de contacto, ubicación de referencia y un mapa integrado para ubicar la sede principal del proyecto.
 
-<img src="assets/LandingPage-Mockup-Direction.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-direction.png">
 
 **Support / Soporte:**  
 La sección final permite al usuario suscribirse para recibir novedades, consejos de ahorro y actualizaciones del producto. También incluye el footer con redes sociales y derechos reservados.
 
-<img src="assets/LandingPage-Mockup-Support.png">
+<img src="assets/md-images-chapter4/landing-page-mockup-support.png">
 
 ## 4.4. Web Applications UX/UI Design
 ### 4.4.1. Web Applications Wireframes
@@ -1466,105 +1543,105 @@ Los siguientes wireframes representan la estructura de baja fidelidad de las pri
 
 ---
 
-![Wireframe-Login](assets/Webapp-Wireframe-Login.png)
+![Wireframe-Login](assets/md-images-chapter4/webapp-wireframe-login.png)
 
 **Login:**  
 Este wireframe muestra la pantalla de inicio de sesión de la aplicación web. Incluye los campos principales para ingresar correo electrónico y contraseña, así como las acciones para iniciar sesión o dirigirse al registro de una nueva cuenta. Esta vista funciona como punto de acceso inicial al sistema.
 
 ---
 
-![Wireframe-Register](assets/Webapp-Wireframe-Register.png)
+![Wireframe-Register](assets/md-images-chapter4/webapp-wireframe-register.png)
 
 **Register:**  
 Este wireframe representa la pantalla de registro de usuarios. Presenta los campos necesarios para crear una cuenta, como nombre completo, correo electrónico y contraseña. Además, incluye una opción para volver al login en caso el usuario ya tenga una cuenta registrada.
 
 ---
 
-![Wireframe-Home](assets/Webapp-Wireframe-Home.png)
+![Wireframe-Home](assets/md-images-chapter4/webapp-wireframe-home.png)
 
 **Home:**  
 Este wireframe corresponde al dashboard principal de ElectroCorp. En esta vista se organiza la información general del usuario, como dispositivos conectados, rutinas activas, consumo actual, alertas pendientes y estado de suscripción. También se incluyen accesos rápidos hacia las funcionalidades principales de la aplicación.
 
 ---
 
-![Wireframe-About](assets/Webapp-Wireframe-About.png)
+![Wireframe-About](assets/md-images-chapter4/webapp-wireframe-about.png)
 
 **About:**  
 Este wireframe muestra la sección informativa de la plataforma. Su objetivo es presentar una descripción breve de ElectroCorp, explicando su propósito como solución para monitoreo energético, gestión de dispositivos, configuración de rutinas y recepción de alertas.
 
 ---
 
-![Wireframe-Devices](assets/Webapp-Wireframe-Devices.png)
+![Wireframe-Devices](assets/md-images-chapter4/webapp-wireframe-devices.png)
 
 **Devices:**  
 Este wireframe representa la vista de control de dispositivos inteligentes. Incluye un formulario para agregar nuevos dispositivos, tarjetas resumen y un área destinada a listar los equipos registrados. Esta sección permite organizar la administración de enchufes, luces e interruptores inteligentes desde una sola interfaz.
 
 ---
 
-![Wireframe-Routines](assets/Webapp-Wireframe-Routines.png)
+![Wireframe-Routines](assets/md-images-chapter4/webapp-wireframe-routines.png)
 
 **Routines:**  
 Este wireframe corresponde al módulo de rutinas automáticas. Presenta un formulario para crear automatizaciones y una lista de rutinas registradas. Su finalidad es permitir que el usuario programe acciones como encender o apagar dispositivos en horarios definidos.
 
 ---
 
-![Wireframe-Energy](assets/Webapp-Wireframe-Energy.png)
+![Wireframe-Energy](assets/md-images-chapter4/webapp-wireframe-energy.png)
 
 **Energy:**  
 Este wireframe muestra la vista de monitoreo de consumo energético. Incluye indicadores clave como watts totales, promedio y pico máximo, además de filtros por fecha, recomendaciones de ahorro y un gráfico para visualizar el comportamiento del consumo. Esta sección facilita el análisis inicial de los datos energéticos.
 
 ---
 
-![Wireframe-History](assets/Webapp-Wireframe-History.png)
+![Wireframe-History](assets/md-images-chapter4/webapp-wireframe-history.png)
 
 **History:**  
 Este wireframe representa el historial de consumo energético. La vista contiene una tabla con registros organizados por dispositivo, consumo en watts, fecha y estado. También incluye una opción para exportar los datos en formato CSV, lo que permite generar reportes o análisis externos.
 
 ---
 
-![Wireframe-Sites](assets/Webapp-Wireframe-Sites.png)
+![Wireframe-Sites](assets/md-images-chapter4/webapp-wireframe-sites.png)
 
 **Sites:**  
 Este wireframe corresponde a la gestión de sedes y ambientes. Presenta indicadores sobre sedes, ambientes, asignaciones y cobertura, además de secciones para visualizar distribución de sedes, resumen operativo y tarjetas de ubicación. Esta vista permite organizar los espacios donde se encuentran instalados los dispositivos inteligentes.
 
 ---
 
-![Wireframe-Reports](assets/Webapp-Wireframe-Reports.png)
+![Wireframe-Reports](assets/md-images-chapter4/webapp-wireframe-reports.png)
 
 **Reports:**  
 Este wireframe muestra la sección de reportes de consumo. Incluye indicadores generales, comparación de reportes, periodo de mayor consumo y tarjetas de reportes generados. Su propósito es analizar la información energética registrada y mostrar recomendaciones basadas en el consumo.
 
 ---
 
-![Wireframe-Goals](assets/Webapp-Wireframe-Goals.png)
+![Wireframe-Goals](assets/md-images-chapter4/webapp-wireframe-goals.png)
 
 **Goals:**  
 Este wireframe representa la vista de metas energéticas. Incluye tarjetas de progreso, métricas generales y una lista de objetivos creados por el usuario. Esta sección permite definir metas de consumo y revisar el avance hacia el cumplimiento de los objetivos energéticos.
 
 ---
 
-![Wireframe-Support](assets/Webapp-Wireframe-Support.png)
+![Wireframe-Support](assets/md-images-chapter4/webapp-wireframe-support.png)
 
 **Support:**  
 Este wireframe corresponde al centro de soporte. Presenta indicadores de tickets, casos abiertos, casos críticos y tasa de resolución, además de una sección para visualizar el ticket más urgente y la lista de solicitudes registradas. Esta vista permite gestionar incidencias o problemas relacionados con el uso de la plataforma.
 
 ---
 
-![Wireframe-Maintenance](assets/Webapp-Wireframe-Maintenance.png)
+![Wireframe-Maintenance](assets/md-images-chapter4/webapp-wireframe-maintenance.png)
 
 **Maintenance:**  
 Este wireframe representa la sección de mantenimiento técnico. Incluye métricas sobre mantenimientos pendientes y completados, el mantenimiento más cercano, estado operativo y una lista de tareas programadas. Esta vista permite planificar revisiones preventivas o correctivas de los dispositivos inteligentes.
 
 ---
 
-![Wireframe-Alerts](assets/Webapp-Wireframe-Alerts.png)
+![Wireframe-Alerts](assets/md-images-chapter4/webapp-wireframe-alerts.png)
 
 **Alerts:**  
 Este wireframe corresponde al centro de alertas de ElectroCorp. Incluye un resumen de alertas no leídas, formularios para crear alertas y reglas, preferencias de notificación y una lista de alertas relacionadas con consumo elevado, sugerencias de automatización y eventos del sistema.
 
 ---
 
-![Wireframe-Plans](assets/Webapp-Wireframe-Plans.png)
+![Wireframe-Plans](assets/md-images-chapter4/webapp-wireframe-plans.png)
 
 **Plans:**  
 Este wireframe presenta la pantalla de planes de servicio. Se muestran diferentes opciones de suscripción con sus precios y características principales. Esta vista permite comparar planes, visualizar la suscripción activa y revisar el resumen de facturación del usuario.
@@ -1575,7 +1652,7 @@ Este wireframe presenta la pantalla de planes de servicio. Se muestran diferente
 
 El siguiente wireflow representa el flujo de navegación principal de la aplicación web de **ElectroCorp**. Este diagrama permite visualizar cómo el usuario se desplaza entre las pantallas principales del sistema, partiendo desde el proceso de autenticación hasta el acceso a los módulos funcionales de la plataforma.
 
-![Webapp-Wireflow](assets/Webapp-Wireflow.png)
+![Webapp-Wireflow](assets/md-images-chapter4/webapp-wireflow.png)
 
 **Web Application Wireflow:**  
 El flujo inicia en la pantalla de **Login**, desde donde el usuario puede iniciar sesión o acceder al formulario de **Register** para crear una nueva cuenta. Una vez autenticado, el usuario ingresa al **Home Dashboard**, que funciona como el punto central de navegación de la aplicación.
@@ -1588,105 +1665,105 @@ Los siguientes mock-ups representan la versión de mayor fidelidad de las interf
 
 ---
 
-![Mockup-Login](assets/Webapp-Mockup-Login.png)
+![Mockup-Login](assets/md-images-chapter4/webapp-mockup-login.png)
 
 **Login:**  
 Este mock-up muestra la pantalla final de inicio de sesión. Presenta una interfaz moderna con soporte para cambio de idioma y modo visual. La vista permite que el usuario acceda a la plataforma mediante correo electrónico y contraseña, manteniendo una experiencia clara y directa.
 
 ---
 
-![Mockup-Register](assets/Webapp-Mockup-Register.png)
+![Mockup-Register](assets/md-images-chapter4/webapp-mockup-register.png)
 
 **Register:**  
 Este mock-up representa la pantalla de registro final. La interfaz permite crear una cuenta nueva ingresando nombre completo, correo electrónico y contraseña. Además, mantiene una navegación sencilla hacia el login para usuarios que ya poseen una cuenta.
 
 ---
 
-![Mockup-Home](assets/Webapp-Mockup-Home.png)
+![Mockup-Home](assets/md-images-chapter4/webapp-mockup-home.png)
 
 **Home:**  
 Este mock-up presenta el dashboard principal de la aplicación. Se muestran tarjetas resumen sobre dispositivos conectados, rutinas activas, consumo actual, alertas pendientes y uso del plan. También incluye accesos rápidos hacia módulos importantes como control de dispositivos, consumo energético, historial, alertas y planes.
 
 ---
 
-![Mockup-About](assets/Webapp-Mockup-About.png)
+![Mockup-About](assets/md-images-chapter4/webapp-mockup-about.png)
 
 **About:**  
 Este mock-up corresponde a la sección informativa de ElectroCorp. La vista resume el propósito de la plataforma, explicando que permite monitorear consumo energético, gestionar dispositivos inteligentes, configurar rutinas automáticas y recibir alertas.
 
 ---
 
-![Mockup-Devices](assets/Webapp-Mockup-Devices.png)
+![Mockup-Devices](assets/md-images-chapter4/webapp-mockup-devices.png)
 
 **Devices:**  
 Este mock-up muestra el módulo de gestión de dispositivos inteligentes. Permite agregar nuevos equipos mediante un formulario y visualizar el estado general de los dispositivos registrados. Además, presenta métricas como total de dispositivos, dispositivos activos y consumo actual.
 
 ---
 
-![Mockup-Routines](assets/Webapp-Mockup-Routines.png)
+![Mockup-Routines](assets/md-images-chapter4/webapp-mockup-routines.png)
 
 **Routines:**  
 Este mock-up representa la vista de rutinas automáticas. El usuario puede crear nuevas rutinas, seleccionar dispositivos, definir una acción y establecer un horario. También se muestra una lista de rutinas existentes con opciones para activarlas, desactivarlas o eliminarlas.
 
 ---
 
-![Mockup-Energy](assets/Webapp-Mockup-Energy.png)
+![Mockup-Energy](assets/md-images-chapter4/webapp-mockup-energy.png)
 
 **Energy:**  
 Este mock-up corresponde al módulo de monitoreo energético. Presenta indicadores como watts totales, promedio y pico máximo. También incluye filtros por fecha, una recomendación de ahorro y un gráfico de barras que permite analizar visualmente el historial de consumo energético.
 
 ---
 
-![Mockup-History](assets/Webapp-Mockup-History.png)
+![Mockup-History](assets/md-images-chapter4/webapp-mockup-history.png)
 
 **History:**  
 Este mock-up muestra la vista de historial de consumo. La pantalla presenta una tabla con lecturas energéticas registradas, indicando dispositivo, consumo, fecha y estado. También incluye una opción para exportar la información en formato CSV.
 
 ---
 
-![Mockup-Sites](assets/Webapp-Mockup-Sites.png)
+![Mockup-Sites](assets/md-images-chapter4/webapp-mockup-sites.png)
 
 **Sites:**  
 Este mock-up representa el módulo de gestión de sedes y ambientes. Muestra indicadores sobre sedes, ambientes y asignaciones, además de una distribución por tipo de sede y tarjetas con información de cada ubicación. Esta vista permite supervisar la organización física de los dispositivos dentro de la plataforma.
 
 ---
 
-![Mockup-Reports](assets/Webapp-Mockup-Reports.png)
+![Mockup-Reports](assets/md-images-chapter4/webapp-mockup-reports.png)
 
 **Reports:**  
 Este mock-up muestra la vista de reportes de consumo. Presenta indicadores de reportes generados, watts totales, pico máximo, promedio por reporte y reportes críticos. Además, incluye una comparación visual de reportes y tarjetas con recomendaciones relacionadas al consumo energético.
 
 ---
 
-![Mockup-Goals](assets/Webapp-Mockup-Goals.png)
+![Mockup-Goals](assets/md-images-chapter4/webapp-mockup-goals.png)
 
 **Goals:**  
 Este mock-up corresponde a la sección de metas energéticas. Permite visualizar el número de metas creadas, metas activas, completadas, fallidas y el progreso promedio. También muestra metas individuales con barras de progreso y métricas asociadas al objetivo energético.
 
 ---
 
-![Mockup-Support](assets/Webapp-Mockup-Support.png)
+![Mockup-Support](assets/md-images-chapter4/webapp-mockup-support.png)
 
 **Support:**  
 Este mock-up muestra el centro de soporte de la aplicación. Incluye métricas sobre tickets, casos abiertos, casos críticos y resolución, además de una sección para destacar el ticket más urgente. También permite visualizar solicitudes registradas con su estado y prioridad.
 
 ---
 
-![Mockup-Maintenance](assets/Webapp-Mockup-Maintenance.png)
+![Mockup-Maintenance](assets/md-images-chapter4/webapp-mockup-maintenance.png)
 
 **Maintenance:**  
 Este mock-up representa la vista de mantenimiento técnico. Permite revisar mantenimientos pendientes, completados y tareas programadas. También destaca el mantenimiento más cercano y muestra información asociada al dispositivo, fecha programada y estado del servicio.
 
 ---
 
-![Mockup-Alerts](assets/Webapp-Mockup-Alerts.png)
+![Mockup-Alerts](assets/md-images-chapter4/webapp-mockup-alerts.png)
 
 **Alerts:**  
 Este mock-up muestra el centro de alertas de la aplicación. Incluye un contador de alertas sin leer, formularios para crear alertas y reglas de alerta, preferencias de notificación y una lista de eventos clasificados por nivel. Esta sección permite al usuario supervisar eventos importantes relacionados con consumo energético y automatización.
 
 ---
 
-![Mockup-Plans](assets/Webapp-Mockup-Plans.png)
+![Mockup-Plans](assets/md-images-chapter4/webapp-mockup-plans.png)
 
 **Plans:**  
 Este mock-up representa la vista de planes de servicio. Se presentan tres opciones de suscripción con sus respectivos precios y características. También se muestra la suscripción activa y un resumen de facturas, permitiendo al usuario comparar planes disponibles y gestionar su estado de facturación.
@@ -1698,10 +1775,10 @@ Este mock-up representa la vista de planes de servicio. Se presentan tres opcion
 
 El siguiente diagrama de flujo de usuario representa el recorrido principal que realiza una persona al interactuar con la aplicación web de **ElectroCorp**. Este flujo contempla el acceso desde la **Landing Page** o directamente desde la **Single Page Application (SPA)**, el proceso de autenticación, el registro de usuarios, la selección de planes, la navegación por los módulos principales y la gestión de funcionalidades como dispositivos, rutinas, consumo energético, reportes, metas, soporte, mantenimiento, alertas y facturación.
 
-![Webapp-Userflow](assets/Webapp-Userflow.png)
+![Webapp-Userflow](assets/md-images-chapter4/webapp-userflow.png)
 
 **Web Application User Flow:**  
-El flujo principal inicia cuando el usuario accede a ElectroCorp. Si ingresa desde la **Landing Page**, puede revisar información pública sobre la plataforma, conocer sus beneficios y seleccionar un plan. En caso seleccione un plan desde la landing, se recopilan los datos simulados de pago y se redirige al usuario hacia la SPA para completar su registro. Si el usuario accede directamente a la aplicación, puede iniciar sesión o crear una nueva cuenta.
+El flujo principal inicia cuando el usuario accede a ElectroCorp. Si ingresa desde la **Landing Page**, puede revisar información pública sobre la plataforma, conocer sus beneficios y seleccionar un plan. En caso seleccione un plan desde la landing, se recopila la intención de contratación y se redirige al usuario hacia la SPA para completar su registro y checkout. Si el usuario accede directamente a la aplicación, puede iniciar sesión o crear una nueva cuenta.
 
 Luego, el sistema evalúa si el usuario ya posee una cuenta registrada. Si no tiene una cuenta, se dirige al módulo de **Register**, donde ingresa su nombre completo, correo electrónico y contraseña. Si el registro proviene de una selección previa de plan desde la landing, el sistema asocia el plan seleccionado al nuevo usuario, registra el pago simulado y crea una suscripción activa. En caso contrario, el usuario se registra sin una suscripción activa. Si el usuario ya posee credenciales, accede al módulo de **Login**, donde ingresa su correo y contraseña.
 
@@ -1719,7 +1796,7 @@ Finalmente, el módulo de **Plans** permite visualizar los planes disponibles, r
 
 En esta sección se presenta el prototipo funcional de la aplicación web de **ElectroCorp**, incluyendo la integración entre la webapp y el servicio temporal `electrocorp-platform`. El video muestra el flujo general de uso de la plataforma, desde el acceso del usuario hasta la navegación por los principales módulos del sistema.
 
-El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la Fake API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
+El prototipo permite validar visualmente la experiencia de usuario, la navegación entre vistas, el consumo de datos desde la REST API desplegada en Render y la separación entre frontend y plataforma de datos. Asimismo, evidencia el avance funcional de módulos como autenticación, dashboard principal, gestión de dispositivos, rutinas, monitoreo energético, historial, planes y alertas.
 
 **Video de presentación del prototipo:**  
 [Ver video del prototipo de ElectroCorp](https://1drv.ms/v/c/0e85bddd31a5a6b2/IQCP8SBS3IW5S5o6jAGWF7XLARHP0FJrkJaB8oKVd_Yd1Bo?e=y85xUO)
@@ -1728,314 +1805,761 @@ El prototipo permite validar visualmente la experiencia de usuario, la navegaci�
 ## 4.6. Domain-Driven Software Architecture
 ### 4.6.1. Design-Level Event Storming
 
-<img src="assets/designLevelEventStorming.png">
+El Design-Level Event Storming de ElectroCorp se organiza por bounded contexts para mantener coherencia con la arquitectura DDD implementada en el backend y en la web application. En lugar de representar todo el dominio en una sola imagen, los eventos, comandos, agregados y reglas se separan por contexto para facilitar la trazabilidad con el codigo actual.
+
+La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management.
+
+Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces mediante `IntegrationEventPublisher`. Los handlers se ejecutan despues del commit transaccional y los consumidores principales son Notifications, que crea alertas operativas, y Reporting, que persiste una proyeccion de actividad en `reporting_events` para trazabilidad y analisis sin acoplar controllers entre contextos.
+
+| Domain event | Integration event | Consumer context | Resultado funcional |
+|--|--|--|--|
+| UserRegisteredEvent | UserRegisteredIntegrationEvent | Notifications, Reporting | Alerta de cuenta creada y registro de actividad IAM. |
+| SubscriptionActivatedEvent | SubscriptionActivatedIntegrationEvent | Notifications, Reporting | Alerta de plan activado y actividad Billing. |
+| PaymentRegisteredEvent | PaymentRegisteredIntegrationEvent | Notifications, Reporting | Alerta de pago registrado y actividad financiera. |
+| DeviceCreatedEvent | DeviceCreatedIntegrationEvent | Notifications, Reporting | Alerta de dispositivo disponible y actividad Device Control. |
+| OperationModeActivatedEvent | OperationModeActivatedIntegrationEvent | Notifications, Reporting | Alerta de modo operativo aplicado y actividad de automatizacion. |
+| DeviceAssignedToRoomEvent | DeviceAssignedToRoomIntegrationEvent | Notifications, Reporting | Alerta de asignacion y sincronizacion Workplace-Device Control. |
+| EnergyThresholdExceededEvent | EnergyThresholdExceededIntegrationEvent | Notifications, Reporting | Evaluacion de reglas, alerta de consumo elevado y actividad energetica. |
+| SupportTicketCreatedEvent | SupportTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de ticket de soporte creado y actividad de servicio. |
+| MaintenanceTicketCreatedEvent | MaintenanceTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de mantenimiento asociado a dispositivo y actividad tecnica. |
+
+#### 4.6.1.1. Bounded Contexts Overview
+
+<img src="assets/md-images-chapter4/event-storming-bounded-contexts-overview.jpg">
+
+Esta vista general identifica los bounded contexts principales de ElectroCorp y muestra como se distribuyen las capacidades del producto. IAM centraliza identidad y acceso; Billing gestiona planes y suscripciones; Workplace organiza sedes y ambientes; Device Control coordina dispositivos, grupos, rutinas y modos; Energy Monitoring procesa lecturas y metricas; Notifications evalua alertas y preferencias; Reporting consolida reportes e indicadores; y Service Management gestiona tickets y mantenimiento.
+
+#### 4.6.1.2. IAM Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-iam.jpg">
+
+El contexto IAM representa los flujos de registro, autenticacion, perfiles y control de acceso. Este contexto provee la identidad base que otros bounded contexts usan para validar propiedad, alcance de usuario y permisos de operacion.
+
+#### 4.6.1.3. Billing Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-billing.jpg">
+
+El contexto Billing cubre planes, suscripciones, pagos e invoices. Sus eventos permiten conectar la seleccion de plan, la activacion de beneficios y la validacion de acceso a funcionalidades de la plataforma.
+
+#### 4.6.1.4. Workplace Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-workplace-flow-1.jpg">
+
+<img src="assets/md-images-chapter4/event-storming-workplace-flow-2.jpg">
+
+El contexto Workplace modela sedes, rooms y asignaciones de dispositivos. Su separacion en dos vistas permite mostrar el flujo de creacion y administracion de espacios, junto con las relaciones necesarias para que Device Control, Energy Monitoring y Reporting trabajen con ubicaciones reales.
+
+#### 4.6.1.5. Device Control Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-device-control-flow-1.jpg">
+
+<img src="assets/md-images-chapter4/event-storming-device-control-flow-2.jpg">
+
+El contexto Device Control representa dispositivos, grupos de dispositivos, rutinas y modos de operacion. Estos eventos sostienen la automatizacion del producto y preparan la informacion que luego consumen Energy Monitoring, Notifications y Reporting.
+
+#### 4.6.1.6. Energy Monitoring Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-1.jpg">
+
+<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-2.jpg">
+
+El contexto Energy Monitoring organiza la captura, consulta y analisis de lecturas energeticas. Sus eventos conectan dispositivos con metricas, dashboards y condiciones que pueden activar alertas o alimentar reportes.
+
+#### 4.6.1.7. Notifications Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-notifications-flow-1.jpg">
+
+<img src="assets/md-images-chapter4/event-storming-notifications-flow-2.jpg">
+
+El contexto Notifications modela reglas de alerta, preferencias y evaluacion de condiciones. Se apoya en lecturas energeticas y configuraciones de usuario para generar notificaciones relevantes dentro del flujo operativo de ElectroCorp.
+
+#### 4.6.1.8. Reporting Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-reporting-flow-1.jpg">
+
+<img src="assets/md-images-chapter4/event-storming-reporting-flow-2.jpg">
+
+El contexto Reporting consolida indicadores de consumo, metas energeticas, reportes y exportaciones. Su rol es integrar datos de billing, workplaces, devices, energy monitoring, notifications y service management para producir una vista ejecutiva del sistema.
+
+#### 4.6.1.9. Service Management Event Storming
+
+<img src="assets/md-images-chapter4/event-storming-service-management.jpg">
+
+El contexto Service Management cubre tickets de soporte, tickets de mantenimiento y seguimiento de atenciones. Este contexto se conecta con dispositivos y espacios afectados para que las incidencias tengan trazabilidad operativa.
 
 ### 4.6.2. Software Architecture Context Diagram
 
-En esta sección se presenta el Diagrama de Contexto correspondiente al Nivel 1 del modelo C4 para la arquitectura de ElectroCorp. Este diagrama permite visualizar el ecosistema general de la solución, identificando al usuario principal, el sistema ElectroCorp y los servicios externos que complementan sus funcionalidades.
+En esta seccion se presenta el Diagrama de Contexto correspondiente al Nivel 1 del modelo C4 para la arquitectura de ElectroCorp. Este diagrama permite visualizar el ecosistema general de la solucion, identificando a los usuarios principales, el sistema ElectroCorp, los servicios externos y los entornos de despliegue que participan en la experiencia completa del producto.
 
-<img src="assets/context-diagram.png">
+![ElectroCorp - C4 Context Diagram](https://www.plantuml.com/plantuml/svg/bPL1Rziu48Nl_1M3vcetALgtQM08TPm6MQ1P67KMUuXpeCInJ9ZY24CgZhlP_xuWHTboR1HO-IBCFF5zd4V9tvoNx9lA2BVMjfOiAyXbiIwP6gkcP8ZXx3PUFOLRIKKRRKjOIkEmrr6ub8tnjsJzdx92cB2MvhZ_W2z-OdHfAxGU2hGUkQVQiAp_rigluCF7KQzUoPTxT4wMEDU_4BvSz7gM53giuU01bdOTYf_wnGapRTBMBYVXzxOPy9FWSxnE2UP-Qn1oCkfjzs6bYxL5v-13dmKBBsrfy6SxMhR8S75AS4siaFUhd1Jr68_oEH2rdBMHsfwIm3y2uDWHu5vRNJLLoc4q4W0pgLH8_LByArPQ8JYFZEItDGfFDNY2dBod2fGE1fgi45vxW_3TOE6PfiGr367w2QPaFRvukD6oP5a9iITwDywpllulXpm-pxE57UliSORio3wDptMsi0jxHnNI9ioI6FB6wRY1jh9P4LJIoX8Te4KkjmDG-AmBT0DWh8cz6u1hwd07qYh8jJ7Qbk_VWNJH5yukhaUZhnz_npVVEe_Ldd1EIx-HZAcnGvqPwPV45Io94mzKPBKdrhOSW6myLJ9CRT213C2IrqjTnFAEEeGGS1ros4tQP7YPMlBMEB1_lhq-Of_9RNplPapFMlLd-_t58rjfZiYP2dGE7RWcTmNhEk94XcA5nPeQ3yvBtxWMeBCu-t9xERsyUJkyIchpF-nlqEXdP0VIO8miPTVE8CLNjL-6170V74wxJmqr2kx8XJ6UCEzYwXqnvntKJMvq0Kvx7C1yDcdFYopMk0yYcQUrT_uYdgJXCEk2kOB6eLlOnskcZKD-4gaHDDtihg1kxuBmxk5XDeTpcCp-E137VLuTdfBVo3koAr1O6zgY0h8B-nXdyYGwwo2Dp3k6bAw8VhqsXYYTs3_vkD9AeNrYNQxyCFAbXzvq4agQJTTKjB73DAOT-64pBYaCbc7mSJ41CCwp7x4I0XK0h-FqucPGnmy6l7RLy4fauDgrKxKDAWFi3i6kZLQrLa9yGwl2N-L_)
 
-El entorno del sistema ElectroCorp se compone de los siguientes elementos principales:
+El contexto muestra a ElectroCorp como un sistema unico frente al usuario, el servicio externo de terceros y los entornos de despliegue. El detalle interno de website, SPA, backend y base de datos se separa en el diagrama de contenedores.
 
-**- ElectroCorp User (Actor Principal):** Representa a los propietarios de viviendas o dueños de negocios que interactúan con la plataforma. El usuario utiliza ElectroCorp para gestionar dispositivos inteligentes, configurar rutinas automáticas, monitorear el consumo energético, revisar reportes, definir metas energéticas, recibir alertas, gestionar su suscripción y solicitar soporte o mantenimiento técnico.
-
-**- ElectroCorp System (Sistema Principal):** Es la plataforma central del proyecto. Integra las funcionalidades principales relacionadas con autenticación, planes y facturación, control de dispositivos, monitoreo energético, gestión de sedes, reportes, metas, notificaciones, soporte y mantenimiento. Para el alcance del proyecto, el sistema simula el comportamiento y la información de dispositivos inteligentes mediante una API y una base de datos, sin depender de hardware físico real.
-
-**- Stripe (Sistema Externo de Soporte):** Servicio externo utilizado como pasarela de pagos. ElectroCorp se comunica con Stripe para procesar pagos de suscripciones y operaciones relacionadas con la facturación de los usuarios.
-
-**- Mailchimp (Sistema Externo de Soporte):** Servicio externo utilizado para el envío de correos electrónicos. ElectroCorp delega en Mailchimp el despacho de notificaciones, alertas críticas y reportes relacionados con el consumo energético del usuario.
-
-En conjunto, este diagrama evidencia que ElectroCorp actúa como el sistema principal que centraliza la experiencia del usuario, mientras se apoya en servicios externos para resolver procesos especializados como pagos y notificaciones.
+Como parte del contexto, la solucion integra un servicio externo de terceros: **OpenStreetMap (Nominatim)**. La Web Application consume sus endpoints publicos de geocodificacion (`/search`), geocodificacion inversa (`/reverse`) y sus *tiles* de mapa (`tile.openstreetmap.org`) para permitir a los usuarios ubicar y registrar la direccion de sus sedes sobre un mapa interactivo. Esta integracion satisface el requisito de acceso a un servicio externo de terceros, complementando al RESTful API de desarrollo interno de ElectroCorp. Los pagos de suscripciones se procesan mediante un servicio de validacion interno (checkout propio) y las notificaciones se entregan como alertas dentro de la aplicacion, sin depender de pasarelas o servicios de correo externos en esta version.
 
 ### 4.6.3. Software Architecture Container Diagrams
 
-A continuación, se presenta el Diagrama de Contenedores correspondiente al Nivel 2 del modelo C4. Este diagrama detalla los principales contenedores técnicos que conforman ElectroCorp y muestra el flujo general desde la interacción del usuario hasta el procesamiento de la información en el backend y la persistencia de datos.
+A continuacion, se presenta el Diagrama de Contenedores correspondiente al Nivel 2 del modelo C4. Este diagrama detalla los principales contenedores tecnicos que conforman ElectroCorp y muestra el flujo general desde la interaccion del usuario hasta el procesamiento de la informacion en el backend y la persistencia de datos.
 
-<img src="assets/container-diagram.png">
+![ElectroCorp - C4 Container Diagram](https://www.plantuml.com/plantuml/svg/dPTVSzeu4C3V_IbscjTmIPkaJJc6gO7qUfsaH-jq-X1uaAq5TCYIHbg7q6k_-uqaspY4T6uENiZkIllRltRUEMAMgb8cRYsKOPQLaBDYlRIwKdoifRPmz3vyEXPknRZU2BM41PCEEngE2rP9UgyLVM8bGce5aq_rj_X0gHHBLQ8YA50HsexLnZBpJN1QmSkpYuwyP0ytw1nROYQ-8xmvxUYKvkZGmAC3bgcr5vvtXQcrUbE7TfdwxxxIuzS6hyFda456MucGQydtjRShKQmLEWSlkonO45DBYLzYQgr22wU734RQShIxMmuQTHYVrEUHKUGqaWbro0J-IG2UUWIu4KgKLLdNuU8Y0PWopdtLBvEVtPeoOZbpyQR7fru_Vwe560oohICiHpujp6w7muYqruLacNA6MLJK0jVndwV-Uo2CLwqi9e4pjqAU07IITnO-jQnJqxrGNf-VTa9v-UfW1lQPZyPlpyvUZGvPTlcVjVfLZRistHAl14TmX1OrRGqcf0sGXbmJwHAuy7aNMYK92P88Ln8BidgihO4UZCzXh1KnuNjp8jZIiZ99ThtoOf0FkoU-EhI3atmuKmCnl9kYTLhD1oTYE5CpzTMX0rFbKXJ050TMqGeLYO8HSZ1MyweWM4YzSR-z0ER2RN1qEhguU7lsAw_J-cZJCJk2J2zemon2RAc0yWAUwR373gwP2gMTiYLsBYH6ee1lc3j1s8OsZL7TCrcXZyHe9tnMZtqHb0lX5apA7kaU2_dknbdV1aTdvsyl9wCdADrOls6U6hC3IjMoain2fYjR8AJ6j52ro5ZzDnO46q4hiBeYTCTmBt3ZZc712iRztuwqnSYPJl-4GWfKjCDBZVbFTDaqtQ6DTMc4H0ujupHjuKPMRtnvRQL8b0Xv9IJ1mkeIQ8MDJy_ZqDuZzo0k9dyX9DPecM4jrnCmFtqO0-eKq5XVrP7Mj6ljbkf6yq1QQgMbpvUsIwR4T-IGRs4ocK3kUmOv55eHFZGfIetevATTWFlfcTIApeXeHqkBsUVh0pH-VeGZ1vL3w-fUEeQDjciZMU7hnl5UX1yMcM_NyCjeIx6M98erDf2JFFcvFqOVjAFGvPBHGjjoHtRrG6WLawsgnVf3q8Sg3uFXOAKze2-Ph0V6i2N-3bzGSRInU56VJTF0bDTbyIfHO6HhE8xUlBySNqxsAATi6ruCfbRV2zvTCIrbPy13xrScPi5LkIkiC67cJ7sFdxtejxdviD-haWdvVxmoYPP2jB4Qm56AUxJRwFN6NzkuJCAQw_M6xHxeGnwcmyMApzHTFItpf37nvhxv--3GDvXVe9AfcReRtwPmBTHwlhit6cg3VXCPitUVdxETbPz3xa0eqZFLRfSWdIVUn9lwTk_3bwliTgRkFcP_VO8J-71xEytcYLTvaqaE_J08m8e2dG_YupI54yW-Ny-JHt4qjU-7Pa8EMhMUThfw3UJRriLEPolb_Ab6qrIrtrRShuxAjGQX07qeuykZw_3ShGJdgEPMB5VKg_TGcwOzRMPO96taN6zKpwSdUjepd-H9mxolgecJXdnVxu6JHEBIJqwG9G3-AHKalZCJW1-3-c4v11CUlV0ZIkDc6eQb5P_bjIA-QGnt6wkMnzOS0ZQDtZs9YaUG97c7Ylj_5lu5)
 
-La arquitectura de ElectroCorp se basa en una separación clara entre presentación, aplicación cliente, lógica de negocio, persistencia y servicios externos. Los contenedores principales son los siguientes:
-
-**1. Contenedores de Aplicación Frontend**
-
-**- Landing Page:** Representa la página pública de presentación de ElectroCorp. Su finalidad es mostrar información general del producto, beneficios, planes y llamadas a la acción. Desde esta página, el usuario puede dirigirse hacia la aplicación principal.
-
-**- ElectroCorp Single Page Application (SPA):** Representa la aplicación cliente desarrollada con Angular. Se denomina SPA porque permite navegar entre distintas vistas sin recargar completamente la página. Desde esta aplicación, el usuario interactúa con funcionalidades como dispositivos, rutinas, energía, historial, sedes, reportes, metas, alertas, planes, soporte y mantenimiento.
-
-**- ElectroCorp Web App:** Representa el contenedor funcional web que conecta la aplicación frontend con los servicios de backend. En el flujo definido para la arquitectura, el usuario puede ingresar directamente a la SPA o llegar desde la Landing Page; posteriormente, la SPA se comunica con la Web App y esta consume los servicios de la API.
-
-**2. Contenedor de Lógica Central Backend**
-
-**- ElectroCorp API:** Es el núcleo de la solución backend, desarrollado en Java con Spring Boot. Implementa la lógica de negocio organizada bajo principios de Domain-Driven Design. La API expone servicios REST para los bounded contexts de IAM, Billing, Device Control, Energy Monitoring, Notifications, Workplace, Reporting y Service Management.
-
-**3. Contenedor de Persistencia**
-
-**- ElectroCorp Database:** Es la base de datos relacional encargada de almacenar la información principal del sistema. Contiene datos de usuarios, perfiles de acceso, dispositivos, rutinas, planes, suscripciones, pagos, facturas, sedes, ambientes, asignaciones, lecturas energéticas, reportes, metas, alertas, reglas de alerta, preferencias de notificación, tickets de soporte y tickets de mantenimiento.
-
-**4. Servicios Externos**
-
-**- Stripe:** Servicio externo utilizado para procesar pagos y suscripciones de forma segura.
-
-**- Mailchimp:** Servicio externo utilizado para enviar notificaciones, reportes y alertas críticas por correo electrónico.
-
-El flujo principal de la arquitectura queda representado de la siguiente forma: el usuario puede acceder directamente a la SPA o pasar primero por la Landing Page; la Landing Page redirige hacia la SPA; la SPA interactúa con la Web App; la Web App consume la API; y la API se comunica con la base de datos y con servicios externos como Stripe y Mailchimp.
+La arquitectura de contenedores separa la Landing Page, la WebApp fuente, la SPA compilada, el backend Spring Boot y la base de datos PostgreSQL. El usuario puede llegar desde la Landing Page o abrir directamente la SPA; la WebApp se compila en la SPA, y la SPA consume los servicios REST del backend.
 
 ### 4.6.4. Software Architecture Components Diagrams
 
-Los siguientes diagramas de componentes representan la arquitectura interna de ElectroCorp a nivel frontend y backend. Estos diagramas permiten observar cómo la aplicación se organiza modularmente por bounded contexts, separando responsabilidades entre presentación, aplicación, dominio e infraestructura en el frontend, y entre aplicación, dominio e infraestructura en el backend.
-
-Para una mejor comprensión, los diagramas se han dividido en dos grupos principales:
-
-- **Frontend Components Diagrams:** muestran la organización interna de la aplicación web Angular, incluyendo la vista general, los bounded contexts y la capa de presentación.
-- **Backend Components Diagrams:** muestran la organización interna del backend Java, incluyendo una vista general y el diseño específico de cada bounded context.
+Los siguientes diagramas de componentes representan la arquitectura interna de ElectroCorp separada por frontend y backend. El diagrama general muestra la interaccion entre bounded contexts. Los diagramas por bounded context muestran la interaccion entre capas arquitectonicas. Los diagramas de presentation frontend detallan como las views y componentes UI se coordinan dentro de cada contexto.
 
 #### 4.6.4.1. ElectroCorp - Frontend General Components Diagram
 
-![ElectroCorp - Frontend General Components Diagram](assets/frontend-general-components.png)
+![ElectroCorp - Frontend General Components Diagram](https://www.plantuml.com/plantuml/svg/dLXBKnj93Bxthr25mrxCaeIG0ELoPJ2mosx8KfXK3aaEyemyxgAdUwgx1yDkyj-t-Z4lU-o3pSMMrD8dVMffXe_6ehPL8PXvvB94ZGNCCNtCjQfaDbL2QJYuzf-EXLbYfbPSvh10OQYZoMY1bR3NIjhFM10acgFOr3_Giqq4psL1qa9AqfBkMAqqbbzvPfVmvlYa8o_m-PQCmPnc_5-23wyxEgaoCbH2xu16-UY4xxh2H6krYgcT9kvlNUdWHuFt_ZDaCBClWc2kHBQkVLZoz56ICV2cYuLIYp8NT1zAgoLfU3raSA5qHhhrCcZKmRZ1Jyyeu2m5SZba0lynWCs80BTSyg8g8WydJdI7MUPOFsM_XboDnnSkDSgcIbfwjfD9SBxMJrQZD2LgahO97JDvbxY_0K1l6rb89qEpf8m1TCfmx3zHrc5dBPNtRxkfl7dBVh4bpmYC9KtAlfJ4h2h1AfWhQrK16NSPSYKPizmAWYj1gTLggdG9Xt2jNROoWpz8aaO1KrMKIfAq1YuvvXeBnjfolnhF9rq7NmpfyT5yybsE-UJR7McZv8_n4Pzybz_b5qC6x99WTfS0bu0mrsfbIF_-2j3uit3m-kBavEnuLum6OkG78a5mYsKREv5v9L3xM4Vj6MUBN9Bsg5x15fRxqPEoX4_ueYexu7z9GZGfFgXoZde44fzuZgxC8n0eymfp0aCk2wK1PGPQLPOqgCeAig408GGS7ByxExsy64HnxqzjeWZo1eR_QHphYphnUInM6l8q8MGuruJSY3bRegOC_YOjITI5RiElCz0qIuDaHiR4AhZaHYx-WkULziNnbIW5seNI1HZIJpob22s6FZWvJSwkJZUGtIIt--19AhiaQNaQoQaCQJE2Kgi55sGy84nJTqjTfRGI0OqBjmtA1HV2tRuzuDm9b6O4ffgRLFFION9eyANmDywXuV99jLMfOzLODi1yLVgn59ZIFd0-gL0NCmAjL140PEHO0JGchhW8fOsqhJ2NuUGq578VGC636O4RkQM7LLak8r6gfDX7XTkN0LOCkWtJbIITly2jajmglITjzuHktZhci2WT8ICm5YqtbgUnQcYMSuKwYx1YtAsyVLQMBs9RchqwMv2shaAL8D_Hj21DCesreYSKbVSUyFJZRQlMFPLAsxshv0uxyXGACm9wzhzZLnkUBvinr8JP1cGMPWFSeiIS_8FMFjEeAbqWi3nz98UiGEx68qhNu3AhHn0ib11gTLYLSHP5yLRsahiRc0hkBiVcSBwH2ut6wYgrbQPsLxoKr4HqYn4jf2Y4VsHr8_l-QlO09BDIyURI9IMFSU3W-lXiwZV-ZcLv4NqbTpSjiAjdIrgYMDk6laAblnCNIjaGtsMMAccgWZAOlxGBfRz8wZW77wvFfwUNZFbjVdWugRVQkHkrXiLVJX5tptbOXHaySLePngBOMSGL42rCL-NcyP2ydez3kdPW3MdZt1XInRixfEfVeo6BjhU7j7LdDJhcCkibRy8AXIythCwkhG2cgQhSMqTWWxKvjZPknu59LKai9hbU3LDYIeR5FFlLYAEEzJFjbILLCkDUpjfi-spCuxU2hERfkbqNowhvFcpR8EjC_q731Xw5BxLLNVAUCrmiA7LT6BQTOIpMtrbrBjrvk1NrhMtOsc7I9Ms7MP-v7OOT3dTOTRZSORL9wWxZVdbt67OhlCEie_BD4aV8EVmr--Sp7C6V3mztCyP-yuCSKmj-dyOdoMQIV5loB2Fv8rChUHY7IdF3-igRvBQXjTPejuQ2odEv9e_aRHmB3XlE-cU3Cl3Kqj_N1dwwhAz5ZiThjjUqsuy7zprYDvp4MjLyDitIrqSQrvja3KdhfTCVQpQrfm6B4AfjXLvNz8rYWp0cA7UDufqpWF5yyibBt8PZ03_7yIro0gL_0uMVGHhUSYP-MFgrLol2MdUA-CHGAyAAdG3lhV1Q6tRT1AZUfrt79BE0ax6F93FtNwd_0G00)
 
-El diagrama general de componentes del frontend muestra la estructura global de la aplicación web de ElectroCorp. En esta vista se observa cómo el usuario interactúa con el `App Layout`, el sistema de rutas y el `Language Switcher`, además de cómo la aplicación organiza sus funcionalidades en bounded contexts.
-
-Los módulos principales considerados son `Shared`, `IAM`, `Billing`, `Device Control`, `Energy Monitoring`, `Notifications`, `Workplace`, `Reporting` y `Service Management`. Cada uno de estos módulos representa una sección funcional de la aplicación y se comunica con servicios de infraestructura encargados de consumir la API backend.
-
-Este diagrama evidencia que la aplicación frontend mantiene una arquitectura modular, donde cada bounded context encapsula sus responsabilidades y utiliza elementos compartidos como servicios de sesión, preferencias de interfaz, base API service, base assembler y componentes comunes.
+El diagrama general de componentes del frontend muestra como el usuario interactua con el App Layout, el router de Angular y los bounded contexts de la Web Application. Cada contexto consume API clients y se apoya en el Shared Kernel para layout, sesion, preferencias y servicios base.
 
 #### 4.6.4.2. ElectroCorp - Frontend Bounded Context Components Diagrams
 
-Los siguientes diagramas detallan el diseño interno de cada bounded context del frontend. En ellos se observa la relación entre las capas de presentación, aplicación, dominio e infraestructura.
+##### ElectroCorp - Shared Kernel Frontend Components Diagram
 
-##### ElectroCorp - Shared Frontend Components Diagram
+![ElectroCorp - Shared Kernel Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDRziu48Rl-XM3vEhKiTqaJc08zKSC1DiiWgH53sqFOt4i4Q58BKd5SRVzxmjIiat9Tj5JW9Lld9UQPpuueZyOYzgMkOZCCvS5QinXWSbpgbKfsLG9fU5qxfz0OJ9aQiLb2aiKXW8BeoMMmiwLj7zZJZ3M7CM-_HEzsh7WgSn9MaX8MjA1QgMn-CAPpQ3VFm_MStoz9sCmfIV-Ww0t28rICJ9Km5Mug54-kyLXk3ZMMgtgs8PZzsiR7NyjkFJF8S6JNGk2XHAiRVsKyUHPaZ7G2raeiIXJGOzLRhKa3UU711Eb6UdTMmwA0iQz0ZL45MSXaCj34lWt0jZt273F9S_Bl2f4xzejFI1ZhkozVlGhh2fQNA2fNjNOrk_zPjiMOJHwMXjB-SGb1lKwZYkeLYDQZT8Kg4dQBNATWVTZzpiGI7-xLgM1eSc8HG11-WR-gTU2ghPYkRfin38y5ekFWjXKIKklzdyOowQSRURJwVLWq9ySKeRyHrM_wzXG4pPinXc1iQH9sNL1aQ2b1Qj0ypIpmBZBErSoYYotWk1MK6ArcYfTm1ayPQY9mL-a9GcOQrSHoM2gya99ajR0Z6EgCO-YtN4u6ItY8nlhoa9Tsb5t4N-J8nv_7Skq5AXXJcXBJN2lM2de-wZBunCuqX5DZm-Q34cBBXZuY6lIkxS_O4e6kY5t5nvLQSbu5z_aD_b8af4syC9fPJgGeMI239I6D70tNj7d2L0oO2GeHKi6Z4LBa6GeKpBlJW0DD41EBuRZwzlX7ksuA0HF3iBECK7cSP-iqW7XL2dDkFH-FzzLhZiE418qP3pPiixVIkddfL2hcYbqTmnffdBaUpJtYf7mwIf5m3AZ9PTaOBcfREvr7Py-q4xhUOHAK02hNiqeuOOhMKFL3e_ntCcbHcDrcVY8MbpZXpkO2bxNyXwBWdIOAcdAd8p_53iyagnGt8aTLOw50Kr6bJeXuyghsf5KY2s63UglLhU7XsPIUnm_tEreRryjQOd2DpvoINhNTxTFdvmOaegPmM8DDkD1RfEgxIkapVjFh-R3wN3sH-Tk1rBRFz-vzYBZgh4bUT3gXRlE4xXMfUs0gGGTA3GjIPDCo7JStaBpd5l-KXVPVxbS20lAy8KhNP7MlWw3tetlWvRV3HOVwS6Mb_Z2Kz_27NT_Sg-kJf_IiELZVWxM_KN5-H7l4ou4b-aR4FIE47nH-haGcD0RCFIFCCpeXIVatMabtW1ai0M96bFox2nkZAWRc75Je4soQjHLezT4eSRjgIV8JRNPZQDw_Fa1j2TldUORUAH_IZBMUCgePNOxDeVj1hOJnP_NxJXfnl7kNRpf-XluRBP72RhDKzCWszzKdpleXWTlRuzlRmUsgycAs-oGhlU7kluVwWQ7TAsIViquOoI_-tl6MLZUPbrQkggaKLtPjhLPeYWIbBhoU6i4C5h47_sAw-K8uEVez7noSN4zYC5z7fI4dvlLo_ba48Fnj-RDwk3zzN0sYVsyzKDwOwZ6lZFKzuUDOJwudlRwCV1cwtI1DWE_5bPNkdXtqQ_Ng-CGx_IXRt9N41TE57qWoToVpFy0)
 
-![ElectroCorp - Shared Frontend Components Diagram](assets/frontend-shared-components.png)
-
-El bounded context `Shared` funciona como un kernel compartido dentro del frontend. Contiene componentes comunes como `App Layout`, `Footer` y `Language Switcher`, además de servicios transversales como `Auth Session Service`, `UI Preferences Service`, guards, servicios base de API y ensambladores base. Su propósito es evitar duplicidad y proporcionar funcionalidades reutilizables a los demás bounded contexts.
+Este diagrama muestra el bounded context frontend `Shared Kernel` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 ##### ElectroCorp - IAM Frontend Components Diagram
 
-![ElectroCorp - IAM Frontend Components Diagram](assets/frontend-iam-components.png)
+![ElectroCorp - IAM Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/iam-frontend-components.puml)
 
-El bounded context `IAM` se encarga de la autenticación, registro, gestión de sesión y perfiles de acceso. Su capa de presentación contiene las páginas de login y registro, mientras que su capa de aplicación utiliza un facade para coordinar los casos de uso. La infraestructura se comunica con la API mediante servicios especializados y transforma los datos usando assemblers.
+Este diagrama muestra el bounded context frontend `IAM` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 ##### ElectroCorp - Billing Frontend Components Diagram
 
-![ElectroCorp - Billing Frontend Components Diagram](assets/frontend-billing-components.png)
+![ElectroCorp - Billing Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRziu4BthLmoIgrF7TfCuWI7K7p4GRBC8ye4zD3sCnR54X2Ar91N7tVQ_BqZ9DYNRFIwmyetpo7apxmqbVp4MjIrp4PatBWlKcCC2axTKgrAogH9Am-dSFm72PCZKYiiKbYWC1H56Ioo5dIjf_yISOAmvYltuCttOiU2fp4bQI4XQqW5gfR7uYpERGRz_7gpd-75Fnc1AJ_m7GMyG1gLYPAY0gt1HetnpYyDmSQorMjMr3SVkrmuw_ZNWqZ-704zsBGWMIh1sz3dZoPiaOw0NSg74eam5FLQzrP8qd1y2J9Hcf7Ud70G57FS4Qe0gdeL0BWz1u9y8O3yZm3sNF2_pIeZUjLjwGCQSxBr-z2jK5Iqkq5H7DRRrUx_PjgKm6ZsjZQLyuXg3UXt75QcM4Qr6QGhK9EsMSjs1psFtEr18VxjMjO6XoOX5047x1lwfrm9LMxLSNJPg6HwhnLT1RAgafG_xFwnb8sURy-dqUZ3eJmuXG_v7KRzpR8W93PjnHc0iQL9sNL0aQ6d1Aj0ypImmxlhEbOmYowqWk1MKMAscIXTm1XCkXAjlhfqMai5KvOMI9As16STKOnv5kq4u6ItYlIsrcb3BEUekubSvul6tiKnBWHhcXBRK1FUAbOA-ZxeyFe4ZBcZcUj1aI5fq1S1NN9FUdVw0AHdeXeoxyAXAIyQdU9Mlyf4a8stWdTFAT213oGGPA0rfuEvAHTyRGCc0aQ0KBHam5Yr1ag5CoNmw0JJG879wCHnVtmxts8wBGl3a8Dav9iWytIUhTC1mgfHcNFgyBtTLweuZ20aQCfxPikxVIkctfL2hcbEOxXYbcSgHxx6vLuo4RrSf0YupMd991fORPNEFw_ZsWNPOpqUe10MmwcX62JTSoPfKdV0Odpkvr6YiBXDVKOlN-E4EfeBNMjvZKP0EMoLDcPFnhrz7ZoGh57TWnoh7me0ceqgTa77ogdOb5SKMXmtLNosVXuCogJEE7-vsR6y_B6c9mXiVkIIzyztjqxC3Gr9nPh1OWyruqDkaidr5QNF-wTLyE1tEMaoUCjJ4u0_IaiHsxdP4wlZBdRCN6QV6bic3Lk_SEK_WMfMs0wO2TA3Gj2HDCY7JSNiBpNDk-NijidzRkH8MbE4xLxfYMkSwJFHkV1zOVdUb-4eFMbxYEq-zXJlkcyaTNKsVqh3bn_pTL_kBYlCZsH-fKDfocVu777fR3b7ZQZWxYnjpUGCpRWgqILRDTtNVc2Z4k3trsDnKczqCrZFlfsuFthBm3JpItoKPQppBg1LsEpOEku7j67cJRcUeMSUdJ_56wXjuCLl_GBTfbGQp_KsrsQ0RkcrlZzVK4Tjfik8sEuJh7SAr9FYMSSP8VlSlmBDGZcOVMxXAWgXMeXrjjZIA1AMkdJuQ0OmMyLU_uhmN0VmSdPvFBYwk1p6uEqn9-BbPlPnF1Z4O_pctMHrylXxE9h6_5FnDiWbKTvCBr2-vJM0-k9xs-Z7mfjHTeCsjL0EhRuruzmLQhrVsZNVuC3UvzwGh9ug-a6Jkty-_)
 
-El bounded context `Billing` gestiona planes, suscripciones, pagos e invoices. Este módulo permite visualizar planes disponibles, suscribirse, cancelar una suscripción, procesar pagos simulados y revisar el resumen de facturación. Además, incorpora entidades como `Plan`, `Subscription`, `Payment` e `Invoice`, junto con servicios de aplicación e infraestructura para mantener la información sincronizada con la API.
-
-##### ElectroCorp - Device Control Frontend Components Diagram
-
-![ElectroCorp - Device Control Frontend Components Diagram](assets/frontend-device-control-components.png)
-
-El bounded context `Device Control` administra dispositivos, rutinas y grupos de dispositivos. Su facade coordina la carga, creación, actualización y eliminación de dispositivos y rutinas. También se apoya en modelos de dominio para representar el estado de los dispositivos, las rutinas automáticas y la agrupación de elementos inteligentes.
-
-##### ElectroCorp - Energy Monitoring Frontend Components Diagram
-
-![ElectroCorp - Energy Monitoring Frontend Components Diagram](assets/frontend-energy-monitoring-components.png)
-
-El bounded context `Energy Monitoring` se encarga de mostrar lecturas energéticas, métricas, historial y gráficos de consumo. Este módulo permite observar el comportamiento energético de los dispositivos y, en función de las lecturas registradas, presentar información relevante para el análisis de consumo.
-
-##### ElectroCorp - Notification Frontend Components Diagram
-
-![ElectroCorp - Notification Frontend Components Diagram](assets/frontend-notification-components.png)
-
-El bounded context `Notifications` administra alertas, reglas de alerta y preferencias de notificación. Permite listar alertas, marcar alertas como leídas, configurar reglas y aplicar criterios de prioridad. Este módulo se relaciona con el monitoreo energético, ya que ciertas lecturas pueden activar alertas según las reglas configuradas.
+Este diagrama muestra el bounded context frontend `Billing` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 ##### ElectroCorp - Workplace Frontend Components Diagram
 
-![ElectroCorp - Workplace Frontend Components Diagram](assets/frontend-workplace-components.png)
+![ElectroCorp - Workplace Frontend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/frontend/bounded-contexts/workplace-frontend-components.puml)
 
-El bounded context `Workplace` gestiona sedes, ambientes y asignaciones de dispositivos. Permite organizar los dispositivos dentro de ubicaciones físicas como hogares, oficinas, tiendas o almacenes. Su diseño facilita visualizar la distribución de ambientes, cobertura de asignaciones y sedes con mayor actividad.
+Este diagrama muestra el bounded context frontend `Workplace` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
+
+##### ElectroCorp - Device Control Frontend Components Diagram
+
+![ElectroCorp - Device Control Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDRziu48Rl-XM3vkhKiTqsJc08zKSC1DiKGTAYXxQ7iJYMY52aTaZ5yMxxtnUaP5kMxQAd0YlVE2_5Ppv5lxSEsPMvYkoJr0Kovh30v2bbKsenDSemdCt3qr3O38LPIPt24fMbXaNG4albvaQxZvWJZ5cYEhH_eXStLZBLEMa72Mb7t52j68ilKhWC-lsBndgEBtTaBQRqAFyXw0sQHcq4MIhWihd8g9_yuh2vE6OsgzgtuTZ_saRFNmlUXUUOuD6j5S72AD6sVifaygJ9MkWrMIXng5D53rLiMHF3nJ71nB0WthtbgAZ1U92WFL75MIYK-fW4_eq03ay4k9DQvcLU9Q9tvPVkKGYVzbu_-jdCAZfSeArUjRUjt_l5jYt2QFIujexoYGyCyZgEAwXM8Jf6RGjaqcwBN4VWpTZ_ZZZItwvLOH1eCn8HG2DyW_3KQusijdovVBVdo_2KBy4B4bEZ7Rsu_w4lctIscS-cLuD1Vt9CsUG_gVfLnJOrpOBDf22mZfYCMnSKALewS0POffa38NtSfT5HvAHJ13UA4iTcQhY0SvZHiqm8V2ROA9YpJuaMC3LvOJHfPs4cCMNCesZN3wz6Y_ZKpZgtK2Ttr5t4t_H8nb_7EYqLCim9NSa4TqQKYhwFkZ9-1ITgOl_8UoPBsg5t1pxWcdZtzdjCoKAt2Tw51rCwik68R_gRVY0jY2qyIrhP3cIeXI8BfIK6wGSiXaW1QW625ANeo89rw0YI37LAzlKhG0jx86TlX-Ehc-41xRWeb4oEmiunGH5m7vtX1k7K61PIXtC_trP7TpmW96Z91h9b7R-LuQUbCgkQgNdSAQIPoL4UqDmPGIg4grGDbXajfIOBoqrcyw3hXF01UstWKIP11Q9wjQ14Mcbq3LKVU8hdLYyPhUCo2HwrkCRtjp1Liixb7HO5SJDKsfOvsV0nzdYaHM6a5tkg70iBJDQKd93rwJLjJoh45iC6zMUht9jjCwbF7D_VxcXlNXonHXKA7wKctjNTpUCdBuQaOXQmM8FBP2EsILNs5TBc_MUNy-5qE6kHF6R89E0lOasxljk1rFRFjxwyoFfiR4dksJnBNtaArwPq7R2Le0C5qvAOT4Asu_SMB7Ffv7ETvF3jyYuiACDdQRWYhSyw3lh5y5EXCA56uU_cI_3tQE5hV9PfAEIElqVv0weUD0nRIX7cOLrbL5oSOBZHnEaQxeoMph3KwHzWwPrW-MYSNDOjQly0H_y4nmCLXjsVYSLWon3j3StpytXlObt3JDe2NP9Law-Qn3PgQloUUg1SLvlzTAgdOPX71_9MSr_30_rTadKsK4Ojiz-nwRrhs0wOqBxRwRBln-lNyQO9hk6ptNOMTFURQ8_iS5FTXj1jzk71db3d7coNavLqsJ5TxpTr_T_K3OxfMYdzcaaXI7yF5u_pPdhtyzBILIcDwioshVifYY95gKzFi4O0eqNy8QpuMeu0VepEBYPltruDOl1V2wFXnsRrtNmoYC66Q_HcTV3cQZYRn67yXfczCLHV0M-ehnCRmtnmDUtrOv3xfTC5sip_MbZTyUBTpRzUhzeXtkcRPvE_aNXtekWzQU7_TVu7)
+
+Este diagrama muestra el bounded context frontend `Device Control` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
+
+##### ElectroCorp - Energy Monitoring Frontend Components Diagram
+
+![ElectroCorp - Energy Monitoring Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDRziu48Rl-XM3vEhKiTsaJc08zKSC1DiKGT9W3qqFj3YMY52aTaZ5yMxxtnUaP9kIxM1F1TQvSLwApyoy72cVZMLaorn6vaMeWX7BOS6IbvHqgVXKIqrmElU_G64onlLAg1IMJ1eC8XoNh9HshfNzodA4CGacz-FVyCsEfKXLZif2WieY1QeLiU9FmMq6_Vvvi9wpjpiqXgNuAFv6w0t2eD8S3HRmALmafbxSuZ1S71FfLPtRSEp-sa77Nmik_U-GuD6k9S92IzwEVij4ygBG6EY5B9XOfbA93rLjII71-I71H1D7sZtbe2XWt6jGGrHn5f89TKW2_qG0-oS2t0abyZAl6j6xSaltZ7FNzbu_-XLsbLcsOAPwL6DRl_VEjYt2QFIuDXRpYIiCetKSLr0j8rfYoXICKDajSbs1ZsFtTo2H_dQjAWDd9aCU0GJb6_XVlHPqjPNBfyj6BiDZkVWia4-rilXc_uUvRDhPPZwTNWq6_SaXPSX_LFMUOqDDQDXCS0HZaL3RTO6HnAK5gu54cbdWmjLTQ1L5LbY9S2CniQIdcWeuWnk5bAxXJYjXDRbCv-IweZXCTLveXSeQc0cM4ikZQ7SbJaQB-9tDTOUXRl6ekuYVrKZ4tySgBIKZc2Ep9I7SQLvA_37gYlW4ZZYZUUezeK5bcKiAlh0rqkxfzon50zsGlGiFkhHe_17FwbazeE981bu5ham7CgQuH0EbGGBXnYppzGAcE72Kc3AB1enb5Y79c4hHV3W1Pg01Sden75_T3FTenqKXHN8GTiuInZtkezKK44wr9YwKF_VfjZgwum0XOGQD9rlMzLjfUbbAlQgPmkEE8SrqpiGUpPtcA7svIXcmp70f51fORZgRUrt7bm_8QJsFr0cJmAj7Sqo44LhLKFM1ntXkrPAOiLGcFgCMr_Z-5gPIrBsyOqM159PAcJ97ur_93WyLBxHmOaULiy80eT4b9MXSUtKxamgnnR11_TLsV71v9lM9u_lR7UtDcqLIJ7hZCw6GThwxUVpcn91Kp1mMQx2P26gRLBQla3RFF_qq7qw7inR9OyO8EVo1f51kxzqEf8u_tJfxeN7Ts9BSatuLpdcIhNLfEs0gGGSAmYKIgWHDn-qjIEJ2YjUwoVuDvb9OOCPUXQQAj3xhCEWCNqM2lXwaPU3-tPpnIHzqlsAl8lLkxhXFAdTATH4rmHQL-z5OMmsByoCWNxKLo_fkcD_0qJl2yO259YjK-XiO-bk6g36jpixYngYuXfam1RD9LesSQWIQADIuFVLDlguskx5GZo4_2FRahLjr3G_uLud66ayPjS9knyRqrx2zsVxURAzrCuyF7-AD-wxXoMmj3TscUnja-vjg_qCtl01xUxot7DYk9ojXiqEwtd_KzG_fMgtwdWdEKVtmx_Epi6tDUhTqLQkYkcFjQBFqKIGnTMNtqGXWj8Y_-1NdqGZWv-ZqV79nSJM8mOrVhU3dPlLoFXd4OFpNwMPryF5gE9l4Vfxv8RW9L6FL1UhtyoOm7rnDU_qOHDCINS3DGAs5rQTJlFkWhjShcySxVNWskbUyIoUAFgFYxf-vVm40)
+
+Este diagrama muestra el bounded context frontend `Energy Monitoring` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
+
+##### ElectroCorp - Notifications Frontend Components Diagram
+
+![ElectroCorp - Notifications Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRziu4BthLmoQgrF7TjiuWI7K7p4GR5q4IOizD3tGubWYGf7Q8HN7tVQ_BqZ9DYNRHKy1LhxDF6hUp9iPqH-DPMJBN4RcIQY24SjXoPAdb7If-5HBJN0szq-0C1dZUYrK2Yic3GOUZYjMIZlNodvcESAO19E7_Y_uOiTIf2f7PI51PP42r9fOyRVWDeD-_oAmv-nbWSQm51_43uJU87GgpT5W0PUXaPXwSiPXQ1mJwNMTst3iVcsdury3FlZd6E31RYJ2KalUzdx9HFAaq1ZeXLmmiKob4k-hsf92WejZW8acZhH_or5GmF50e0Qeubb89jGn2FmR0Hn615W89V8ohuJeNJdJ7UFSoTxhHxz2LPbbIsQgLpMEzNk_ERQZC1ezR8p5VE8AmsWJnnMfLYDQOieKZ53P7UMw0k_6xdSaaVxELfM1CvCXZm22yWtyKzi2LLkvN7vev38ybOlF0lbKAuilzd-OorREDkUpwTLWq9ySGuRyJw9-rx4X9cpOJ704Ov5Gsqs1aSIL1Qk1H9fPuCBLNMWLHLPOYN0ZCR6afveAE8VFsegLI9X369YJKqHncEgyq0gLDJ0JB2MMHz5-7DwCbl69WxMoK4ixwYxZHpKIyRUnIal92ER8R4a82yrBYTz7NH6_WHCTqOnuHsXGMHyHFh4DqlxjTon50zsGTnVkTMdH-12Fwb7Te-981fu5haq7CgQuH0EbGGBXrYlpTGAcE72Kc3AB1enb5Y79c4hHl7q3p423oDdxuVZgPdZ0TbmKiYvFc-oS9OnxkWzMKy1mgZLneNpShxTLw8uZ20apQ3opLLs_jQQdbTJhcbCOxXIbcSwPE62pq1obBrSf0oupN0c51bPRPNEFw_Zo0JcivoDrmYJmwjKS4s5SGrIawe2d-Dog5J5ZgKnyHYrUuxjRc4fHQxbWHO4KbagPCaVZFyME7YfUQE70ZbNE2WE4HfUKe77owdOc5SKMXotLNwrk3uTcKaSStztksTwyM2J5f6zy9XJIlkzk7huuC2GLPmxB3TXC1BLDghQlA6tVVtOv7qw7inQJXumHSlWBIQ7SpTsUIEt_UklQ2urJOyVaZlIpS9qdsKQNjWEc0dIW85mXeKhGTDpPWaGkh7YkHVPVBfV24ZFsB3HLJEjOnudUAAHq0mkjXDKaL1eCm7xD-BoF3e1YpoBr3TrnjoaNg9f5JR1Zo_rMhBiDYuiJN6RuB1BquKZBLo3IEq7aThnuXUZz4z7liT1aNqUAmOv3rDYNv-TnOrbTmqoOWjaagvPUjOHD56BScNgNN5U7tMAg5w5VHGVmrbnVmpt-KwAnnhECMcvtOZjsrx3RBNvoTukbcSVRj_6s_w_XgzaD5NIRyzDWTdYeda3eXYDuSCQtjYEsrsGjR7OCr_j3NFyFSODZk9QatpB1EQhl_iPn7ihRrAM5goIDQcNRtgP4KIGnTV9uRmGmMiQVlCNrSWJmStHsCNd__ceGW_jGQ0K_jzOFyyaW1kFlprlhuDtLS3Q9_URrwthhg3u0pb7V9BQE-U1gskl789gjqmNShluQM5tkulsLlxPNun3lyM5iT9SHbquKVKJ5tT_D_m00)
+
+Este diagrama muestra el bounded context frontend `Notifications` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 ##### ElectroCorp - Reporting Frontend Components Diagram
 
-![ElectroCorp - Reporting Frontend Components Diagram](assets/frontend-reporting-components.png)
+![ElectroCorp - Reporting Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDRziu48Rl-XM3vkhKiTqsJc08zKSC1DiiWgH53sqFOt4i4Q58xP2AusxxtnUaP5kMxQAd0YlVE2_5Ppv5lxSEsPMvYkoJr0Kovh30v2bbKsenDSemdCt3qr3O38LPIPt24fMbXaNG4albvaQxlp4d6BD4TMZ_I2zkh6IgSz8E4jAEkA5QCHQVfN0PzFiNZVKSN-x8MapfKNudw0sQHcq4MIhWihd8g9_yuh2vE6OsgzgtuTZ_saRFNmlUXUUOuD6j5S72AD6sVinaygJ9MkWrMIXng5D53rLiMHF3nJ71nB0WthtbgAZ1U92WFL75MIYK-fW4_eq03ay4k9DQvcLU9Q9tvPVkKGYVzbu_-jdCAZfSeArUjRUjt_l5jYt2QFIujexoYGyCyZgEAwXM8Jf6RGjaqcwBN4VWpTZ_ZZZItwvLOH1eCn8HG2DyW_3KQusijdovVBVdo_2KBy4B4bEZ7Rsu_w4lctIscS-cLuD1Vt9CsUG_gVfLnJOrpOBDf22mZfYCMnSKALewS0POffa38NtSfT5HvAHJ13UA4iTcQhY0StYWmh3p7ixPPqCBc9gyC9gqip2Jc3BcKRHhXLUZHNnaKvrHg5CwwYxYhteauozZdPOA6UQ4hcI2EoDAHTz6NHc_WXELi7_QFPCbxT0x0HzmJRnx-pscPA7RPEx2WoaTsN34L_rLFv0Mn1QU9Qri1pBKGf65qXA3z6CLGtm0jG11Yb9qPC4wT0H9XZeb-_eLe8KzaBEtm_7LpV20TbmKIYP7OUUOe0YuZyvmWt1g30kfmxcVRgkZEnuG4hHa0zcoZj_AyDDIcLNDr3pk5DBCv2WFQEwC81N2LQe6ouoMKfE5vIQpUT1rGlY0lJRmA9EW0b6zMb0YhJIwXgeFFCLpgvUCrd6P18zQNEFxMvWgMUVo3ek2k1agRSkSRFW4UppIeZ3IYprLZeK59cjAJiZwz9gs9nLYYs63-hDLwSrccTGdZkzlTxGtBuvOemg5Zr8Jx-hkvl6Z5qDICGjOhC5biX7Rf2hx2cdp_hFB-N0wdBL87ZDa4l0NiIQrxRiTI6t_TElBYwpFnfRadispz9MdS6rArm5R2JfGC2s9IITaEtvlmJANJZxNIGvVBE_2WZ9ybeOhqlgiuw0JgPJKQQFiTuCbU7kqx3K-opIKSSVVdVphgmuq35j64MPWNMDKN9mW-6pugL2Oq1zWw9rWcD6pJ2WSnqRz0P3-2P0RJPokuSvewGp_cSGCjYpHtimyFu_t1jOrpAGjq2LPDVYgGMoZfiRlgUV9TRNP3wTw68PnT21lzVOrFD0_9Lbd0sNKCliTczQxXkry2Tsx7IxxVhn-7Mzwu1e-sMrZGNU_X_R83ZVLNGZTPXiUx0c5xi5sELb9bntJzNvJr_zDtU2OhfNIBvaKWlItSDiuRwPtFoyjNPNIgCvisxgVeYXIbFhq16i4C5h47yAAh-K8uCVex6BozktL80R_iJ0QVcnMtyqdWnXik3jlLWTlheQpIHocRnZP6qFr4V26-ZQnCSm7LzDUFmQvNpfTeCtuhuNLnIxUNVVhzQeTufs-UJRv2ubt9uhUanR-h-P_)
 
-El bounded context `Reporting` gestiona reportes de consumo y metas energéticas. Este módulo muestra indicadores como consumo total, picos máximos, reportes críticos, progreso promedio de metas y metas completadas. Además, permite generar reportes a partir de lecturas energéticas y crear metas asociadas al usuario autenticado.
+Este diagrama muestra el bounded context frontend `Reporting` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 ##### ElectroCorp - Service Management Frontend Components Diagram
 
-![ElectroCorp - Service Management Frontend Components Diagram](assets/frontend-service-management-components.png)
+![ElectroCorp - Service Management Frontend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDRziu48Rl-XM3vkhKiTqsJc08zKSC15ilWgH53qqFOt4i4Q58BKd5SRVzxmjIiat9Tj1JWPLld9UQPpWVeZyQYzgMkOZC4vS5QinXYSbJgbKfsLG9fU5ixfz0OJ9aQirb2YiKXW8BenMMmiwLj7zZJZ3M7CMX_JEzsB7WgSn9MaX8MjA1Qgsn-CgPpQ3VlmZMStnPa36OqWF_GT0RX4Qf61agu39Sr2YVtE8mN1nhhTPrRCEn-xMDZhyMVF3FCS63tGY2fHAiRVsSyUH9aZ7G2raeiIXJGVVLsMf96YwE2IPACzBxjnmL1Om72Mg8Aiv289V79F1l173e4M319S_Bl4f4xyejtI5ZBkszVlGhp2fQNAAfNjNOrk-zics7C1ezR8obVE8E1lKcZYkeLY5QZT8Kg4dQ7N9z0k_6xdSaaFvkhJe6XYOZ5W44npVmJxqMPBKLo-M7HYp3Kx7uA8XDbRJqOl-7iMpJsMO-cruD1lt9CMN8VrBrMiM6ch1WCyu8Z2LDocuAYWIjB5W5cgUP1SRTkNCbeyXoAmXk12LMgwdI1Pp30-bddX0iK69AVjRCjKkBP31LUQ4aIMjWnZ7Lc4VHlYVUZ9RnQxlh74ETv55t6J_A4O-_ZMLQ2jGm9xIb9bWeLWhwFkho-0sSg8scspjDXgH55nPymWtf_TllC2K3tH2-2_Ugj6IyYqVvAEz9Cj86dZcjJGSob4oGWTAG1ku6BVeJ0vGC60bAqP81Oz4I91dAbCpRDu066Y1dxuVZgvlX0UsuA0HFZiBECK7cSH-iqW7XL2dDkFH-lznMhZiE418qP3pPgZw_jT9FAw7MDLFexXJIJEN83sWMYf7mnrMAW6L6Aox9m6gRsTphElxuG3kjvn4gGG6iUZMZX1kkP0rLEpp5SojN6etLPU8ZQd6DxsvXAdYTomKM1UdmgAGfSpB-e-pmIB92SITsL3aM1ZGPLUg4Z4klQaTI8ROOjgY_MYKVji-azZY-kztJthnOqXA5BtpaalI-xcuUFZin91KpW-K6RCQ3iqsgig-Gjky_kvmFfyDPk_aorCJWBzAInAxlzY2r_SkjAoyoBXixaZkjdhchF84RLTeEc4hGWKBJYZJ9X4p7xIqqpxdbptMI_JVCXR2a39-vqXLfxUiuwEru4PJyVhhuI8-MlCHddleIxhYRb7jrrNrAmuwF-ObOrnSL5oUyVrNwgH2Oq1zWw9rWc94VaywTLk8FWFHFWDnJeRJbClq338CTGzIOa-VdSMD8NSECcm9jabN3hXg-9WerRayzGwwhpMuWrGFGZw03UQkVh-6U_Yd9MECfevRPxTYsspNiPehlsDr0QSRnzcsyhVjh-69spGJTPjyqo0utrPq7tR3r3lRu0dTW-voikSsEwNg_gUl_fcvmJDTAwRUCCqRokxzpd8VfRUQbfQjI6jMPRLkRAOeYGQbBZxT60ADb_Cclk5gE07wEpYucxzzV3M9m7mWbuUTszSDyCeZ1-1lqTdNmxceucyH-ulenlJLKWzyPwXl4rZ0VN4rx_HXuitIwGDkHNmkhwrsyl_JNwrKxn7jzw9lS9SI54qKVIJBtX_C_)
 
-El bounded context `Service Management` administra tickets de soporte y tickets de mantenimiento. Permite visualizar solicitudes de ayuda, casos críticos, tasa de resolución, mantenimientos pendientes y mantenimientos completados. Su objetivo es dar soporte operativo al usuario y controlar incidencias relacionadas con el sistema o los dispositivos.
+Este diagrama muestra el bounded context frontend `Service Management` dividido por capas: presentation, application, domain e infrastructure, con sus dependencias hacia shared kernel, backend API y contextos relacionados.
 
 #### 4.6.4.3. ElectroCorp - Frontend Presentation Components Diagrams
 
-Los siguientes diagramas se enfocan específicamente en la capa de presentación de cada bounded context del frontend. Estos diagramas permiten visualizar cómo se organizan las páginas, componentes visuales, pipes de traducción y facades consumidos desde la interfaz.
+Estos diagramas detallan la capa de presentation del frontend. Cada vista muestra como las paginas, componentes UI, rutas y facade del contexto colaboran para sostener la experiencia de usuario sin mezclar detalles de dominio o persistencia.
 
-##### ElectroCorp - Shared Frontend Components Diagram Presentation
+##### ElectroCorp - Shared Kernel Frontend Presentation Components Diagram
 
-![ElectroCorp - Shared Frontend Components Diagram Presentation](assets/frontend-presentation-shared-components.png)
+![ElectroCorp - Shared Kernel Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTBRzj64BxpLmoiQsnPP6nBXa14aYCWQ98QbjqUwXv6t16ry7ANs5tgaIR_lLWk9P5wk44FBaeT3Cry_FQRfzOVZ4LjYqm4veNB73LcCCNa9TMga6oaXDBG6fTF3M7coDIIonHcA0pLF8ncM0WxLj9-nOnWe3cAG_yZhUn0y5Hc92qa92tf6cgfCV-TCpk7CBoisJDSVI5ZCAK9_qRGYUfEgHWPok6cRjGeNvonMpSEj5RBAhRkm7tsdKv_1RWkdsE0YLqBWgaIRD_xEEV9YoHZe5FNGeb5cGfwyBdLaZHS7WCCbMQaTon7GJMD1mLgWBpEN22Nno3mLm1mU2B05ovvLcI-49sUCzqZOwxidJ3uKQygMfoYyLIDryBEAwzj9VJxaxMnb0rTOb2luzYBscj4gr6Q73L9kvLSPU3zm7sE119kRJuD3CsSM01GIrzKFfMjLjMzM6wk6x5qJyLIHa5ifAIbbVqVnh8fvxxcrgWNHU7m6BAk_oJgjOwjO-eDE-UCm5ZIfEmwfq3Gp89Le7awjy2uopjNCWWijuBWew34QZLIEeTpcCnH4uDVI4iICDQk8fB1lIP3qg9x4KOgovKaQGtSSKmrPa6mcusp_ZHkiZHU_enhqltsD7wMVHx_CP1f8L33qoUO57g62VtPR_Fu34uqHVESGPuxGbNOdQWTzpsc16ruK8Kb1hznMfRSp_9P_hgK1aoYYUIve0K949u69OF2a0Rk5YoMcOAPwxuvDp0Zj8McYpD00ux-4bfNtK7lO_T0MfM2fq-rTBsfjCv9QPzHfeKJC5bocyn9_qV92qygV5Jv57LvwavHFPLRBNVSv0BN1ZGL1gU26cSh3Gjk2XHWB5ggj13aBhYPK4ilvec_KaVEo6dvYWkUbYtyDef-fdpaHbVfjn7qIhNcb15CvYJ4sqY9_cdgDkiB4sHKMpPvBdZYzv3tRPKzK49yGSODB2tAtUQwcLQvCcHgWlBwCakse-sbUL9eHUzxtRjXyEFuMZon4nhQjy96g9bv1zF2MYNDEw0ijsklnvcHfUvlRG25ml8NoaEyhegwTJFkZhfthoxhSk3DuO8kxNehQv1Old07WFORmXN9x8QzaIRXThvNukctIeBg-_bvNEtJMzXI1zxYV5LYR-61a6tAqGP3aXdmxMFskJe7N9r_pHKUS8K_pxKBmosQMrzyGoPmNoykuarvRk79D9IwBT20Tqx0mmeUDk7X2VX6JDI4HqVWLO073Z1aZAjjsvLwHffaGYO81ANklb3UDG80jwvAYske0E1xltKvlBhgHJ7af8sIy7rZlHuFenXCUQlTMFqSnP0eQP6xot_byECVxmPmunX7lL4dZ87BcKPZTP6utnne0wqiQObY0_HNhdXt4Q_ilZ7Z7Rv-Dadc0mo23oIP-oVmRm00)
 
-La capa de presentación de `Shared` incluye el layout principal, el componente de cambio de idioma, el footer y páginas generales como Home, About y Not Found. Esta capa proporciona la estructura visual común de toda la aplicación y permite que los demás módulos se rendericen mediante el sistema de rutas.
+Este diagrama muestra las views y componentes de presentation del bounded context `Shared Kernel`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - IAM Frontend Components Diagram Presentation
+##### ElectroCorp - IAM Frontend Presentation Components Diagram
 
-![ElectroCorp - IAM Frontend Components Diagram Presentation](assets/frontend-presentation-iam-components.png)
+![ElectroCorp - IAM Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTBR-Cs4BxhLmpYwsOTovl43WnX7MTT1DsqGRnf3qqFOt4i4w58WKF5SRlxtmkAiYs_jeiU0bGw69hvEFpcIVeZExIkp5N4pr8NQ367AQRFcJMb5YEZZ8NMk7eQ29wZC0kfCvYXOcfe1CsmL6vijFi5SuAXbQZszL_erGsLp7HEsa5Asf5je1OMYz-bS7E8uxE6FCVNEsB6Z2RoBu9EjwdKHX1J0PTDeKNzx8Mzfd1ehLdKllM6_jrLUluruA9w3W4cRga8faQ9NUsNkKoVDJ53fyc5KeSwK_GGOcirMJWx1BWsLf3TM3a8Qd3SIz0MAF0i54fz209_Hm3xEmBSIItpCW-9wFIzw1w5y6dlnD6tPbRHuHGvcDfQ5dU-isnDOJ2OBDbHVkq3WtQP987KJY4wYveBjAJTcd8TWGz3_nvm95xBGXW4yfn41D08NxTwQbaZgpk-N5vi-T8xvalb1OcHqOvUtV_GbrKwTpctHlrkDxu-X6poFuhwNiKsCSs2dKj1m8ui6RSiA58qS-0CM9dD7GZfuowDZY8ddIBuf2XrreoCBU0KReTtCBO-3rh0lIKcxT33OMJomcZIZk56OcOnZw9DHvmCfebVkxNaCox93jhJv4aFPFB7K6UbGWkFjp0fxGnJ-dFGbia972c0RUkVJIOrt6D66ul-2zhmO4f70dwJjAWiFkad_Uj2Ct1gYVIfeXTIe71fIWUe1PHC5gGVeLZ50cQ-lkQIOKReIallJm2vskmCMkUzOVzJRu_G0sNIX_djENMEShgtPYOLlJsb-2YbaBUniVc6qEFjffpML6ua5mgN39PAngcYhQsDXHV99IfWXuvgAWI5zsscp29mUPG_aB2t8_FlcPgKUOvs-JPqZcTfGipUr4ybsb0YRyEeUvHHDOamHT4ev65HA9c6uH9qQpuFb99y8VRJXLwgCULBc5uBmyGD6aLpGgNheHO81QFGwdxezswkesyx4suoHqi2cW7X3RjQ-pDPJMfDR8HMy3kObiuPpU-0yi8j0nylHf7vtqRNAOFL4HCWWLTjkdKvxerwDmVcRjNRl3zhAxbTanccJhvuis33CF09uKrVRmL7-V4TzW_cr_j7zVVfQL8FoIjOcuw2nElgS5x10w5O9Q4DJ5emX5BXNLkTFLkT_smhthCL_xYjZHj-g5o5b3Dnv3_VlqzMIRc2HzvYwjj-2zuv0ezhUBmDZu_0LsIws_3k0NZju9u2kExpja_rZ2pfb3YA56N-mA-k21607zkLn1TK1F1rq3gxFZ_lTnCeoBBHy7KblHXVTnFWwZAwaeRkII0rsg7qT_PQ4LezsRJTIZ7kzaUTE06fPnRPsJBrnmkqWLuTMOrg1GmtfMHpVwxbeJ2J3RwvDsaH78oYZwI5_-_s3m00)
 
-La capa de presentación de `IAM` contiene las páginas de login y registro. Estas páginas construyen los DTOs correspondientes y llaman al `IAM Facade` para ejecutar los casos de uso de autenticación y creación de cuenta. También utiliza traducciones para soportar los idiomas disponibles en la aplicación.
+Este diagrama muestra las views y componentes de presentation del bounded context `IAM`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Billing Frontend Components Diagram Presentation
+##### ElectroCorp - Billing Frontend Presentation Components Diagram
 
-![ElectroCorp - Billing Frontend Components Diagram Presentation](assets/frontend-presentation-billing-components.png)
+![ElectroCorp - Billing Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTBR-Cs4BxhLmpYwoQEvKrY1uQmjhDkWzrjWsJJ7feUnkBO9aAH0eUoutRtlnSKPLj-POiU0bGw69hvEFpcIVe3ExIko5J4prBdQ363CQRFKsiABOP66GkDKVdK43n3OHPIJs62Ygcc4JJ1GhcHqUuNp0ZwLgBQrt-b5zTNSgepqWvIqevi3RMmcFykXPj179_Nv1c-V25cdDA3_8kWrQuhjH74bCDLNMXHFtjXfoxiMsiMbM-TldztbPv_1RWidqE01xTK16EZnAxswqocpvgOeLNdGgb3FLLq7s9hDLauFmGO62l8RgmS1DKuxYLe2nHuvWgbFWI1loE0_Hq1laWjio8BYMXrlUWEXV1fRyNHztfMqU4OEPZQMXQtNbcsfj3hFIpPKJRmWK6xJ990QgSGdKNDELhIRasvYi3xldyFE1AlPI4C0db68WAeXQzTFfMibjKTNwukjtpf7FEbz8B4q6X7B-v_wCigdRkS6yDkknqF3Y7h_8-YNglOEgPUi3Cf2DYH9UEMEKMA9WwS0IkdCmT2-hXBewF8IQS8FYfAdJL3OtCuXO5KolitiZuNMi2T9IRjq2-1eSboeqaxXXk9KujP56swugGtJbRhjvPznYNPNdESFEcUJFxewscXqCBZBJmKTe8f_TbhokG4ZXJ2zWvt2ZN37KvfOz5_GHFkJU58m6-I5gN59_saVrre1aujaJvLD2S52fUcS81QGC5aGVfHYcLCOEBhR2OP9eIki7Hs0XWsEuV6HQVV_TZP8xHo-MV9pjZbsrDh7QNcOmN36QNFtgpV_4s9nJyWXbPi-3pURifhpUH6SgvmoM2fO1mhsjhPM9XBBb01EtHKCI78lMiJPHQ1ogCydhn0n6GvMib6mqzMlX6dLxA6o_AG7ncRlGsNuucwrNCZKth3NBL_s6WZJ57KMgoVvqgcOTG4tPhJFQKavyH-rj2y75o-XkabDqnSevBNvrMw7dE1L30AZVRxRkTc47tVcNaFCxGae1uKth2hj9_8Qb9hOZwU_0x6XND6ypkWB7VBmCUBKKpzRwtjbC7ou0cGmAiotRWQTOQTcoEJk6nmtf--fTok2VLJ9-VUDDWm4NnYUDFSMm5IVg073i7ycaDKVP-U9jNOl8QrwIX8lAuAwJNS4ufL8fh0f0L3A1dUjTNQizNwpxRYFLlnlxUrSSEFbkkGTYQE_EVPMR9Ap3KyyXPJt_LRyDOHU5p1usruV0I-8jFUXhSFm2i7znJ0nEnps_Ifdf0bdH97aQAflmQKbuS8e3TEFfSINr0HmBTUutnmST5j9v2JzHFqsqfwEHgq4-3ochgIXWvA83NQeVIt-KeHMZxPjDvACMftXwqu0Qad5jdP8lLd33I1NXnPZMe537UeP7EphkIXC9CDlhutQH4SZA8Ff8N_L_SF)
 
-La capa de presentación de `Billing` contiene la página de planes, tarjetas de plan y formulario de pago. Desde esta vista, el usuario puede ver su plan activo, seleccionar un nuevo plan, confirmar un pago simulado y revisar sus facturas. La página se comunica con el `Billing Facade`, que proporciona los datos y acciones necesarias.
+Este diagrama muestra las views y componentes de presentation del bounded context `Billing`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Device Control Frontend Components Diagram Presentation
+##### ElectroCorp - Workplace Frontend Presentation Components Diagram
 
-![ElectroCorp - Device Control Frontend Components Diagram Presentation](assets/frontend-presentation-device-control-components.png)
+![ElectroCorp - Workplace Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRziu4BthLmpYQnF7SfFOWI7KSMgWsBGRnCtsiDd3M1pRH6XIu51slDl-zmL5sPA_Wc8FALOw69fv6hwPDnpH7zYXTVbSHVmiTOOMvp36z7bgJQx5m2XZeJ4ihXg2PoZCKkefJ50nrJo29fWhDpJQVS4vGTzALFl-h_JY-afEzPoqWvIq8rj3BIrctwHmCuZZyvfzZY-VYHcdD99_4xJQTQSsWfWokAeRBUfdR-pKZNrhpRBChTFtzwxJyoy1byLr231oAqKmDahiUh_EPFgiYHbQTIwKEjHJHG-XjbQJXVD3W1jZ1Tagoa5GZUEUG5kWm3DJAFKX2FmJ0Uol2F1PQZdFvq68LjURxb48BtihZdxKLKM7O-GGQkkrkFNAQniAlTvenOxcDxumQ5T94aZjDAApg3b3IzfjA9SLUD_tzu54ueqjb44WpqX40BNojOkhjDLKtSdbwd8hbywnN8eiI0oCTlJY_eUvhENSvTmOTDlj-EOGiix_AEgrZgrZwWqxauA07LaoRfLHf6ZYm1cmSZfp8AIlkpGwYfnqYk2ZejHPCp0sWrFuPknpfZ0b65glXXPmRub9E_GlmS3CCwD9EuPRYLEByoYgziL9RvnK4RPUlCCLsLvpd3pfdap-xEjfhj32uoSOvNQ2AVtLQyha18uqm_OQToOjeZBSuvIggFu9cl1WSaS2_f2qBA8-wIVz-r8pS6g9zAcY1IbGk3Av0zG2SYOBqezKB6e34zzlCyam8NIvfRCJmB3OEJGkEltknyuUgGTZvh-0KEieeLjQo9IWprn-Ddu1k_WekxM6C40hAawFdweUsx2vbPmfN35OoXd7YhPMDnOMadDKm0uTbMm8Cf_UH9bbeFCeNzSExYIxjo5oNBDABBX7JUfj-1nNgThD8_A3mjYtOTJ-2KP3J57KshcVPKgMJHLy6rOFb99S4FjvGujYA_X6ffVCC76DJ5QVMUbcs0LQ8IWqsk-xdTkRwCVEv1lDq9A0UbcuObTwVoEhIMs8-URdTp3EdJEQtm7DCxSAVBmPnTJ_rlQUCbXyW08ay2f3Dww6dK7dzkWyBlOvxy_WmcutbFgfamiV76mO35uShlRuLecK7-k1HGY_OH6LpwUdIJauhs4JEWeMxokBUWqFX68jHHEOj608RSExiLfxiLh_ELQy5ol--LXL6dwwN0VXcJZoZsTdoLgQQtZaBQP-1cp1MqVWSGcFj-7n4VYQJ7iRtZu0BnFSSm0JizUswQMUa2MT4aUHega_3XJ7Y0Z0Z_32uXig0lZUQvpVN5nqsmbaPDbe-BwsNWvlsWbmSM1TMyCUIY0rsg7qv_hI4RPzKcs-jMFOxWvQSG9IJoooitdgFpNG17fnP3MgDJ2SffBgZ5tQGsCc5Rw-DcaH4eoY3wI5_t_tBm00)
 
-La capa de presentación de `Device Control` contiene las páginas de dispositivos y rutinas, además de componentes como listas y tarjetas de dispositivos. Su objetivo es mostrar el estado de los dispositivos, permitir acciones como encender o apagar, y gestionar rutinas automáticas.
+Este diagrama muestra las views y componentes de presentation del bounded context `Workplace`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Energy Monitoring Frontend Components Diagram Presentation
+##### ElectroCorp - Device Control Frontend Presentation Components Diagram
 
-![ElectroCorp - Energy Monitoring Frontend Components Diagram Presentation](assets/frontend-presentation-energy-monitoring-components.png)
+![ElectroCorp - Device Control Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRzj64BtpLmoiQsnPP6nBXa14agCYQDmO_cWFTGyZxaXQUBLBx2njgqt-Ux5SIgA-x2107PGw29nvd7qpytQM_C0EhIjcAk87gNEqE8CHPWyJQmej1aOP2urXUTKGF4LXdgIUm1WLKyqZQ8o5SaEZtMyu8-XPYMhRVqlFhgVaHCz8EyX8Ex8rr9F5_0yft1JY-BXcd-7p9J7ZX6xatmIjfExKHX1J3cTreqNzu8tjkh5dhNcgSclt_6_JwVbNWDFosWMuSND5C39AR7flfp9xqCGChJeNoXpgYQBhK5khoSBnBa3VM45s5MKdgCPngq5heC0pLoZrBWZy4m5ihmXmARMS5RFGY5R7cwvG2D_sLXnzgtSL7OwGGwYrn-BM2uyjANIxDtDsDElxmg2TfsaWjI54Pr5pZfQqMrAkAl2-vtyx4ecNjb06WJmb4G7KofUKLsMhTNKZbxFJjLpQ-t8fio0nCDhHi_iVvh9evoRdng2J975_5xBEVo_g9SNMCNN1JgKWO4UMZ9ld52aQEt06h9nC7GZfwowDZY8ddIBug2XprWoCpU4GBkXHPWI-4zOe65hV4YtWoXAJTkYVX86PvKQJTWmN4YSMPr6qsXm7tL6w4MRjwSyu9zjjZj9xtPNfdpqzAHHQkFi4DuKTOqP_TPioFO0zijYr4CCLJcWLqzz14wvDuKZ0xvAUofZt-bv_UT8Cd5aYVQZeaHGed9l20Me11PC5wKShbZM2iTVTL3AC2LrXwUW0C2ns38sJTg_piRs74lnYJP7_16AjlSJygbB_Z6B5UpbzoSa6MLpwmwXS_asf9Q_rSO1Mh1ZTVLgfVydbGdAkSCvWgM0SALfRsrXub5oW0dRegE92aFlaniey1J9tylia1LUeIRqDerUr1Fr2Ab7VplybdVqoykA1MpFnfycRK7bTDei9YXcA6gbUdYkP1Sa7tvBQDMKa7udzAAJ7ShnwCTDpRfYunYYlZzDiEOm3jn0K6idxJlkY7ttRcCmtKxGae5uRNh6hlB-IrQIMnFmMu7SmAfmpcjy1pN8t3toy6SN4_zVsdp9Odf814dXLeHjdm_QWVV7oUL5kUDu-8qgxNVBgPKu--XN0XWdXsyIhpRvM9-MFdK0bX5zIYQhxmyEq6ktdi0mT1OltLPKzXsj2iUX74vYqO0W2uirOhQrOhH-E5M_5YdyuLh8LA_d-MAkI-A5r7fJ4n96_FJfA5xq-XpjUozfFb3LuQmyyhk3nEZpU0qygUB8EJtR0gmIt7C34x7NIzB8PaoMT4KUHeeb__obVdYA0xYZzN5gyE2E0hzt6SV_af9Eaa9Dbe-7hmdewx2SfSFcQlh26JPb2PhH3wRzcAaSO9kbgDoySmwGpQCKfI3ssoCuMcJ-_e0dqxCXgL0jWU8TCLryMbJs8F5tXwskJ5Y71AFf0MlYlsdy1)
 
-La capa de presentación de `Energy Monitoring` contiene las páginas de dashboard energético e historial. También incluye componentes de métricas y gráficos, los cuales permiten visualizar el consumo total, consumo promedio, picos máximos y evolución histórica.
+Este diagrama muestra las views y componentes de presentation del bounded context `Device Control`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Notification Frontend Components Diagram Presentation
+##### ElectroCorp - Energy Monitoring Frontend Presentation Components Diagram
 
-![ElectroCorp - Notification Frontend Components Diagram Presentation](assets/frontend-presentation-notification-components.png)
+![ElectroCorp - Energy Monitoring Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRzj64BtpLmpYQnnRL3vaGo0Yon4QD6u3EsuFJGyZxeXQUBbBp2njgqt-Ux5SIgA-ag103PGw29nvE_jctknezLOyigzBayYTjXKobZ35_AvWLrirTiOn74sQfuEGEIhte6q1CpH27O-Y6TR6Jvprls19C6ADPjV_YHxzoEZ2bcGzv6GzSGVrm5ZzhfMVGvgUTkmbFbwH21Pqe_yYwFMxJkiK2LNmfcjaj7V1EEWQHypkeSrjC0gVRMVWtm9UDyy-m8rV68AfCshR-sckypjB8j3hSg7SeoqCNSVQiYM6qts02yUAU1rbBwZ3SKUW3L3aMHdKTXy4_au0TdS4kD9MbtKPXUYT1TD7L2h8takJhrrLqUCK9ORQM9Rslh5iHM4ul5c8f_8Y50PvaMMHr5OZUaOh5J9PlwBSLk3bA7ps99AkRB4C2cLEAW7ebA_VFAsje-fMBczUR-GoE9HBamMfiREU7lt_C9UbdDkSZyPd_NvwiG_PvNyGzQsExMAw3JlNYa0yCJc_g2WnDFFW7R0kvXwK3dNNpYQ9rzuGl3EKUtPZnnKSmpjBN2pWobdj7OTC9nnKiGe-CWbPZs4nZ5rPEKlM2rngB1ZB95cVZsV3QRORQIF01rmG3q-csMSxrDaV8rlK1XbktyDDpJFCwS_XYSwUmO7csBlN9Sfywf0LVCI2ri736vp0jQizAVXDqqCJ_BFzR7zzi0AICv4zDdHF1WmkNEq1hO9QY467IOjDoM0Msd2k1MQ4lcPwyGnGcirEuUZLO7JsRd28sqzQlEF5qpFh7MGsTbRgichMNv5ddKj3uKdffJz4Rpn7zcjUj-_N3RXYTAcbChWGOAe5fuOs63Y6Uoqr6X2Fdbf615L8SMRSGwHqgmyhUKtOdFsbb9_29az3wh28KJYugSiIUG5ZPFKqb0uBTndMNQCj22RQ-Eun_oy9zRzt1Bj33NDK7Ur6LMLq7YTJzAtONLDE-fuaZ2QwRoPUQ75wh9oGT4XLtV6Mh-PZf1U3mb7_vTdWyYBvkZKiR-R8fA1R7bcpQxq_4rioAs91QdaEqzfxP-KvK5dvHUGJpAYAyDqvbSR5_esGoAiDVVHcCXWFBhyxmfj98BjZkx7pYjeez_e-R08SHqSGIzPJOADK9lmIH3On_8fDqhuV7sVja3s7LUWaMeAlBUuvX1EwbEG4XAmIY6qasx5wEx5w_pfMkXCh_V5OwpJ2x3cF3I0aINXzyI9RIdGEjxB1D4o53NZl03njuUacF3q0NvBfRyBxU-1jWZiE4189sfu4gMV4P7EI935KX9j4SnD908RJx4DZ2GsL07mP7frUl7frri-W8XPduSlI-dfoqSz0cZllqXhFKWQvinvr-6lGEk8OoDQ7SEcOzC_6lJG3RMUCuhdEmuyHd00zUcABPWcC5x9iVKrlxR4nipM-kpTP5HDCahTaLVYB-0y0)
 
-La capa de presentación de `Notifications` incluye la página de alertas y el listado de alertas. Esta vista permite observar alertas ordenadas por prioridad, revisar notificaciones pendientes y ejecutar acciones como marcar alertas como leídas.
+Este diagrama muestra las views y componentes de presentation del bounded context `Energy Monitoring`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Workplace Frontend Components Diagram Presentation
+##### ElectroCorp - Notifications Frontend Presentation Components Diagram
 
-![ElectroCorp - Workplace Frontend Components Diagram Presentation](assets/frontend-presentation-workplace-components.png)
+![ElectroCorp - Notifications Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRziu4BthLmpYQnB7SfFOWI7KTcAWsBGRnCdkORE7iJYsYT2amA7YkDl-zmL5sPQ_qc8FALOwQUPf-6RUS4HzP8VMvJCLyRFK6LgSmGZJvuarkHPzeuo5sg2uAWYUeZ1pgISmHiLKyGWQOwxSm6Zt1MS4NIjHxVeVwDLrbPpe6Ma7AMb7jeAQMyp-bC9D8OxFAlOPlducPfpGK7ubQ3IhJcq4CMLmMJLQrC_UsAeQkzQQUPbRg-llRQVdNm8kYciVOEWMYc1abDZsFanb-go96HfLBfGwr1D5zw6sLfE5its0dh62x3hANb25uuv06w30CrCezJu8_1C1xAu8y5bgESjdGOX6svlkK0WlUoEElbTLHOSZv11guxMuySPhAmgTpd31ZcOzNnYqYoG9fBOQqLdKdA4bxLQKomfywFfxJoBnoXRA892d92A0IlcQnLNQAgfkvN9viP5Bwr0kHHOa-aOxUdN_mroMScvphlNRpMRSsuUiyZ-8UgjZgvXgmqwb8617benRP1Gf6Zjm1goSJ1q8wUikZOuY9vqYk56KEclwncPm0b-CasEPeaSm3AnNH0kuiyIaNM66lfbbHfDs3DSI9nPdKRJU6qUTKR8PPUFbMroGxTH7oPFkoEIlhfxa2YqyVe9XRiUOqj-TkaoEu41JRAxJLMGTmnrEQ1tIFq4TxatkIC0VakP5o2Vzf7-VQmPEBP4-KVH22XGkJEu0jO2SoOBqSnMB0i7ODzrKCem9NMxfz0WmB7O6jVDMjttJsiy8xdD5lu1Muo2jgY1UZp5Pqkclu1Z_e7ItajsQqEEdTRUjg5nBpXGk62pbZ2D56qiR2o-ISrJ03XsLL0WodzjOcNdWyYWFY-ZbWniXdR7lG-MmS6kjuC5C_B1y5q8_KcdeqEKCFHIJTsBK_AdUPXXWYgB2gPjbQjdumRTYTayfoHTYFtpefPXdlfdfDJDCN26KLGTOkff-WLe82hNcXtRhkXTztng5mobQ4b0j3Q_PbTxVo6fIAs9zj8AFOPGxPpGV0yqojmXylDaNdO-h-qyPBBvA0H9ubQ5hbuDMltNzve0kzZll3kN2RbUqkgcJBtu1i650U95ulTStogJyd0zCGlWLawXyFZb9oc5w1QlGKR1uNrdOAxWd54ivwi2a1KDe7zwErTY9rVZFiUATMF7FnrgduGVDLH2VYIF_U7gQBEMvWaVUOEg7mGQySG0Ub_1u4nuVW2_9D3VXpJtmCi4T1p0nUsthNkhb9oIA54ty6Q4uNqG0dL5oMrXyGqK0tpgrizxvURkPG4QMZOPlI-l5eDTCW8kJxD8Qzb42gT4EfJ_mbuwm_PFr1bmw1irsln4d8FNO8ZkRf_wJ0tMWLqTMere2mp4hMH--Itjep6IDhwvDMeG4e-WZQU5__Fu5)
 
-La capa de presentación de `Workplace` contiene la página de gestión de sedes y ambientes. Esta vista muestra KPIs, insights operativos, distribución de sedes, ambientes registrados y estado de asignaciones de dispositivos. Utiliza el `Workplace Facade` para obtener y calcular la información mostrada.
+Este diagrama muestra las views y componentes de presentation del bounded context `Notifications`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Reporting Frontend Components Diagram Presentation
+##### ElectroCorp - Reporting Frontend Presentation Components Diagram
 
-![ElectroCorp - Reporting Frontend Components Diagram Presentation](assets/frontend-presentation-reporting-components.png)
+![ElectroCorp - Reporting Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRzj64BtpLmpYQnnRL1BBXa14agqWQD8QTjmUcXv6t16ry6gNc5dQLfhyzsAvb4HzfKKFBaeU1Cwy7RwPDpjSlHEFxAkvIUHUsn8Pvp31_BvWLrarSiOn78thguMG6Ihtg6q1KpH2BO-YALR6ZvtrF-ESOC0QpQx_CptvWT65dPFra9Frn2tK8sFvcrP-1cbwshBFyUaJYM11j_ehGQVRTbgdIAY4ixQHqTu7Owzj732xnoQttY3Ssyx0lm6yhQzzW5k_C0GJPzIsz_DCv_UMHA3JvaAvHriOkecrPKiCf_i0GyUAU1rbBwZ5SKUW3L3aMHhKTXy4_am0Tjy8y4bRFQ_cKOZEUJ1Ter91zawQV6-hYXudA37KnhAqyuDbAmhz_kr2FCs7eJ38YooBfBOQqJDQAP79-XNbfWAl1-7UaqYwiiKoA9GPgGIWLRvkVJMsbgfRkPoztSYbToYNEWjI8sSzFVd_OIvBERSv7utEkzrqk0_PvdyGzQEERMFQ3JlJYa0yCJc_A2anDFNW7R0kPXwK3dNNpYQ9rzuGN1dAFRkHunAEuOPAnpvaEEQWXbLmpIHaFOP5C7BpqbcoNk1IOy4uJvBrldZHdsJh21iBF-A2k7yooRxOliv-7zYYCiXmzm5kAvvYJd_qJtJs0Wuqmxvt25nZGUkOuGbEuCPLdXJygkcnZld5Vh6_F5e1oPd87Xjw80C65wxoW5P19SIWmq35kZ8m3Tqsqm9JGbynlNe165zs2aTlUeFpgzuEfIjBN2pWlKFp7_3g7EHrYJARE6G57wo43f2QmREoIm-oYqB2M1jF3DTeoQoPtNrOjzkAqwMMqk12WAaId1ZQuE0O7hHKQ40yUceu4PGXoQbnZv7KdJuiP50GhjaL70R825az3wF34buzrKKQLjux2-_PLUNpK3giMzDBS5lDvyYBvw7J_PisggSMvgXQUszGbaRdSGH5tuhL3UMa7qZ23AA7UgI5lgQdqWb9YqpPdcFvQW16MZ4e77LVd_SkXydthMbuEqCc1Usoo9fTu_s9s99P4Giz9ozXKkijBu7cfLz4Fi6CgWY_hQre7DOVfGY9l9hGHsVZtgXtUN16rzjUTkToRUSLfK7kzKC83XpdH117rbj-eqGcZFh88ePViKYQv-FZh1cd5x0AdKHBy3L5lO0RGhMKuWI4h1A8RIFRiJexiJh_EbQw4olzvx7MQOGnSn655v8aFBvwbIsbkO0xsM0QPi06l7C0dZRmT1EU7e0loNGtuTqzy2R17GS8YGHjJuBKKsAoEKcI62h24Q4-MYG0_KdsiRQ4Xae0llMFJeTltfntCoY9nLdujhI-7G-x6KXzY5rQunxA87VMemvd_SOHjtsstdnBnxXxFkga6MWxPHJFLHw-F702zEI9BPebC9wmilMvkx77nipM-FQxoQgOO9Ay8wl2Vxw_0000)
 
-La capa de presentación de `Reporting` contiene las páginas de reportes y metas. La página de reportes muestra análisis de consumo, tendencias y reportes críticos, mientras que la página de metas muestra progreso, estado de metas y métricas de seguimiento energético.
+Este diagrama muestra las views y componentes de presentation del bounded context `Reporting`, junto con sus rutas, facade y dependencias de Shared UI.
 
-##### ElectroCorp - Service Management Frontend Components Diagram Presentation
+##### ElectroCorp - Service Management Frontend Presentation Components Diagram
 
-![ElectroCorp - Service Management Frontend Components Diagram Presentation](assets/frontend-presentation-service-management-components.png)
+![ElectroCorp - Service Management Frontend Presentation Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDR-Cs4BthLmpYwoQEvKrY1uQmZhC65jriWpXf3qqFOt5i4w58bKFPSRlxtmkAiYr_xHOzfAXyC3JpD7ppmIVg0pkqhiXKn2zIvsWnWp6cBrDh2Yq6HXaBZM5vrH0yGs4MKazXWegfvX4qmKAveT7k2sO4VIjHxViVwTNrbPpgZBI3bBGZMqCjBEQ_Ik5c4CVdDNk6htV4Z5CQoJy9MkswKnj1J3bSrOqMzOitTkh6lhLcKUNMwVlVhjFphm2NvNK8C79BHJ0sIknw7sSoVT743Aqw5qeTwgcYXr1Rgyd2-I70ZR62x2RAGL2Durw3ja21PwvGwaCG-2i2s5yHu4vgcHLPQ4IhwqttA8HlUokEljMxYWx7o27KrcDnwpkFhIdqUgCbEyfkV67GBfCaaDePH6THSuwMj5jJhYhmlkz_1nA9rxPG1e4y8n41rChNBg_ALklgJYvNbrkvT8xbKcP1Oc2qerVtFynbrSvTper1jzsERmuXw_oFehutiNLCVM1dKX2m8ql6BNEA54qSE0DMJcSEXFHrbqP7aPDE4NnKb3fh1iRcS0eZidEP4joXnYcLMZEqlYrQmBqb9ktGFmq3a-L6atOCjnAd5hCescoGazuuEH1gAy9dN9BjDSV9i-x9vBU-dXOABJnzWb5X9vZIxxscJ4xWo7ZiB5RakR4E7cNwGexX7gUqYUtle0aFfd0au1T9YpBsitxMFoyq0wUMI9ygcfC2XKjJE40je62o8BtKObapcFWvd4c62Q4hB9sT08R5pg5nqUbtFtRsgDsXZw1Hf_JVqMiTfHSemIqvbAfS_4s9nJyYDZGssp1w-hIPl3MNMycvmYM3fO9nh6XhRMDXBhb01UpGKSM58FV9JPHP139FydWBAoeZXwvWU9GPAQdfRLWTxrnzi1xeZuBOmG2jU1jUnnktsei3e-TaEUpsUzIatePP-pYp0-g6AOfQA_jvhcGQE0VVcju3fIJdn5wYQ5vAdnzsUiqD4zTOvNMPIzT26VY5eD1el-zsRc-YRxkgEKDB0khruGsxoliJMKrgJSmtdT_1k73EQ7u7bELk6VXuCugf_w_jJsMmV8i5IE1LXMvS3Jk3pksFjRmK1TxNxz9krzpwgPDplmhOe2A-NRmHXArQAVzA27H2-3MTgBe_FKqgkRs6TUWeMBolgkurF12ALK-QmAG5GnWatetLselL-jUnuhrOyJ-FjKd3Yz5rc00cZlpjsLcowj4rFF4MKwyIM_3M4NXSmUDjU7m4lYBJteQt3y2h1FSSmCJiUzlqhPwG9PqIHv6YgJzJb8UI2A0tJZwN5ZzG4S3NNkFyvkAYsquW9yj6mzULzN9uqqw0o-FloXesKmAfqGwb_qge7448aiqkN3c6xUwW5ISWzSGYErka_hq4JQ1NHrQZMW73sIpPdDWhUnZCP8ElhqrQX0IZw0DfuRyM_mO0)
 
-La capa de presentación de `Service Management` contiene las páginas de soporte y mantenimiento. La página de soporte muestra tickets, casos críticos y tasa de resolución. La página de mantenimiento muestra atenciones pendientes, mantenimientos completados y una línea de tiempo de mantenimientos técnicos.
+Este diagrama muestra las views y componentes de presentation del bounded context `Service Management`, junto con sus rutas, facade y dependencias de Shared UI.
 
 #### 4.6.4.4. ElectroCorp - Backend General Components Diagram
 
-![ElectroCorp - Backend General Components Diagram](assets/backend-general-components.png)
+![ElectroCorp - Backend General Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/backend-general-components.puml)
 
-El diagrama general de componentes del backend muestra la estructura global de la API de ElectroCorp. En esta vista se observa cómo el frontend consume los endpoints REST del backend y cómo la aplicación se organiza internamente mediante bounded contexts.
-
-Los módulos principales considerados son `Shared`, `IAM`, `Billing`, `Device Control`, `Energy Monitoring`, `Notifications`, `Workplace`, `Reporting` y `Service Management`. Cada bounded context encapsula sus casos de uso, entidades de dominio, value objects, servicios de dominio, repositorios e integraciones necesarias.
-
-Este diagrama evidencia que el backend mantiene una arquitectura modular basada en DDD, donde los contextos se apoyan en un kernel compartido y en una capa de persistencia para almacenar la información del sistema. Además, contempla integraciones externas como servicios de pago y notificaciones.
+El diagrama general de componentes del backend muestra el contenedor Spring Boot como API REST modular. El entry point distribuye solicitudes hacia los bounded contexts, y cada contexto persiste informacion en la base de datos de ElectroCorp.
 
 #### 4.6.4.5. ElectroCorp - Backend Bounded Context Components Diagrams
 
-Los siguientes diagramas detallan el diseño interno de cada bounded context del backend. A diferencia del frontend, en el backend no se incluyen diagramas separados de interfaces o capa de presentación, ya que el enfoque está en los componentes de aplicación, dominio e infraestructura.
+##### ElectroCorp - Shared Kernel Backend Components Diagram
 
-##### ElectroCorp - Shared Backend Components Diagram
+![ElectroCorp - Shared Kernel Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/shared-kernel-backend-components.puml)
 
-![ElectroCorp - Shared Backend Components Diagram](assets/backend-shared-components.png)
-
-El bounded context `Shared` del backend contiene elementos reutilizables por los demás módulos, como `Base Entity`, entidades auditables, value objects generales, excepciones de dominio, servicios transversales, configuración de persistencia, configuración de seguridad y manejo global de excepciones.
-
-Este módulo permite mantener consistencia entre los contextos y evita duplicar lógica común relacionada con identidad de entidades, auditoría, validaciones generales y acceso a infraestructura compartida.
+Este diagrama muestra el bounded context backend `Shared Kernel` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ##### ElectroCorp - IAM Backend Components Diagram
 
-![ElectroCorp - IAM Backend Components Diagram](assets/backend-iam-components.png)
+![ElectroCorp - IAM Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/iam-backend-components.puml)
 
-El bounded context `IAM` del backend se encarga de la gestión de usuarios, perfiles de acceso, autenticación y reglas de seguridad. Incluye servicios de aplicación para registrar usuarios, autenticar credenciales y asignar perfiles.
-
-En la capa de dominio se consideran entidades como `User Account` y `Access Profile`, además de value objects como `Email Address`, `Password Hash` y `User Status`. La infraestructura se encarga de persistir usuarios y perfiles, así como de cifrar contraseñas y generar tokens de autenticación.
+Este diagrama muestra el bounded context backend `IAM` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ##### ElectroCorp - Billing Backend Components Diagram
 
-![ElectroCorp - Billing Backend Components Diagram](assets/backend-billing-components.png)
+![ElectroCorp - Billing Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/billing-backend-components.puml)
 
-El bounded context `Billing` del backend gestiona planes, suscripciones, pagos e invoices. Sus servicios de aplicación coordinan la suscripción a planes, cancelación de suscripciones y procesamiento de pagos.
-
-En el dominio se consideran entidades como `Plan`, `Subscription`, `Payment` e `Invoice`, junto con value objects como `Money`, `Plan Code`, `Subscription Status` y `Payment Status`. La infraestructura se encarga de persistir la información de facturación y conectarse con un proveedor externo de pagos.
-
-##### ElectroCorp - Device Control Backend Components Diagram
-
-![ElectroCorp - Device Control Backend Components Diagram](assets/backend-device-control-components.png)
-
-El bounded context `Device Control` del backend administra dispositivos, rutinas y grupos de dispositivos. Sus servicios de aplicación permiten registrar dispositivos, actualizar estados, crear rutinas y organizar dispositivos en grupos.
-
-En el dominio se consideran entidades como `Device`, `Routine` y `Device Group`, además de value objects como `Device Status`, `Device Type`, `Power Rating` y `Schedule`. También se incluyen servicios de dominio para validar conflictos de rutinas y estimar consumo activo.
-
-##### ElectroCorp - Energy Monitoring Backend Components Diagram
-
-![ElectroCorp - Energy Monitoring Backend Components Diagram](assets/backend-energy-monitoring-components.png)
-
-El bounded context `Energy Monitoring` del backend gestiona lecturas energéticas, consultas históricas y cálculos de métricas. Sus servicios de aplicación permiten registrar lecturas, filtrar información por fecha y calcular indicadores para dashboards.
-
-En el dominio se considera la entidad `Energy Reading`, junto con value objects como `Watts`, `Reading Timestamp` y `Consumption Level`. Además, se incluyen servicios de dominio para analizar lecturas, detectar picos y agregar valores de consumo.
-
-##### ElectroCorp - Notification Backend Components Diagram
-
-![ElectroCorp - Notification Backend Components Diagram](assets/backend-notification-components.png)
-
-El bounded context `Notifications` del backend administra alertas, reglas de alerta y preferencias de notificación. Sus servicios de aplicación permiten crear alertas, marcarlas como leídas y actualizar preferencias de usuario.
-
-En el dominio se consideran entidades como `Alert`, `Alert Rule` y `Notification Preference`, junto con value objects como `Alert Priority`, `Alert Status` y `Notification Channel`. La infraestructura se encarga de persistir la información y conectarse con servicios externos de correo o notificación.
+Este diagrama muestra el bounded context backend `Billing` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ##### ElectroCorp - Workplace Backend Components Diagram
 
-![ElectroCorp - Workplace Backend Components Diagram](assets/backend-workplace-components.png)
+![ElectroCorp - Workplace Backend Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDRziu4BthLmoQQx9kx7uuWI7KTX9i5qcRnbdqqFGm5YSoDnIf3aTrqct_-uAIR5Esq_jA5sE--ERD8oc_yu8iLM4I_w1jYOm5p35xoDbLLasTSGm75_KJHVW5AhVKDeTxD9uYZw9xh8nSE2iVi20OiqQpwx-bHnaRdTk2h416LeYZg2LZ-LahMK2__pAo5_XuHTvZJZFzW-1u43kjK-IfXBUnaT4-1ECmDewPtRBjRJWExxOpu6y3tjJFle2PF1c2kJDgstkxqDc39U_XECP2cQ3D3TqqtB8bXfVx0YQE5V6cojwW2EFEW3f13SxIeBRxGk3V161tHO0hRNLH5SqWZa-2wHgL2cC_xYU_ugcYu1nzKwgJrZ_-JTeQmcWqU_92nIGGW_oKfWseBI4Ae_KbCbbPGsuPU3KExvv6-cjRGuD2lo2L04Jq3UgdjKLJtUhbxPjEByFdUgcx83LrLkXH_eUzhCQvZVbWUZ8Oz2Vx8cFypqRzJh5nJ2pOXLO4NeZ9oLD9YRWInC7SYRW2b0wyQsUJHBGOWdD3cR2REYxX23uxVYWDPbJJJrR1r1MbisJ5mvd6dB58airEU36Qft65sVLur9kdTtQaqoyXLHjICBPvPP23z-kefzCxUsSdx9QU6BYoeWi2MQ10vgol2l8W2-rXtiWYM8CkG1Rigdm1VzxUNi_-U07eOLOY70nUdGpF9jkmTbjfPGQjpZP0PoM7eKwS4xXogZ9Kmtm1pqYpkz3xS1RVOqOURivdjt29JyIRuhMj1pVaNSKP-JK3eIOxOuWzq6FfFDMT0LbLEXq8HwiQsHiK0bvL06t50PQbqHc6MGBJjugy-8QK2D31w-7uv7ouWtaS9M_XdRgYGAiyzE1JHQmf_9eHVzTTy8wLjYZaeV846NhoXmrQh0Nc3o5hInt2jxPIw2W6xjkw3V0OrNF8pro1UWVqEC-PyXfD3wwTqPcEm7vSMW_poklwKE3A1AYuJZa4ig95Xr_VqLG4RluFPH8Stsar2DKit4NSedaEx7jxp-Y5gqmgfctGryHUUo6R4VHWhB0KuWtgzqLfgAZNPogTr-AunbX6UGMMfRQvFuJnz1AmhT4eXxA5rHcQe1VAkUPrBP4Ei1N-NydwOjhUsMUj8uBllEHCiq-NQyWpSKmUZ6k6w0-1dIjQ_YZm1kXz-nMpeh0jd2HXCnyTfR5-Js6AnhGRQxqnxkoNlsOVFq2lEGg-9b56A13hw1JEoBJIM0irYID2HZl7KpYtzwxUOrsvx2Hi4NWAVtloK3gMeC1uNibMQ6UvAopzUfuAlA3GteJLM4xXXb0rZ2vP2_cMjoyBhHJPhyejxL54OOURRb3KKxU_RbW3DcanhvsiyuKSRH6nWtshr7hMXl9m9DT54e3HFBsiBK5U2S3FqS7BoUlN9uEqPiTP-BcolhcO35BmzUVFojhS06bzKw0ENucjez5rSBItsCfnCJYP7lTJq5syFQ178RPeLe7DtPnkljXQ-zkBuNHubcxYuxN9ggR197b7LeL_2_y1)
 
-El bounded context `Workplace` del backend gestiona sedes, ambientes y asignaciones de dispositivos. Sus servicios de aplicación permiten crear ubicaciones, registrar ambientes y asignar dispositivos a espacios específicos.
+Este diagrama muestra el bounded context backend `Workplace` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
-En el dominio se consideran entidades como `Location`, `Room` y `Device Assignment`, además de value objects como `Address`, `Room Name` y `Assignment Status`. Este contexto facilita organizar físicamente los dispositivos dentro del entorno del usuario.
+##### ElectroCorp - Device Control Backend Components Diagram
+
+![ElectroCorp - Device Control Backend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTBSzis483l_1KxyLMkOYaFsQFXH0zxcewTE9OxFSGvh8WrXHe4cCNIijlaltT0KXBqSEwbBfnzuTi70Eg35sIf2fFu1srBP2nWZjb3pgwoQkACOpYwg9_8mYzGkQMsEToZyHHf5DrZPUJ2MVc41S68DPfz_IqzoSZet1Pa1JAoGXnPBHdBlxII1VHwhoDvWKzNv3tcDDF_49pqOwLrYZoLy3uMCjg781p4mX6pMxQv3KRXjwiC_At1k_evP32JPqCmTqRjQcyNEdkmv3sSn2oK2ThSq4rJMxR4yFgGmTYn8jv4EMWKCUurQCkeuImDQdl81FvD0FPN1BZILXTLqJJYv3I8hb6fqFQJNl8pxYeApj4teRRSUYU_S5iZ38UpPozKZ4DXa9_Jj87Q6KHXjBv49YjhvBO2RqRXTo2HtbhMb46XNv1A0ABozUkdbKLTtSdb_RkjN0OlvL9dGMhYhD2J_0zpMRLpb_beSjhlzyQ7B6F-5wr-DR6nJJom2wq8l12Ja-UI4d4bY8Ev4t45A1tghfrD4j5Y2CuDPS9kuhY4OvZIeyu8GYVOcRe7P1LCN54wIrOyJ3NcZ4MIRBR3g-4yZSFChaV3xZoziqETVWsksf22aSqhWnoqtuPTdTxPEpjcj_J4m9KLNH380WKoPtrLa0TPQ0_pPZQ2D0m7o89TbI_WzzlRwzblhm0zp4g4e_wRqy5ql8lrGZxjm44xSHlQMScXlMFd1AwSgWpLhA_WXI7TNkrZE9NlCICFD-UpMxZ4P-9Dy5hMXHlohkAC_BeCBPuXza1FfVDKfmTaLUbqg3fQrMm0WqB0gmYWhJZ0iZGwmz1LOFfUaHVVL2O2Edex69sU3_QOHv7p3k_45GLQvQ4BNofYJU5jHXnA6iCxLjgYa8VA4sJeoNSQMgn7pNSWQqDru7iRAMGKW_isRWCUKxr4FdK5wZteKPupvJLD5wwTqPcEO3ylhOTvvNLzF71b0YgkNJf0LhJeyFQ8fY9myxyfaw1uf5KZLBFmDd5BynBiHtlFw8MhJ2gcNUXhOg-zaCq8kZ1IM0hnXlfZKHegwlMPIkUrEAuPoyYlmBBKDlST64qk0TiOpUHGjh0wGnFcXNAkwxeUaIsm5V_FP7r5xMxlQQk8y9sNd6dsvNADF1F7v47L-yztsXS8XsFfEy2kaj236i-Lr2114Rv8sdgsgoH9sDx7nsayp6SmGMFQNRRU9NVswn-ppv-WsnmEtvB88mI8X-eCfcJQELbFRH9R18-sgMTmRkzTlU6sPsVFOQUQP_2d9m-bOmdZ63SlsJ7TMkuAIxzkhW8lA7JGOTMZCxWXL4qvbwo5V5kthmkj5DbloYtjSLJ2hTfi6qKvRUUtRTR09YtpMiawNyZnJY7ss7T2hNjjA0_dSnqa0HZEqyjQ4cOj0VWnF7ezVllsj9_MrN4MVgoaxox6_HHy_LMqaZPtGbhV7QZ3nsEhQ8OyADfxRQMuw9zEJdefw6tUBj2J45iqAyFcoaut7tAj_Ft5O3AOfXlxU6sogaamIJwGLU5Fn7y0)
+
+Este diagrama muestra el bounded context backend `Device Control` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
+
+##### ElectroCorp - Energy Monitoring Backend Components Diagram
+
+![ElectroCorp - Energy Monitoring Backend Components Diagram](https://www.plantuml.com/plantuml/svg/rPTDSziu38Rl-XMOvfgi6xiVJiQZgUqaizr9sZJEpXwQ7c0HaRcXI1M4ucIt_Uyxb6IRiftULxfu011y0BoKv0zUaAKgJE8Vj2sHiO0vPWyvkygggJEEuU2Ylg88lq3bbjhcS8_6K-HHT8-LaGjdvHCM16FMQ7Rzj_GaOwDpMv0LoCWASHIrP2p_qaeMqE-_Zkm5FbsHzvZJJFz3S3o8dTOfybJ2-zZ8Q1-2SHWRnynksTOs78Txsndusu1tzRKlO2RFXc3kZDhstYvqzc39UpYEMIWJjBcXcwQtR8dXzRw0YMD5lCcoDoXYt1bG9wZXB0rgkoy4_aq0TdS4kD9M5rNH3EBu99YkKQamzkD-yZEUAWhEqJUfEilwnxzOjaOOZMRFNgYOXCOWFwTf0xKbH66qlaGcAslajWDlnk7UKqX_RMlQeD0lI2K0KVi6zTNQegbkrVB-NQUMuKkrr5MGcZehz2J_mrfMuzncFfYU30RzoRx8cF_5g5yfDew91RlGYi0BCJbvBYaHLu8uc3iHLu3IeU_QsIGHBORWt50cxAQEIpY2SqkSFyELireSXqf3IMGLJ5rHEajMF9nfp1cB9DcSY5UZUHfdcbsFHxrvUcT7ElqQbcf32iOshmnoy7uRzNHwP-_iXDtI4mDNLdH180iKo9prLK4UPA4zp1jv16lG1yY2NPKluFVRs-lPRwy0FSnAX8F1cvFXsMG7wyMIMjb1gxiDyAniufmJk7AgCbJZle8NfDhTy6DuDjzZHXvkpcUtS8dFn9lajQq7D-HTnHdvTIT2JdR647kWfz9vgYi4igfqEZGUhMgEWK4Xu5K6q5OSO5aQdM6OBJ1zhyYBRveJ0Hsy7OvFpeSxpEDeyHRlr1K5MkMX1rygOatXrupuKNVX7IjjKSX3vGaozEGF6rgi1USF8MjJ7SBtDbEeA0RtRTu6FAPwYVpC5QXteCTvpfJND3suTaPdEeBzlBGUvfNNzKE2AnDGSRta4CYA5Xr-FQAf2DpyRyeaE1vfDGZLRDmbRcbUWlrexnczS9L9nRGDVKtijHUo6K4FnWfB8TvGVonAGqMzFrFfV2tdm5X6wmeiIsrpVmZZwILWcwDH3cKBgpCqGI-KSztNjKGwO2l-dydwHRLzmizQHuJllEHCio-NQ-IPEAQ0Ywg1ybYK9fmjJoAjIL2q5vqrbDGSr_2adZjajMfikrsIXAD-T9J6gZw5AHhJ7hVrSRcpN_-OVVu4lUP1yIs9LeG4iRfEuOnCAvYrV9Cu8gneftiAv_RUrIUlAwAT1LjjFOK_FNae7KlGPJp5P2kqizqLbduzPLLtZFOkM0th56u8LTFG9MiXt_Rjwq8hHVQRSajx5BMmqvjkK5HJjxvkM0ERjCnh9-jy8KTRZTXXtqgrdhMXF3oewoG9m6YUNjQM8Be4uCVeuFNaxTkJGLftnrduiRA-kvWCKl3rHzBAshmVqlezWZfyIxQEHkt1qRxZLewBmSdqk9-2xlBsW9w4sA9P1JPly7JpNTVQtryCfyEpT1CVxqrMDGKcoGUoAlod-0y0)
+
+Este diagrama muestra el bounded context backend `Energy Monitoring` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
+
+##### ElectroCorp - Notifications Backend Components Diagram
+
+![ElectroCorp - Notifications Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/notifications-backend-components.puml)
+
+Este diagrama muestra el bounded context backend `Notifications` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ##### ElectroCorp - Reporting Backend Components Diagram
 
-![ElectroCorp - Reporting Backend Components Diagram](assets/backend-reporting-components.png)
+![ElectroCorp - Reporting Backend Components Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/components/backend/bounded-contexts/reporting-backend-components.puml)
 
-El bounded context `Reporting` del backend gestiona reportes de consumo y metas energéticas. Sus servicios de aplicación permiten generar reportes por rango de fechas, crear metas y consultar información histórica.
-
-En el dominio se consideran entidades como `Consumption Report` y `Energy Goal`, junto con value objects como `Report Period`, `Watt Summary`, `Goal Progress` y `Recommendation`. Además, se incluyen servicios de dominio para generar reportes, validar metas y construir recomendaciones de ahorro energético.
+Este diagrama muestra el bounded context backend `Reporting` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ##### ElectroCorp - Service Management Backend Components Diagram
 
-![ElectroCorp - Service Management Backend Components Diagram](assets/backend-service-management-components.png)
+![ElectroCorp - Service Management Backend Components Diagram](https://www.plantuml.com/plantuml/svg/rLTDSzis4BtpL-p4LxkAfNp87WqdacnFqx4JntAdXpY75R6cK8C0irXQTflyzmv8IW8bEVUI5yr-uUtR1u3wu0LPgi8a_a7R4XaBc6FsaBEhh9ewunWEBkedYl0BL6wfRGxtQ3n57aNtM1cvS5O-OK4mPercrtzBJp8sEhS5MO6Ch117KKl6yY-jP07z_kl8Nk3J5NcFEStqFmJ7WzXfdI9F9RoFZOps8HY7iN7Cx9PjRyDnUBUT0NyRyAv-zWNCvDaGp9rHszxRXSuUB7aFnp4MoWHjRkYcuPOjCRpU5p1nh8WtLVO6HHXt1jG9Qd2M1hNT5mB_9W2xAm9SQQkBgcW6SNmIJDUeL1ZxSJ_v6KyL1UVecrATjFxnBzBM44QZsRCNAYQ16EJdD6r0RGbH6AqlaSdA6dBBm9jnUFSqqb_R6XeK-WMf122YRr0_hIsQwbOlxzzrUXc-r4lT1Qcfiq9FyZ_iPJNERSm7qvF1e3_P5ndZVp7gLugDOsB1BhGYy49CJfvBIiIL80xcJiGLe7JWNJkR9AB549mRoeJTr749Hp0ZVjGPmHLQpAa-Qq9FP1LCNL4wIrOyd6dC6OiasMo9LwDv6fUQNOz7lNbwPqSw_HfIjI45OvjN1ZbulurwEhspTtR2Rkc9WIihkY2G1Gfaplgg80-oq1xcZJw2DGW4PC6koXVm--tjzUotLu0UPYN2mU3DoV1iiWth5psrmeDMUHl4ivB3c2VE2LmvLHcgyRw25yJQNV5ZE9tlCICFD-UpMxZ4P-9DyThMWnlohkAC_9gAK9ETCSGUwAbqdkeMWQmgdGxCerNDHZ0e1Bog0DgA0onBepCCqmMcxnLvyGqx4Q23jyFnoVbm1_CuIjx2EtL5WLPvwC6NYbXJ-DMo6eDthBH58G-L9yZGapziq68jENy8MLlg4BwtbK97CN3Vrcs0nwXUGdxc2jGxeCTvpfJNQ7fmxOpET0Jsyz9wc5TUryS4LoP0nNNA8P0LBJhyUaHJ4RZvtvH9S3pIQX2gMRYBk4Np4jYFzfxH2rUPL4pReA-9lVP2DYFemLXXASGRr1-BqjG2zi1KEg_5SOsnZF8AB4jjSty8u-abO5kZKGvb2wipD44lb7FDwreY7M0h_3-JzLMrlSNFMaS4ttd9cMPVBjUGP-AOFFYgB1qBYCuUAD0OI1Ao612tnXfYIoRSEsFSygWgMrRRjP8aRFIZepIMz2bCqPXshwttoftz-iViyoVeDSV4joJA20LYQPt26PbMBMlj9d54o6X7UmhdzjxLswwhe9s4BKvFuKzF7W8HGPJn29EjqCvoLrZwzOWLU46XlGchIPt23Q5g25so5l8jRryNMYcotvHRsgE8mWuttQ2efsv_tR06RD9YNZjPvmivsY9Y1_jMgVMi3UNXbAwB902ZUNfPMuBY4e0VeuFNaxTlJmPfpOwpy6DbVNSn6QJWws-abRMv7TBw5a4TFYLRHoFru6Xlk9NZOd0oFUwdeBjuUq1FGcpHh0AR2ppTVDQrzlSNm-dmBDt4nskJLKs3IVA1h0f_AVu3)
 
-El bounded context `Service Management` del backend administra tickets de soporte y tickets de mantenimiento. Sus servicios de aplicación permiten crear tickets, programar mantenimientos y actualizar estados de atención.
-
-En el dominio se consideran entidades como `Support Ticket` y `Maintenance Ticket`, además de value objects como `Ticket Priority`, `Ticket Status`, `Maintenance Status` y `Scheduled Date`. Este contexto permite controlar incidencias, solicitudes de ayuda y revisiones técnicas relacionadas con el sistema o los dispositivos.
-
+Este diagrama muestra el bounded context backend `Service Management` dividido por capas: interfaces REST, application, domain e infrastructure, con sus dependencias hacia database, shared kernel y contextos relacionados.
 
 ## 4.7. Software Object-Oriented Design
 
 ### 4.7.1. Class Diagrams
 
-Los siguientes diagramas de clases presentan el diseño orientado a objetos del sistema ElectroCorp, separados en una vista de frontend y una vista de backend. Ambos diagramas se renderizan de forma online a partir de los archivos fuente PlantUML almacenados en el repositorio, utilizando la versión raw de GitHub.
+Los siguientes diagramas de clases presentan el diseno orientado a objetos del sistema ElectroCorp, separados en backend y frontend. Se organizan en tres niveles: una vista general que relaciona bounded contexts, una vista por bounded context que relaciona sus capas internas, y diagramas detallados por capa donde si se muestran clases, interfaces, records, enums, resources, assemblers, services, stores, endpoints y componentes identificados en el codigo fuente.
 
-#### Frontend Class Diagram
+Los diagramas se renderizan con PlantUML Proxy desde los archivos fuente .puml almacenados en este repositorio, apuntando a la rama main.
 
-![Frontend Class Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/master/docs/frontend-class-diagram.puml)
+#### Backend Class Diagrams
 
-El diagrama de clases del frontend representa la estructura interna de la webapp de ElectroCorp, organizada por bounded contexts. Cada módulo conecta sus vistas y componentes con stores de Pinia, servicios de aplicación, endpoints de infraestructura, ensambladores y modelos de dominio.
+Los diagramas backend por bounded context muestran solo capas y dependencias entre capas. El detalle de clases queda en los diagramas backend por capa.
 
-La conexión principal sigue el flujo: las vistas invocan acciones del store, el store utiliza facades para coordinar la lógica de aplicación, las facades consumen endpoints de infraestructura, y los responses recibidos desde la API son transformados en entidades de dominio mediante assemblers. Esta estructura permite mantener una separación clara entre presentación, aplicación, infraestructura y dominio, facilitando la futura conexión con el backend real de ElectroCorp Platform.
+##### Backend General Bounded Contexts
 
-#### Backend Class Diagram
+![Backend General Bounded Contexts](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-general-bounded-contexts.puml)
 
-![Backend Class Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/master/docs/backend-class-diagram.puml)
+##### Backend IAM
 
-El diagrama de clases del backend representa la arquitectura propuesta para ElectroCorp Platform, planteada como una aplicación Spring Boot organizada por bounded contexts y capas. El diseño contempla módulos como IAM, Device Control, Energy Monitoring, Notifications y Billing.
+![Backend IAM](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-iam-class-diagram.puml)
 
-Cada bounded context se estructura mediante controladores REST, servicios de aplicación, entidades de dominio, repositorios, adaptadores de persistencia, entidades JPA y mappers. Esta organización permite separar responsabilidades entre la capa de presentación de API, la lógica de aplicación, el modelo de dominio y la infraestructura de persistencia.
+##### Backend Billing
 
-El flujo principal parte desde los controladores REST, los cuales reciben requests y delegan la ejecución a servicios de aplicación. Estos servicios coordinan la lógica del caso de uso, interactúan con entidades de dominio y consumen interfaces de repositorio. Finalmente, los adaptadores de persistencia implementan dichas interfaces utilizando Spring Data JPA y transforman la información entre entidades de dominio, entidades JPA y DTOs de respuesta.
+![Backend Billing](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-billing-class-diagram.puml)
+
+##### Backend Workplace
+
+![Backend Workplace](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-workplace-class-diagram.puml)
+
+##### Backend Device Control
+
+![Backend Device Control](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-device-control-class-diagram.puml)
+
+##### Backend Energy Monitoring
+
+![Backend Energy Monitoring](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-energy-monitoring-class-diagram.puml)
+
+##### Backend Notifications
+
+![Backend Notifications](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-notifications-class-diagram.puml)
+
+##### Backend Reporting
+
+![Backend Reporting](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-reporting-class-diagram.puml)
+
+##### Backend Service Management
+
+![Backend Service Management](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-service-management-class-diagram.puml)
+
+##### Backend Shared Kernel
+
+![Backend Shared Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/backend-shared-kernel-class-diagram.puml)
+
+#### Backend Layer Class Diagrams
+
+Estos diagramas dividen cada bounded context backend por capa para evitar imagenes demasiado largas. Cada vista conserva relaciones internas de la capa y dependencias explicitas para que ningun elemento quede aislado.
+
+##### Backend IAM Layers
+
+###### Application
+
+![Backend IAM Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-application-class-diagram.puml)
+
+###### Domain
+
+![Backend IAM Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend IAM Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend IAM Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/iam/backend-iam-interfaces-rest-class-diagram.puml)
+
+##### Backend Billing Layers
+
+###### Application
+
+![Backend Billing Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Billing Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Billing Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Billing Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/billing/backend-billing-interfaces-rest-class-diagram.puml)
+
+##### Backend Workplace Layers
+
+###### Application
+
+![Backend Workplace Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Workplace Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Workplace Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Workplace Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/workplace/backend-workplace-interfaces-rest-class-diagram.puml)
+
+##### Backend Device Control Layers
+
+###### Application
+
+![Backend Device Control Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Device Control Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Device Control Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Device Control Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/device-control/backend-device-control-interfaces-rest-class-diagram.puml)
+
+##### Backend Energy Monitoring Layers
+
+###### Application
+
+![Backend Energy Monitoring Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Energy Monitoring Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Energy Monitoring Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Energy Monitoring Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/energy-monitoring/backend-energy-monitoring-interfaces-rest-class-diagram.puml)
+
+##### Backend Notifications Layers
+
+###### Application
+
+![Backend Notifications Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Notifications Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Notifications Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Notifications Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/notifications/backend-notifications-interfaces-rest-class-diagram.puml)
+
+##### Backend Reporting Layers
+
+###### Application
+
+![Backend Reporting Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Reporting Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Reporting Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Reporting Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/reporting/backend-reporting-interfaces-rest-class-diagram.puml)
+
+##### Backend Service Management Layers
+
+###### Application
+
+![Backend Service Management Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Service Management Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Service Management Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Service Management Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/service-management/backend-service-management-interfaces-rest-class-diagram.puml)
+
+##### Backend Shared Kernel Layers
+
+###### Application
+
+![Backend Shared Kernel Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-application-class-diagram.puml)
+
+###### Domain
+
+![Backend Shared Kernel Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-domain-class-diagram.puml)
+
+###### Infrastructure
+
+![Backend Shared Kernel Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-infrastructure-class-diagram.puml)
+
+###### Interfaces REST
+
+![Backend Shared Kernel Interfaces REST Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/backend/layers/shared-kernel/backend-shared-kernel-interfaces-rest-class-diagram.puml)
+
+#### Frontend Class Diagrams
+
+Los diagramas frontend por bounded context muestran solo capas y dependencias entre capas. El detalle de clases queda en los diagramas frontend por capa.
+
+##### Frontend General Bounded Contexts
+
+![Frontend General Bounded Contexts](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-general-bounded-contexts.puml)
+
+##### Frontend IAM
+
+![Frontend IAM](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-iam-class-diagram.puml)
+
+##### Frontend Billing
+
+![Frontend Billing](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-billing-class-diagram.puml)
+
+##### Frontend Workplace
+
+![Frontend Workplace](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-workplace-class-diagram.puml)
+
+##### Frontend Device Control
+
+![Frontend Device Control](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-device-control-class-diagram.puml)
+
+##### Frontend Energy Monitoring
+
+![Frontend Energy Monitoring](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-energy-monitoring-class-diagram.puml)
+
+##### Frontend Notifications
+
+![Frontend Notifications](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-notifications-class-diagram.puml)
+
+##### Frontend Reporting
+
+![Frontend Reporting](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-reporting-class-diagram.puml)
+
+##### Frontend Service Management
+
+![Frontend Service Management](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-service-management-class-diagram.puml)
+
+##### Frontend Shared UI / Kernel
+
+![Frontend Shared UI Kernel](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/frontend-shared-kernel-class-diagram.puml)
+
+#### Frontend Layer Class Diagrams
+
+Estos diagramas dividen cada bounded context frontend por capa para mantener imagenes pequenas y revisables. Cada vista conserva relaciones internas de la capa y dependencias explicitas para que ningun elemento quede aislado.
+
+##### Frontend IAM Layers
+
+###### Domain
+
+![Frontend IAM Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend IAM Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend IAM Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend IAM Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/iam/frontend-iam-presentation-class-diagram.puml)
+
+##### Frontend Billing Layers
+
+###### Domain
+
+![Frontend Billing Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Billing Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Billing Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Billing Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/billing/frontend-billing-presentation-class-diagram.puml)
+
+##### Frontend Workplace Layers
+
+###### Domain
+
+![Frontend Workplace Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Workplace Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Workplace Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Workplace Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/workplace/frontend-workplace-presentation-class-diagram.puml)
+
+##### Frontend Device Control Layers
+
+###### Domain
+
+![Frontend Device Control Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Device Control Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Device Control Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Device Control Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/device-control/frontend-device-control-presentation-class-diagram.puml)
+
+##### Frontend Energy Monitoring Layers
+
+###### Domain
+
+![Frontend Energy Monitoring Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Energy Monitoring Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Energy Monitoring Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Energy Monitoring Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/energy-monitoring/frontend-energy-monitoring-presentation-class-diagram.puml)
+
+##### Frontend Notifications Layers
+
+###### Domain
+
+![Frontend Notifications Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Notifications Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Notifications Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Notifications Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/notifications/frontend-notifications-presentation-class-diagram.puml)
+
+##### Frontend Reporting Layers
+
+###### Domain
+
+![Frontend Reporting Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Reporting Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Reporting Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Reporting Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/reporting/frontend-reporting-presentation-class-diagram.puml)
+
+##### Frontend Service Management Layers
+
+###### Domain
+
+![Frontend Service Management Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Service Management Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Service Management Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Service Management Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/service-management/frontend-service-management-presentation-class-diagram.puml)
+
+##### Frontend Shared Kernel Layers
+
+###### Domain
+
+![Frontend Shared Kernel Domain Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-domain-class-diagram.puml)
+
+###### Application
+
+![Frontend Shared Kernel Application Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-application-class-diagram.puml)
+
+###### Infrastructure
+
+![Frontend Shared Kernel Infrastructure Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-infrastructure-class-diagram.puml)
+
+###### Presentation
+
+![Frontend Shared Kernel Presentation Layer](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/class/frontend/layers/shared-kernel/frontend-shared-kernel-presentation-class-diagram.puml)
 
 ## 4.8. Database Design
 
-### 4.8.1. Database Diagrams
+### 4.8.1. Database Diagram
 
-El diagrama de base de datos de ElectroCorp representa las principales entidades necesarias para el funcionamiento de la plataforma. Se incluyen entidades relacionadas con la gestión de usuarios, perfiles de acceso, permisos, dispositivos inteligentes, rutinas automáticas, lecturas de consumo energético, alertas, planes de servicio y suscripciones.
+El modelo de base de datos de ElectroCorp se presenta en dos niveles para mantener la lectura manejable. Primero se muestra una vista general por bounded context y luego se detalla cada contexto con sus tablas, foreign keys locales y referencias externas relevantes.
 
-La estructura permite modelar la relación entre usuarios y dispositivos, así como el registro de lecturas energéticas generadas por cada dispositivo. Además, contempla la gestión de rutinas programadas, alertas asociadas al consumo o estado de los equipos, y la administración de planes de suscripción. Este diseño está alineado con una futura implementación backend en Spring Boot, donde las entidades podrán persistirse en una base de datos relacional.
+#### Database General Overview
 
-![Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/master/docs/database-diagram.puml)
+![Database General Overview](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-diagram.puml)
 
+#### IAM Database Diagram
+
+![IAM Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-iam-diagram.puml)
+
+#### Billing Database Diagram
+
+![Billing Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-billing-diagram.puml)
+
+#### Workplace Database Diagram
+
+![Workplace Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-workplace-diagram.puml)
+
+#### Device Control Database Diagram
+
+![Device Control Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-device-control-diagram.puml)
+
+#### Energy Monitoring Database Diagram
+
+![Energy Monitoring Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-energy-monitoring-diagram.puml)
+
+#### Notifications Database Diagram
+
+![Notifications Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-notifications-diagram.puml)
+
+#### Reporting Database Diagram
+
+![Reporting Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-reporting-diagram.puml)
+
+#### Service Management Database Diagram
+
+![Service Management Database Diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report/main/docs/diagrams/database/database-service-management-diagram.puml)
 # Capitulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management
 
@@ -2070,7 +2594,7 @@ https://www.figma.com/design/
   + **Lucid Chart:**<br> Es una herramienta de diagramación basada en la web, que permite a los usuarios colaborar y trabajar juntos en tiempo real, creando diseños UML, mapas mentales, prototipos de software y muchos otros tipos de diagrama.
 https://lucid.app/documents#/dashboard 
 
-  + **dbdiagram.io:**<br> Herramienta gratuita y basada en la web diseñada para dibujar esquemas de bases de datos de forma rápida e intuitiva mediante código (DBML). Se utilizará para diseñar visualmente el modelo Entidad-Relación (ERD), definir las estructuras de las tablas y exportar ágilmente los scripts SQL necesarios para implementar nuestra base de datos en MySQL.
+  + **dbdiagram.io:**<br> Herramienta gratuita y basada en la web diseñada para dibujar esquemas de bases de datos de forma rápida e intuitiva mediante código (DBML). Se utilizará para diseñar visualmente el modelo Entidad-Relación (ERD), definir las estructuras de las tablas y exportar ágilmente los scripts SQL necesarios para implementar nuestra base de datos en PostgreSQL.
 https://dbdiagram.io/
 
   + **Structurizr:**<br> Es una herramienta de diseño que soporta el modelo C4, para visualizar la arquitectura de software de nuestra solución. 
@@ -2126,15 +2650,15 @@ En cuanto a nuestros archivos feature, creamos una nueva rama “feature/sprint-
 
 Enlace de la Landing Page en GitHub Pages: https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/<br><br> 
 
-<img src="assets/landing-page-link-prueba-1.PNG"></img><br>
+<img src="assets/md-images-chapter5/landing-page-link-prueba-1.png"></img><br>
 
 Repositorio GitHub de la Landing Page: https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website <br><br> 
 
-<img src="assets/respositorio-landing.PNG"></img><br>
+<img src="assets/md-images-chapter5/repositorio-landing.png"></img><br>
 
 Repositorio GitHub de los archivos feature: https://github.com/upc-pre-202610-1asi0729-11896-ecorp/Acceptance-Test/tree/feature/sprint-1 <br><br> 
 
-<img src="assets/repositorio-acceptance-test.PNG"></img><br>
+<img src="assets/md-images-chapter5/repositorio-acceptance-test.png"></img><br>
 
 
 ### 5.1.3 Source Code Style Guide & Conventions
@@ -2575,6 +3099,22 @@ private int calculateWatts(int current, int voltage)
 ```
 
 ### 5.1.4. Software Deployment Configuration
+
+La configuracion de despliegue de ElectroCorp se organizo en tres repositorios principales: Landing Page, Web Application y Backend Platform. Cada repositorio mantiene su propio flujo de ramas y su propio entorno de despliegue, evitando mezclar responsabilidades entre sitio publico, aplicacion de usuario y servicios REST.
+
+| Component | Repository | Deployment platform | Main purpose |
+|--|--|--|--|
+| Landing Page | electrocorp-website | GitHub Pages | Presentar la propuesta de valor y redirigir a la Web Application. |
+| Web Application | electrocorp-webapp | Render | Permitir registro, seleccion de plan, navegacion de dashboard y gestion del usuario. |
+| Backend Platform | electrocorp-platform | Render | Exponer endpoints REST, health check y documentacion OpenAPI para los bounded contexts. |
+| Report | electrocorp-report | GitHub | Mantener trazabilidad academica, diagramas y evidencias de entrega. |
+
+Para el backend se considero el perfil productivo de Spring Boot, el despliegue mediante Render y la exposicion de rutas publicas minimas para validar disponibilidad del servicio sin afectar la preparacion de autenticacion JWT. Las rutas de verificacion principales son `/`, `/health`, `/swagger-ui/index.html` y `/v3/api-docs`.
+
+Las variables sensibles y configuraciones propias del entorno productivo deben administrarse desde Render, no desde el repositorio. Esto permite mantener separados los secretos, credenciales y valores de conexion a base de datos respecto al codigo fuente versionado.
+
+La configuracion actual del backend documenta el esquema JWT Bearer en OpenAPI, mantiene las claves con BCrypt mediante un puerto de hashing en IAM y expone los endpoints protegidos sin cambiar las rutas publicas existentes. La seguridad se valida con token Bearer en el header `Authorization`, mientras que `/api/v1/auth/**`, health check y Swagger permanecen accesibles para pruebas y documentacion.
+
 ## 5.2. Landing Page, Services & Applications Implementation
 ### 5.2.1. Sprint 1 
 #### 5.2.1.1. Sprint Planning 1
@@ -2607,22 +3147,14 @@ private int calculateWatts(int current, int voltage)
         <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td>
     </tr>
     <tr>
-        <td><b>Sprint n - 1 Review Summary</b></td>
-        <td>No existe Spring anterior para realizar una retrospectiva. Sin embargo se debe de desarrollar en la brevedad posible las User Stories y la planificación del Product Backlog.</td>
-    </tr>
-    <tr>
-        <td><b>Sprint n - 1 Retrospective Summary</b></td>
-        <td>No existe un sprint anterior para realizar una retrospectiva. Sin embargo, basándonos en lo avanzado, debemos priorizar la correcta definición y desarrollo de las User Stories y una planificación eficiente del Product Backlog.</td>
-    </tr>
-    <tr>
         <td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td>
     </tr>
     <tr>
         <td><b>Sprint 1 Goal</b></td>
         <td>
-            <b>Our focus is on</b> desarrollar y desplegar la primera versión funcional de la Landing Page de ElectroCorp en Github Pages.<br><br>
-            <b>We believe it delivers</b> una comunicación clara de nuestra propuesta de valor (ecosistema IoT plug-and-play) a los visitantes, generando interés y prospectos.<br><br>
-            <b>This will be confirmed when</b> los usuarios puedan navegar fluidamente por las secciones informativas, visualizar testimonios, interactuar con el cambio de idiomas y suscribirse al boletín.
+            <b>Estamos concentrados en</b> presentar nuestra propuesta de valor al mercado mediante un sitio web informativo que capte la atención de familias y dueños de negocios interesados en el ahorro energético.<br><br>
+            <b>Creemos que entregar</b> una experiencia clara sobre los beneficios de nuestro ecosistema IoT plug-and-play generará interés real y nos permitirá captar a nuestros primeros clientes potenciales.<br><br>
+            <b>Esto será confirmado cuando</b> los visitantes logren comprender el impacto del producto en sus finanzas, comparen los planes de servicio disponibles y logren suscribirse exitosamente para recibir novedades y ofertas.
         </td>
     </tr>
     <tr>
@@ -2707,7 +3239,7 @@ Al momento de realizar el sprint 1, el equipo ElectroCorp decidió asignar Líde
 <p style="text-align: left; width: 90%; margin: 20px auto;">
     <b>Enlace de Seguimiento:</b> <a href="https://trello.com/invite/b/69ea69db3f7579b973a8f0d9/ATTIc10bfb6ee54361e0d44f1e36131317e252842AF0/sprint1-electrocorp" target="_blank">Tablero del Sprint 1 en Trello</a>
     <br><br>
-    <img src="assets/Tablero-Sprint1.png"></img>
+    <img src="assets/md-images-chapter5/tablero-sprint1.png"></img>
 </p>
 
 <table align="center" border="1" width="95%" style="text-align:center; border-collapse: collapse;">
@@ -2887,7 +3419,7 @@ Durante el primer sprint, se lograron varios hitos importantes en el desarrollo 
 
 - Establecimiento de repositorios: Se crearon y configuraron repositorios en GitHub para gestionar el código y las pruebas, asegurando una correcta organización y control de versiones, ademas de separar en main y developer para evitar posibles errores. <br>
 
-<img src="assets/Repositorios.png"></img><br>
+<img src="assets/md-images-chapter5/repositorios.png"></img><br>
 
 - Implementación del Landing Page: Se diseño y se estructuro la landing page de ElectroCorp implementando funcionalidades claves y asegurando que cumpla con lo dictado en la rubrica, como el agregarle un boton de traduccion de idioma y que este en ingles por defecto
 
@@ -2897,31 +3429,31 @@ Durante el primer sprint, se lograron varios hitos importantes en el desarrollo 
   
   * Home
     
-    <img src="assets/LandingPageMockUps1.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups1.png"></img><br>
   
   * Description:
 
-    <img src="assets/LandingPageMockUps2.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups2.png"></img><br>
     
   * Goals:
 
-    <img src="assets/LandingPageMockUps3.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups3.png"></img><br>
     
   * Smart Plugs:
     
-    <img src="assets/LandingPageMockUps4.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups4.png"></img><br>
  
   * Pricing:
 
-    <img src="assets/LandingPageMockUps5.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups5.png"></img><br>
     
   * Reviews:
     
-    <img src="assets/LandingPageMockUps6.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups6.png"></img><br>
 
   * Support:
     
-    <img src="assets/LandingPageMockUps7.png"></img><br>
+    <img src="assets/md-images-chapter5/landing-page-mockups7.png"></img><br>
 
     
 
@@ -2936,20 +3468,20 @@ Creación de Repositorios y Configuración en GitHub
 * Preparación del Entorno: Se realizó la configuración técnica de los repositorios para automatizar los flujos de despliegue mediante el uso de GitHub Pages.
 * GitHub Pages:: Se utilizó GitHub Pages como infraestructura de hosting estático, permitiendo que la Landing Page sea accesible de forma pública y segura directamente desde la rama principal del repositorio.
 
-  <img src="assets/GitHubPages1.png"></img><br>
+  <img src="assets/md-images-chapter5/git-hub-pages1.png"></img><br>
 
 Proceso de Despliegue
 Despliegue de la Landing Page:
 * Se subió el código de la Landing Page al repositorio correspondiente en GitHub.
 * Se configuró GitHub Pages para publicar el sitio en línea.
 
-  <img src="assets/GitHubPages2.png"></img><br>
+  <img src="assets/md-images-chapter5/git-hub-pages2.png"></img><br>
 
 Verificación del Despliegue:
 Se hizo una comprobacion sitio publicado en GitHub Pages para asegurar que todos los elementos funcionaran correctamente.
 Se ejecutaron pruebas de funcionalidad para verificar la correcta carga del sitio y la ausencia de errores en el contenido desplegado
 
-  <img src="assets/LandingPageMockUps1.png"></img><br>
+  <img src="assets/md-images-chapter5/landing-page-mockups1.png"></img><br>
 
 Durante el Sprint 1, logramos consolidar la infraestructura de publicación del proyecto mediante la implementación de GitHub Pages. Este flujo de trabajo no solo optimizó el despliegue, sino que estableció un ciclo de integración continua eficiente, dejando el camino preparado para escalar la aplicación web de manera ágil en las próximas fases
 
@@ -2969,15 +3501,15 @@ Durante este Sprint 1, el equipo llevó a cabo un trabajo colaborativo enfocado 
 * **Link de commits del repositorio del reporte:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/develop/README.md]
 * **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
 
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/Commits1.png"></img><br>
-   <img src="assets/Commits2.png"></img><br>
-   <img src="assets/Commits3.png"></img><br>
-   <img src="assets/Commits4.png"></img><br>
+   <img src="assets/md-images-chapter5/contributors-rep.png"></img><br>
+   <img src="assets/md-images-chapter5/commits1.png"></img><br>
+   <img src="assets/md-images-chapter5/commits2.png"></img><br>
+   <img src="assets/md-images-chapter5/commits3.png"></img><br>
+   <img src="assets/md-images-chapter5/commits4.png"></img><br>
    <br>
-   <img src="assets/ContributorsRep.png"></img><br>
-   <img src="assets/ComitsWeb1.png"></img><br>
-   <img src="assets/ComitsWeb2.png"></img><br>
+   <img src="assets/md-images-chapter5/contributors-rep.png"></img><br>
+   <img src="assets/md-images-chapter5/commits-web1.png"></img><br>
+   <img src="assets/md-images-chapter5/commits-web2.png"></img><br>
 
 
 ### 5.2.2. Sprint 2 
@@ -3012,11 +3544,11 @@ En este Sprint se marca la transición hacia el desarrollo interactivo, enfocán
         <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td>
     </tr>
     <tr>
-        <td><b>Sprint n - 1 Review Summary</b></td>
+        <td><b>Sprint 1 Review Summary</b></td>
         <td>El equipo logró desarrollar y desplegar la primera versión de la Landing Page en GitHub Pages exitosamente. Se completó el 100% de los Story Points comprometidos y el diseño responsivo, junto con la funcionalidad de i18n, funcionan según lo esperado.</td>
     </tr>
     <tr>
-        <td><b>Sprint n - 1 Retrospective Summary</b></td>
+        <td><b>Sprint 1 Retrospective Summary</b></td>
         <td>El equipo identificó que la división de tareas fue efectiva, pero se acordó mejorar el nivel de detalle en los mensajes de los commits y utilizar ramas "feature" más específicas y pequeñas para evitar conflictos de integración en GitHub en este nuevo Sprint.</td>
     </tr>
     <tr>
@@ -3025,9 +3557,9 @@ En este Sprint se marca la transición hacia el desarrollo interactivo, enfocán
     <tr>
         <td><b>Sprint 2 Goal</b></td>
         <td>
-            <b>Our focus is on</b> desarrollar la primera versión de la Frontend Web Application (SPA) y aplicar mejoras a la Landing Page actual.<br><br>
-            <b>We believe it delivers</b> el entorno base para que los usuarios puedan registrarse, iniciar sesión y visualizar la maqueta interactiva del dashboard principal de gestión energética de ElectroCorp.<br><br>
-            <b>This will be confirmed when</b> la Web Application esté desplegada, los flujos de navegación entre el Login, Register y Dashboard operen correctamente (ruteo) y se conecten exitosamente mediante enlaces desde los call-to-action del Landing Page.
+            <b>Estamos concentrados en</b> proveer a los usuarios un entorno interactivo y seguro donde puedan crear su cuenta y dar sus primeros pasos dentro de la plataforma de gestión de ElectroCorp.<br><br>
+            <b>Creemos que entregar</b> un proceso de registro sencillo y una vista previa de su panel de control permitirá a los clientes familiarizarse rápidamente con la herramienta que les ayudará a monitorear su consumo.<br><br>
+            <b>Esto será confirmado cuando</b> las personas puedan registrarse sin incovenientes, iniciar sesión de forma segura y navegar intuitivamente hacia su panel principal para explorar las opciones de ahorro energético.
         </td>
     </tr>
     <tr>
@@ -3114,7 +3646,7 @@ El objetivo principal de este segundo Sprint es dar el salto desde el sitio est�
 <p style="text-align: left; width: 90%; margin: 20px auto;">
     <b>Enlace de Seguimiento:</b> <a href="https://trello.com/invite/b/6a03f7421c316f3c5d885e7f/ATTI5a49117f1b9d8c247078bac2838d81a9E7DF4656/sprint2-electro" target="_blank">Tablero del Sprint 2 en Trello</a>
     <br><br>
-    <img src="assets/Tablero-Sprint2.png" alt="Sprint 2 Trello Board"></img>
+    <img src="assets/md-images-chapter5/tablero-sprint2.png" alt="Sprint 2 Trello Board"></img>
 </p>
 
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
@@ -3225,7 +3757,7 @@ Link de commits del repositorio del Landing Page:
 https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website/commits/main/
 
 Link de commits del repositorio de la Web App:
-https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/master/
+https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/main/
 
 <table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
   <tr>
@@ -3305,62 +3837,62 @@ Imagenes del Web App:
 
  * Login
     
-    <img src="assets/Webapp-Mockup_Login.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-login.png"></img><br>
   
   * Register:
 
-    <img src="assets/Webapp-Mockup_Register.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-register.png"></img><br>
     
   * Planes desde Landing:
 
-    <img src="assets/Webapp-Mockup_Plans.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockup-plans.png"></img><br>
 
   * Planes:
 
-    <img src="assets/Webapp-Mock_Ups_Planes.png"></img><br>
+    <img src="assets/md-images-chapter5/webapp-mockups-planes.png"></img><br>
 
 
 Imágenes del Landing Page Actualizada:
   
 * Home
 
-  <img src="assets/LandingPage-Mockup-Home.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-home.png"></img><br>
 
 * Pricing:
 
-  <img src="assets/LandingPage-Mockup-Pricing.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-pricing.png"></img><br>
 
 * FAQ:
 
-  <img src="assets/LandingPage-Mockup-FAQ.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-faq.png"></img><br>
 
 * Smart Plugs:
 
-  <img src="assets/LandingPage-Mockup-SmartPlugs.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-smart-plugs.png"></img><br>
 
 * Reviews:
 
-  <img src="assets/LandingPage-Mockup-Reviews.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-reviews.png"></img><br>
 
 * Description:
 
-  <img src="assets/LandingPage-Mockup-Description.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-description.png"></img><br>
 
 * Goals:
 
-  <img src="assets/LandingPage-Mockup-Goals.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-goals.png"></img><br>
 
 * About Us:
 
-  <img src="assets/LandingPage-Mockup-About.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-about.png"></img><br>
 
 * Direction:
 
-  <img src="assets/LandingPage-Mockup-Direction.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-direction.png"></img><br>
 
 * Support:
 
-  <img src="assets/LandingPage-Mockup-Support.png"></img><br>
+  <img src="assets/md-images-chapter4/landing-page-mockup-support.png"></img><br>
     
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -3373,11 +3905,11 @@ Durante este Sprint, el equipo gestionó el despliegue continuo de dos productos
 
 1. **Landing Page (Actualización):** Se mantuvo y actualizó el despliegue estático a través de **GitHub Pages**, asegurando que los nuevos Call-to-Action apunten correctamente a la Web App.
    * *URL:* https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/
-   <img src="assets/LandingPageMockUps2.1.png" alt="Deploy Landing Page V2">
+   <img src="assets/md-images-chapter5/landing-page-mockups2.png" alt="Deploy Landing Page V2">
 
 2. **Frontend Web Application (SPA):** Se configuró un nuevo entorno de despliegue en la nube utilizando **Render** (o tu proveedor en la nube correspondiente, ej. Vercel/Netlify), conectándolo directamente a la rama `main` del repositorio `electrocorp-webapp` para habilitar un flujo de Integración y Despliegue Continuo (CI/CD).
    * *URL:* https://electrocorp-webapp.onrender.com/billing/plans
-   <img src="assets/Webapp-Mock_Ups_Planes.png" alt="Deploy Web App">
+   <img src="assets/md-images-chapter5/webapp-mockups-planes.png" alt="Deploy Web App">
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
 
@@ -3391,26 +3923,195 @@ Durante el Sprint 2, la colaboración del equipo se intensificó al tener que ma
 | **Loa Rojas, Jean Franck** | Maquetación del Dashboard (Home), integración de Layout y estilos Dark Mode. |
 | **Documet Romero, Timothy y Santiago Atanacio, Jairo** | Pruebas de navegación (QA) e implementación de validaciones visuales en formularios. |
 
-### 5.2.1. Sprint n 
-#### 5.2.X.1. Sprint Planning n
-#### 5.2.X.2. Aspect Leaders and Collaborators
-#### 5.2.X.3. Sprint Backlog n. 
-#### 5.2.X.4. Development Evidence for Sprint Review
-#### 5.2.X.5. Execution Evidence for Sprint Review
-#### 5.2.X.6. Services Documentation Evidence for Sprint Review
-#### 5.2.X.7. Software Deployment Evidence for Sprint Review
-#### 5.2.X.8. Team Collaboration Insights during Sprint.
+* **Link de commits del repositorio del reporte:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/develop/README.md]
+* **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
+* **Link de commits del repositorio del frontend:** [https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/main/]
+
+   <img src="assets/md-images-chapter5/evidence5-2-8.png"></img><br>
+   <img src="assets/md-images-chapter5/report-commit.png"></img><br>
+
+   <img src="assets/md-images-chapter5/evidence5-2-8-3.png"></img><br>
+   <img src="assets/md-images-chapter5/landing-commit.png"></img><br>
+   
+   <img src="assets/md-images-chapter5/evidence5-2-8-2.png"></img><br>
+   <img src="assets/md-images-chapter5/frontend-commit.png"></img><br>
+
+### 5.2.3. Sprint 3
+En este Sprint se consolida la entrega AV2 del producto, incorporando el primer entregable funcional del backend, la integracion entre frontend y backend, la documentacion tecnica de servicios y la revision del informe academico. El foco principal fue pasar de una aplicacion navegable a una plataforma con contratos de API, despliegue backend y trazabilidad entre bounded contexts.
+
+#### 5.2.3.1. Sprint Planning 3
+
+<table align="center" border="1" width="90%" style="text-align:left;">
+    <tr><td><b>Sprint #</b></td><td>Sprint 3</td></tr>
+    <tr><td colspan="2" align="center"><b>Sprint Planning Background</b></td></tr>
+    <tr><td><b>Date</b></td><td>2026-06-12</td></tr>
+    <tr><td><b>Time</b></td><td>11:00 AM</td></tr>
+    <tr><td><b>Location</b></td><td>Modalidad Remota por Whatsapp / Microsoft Teams</td></tr>
+    <tr><td><b>Prepared By</b></td><td>Loa Rojas, Jean Franck</td></tr>
+    <tr><td><b>Attendees (to planning meeting)</b></td><td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td></tr>
+    <tr><td><b>Sprint 2 Review Summary</b></td><td>El equipo completo la primera version desplegada de la Web Application y mantuvo conectada la Landing Page con los flujos principales. Se identifico como siguiente prioridad implementar el backend, documentar los endpoints y preparar la integracion funcional con los planes, usuarios, sedes, dispositivos y reportes.</td></tr>
+    <tr><td><b>Sprint 2 Retrospective Summary</b></td><td>El equipo acordo reforzar la disciplina de ramas, mejorar la trazabilidad de commits por bounded context, validar los contratos antes de integrar y documentar los servicios para que el frontend pueda consumirlos sin romper la navegacion existente.</td></tr>
+    <tr><td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td></tr>
+    <tr><td><b>Sprint 3 Goal</b></td><td><b>Estamos concentrados en</b> habilitar las funcionalidades centrales del sistema para que los usuarios puedan gestionar de manera real su infraestructura eléctrica, desde la selección de su suscripción hasta la organización de sus locales.<br><br><b>Creemos que entregar</b> la capacidad de activar planes de servicio y estructurar digitalmente sus hogares o negocios (sedes y habitaciones) brindará a los clientes el control total sobre los espacios exactos que desean monitorear.<br><br><b>Esto será confirmado cuando</b> el usuario final sea capaz de ingresar con sus credenciales, escoger un plan que se adapte a sus necesidades, configurar sus ambientes y visualizar la estructura donde operarán sus dispositivos inteligentes.</td></tr>
+    <tr><td><b>Sprint 3 Velocity</b></td><td>60</td></tr>
+    <tr><td><b>Sum of Story Points</b></td><td>60</td></tr>
+</table>
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+En esta seccion se presenta la matriz de Liderazgo y Colaboracion definida para el Sprint 3. La organizacion se realizo por frentes de entrega relacionados con bounded contexts y con la preparacion de la version AV2.
+
+<table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
+    <tr align="center"><td><b>Team Member <br> (Last Name, First Name)</b></td><td><b>GitHub Username</b></td><td><b>Backend API & DDD <br> Leader (L) / Collaborator (C)</b></td><td><b>Frontend Integration <br> Leader (L) / Collaborator (C)</b></td><td><b>Deployment & OpenAPI <br> Leader (L) / Collaborator (C)</b></td><td><b>Validation Interviews <br> Leader (L) / Collaborator (C)</b></td><td><b>Report & Diagrams <br> Leader (L) / Collaborator (C)</b></td></tr>
+    <tr align="left"><td>Tavara Correa, Sebastian Oswaldo</td><td align="center">SebastianTavara</td><td align="center">C</td><td align="center">L</td><td align="center">C</td><td align="center">C</td><td align="center">C</td></tr>
+    <tr align="left"><td>Santiago Atanacio, Jairo Mathias</td><td align="center">Msa-ware</td><td align="center">L</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">C</td></tr>
+    <tr align="left"><td>Cabrejos Chocce, Diego Alexander</td><td align="center">MOTOX-357</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">L</td><td align="center">C</td></tr>
+    <tr align="left"><td>Loa Rojas, Jean Franck</td><td align="center">JeanLoa</td><td align="center">L</td><td align="center">C</td><td align="center">L</td><td align="center">C</td><td align="center">C</td></tr>
+    <tr align="left"><td>Documet Romero, Timothy</td><td align="center">HiApple1</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">L</td></tr>
+</table>
+
+#### 5.2.3.3. Sprint Backlog 3
+
+El Sprint Backlog 3 prioriza la implementacion de la plataforma como sistema integrado. Las tareas se organizaron para cubrir autenticacion, facturacion, sedes, habitaciones, control de dispositivos, monitoreo energetico, reportes, servicios, documentacion OpenAPI y despliegue.
+
+https://trello.com/b/Ox2SHhpy/sprint3-electro
+
+<table align="center" border="1" width="100%" style="text-align:center; border-collapse: collapse;">
+  <tr><td colspan="2"><b>Sprint #</b></td><td colspan="6"><b>Sprint 3</b></td></tr>
+  <tr><td colspan="2"><b>User Story</b></td><td colspan="6"><b>Work-Item / Task</b></td></tr>
+  <tr><td><b>Id</b></td><td><b>Title</b></td><td><b>Id</b></td><td><b>Title</b></td><td><b>Description</b></td><td><b>Estimation (Hours)</b></td><td><b>Assigned To</b></td><td><b>Status</b></td></tr>
+  <tr><td rowspan="2">TS-21</td><td rowspan="2">Backend modular por bounded contexts</td><td>T31</td><td>Estructura Spring Boot y capas DDD</td><td>Organizar el backend con paquetes de domain, application, infrastructure e interfaces REST.</td><td>8</td><td>Jean Loa</td><td>Done</td></tr>
+  <tr><td>T32</td><td>Contratos REST y resources</td><td>Crear controladores, resources y assemblers para exponer contratos consumibles por la Web Application.</td><td>8</td><td>Jairo Santiago</td><td>Done</td></tr>
+  <tr><td>US-07</td><td>Registro e inicio de sesion</td><td>T33</td><td>IAM y flujo de autenticacion</td><td>Implementar endpoints de autenticacion y preparar la creacion de cuenta desde el frontend.</td><td>8</td><td>Jairo Santiago</td><td>Done</td></tr>
+  <tr><td>US-14</td><td>Seleccionar plan de suscripcion</td><td>T34</td><td>Billing plans y activacion de plan</td><td>Registrar el catalogo de planes y preparar el flujo para activar el plan elegido desde el sitio publico.</td><td>7</td><td>Jean Loa</td><td>Done</td></tr>
+  <tr><td>US-19</td><td>Administrar dispositivos por sede</td><td>T35</td><td>Workplaces, rooms y device groups</td><td>Relacionar sedes, habitaciones, grupos de dispositivos y dispositivos para sostener la gestion energetica.</td><td>9</td><td>Sebastian Tavara</td><td>Done</td></tr>
+  <tr><td>US-25</td><td>Automatizar rutinas y modos</td><td>T36</td><td>Routines y operation modes</td><td>Preparar reglas de uso, rutinas y modos de operacion asociados a grupos de dispositivos.</td><td>7</td><td>Sebastian Tavara</td><td>Done</td></tr>
+  <tr><td>US-31</td><td>Monitorear consumo energetico</td><td>T37</td><td>Energy, notifications y reporting</td><td>Implementar la base para lecturas energeticas, alertas y reportes de consumo.</td><td>8</td><td>Diego Cabrejos</td><td>Done</td></tr>
+  <tr><td>US-34</td><td>Gestionar servicios y soporte</td><td>T38</td><td>Service Management</td><td>Preparar tickets, mantenimientos y solicitudes de soporte asociadas a usuarios y dispositivos.</td><td>5</td><td>Timothy Documet</td><td>Done</td></tr>
+  <tr><td>TS-22</td><td>Despliegue y documentacion de API</td><td>T39</td><td>Render, health y Swagger/OpenAPI</td><td>Configurar despliegue productivo, rutas publicas minimas, health check y documentacion de endpoints.</td><td>7</td><td>Jean Loa</td><td>Done</td></tr>
+</table>
+
+#### 5.2.3.4. Development Evidence for Sprint Review
+
+Durante este Sprint, el equipo trabajo en la implementacion del backend, la integracion progresiva con el frontend y la actualizacion del reporte tecnico. Las evidencias principales se encuentran en los historiales de commits de los repositorios oficiales:
+
+* **Backend:** https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform/commits/main/
+* **Frontend Web App:** https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp/commits/main/
+* **Landing Page:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/
+* **Report:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/main/
+
+Como ajuste de cierre, el backend se alineo con el proyecto de referencia mediante command/query services por contexto, puertos de hashing/token en IAM, integration events entre bounded contexts, OpenAPI con Bearer JWT, RestClientConfig compartido para adapters externos y pruebas unitarias para hashing y publicacion de eventos. Notifications consume los integration events para generar alertas y Reporting los consume para persistir actividad consultable desde `/api/v1/reports/activity`. En la Web Application se mantuvo la arquitectura por contexto y se movio el geocoding de Workplace desde presentation hacia application/infrastructure.
+
+#### 5.2.3.5. Execution Evidence for Sprint Review
+
+La ejecucion del Sprint se valido mediante rutas publicas del backend, navegacion de frontend y revision de los enlaces principales del producto.
+
+| Artifact | URL / Route | Expected result |
+|--|--|--|
+| Backend Health | https://electrocorp-platform.onrender.com/health | Respuesta JSON con status UP. |
+| Backend Root | https://electrocorp-platform.onrender.com/ | Respuesta publica para validar que el servicio esta activo. |
+| OpenAPI Docs | https://electrocorp-platform.onrender.com/v3/api-docs | Contrato OpenAPI disponible para validar endpoints. |
+| Swagger UI | https://electrocorp-platform.onrender.com/swagger-ui/index.html | Interfaz de documentacion de servicios accesible desde navegador. |
+| Web App Plans | https://electrocorp-webapp.onrender.com/billing/plans | Visualizacion de planes y preparacion del flujo de seleccion de plan. |
+| Landing Page | https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/ | Sitio publico con redireccion hacia la Web Application. |
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Para la documentacion de servicios se utilizo Swagger/OpenAPI como mecanismo principal de consulta tecnica. Esta documentacion permite revisar rutas, metodos HTTP, estructura de recursos y respuestas esperadas del backend sin depender de explicaciones externas al codigo.
+
+* **Swagger UI:** https://electrocorp-platform.onrender.com/swagger-ui/index.html
+* **OpenAPI JSON:** https://electrocorp-platform.onrender.com/v3/api-docs
+* **Rutas publicas habilitadas:** /, /health, /swagger-ui/**, /swagger-ui.html, /v3/api-docs/**, /api/v1/auth/**.
+* **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes, actividad de reporting y soporte.
+* **Seguridad documentada:** OpenAPI incluye esquema HTTP Bearer con formato JWT para probar endpoints protegidos desde Swagger UI.
+* **Credenciales:** las contrasenas se almacenan como hash BCrypt en `password_hash`, no como texto plano.
+
+#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+El despliegue de AV2 considera tres superficies principales: el sitio publico, la Web Application y el backend de servicios. Esta separacion permite validar el producto desde la adquisicion del usuario hasta la consulta de servicios internos.
+
+| Component | Platform | Deployment evidence |
+|--|--|--|
+| Landing Page | GitHub Pages | Publicacion desde la rama main del repositorio electrocorp-website. |
+| Web Application | Render | Aplicacion frontend disponible para flujos de autenticacion, planes y dashboard. |
+| Backend Platform | Render | Servicio Spring Boot desplegado con health check y documentacion OpenAPI. |
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo reforzo la colaboracion por bounded contexts y por entregables tecnicos. La coordinacion fue especialmente importante para mantener alineados el backend, el frontend, el despliegue y el informe.
+
+| Area | Collaboration insight |
+|--|--|
+| Backend | La division por contextos permitio trabajar IAM, Billing, Workplace, Device Control, Energy, Reporting y Service Management sin concentrar todo en un unico modulo. |
+| Frontend | La Web Application mantuvo rutas y pantallas alineadas con los flujos esperados del backend, especialmente planes, cuenta, dashboard y navegacion principal. |
+| Deployment | El equipo valido rutas publicas minimas para comprobar que Render expone correctamente el backend y que la documentacion tecnica queda accesible. |
+| Documentation | El reporte fue actualizado con evidencias, diagramas y estructura de Sprint 3 para reflejar el avance AV2. |
+
 ## 5.3. Validation Interviews
-### 5.3.1. Diseño de Entrevistas
+### 5.3.1. Diseno de Entrevistas
+
+Las entrevistas de validacion mantienen el mismo enfoque de la seccion 2.2, pero ahora se orientan a evaluar el producto construido durante AV2. El objetivo es validar si la Landing Page, la Web Application y el backend documentado comunican claramente el valor de ElectroCorp y si los usuarios entienden los flujos principales.
+
+##### Preguntas Generales
+
+- Cual es su nombre?
+- Cuantos anos tiene usted?
+- En que ciudad y distrito reside?
+- A que se dedica actualmente?
+- Ha usado antes aplicaciones para controlar consumo electrico, dispositivos inteligentes o servicios de soporte tecnico?
+
+##### Preguntas Especificas
+
+###### Segmento 1: Hogares urbanos con viviendas antiguas
+
+1. Despues de revisar la Landing Page, entiende rapidamente que problema resuelve ElectroCorp?
+2. El mensaje de ahorro de energia y control del hogar le resulta claro y confiable?
+3. El flujo para elegir un plan y crear una cuenta le parece facil de seguir?
+4. Que informacion adicional necesitaria antes de contratar un plan para su hogar?
+5. La Web Application le ayuda a entender como se organizan sedes, habitaciones, grupos de dispositivos y dispositivos?
+6. Los indicadores de consumo, alertas y reportes le parecen utiles para tomar decisiones en casa?
+7. La interfaz le parece suficientemente simple para que otros miembros de su familia tambien puedan usarla?
+8. Que parte del producto le genera mayor confianza y que parte le genera dudas?
+
+###### Segmento 2: Pequenos negocios y talleres en zonas urbanas
+
+1. Despues de revisar la Landing Page, queda claro como ElectroCorp podria ayudar a reducir costos operativos?
+2. El flujo de seleccion de plan le permite identificar cual se ajusta mejor al tamano de su negocio?
+3. La creacion de cuenta y activacion del plan se entiende como un proceso continuo?
+4. La organizacion por sedes, habitaciones, grupos de dispositivos y dispositivos representa adecuadamente la realidad de su negocio?
+5. Las funciones de rutinas, modos de operacion y alertas le parecen utiles para evitar equipos encendidos fuera de horario?
+6. Los reportes de consumo y metas energeticas le ayudarian a identificar desperdicio de energia?
+7. La documentacion o explicacion del servicio le transmite confianza para adoptar la plataforma?
+8. Que cambio priorizaria antes de usar ElectroCorp en un negocio real?
+
 ### 5.3.2. Registro de Entrevistas
-### 5.3.3. Evaluaciones según heurísticas
+
+Pendiente de completar despues de ejecutar las entrevistas de validacion con usuarios.
+
+### 5.3.3. Evaluaciones segun heuristicas
+
+Pendiente de completar despues de registrar y analizar las entrevistas de validacion.
 ## 5.4. Video About-the-Product.
-* *URL:* https://youtu.be/Z5hOonQ95rI
+* *URL:* https://1drv.ms/v/c/0e85bddd31a5a6b2/IQAMcGRaMpY2QYekFq7IQc4kAf0y43rmfir6a1GspY7zxFg?e=GWPLut
 # Conclusiones
 ## Conclusiones y recomendaciones
+
+En AV2, ElectroCorp evoluciono desde una propuesta validada y una Web Application navegable hacia una plataforma con backend desplegable, documentacion OpenAPI y una estructura mas clara por bounded contexts. Esto fortalece la trazabilidad entre el problema identificado, la experiencia de usuario, los contratos REST y los diagramas tecnicos del informe.
+
+Como recomendacion principal, el siguiente bloque debe priorizar la ejecucion real de las entrevistas de validacion, el registro de hallazgos con evidencia y la refinacion de los flujos conectados: seleccion de plan, creacion de cuenta, gestion de sedes, habitaciones, grupos de dispositivos, rutinas, alertas, metas y reportes. Tambien se recomienda mantener los despliegues sincronizados con la documentacion para que Swagger/OpenAPI y el README sigan reflejando el estado real del producto.
+
+### Roadmap y funcionalidades fuera del alcance de la versión actual
+
+Como parte de la priorización del alcance para esta versión, el equipo decidió posponer las capacidades de gestión multiusuario, que quedan documentadas en el roadmap para futuras iteraciones del producto:
+
+- **US-20 (Crear perfiles de acceso / invitar a familiares):** la administración de múltiples usuarios por cuenta, con invitación por correo y perfiles de permisos restringidos, se considera **fuera del alcance de la versión actual**. La versión entregada opera bajo un modelo de cuenta única por titular. Esta capacidad se contempla para una iteración posterior, junto con la definición de roles y niveles de permiso.
+- **US-26 (Compartir acceso con personal):** de forma análoga a US-20, la compartición de control de dispositivos por área o sector con empleados requiere el mismo soporte multiusuario y de permisos, por lo que también se posterga como parte del **roadmap** y no forma parte del alcance de esta versión.
+
+El resto de las historias comprometidas para el negocio (autenticación, suscripciones, gestión de sedes y dispositivos, monitoreo energético, alertas, reportes y soporte) sí forman parte del alcance implementado y desplegado.
+
 ## Video About-the-Team.
 
-* *URL:* https://www.youtube.com/watch?v=aAg-_-4vc2c
+* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
 
 # Bibliografía 
 
@@ -3418,3 +4119,29 @@ Durante el Sprint 2, la colaboración del equipo se intensificó al tener que ma
 - Instituto Nacional de Estadística e Informática. (2018). Perú: Características de las viviendas particulares y los hogares. Acceso a servicios básicos (Publicación Digital Lib1538). https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1538/parte01.pdf
 
 # Anexos
+
+## Links importantes
+
+#### Link del repositorio del Reporte:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report
+
+#### Link del repositorio del Website:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website
+
+#### Link del repositorio de la Webapp:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp
+
+#### Link del repositorio del Platform:
+
+- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
+
+#### Link del Swagger
+
+- https://electrocorp-platform.onrender.com/swagger-ui/index.html
+
+## Credenciales de prueba
+
+-- Añadir credenciales de usuarios predeterminados
