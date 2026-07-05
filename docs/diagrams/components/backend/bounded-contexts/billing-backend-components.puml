@@ -57,11 +57,12 @@ rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runt
 
 rectangle "<b>Billing Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" <<BoundedContext>> {
   rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
-  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
-  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
-  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
+  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Gateway Port]</i>\n\nCoordinates checkout, subscription activation, payments, invoices and payment gateway requests." as Application #58A9E8
+  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns plans, subscriptions, payments, invoices and payment validation rules." as Domain #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[JPA / Stripe Adapter]</i>\n\nImplements persistence and the Stripe payment gateway adapter with demo fallback when credentials are absent." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores plans, subscriptions, payments and invoices." as Database
+rectangle "<b>Stripe API</b>\n<i>[External Payment Provider]</i>\n\nReceives payment intent requests when integration credentials are configured." as Stripe #F39C12
 
 Spa --> Interfaces : Calls REST endpoints\n[JSON / HTTPS]
 Interfaces --> Application : Delegates use cases
@@ -69,12 +70,14 @@ Application --> Domain : Enforces business rules
 Application --> Infrastructure : Uses ports / repositories
 Infrastructure --> Domain : Maps persisted state
 Infrastructure --> Database : Reads and writes
+Infrastructure --> Stripe : Creates payment intents
 
 Spa -[hidden]down- Interfaces
 Interfaces -[hidden]down- Application
 Application -[hidden]down- Domain
 Domain -[hidden]right- Infrastructure
 Infrastructure -[hidden]down- Database
+Infrastructure -[hidden]right- Stripe
 
 legend right
   <b>Legend</b>

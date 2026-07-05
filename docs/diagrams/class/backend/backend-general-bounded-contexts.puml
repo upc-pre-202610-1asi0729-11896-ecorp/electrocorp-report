@@ -15,6 +15,7 @@ class "Notifications" as BackendNotifications <<Bounded Context>> {}
 class "Reporting" as BackendReporting <<Bounded Context>> {}
 class "Service Management" as BackendServiceManagement <<Bounded Context>> {}
 class "Shared Kernel" as BackendSharedKernel <<Bounded Context>> {}
+class "Integration Events" as BackendIntegrationEvents <<Pattern>> {}
 
 BackendIAM ..> BackendBilling : user account / subscription owner
 BackendIAM ..> BackendWorkplace : user owns locations
@@ -22,6 +23,14 @@ BackendWorkplace ..> BackendDeviceControl : room-device assignments
 BackendDeviceControl ..> BackendEnergyMonitoring : device readings source
 BackendEnergyMonitoring ..> BackendNotifications : reading thresholds
 BackendDeviceControl ..> BackendNotifications : device state alerts
+BackendIAM ..> BackendIntegrationEvents : UserRegistered
+BackendBilling ..> BackendIntegrationEvents : Subscription / Payment
+BackendWorkplace ..> BackendIntegrationEvents : DeviceAssignedToRoom
+BackendDeviceControl ..> BackendIntegrationEvents : DeviceCreated / ModeActivated
+BackendEnergyMonitoring ..> BackendIntegrationEvents : ThresholdExceeded
+BackendServiceManagement ..> BackendIntegrationEvents : TicketsCreated
+BackendIntegrationEvents ..> BackendNotifications : creates alerts
+BackendIntegrationEvents ..> BackendReporting : records activity
 BackendEnergyMonitoring ..> BackendReporting : consumption metrics
 BackendWorkplace ..> BackendReporting : site and room summaries
 BackendDeviceControl ..> BackendReporting : device and routine summaries

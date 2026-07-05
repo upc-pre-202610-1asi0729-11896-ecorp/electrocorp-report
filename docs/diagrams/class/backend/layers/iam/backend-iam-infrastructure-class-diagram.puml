@@ -7,12 +7,29 @@ skinparam classAttributeIconSize 0
 hide circle
 
 package "IAM / Infrastructure" {
+  package "Infrastructure / Bootstrap" {
+    class "AccessProfileCatalogInitializer" as Backend_iam_AccessProfileCatalogInitializer <<Bootstrap>> {
+      - accessProfileRepository: AccessProfileRepository
+      + run(ApplicationArguments args) : void
+    }
+  }
+  package "Infrastructure / Delivery" {
+    class "ConsolePasswordRecoveryDeliveryAdapter" as Backend_iam_ConsolePasswordRecoveryDeliveryAdapter <<Adapter>> {
+      + sendPasswordResetLink(User user, String rawToken) : void
+    }
+  }
   package "Infrastructure / JPA" {
+    class "IamJpaPersistenceMarker" as Backend_iam_IamJpaPersistenceMarker <<Marker>> {
+    }
   }
   package "Infrastructure / JPA Repositories" {
-    interface "JpaAccessProfileRepository" as Backend_iam_JpaAccessProfileRepository <<interface>> {
+    interface "JpaAccessProfileRepository" as Backend_iam_JpaAccessProfileRepository <<Repository Adapter>> {
     }
-    interface "JpaUserRepository" as Backend_iam_JpaUserRepository <<interface>> {
+    interface "JpaPasswordResetTokenRepository" as Backend_iam_JpaPasswordResetTokenRepository <<Repository Adapter>> {
+    }
+    interface "JpaUserRepository" as Backend_iam_JpaUserRepository <<Repository Adapter>> {
+    }
+    interface "JpaUserUiPreferenceRepository" as Backend_iam_JpaUserUiPreferenceRepository <<Repository Adapter>> {
     }
   }
   package "Infrastructure / Security" {
@@ -24,41 +41,37 @@ package "IAM / Infrastructure" {
       - BEARER_PREFIX: String
       - jwtTokenService: JwtTokenService
     }
-    class "JwtTokenService" as Backend_iam_JwtTokenService <<Security>> {
-      - HMAC_ALGORITHM: String
-      - BASE64_URL_ENCODER: Base64.Encoder
-      - BASE64_URL_DECODER: Base64.Decoder
-      - SUBJECT_PATTERN: Pattern
-      - EXPIRATION_PATTERN: Pattern
+    class "JwtTokenService" as Backend_iam_JwtTokenService <<Security Adapter>> {
       - secret: String
       - expirationSeconds: long
       + generateToken(User user) : String
       + validateAndGetUserId(String token) : Optional<Long>
-      - encode(String value) : String
-      - sign(String value) : String
-      - constantTimeEquals(String left, String right) : boolean
-      - escapeJson(String value) : String
     }
-    class "MessageDigestHelper" as Backend_iam_MessageDigestHelper <<Security>> {
-      - MessageDigestHelper()
-    }
-    class "PasswordHashingService" as Backend_iam_PasswordHashingService <<Security>> {
+    class "PasswordHashingService" as Backend_iam_PasswordHashingService <<Security Adapter>> {
       - passwordEncoder: PasswordEncoder
       + hash(String rawPassword) : String
       + matches(String rawPassword, String encodedPassword) : boolean
     }
+    class "SecurePasswordResetTokenService" as Backend_iam_SecurePasswordResetTokenService <<Security Adapter>> {
+      + generateToken() : String
+      + hashToken(String rawToken) : String
+    }
+    class "MessageDigestHelper" as Backend_iam_MessageDigestHelper <<Security>> {
+      - MessageDigestHelper()
+    }
   }
 }
 
-
-
-' Layer relationship completion: every declared type participates in this layer diagram.
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_JpaUserRepository
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_JpaUserRepository
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_CurrentSessionService
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_JwtAuthenticationFilter
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_JwtTokenService
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_MessageDigestHelper
-Backend_iam_JpaAccessProfileRepository ..> Backend_iam_PasswordHashingService
+Backend_iam_AccessProfileCatalogInitializer ..> Backend_iam_JpaAccessProfileRepository
+Backend_iam_ConsolePasswordRecoveryDeliveryAdapter ..|> Backend_iam_PasswordRecoveryDeliveryPort
+Backend_iam_JpaAccessProfileRepository ..|> Backend_iam_AccessProfileRepository
+Backend_iam_JpaPasswordResetTokenRepository ..|> Backend_iam_PasswordResetTokenRepository
+Backend_iam_JpaUserRepository ..|> Backend_iam_UserRepository
+Backend_iam_JpaUserUiPreferenceRepository ..|> Backend_iam_UserUiPreferenceRepository
+Backend_iam_JwtAuthenticationFilter ..> Backend_iam_JwtTokenService
+Backend_iam_JwtTokenService ..|> Backend_iam_TokenService
+Backend_iam_PasswordHashingService ..|> Backend_iam_HashingService
+Backend_iam_SecurePasswordResetTokenService ..|> Backend_iam_PasswordResetTokenService
+Backend_iam_SecurePasswordResetTokenService ..> Backend_iam_MessageDigestHelper
 
 @enduml

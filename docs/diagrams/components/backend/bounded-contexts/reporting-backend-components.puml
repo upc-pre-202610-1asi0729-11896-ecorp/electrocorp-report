@@ -62,8 +62,10 @@ rectangle "<b>Reporting Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>
   rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores reports, energy goals, exports and platform insights." as Database
+rectangle "<b>Integration Events</b>\n<i>[Internal Spring Events]</i>\n\nCommitted product activity translated into reporting_events for audit and traceability." as Events #7F8C8D
 
 Spa --> Interfaces : Calls REST endpoints\n[JSON / HTTPS]
+Events --> Application : RecordReportingEventCommand\nAFTER_COMMIT
 Interfaces --> Application : Delegates use cases
 Application --> Domain : Enforces business rules
 Application --> Infrastructure : Uses ports / repositories
@@ -71,6 +73,7 @@ Infrastructure --> Domain : Maps persisted state
 Infrastructure --> Database : Reads and writes
 
 Spa -[hidden]down- Interfaces
+Events -[hidden]right- Application
 Interfaces -[hidden]down- Application
 Application -[hidden]down- Domain
 Domain -[hidden]right- Infrastructure

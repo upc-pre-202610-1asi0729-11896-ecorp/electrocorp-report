@@ -56,17 +56,17 @@ title ElectroCorp - IAM Backend Components Diagram
 rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nBrowser runtime that consumes this bounded context through HTTPS." as Spa #3498DB
 
 rectangle "<b>IAM Backend Bounded Context</b>\n<i>[Spring Boot Module]</i>" <<BoundedContext>> {
-  rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
-  rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
-  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
-  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
+  rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nAuth, users and access-profile controllers translate resources into commands and queries." as Interfaces #58A9E8
+  rectangle "<b>Application Layer</b>\n<i>[Command Services / Query Services / Ports]</i>\n\nCoordinates sign-in, sign-up, password recovery, reset, user listing, access assignment and UI preferences." as Application #58A9E8
+  rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns users, access profiles, permissions, password reset tokens and profile policies." as Domain #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[JPA / Security / Delivery Adapters]</i>\n\nImplements repositories, BCrypt hashing, JWT token service and password recovery delivery." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores authentication, users, profiles and access control." as Database
 
 Spa --> Interfaces : Calls REST endpoints\n[JSON / HTTPS]
 Interfaces --> Application : Delegates use cases
 Application --> Domain : Enforces business rules
-Application --> Infrastructure : Uses ports / repositories
+Application --> Infrastructure : Uses hashing, token and delivery ports
 Infrastructure --> Domain : Maps persisted state
 Infrastructure --> Database : Reads and writes
 

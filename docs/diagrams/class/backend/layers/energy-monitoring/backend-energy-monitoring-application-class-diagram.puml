@@ -32,6 +32,12 @@ package "Energy Monitoring / Application" {
       + handle(GetEnergySamplingSettingsQuery query) : Integer
     }
   }
+  package "Application / Event Handlers" {
+    class "EnergyThresholdExceededEventHandler" as Backend_energymonitoring_EnergyThresholdExceededEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(EnergyThresholdExceededEvent event) : void
+    }
+  }
   package "Application / Services" {
     class "EnergyMonitoringApplicationService" as Backend_energymonitoring_EnergyMonitoringApplicationService <<Application Service>> {
       - TARIFF_PER_KWH: BigDecimal
@@ -40,6 +46,7 @@ package "Energy Monitoring / Application" {
       - alertRepository: AlertRepository
       - energyReadingRecorderService: EnergyReadingRecorderService
       - energySamplingSettingsService: EnergySamplingSettingsService
+      - domainEventPublisher: DomainEventPublisher
       + getReadings(Long userId) : List<EnergyReading>
       + getReadings(Long userId, LocalDateTime start, LocalDateTime end) : List<EnergyReading>
       + getDashboardSummary(Long userId) : EnergyDashboardSummaryResource
@@ -63,7 +70,7 @@ package "Energy Monitoring / Application" {
       - usageStateRepository: EnergyDeviceUsageStateRepository
       - energyReadingRepository: EnergyReadingRepository
       - simulatorService: EnergyConsumptionSimulatorService
-      - notificationApplicationService: NotificationApplicationService
+      - domainEventPublisher: DomainEventPublisher
       + recordStatusTransition(Device device, DeviceStatus previousStatus) : void
       + recordActiveDeviceInterval(Device device) : EnergyReading
       + recordActiveDeviceIntervalIfDue(Device device, int minimumSeconds) : EnergyReading
@@ -102,5 +109,6 @@ Backend_energymonitoring_EnergyMonitoringQueryServiceImpl ..> Backend_energymoni
 ' Layer relationship completion: every declared type participates in this layer diagram.
 Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergyReadingRecorderService
 Backend_energymonitoring_EnergyMonitoringCommandServiceImpl ..> Backend_energymonitoring_EnergyReadingSchedulerService
+Backend_energymonitoring_EnergyThresholdExceededEventHandler ..> Backend_energymonitoring_EnergyMonitoringApplicationService : after commit
 
 @enduml

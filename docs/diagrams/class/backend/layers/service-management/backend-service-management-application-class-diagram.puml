@@ -12,6 +12,7 @@ package "Service Management / Application" {
       - supportTicketRepository: SupportTicketRepository
       - maintenanceTicketRepository: MaintenanceTicketRepository
       - deviceRepository: DeviceRepository
+      - domainEventPublisher: DomainEventPublisher
       + getSupportTickets(Long userId) : List<SupportTicket>
       + createSupportTicket(CreateSupportTicketCommand command) : SupportTicket
       + updateSupportStatus(Long userId, Long ticketId, UpdateTicketStatusCommand command) : SupportTicket
@@ -22,12 +23,23 @@ package "Service Management / Application" {
       + deleteMaintenanceTicket(DeleteMaintenanceTicketCommand command) : void
     }
   }
+  package "Application / Event Handlers" {
+    class "SupportTicketCreatedEventHandler" as Backend_servicemanagement_SupportTicketCreatedEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(SupportTicketCreatedEvent event) : void
+    }
+    class "MaintenanceTicketCreatedEventHandler" as Backend_servicemanagement_MaintenanceTicketCreatedEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(MaintenanceTicketCreatedEvent event) : void
+    }
+  }
 }
 
 
 
 
 ' Single-class layer participation.
-Backend_servicemanagement_ServiceManagementApplicationService ..> Backend_servicemanagement_ServiceManagementApplicationService
+Backend_servicemanagement_ServiceManagementApplicationService ..> Backend_servicemanagement_SupportTicketCreatedEventHandler : after commit
+Backend_servicemanagement_ServiceManagementApplicationService ..> Backend_servicemanagement_MaintenanceTicketCreatedEventHandler : after commit
 
 @enduml

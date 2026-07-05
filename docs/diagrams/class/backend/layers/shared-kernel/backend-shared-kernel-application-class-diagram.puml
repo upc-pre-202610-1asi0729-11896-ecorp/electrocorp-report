@@ -9,6 +9,13 @@ hide circle
 package "Shared Kernel / Application" {
   package "Application / Events" {
     interface "DomainEventPublisher" as Backend_shared_DomainEventPublisher <<interface>> {
+      + publish(DomainEvent event) : void
+    }
+    interface "IntegrationEvent" as Backend_shared_IntegrationEvent <<interface>> {
+      + occurredOn() : LocalDateTime
+    }
+    interface "IntegrationEventPublisher" as Backend_shared_IntegrationEventPublisher <<interface>> {
+      + publish(IntegrationEvent event) : void
     }
   }
   package "Application / Results" {
@@ -41,8 +48,8 @@ package "Shared Kernel / Application" {
 
 ' Layer relationship completion: every declared type participates in this layer diagram.
 Backend_shared_DateTimeService ..> Backend_shared_DomainEventPublisher
+Backend_shared_IntegrationEventPublisher ..> Backend_shared_IntegrationEvent
 Backend_shared_DateTimeService ..> Backend_shared_Result
-Backend_shared_DateTimeService ..> Backend_shared_DomainEventPublisher
 Backend_shared_DateTimeService ..> Backend_shared_StringNormalizerService
 
 @enduml

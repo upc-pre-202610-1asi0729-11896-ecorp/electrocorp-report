@@ -23,6 +23,23 @@ package "IAM" {
     status : varchar
     FK access_profile_id : bigint
   }
+  entity "password_reset_tokens" as password_reset_tokens {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    FK user_id : bigint
+    token_hash : varchar(64)
+    expires_at : timestamp
+    used_at : timestamp
+  }
+  entity "user_ui_preferences" as user_ui_preferences {
+    PK id : bigint
+    created_at : timestamp
+    updated_at : timestamp
+    FK user_id : bigint
+    language : varchar(10)
+    theme : varchar(10)
+  }
 }
 
 package "External References" {
@@ -86,6 +103,8 @@ package "External References" {
 }
 
 access_profiles ||--o{ users : access_profile_id
+users ||--o{ password_reset_tokens : user_id
+users ||--o| user_ui_preferences : user_id
 users ||--o{ alert_rule_profiles : user_id
 users ||--o{ alert_rules : user_id
 users ||--o{ alerts : user_id

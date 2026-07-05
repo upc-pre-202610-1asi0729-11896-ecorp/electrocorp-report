@@ -17,6 +17,8 @@ skinparam entity {
 entity "IAM" as db_iam <<bounded context>> {
   access_profiles
   users
+  password_reset_tokens
+  user_ui_preferences
 }
 
 entity "Billing" as db_billing <<bounded context>> {

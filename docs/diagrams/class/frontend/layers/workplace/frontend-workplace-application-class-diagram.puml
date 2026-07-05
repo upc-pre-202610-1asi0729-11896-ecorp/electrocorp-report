@@ -41,6 +41,13 @@ package "Workplace / Application" {
       + floor: string
     }
   }
+  package "Application / Models" {
+    interface "AddressSuggestion" as Frontend_workplace_AddressSuggestion <<interface>> {
+      + displayName: string
+      + latitude: number
+      + longitude: number
+    }
+  }
   package "Application / Facades and Services" {
     class "ActiveWorkplaceContextService" as Frontend_workplace_ActiveWorkplaceContextService <<Service>> {
       - activeLocationIdSignal
@@ -49,6 +56,11 @@ package "Workplace / Application" {
       + clearActiveLocation() : void
       + ensureActiveLocation(locations: Location[]) : Location | null
       - restoreActiveLocationId() : number | null
+    }
+    class "WorkplaceGeocodingService" as Frontend_workplace_WorkplaceGeocodingService <<Service>> {
+      - geocodingApi: GeocodingApiService
+      + searchAddressSuggestions(query: string, language: string) : Promise<AddressSuggestion[]>
+      + resolveAddressFromCoordinates(latitude: number, longitude: number, language: string) : Promise<string | null>
     }
     class "WorkplaceFacade" as Frontend_workplace_WorkplaceFacade <<Facade>> {
       - locationAssembler
@@ -105,5 +117,6 @@ Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_WorkplaceStore
 
 ' Layer relationship completion: every declared type participates in this layer diagram.
 Frontend_workplace_WorkplaceFacade ..> Frontend_workplace_ActiveWorkplaceContextService
+Frontend_workplace_WorkplaceGeocodingService ..> Frontend_workplace_AddressSuggestion
 
 @enduml
