@@ -1801,19 +1801,19 @@ El Design-Level Event Storming de ElectroCorp se organiza por bounded contexts p
 
 La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management.
 
-Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces. El consumidor principal es Notifications, que crea alertas operativas sin que los controllers cambien sus contratos publicos.
+Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces. Los consumidores principales son Notifications, que crea alertas operativas, y Reporting, que persiste una proyeccion de actividad en `reporting_events` para trazabilidad y analisis sin acoplar controllers entre contextos.
 
 | Domain event | Integration event | Consumer context | Resultado funcional |
 |--|--|--|--|
-| UserRegisteredEvent | UserRegisteredIntegrationEvent | Notifications | Alerta de cuenta creada y trazabilidad de IAM. |
-| SubscriptionActivatedEvent | SubscriptionActivatedIntegrationEvent | Notifications | Alerta de plan activado desde Billing. |
-| PaymentRegisteredEvent | PaymentRegisteredIntegrationEvent | Notifications | Alerta de pago registrado. |
-| DeviceCreatedEvent | DeviceCreatedIntegrationEvent | Notifications | Alerta de dispositivo disponible para control y monitoreo. |
-| OperationModeActivatedEvent | OperationModeActivatedIntegrationEvent | Notifications | Alerta de modo operativo aplicado. |
-| DeviceAssignedToRoomEvent | DeviceAssignedToRoomIntegrationEvent | Notifications | Alerta de asignacion y sincronizacion Workplace-Device Control. |
-| EnergyThresholdExceededEvent | EnergyThresholdExceededIntegrationEvent | Notifications | Evaluacion de reglas o alerta de consumo elevado. |
-| SupportTicketCreatedEvent | SupportTicketCreatedIntegrationEvent | Notifications | Alerta de ticket de soporte creado. |
-| MaintenanceTicketCreatedEvent | MaintenanceTicketCreatedIntegrationEvent | Notifications | Alerta de mantenimiento asociado a dispositivo. |
+| UserRegisteredEvent | UserRegisteredIntegrationEvent | Notifications, Reporting | Alerta de cuenta creada y registro de actividad IAM. |
+| SubscriptionActivatedEvent | SubscriptionActivatedIntegrationEvent | Notifications, Reporting | Alerta de plan activado y actividad Billing. |
+| PaymentRegisteredEvent | PaymentRegisteredIntegrationEvent | Notifications, Reporting | Alerta de pago registrado y actividad financiera. |
+| DeviceCreatedEvent | DeviceCreatedIntegrationEvent | Notifications, Reporting | Alerta de dispositivo disponible y actividad Device Control. |
+| OperationModeActivatedEvent | OperationModeActivatedIntegrationEvent | Notifications, Reporting | Alerta de modo operativo aplicado y actividad de automatizacion. |
+| DeviceAssignedToRoomEvent | DeviceAssignedToRoomIntegrationEvent | Notifications, Reporting | Alerta de asignacion y sincronizacion Workplace-Device Control. |
+| EnergyThresholdExceededEvent | EnergyThresholdExceededIntegrationEvent | Notifications, Reporting | Evaluacion de reglas, alerta de consumo elevado y actividad energetica. |
+| SupportTicketCreatedEvent | SupportTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de ticket de soporte creado y actividad de servicio. |
+| MaintenanceTicketCreatedEvent | MaintenanceTicketCreatedIntegrationEvent | Notifications, Reporting | Alerta de mantenimiento asociado a dispositivo y actividad tecnica. |
 
 #### 4.6.1.1. Bounded Contexts Overview
 
@@ -3990,7 +3990,7 @@ Durante este Sprint, el equipo trabajo en la implementacion del backend, la inte
 * **Landing Page:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/
 * **Report:** https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/main/
 
-Como ajuste de cierre, el backend se alineo con el proyecto de referencia mediante command/query services por contexto, puertos de hashing/token en IAM, integration events entre bounded contexts, OpenAPI con Bearer JWT y pruebas unitarias para hashing y publicacion de eventos. En la Web Application se mantuvo la arquitectura por contexto y se movio el geocoding de Workplace desde presentation hacia application/infrastructure.
+Como ajuste de cierre, el backend se alineo con el proyecto de referencia mediante command/query services por contexto, puertos de hashing/token en IAM, integration events entre bounded contexts, OpenAPI con Bearer JWT y pruebas unitarias para hashing y publicacion de eventos. Notifications consume los integration events para generar alertas y Reporting los consume para persistir actividad consultable desde `/api/v1/reports/activity`. En la Web Application se mantuvo la arquitectura por contexto y se movio el geocoding de Workplace desde presentation hacia application/infrastructure.
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
@@ -4012,7 +4012,7 @@ Para la documentacion de servicios se utilizo Swagger/OpenAPI como mecanismo pri
 * **Swagger UI:** https://electrocorp-platform.onrender.com/swagger-ui/index.html
 * **OpenAPI JSON:** https://electrocorp-platform.onrender.com/v3/api-docs
 * **Rutas publicas habilitadas:** /, /health, /swagger-ui/**, /swagger-ui.html, /v3/api-docs/**, /api/v1/auth/**.
-* **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes y soporte.
+* **Rutas funcionales protegibles:** endpoints de usuarios, planes, sedes, habitaciones, dispositivos, rutinas, energia, reportes, actividad de reporting y soporte.
 * **Seguridad documentada:** OpenAPI incluye esquema HTTP Bearer con formato JWT para probar endpoints protegidos desde Swagger UI.
 * **Credenciales:** las contrasenas se almacenan como hash BCrypt en `password_hash`, no como texto plano.
 

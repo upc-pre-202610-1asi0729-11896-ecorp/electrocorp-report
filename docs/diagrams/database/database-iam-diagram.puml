@@ -53,6 +53,9 @@ package "External References" {
   entity "energy_readings" as energy_readings <<external>> {
     PK id
   }
+  entity "reporting_events" as reporting_events <<external>> {
+    PK id
+  }
   entity "invoices" as invoices <<external>> {
     PK id
   }
@@ -92,6 +95,7 @@ users ||--o{ devices : user_id
 users ||--o{ energy_device_usage_states : user_id
 users ||--o{ energy_goals : user_id
 users ||--o{ energy_readings : user_id
+users ||--o{ reporting_events : user_id
 users ||--o{ invoices : user_id
 users ||--o{ locations : user_id
 users ||--o{ maintenance_tickets : user_id
