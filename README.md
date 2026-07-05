@@ -4237,6 +4237,26 @@ Durante el Sprint 4, el equipo enfoco la colaboracion en cerrar brechas de coher
 | Deployment | Los repositorios principales se ordenaron con Gitflow, releases y tags finales para sustentar la trazabilidad academica. |
 | Documentation | El informe se actualizo con Sprint 4, diagramas, evidencias de servicios y texto alineado al estado real de ElectroCorp. |
 
+**Project Report collaboration evidence**
+
+<img src="assets/md-images-chapter5/insight-report-sprint-4.jpeg" alt="Report Sprint 4 insights evidence"></img><br>
+<img src="assets/md-images-chapter5/contribuitors-report-sprint-4.jpeg" alt="Report Sprint 4 contributors evidence"></img><br>
+
+**Backend Platform collaboration evidence**
+
+<img src="assets/md-images-chapter5/insight-platform-sprint-4.jpeg" alt="Backend Sprint 4 insights evidence"></img><br>
+<img src="assets/md-images-chapter5/contribuitors-platform-sprint-4.jpeg" alt="Backend Sprint 4 contributors evidence"></img><br>
+
+**Frontend Web Application collaboration evidence**
+
+<img src="assets/md-images-chapter5/insight-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 insights evidence"></img><br>
+<img src="assets/md-images-chapter5/contribuitors-webapp-sprint-4.jpeg" alt="Frontend Sprint 4 contributors evidence"></img><br>
+
+**Landing Page collaboration evidence**
+
+<img src="assets/md-images-chapter5/insight-website-sprint-4.jpeg" alt="Landing Page Sprint 4 insights evidence"></img><br>
+<img src="assets/md-images-chapter5/contribuitors-website-sprint-4.jpeg" alt="Landing Page Sprint 4 contributors evidence"></img><br>
+
 ## 5.3. Validation Interviews
 ### 5.3.1. Diseno de Entrevistas
 
