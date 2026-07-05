@@ -4292,7 +4292,17 @@ Las entrevistas de validacion mantienen el mismo enfoque de la seccion 2.2, pero
 
 ### 5.3.2. Registro de Entrevistas
 
-Pendiente de completar despues de ejecutar las entrevistas de validacion con usuarios.
+#### Segmento 1
+
+
+
+#### Segmento 2
+
+| N | Datos | Imagen referencial
+|--|--|--|
+|1  | Nombre: Orlando<br>Apellido: Trinidad <br>Edad: 48<br>Distrito: La Victoria |<img src="assets/md-images-chapter5/seg2-interview1.png">
+|2  | Nombre: Catherine<br>Apellido: Tejada <br>Edad: 39<br>Distrito: Villa el Salvador |<img src="assets/md-images-chapter5/seg2-interview2.png">
+|3  | Nombre: Lourdes<br>Apellido: Saldarriaga <br>Edad: 46<br>Distrito: La Victoria | <img src="assets/md-images-chapter5/seg2-interview3.png">
 
 ### 5.3.3. Evaluaciones segun heuristicas
 
