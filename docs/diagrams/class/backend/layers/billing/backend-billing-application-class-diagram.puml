@@ -18,10 +18,40 @@ package "Billing / Application" {
       - paymentRepository: PaymentRepository
       - invoiceRepository: InvoiceRepository
       - paymentValidationService: PaymentValidationService
+      - paymentGatewayPort: PaymentGatewayPort
       + handle(CheckoutSubscriptionCommand command) : Subscription
       + handle(CancelSubscriptionCommand command) : void
       + handle(ProcessPaymentCommand command) : Payment
       - validatePaymentDetails(CheckoutSubscriptionCommand command) : void
+    }
+  }
+  package "Application / Gateways" {
+    interface "PaymentGatewayPort" as Backend_billing_PaymentGatewayPort <<Port>> {
+      + charge(PaymentGatewayChargeRequest request) : PaymentGatewayChargeResult
+    }
+    class "PaymentGatewayChargeRequest" as Backend_billing_PaymentGatewayChargeRequest <<record>> {
+      + Long userId
+      + String planCode
+      + Money amount
+      + String holderName
+      + String cardNumber
+      + String expirationDate
+    }
+    class "PaymentGatewayChargeResult" as Backend_billing_PaymentGatewayChargeResult <<record>> {
+      + boolean approved
+      + String provider
+      + String transactionId
+      + String statusMessage
+    }
+  }
+  package "Application / Event Handlers" {
+    class "SubscriptionActivatedEventHandler" as Backend_billing_SubscriptionActivatedEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(SubscriptionActivatedEvent event) : void
+    }
+    class "PaymentRegisteredEventHandler" as Backend_billing_PaymentRegisteredEventHandler <<Event Handler>> {
+      - integrationEventPublisher: IntegrationEventPublisher
+      + on(PaymentRegisteredEvent event) : void
     }
   }
   package "Application / Query Services" {
@@ -43,6 +73,11 @@ package "Billing / Application" {
 }
 
 Backend_billing_BillingCommandServiceImpl ..> Backend_billing_BillingCommandService
+Backend_billing_BillingCommandServiceImpl ..> Backend_billing_PaymentGatewayPort
+Backend_billing_PaymentGatewayPort ..> Backend_billing_PaymentGatewayChargeRequest
+Backend_billing_PaymentGatewayPort ..> Backend_billing_PaymentGatewayChargeResult
+Backend_billing_SubscriptionActivatedEventHandler ..> Backend_billing_BillingCommandServiceImpl : after commit
+Backend_billing_PaymentRegisteredEventHandler ..> Backend_billing_BillingCommandServiceImpl : after commit
 Backend_billing_BillingQueryServiceImpl ..> Backend_billing_BillingQueryService
 
 

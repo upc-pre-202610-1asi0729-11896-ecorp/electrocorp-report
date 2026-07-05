@@ -49,7 +49,7 @@ rectangle "<b>ElectroCorp SPA</b>\n<i>[Compiled Angular SPA]</i>\n\nConsumes bac
 rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modular Monolith / Backend Container]</i>" <<BoundedContext>> {
   rectangle "<b>REST API Surface</b>\n<i>[Spring Boot Entry Points]</i>\n\nReceives SPA requests and dispatches them to bounded contexts." as ApiSurface #3498DB
 
-  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nSecurity, OpenAPI, CORS, health and common platform configuration." as Shared #58A9E8
+  rectangle "<b>Shared Kernel API</b>\n<i>[Bounded Context Component]</i>\n\nSecurity, OpenAPI, CORS, RestClient, health and common platform configuration." as Shared #58A9E8
   rectangle "<b>IAM API</b>\n<i>[Bounded Context Component]</i>\n\nAuthentication, users, profiles and access control." as IAM #58A9E8
   rectangle "<b>Billing API</b>\n<i>[Bounded Context Component]</i>\n\nPlans, subscriptions, payments and invoices." as Billing #58A9E8
 
@@ -61,6 +61,7 @@ rectangle "<b>ElectroCorp Backend Bounded Context Map</b>\n<i>[Spring Boot Modul
   rectangle "<b>Reporting API</b>\n<i>[Bounded Context Component]</i>\n\nReports, goals, exports and insights." as Reporting #58A9E8
   rectangle "<b>Service Management API</b>\n<i>[Bounded Context Component]</i>\n\nSupport tickets, maintenance and service follow-up." as Service #58A9E8
 
+  rectangle "<b>Integration Event Bus</b>\n<i>[Spring Application Events]</i>\n\nPublishes committed domain activity as integration events for internal consumers." as EventBus #F39C12
   rectangle "<b>Persistence Access</b>\n<i>[Repositories / Adapters]</i>\n\nAggregates JPA repositories used by bounded contexts." as Persistence #F39C12
 }
 
@@ -82,6 +83,14 @@ Workplace --> IAM : user scope
 Device --> Workplace : assigned spaces
 Energy --> Device : device readings
 Notifications --> Energy : energy conditions
+IAM --> EventBus : user registered
+Billing --> EventBus : subscription / payment
+Workplace --> EventBus : assignment
+Device --> EventBus : device / mode
+Energy --> EventBus : threshold
+Service --> EventBus : service tickets
+EventBus --> Notifications : CreateAlertCommand
+EventBus --> Reporting : RecordReportingEventCommand
 Reporting --> Billing : subscription metrics
 Reporting --> Workplace : workplace metrics
 Reporting --> Device : operation metrics
@@ -112,9 +121,10 @@ Device -[hidden]right- Energy
 Workplace -[hidden]down- Notifications
 Device -[hidden]down- Reporting
 Energy -[hidden]down- Service
+Energy -[hidden]right- EventBus
 Notifications -[hidden]right- Reporting
 Reporting -[hidden]right- Service
-Reporting -[hidden]down- Persistence
+EventBus -[hidden]down- Persistence
 Persistence -[hidden]down- Database
 
 legend right

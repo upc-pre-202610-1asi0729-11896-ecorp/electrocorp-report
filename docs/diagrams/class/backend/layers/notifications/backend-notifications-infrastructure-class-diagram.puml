@@ -31,6 +31,20 @@ package "Notifications / Infrastructure" {
     interface "JpaNotificationPreferenceRepository" as Backend_notifications_JpaNotificationPreferenceRepository <<interface>> {
     }
   }
+  package "Infrastructure / Delivery" {
+    class "MailchimpNotificationDeliveryAdapter" as Backend_notifications_MailchimpNotificationDeliveryAdapter <<Adapter>> {
+      - restClient: RestClient
+      - userRepository: UserRepository
+      - mailchimpApiKey: String
+      - mailchimpMessagesUrl: String
+      - fromEmail: String
+      - fromName: String
+      + MailchimpNotificationDeliveryAdapter(restClientBuilder: RestClient.Builder, userRepository: UserRepository)
+      + send(Alert alert, NotificationPreference preference, NotificationDeliveryDecision decision) : void
+      - sendMailchimpEmail(Alert alert) : boolean
+      - resolveRecipientEmail(Alert alert) : Optional<String>
+    }
+  }
 }
 
 
@@ -42,5 +56,6 @@ Backend_notifications_JpaAlertRepository ..> Backend_notifications_Notifications
 Backend_notifications_JpaAlertRepository ..> Backend_notifications_JpaAlertRuleProfileRepository
 Backend_notifications_JpaAlertRepository ..> Backend_notifications_JpaAlertRuleRepository
 Backend_notifications_JpaAlertRepository ..> Backend_notifications_JpaNotificationPreferenceRepository
+Backend_notifications_MailchimpNotificationDeliveryAdapter ..|> Backend_notifications_NotificationDeliveryPort
 
 @enduml

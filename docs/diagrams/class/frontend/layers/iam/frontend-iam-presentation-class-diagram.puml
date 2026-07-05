@@ -9,103 +9,90 @@ hide circle
 package "IAM Presentation" {
   package "Presentation / Pages" {
     class "AccountPageComponent" as FrontendPresentation_iam_AccountPageComponent <<Component>> {
-      + constructor: (
-      + iamFacade: IamFacade
-      - uiPreferences: UiPreferencesService
-      - translate: TranslateService
-      + get: userInitials(): string
+      + userInitials() : string
       + formatDate(value: string | undefined) : string
       + currentLocale() : string
-      - t(key: string) : string
+    }
+    class "AccessPageComponent" as FrontendPresentation_iam_AccessPageComponent <<Component>> {
+      - iamFacade: IamFacade
+      - toastService: ToastService
+      - translate: TranslateService
+      + ngOnInit() : Promise<void>
+      + isCurrentProfile(profile: AccessProfile) : boolean
+      + profileOptions() : DropdownOption[]
+      + profileValue(user: User) : string
+      + userStatusLabelKey(user: User) : string
+      + onProfileSelected(user: User, profileId: string) : Promise<void>
     }
     class "LoginPageComponent" as FrontendPresentation_iam_LoginPageComponent <<Component>> {
-      + email
-      + password
-      + constructor: (
-      + iamFacade: IamFacade
-      - toastService: ToastService
+      + email: string
+      + password: string
       + onSubmit() : Promise<void>
     }
     class "PlatformPageComponent" as FrontendPresentation_iam_PlatformPageComponent <<Component>> {
       + languageOptions: DropdownOption[]
-      + constructor: (
-      + uiPreferences: UiPreferencesService
-      - toastService: ToastService
-      - translate: TranslateService
-      + get: currentLanguage(): string
-      + get: currentLanguageLabel(): string
-      + get: currentThemeLabel(): string
+      + currentLanguage() : string
+      + currentLanguageLabel() : string
+      + currentThemeLabel() : string
       + selectLanguage(value: string) : void
       + setDarkMode(enabled: boolean) : void
-      - t(key: string) : string
     }
     class "ProfilePageComponent" as FrontendPresentation_iam_ProfilePageComponent <<Component>> {
-      + fullName
-      + email
-      + constructor: (
-      + iamFacade: IamFacade
-      - toastService: ToastService
-      - translate: TranslateService
+      + fullName: string
+      + email: string
       + ngOnInit() : void
       + onUpdateProfile() : Promise<void>
       + hasPendingChanges() : boolean
-      - t(key: string) : string
     }
     class "RecoverPasswordPageComponent" as FrontendPresentation_iam_RecoverPasswordPageComponent <<Component>> {
-      + email
-      + constructor: (
-      + iamFacade: IamFacade
-      - toastService: ToastService
+      + email: string
+      + onSubmit() : Promise<void>
+    }
+    class "ResetPasswordPageComponent" as FrontendPresentation_iam_ResetPasswordPageComponent <<Component>> {
+      + token: string
+      + password: string
+      + confirmPassword: string
+      + ngOnInit() : void
       + onSubmit() : Promise<void>
     }
     class "RegisterPageComponent" as FrontendPresentation_iam_RegisterPageComponent <<Component>> {
-      + fullName
-      + email
-      + password
+      + fullName: string
+      + email: string
+      + password: string
       + selectedLandingPlan: LandingSelectedPlan | null
-      + constructor: (
-      + iamFacade: IamFacade
-      + billingFacade: BillingFacade
-      - route: ActivatedRoute
-      - router: Router
-      - toastService: ToastService
       + ngOnInit() : void
-      + get: passwordRequirements()
-      + get: passwordIsValid(): boolean
-      + get: registrationIsLoading(): boolean
+      + passwordRequirements() : PasswordRequirement[]
+      + passwordIsValid() : boolean
+      + registrationIsLoading() : boolean
       + onSubmit() : Promise<void>
-      - activateSelectedLandingPlan() : Promise<void>
-      - isPlanCode(value: string | null) : value is PlanCode
-      - getDefaultPlanName(planCode: PlanCode) : string
     }
     class "SecurityPageComponent" as FrontendPresentation_iam_SecurityPageComponent <<Component>> {
-      + constructor: (
-      + iamFacade: IamFacade
-      - toastService: ToastService
-      - confirmDialog: ConfirmDialogService
-      - translate: TranslateService
-      + get: email(): string
+      + email() : string
       + sendRecovery() : Promise<void>
       + onDeleteAccount() : Promise<void>
-      - t(key: string) : string
     }
   }
   package "Presentation / Routes" {
     class "IAM_ROUTES" as FrontendPresentation_iam_IAM_ROUTES <<Routes>> {
-      + route: /iam/login
+      + /iam/login
+      + /iam/register
+      + /iam/recover-password
+      + /iam/reset-password
+      + /settings/account
+      + /settings/profile
+      + /settings/security
+      + /settings/platform
+      + /settings/access
     }
   }
 }
 
-
-' Relationship completion: every declared type participates in the frontend diagram.
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_LoginPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_LoginPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_PlatformPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_ProfilePageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_RecoverPasswordPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_RegisterPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_SecurityPageComponent
-FrontendPresentation_iam_AccountPageComponent ..> FrontendPresentation_iam_IAM_ROUTES
+FrontendPresentation_iam_AccessPageComponent ..> Frontend_iam_IamFacade
+FrontendPresentation_iam_ResetPasswordPageComponent ..> Frontend_iam_IamFacade
+FrontendPresentation_iam_RecoverPasswordPageComponent ..> Frontend_iam_IamFacade
+FrontendPresentation_iam_ProfilePageComponent ..> Frontend_iam_IamFacade
+FrontendPresentation_iam_SecurityPageComponent ..> Frontend_iam_IamFacade
+FrontendPresentation_iam_IAM_ROUTES ..> FrontendPresentation_iam_AccessPageComponent
+FrontendPresentation_iam_IAM_ROUTES ..> FrontendPresentation_iam_ResetPasswordPageComponent
 
 @enduml

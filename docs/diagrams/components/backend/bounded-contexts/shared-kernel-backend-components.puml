@@ -59,7 +59,7 @@ rectangle "<b>Shared Kernel Backend Bounded Context</b>\n<i>[Spring Boot Module]
   rectangle "<b>Interfaces REST Layer</b>\n<i>[REST / Resources]</i>\n\nControllers expose HTTP endpoints and translate resources into application requests." as Interfaces #58A9E8
   rectangle "<b>Application Layer</b>\n<i>[Commands / Queries / Services]</i>\n\nCoordinates use cases, transactions, commands, queries and application services." as Application #58A9E8
   rectangle "<b>Domain Layer</b>\n<i>[Aggregates / Policies]</i>\n\nOwns business rules, aggregates, entities, value objects, events and domain services." as Domain #58A9E8
-  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, ACL adapters and technical integrations." as Infrastructure #58A9E8
+  rectangle "<b>Infrastructure Layer</b>\n<i>[Persistence / Adapters]</i>\n\nImplements repositories, persistence mappings, RestClient configuration, ACL adapters and technical integrations." as Infrastructure #58A9E8
 }
 database "<b>ElectroCorp Database</b>\n<i>[PostgreSQL]</i>\n\nStores shared security, layout, session, configuration and platform services." as Database
 
