@@ -4294,7 +4294,9 @@ Las entrevistas de validacion mantienen el mismo enfoque de la seccion 2.2, pero
 
 #### Segmento 1
 
-
+| N | Datos | Imagen referencial
+|--|--|--|
+|1  | Nombre: Jeremy<br>Apellido: Lampary <br>Edad: 20<br>Distrito: Ate |<img src="assets/md-images-chapter5/seg1-interview2.png">
 
 #### Segmento 2
 
