@@ -1807,7 +1807,7 @@ El prototipo permite validar visualmente la experiencia de usuario, la navegaci�
 
 El Design-Level Event Storming de ElectroCorp se organiza por bounded contexts para mantener coherencia con la arquitectura DDD implementada en el backend y en la web application. En lugar de representar todo el dominio en una sola imagen, los eventos, comandos, agregados y reglas se separan por contexto para facilitar la trazabilidad con el codigo actual.
 
-La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting y Service Management.
+La primera vista resume la separacion de bounded contexts y sus relaciones principales. Las vistas siguientes detallan los flujos internos de cada contexto, usando la nomenclatura actual del proyecto: IAM, Billing, Workplace, Device Control, Energy Monitoring, Notifications, Reporting, Service Management y Marketing. El codigo fuente Mermaid de cada diagrama se versiona en `docs/diagrams/event-storming/` para mantener trazabilidad directa con la implementacion.
 
 Para la entrega final, los eventos candidatos del Event Storming se implementan como eventos de dominio dentro de cada bounded context y se traducen a integration events desde la capa de application/interfaces mediante `IntegrationEventPublisher`. Los handlers se ejecutan despues del commit transaccional y los consumidores principales son Notifications, que crea alertas operativas, y Reporting, que persiste una proyeccion de actividad en `reporting_events` para trazabilidad y analisis sin acoplar controllers entre contextos.
 
@@ -1886,6 +1886,37 @@ El contexto Reporting consolida indicadores de consumo, metas energeticas, repor
 <img src="assets/md-images-chapter4/event-storming-service-management.jpg">
 
 El contexto Service Management cubre tickets de soporte, tickets de mantenimiento y seguimiento de atenciones. Este contexto se conecta con dispositivos y espacios afectados para que las incidencias tengan trazabilidad operativa.
+
+#### 4.6.1.10. Marketing Event Storming
+
+```mermaid
+flowchart LR
+  classDef actor fill:#ffe066,stroke:#d4a100,color:#3d2f00;
+  classDef command fill:#6db3f2,stroke:#1c6fb8,color:#08243d;
+  classDef aggregate fill:#fff2ae,stroke:#c9a900,color:#4a3b00;
+  classDef readmodel fill:#b5e7a0,stroke:#4f9a2f,color:#1f3d0f;
+
+  VISITOR([🎬 Visitor]):::actor
+
+  C_NEWS[⚡ SubscribeNewsletter]:::command
+  C_SEARCH[⚡ Search]:::command
+  C_MULTIMEDIA[⚡ UpdateMultimediaState]:::command
+
+  A_NEWS[📦 NewsletterSubscription]:::aggregate
+
+  RM_CONTENT[🟢 Landing content by language]:::readmodel
+  RM_TRANS[🟢 Translations bundle]:::readmodel
+  RM_MULTI[🟢 Multimedia config - audio/menu]:::readmodel
+  RM_TERMS["🟢 Terms and Conditions"]:::readmodel
+
+  VISITOR --> C_NEWS -->|idempotent by email| A_NEWS
+  VISITOR --> C_SEARCH --> RM_CONTENT
+  VISITOR --> C_MULTIMEDIA --> RM_MULTI
+  VISITOR --> RM_TRANS
+  VISITOR --> RM_TERMS
+```
+
+El contexto Marketing da soporte a la landing page previa al registro. Gestiona la suscripcion al boletin (`NewsletterSubscription`, idempotente por email), la busqueda y el contenido de la landing por idioma, el bundle de traducciones, la configuracion multimedia (audio y menu) y los terminos y condiciones. A diferencia de los demas bounded contexts no publica domain events, ya que su rol es de captacion y presentacion, sin acoplarse al flujo transaccional del resto de la plataforma. El diagrama se embebe como codigo Mermaid y su fuente se versiona en `docs/diagrams/event-storming/09-marketing.mmd`.
 
 ### 4.6.2. Software Architecture Context Diagram
 
