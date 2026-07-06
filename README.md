@@ -4329,7 +4329,10 @@ El resto de las historias comprometidas para el negocio (autenticación, suscrip
 
 ## Video About-the-Team.
 
-* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u202418755_upc_edu_pe/IQAHV6Rac0vsTIGjefd9ph7gAbH1FljBZnE1edLYB38JskE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=kBu4nN
+* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e014_upc_edu_pe/IQCGwOKUNfwNS4Ckcd9qoSYVAcxHm1-KJN9Fb-YekOiR3z4?e=h7dAVK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
+-youtube
+* *URL:*  https://youtu.be/zALarkP7iTo
 
 # Bibliografía 
 
