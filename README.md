@@ -4354,4 +4354,8 @@ El resto de las historias comprometidas para el negocio (autenticación, suscrip
 
 ## Credenciales de prueba
 
--- Añadir credenciales de usuarios predeterminados
+**Usuario:** sebastian@gmail.com  
+**Contraseña:** Contrasenia1
+
+**Usuario:** loarojas1@gmail.com  
+**Contraseña:** 30Eternidad03
