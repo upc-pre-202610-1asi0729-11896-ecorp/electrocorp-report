@@ -1825,98 +1825,63 @@ Para la entrega final, los eventos candidatos del Event Storming se implementan 
 
 #### 4.6.1.1. Bounded Contexts Overview
 
-<img src="assets/md-images-chapter4/event-storming-bounded-contexts-overview.jpg">
+<img src="assets/md-images-chapter4/event-storming-bounded-contexts-overview.png">
 
-Esta vista general identifica los bounded contexts principales de ElectroCorp y muestra como se distribuyen las capacidades del producto. IAM centraliza identidad y acceso; Billing gestiona planes y suscripciones; Workplace organiza sedes y ambientes; Device Control coordina dispositivos, grupos, rutinas y modos; Energy Monitoring procesa lecturas y metricas; Notifications evalua alertas y preferencias; Reporting consolida reportes e indicadores; y Service Management gestiona tickets y mantenimiento.
+Esta vista general identifica los bounded contexts principales de ElectroCorp y muestra como se distribuyen las capacidades del producto. IAM centraliza identidad y acceso; Billing gestiona planes y suscripciones; Workplace organiza sedes y ambientes; Device Control coordina dispositivos, grupos, rutinas y modos; Energy Monitoring procesa lecturas y metricas; Notifications evalua alertas y preferencias; Reporting consolida reportes e indicadores; Service Management gestiona tickets y mantenimiento; y Marketing sostiene la landing y la captacion previa al registro.
 
 #### 4.6.1.2. IAM Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-iam.jpg">
+<img src="assets/md-images-chapter4/event-storming-iam.png">
 
 El contexto IAM representa los flujos de registro, autenticacion, perfiles y control de acceso. Este contexto provee la identidad base que otros bounded contexts usan para validar propiedad, alcance de usuario y permisos de operacion.
 
 #### 4.6.1.3. Billing Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-billing.jpg">
+<img src="assets/md-images-chapter4/event-storming-billing.png">
 
 El contexto Billing cubre planes, suscripciones, pagos e invoices. Sus eventos permiten conectar la seleccion de plan, la activacion de beneficios y la validacion de acceso a funcionalidades de la plataforma.
 
 #### 4.6.1.4. Workplace Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-workplace-flow-1.jpg">
+<img src="assets/md-images-chapter4/event-storming-workplace.png">
 
-<img src="assets/md-images-chapter4/event-storming-workplace-flow-2.jpg">
-
-El contexto Workplace modela sedes, rooms y asignaciones de dispositivos. Su separacion en dos vistas permite mostrar el flujo de creacion y administracion de espacios, junto con las relaciones necesarias para que Device Control, Energy Monitoring y Reporting trabajen con ubicaciones reales.
+El contexto Workplace modela sedes, rooms y asignaciones de dispositivos. La vista muestra el flujo de creacion y administracion de espacios, junto con las relaciones necesarias para que Device Control, Energy Monitoring y Reporting trabajen con ubicaciones reales.
 
 #### 4.6.1.5. Device Control Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-device-control-flow-1.jpg">
-
-<img src="assets/md-images-chapter4/event-storming-device-control-flow-2.jpg">
+<img src="assets/md-images-chapter4/event-storming-device-control.png">
 
 El contexto Device Control representa dispositivos, grupos de dispositivos, rutinas y modos de operacion. Estos eventos sostienen la automatizacion del producto y preparan la informacion que luego consumen Energy Monitoring, Notifications y Reporting.
 
 #### 4.6.1.6. Energy Monitoring Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-1.jpg">
-
-<img src="assets/md-images-chapter4/event-storming-energy-monitoring-flow-2.jpg">
+<img src="assets/md-images-chapter4/event-storming-energy-monitoring.png">
 
 El contexto Energy Monitoring organiza la captura, consulta y analisis de lecturas energeticas. Sus eventos conectan dispositivos con metricas, dashboards y condiciones que pueden activar alertas o alimentar reportes.
 
 #### 4.6.1.7. Notifications Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-notifications-flow-1.jpg">
-
-<img src="assets/md-images-chapter4/event-storming-notifications-flow-2.jpg">
+<img src="assets/md-images-chapter4/event-storming-notifications.png">
 
 El contexto Notifications modela reglas de alerta, preferencias y evaluacion de condiciones. Se apoya en lecturas energeticas y configuraciones de usuario para generar notificaciones relevantes dentro del flujo operativo de ElectroCorp.
 
 #### 4.6.1.8. Reporting Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-reporting-flow-1.jpg">
-
-<img src="assets/md-images-chapter4/event-storming-reporting-flow-2.jpg">
+<img src="assets/md-images-chapter4/event-storming-reporting.png">
 
 El contexto Reporting consolida indicadores de consumo, metas energeticas, reportes y exportaciones. Su rol es integrar datos de billing, workplaces, devices, energy monitoring, notifications y service management para producir una vista ejecutiva del sistema.
 
 #### 4.6.1.9. Service Management Event Storming
 
-<img src="assets/md-images-chapter4/event-storming-service-management.jpg">
+<img src="assets/md-images-chapter4/event-storming-service-management.png">
 
 El contexto Service Management cubre tickets de soporte, tickets de mantenimiento y seguimiento de atenciones. Este contexto se conecta con dispositivos y espacios afectados para que las incidencias tengan trazabilidad operativa.
 
 #### 4.6.1.10. Marketing Event Storming
 
-```mermaid
-flowchart LR
-  classDef actor fill:#ffe066,stroke:#d4a100,color:#3d2f00;
-  classDef command fill:#6db3f2,stroke:#1c6fb8,color:#08243d;
-  classDef aggregate fill:#fff2ae,stroke:#c9a900,color:#4a3b00;
-  classDef readmodel fill:#b5e7a0,stroke:#4f9a2f,color:#1f3d0f;
+<img src="assets/md-images-chapter4/event-storming-marketing.png">
 
-  VISITOR([🎬 Visitor]):::actor
-
-  C_NEWS[⚡ SubscribeNewsletter]:::command
-  C_SEARCH[⚡ Search]:::command
-  C_MULTIMEDIA[⚡ UpdateMultimediaState]:::command
-
-  A_NEWS[📦 NewsletterSubscription]:::aggregate
-
-  RM_CONTENT[🟢 Landing content by language]:::readmodel
-  RM_TRANS[🟢 Translations bundle]:::readmodel
-  RM_MULTI[🟢 Multimedia config - audio/menu]:::readmodel
-  RM_TERMS["🟢 Terms and Conditions"]:::readmodel
-
-  VISITOR --> C_NEWS -->|idempotent by email| A_NEWS
-  VISITOR --> C_SEARCH --> RM_CONTENT
-  VISITOR --> C_MULTIMEDIA --> RM_MULTI
-  VISITOR --> RM_TRANS
-  VISITOR --> RM_TERMS
-```
-
-El contexto Marketing da soporte a la landing page previa al registro. Gestiona la suscripcion al boletin (`NewsletterSubscription`, idempotente por email), la busqueda y el contenido de la landing por idioma, el bundle de traducciones, la configuracion multimedia (audio y menu) y los terminos y condiciones. A diferencia de los demas bounded contexts no publica domain events, ya que su rol es de captacion y presentacion, sin acoplarse al flujo transaccional del resto de la plataforma. El diagrama se embebe como codigo Mermaid y su fuente se versiona en `docs/diagrams/event-storming/09-marketing.mmd`.
+El contexto Marketing da soporte a la landing page previa al registro. Gestiona la suscripcion al boletin (`NewsletterSubscription`, idempotente por email), la busqueda y el contenido de la landing por idioma, el bundle de traducciones, la configuracion multimedia (audio y menu) y los terminos y condiciones. A diferencia de los demas bounded contexts no publica domain events, ya que su rol es de captacion y presentacion, sin acoplarse al flujo transaccional del resto de la plataforma.
 
 ### 4.6.2. Software Architecture Context Diagram
 
