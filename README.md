@@ -131,7 +131,10 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
             <div style="display: flex; align-items: center;">
             <img src="assets/md-images-front-matter/jean-commits.png">
             </div><br>
-
+        + **Carolina Navarro**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-carolina-commits.png">
+            </div><br>
 ### **Entrega TB1:**
 Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub cada uno en su debida rama, asegurando así un seguimiento claro de los avances y la colaboración conjunta. Ademas hicimos mejoras en la parte del frontend y la landing page.
 
@@ -174,6 +177,10 @@ Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción f
         + **Jean Loa**
             <div style="display: flex; align-items: center;">
             <img src="assets/md-images-front-matter/tb1-jean-commits.png">
+            </div><br>
+        + **Carolina Navarro**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-carolina-commits.png">
             </div><br>
 
 ### **Entrega AV2:**
@@ -218,8 +225,57 @@ Se hicieron las correcion a la parte del frontend y a la parte de la landing pag
             <div style="display: flex; align-items: center;">
             <img src="assets/md-images-front-matter/av2-jean-commits.png">
             </div><br>
+        + **Carolina Navarro**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-carolina-commits.png">
+            </div><br>  
+
+### **Entrega TB2:**
+Se hicieron las correciones en el report para algunos videos, tambien se ajusto la landing page con los videos about the team y about the product. Se hicieron cambios en la configuracion del despliegue del backend.
+
+##### Participación por integrante:
+
+- Tavara Correa, Sebastian Oswaldo: Correciones en el reporte y video del equipo      <br>
+- Santiago Atanacio, Jairo Mathias: Correciones en el reporte y revision de los diagramas
+- Cabrejos Chocco, Diego Alexander: Correcion de la landing page y agregar el sprint 4
+- Loa Rojas, Jean Franck: Correcion en el despliegue del backend
+- Navarro Aldoradin, Carolina Celeste: Revision del proyecto, correcion de user stories y technical stories
++ **Evidencias de colaboración y commits - Github:**
+    * **Análiticos de colaboración** <br><br>
+        + **Pulse Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb2-top-commiters.png"></div><br><br>
 
 
+        + **Contributors Image of Github Insights**
+        <div align="center"><img src="assets/md-images-front-matter/tb2-commits.png"></div><br><br>
+
+
+    * **Commits**
+
+         A continuación se muestran algunos commits realizados en este entrega de TB1.
+
+        + **Sebastian Tavara**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-sebastian-commits.png" >
+            </div><br>
+
+        + **Jairo Santiago**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-jairo-commits.png">
+            </div><br>
+
+        + **Diego Cabrejos**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-diego-commits.png">
+            </div><br>
+        + **Jean Loa**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-jean-commits.png">
+            </div><br>
+        + **Carolina Navarro**
+            <div style="display: flex; align-items: center;">
+            <img src="assets/md-images-front-matter/tb2-carolina-commits.png">
+            </div><br>
 # Contenido
 
 ## Índice
