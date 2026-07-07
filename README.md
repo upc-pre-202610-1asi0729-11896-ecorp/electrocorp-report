@@ -62,9 +62,9 @@ Proyecto<br>
 
 | Versión |   Fecha    |                                                                               Autor                                                                               |                                                  Descripción de modificación                                                   |
 | :-----: |:----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------------------------------------------------------------------------: |
-|   AV1   | 03/04/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
-|   TB1   | 09/05/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Documet Romero, Timothy       | Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
-|   AV2   | 12/06/2026 |                   Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck                    | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
+|   AV1   | 03/04/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste     | Avance del trabajo: Completando el contenido del Documento, entre estos La Landing Page, la Applicacion Web, etc |
+|   TB1   | 09/05/2026 |       Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste       | Avance del trabajo:Primer entregable de la Web App, mejorar el contenido del Documento, y  actualizar La Landing Page y que este conectada con la Web App|
+|   AV2   | 12/06/2026 |                   Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste                   | Avance del trabajo:Primer entregable del backend, mejorar el contenido del Documento, y actualizar La Landing Page, mejorar el Frontend y que este conectada con el backend |
 |   TB2   | 05/07/2026 | Tavara Correa, Sebastian Oswaldo; Santiago Atanacio, Jairo Mathias; Cabrejos Chocco, Diego Alexander; Loa Rojas, Jean Franck; Navarro Aldoradin, Carolina Celeste | Corrección de coherencia entre informe e implementación: suscripciones con checkout y validación de pago interna, alertas in-app, y documentación de OpenStreetMap/Nominatim como servicio externo de terceros. |
 
 <div style="page-break-after: always;"></div>
@@ -97,7 +97,7 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
 - Santiago Atanacio, Jairo Mathias: Desarrollo de los capitulos 1, 2, 4 y 5. 
 - Cabrejos Chocco, Diego Alexander: Desarrollo de los capitulos 2,4, 5 y landing page.  
 - Loa Rojas, Jean Franck: Desarrollo de los capitulos 1, 2, 4 y Aplicación web.
-- Documet Romero, Timothy: Desarrollo de capitulo 1.    
+- Navarro Aldoradin, Carolina Celeste: Revision de todos los capitulos.    
 
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
@@ -131,10 +131,6 @@ Durante esta entrega se elaboraron los capítulos 1 al 5 del informe. La redacci
             <div style="display: flex; align-items: center;">
             <img src="assets/md-images-front-matter/jean-commits.png">
             </div><br>
-        + **Timothy Documet**
-            <div style="display: flex; align-items: center;">
-            <img src="assets/md-images-front-matter/timothy-commits.png">
-            </div><br><br>
 
 ### **Entrega TB1:**
 Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción fue dividida equitativamente entre los integrantes del equipo, quienes se encargaron de sus respectivas secciones de manera paralela. Cada miembro subió sus contribuciones directamente al repositorio de GitHub cada uno en su debida rama, asegurando así un seguimiento claro de los avances y la colaboración conjunta. Ademas hicimos mejoras en la parte del frontend y la landing page.
@@ -145,7 +141,7 @@ Se hicieron las debidas correcciones a los capitulos del 1 al 5. La correción f
 - Santiago Atanacio, Jairo Mathias: Se corrigieron los errores presentes en las tablas y diagramas del trabajo. 
 - Cabrejos Chocco, Diego Alexander: Crea y mejora versiones de la página de inicio, que a su vez se conecta con la aplicación web.  
 - Loa Rojas, Jean Franck: Desarrollar e implementar la primera versión de la aplicación web, asegurando de que se desplegara sin errores y se conectara a la landing page 
-- Documet Romero, Timothy: Historias técnicas, corregir historias de usuario   
+- Navarro Aldoradin, Carolina Celeste: Revision de todo el reporte.   
 
 + **Evidencias de colaboración y commits - Github:**
     * **Análiticos de colaboración** <br><br>
@@ -3135,7 +3131,7 @@ La configuracion actual del backend documenta el esquema JWT Bearer en OpenAPI, 
     </tr>
     <tr>
         <td><b>Attendees (to planning meeting)</b></td>
-        <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td>
+        <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Navarro Aldoradin, Carolina Celeste</td>
     </tr>
     <tr>
         <td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td>
@@ -3212,8 +3208,8 @@ Al momento de realizar el sprint 1, el equipo ElectroCorp decidió asignar Líde
         <td align="center">C</td>
     </tr>
     <tr align="left">
-        <td>- Documet Romero, Timothy</td>
-        <td align="center">HiApple1</td>
+        <td>- Navarro Aldoradin, Carolina Celeste</td>
+        <td align="center">genixmvp</td>
         <td align="center">C</td>
         <td align="center">-</td>
         <td align="center">-</td>
@@ -3333,8 +3329,8 @@ Al momento de realizar el sprint 1, el equipo ElectroCorp decidió asignar Líde
     <td>Validación de formulario JS</td>
     <td>Interceptar el evento submit con preventDefault y mostrar alerta de éxito temporal.</td>
     <td>2</td>
-    <td>Timothy Documet</td>
-    <td>U202318828</td>
+    <td>Navarro Aldoradin, Carolina Celeste</td>
+    <td>U20241b962</td>
     <td>Done</td>
   </tr>
 
@@ -3532,7 +3528,7 @@ En este Sprint se marca la transición hacia el desarrollo interactivo, enfocán
     </tr>
     <tr>
         <td><b>Attendees (to planning meeting)</b></td>
-        <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td>
+        <td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Navarro Aldoradin, Carolina Celeste</td>
     </tr>
     <tr>
         <td><b>Sprint 1 Review Summary</b></td>
@@ -3621,8 +3617,8 @@ A continuación, se detalla la asignación de líderes (L) y colaboradores (C) p
         <td align="center">C</td>
     </tr>
     <tr align="left">
-        <td>Documet Romero, Timothy</td>
-        <td align="center">HiApple1</td>
+        <td>Navarro Aldoradin, Carolina Celeste</td>
+        <td align="center">genixmvp</td>
         <td align="center">C</td>
         <td align="center">C</td>
         <td align="center">C</td>
@@ -3686,7 +3682,7 @@ El objetivo principal de este segundo Sprint es dar el salto desde el sitio est�
     <td>Maquetación vista Register</td>
     <td>Diseñar e implementar la estructura HTML/CSS del formulario de creación de cuenta.</td>
     <td>6</td>
-    <td>Timothy Documet</td>
+    <td>Navarro Aldoradin, Carolina Celeste</td>
     <td>Done</td>
   </tr>
   <tr>
@@ -3912,7 +3908,7 @@ Durante el Sprint 2, la colaboración del equipo se intensificó al tener que ma
 | **Loa Rojas, Jean Franck** | Implementación de las interfaces de Login y Register en la Web App. |
 | **Cabrejos Chocce, Diego** | Actualización del Landing Page y conexión de hipervínculos hacia la Web App. |
 | **Loa Rojas, Jean Franck** | Maquetación del Dashboard (Home), integración de Layout y estilos Dark Mode. |
-| **Documet Romero, Timothy y Santiago Atanacio, Jairo** | Pruebas de navegación (QA) e implementación de validaciones visuales en formularios. |
+| **Navarro Aldoradin, Carolina Celeste y Santiago Atanacio, Jairo** | Pruebas de navegación (QA) e implementación de validaciones visuales en formularios. |
 
 * **Link de commits del repositorio del reporte:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/Electrocorp-report/commits/develop/README.md]
 * **Link de commits del repositorio del landing page:** [https://github.com/upc-pre-202610-1asi0729-11896-ECorp/ElectroCorp-website/commits/main/]
@@ -3939,7 +3935,7 @@ En este Sprint se consolida la entrega AV2 del producto, incorporando el primer 
     <tr><td><b>Time</b></td><td>11:00 AM</td></tr>
     <tr><td><b>Location</b></td><td>Modalidad Remota por Whatsapp / Microsoft Teams</td></tr>
     <tr><td><b>Prepared By</b></td><td>Loa Rojas, Jean Franck</td></tr>
-    <tr><td><b>Attendees (to planning meeting)</b></td><td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Documet Romero, Timothy</td></tr>
+    <tr><td><b>Attendees (to planning meeting)</b></td><td>Tavara Correa, Sebastian Oswaldo / Santiago Atanacio, Jairo Mathias / Cabrejos Chocce, Diego Alexander / Loa Rojas, Jean Franck / Navarro Aldoradin, Carolina Celeste</td></tr>
     <tr><td><b>Sprint 2 Review Summary</b></td><td>El equipo completo la primera version desplegada de la Web Application y mantuvo conectada la Landing Page con los flujos principales. Se identifico como siguiente prioridad implementar el backend, documentar los endpoints y preparar la integracion funcional con los planes, usuarios, sedes, dispositivos y reportes.</td></tr>
     <tr><td><b>Sprint 2 Retrospective Summary</b></td><td>El equipo acordo reforzar la disciplina de ramas, mejorar la trazabilidad de commits por bounded context, validar los contratos antes de integrar y documentar los servicios para que el frontend pueda consumirlos sin romper la navegacion existente.</td></tr>
     <tr><td colspan="2" align="center"><b>Sprint Goal & User Stories</b></td></tr>
@@ -3958,7 +3954,7 @@ En esta seccion se presenta la matriz de Liderazgo y Colaboracion definida para 
     <tr align="left"><td>Santiago Atanacio, Jairo Mathias</td><td align="center">Msa-ware</td><td align="center">L</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">C</td></tr>
     <tr align="left"><td>Cabrejos Chocce, Diego Alexander</td><td align="center">MOTOX-357</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">L</td><td align="center">C</td></tr>
     <tr align="left"><td>Loa Rojas, Jean Franck</td><td align="center">JeanLoa</td><td align="center">L</td><td align="center">C</td><td align="center">L</td><td align="center">C</td><td align="center">C</td></tr>
-    <tr align="left"><td>Documet Romero, Timothy</td><td align="center">HiApple1</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">L</td></tr>
+    <tr align="left"><td>Navarro Aldoradin, Carolina Celeste</td><td align="center">HiApple1</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">C</td><td align="center">L</td></tr>
 </table>
 
 #### 5.2.3.3. Sprint Backlog 3
@@ -3978,7 +3974,7 @@ https://trello.com/b/Ox2SHhpy/sprint3-electro
   <tr><td>US-19</td><td>Administrar dispositivos por sede</td><td>T35</td><td>Workplaces, rooms y device groups</td><td>Relacionar sedes, habitaciones, grupos de dispositivos y dispositivos para sostener la gestion energetica.</td><td>9</td><td>Sebastian Tavara</td><td>Done</td></tr>
   <tr><td>US-25</td><td>Automatizar rutinas y modos</td><td>T36</td><td>Routines y operation modes</td><td>Preparar reglas de uso, rutinas y modos de operacion asociados a grupos de dispositivos.</td><td>7</td><td>Sebastian Tavara</td><td>Done</td></tr>
   <tr><td>US-31</td><td>Monitorear consumo energetico</td><td>T37</td><td>Energy, notifications y reporting</td><td>Implementar la base para lecturas energeticas, alertas y reportes de consumo.</td><td>8</td><td>Diego Cabrejos</td><td>Done</td></tr>
-  <tr><td>US-34</td><td>Gestionar servicios y soporte</td><td>T38</td><td>Service Management</td><td>Preparar tickets, mantenimientos y solicitudes de soporte asociadas a usuarios y dispositivos.</td><td>5</td><td>Timothy Documet</td><td>Done</td></tr>
+  <tr><td>US-34</td><td>Gestionar servicios y soporte</td><td>T38</td><td>Service Management</td><td>Preparar tickets, mantenimientos y solicitudes de soporte asociadas a usuarios y dispositivos.</td><td>5</td><td>Navarro Aldoradin, Carolina Celeste</td><td>Done</td></tr>
   <tr><td>TS-22</td><td>Despliegue y documentacion de API</td><td>T39</td><td>Render, health y Swagger/OpenAPI</td><td>Configurar despliegue productivo, rutas publicas minimas, health check y documentacion de endpoints.</td><td>7</td><td>Jean Loa</td><td>Done</td></tr>
 </table>
 
