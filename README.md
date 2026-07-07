@@ -4410,6 +4410,18 @@ El resto de las historias comprometidas para el negocio (autenticación, suscrip
 
 - https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
 
+#### Link del platform
+
+- https://electrocorp-platform.onrender.com
+
+#### Link del webapp
+
+- https://electrocorp-webapp.onrender.com/
+
+#### Link de la landing page
+
+- https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/
+
 #### Link del Swagger
 
 - https://electrocorp-platform.onrender.com/swagger-ui/index.html
