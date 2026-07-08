@@ -4357,10 +4357,10 @@ Las entrevistas de validacion mantienen el mismo enfoque de la seccion 2.2, pero
 
 Pendiente de completar despues de registrar y analizar las entrevistas de validacion.
 ## 5.4. Video About-the-Product.
-* *URL:* https://drive.google.com/file/d/1rCwWYC4tKv9OyqD7NGp6Zd5sjqlNuDTZ/view?usp=sharing
+* [Video About-the-Product en Google Drive](https://drive.google.com/file/d/1rCwWYC4tKv9OyqD7NGp6Zd5sjqlNuDTZ/view?usp=sharing)
   
 -youtube
-* *URL:* https://youtu.be/9PpAapLjpp8
+* [Video About-the-Product en YouTube](https://youtu.be/9PpAapLjpp8)
   
 # Conclusiones
 ## Conclusiones y recomendaciones
@@ -4380,10 +4380,10 @@ El resto de las historias comprometidas para el negocio (autenticación, suscrip
 
 ## Video About-the-Team.
 
-* *URL:* https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e014_upc_edu_pe/IQCGwOKUNfwNS4Ckcd9qoSYVAcxHm1-KJN9Fb-YekOiR3z4?e=h7dAVK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+* [Video About-the-Team en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e406_upc_edu_pe/IQC1oPQs1EPGRZ2pXhmjS4QlASNy-9QnJsmAqNWQLLU2KYI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4mE4L8)
 
 -youtube
-* *URL:*  https://youtu.be/zALarkP7iTo
+* [Video About-the-Team en YouTube](https://youtu.be/zALarkP7iTo)
 
 # Bibliografía 
 
@@ -4396,35 +4396,35 @@ El resto de las historias comprometidas para el negocio (autenticación, suscrip
 
 #### Link del repositorio del Reporte:
 
-- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report
+- [Repositorio del informe](https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-report)
 
 #### Link del repositorio del Website:
 
-- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website
+- [Repositorio de la Landing Page](https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-website)
 
 #### Link del repositorio de la Webapp:
 
-- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp
+- [Repositorio de la Web Application](https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-webapp)
 
 #### Link del repositorio del Platform:
 
-- https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform
+- [Repositorio del backend Platform](https://github.com/upc-pre-202610-1asi0729-11896-ecorp/electrocorp-platform)
 
 #### Link del platform
 
-- https://electrocorp-platform.onrender.com
+- [Backend Platform desplegado en Render](https://electrocorp-platform.onrender.com)
 
 #### Link del webapp
 
-- https://electrocorp-webapp.onrender.com/
+- [Web Application desplegada en Render](https://electrocorp-webapp.onrender.com/)
 
 #### Link de la landing page
 
-- https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/
+- [Landing Page desplegada en GitHub Pages](https://upc-pre-202610-1asi0729-11896-ecorp.github.io/electrocorp-website/)
 
 #### Link del Swagger
 
-- https://electrocorp-platform.onrender.com/swagger-ui/index.html
+- [Swagger UI del backend](https://electrocorp-platform.onrender.com/swagger-ui/index.html)
 
 ## Credenciales de prueba
 
